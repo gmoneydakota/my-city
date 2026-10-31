@@ -127,3 +127,5 @@ logged_at,league,event_id,start,kind,selection,athlete_id,stat,side,line,price,p
 2026-10-31T17:14:42+00:00,nba,401909897,2026-10-31T22:00:00+00:00,Prop,Tyrese Maxey under 3.5 threes,4431678,threes,under,3.5,-167,0.6628,0.0597,2.00,draftkings,,
 2026-10-31T17:14:42+00:00,nba,401909897,2026-10-31T22:00:00+00:00,Prop,Sion James under 12.5 pra,4602025,pra,under,12.5,-101,0.5295,0.0537,1.36,draftkings,,
 2026-10-31T17:14:42+00:00,nba,401909897,2026-10-31T22:00:00+00:00,Prop,VJ Edgecombe under 2.5 threes,5124612,threes,under,2.5,-176,0.6690,0.0492,2.00,draftkings,,
+2026-10-31T17:18:06+00:00,nba,401909897,2026-10-31T22:00:00+00:00,Prop,Dean Wade under 6.5 points,3912848,points,under,6.5,-114,0.5926,0.1123,2.00,draftkings,,
+2026-10-31T17:18:06+00:00,nba,401909900,2026-11-01T00:00:00+00:00,Prop,Jaime Jaquez Jr. over 14.5 points,4432848,points,over,14.5,-118,0.5701,0.0532,1.57,draftkings,,

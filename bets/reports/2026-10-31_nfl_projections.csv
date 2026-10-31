@@ -105,11 +105,12 @@ MIN @ DET,MIN,Jordan Mason,rush_yds,54.94,27.19,54.5,50.5,59.5,
 MIN @ DET,MIN,Jordan Mason,rec_yds,1.25,2.49,0.5,,0.5,
 MIN @ DET,MIN,Jordan Mason,receptions,0.34,0.71,0.5,,0.5,
 MIN @ DET,MIN,Jordan Mason,anytime_td,0.39,0.63,36% (+181),,,
+MIN @ DET,MIN,Justin Jefferson,rec_yds,59.29,29.90,59.5,54.5,64.5,
+MIN @ DET,MIN,Justin Jefferson,receptions,4.64,2.30,4.5,3.5,5.5,
+MIN @ DET,MIN,Justin Jefferson,anytime_td,0.42,0.74,34% (+191),,,
 MIN @ DET,MIN,T.J. Hockenson,rec_yds,38.13,33.17,38.5,32.5,43.5,
 MIN @ DET,MIN,T.J. Hockenson,receptions,4.30,3.47,3.5,2.5,4.5,
 MIN @ DET,MIN,T.J. Hockenson,anytime_td,0.32,0.57,32% (+216),,,
-MIN @ DET,MIN,Jordan Addison,rec_yds,37.81,29.62,37.5,32.5,43.5,
-MIN @ DET,MIN,Jordan Addison,receptions,2.68,1.88,2.5,1.5,3.5,
 LV @ NYJ,NYJ,Breece Hall,rush_yds,61.51,36.53,61.5,55.5,67.5,Questionable
 LV @ NYJ,NYJ,Breece Hall,rec_yds,30.48,22.00,30.5,26.5,34.5,Questionable
 LV @ NYJ,NYJ,Breece Hall,receptions,2.98,1.74,2.5,2.5,3.5,Questionable
@@ -242,7 +243,7 @@ LAC @ LAR,LAC,Omarion Hampton,rush_yds,49.44,27.45,49.5,44.5,54.5,
 LAC @ LAR,LAC,Omarion Hampton,rec_yds,12.51,10.78,12.5,10.5,14.5,
 LAC @ LAR,LAC,Omarion Hampton,receptions,2.12,1.94,1.5,0.5,2.5,
 LAC @ LAR,LAC,Omarion Hampton,anytime_td,0.50,0.71,41% (+142),,,
-LAC @ LAR,LAC,Keaton Mitchell,rush_yds,24.13,18.59,24.5,20.5,27.5,
+LAC @ LAR,LAC,Keaton Mitchell,rush_yds,24.12,18.59,24.5,20.5,27.5,
 LAC @ LAR,LAC,Keaton Mitchell,rec_yds,8.31,9.25,5.5,3.5,7.5,
 LAC @ LAR,LAC,Keaton Mitchell,receptions,1.81,1.79,1.5,0.5,2.5,
 LAC @ LAR,LAC,Kimani Vidal,rush_yds,27.08,26.68,27.5,22.5,31.5,
@@ -296,9 +297,6 @@ NE @ MIA,NE,Rhamondre Stevenson,rush_yds,42.93,23.16,42.5,38.5,47.5,
 NE @ MIA,NE,Rhamondre Stevenson,rec_yds,31.75,29.20,31.5,26.5,36.5,
 NE @ MIA,NE,Rhamondre Stevenson,receptions,2.82,1.86,2.5,1.5,3.5,
 NE @ MIA,NE,Rhamondre Stevenson,anytime_td,0.60,0.79,45% (+120),,,
-NE @ MIA,NE,TreVeyon Henderson,rush_yds,39.03,29.30,39.5,33.5,44.5,Questionable
-NE @ MIA,NE,TreVeyon Henderson,rec_yds,9.25,6.88,7.5,6.5,9.5,Questionable
-NE @ MIA,NE,TreVeyon Henderson,receptions,1.14,1.15,0.5,0.5,1.5,Questionable
 NE @ MIA,NE,DeMario Douglas,rec_yds,38.01,27.14,38.5,33.5,42.5,
 NE @ MIA,NE,DeMario Douglas,receptions,3.18,2.12,2.5,2.5,3.5,
 NE @ MIA,NE,DeMario Douglas,anytime_td,0.43,0.77,35% (+186),,,

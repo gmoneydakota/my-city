@@ -1,481 +1,273 @@
 kind,game,selection,line,dk_odds,p_model,p_market,p_blend,ev
-ML,POR @ UTAH,UTAH ML,,250.0,0.3864,0.2598,0.2978,0.0422
-ML,POR @ UTAH,POR ML,,-310.0,0.6136,0.7402,0.7022,-0.0712
-Spread,POR @ UTAH,UTAH +7.5,7.5,-108.0,0.6028,0.4954,0.5276,0.0161
-Spread,POR @ UTAH,POR -7.5,-7.5,-112.0,0.3972,0.5046,0.4724,-0.1058
-Total,POR @ UTAH,Over 231.5,231.5,-112.0,0.5454,0.5046,0.5169,-0.0216
-Total,POR @ UTAH,Under 231.5,231.5,-108.0,0.4546,0.4954,0.4831,-0.0695
-ML,PHI @ CHA,CHA ML,,-108.0,0.5497,0.4954,0.5117,-0.0146
-ML,PHI @ CHA,PHI ML,,-112.0,0.4503,0.5046,0.4883,-0.0757
-Spread,PHI @ CHA,CHA +1.5,1.5,-120.0,0.5928,0.5232,0.5441,-0.0025
-Spread,PHI @ CHA,PHI -1.5,-1.5,100.0,0.4072,0.4768,0.4559,-0.0882
-Total,PHI @ CHA,Over 214.5,214.5,-108.0,0.4093,0.4954,0.4695,-0.0957
-Total,PHI @ CHA,Under 214.5,214.5,-112.0,0.5907,0.5046,0.5305,0.0041
-ML,ATL @ NO,NO ML,,150.0,0.3654,0.3760,0.3728,-0.0679
-ML,ATL @ NO,ATL ML,,-180.0,0.6346,0.6240,0.6272,-0.0244
-Spread,ATL @ NO,NO +4.5,4.5,-115.0,0.4942,0.5116,0.5064,-0.0533
-Spread,ATL @ NO,ATL -4.5,-4.5,-105.0,0.5058,0.4884,0.4936,-0.0363
-Total,ATL @ NO,Over 240.5,240.5,-108.0,0.3841,0.4954,0.4620,-0.1103
-Total,ATL @ NO,Under 240.5,240.5,-112.0,0.6159,0.5046,0.5380,0.0184
-ML,SAC @ MEM,MEM ML,,-375.0,0.7741,0.7741,0.7741,-0.0194
-ML,SAC @ MEM,SAC ML,,295.0,0.2259,0.2259,0.2259,-0.1078
-Spread,SAC @ MEM,MEM -8.5,-8.5,-108.0,0.5517,0.4954,0.5123,-0.0134
-Spread,SAC @ MEM,SAC +8.5,8.5,-112.0,0.4483,0.5046,0.4877,-0.0768
-Total,SAC @ MEM,Over 230.5,230.5,-105.0,0.4934,0.4884,0.4899,-0.0435
-Total,SAC @ MEM,Under 230.5,230.5,-115.0,0.5066,0.5116,0.5101,-0.0463
-ML,CLE @ MIL,MIL ML,,300.0,0.4065,0.2233,0.2783,0.1130
-ML,CLE @ MIL,CLE ML,,-380.0,0.5935,0.7767,0.7217,-0.0883
-Spread,CLE @ MIL,MIL +9.5,9.5,-108.0,0.6770,0.4954,0.5498,0.0590
-Spread,CLE @ MIL,CLE -9.5,-9.5,-112.0,0.3230,0.5046,0.4502,-0.1479
-Total,CLE @ MIL,Over 235.5,235.5,-112.0,0.4908,0.5046,0.5005,-0.0527
-Total,CLE @ MIL,Under 235.5,235.5,-108.0,0.5092,0.4954,0.4995,-0.0380
-ML,MIN @ SA,SA ML,,-575.0,0.5931,0.8384,0.7648,-0.1022
-ML,MIN @ SA,MIN ML,,425.0,0.4069,0.1616,0.2352,0.2346
-Spread,MIN @ SA,SA -12.5,-12.5,-105.0,0.2483,0.4884,0.4164,-0.1871
-Spread,MIN @ SA,MIN +12.5,12.5,-115.0,0.7517,0.5116,0.5836,0.0911
-Total,MIN @ SA,Over 225.5,225.5,-108.0,0.5536,0.4954,0.5128,-0.0123
-Total,MIN @ SA,Under 225.5,225.5,-112.0,0.4464,0.5046,0.4872,-0.0778
-Prop,POR @ UTAH,Toumani Camara over 1.5 assists,1.5,-131,,,0.4878,-0.1398
-Prop,POR @ UTAH,Toumani Camara under 1.5 assists,1.5,-101,,,0.5122,0.0193
-Prop,POR @ UTAH,Lauri Markkanen over 1.5 assists,1.5,-119,,,0.4980,-0.0835
-Prop,POR @ UTAH,Lauri Markkanen under 1.5 assists,1.5,-110,,,0.5020,-0.0416
-Prop,POR @ UTAH,Keyonte George over 6.5 assists,6.5,102,,,0.4328,-0.1258
-Prop,POR @ UTAH,Keyonte George under 6.5 assists,6.5,-135,,,0.5672,-0.0126
-Prop,POR @ UTAH,Ace Bailey over 2.5 assists,2.5,138,,,0.3942,-0.0617
-Prop,POR @ UTAH,Ace Bailey under 2.5 assists,2.5,-183,,,0.6058,-0.0632
-Prop,POR @ UTAH,Scoot Henderson over 3.5 assists,3.5,-107,,,0.3577,-0.3080
-Prop,POR @ UTAH,Scoot Henderson under 3.5 assists,3.5,-123,,,0.6423,0.1645
-Prop,POR @ UTAH,Deni Avdija over 6.5 assists,6.5,-152,,,0.5380,-0.1080
-Prop,POR @ UTAH,Deni Avdija under 6.5 assists,6.5,115,,,0.4620,-0.0067
-Prop,POR @ UTAH,Damian Lillard over 5.5 assists,5.5,115,,,0.3165,-0.3195
-Prop,POR @ UTAH,Damian Lillard under 5.5 assists,5.5,-151,,,0.6835,0.1361
-Prop,POR @ UTAH,Donovan Clingan over 11.5 points,11.5,-103,,,0.4456,-0.1218
-Prop,POR @ UTAH,Donovan Clingan under 11.5 points,11.5,-123,,,0.5544,0.0051
-Prop,POR @ UTAH,Darryn Peterson over 14.5 points,14.5,-108,,,0.4349,-0.1625
-Prop,POR @ UTAH,Darryn Peterson under 14.5 points,14.5,-118,,,0.5651,0.0441
-Prop,POR @ UTAH,Robert Williams III over 6.5 points,6.5,-106,,,0.5346,0.0389
-Prop,POR @ UTAH,Robert Williams III under 6.5 points,6.5,-121,,,0.4654,-0.1499
-Prop,POR @ UTAH,Lauri Markkanen over 21.5 points,21.5,-109,,,0.4261,-0.1830
-Prop,POR @ UTAH,Lauri Markkanen under 21.5 points,21.5,-117,,,0.5739,0.0644
-Prop,POR @ UTAH,Keyonte George over 22.5 points,22.5,-116,,,0.5482,0.0208
-Prop,POR @ UTAH,Keyonte George under 22.5 points,22.5,-110,,,0.4518,-0.1374
-Prop,POR @ UTAH,Jrue Holiday over 14.5 points,14.5,-105,,,0.4715,-0.0795
-Prop,POR @ UTAH,Jrue Holiday under 14.5 points,14.5,-122,,,0.5285,-0.0382
-Prop,POR @ UTAH,Toumani Camara over 12.5 points,12.5,-122,,,0.5201,-0.0536
-Prop,POR @ UTAH,Toumani Camara under 12.5 points,12.5,-105,,,0.4799,-0.0630
-Prop,POR @ UTAH,Jaxson Hayes over 8.5 points,8.5,-118,,,0.5333,-0.0148
-Prop,POR @ UTAH,Jaxson Hayes under 8.5 points,8.5,-108,,,0.4667,-0.1011
-Prop,POR @ UTAH,Damian Lillard over 23.5 points,23.5,-114,,,0.3905,-0.2669
-Prop,POR @ UTAH,Damian Lillard under 23.5 points,23.5,-112,,,0.6095,0.1536
-Prop,POR @ UTAH,Deni Avdija over 24.5 points,24.5,-104,,,0.4870,-0.0448
-Prop,POR @ UTAH,Deni Avdija under 24.5 points,24.5,-122,,,0.5130,-0.0664
-Prop,POR @ UTAH,Keyonte George over 33.5 pra,33.5,-112,,,0.5129,-0.0291
-Prop,POR @ UTAH,Keyonte George under 33.5 pra,33.5,-117,,,0.4871,-0.0966
-Prop,POR @ UTAH,Scoot Henderson over 20.5 pra,20.5,-108,,,0.3512,-0.3237
-Prop,POR @ UTAH,Scoot Henderson under 20.5 pra,20.5,-121,,,0.6488,0.1851
-Prop,POR @ UTAH,Darryn Peterson over 21.5 pra,21.5,-113,,,0.4582,-0.1364
-Prop,POR @ UTAH,Darryn Peterson under 21.5 pra,21.5,-116,,,0.5418,0.0090
-Prop,POR @ UTAH,Jaxson Hayes over 16.5 pra,16.5,-126,,,0.5593,0.0032
-Prop,POR @ UTAH,Jaxson Hayes under 16.5 pra,16.5,-105,,,0.4407,-0.1396
-Prop,POR @ UTAH,Damian Lillard over 32.5 pra,32.5,-125,,,0.3903,-0.2975
-Prop,POR @ UTAH,Damian Lillard under 32.5 pra,32.5,-105,,,0.6097,0.1904
-Prop,POR @ UTAH,Jrue Holiday over 24.5 pra,24.5,-111,,,0.4445,-0.1550
-Prop,POR @ UTAH,Jrue Holiday under 24.5 pra,24.5,-118,,,0.5555,0.0263
-Prop,POR @ UTAH,Jaxson Hayes over 5.5 rebounds,5.5,-127,,,0.5451,-0.0256
-Prop,POR @ UTAH,Jaxson Hayes under 5.5 rebounds,5.5,-103,,,0.4549,-0.1035
-Prop,POR @ UTAH,Ace Bailey over 5.5 rebounds,5.5,-129,,,0.5660,0.0047
-Prop,POR @ UTAH,Ace Bailey under 5.5 rebounds,5.5,-102,,,0.4340,-0.1404
-Prop,POR @ UTAH,Scoot Henderson over 2.5 rebounds,2.5,-129,,,0.4560,-0.1905
-Prop,POR @ UTAH,Scoot Henderson under 2.5 rebounds,2.5,-102,,,0.5440,0.0773
-Prop,POR @ UTAH,Deni Avdija over 7.5 rebounds,7.5,-101,,,0.4397,-0.1249
-Prop,POR @ UTAH,Deni Avdija under 7.5 rebounds,7.5,-130,,,0.5603,-0.0087
-Prop,POR @ UTAH,Toumani Camara over 4.5 rebounds,4.5,-118,,,0.3764,-0.3046
-Prop,POR @ UTAH,Toumani Camara under 4.5 rebounds,4.5,-111,,,0.6236,0.1854
-Prop,POR @ UTAH,Lauri Markkanen over 6.5 rebounds,6.5,117,,,0.3855,-0.1635
-Prop,POR @ UTAH,Lauri Markkanen under 6.5 rebounds,6.5,-154,,,0.6145,0.0136
-Prop,POR @ UTAH,Jrue Holiday over 4.5 rebounds,4.5,-105,,,0.4324,-0.1558
-Prop,POR @ UTAH,Jrue Holiday under 4.5 rebounds,4.5,-126,,,0.5676,0.0181
-Prop,POR @ UTAH,Keyonte George over 3.5 rebounds,3.5,-157,,,0.5294,-0.1333
-Prop,POR @ UTAH,Keyonte George under 3.5 rebounds,3.5,119,,,0.4706,0.0305
-Prop,POR @ UTAH,Damian Lillard over 3.5 rebounds,3.5,-167,,,0.5534,-0.1151
-Prop,POR @ UTAH,Damian Lillard under 3.5 rebounds,3.5,126,,,0.4466,0.0092
-Prop,POR @ UTAH,Jrue Holiday over 2.5 threes,2.5,126,,,0.4014,-0.0928
-Prop,POR @ UTAH,Jrue Holiday under 2.5 threes,2.5,-166,,,0.5986,-0.0408
-Prop,POR @ UTAH,Damian Lillard over 3.5 threes,3.5,123,,,0.4048,-0.0973
-Prop,POR @ UTAH,Damian Lillard under 3.5 threes,3.5,-163,,,0.5952,-0.0397
-Prop,POR @ UTAH,Keyonte George over 2.5 threes,2.5,136,,,0.4405,0.0396
-Prop,POR @ UTAH,Keyonte George under 2.5 threes,2.5,-180,,,0.5595,-0.1297
-Prop,POR @ UTAH,Lauri Markkanen over 2.5 threes,2.5,117,,,0.4152,-0.0989
-Prop,POR @ UTAH,Lauri Markkanen under 2.5 threes,2.5,-155,,,0.5848,-0.0380
-Prop,POR @ UTAH,Toumani Camara over 2.5 threes,2.5,111,,,0.5071,0.0699
-Prop,POR @ UTAH,Toumani Camara under 2.5 threes,2.5,-146,,,0.4929,-0.1694
-Prop,POR @ UTAH,Ace Bailey over 1.5 threes,1.5,-146,,,0.5620,-0.0531
-Prop,POR @ UTAH,Ace Bailey under 1.5 threes,1.5,111,,,0.4380,-0.0758
-Prop,POR @ UTAH,Deni Avdija over 1.5 threes,1.5,-175,,,0.5376,-0.1551
-Prop,POR @ UTAH,Deni Avdija under 1.5 threes,1.5,132,,,0.4624,0.0727
-Prop,POR @ UTAH,Darryn Peterson over 1.5 threes,1.5,121,,,0.4175,-0.0772
-Prop,POR @ UTAH,Darryn Peterson under 1.5 threes,1.5,-160,,,0.5825,-0.0535
-Prop,POR @ UTAH,Scoot Henderson over 1.5 threes,1.5,-164,,,0.4579,-0.2628
-Prop,POR @ UTAH,Scoot Henderson under 1.5 threes,1.5,124,,,0.5421,0.2142
-Prop,POR @ UTAH,Jrue Holiday over 5.5 assists,5.5,115,,,0.3849,-0.1725
-Prop,POR @ UTAH,Jrue Holiday under 5.5 assists,5.5,-151,,,0.6151,0.0225
-Prop,POR @ UTAH,Darryn Peterson over 2.5 assists,2.5,-142,,,0.5250,-0.1053
-Prop,POR @ UTAH,Darryn Peterson under 2.5 assists,2.5,108,,,0.4750,-0.0120
-Prop,POR @ UTAH,Jaxson Hayes over 1.5 assists,1.5,-162,,,0.5763,-0.0680
-Prop,POR @ UTAH,Jaxson Hayes under 1.5 assists,1.5,123,,,0.4237,-0.0551
-Prop,POR @ UTAH,Donovan Clingan over 1.5 assists,1.5,-158,,,0.5701,-0.0691
-Prop,POR @ UTAH,Donovan Clingan under 1.5 assists,1.5,120,,,0.4299,-0.0541
-Prop,POR @ UTAH,Ace Bailey over 14.5 points,14.5,-109,,,0.5380,0.0317
-Prop,POR @ UTAH,Ace Bailey under 14.5 points,14.5,-117,,,0.4620,-0.1432
-Prop,POR @ UTAH,Scoot Henderson over 13.5 points,13.5,-116,,,0.3862,-0.2808
-Prop,POR @ UTAH,Scoot Henderson under 13.5 points,13.5,-109,,,0.6138,0.1769
-Prop,POR @ UTAH,Deni Avdija over 39.5 pra,39.5,-107,,,0.4670,-0.0966
-Prop,POR @ UTAH,Deni Avdija under 39.5 pra,39.5,-123,,,0.5330,-0.0337
-Prop,POR @ UTAH,Lauri Markkanen over 29.5 pra,29.5,-112,,,0.4298,-0.1865
-Prop,POR @ UTAH,Lauri Markkanen under 29.5 pra,29.5,-118,,,0.5702,0.0535
-Prop,POR @ UTAH,Donovan Clingan over 24.5 pra,24.5,-121,,,0.4653,-0.1501
-Prop,POR @ UTAH,Donovan Clingan under 24.5 pra,24.5,-109,,,0.5347,0.0252
-Prop,POR @ UTAH,Ace Bailey over 22.5 pra,22.5,-123,,,0.5598,0.0149
-Prop,POR @ UTAH,Ace Bailey under 22.5 pra,22.5,-107,,,0.4402,-0.1484
-Prop,POR @ UTAH,Toumani Camara over 19.5 pra,19.5,-117,,,0.4458,-0.1731
-Prop,POR @ UTAH,Toumani Camara under 19.5 pra,19.5,-112,,,0.5542,0.0489
-Prop,POR @ UTAH,Donovan Clingan over 11.5 rebounds,11.5,103,,,0.4080,-0.1718
-Prop,POR @ UTAH,Donovan Clingan under 11.5 rebounds,11.5,-136,,,0.5920,0.0273
-Prop,POR @ UTAH,Robert Williams III over 6.5 rebounds,6.5,-128,,,0.6014,0.0713
-Prop,POR @ UTAH,Robert Williams III under 6.5 rebounds,6.5,-103,,,0.3986,-0.2145
-Prop,POR @ UTAH,Darryn Peterson over 3.5 rebounds,3.5,-151,,,0.5948,-0.0113
-Prop,POR @ UTAH,Darryn Peterson under 3.5 rebounds,3.5,115,,,0.4052,-0.1289
-Prop,POR @ UTAH,Donovan Clingan over 1.5 threes,1.5,176,,,0.3481,-0.0392
-Prop,POR @ UTAH,Donovan Clingan under 1.5 threes,1.5,-237,,,0.6519,-0.0730
-Prop,PHI @ CHA,Naz Reid over 2.5 assists,2.5,128,,,0.3635,-0.1711
-Prop,PHI @ CHA,Naz Reid under 2.5 assists,2.5,-169,,,0.6365,0.0131
-Prop,PHI @ CHA,VJ Edgecombe over 3.5 assists,3.5,-138,,,0.4785,-0.1748
-Prop,PHI @ CHA,VJ Edgecombe under 3.5 assists,3.5,105,,,0.5215,0.0691
-Prop,PHI @ CHA,Dennis Schroder over 5.5 assists,5.5,-146,,,0.5482,-0.0764
-Prop,PHI @ CHA,Dennis Schroder under 5.5 assists,5.5,111,,,0.4518,-0.0466
-Prop,PHI @ CHA,Jaylen Brown over 4.5 assists,4.5,107,,,0.4628,-0.0420
-Prop,PHI @ CHA,Jaylen Brown under 4.5 assists,4.5,-140,,,0.5372,-0.0791
-Prop,PHI @ CHA,Moussa Diabate over 8.5 points,8.5,-124,,,0.4941,-0.1075
-Prop,PHI @ CHA,Moussa Diabate under 8.5 points,8.5,-103,,,0.5059,-0.0029
-Prop,PHI @ CHA,Tyrese Maxey over 28.5 points,28.5,-113,,,0.4569,-0.1388
-Prop,PHI @ CHA,Tyrese Maxey under 28.5 points,28.5,-113,,,0.5431,0.0238
-Prop,PHI @ CHA,VJ Edgecombe over 17.5 points,17.5,-102,,,0.3745,-0.2584
-Prop,PHI @ CHA,VJ Edgecombe under 17.5 points,17.5,-124,,,0.6255,0.1300
-Prop,PHI @ CHA,Brandon Miller over 26.5 points,26.5,-122,,,0.4599,-0.1631
-Prop,PHI @ CHA,Brandon Miller under 26.5 points,26.5,-105,,,0.5401,0.0544
-Prop,PHI @ CHA,Sion James over 5.5 points,5.5,-134,,,0.4504,-0.2136
-Prop,PHI @ CHA,Sion James under 5.5 points,5.5,105,,,0.5496,0.1268
-Prop,PHI @ CHA,Adem Bona over 6.5 points,6.5,-123,,,0.3533,-0.3595
-Prop,PHI @ CHA,Adem Bona under 6.5 points,6.5,-103,,,0.6467,0.2746
-Prop,PHI @ CHA,Jaylen Brown over 23.5 points,23.5,-106,,,0.5042,-0.0201
-Prop,PHI @ CHA,Jaylen Brown under 23.5 points,23.5,-120,,,0.4958,-0.0911
-Prop,PHI @ CHA,Dennis Schroder over 14.5 points,14.5,-122,,,0.4565,-0.1693
-Prop,PHI @ CHA,Dennis Schroder under 14.5 points,14.5,-105,,,0.5435,0.0611
-Prop,PHI @ CHA,Dean Wade over 6.5 points,6.5,-112,,,0.4074,-0.2288
-Prop,PHI @ CHA,Dean Wade under 6.5 points,6.5,-114,,,0.5926,0.1123
-Prop,PHI @ CHA,Tyrese Maxey over 39.5 pra,39.5,-113,,,0.4244,-0.2000
-Prop,PHI @ CHA,Tyrese Maxey under 39.5 pra,39.5,-116,,,0.5756,0.0717
-Prop,PHI @ CHA,Jaylen Brown over 34.5 pra,34.5,-107,,,0.4989,-0.0349
-Prop,PHI @ CHA,Jaylen Brown under 34.5 pra,34.5,-123,,,0.5011,-0.0915
-Prop,PHI @ CHA,Sion James over 12.5 pra,12.5,-131,,,0.4735,-0.1651
-Prop,PHI @ CHA,Sion James under 12.5 pra,12.5,-101,,,0.5265,0.0478
-Prop,PHI @ CHA,Brandon Miller over 5.5 rebounds,5.5,-149,,,0.5322,-0.1106
-Prop,PHI @ CHA,Brandon Miller under 5.5 rebounds,5.5,113,,,0.4678,-0.0036
-Prop,PHI @ CHA,Dennis Schroder over 3.5 rebounds,3.5,113,,,0.4610,-0.0181
-Prop,PHI @ CHA,Dennis Schroder under 3.5 rebounds,3.5,-149,,,0.5390,-0.0992
-Prop,PHI @ CHA,Jaylen Brown over 6.5 rebounds,6.5,111,,,0.4631,-0.0230
-Prop,PHI @ CHA,Jaylen Brown under 6.5 rebounds,6.5,-147,,,0.5369,-0.0978
-Prop,PHI @ CHA,Adem Bona over 6.5 rebounds,6.5,-123,,,0.3641,-0.3399
-Prop,PHI @ CHA,Adem Bona under 6.5 rebounds,6.5,-107,,,0.6359,0.2302
-Prop,PHI @ CHA,Naz Reid over 8.5 rebounds,8.5,-106,,,0.4339,-0.1568
-Prop,PHI @ CHA,Naz Reid under 8.5 rebounds,8.5,-124,,,0.5661,0.0226
-Prop,PHI @ CHA,Sion James over 3.5 rebounds,3.5,-117,,,0.4975,-0.0772
-Prop,PHI @ CHA,Sion James under 3.5 rebounds,3.5,-113,,,0.5025,-0.0529
-Prop,PHI @ CHA,VJ Edgecombe over 6.5 rebounds,6.5,-104,,,0.5115,0.0033
-Prop,PHI @ CHA,VJ Edgecombe under 6.5 rebounds,6.5,-127,,,0.4885,-0.1269
-Prop,PHI @ CHA,Tyrese Maxey over 4.5 rebounds,4.5,118,,,0.4207,-0.0829
-Prop,PHI @ CHA,Tyrese Maxey under 4.5 rebounds,4.5,-155,,,0.5793,-0.0469
-Prop,PHI @ CHA,Brandon Miller over 3.5 threes,3.5,-140,,,0.4903,-0.1596
-Prop,PHI @ CHA,Brandon Miller under 3.5 threes,3.5,106,,,0.5097,0.0501
-Prop,PHI @ CHA,Naz Reid over 2.5 threes,2.5,-122,,,0.4592,-0.1643
-Prop,PHI @ CHA,Naz Reid under 2.5 threes,2.5,-107,,,0.5408,0.0461
-Prop,PHI @ CHA,Dennis Schroder over 1.5 threes,1.5,106,,,0.3685,-0.2409
-Prop,PHI @ CHA,Dennis Schroder under 1.5 threes,1.5,-140,,,0.6315,0.0826
-Prop,PHI @ CHA,Sion James over 1.5 threes,1.5,147,,,0.3496,-0.1366
-Prop,PHI @ CHA,Sion James under 1.5 threes,1.5,-195,,,0.6504,-0.0160
-Prop,PHI @ CHA,Jaylen Brown over 1.5 threes,1.5,-133,,,0.5177,-0.0931
-Prop,PHI @ CHA,Jaylen Brown under 1.5 threes,1.5,101,,,0.4823,-0.0305
-Prop,PHI @ CHA,Tyrese Maxey over 3.5 threes,3.5,127,,,0.3372,-0.2346
-Prop,PHI @ CHA,Tyrese Maxey under 3.5 threes,3.5,-167,,,0.6628,0.0597
-Prop,PHI @ CHA,Tyrese Maxey over 6.5 assists,6.5,100,,,0.3636,-0.2729
-Prop,PHI @ CHA,Tyrese Maxey under 6.5 assists,6.5,-131,,,0.6364,0.1223
-Prop,PHI @ CHA,Brandon Miller over 2.5 assists,2.5,-176,,,0.5233,-0.1794
-Prop,PHI @ CHA,Brandon Miller under 2.5 assists,2.5,133,,,0.4767,0.1107
-Prop,PHI @ CHA,Sion James over 2.5 assists,2.5,-170,,,0.5976,-0.0509
-Prop,PHI @ CHA,Sion James under 2.5 assists,2.5,128,,,0.4024,-0.0824
-Prop,PHI @ CHA,Naz Reid over 18.5 points,18.5,-109,,,0.3911,-0.2501
-Prop,PHI @ CHA,Naz Reid under 18.5 points,18.5,-117,,,0.6089,0.1293
-Prop,PHI @ CHA,Brandon Miller over 36.5 pra,36.5,-114,,,0.4513,-0.1528
-Prop,PHI @ CHA,Brandon Miller under 36.5 pra,36.5,-115,,,0.5487,0.0258
-Prop,PHI @ CHA,Naz Reid over 29.5 pra,29.5,-109,,,0.3970,-0.2387
-Prop,PHI @ CHA,Naz Reid under 29.5 pra,29.5,-121,,,0.6030,0.1013
-Prop,PHI @ CHA,VJ Edgecombe over 27.5 pra,27.5,-124,,,0.4281,-0.2267
-Prop,PHI @ CHA,VJ Edgecombe under 27.5 pra,27.5,-106,,,0.5719,0.1114
-Prop,PHI @ CHA,Dennis Schroder over 24.5 pra,24.5,-115,,,0.4546,-0.1501
-Prop,PHI @ CHA,Dennis Schroder under 24.5 pra,24.5,-114,,,0.5454,0.0238
-Prop,PHI @ CHA,Moussa Diabate over 10.5 rebounds,10.5,103,,,0.4653,-0.0555
-Prop,PHI @ CHA,Moussa Diabate under 10.5 rebounds,10.5,-135,,,0.5347,-0.0692
-Prop,PHI @ CHA,VJ Edgecombe over 2.5 threes,2.5,133,,,0.3367,-0.2154
-Prop,PHI @ CHA,VJ Edgecombe under 2.5 threes,2.5,-176,,,0.6633,0.0401
-Prop,ATL @ NO,Zion Williamson over 2.5 assists,2.5,-116,,,0.4936,-0.0808
-Prop,ATL @ NO,Zion Williamson under 2.5 assists,2.5,-113,,,0.5064,-0.0455
-Prop,ATL @ NO,Jeremiah Fears over 3.5 assists,3.5,113,,,0.4546,-0.0317
-Prop,ATL @ NO,Jeremiah Fears under 3.5 assists,3.5,-149,,,0.5454,-0.0886
-Prop,ATL @ NO,Trey Murphy III over 3.5 assists,3.5,132,,,0.4109,-0.0468
-Prop,ATL @ NO,Trey Murphy III under 3.5 assists,3.5,-174,,,0.5891,-0.0723
-Prop,ATL @ NO,Derik Queen over 2.5 assists,2.5,121,,,0.4248,-0.0612
-Prop,ATL @ NO,Derik Queen under 2.5 assists,2.5,-159,,,0.5752,-0.0630
-Prop,ATL @ NO,Nickeil Alexander-Walker over 3.5 assists,3.5,117,,,0.4058,-0.1195
-Prop,ATL @ NO,Nickeil Alexander-Walker under 3.5 assists,3.5,-154,,,0.5942,-0.0199
-Prop,ATL @ NO,Dyson Daniels over 4.5 assists,4.5,-141,,,0.5514,-0.0575
-Prop,ATL @ NO,Dyson Daniels under 4.5 assists,4.5,107,,,0.4486,-0.0715
-Prop,ATL @ NO,Onyeka Okongwu over 2.5 assists,2.5,-114,,,0.5005,-0.0604
-Prop,ATL @ NO,Onyeka Okongwu under 2.5 assists,2.5,-116,,,0.4995,-0.0699
-Prop,ATL @ NO,Dejounte Murray over 5.5 assists,5.5,-147,,,0.5914,-0.0062
-Prop,ATL @ NO,Dejounte Murray under 5.5 assists,5.5,111,,,0.4086,-0.1379
-Prop,ATL @ NO,Aaron Wiggins over 12.5 points,12.5,-108,,,0.5360,0.0322
-Prop,ATL @ NO,Aaron Wiggins under 12.5 points,12.5,-119,,,0.4640,-0.1460
-Prop,ATL @ NO,Jeremiah Fears over 13.5 points,13.5,-118,,,0.5147,-0.0491
-Prop,ATL @ NO,Jeremiah Fears under 13.5 points,13.5,-108,,,0.4853,-0.0653
-Prop,ATL @ NO,Herbert Jones over 6.5 points,6.5,-106,,,0.4732,-0.0804
-Prop,ATL @ NO,Herbert Jones under 6.5 points,6.5,-120,,,0.5268,-0.0342
-Prop,ATL @ NO,Trey Murphy III over 16.5 points,16.5,-113,,,0.4953,-0.0664
-Prop,ATL @ NO,Trey Murphy III under 16.5 points,16.5,-113,,,0.5047,-0.0487
-Prop,ATL @ NO,Derik Queen over 11.5 points,11.5,100,,,0.4703,-0.0593
-Prop,ATL @ NO,Derik Queen under 11.5 points,11.5,-127,,,0.5297,-0.0533
-Prop,ATL @ NO,Luguentz Dort over 7.5 points,7.5,-108,,,0.5123,-0.0133
-Prop,ATL @ NO,Luguentz Dort under 7.5 points,7.5,-118,,,0.4877,-0.0991
-Prop,ATL @ NO,Kingston Flemings over 7.5 points,7.5,-128,,,0.4477,-0.2026
-Prop,ATL @ NO,Kingston Flemings under 7.5 points,7.5,101,,,0.5523,0.1102
-Prop,ATL @ NO,Jalen Johnson over 22.5 points,22.5,-109,,,0.4478,-0.1414
-Prop,ATL @ NO,Jalen Johnson under 22.5 points,22.5,-117,,,0.5522,0.0242
-Prop,ATL @ NO,Saddiq Bey over 12.5 points,12.5,-127,,,0.5465,-0.0231
-Prop,ATL @ NO,Saddiq Bey under 12.5 points,12.5,100,,,0.4535,-0.0931
-Prop,ATL @ NO,Nickeil Alexander-Walker over 19.5 points,19.5,-108,,,0.5394,0.0389
-Prop,ATL @ NO,Nickeil Alexander-Walker under 19.5 points,19.5,-117,,,0.4606,-0.1458
-Prop,ATL @ NO,Dyson Daniels over 11.5 points,11.5,100,,,0.4601,-0.0798
-Prop,ATL @ NO,Dyson Daniels under 11.5 points,11.5,-127,,,0.5399,-0.0350
-Prop,ATL @ NO,Dejounte Murray over 16.5 points,16.5,-125,,,0.5547,-0.0016
-Prop,ATL @ NO,Dejounte Murray under 16.5 points,16.5,-102,,,0.4453,-0.1180
-Prop,ATL @ NO,Trey Murphy III over 24.5 pra,24.5,-117,,,0.4961,-0.0799
-Prop,ATL @ NO,Trey Murphy III under 24.5 pra,24.5,-112,,,0.5039,-0.0461
-Prop,ATL @ NO,Jalen Johnson over 40.5 pra,40.5,-119,,,0.4705,-0.1341
-Prop,ATL @ NO,Jalen Johnson under 40.5 pra,40.5,-110,,,0.5295,0.0109
-Prop,ATL @ NO,Onyeka Okongwu over 23.5 pra,23.5,-121,,,0.4996,-0.0874
-Prop,ATL @ NO,Onyeka Okongwu under 23.5 pra,23.5,-109,,,0.5004,-0.0406
-Prop,ATL @ NO,Derik Queen over 20.5 pra,20.5,-124,,,0.5248,-0.0520
-Prop,ATL @ NO,Derik Queen under 20.5 pra,20.5,-107,,,0.4752,-0.0807
-Prop,ATL @ NO,Kingston Flemings over 13.5 pra,13.5,-122,,,0.5289,-0.0375
-Prop,ATL @ NO,Kingston Flemings under 13.5 pra,13.5,-108,,,0.4711,-0.0928
-Prop,ATL @ NO,Dyson Daniels over 22.5 pra,22.5,-113,,,0.4871,-0.0819
-Prop,ATL @ NO,Dyson Daniels under 22.5 pra,22.5,-116,,,0.5129,-0.0449
-Prop,ATL @ NO,Nickeil Alexander-Walker over 26.5 pra,26.5,-107,,,0.5091,-0.0150
-Prop,ATL @ NO,Nickeil Alexander-Walker under 26.5 pra,26.5,-123,,,0.4909,-0.1101
-Prop,ATL @ NO,Dejounte Murray over 29.5 pra,29.5,-109,,,0.5172,-0.0084
-Prop,ATL @ NO,Dejounte Murray under 29.5 pra,29.5,-120,,,0.4828,-0.1148
-Prop,ATL @ NO,Zion Williamson over 5.5 rebounds,5.5,103,,,0.4175,-0.1525
-Prop,ATL @ NO,Zion Williamson under 5.5 rebounds,5.5,-136,,,0.5825,0.0108
-Prop,ATL @ NO,Jeremiah Fears over 3.5 rebounds,3.5,-144,,,0.5249,-0.1106
-Prop,ATL @ NO,Jeremiah Fears under 3.5 rebounds,3.5,109,,,0.4751,-0.0071
-Prop,ATL @ NO,Saddiq Bey over 4.5 rebounds,4.5,118,,,0.3651,-0.2041
-Prop,ATL @ NO,Saddiq Bey under 4.5 rebounds,4.5,-156,,,0.6349,0.0419
-Prop,ATL @ NO,Herbert Jones over 2.5 rebounds,2.5,104,,,0.4579,-0.0659
-Prop,ATL @ NO,Herbert Jones under 2.5 rebounds,2.5,-137,,,0.5421,-0.0622
-Prop,ATL @ NO,Trey Murphy III over 4.5 rebounds,4.5,-117,,,0.5032,-0.0668
-Prop,ATL @ NO,Trey Murphy III under 4.5 rebounds,4.5,-112,,,0.4968,-0.0596
-Prop,ATL @ NO,Karlo Matkovic over 4.5 rebounds,4.5,-144,,,0.4534,-0.2318
-Prop,ATL @ NO,Karlo Matkovic under 4.5 rebounds,4.5,109,,,0.5466,0.1425
-Prop,ATL @ NO,Derik Queen over 7.5 rebounds,7.5,111,,,0.4395,-0.0727
-Prop,ATL @ NO,Derik Queen under 7.5 rebounds,7.5,-146,,,0.5605,-0.0555
-Prop,ATL @ NO,Kingston Flemings over 2.5 rebounds,2.5,-113,,,0.5067,-0.0450
-Prop,ATL @ NO,Kingston Flemings under 2.5 rebounds,2.5,-116,,,0.4933,-0.0814
-Prop,ATL @ NO,Luguentz Dort over 2.5 rebounds,2.5,-137,,,0.5522,-0.0448
-Prop,ATL @ NO,Luguentz Dort under 2.5 rebounds,2.5,104,,,0.4478,-0.0864
-Prop,ATL @ NO,Nickeil Alexander-Walker over 3.5 rebounds,3.5,117,,,0.4195,-0.0897
-Prop,ATL @ NO,Nickeil Alexander-Walker under 3.5 rebounds,3.5,-154,,,0.5805,-0.0425
-Prop,ATL @ NO,Dyson Daniels over 5.5 rebounds,5.5,-143,,,0.5171,-0.1214
-Prop,ATL @ NO,Dyson Daniels under 5.5 rebounds,5.5,109,,,0.4829,0.0093
-Prop,ATL @ NO,Jalen Johnson over 9.5 rebounds,9.5,-110,,,0.4988,-0.0478
-Prop,ATL @ NO,Jalen Johnson under 9.5 rebounds,9.5,-120,,,0.5012,-0.0811
-Prop,ATL @ NO,CJ McCollum over 2.5 rebounds,2.5,-123,,,0.4614,-0.1634
-Prop,ATL @ NO,CJ McCollum under 2.5 rebounds,2.5,-107,,,0.5386,0.0419
-Prop,ATL @ NO,Dejounte Murray over 5.5 rebounds,5.5,-127,,,0.5297,-0.0531
-Prop,ATL @ NO,Dejounte Murray under 5.5 rebounds,5.5,-104,,,0.4703,-0.0776
-Prop,ATL @ NO,Aaron Wiggins over 2.5 threes,2.5,142,,,0.4248,0.0280
-Prop,ATL @ NO,Aaron Wiggins under 2.5 threes,2.5,-188,,,0.5752,-0.1189
-Prop,ATL @ NO,Jeremiah Fears over 1.5 threes,1.5,122,,,0.4081,-0.0940
-Prop,ATL @ NO,Jeremiah Fears under 1.5 threes,1.5,-161,,,0.5919,-0.0404
-Prop,ATL @ NO,Trey Murphy III over 2.5 threes,2.5,107,,,0.4715,-0.0240
-Prop,ATL @ NO,Trey Murphy III under 2.5 threes,2.5,-141,,,0.5285,-0.0966
-Prop,ATL @ NO,Saddiq Bey over 1.5 threes,1.5,-117,,,0.5189,-0.0376
-Prop,ATL @ NO,Saddiq Bey under 1.5 threes,1.5,-113,,,0.4811,-0.0932
-Prop,ATL @ NO,Nickeil Alexander-Walker over 2.5 threes,2.5,-169,,,0.6331,0.0077
-Prop,ATL @ NO,Nickeil Alexander-Walker under 2.5 threes,2.5,128,,,0.3669,-0.1634
-Prop,ATL @ NO,CJ McCollum over 2.5 threes,2.5,129,,,0.3883,-0.1108
-Prop,ATL @ NO,CJ McCollum under 2.5 threes,2.5,-170,,,0.6117,-0.0285
-Prop,ATL @ NO,Jalen Johnson over 1.5 threes,1.5,-114,,,0.4795,-0.0999
-Prop,ATL @ NO,Jalen Johnson under 1.5 threes,1.5,-115,,,0.5205,-0.0269
-Prop,ATL @ NO,Dejounte Murray over 1.5 threes,1.5,121,,,0.3618,-0.2004
-Prop,ATL @ NO,Dejounte Murray under 1.5 threes,1.5,-160,,,0.6382,0.0371
-Prop,ATL @ NO,Onyeka Okongwu over 1.5 threes,1.5,-105,,,0.4634,-0.0953
-Prop,ATL @ NO,Onyeka Okongwu under 1.5 threes,1.5,-125,,,0.5366,-0.0341
-Prop,ATL @ NO,Jalen Johnson over 8.5 assists,8.5,102,,,0.4427,-0.1057
-Prop,ATL @ NO,Jalen Johnson under 8.5 assists,8.5,-134,,,0.5573,-0.0269
-Prop,ATL @ NO,CJ McCollum over 3.5 assists,3.5,128,,,0.4292,-0.0213
-Prop,ATL @ NO,CJ McCollum under 3.5 assists,3.5,-170,,,0.5708,-0.0935
-Prop,ATL @ NO,Kingston Flemings over 2.5 assists,2.5,-162,,,0.6809,0.1012
-Prop,ATL @ NO,Kingston Flemings under 2.5 assists,2.5,122,,,0.3191,-0.2916
-Prop,ATL @ NO,Saddiq Bey over 1.5 assists,1.5,-150,,,0.5751,-0.0415
-Prop,ATL @ NO,Saddiq Bey under 1.5 assists,1.5,114,,,0.4249,-0.0907
-Prop,ATL @ NO,Zion Williamson over 21.5 points,21.5,-118,,,0.5186,-0.0419
-Prop,ATL @ NO,Zion Williamson under 21.5 points,21.5,-108,,,0.4814,-0.0728
-Prop,ATL @ NO,CJ McCollum over 16.5 points,16.5,-110,,,0.4842,-0.0756
-Prop,ATL @ NO,CJ McCollum under 16.5 points,16.5,-116,,,0.5158,-0.0396
-Prop,ATL @ NO,Onyeka Okongwu over 13.5 points,13.5,-116,,,0.5021,-0.0651
-Prop,ATL @ NO,Onyeka Okongwu under 13.5 points,13.5,-110,,,0.4979,-0.0495
-Prop,ATL @ NO,Karlo Matkovic over 8.5 points,8.5,101,,,0.4076,-0.1807
-Prop,ATL @ NO,Karlo Matkovic under 8.5 points,8.5,-129,,,0.5924,0.0516
-Prop,ATL @ NO,Zion Williamson over 30.5 pra,30.5,-111,,,0.4663,-0.1136
-Prop,ATL @ NO,Zion Williamson under 30.5 pra,30.5,-119,,,0.5337,-0.0179
-Prop,ATL @ NO,CJ McCollum over 22.5 pra,22.5,-112,,,0.4830,-0.0857
-Prop,ATL @ NO,CJ McCollum under 22.5 pra,22.5,-117,,,0.5170,-0.0412
-Prop,ATL @ NO,Jeremiah Fears over 21.5 pra,21.5,-109,,,0.5082,-0.0255
-Prop,ATL @ NO,Jeremiah Fears under 21.5 pra,21.5,-121,,,0.4918,-0.1018
-Prop,ATL @ NO,Saddiq Bey over 19.5 pra,19.5,-108,,,0.4968,-0.0432
-Prop,ATL @ NO,Saddiq Bey under 19.5 pra,19.5,-121,,,0.5032,-0.0809
-Prop,ATL @ NO,Onyeka Okongwu over 7.5 rebounds,7.5,110,,,0.4309,-0.0951
-Prop,ATL @ NO,Onyeka Okongwu under 7.5 rebounds,7.5,-145,,,0.5691,-0.0384
-Prop,ATL @ NO,Aaron Wiggins over 3.5 rebounds,3.5,-104,,,0.4955,-0.0280
-Prop,ATL @ NO,Aaron Wiggins under 3.5 rebounds,3.5,-127,,,0.5045,-0.0983
-Prop,ATL @ NO,Luguentz Dort over 1.5 threes,1.5,115,,,0.4432,-0.0470
-Prop,ATL @ NO,Luguentz Dort under 1.5 threes,1.5,-151,,,0.5568,-0.0745
-Prop,CLE @ MIL,Kasparas Jakucionis over 3.5 assists,3.5,-117,,,0.5135,-0.0476
-Prop,CLE @ MIL,Kasparas Jakucionis under 3.5 assists,3.5,-112,,,0.4865,-0.0792
-Prop,CLE @ MIL,Ryan Rollins over 4.5 assists,4.5,-124,,,0.5068,-0.0845
-Prop,CLE @ MIL,Ryan Rollins under 4.5 assists,4.5,-106,,,0.4932,-0.0415
-Prop,CLE @ MIL,Kyle Kuzma over 2.5 assists,2.5,-122,,,0.5343,-0.0277
-Prop,CLE @ MIL,Kyle Kuzma under 2.5 assists,2.5,-108,,,0.4657,-0.1032
-Prop,CLE @ MIL,Donovan Mitchell over 4.5 assists,4.5,-139,,,0.5769,-0.0080
-Prop,CLE @ MIL,Donovan Mitchell under 4.5 assists,4.5,106,,,0.4231,-0.1284
-Prop,CLE @ MIL,James Harden over 7.5 assists,7.5,117,,,0.4330,-0.0604
-Prop,CLE @ MIL,James Harden under 7.5 assists,7.5,-154,,,0.5670,-0.0648
-Prop,CLE @ MIL,Jaime Jaquez Jr. over 3.5 assists,3.5,126,,,0.4369,-0.0126
-Prop,CLE @ MIL,Jaime Jaquez Jr. under 3.5 assists,3.5,-166,,,0.5631,-0.0977
-Prop,CLE @ MIL,Evan Mobley over 3.5 assists,3.5,-122,,,0.5160,-0.0610
-Prop,CLE @ MIL,Evan Mobley under 3.5 assists,3.5,-108,,,0.4840,-0.0679
-Prop,CLE @ MIL,Tyler Herro over 4.5 assists,4.5,109,,,0.4464,-0.0669
-Prop,CLE @ MIL,Tyler Herro under 4.5 assists,4.5,-143,,,0.5536,-0.0593
-Prop,CLE @ MIL,Kasparas Jakucionis over 7.5 points,7.5,-105,,,0.5007,-0.0225
-Prop,CLE @ MIL,Kasparas Jakucionis under 7.5 points,7.5,-122,,,0.4993,-0.0914
-Prop,CLE @ MIL,Kel'el Ware over 9.5 points,9.5,-118,,,0.5236,-0.0326
-Prop,CLE @ MIL,Kel'el Ware under 9.5 points,9.5,-108,,,0.4764,-0.0826
-Prop,CLE @ MIL,Jarrett Allen over 13.5 points,13.5,-124,,,0.5739,0.0366
-Prop,CLE @ MIL,Jarrett Allen under 13.5 points,13.5,-103,,,0.4261,-0.1601
-Prop,CLE @ MIL,Kyle Kuzma over 11.5 points,11.5,-119,,,0.4937,-0.0914
-Prop,CLE @ MIL,Kyle Kuzma under 11.5 points,11.5,-107,,,0.5063,-0.0205
-Prop,CLE @ MIL,Ryan Rollins over 14.5 points,14.5,-119,,,0.4730,-0.1295
-Prop,CLE @ MIL,Ryan Rollins under 14.5 points,14.5,-107,,,0.5270,0.0195
-Prop,CLE @ MIL,AJ Green over 6.5 points,6.5,-110,,,0.5230,-0.0015
-Prop,CLE @ MIL,AJ Green under 6.5 points,6.5,-116,,,0.4770,-0.1119
-Prop,CLE @ MIL,Donovan Mitchell over 24.5 points,24.5,-123,,,0.5361,-0.0281
-Prop,CLE @ MIL,Donovan Mitchell under 24.5 points,24.5,-104,,,0.4639,-0.0900
-Prop,CLE @ MIL,Tyler Herro over 21.5 points,21.5,-111,,,0.4897,-0.0690
-Prop,CLE @ MIL,Tyler Herro under 21.5 points,21.5,-115,,,0.5103,-0.0461
-Prop,CLE @ MIL,James Harden over 18.5 points,18.5,-117,,,0.5671,0.0518
-Prop,CLE @ MIL,James Harden under 18.5 points,18.5,-109,,,0.4329,-0.1700
-Prop,CLE @ MIL,Sam Merrill over 9.5 points,9.5,-104,,,0.5003,-0.0187
-Prop,CLE @ MIL,Sam Merrill under 9.5 points,9.5,-123,,,0.4997,-0.0940
-Prop,CLE @ MIL,Peyton Watson over 13.5 points,13.5,-116,,,0.5201,-0.0316
-Prop,CLE @ MIL,Peyton Watson under 13.5 points,13.5,-110,,,0.4799,-0.0838
-Prop,CLE @ MIL,Kasparas Jakucionis over 14.5 pra,14.5,-106,,,0.5062,-0.0163
-Prop,CLE @ MIL,Kasparas Jakucionis under 14.5 pra,14.5,-124,,,0.4938,-0.1079
-Prop,CLE @ MIL,Kyle Kuzma over 20.5 pra,20.5,-115,,,0.5088,-0.0487
-Prop,CLE @ MIL,Kyle Kuzma under 20.5 pra,20.5,-114,,,0.4912,-0.0780
-Prop,CLE @ MIL,James Harden over 30.5 pra,30.5,-123,,,0.5466,-0.0091
-Prop,CLE @ MIL,James Harden under 30.5 pra,30.5,-107,,,0.4534,-0.1228
-Prop,CLE @ MIL,Tyler Herro over 30.5 pra,30.5,-120,,,0.5066,-0.0712
-Prop,CLE @ MIL,Tyler Herro under 30.5 pra,30.5,-109,,,0.4934,-0.0540
-Prop,CLE @ MIL,Sam Merrill over 14.5 pra,14.5,-110,,,0.5218,-0.0039
-Prop,CLE @ MIL,Sam Merrill under 14.5 pra,14.5,-120,,,0.4782,-0.1232
-Prop,CLE @ MIL,Peyton Watson over 20.5 pra,20.5,-121,,,0.5207,-0.0491
-Prop,CLE @ MIL,Peyton Watson under 20.5 pra,20.5,-109,,,0.4793,-0.0809
-Prop,CLE @ MIL,Evan Mobley over 30.5 pra,30.5,-124,,,0.5598,0.0112
-Prop,CLE @ MIL,Evan Mobley under 30.5 pra,30.5,-106,,,0.4402,-0.1444
-Prop,CLE @ MIL,Kasparas Jakucionis over 2.5 rebounds,2.5,-158,,,0.5552,-0.0934
-Prop,CLE @ MIL,Kasparas Jakucionis under 2.5 rebounds,2.5,120,,,0.4448,-0.0214
-Prop,CLE @ MIL,Kyle Kuzma over 5.5 rebounds,5.5,-122,,,0.5296,-0.0364
-Prop,CLE @ MIL,Kyle Kuzma under 5.5 rebounds,5.5,-108,,,0.4704,-0.0940
-Prop,CLE @ MIL,Ryan Rollins over 4.5 rebounds,4.5,108,,,0.4088,-0.1497
-Prop,CLE @ MIL,Ryan Rollins under 4.5 rebounds,4.5,-143,,,0.5912,0.0046
-Prop,CLE @ MIL,Donovan Mitchell over 4.5 rebounds,4.5,-149,,,0.5480,-0.0841
-Prop,CLE @ MIL,Donovan Mitchell under 4.5 rebounds,4.5,113,,,0.4520,-0.0373
-Prop,CLE @ MIL,James Harden over 4.5 rebounds,4.5,-138,,,0.5044,-0.1301
-Prop,CLE @ MIL,James Harden under 4.5 rebounds,4.5,105,,,0.4956,0.0160
-Prop,CLE @ MIL,Tyler Herro over 4.5 rebounds,4.5,-130,,,0.5229,-0.0748
-Prop,CLE @ MIL,Tyler Herro under 4.5 rebounds,4.5,-101,,,0.4771,-0.0506
-Prop,CLE @ MIL,Jaime Jaquez Jr. over 5.5 rebounds,5.5,-110,,,0.4939,-0.0571
-Prop,CLE @ MIL,Jaime Jaquez Jr. under 5.5 rebounds,5.5,-119,,,0.5061,-0.0686
-Prop,CLE @ MIL,Peyton Watson over 4.5 rebounds,4.5,-118,,,0.4853,-0.1034
-Prop,CLE @ MIL,Peyton Watson under 4.5 rebounds,4.5,-112,,,0.5147,-0.0258
-Prop,CLE @ MIL,Evan Mobley over 9.5 rebounds,9.5,104,,,0.4663,-0.0488
-Prop,CLE @ MIL,Evan Mobley under 9.5 rebounds,9.5,-136,,,0.5337,-0.0738
-Prop,CLE @ MIL,Kasparas Jakucionis over 0.5 threes,0.5,-212,,,0.5978,-0.1203
-Prop,CLE @ MIL,Kasparas Jakucionis under 0.5 threes,0.5,159,,,0.4022,0.0418
-Prop,CLE @ MIL,Kyle Kuzma over 1.5 threes,1.5,118,,,0.4051,-0.1169
-Prop,CLE @ MIL,Kyle Kuzma under 1.5 threes,1.5,-156,,,0.5949,-0.0238
-Prop,CLE @ MIL,Tyler Herro over 2.5 threes,2.5,-140,,,0.5431,-0.0690
-Prop,CLE @ MIL,Tyler Herro under 2.5 threes,2.5,106,,,0.4569,-0.0588
-Prop,CLE @ MIL,Donovan Mitchell over 2.5 threes,2.5,-112,,,0.4872,-0.0778
-Prop,CLE @ MIL,Donovan Mitchell under 2.5 threes,2.5,-118,,,0.5128,-0.0526
-Prop,CLE @ MIL,Myles Turner over 1.5 threes,1.5,-111,,,0.4255,-0.1912
-Prop,CLE @ MIL,Myles Turner under 1.5 threes,1.5,-118,,,0.5745,0.0614
-Prop,CLE @ MIL,James Harden over 2.5 threes,2.5,-102,,,0.5071,0.0043
-Prop,CLE @ MIL,James Harden under 2.5 threes,2.5,-129,,,0.4929,-0.1250
-Prop,CLE @ MIL,Jaime Jaquez Jr. over 1.5 threes,1.5,143,,,0.4087,-0.0069
-Prop,CLE @ MIL,Jaime Jaquez Jr. under 1.5 threes,1.5,-190,,,0.5913,-0.0975
-Prop,CLE @ MIL,Evan Mobley over 1.5 threes,1.5,147,,,0.4083,0.0085
-Prop,CLE @ MIL,Evan Mobley under 1.5 threes,1.5,-196,,,0.5917,-0.1064
-Prop,CLE @ MIL,Myles Turner over 1.5 assists,1.5,-119,,,0.5141,-0.0539
-Prop,CLE @ MIL,Myles Turner under 1.5 assists,1.5,-110,,,0.4859,-0.0724
-Prop,CLE @ MIL,Evan Mobley over 17.5 points,17.5,-114,,,0.5654,0.0613
-Prop,CLE @ MIL,Evan Mobley under 17.5 points,17.5,-112,,,0.4346,-0.1773
-Prop,CLE @ MIL,Jaime Jaquez Jr. over 14.5 points,14.5,-118,,,0.5701,0.0532
-Prop,CLE @ MIL,Jaime Jaquez Jr. under 14.5 points,14.5,-108,,,0.4299,-0.1720
-Prop,CLE @ MIL,Myles Turner over 9.5 points,9.5,-127,,,0.4558,-0.1853
-Prop,CLE @ MIL,Myles Turner under 9.5 points,9.5,100,,,0.5442,0.0884
-Prop,CLE @ MIL,Donovan Mitchell over 35.5 pra,35.5,-111,,,0.5084,-0.0336
-Prop,CLE @ MIL,Donovan Mitchell under 35.5 pra,35.5,-119,,,0.4916,-0.0953
-Prop,CLE @ MIL,Jarrett Allen over 25.5 pra,25.5,-104,,,0.5155,0.0112
-Prop,CLE @ MIL,Jarrett Allen under 25.5 pra,25.5,-126,,,0.4845,-0.1310
-Prop,CLE @ MIL,Ryan Rollins over 24.5 pra,24.5,-108,,,0.4373,-0.1579
-Prop,CLE @ MIL,Ryan Rollins under 24.5 pra,24.5,-121,,,0.5627,0.0278
-Prop,CLE @ MIL,Jaime Jaquez Jr. over 23.5 pra,23.5,-118,,,0.5560,0.0272
-Prop,CLE @ MIL,Jaime Jaquez Jr. under 23.5 pra,23.5,-112,,,0.4440,-0.1596
-Prop,CLE @ MIL,Myles Turner over 17.5 pra,17.5,-103,,,0.4330,-0.1466
-Prop,CLE @ MIL,Myles Turner under 17.5 pra,17.5,-128,,,0.5670,0.0099
-Prop,CLE @ MIL,Jarrett Allen over 9.5 rebounds,9.5,-105,,,0.4644,-0.0934
-Prop,CLE @ MIL,Jarrett Allen under 9.5 rebounds,9.5,-126,,,0.5356,-0.0393
-Prop,CLE @ MIL,Kel'el Ware over 6.5 rebounds,6.5,-138,,,0.5613,-0.0320
-Prop,CLE @ MIL,Kel'el Ware under 6.5 rebounds,6.5,105,,,0.4387,-0.1007
-Prop,CLE @ MIL,Myles Turner over 5.5 rebounds,5.5,117,,,0.4110,-0.1081
-Prop,CLE @ MIL,Myles Turner under 5.5 rebounds,5.5,-154,,,0.5890,-0.0285
-Prop,CLE @ MIL,Sam Merrill over 2.5 rebounds,2.5,-116,,,0.4918,-0.0843
-Prop,CLE @ MIL,Sam Merrill under 2.5 rebounds,2.5,-113,,,0.5082,-0.0420
-Prop,CLE @ MIL,Sam Merrill over 1.5 threes,1.5,-181,,,0.6050,-0.0607
-Prop,CLE @ MIL,Sam Merrill under 1.5 threes,1.5,137,,,0.3950,-0.0640
-Prop,CLE @ MIL,AJ Green over 1.5 threes,1.5,-175,,,0.6123,-0.0378
-Prop,CLE @ MIL,AJ Green under 1.5 threes,1.5,132,,,0.3877,-0.1005
-Prop,CLE @ MIL,Ryan Rollins over 1.5 threes,1.5,-165,,,0.5619,-0.0975
-Prop,CLE @ MIL,Ryan Rollins under 1.5 threes,1.5,125,,,0.4381,-0.0144
-Prop,CLE @ MIL,Peyton Watson over 1.5 threes,1.5,110,,,0.3865,-0.1884
-Prop,CLE @ MIL,Peyton Watson under 1.5 threes,1.5,-145,,,0.6135,0.0367
+ML,ATL @ NO,NO ML,,164.0,0.2786,0.3541,0.3315,-0.1249
+ML,ATL @ NO,ATL ML,,-198.0,0.7214,0.6459,0.6685,0.0062
+Spread,ATL @ NO,NO +4.5,4.5,-105.0,0.3985,0.4884,0.4614,-0.0991
+Spread,ATL @ NO,ATL -4.5,-4.5,-115.0,0.6015,0.5116,0.5386,0.0069
+Total,ATL @ NO,Over 239.5,239.5,-108.0,0.4093,0.4954,0.4695,-0.0957
+Total,ATL @ NO,Under 239.5,239.5,-112.0,0.5907,0.5046,0.5305,0.0041
+ML,SAC @ MEM,MEM ML,,-360.0,0.7663,0.7672,0.7669,-0.0200
+ML,SAC @ MEM,SAC ML,,285.0,0.2337,0.2328,0.2331,-0.1027
+Spread,SAC @ MEM,MEM -8.5,-8.5,-108.0,0.5415,0.4954,0.5092,-0.0193
+Spread,SAC @ MEM,SAC +8.5,8.5,-112.0,0.4585,0.5046,0.4908,-0.0710
+Total,SAC @ MEM,Over 229.5,229.5,-115.0,0.5314,0.5116,0.5175,-0.0324
+Total,SAC @ MEM,Under 229.5,229.5,-105.0,0.4686,0.4884,0.4825,-0.0581
+ML,CLE @ MIL,MIL ML,,300.0,0.4027,0.2233,0.2771,0.1084
+ML,CLE @ MIL,CLE ML,,-380.0,0.5973,0.7767,0.7229,-0.0869
+Spread,CLE @ MIL,MIL +9.5,9.5,-112.0,0.6735,0.5046,0.5553,0.0511
+Spread,CLE @ MIL,CLE -9.5,-9.5,-108.0,0.3265,0.4954,0.4447,-0.1435
+Total,CLE @ MIL,Over 235.5,235.5,-108.0,0.4876,0.4954,0.4930,-0.0504
+Total,CLE @ MIL,Under 235.5,235.5,-112.0,0.5124,0.5046,0.5070,-0.0404
+ML,MIN @ SA,SA ML,,-600.0,0.6088,0.8439,0.7734,-0.0977
+ML,MIN @ SA,MIN ML,,440.0,0.3912,0.1561,0.2266,0.2238
+Spread,MIN @ SA,SA -12.5,-12.5,-110.0,0.2613,0.5000,0.4284,-0.1822
+Spread,MIN @ SA,MIN +12.5,12.5,-110.0,0.7387,0.5000,0.5716,0.0913
+Total,MIN @ SA,Over 228.5,228.5,-105.0,0.4868,0.4884,0.4879,-0.0474
+Total,MIN @ SA,Under 228.5,228.5,-115.0,0.5132,0.5116,0.5121,-0.0426
+ML,OKC @ HOU,HOU ML,,-142.0,0.6855,0.5674,0.6029,0.0274
+ML,OKC @ HOU,OKC ML,,120.0,0.3145,0.4326,0.3971,-0.1263
+Spread,OKC @ HOU,HOU -2.5,-2.5,-110.0,0.6180,0.5000,0.5354,0.0221
+Spread,OKC @ HOU,OKC +2.5,2.5,-110.0,0.3820,0.5000,0.4646,-0.1130
+Total,OKC @ HOU,Over 219.5,219.5,-108.0,0.5730,0.4954,0.5187,-0.0011
+Total,OKC @ HOU,Under 219.5,219.5,-112.0,0.4270,0.5046,0.4813,-0.0889
+Prop,ATL @ NO,Zion Williamson over 2.5 assists,2.5,-116,,,0.4884,-0.0906
+Prop,ATL @ NO,Zion Williamson under 2.5 assists,2.5,-113,,,0.5116,-0.0356
+Prop,ATL @ NO,Jeremiah Fears over 3.5 assists,3.5,113,,,0.4659,-0.0076
+Prop,ATL @ NO,Jeremiah Fears under 3.5 assists,3.5,-149,,,0.5341,-0.1075
+Prop,ATL @ NO,Trey Murphy III over 3.5 assists,3.5,132,,,0.4135,-0.0407
+Prop,ATL @ NO,Trey Murphy III under 3.5 assists,3.5,-174,,,0.5865,-0.0764
+Prop,ATL @ NO,Derik Queen over 2.5 assists,2.5,121,,,0.4258,-0.0589
+Prop,ATL @ NO,Derik Queen under 2.5 assists,2.5,-159,,,0.5742,-0.0647
+Prop,ATL @ NO,Nickeil Alexander-Walker over 3.5 assists,3.5,117,,,0.3968,-0.1390
+Prop,ATL @ NO,Nickeil Alexander-Walker under 3.5 assists,3.5,-154,,,0.6032,-0.0051
+Prop,ATL @ NO,Dyson Daniels over 4.5 assists,4.5,-141,,,0.5457,-0.0673
+Prop,ATL @ NO,Dyson Daniels under 4.5 assists,4.5,107,,,0.4543,-0.0595
+Prop,ATL @ NO,Onyeka Okongwu over 2.5 assists,2.5,-114,,,0.5000,-0.0613
+Prop,ATL @ NO,Onyeka Okongwu under 2.5 assists,2.5,-116,,,0.5000,-0.0690
+Prop,ATL @ NO,Aaron Wiggins over 12.5 points,12.5,-108,,,0.5596,0.0778
+Prop,ATL @ NO,Aaron Wiggins under 12.5 points,12.5,-119,,,0.4404,-0.1895
+Prop,ATL @ NO,Jeremiah Fears over 13.5 points,13.5,-118,,,0.5244,-0.0311
+Prop,ATL @ NO,Jeremiah Fears under 13.5 points,13.5,-108,,,0.4756,-0.0841
+Prop,ATL @ NO,Herbert Jones over 6.5 points,6.5,-106,,,0.4663,-0.0937
+Prop,ATL @ NO,Herbert Jones under 6.5 points,6.5,-120,,,0.5337,-0.0216
+Prop,ATL @ NO,Trey Murphy III over 16.5 points,16.5,-113,,,0.5011,-0.0555
+Prop,ATL @ NO,Trey Murphy III under 16.5 points,16.5,-113,,,0.4989,-0.0596
+Prop,ATL @ NO,Derik Queen over 11.5 points,11.5,100,,,0.4730,-0.0539
+Prop,ATL @ NO,Derik Queen under 11.5 points,11.5,-127,,,0.5270,-0.0581
+Prop,ATL @ NO,Luguentz Dort over 7.5 points,7.5,-108,,,0.5208,0.0030
+Prop,ATL @ NO,Luguentz Dort under 7.5 points,7.5,-118,,,0.4792,-0.1147
+Prop,ATL @ NO,Kingston Flemings over 7.5 points,7.5,-128,,,0.4198,-0.2522
+Prop,ATL @ NO,Kingston Flemings under 7.5 points,7.5,101,,,0.5802,0.1662
+Prop,ATL @ NO,Jalen Johnson over 22.5 points,22.5,-109,,,0.4288,-0.1778
+Prop,ATL @ NO,Jalen Johnson under 22.5 points,22.5,-117,,,0.5712,0.0594
+Prop,ATL @ NO,Saddiq Bey over 12.5 points,12.5,-127,,,0.5647,0.0094
+Prop,ATL @ NO,Saddiq Bey under 12.5 points,12.5,100,,,0.4353,-0.1295
+Prop,ATL @ NO,Nickeil Alexander-Walker over 19.5 points,19.5,-108,,,0.5578,0.0742
+Prop,ATL @ NO,Nickeil Alexander-Walker under 19.5 points,19.5,-117,,,0.4422,-0.1798
+Prop,ATL @ NO,Dyson Daniels over 11.5 points,11.5,100,,,0.4484,-0.1031
+Prop,ATL @ NO,Dyson Daniels under 11.5 points,11.5,-127,,,0.5516,-0.0141
+Prop,ATL @ NO,Trey Murphy III over 24.5 pra,24.5,-117,,,0.4989,-0.0747
+Prop,ATL @ NO,Trey Murphy III under 24.5 pra,24.5,-112,,,0.5011,-0.0515
+Prop,ATL @ NO,Jalen Johnson over 40.5 pra,40.5,-119,,,0.4557,-0.1613
+Prop,ATL @ NO,Jalen Johnson under 40.5 pra,40.5,-110,,,0.5443,0.0391
+Prop,ATL @ NO,Onyeka Okongwu over 23.5 pra,23.5,-121,,,0.5029,-0.0815
+Prop,ATL @ NO,Onyeka Okongwu under 23.5 pra,23.5,-109,,,0.4971,-0.0468
+Prop,ATL @ NO,Derik Queen over 20.5 pra,20.5,-124,,,0.5311,-0.0407
+Prop,ATL @ NO,Derik Queen under 20.5 pra,20.5,-107,,,0.4689,-0.0928
+Prop,ATL @ NO,Kingston Flemings over 13.5 pra,13.5,-122,,,0.5347,-0.0270
+Prop,ATL @ NO,Kingston Flemings under 13.5 pra,13.5,-108,,,0.4653,-0.1039
+Prop,ATL @ NO,Dyson Daniels over 22.5 pra,22.5,-113,,,0.4847,-0.0863
+Prop,ATL @ NO,Dyson Daniels under 22.5 pra,22.5,-116,,,0.5153,-0.0406
+Prop,ATL @ NO,Nickeil Alexander-Walker over 26.5 pra,26.5,-107,,,0.5208,0.0074
+Prop,ATL @ NO,Nickeil Alexander-Walker under 26.5 pra,26.5,-123,,,0.4792,-0.1311
+Prop,ATL @ NO,Zion Williamson over 5.5 rebounds,5.5,103,,,0.4012,-0.1856
+Prop,ATL @ NO,Zion Williamson under 5.5 rebounds,5.5,-136,,,0.5988,0.0391
+Prop,ATL @ NO,Jeremiah Fears over 3.5 rebounds,3.5,-144,,,0.5154,-0.1267
+Prop,ATL @ NO,Jeremiah Fears under 3.5 rebounds,3.5,109,,,0.4846,0.0129
+Prop,ATL @ NO,Saddiq Bey over 4.5 rebounds,4.5,118,,,0.3471,-0.2432
+Prop,ATL @ NO,Saddiq Bey under 4.5 rebounds,4.5,-156,,,0.6529,0.0713
+Prop,ATL @ NO,Herbert Jones over 2.5 rebounds,2.5,104,,,0.4606,-0.0603
+Prop,ATL @ NO,Herbert Jones under 2.5 rebounds,2.5,-137,,,0.5394,-0.0669
+Prop,ATL @ NO,Trey Murphy III over 4.5 rebounds,4.5,-117,,,0.5028,-0.0675
+Prop,ATL @ NO,Trey Murphy III under 4.5 rebounds,4.5,-112,,,0.4972,-0.0588
+Prop,ATL @ NO,Karlo Matkovic over 4.5 rebounds,4.5,-144,,,0.4107,-0.3041
+Prop,ATL @ NO,Karlo Matkovic under 4.5 rebounds,4.5,109,,,0.5893,0.2317
+Prop,ATL @ NO,Derik Queen over 7.5 rebounds,7.5,111,,,0.4449,-0.0612
+Prop,ATL @ NO,Derik Queen under 7.5 rebounds,7.5,-146,,,0.5551,-0.0647
+Prop,ATL @ NO,Kingston Flemings over 2.5 rebounds,2.5,-113,,,0.5100,-0.0387
+Prop,ATL @ NO,Kingston Flemings under 2.5 rebounds,2.5,-116,,,0.4900,-0.0875
+Prop,ATL @ NO,Luguentz Dort over 2.5 rebounds,2.5,-137,,,0.5529,-0.0435
+Prop,ATL @ NO,Luguentz Dort under 2.5 rebounds,2.5,104,,,0.4471,-0.0880
+Prop,ATL @ NO,Nickeil Alexander-Walker over 3.5 rebounds,3.5,117,,,0.4164,-0.0964
+Prop,ATL @ NO,Nickeil Alexander-Walker under 3.5 rebounds,3.5,-154,,,0.5836,-0.0375
+Prop,ATL @ NO,Dyson Daniels over 5.5 rebounds,5.5,-143,,,0.5111,-0.1315
+Prop,ATL @ NO,Dyson Daniels under 5.5 rebounds,5.5,109,,,0.4889,0.0219
+Prop,ATL @ NO,Jalen Johnson over 9.5 rebounds,9.5,-110,,,0.4962,-0.0527
+Prop,ATL @ NO,Jalen Johnson under 9.5 rebounds,9.5,-120,,,0.5038,-0.0763
+Prop,ATL @ NO,CJ McCollum over 2.5 rebounds,2.5,-123,,,0.4446,-0.1939
+Prop,ATL @ NO,CJ McCollum under 2.5 rebounds,2.5,-107,,,0.5554,0.0744
+Prop,ATL @ NO,Aaron Wiggins over 2.5 threes,2.5,142,,,0.4503,0.0898
+Prop,ATL @ NO,Aaron Wiggins under 2.5 threes,2.5,-188,,,0.5497,-0.1580
+Prop,ATL @ NO,Jeremiah Fears over 1.5 threes,1.5,122,,,0.4092,-0.0915
+Prop,ATL @ NO,Jeremiah Fears under 1.5 threes,1.5,-161,,,0.5908,-0.0423
+Prop,ATL @ NO,Trey Murphy III over 2.5 threes,2.5,107,,,0.4793,-0.0079
+Prop,ATL @ NO,Trey Murphy III under 2.5 threes,2.5,-141,,,0.5207,-0.1099
+Prop,ATL @ NO,Saddiq Bey over 1.5 threes,1.5,-117,,,0.5287,-0.0194
+Prop,ATL @ NO,Saddiq Bey under 1.5 threes,1.5,-113,,,0.4713,-0.1116
+Prop,ATL @ NO,Nickeil Alexander-Walker over 2.5 threes,2.5,-169,,,0.6462,0.0286
+Prop,ATL @ NO,Nickeil Alexander-Walker under 2.5 threes,2.5,128,,,0.3538,-0.1934
+Prop,ATL @ NO,CJ McCollum over 2.5 threes,2.5,129,,,0.3851,-0.1180
+Prop,ATL @ NO,CJ McCollum under 2.5 threes,2.5,-170,,,0.6149,-0.0235
+Prop,ATL @ NO,Jalen Johnson over 1.5 threes,1.5,-114,,,0.4700,-0.1177
+Prop,ATL @ NO,Jalen Johnson under 1.5 threes,1.5,-115,,,0.5300,-0.0091
+Prop,ATL @ NO,Onyeka Okongwu over 1.5 threes,1.5,-105,,,0.4591,-0.1036
+Prop,ATL @ NO,Onyeka Okongwu under 1.5 threes,1.5,-125,,,0.5409,-0.0264
+Prop,ATL @ NO,Jalen Johnson over 8.5 assists,8.5,102,,,0.4418,-0.1075
+Prop,ATL @ NO,Jalen Johnson under 8.5 assists,8.5,-134,,,0.5582,-0.0253
+Prop,ATL @ NO,CJ McCollum over 3.5 assists,3.5,128,,,0.4405,0.0044
+Prop,ATL @ NO,CJ McCollum under 3.5 assists,3.5,-170,,,0.5595,-0.1114
+Prop,ATL @ NO,Kingston Flemings over 2.5 assists,2.5,-162,,,0.7196,0.1638
+Prop,ATL @ NO,Kingston Flemings under 2.5 assists,2.5,122,,,0.2804,-0.3776
+Prop,ATL @ NO,Saddiq Bey over 1.5 assists,1.5,-150,,,0.5756,-0.0407
+Prop,ATL @ NO,Saddiq Bey under 1.5 assists,1.5,114,,,0.4244,-0.0918
+Prop,ATL @ NO,Zion Williamson over 21.5 points,21.5,-118,,,0.5183,-0.0425
+Prop,ATL @ NO,Zion Williamson under 21.5 points,21.5,-108,,,0.4817,-0.0723
+Prop,ATL @ NO,CJ McCollum over 16.5 points,16.5,-110,,,0.4834,-0.0772
+Prop,ATL @ NO,CJ McCollum under 16.5 points,16.5,-116,,,0.5166,-0.0380
+Prop,ATL @ NO,Onyeka Okongwu over 13.5 points,13.5,-116,,,0.5084,-0.0534
+Prop,ATL @ NO,Onyeka Okongwu under 13.5 points,13.5,-110,,,0.4916,-0.0615
+Prop,ATL @ NO,Karlo Matkovic over 8.5 points,8.5,101,,,0.3786,-0.2391
+Prop,ATL @ NO,Karlo Matkovic under 8.5 points,8.5,-129,,,0.6214,0.1032
+Prop,ATL @ NO,Zion Williamson over 30.5 pra,30.5,-111,,,0.4538,-0.1374
+Prop,ATL @ NO,Zion Williamson under 30.5 pra,30.5,-119,,,0.5462,0.0052
+Prop,ATL @ NO,CJ McCollum over 22.5 pra,22.5,-112,,,0.4793,-0.0928
+Prop,ATL @ NO,CJ McCollum under 22.5 pra,22.5,-117,,,0.5207,-0.0342
+Prop,ATL @ NO,Jeremiah Fears over 21.5 pra,21.5,-109,,,0.5163,-0.0100
+Prop,ATL @ NO,Jeremiah Fears under 21.5 pra,21.5,-121,,,0.4837,-0.1166
+Prop,ATL @ NO,Saddiq Bey over 19.5 pra,19.5,-108,,,0.5006,-0.0359
+Prop,ATL @ NO,Saddiq Bey under 19.5 pra,19.5,-121,,,0.4994,-0.0878
+Prop,ATL @ NO,Onyeka Okongwu over 7.5 rebounds,7.5,110,,,0.4265,-0.1044
+Prop,ATL @ NO,Onyeka Okongwu under 7.5 rebounds,7.5,-145,,,0.5735,-0.0309
+Prop,ATL @ NO,Aaron Wiggins over 3.5 rebounds,3.5,-104,,,0.5074,-0.0048
+Prop,ATL @ NO,Aaron Wiggins under 3.5 rebounds,3.5,-127,,,0.4926,-0.1195
+Prop,ATL @ NO,Luguentz Dort over 1.5 threes,1.5,115,,,0.4399,-0.0543
+Prop,ATL @ NO,Luguentz Dort under 1.5 threes,1.5,-151,,,0.5601,-0.0689
+Prop,CLE @ MIL,Kasparas Jakucionis over 3.5 assists,3.5,-117,,,0.5196,-0.0363
+Prop,CLE @ MIL,Kasparas Jakucionis under 3.5 assists,3.5,-112,,,0.4804,-0.0907
+Prop,CLE @ MIL,Ryan Rollins over 4.5 assists,4.5,-124,,,0.4917,-0.1118
+Prop,CLE @ MIL,Ryan Rollins under 4.5 assists,4.5,-106,,,0.5083,-0.0121
+Prop,CLE @ MIL,Kyle Kuzma over 2.5 assists,2.5,-122,,,0.5421,-0.0136
+Prop,CLE @ MIL,Kyle Kuzma under 2.5 assists,2.5,-108,,,0.4579,-0.1181
+Prop,CLE @ MIL,Donovan Mitchell over 4.5 assists,4.5,-139,,,0.5819,0.0005
+Prop,CLE @ MIL,Donovan Mitchell under 4.5 assists,4.5,106,,,0.4181,-0.1387
+Prop,CLE @ MIL,James Harden over 7.5 assists,7.5,117,,,0.4365,-0.0528
+Prop,CLE @ MIL,James Harden under 7.5 assists,7.5,-154,,,0.5635,-0.0706
+Prop,CLE @ MIL,Jaime Jaquez Jr. over 3.5 assists,3.5,126,,,0.4496,0.0161
+Prop,CLE @ MIL,Jaime Jaquez Jr. under 3.5 assists,3.5,-166,,,0.5504,-0.1180
+Prop,CLE @ MIL,Evan Mobley over 3.5 assists,3.5,-122,,,0.5184,-0.0566
+Prop,CLE @ MIL,Evan Mobley under 3.5 assists,3.5,-108,,,0.4816,-0.0726
+Prop,CLE @ MIL,Tyler Herro over 4.5 assists,4.5,109,,,0.4481,-0.0634
+Prop,CLE @ MIL,Tyler Herro under 4.5 assists,4.5,-143,,,0.5519,-0.0622
+Prop,CLE @ MIL,Kasparas Jakucionis over 7.5 points,7.5,-105,,,0.5066,-0.0110
+Prop,CLE @ MIL,Kasparas Jakucionis under 7.5 points,7.5,-122,,,0.4934,-0.1021
+Prop,CLE @ MIL,Kel'el Ware over 9.5 points,9.5,-118,,,0.5253,-0.0296
+Prop,CLE @ MIL,Kel'el Ware under 9.5 points,9.5,-108,,,0.4747,-0.0857
+Prop,CLE @ MIL,Jarrett Allen over 13.5 points,13.5,-124,,,0.6002,0.0843
+Prop,CLE @ MIL,Jarrett Allen under 13.5 points,13.5,-103,,,0.3998,-0.2121
+Prop,CLE @ MIL,Kyle Kuzma over 11.5 points,11.5,-119,,,0.4876,-0.1027
+Prop,CLE @ MIL,Kyle Kuzma under 11.5 points,11.5,-107,,,0.5124,-0.0087
+Prop,CLE @ MIL,Ryan Rollins over 14.5 points,14.5,-119,,,0.4591,-0.1552
+Prop,CLE @ MIL,Ryan Rollins under 14.5 points,14.5,-107,,,0.5409,0.0465
+Prop,CLE @ MIL,AJ Green over 6.5 points,6.5,-110,,,0.5332,0.0179
+Prop,CLE @ MIL,AJ Green under 6.5 points,6.5,-116,,,0.4668,-0.1308
+Prop,CLE @ MIL,Donovan Mitchell over 24.5 points,24.5,-123,,,0.5522,0.0011
+Prop,CLE @ MIL,Donovan Mitchell under 24.5 points,24.5,-104,,,0.4478,-0.1216
+Prop,CLE @ MIL,Tyler Herro over 21.5 points,21.5,-111,,,0.4880,-0.0723
+Prop,CLE @ MIL,Tyler Herro under 21.5 points,21.5,-115,,,0.5120,-0.0428
+Prop,CLE @ MIL,James Harden over 18.5 points,18.5,-117,,,0.5874,0.0894
+Prop,CLE @ MIL,James Harden under 18.5 points,18.5,-109,,,0.4126,-0.2089
+Prop,CLE @ MIL,Sam Merrill over 9.5 points,9.5,-104,,,0.5100,0.0004
+Prop,CLE @ MIL,Sam Merrill under 9.5 points,9.5,-123,,,0.4900,-0.1117
+Prop,CLE @ MIL,Peyton Watson over 13.5 points,13.5,-116,,,0.5291,-0.0148
+Prop,CLE @ MIL,Peyton Watson under 13.5 points,13.5,-110,,,0.4709,-0.1010
+Prop,CLE @ MIL,Kasparas Jakucionis over 14.5 pra,14.5,-106,,,0.5201,0.0108
+Prop,CLE @ MIL,Kasparas Jakucionis under 14.5 pra,14.5,-124,,,0.4799,-0.1331
+Prop,CLE @ MIL,Kyle Kuzma over 20.5 pra,20.5,-115,,,0.5179,-0.0317
+Prop,CLE @ MIL,Kyle Kuzma under 20.5 pra,20.5,-114,,,0.4821,-0.0950
+Prop,CLE @ MIL,James Harden over 30.5 pra,30.5,-123,,,0.5596,0.0145
+Prop,CLE @ MIL,James Harden under 30.5 pra,30.5,-107,,,0.4404,-0.1479
+Prop,CLE @ MIL,Tyler Herro over 30.5 pra,30.5,-120,,,0.5053,-0.0735
+Prop,CLE @ MIL,Tyler Herro under 30.5 pra,30.5,-109,,,0.4947,-0.0515
+Prop,CLE @ MIL,Sam Merrill over 14.5 pra,14.5,-110,,,0.5383,0.0276
+Prop,CLE @ MIL,Sam Merrill under 14.5 pra,14.5,-120,,,0.4617,-0.1535
+Prop,CLE @ MIL,Peyton Watson over 20.5 pra,20.5,-121,,,0.5287,-0.0343
+Prop,CLE @ MIL,Peyton Watson under 20.5 pra,20.5,-109,,,0.4713,-0.0963
+Prop,CLE @ MIL,Evan Mobley over 30.5 pra,30.5,-124,,,0.5811,0.0497
+Prop,CLE @ MIL,Evan Mobley under 30.5 pra,30.5,-106,,,0.4189,-0.1859
+Prop,CLE @ MIL,Kasparas Jakucionis over 2.5 rebounds,2.5,-158,,,0.5479,-0.1053
+Prop,CLE @ MIL,Kasparas Jakucionis under 2.5 rebounds,2.5,120,,,0.4521,-0.0054
+Prop,CLE @ MIL,Kyle Kuzma over 5.5 rebounds,5.5,-122,,,0.5375,-0.0218
+Prop,CLE @ MIL,Kyle Kuzma under 5.5 rebounds,5.5,-108,,,0.4625,-0.1093
+Prop,CLE @ MIL,Ryan Rollins over 4.5 rebounds,4.5,108,,,0.4025,-0.1627
+Prop,CLE @ MIL,Ryan Rollins under 4.5 rebounds,4.5,-143,,,0.5975,0.0153
+Prop,CLE @ MIL,Donovan Mitchell over 4.5 rebounds,4.5,-149,,,0.5505,-0.0801
+Prop,CLE @ MIL,Donovan Mitchell under 4.5 rebounds,4.5,113,,,0.4495,-0.0425
+Prop,CLE @ MIL,James Harden over 4.5 rebounds,4.5,-138,,,0.4968,-0.1432
+Prop,CLE @ MIL,James Harden under 4.5 rebounds,4.5,105,,,0.5032,0.0316
+Prop,CLE @ MIL,Tyler Herro over 4.5 rebounds,4.5,-130,,,0.5211,-0.0781
+Prop,CLE @ MIL,Tyler Herro under 4.5 rebounds,4.5,-101,,,0.4789,-0.0469
+Prop,CLE @ MIL,Jaime Jaquez Jr. over 5.5 rebounds,5.5,-110,,,0.4972,-0.0507
+Prop,CLE @ MIL,Jaime Jaquez Jr. under 5.5 rebounds,5.5,-119,,,0.5028,-0.0747
+Prop,CLE @ MIL,Peyton Watson over 4.5 rebounds,4.5,-118,,,0.4879,-0.0987
+Prop,CLE @ MIL,Peyton Watson under 4.5 rebounds,4.5,-112,,,0.5121,-0.0306
+Prop,CLE @ MIL,Evan Mobley over 9.5 rebounds,9.5,104,,,0.4773,-0.0262
+Prop,CLE @ MIL,Evan Mobley under 9.5 rebounds,9.5,-136,,,0.5227,-0.0930
+Prop,CLE @ MIL,Kasparas Jakucionis over 0.5 threes,0.5,-212,,,0.5788,-0.1481
+Prop,CLE @ MIL,Kasparas Jakucionis under 0.5 threes,0.5,159,,,0.4212,0.0908
+Prop,CLE @ MIL,Kyle Kuzma over 1.5 threes,1.5,118,,,0.4074,-0.1118
+Prop,CLE @ MIL,Kyle Kuzma under 1.5 threes,1.5,-156,,,0.5926,-0.0275
+Prop,CLE @ MIL,Tyler Herro over 2.5 threes,2.5,-140,,,0.5499,-0.0573
+Prop,CLE @ MIL,Tyler Herro under 2.5 threes,2.5,106,,,0.4501,-0.0728
+Prop,CLE @ MIL,Donovan Mitchell over 2.5 threes,2.5,-112,,,0.4773,-0.0966
+Prop,CLE @ MIL,Donovan Mitchell under 2.5 threes,2.5,-118,,,0.5227,-0.0343
+Prop,CLE @ MIL,Myles Turner over 1.5 threes,1.5,-111,,,0.4025,-0.2349
+Prop,CLE @ MIL,Myles Turner under 1.5 threes,1.5,-118,,,0.5975,0.1039
+Prop,CLE @ MIL,James Harden over 2.5 threes,2.5,-102,,,0.5201,0.0301
+Prop,CLE @ MIL,James Harden under 2.5 threes,2.5,-129,,,0.4799,-0.1481
+Prop,CLE @ MIL,Jaime Jaquez Jr. over 1.5 threes,1.5,143,,,0.4283,0.0409
+Prop,CLE @ MIL,Jaime Jaquez Jr. under 1.5 threes,1.5,-190,,,0.5717,-0.1275
+Prop,CLE @ MIL,Evan Mobley over 1.5 threes,1.5,147,,,0.4237,0.0465
+Prop,CLE @ MIL,Evan Mobley under 1.5 threes,1.5,-196,,,0.5763,-0.1297
+Prop,CLE @ MIL,Myles Turner over 1.5 assists,1.5,-119,,,0.5160,-0.0504
+Prop,CLE @ MIL,Myles Turner under 1.5 assists,1.5,-110,,,0.4840,-0.0760
+Prop,CLE @ MIL,Evan Mobley over 17.5 points,17.5,-114,,,0.5927,0.1126
+Prop,CLE @ MIL,Evan Mobley under 17.5 points,17.5,-112,,,0.4073,-0.2290
+Prop,CLE @ MIL,Jaime Jaquez Jr. over 14.5 points,14.5,-118,,,0.5910,0.0918
+Prop,CLE @ MIL,Jaime Jaquez Jr. under 14.5 points,14.5,-108,,,0.4090,-0.2122
+Prop,CLE @ MIL,Myles Turner over 9.5 points,9.5,-127,,,0.4259,-0.2388
+Prop,CLE @ MIL,Myles Turner under 9.5 points,9.5,100,,,0.5741,0.1482
+Prop,CLE @ MIL,Donovan Mitchell over 35.5 pra,35.5,-111,,,0.5222,-0.0073
+Prop,CLE @ MIL,Donovan Mitchell under 35.5 pra,35.5,-119,,,0.4778,-0.1208
+Prop,CLE @ MIL,Jarrett Allen over 25.5 pra,25.5,-104,,,0.5333,0.0461
+Prop,CLE @ MIL,Jarrett Allen under 25.5 pra,25.5,-126,,,0.4667,-0.1629
+Prop,CLE @ MIL,Ryan Rollins over 24.5 pra,24.5,-108,,,0.4153,-0.2002
+Prop,CLE @ MIL,Ryan Rollins under 24.5 pra,24.5,-121,,,0.5847,0.0679
+Prop,CLE @ MIL,Jaime Jaquez Jr. over 23.5 pra,23.5,-118,,,0.5776,0.0671
+Prop,CLE @ MIL,Jaime Jaquez Jr. under 23.5 pra,23.5,-112,,,0.4224,-0.2005
+Prop,CLE @ MIL,Myles Turner over 17.5 pra,17.5,-103,,,0.4168,-0.1786
+Prop,CLE @ MIL,Myles Turner under 17.5 pra,17.5,-128,,,0.5832,0.0389
+Prop,CLE @ MIL,Jarrett Allen over 9.5 rebounds,9.5,-105,,,0.4646,-0.0929
+Prop,CLE @ MIL,Jarrett Allen under 9.5 rebounds,9.5,-126,,,0.5354,-0.0397
+Prop,CLE @ MIL,Kel'el Ware over 6.5 rebounds,6.5,-138,,,0.5673,-0.0217
+Prop,CLE @ MIL,Kel'el Ware under 6.5 rebounds,6.5,105,,,0.4327,-0.1129
+Prop,CLE @ MIL,Myles Turner over 5.5 rebounds,5.5,117,,,0.4053,-0.1204
+Prop,CLE @ MIL,Myles Turner under 5.5 rebounds,5.5,-154,,,0.5947,-0.0192
+Prop,CLE @ MIL,Sam Merrill over 2.5 rebounds,2.5,-116,,,0.4869,-0.0933
+Prop,CLE @ MIL,Sam Merrill under 2.5 rebounds,2.5,-113,,,0.5131,-0.0329
+Prop,CLE @ MIL,Sam Merrill over 1.5 threes,1.5,-181,,,0.6011,-0.0668
+Prop,CLE @ MIL,Sam Merrill under 1.5 threes,1.5,137,,,0.3989,-0.0546
+Prop,CLE @ MIL,AJ Green over 1.5 threes,1.5,-175,,,0.6151,-0.0334
+Prop,CLE @ MIL,AJ Green under 1.5 threes,1.5,132,,,0.3849,-0.1071
+Prop,CLE @ MIL,Ryan Rollins over 1.5 threes,1.5,-165,,,0.5493,-0.1179
+Prop,CLE @ MIL,Ryan Rollins under 1.5 threes,1.5,125,,,0.4507,0.0142
+Prop,CLE @ MIL,Peyton Watson over 1.5 threes,1.5,110,,,0.3652,-0.2330
+Prop,CLE @ MIL,Peyton Watson under 1.5 threes,1.5,-145,,,0.6348,0.0725

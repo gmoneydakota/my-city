@@ -542,13 +542,13 @@ $('#send').onclick = async () => {
   const body = `Agent: ${pick.value}\n<!-- sent from Agent City -->\n\n${text}`;
   const g = guessAgent(text); const target = pick.value !== 'auto' ? pick.value : (g.id || 'planner');
   if (cfg.token) {
-    $('#send').disabled = true;
+    $('#send').disabled = true; $('#send').textContent = 'Sending…';
     try {
       await gh(`/repos/${cfg.owner}/${cfg.repo}/issues`, { method:'POST', body: JSON.stringify({ title, body }) });
       toast('Sent! Dispatch is routing it now.'); $('#req').value = ''; previewRoute();
       spawnPacket(target); setTimeout(refreshJobs, 4000); switchTab('jobs');
     } catch (e) { toast('Could not send: ' + e.message, 6000); }
-    $('#send').disabled = false;
+    $('#send').disabled = false; $('#send').textContent = 'Send ▶';
   } else {
     const url = `https://github.com/${cfg.owner}/${cfg.repo}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
     window.open(url, '_blank', 'noopener'); spawnPacket(target);
@@ -561,8 +561,18 @@ function openSettings(){ $('#sOwner').value = cfg.owner; $('#sRepo').value = cfg
 $('#openSettings').onclick = openSettings; $('#sCancel').onclick = () => $('#modal').classList.remove('on');
 $('#sSave').onclick = () => {
   store.set('owner', $('#sOwner').value.trim()); store.set('repo', $('#sRepo').value.trim()); store.set('token', $('#sToken').value.trim());
-  loadCfg(); $('#modal').classList.remove('on'); stopDemo(); refreshAll();
+  loadCfg(); $('#modal').classList.remove('on'); stopDemo(); refreshAll(); checkToken();
 };
+async function checkToken(){
+  if (!cfg.token || !connected()) return;
+  try {
+    const r = await gh(`/repos/${cfg.owner}/${cfg.repo}`);
+    if (r.permissions && r.permissions.push === false) toast('Token saved, but it can’t write to this repo. Give it Issues: Read and write.', 8000);
+    else toast('✅ Token works. Send now posts jobs directly, with no GitHub page.', 6000);
+  } catch (e) {
+    toast(e.status === 401 ? '❌ That token was rejected. Copy it again (it starts with github_pat_).' : e.status === 404 ? '❌ Token can’t see this repo. When creating it, pick “Only select repositories → my-city”.' : 'Could not check token: ' + e.message, 9000);
+  }
+}
 
 /* drawer */
 $('#closeDrawer').onclick = () => $('#drawer').classList.remove('on');

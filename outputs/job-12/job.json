@@ -1,0 +1,18 @@
+{
+  "job": 12,
+  "agent": "forge",
+  "model": "opus",
+  "tier": "heavy",
+  "mode": "make",
+  "route": "one Haiku routing call",
+  "escalated_from": "planner",
+  "builds_on": null,
+  "repeat": null,
+  "has_page": false,
+  "has_model": false,
+  "turns": 37,
+  "cost_usd_estimate": 1.3131,
+  "ok": true,
+  "subtype": "success",
+  "finished_at": "2026-10-31T21:51:27+00:00"
+}

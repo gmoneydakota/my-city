@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#03050b">
+<title>Products · Agent City</title>
+<link rel="icon" href="../../favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+<style>
+:root{
+  --bg:#03050b; --panel:rgba(10,14,28,.78); --panel-solid:#0a0e1c; --line:rgba(120,160,255,.16);
+  --text:#e8eeff; --muted:#8b97b8; --good:#3ddc84; --bad:#ff5c5c; --warn:#f7c948; --accent:#4fd1ff;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:'Space Grotesk',system-ui,sans-serif}
+body{min-height:100vh;background:radial-gradient(1200px 600px at 50% -10%,rgba(61,220,132,.14),transparent 60%),var(--bg)}
+a{color:var(--accent)}
+header{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:10px;padding:10px 16px;padding-top:max(10px,env(safe-area-inset-top));background:rgba(3,5,11,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header h1{margin:0;font-size:18px;letter-spacing:.04em}
+header h1 span{color:var(--good);text-shadow:0 0 12px var(--good)}
+header .sp{flex:1}
+.btn,.ghost{font:inherit;font-size:13px;border-radius:10px;padding:7px 12px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.btn{background:var(--good);color:#04140a;border:0;font-weight:700}
+.btn:hover{filter:brightness(1.1)}
+.ghost{background:none;border:1px solid var(--line);color:var(--muted)}
+.ghost:hover{color:var(--text);border-color:var(--good)}
+.btn[disabled],.ghost[disabled]{opacity:.55;cursor:progress}
+#hero{position:relative;height:min(46vh,380px);min-height:240px;cursor:pointer}
+#hero canvas{display:block;width:100%;height:100%}
+#hero .fallback{display:none;height:100%;align-items:center;justify-content:center}
+#hero.nogl .fallback{display:flex}
+#hero .cap{position:absolute;left:0;right:0;bottom:12px;text-align:center;pointer-events:none}
+#hero .cap b{font-size:clamp(26px,6vw,40px);letter-spacing:.32em;color:#d9ffe9;text-shadow:0 0 18px var(--good)}
+#hero .cap small{display:block;font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:4px}
+main{max-width:980px;margin:0 auto;padding:6px 14px 60px}
+.bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0 14px}
+.bar input{flex:1;min-width:180px;font:inherit;font-size:14px;color:var(--text);background:var(--panel-solid);border:1px solid var(--line);border-radius:10px;padding:9px 12px}
+.bar input:focus{outline:none;border-color:var(--good)}
+.status{font-family:var(--mono);font-size:11px;color:var(--muted);margin:0 0 10px}
+.status.warn{color:var(--warn)}
+h2.sec{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:22px 0 10px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px 14px 12px;margin-bottom:12px}
+.card.latest{border-color:rgba(61,220,132,.55);box-shadow:0 0 0 1px rgba(61,220,132,.15),0 10px 40px rgba(61,220,132,.08)}
+.card .top{display:flex;gap:10px;align-items:flex-start}
+.card .ck{flex:none;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:rgba(61,220,132,.12);color:var(--good);font-size:18px}
+.card .ck.up{background:rgba(185,140,255,.14);color:#b98cff}
+.card h3{margin:0;font-size:17px;line-height:1.25;word-break:break-word}
+.card .ask{font-size:12px;color:var(--muted);margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card .meta{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:4px;display:flex;flex-wrap:wrap;gap:4px 10px}
+.pill{font-family:var(--mono);font-size:10px;padding:2px 7px;border-radius:999px;background:rgba(61,220,132,.16);color:var(--good)}
+.pill.new{background:var(--good);color:#04140a;font-weight:700}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 4px}
+ul.files{list-style:none;margin:8px 0 0;padding:0;border-top:1px solid var(--line)}
+ul.files li{display:flex;align-items:center;gap:8px;padding:8px 2px;border-bottom:1px solid var(--line);font-size:14px}
+ul.files li .ic{flex:none;width:22px;text-align:center}
+ul.files li .nm{flex:1;min-width:0;word-break:break-all}
+ul.files li .sz{flex:none;font-family:var(--mono);font-size:11px;color:var(--muted)}
+ul.files li .dl{flex:none;padding:5px 10px}
+ul.files li .pv{flex:none;padding:5px 8px}
+details.more{margin-top:6px}
+details.more summary{cursor:pointer;font-size:12px;color:var(--muted);padding:6px 0}
+.readme{margin-top:10px;padding:12px;border-radius:12px;background:rgba(0,0,0,.28);border:1px solid var(--line);font-size:14px;line-height:1.55;overflow-x:auto}
+.readme pre{background:rgba(0,0,0,.35);padding:10px;border-radius:8px;overflow-x:auto}
+.readme code{font-family:var(--mono);font-size:12px}
+.readme table,.preview table{border-collapse:collapse;font-size:12px}
+.readme td,.readme th,.preview td,.preview th{border:1px solid var(--line);padding:4px 8px;text-align:left;vertical-align:top}
+.readme img{max-width:100%}
+.preview{margin:4px 0 8px;max-height:360px;overflow:auto;border:1px solid var(--line);border-radius:10px;background:rgba(0,0,0,.28)}
+.preview th{position:sticky;top:0;background:var(--panel-solid)}
+.preview pre{margin:0;padding:10px;font-family:var(--mono);font-size:12px;white-space:pre-wrap;word-break:break-word}
+.empty{color:var(--muted);text-align:center;padding:30px 10px;border:1px dashed var(--line);border-radius:14px}
+#toast{position:fixed;left:50%;bottom:max(18px,env(safe-area-inset-bottom));transform:translateX(-50%) translateY(140%);background:var(--panel-solid);border:1px solid var(--good);color:var(--text);padding:10px 16px;border-radius:12px;font-size:14px;transition:transform .25s;z-index:20;max-width:92vw}
+#toast.on{transform:translateX(-50%) translateY(0)}
+@media (max-width:560px){
+  header h1{font-size:16px}
+  ul.files li .sz{display:none}
+  .card h3{font-size:16px}
+}
+</style>
+</head>
+<body>
+<header>
+  <a class="ghost" href="../../" title="Back to the city">← City</a>
+  <h1><span>✔</span> Products</h1>
+  <div class="sp"></div>
+  <button class="ghost" id="refresh" title="Check for new products">↻</button>
+</header>
+
+<div id="hero" title="Products: every finished job, ready to download">
+  <canvas id="scene" aria-hidden="true"></canvas>
+  <div class="fallback" aria-hidden="true">
+    <svg viewBox="0 0 120 100" width="200" height="170"><path d="M10 52 L42 84 L110 14" fill="none" stroke="#3ddc84" stroke-width="16" stroke-linecap="square" stroke-linejoin="miter" style="filter:drop-shadow(0 0 10px #3ddc84)"/></svg>
+  </div>
+  <div class="cap"><b>PRODUCTS</b><small id="heroSub">every finished job · tap a file to download</small></div>
+</div>
+
+<main>
+  <div class="bar">
+    <input id="q" type="search" placeholder="Search products or file names…" autocomplete="off">
+  </div>
+  <p class="status" id="status">Loading products…</p>
+  <div id="latest"></div>
+  <div id="older"></div>
+</main>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ------------------------------------------------------------------ config */
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
+const store = { get(k){ try { return localStorage.getItem('agentcity.' + k) || ''; } catch { return ''; } } };
+const DEFAULT = { owner:'gmoneydakota', repo:'my-city' };
+function detectRepo(){
+  const m = location.hostname.match(/^([^.]+)\.github\.io$/);
+  if (!m) return null;
+  const seg = location.pathname.split('/').filter(Boolean)[0];
+  return { owner:m[1], repo: seg && seg !== 'outputs' ? seg : `${m[1]}.github.io` };
+}
+// Same settings the city itself uses (shared localStorage on the same github.io site).
+const d = detectRepo();
+const cfg = {
+  owner: store.get('owner') || d?.owner || DEFAULT.owner,
+  repo:  store.get('repo')  || d?.repo  || DEFAULT.repo,
+  token: store.get('token'),
+};
+// On the city's own website, files are served from the same site, so downloads never touch github.com.
+const onPages = !!d && d.owner.toLowerCase() === cfg.owner.toLowerCase() && d.repo.toLowerCase() === cfg.repo.toLowerCase();
+const encPath = p => p.split('/').map(encodeURIComponent).join('/');
+const fileUrl = (n, path) => onPages ? `../job-${n}/${encPath(path)}`
+  : `https://raw.githubusercontent.com/${cfg.owner}/${cfg.repo}/HEAD/outputs/job-${n}/${encPath(path)}`;
+const pageUrl = n => onPages ? `../job-${n}/` : `https://${cfg.owner}.github.io/${cfg.repo}/outputs/job-${n}/`;
+const cadUrl = n => onPages ? `../../cad/?job=${n}` : `https://${cfg.owner}.github.io/${cfg.repo}/cad/?job=${n}`;
+
+/* ------------------------------------------------------------------ helpers */
+let toastT;
+function toast(msg, ms=3200){ const t = $('#toast'); t.textContent = msg; t.classList.add('on'); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('on'), ms); }
+function fmtSize(b){ return b == null ? '' : b < 1024 ? `${b} B` : b < 1048576 ? `${(b/1024).toFixed(1)} KB` : `${(b/1048576).toFixed(1)} MB`; }
+function fmtDate(iso){ try { return new Date(iso).toLocaleString([], { month:'short', day:'numeric', year:'numeric', hour:'numeric', minute:'2-digit' }); } catch { return ''; } }
+function ago(iso){ const s = (Date.now() - new Date(iso)) / 1000; if (!(s >= 0)) return ''; return s < 60 ? 'just now' : s < 3600 ? `${s/60|0}m ago` : s < 86400 ? `${s/3600|0}h ago` : `${s/86400|0}d ago`; }
+const ext = p => (p.match(/\.([a-z0-9]+)$/i)?.[1] || '').toLowerCase();
+const ICON = { csv:'📊', xlsx:'📊', xls:'📊', ods:'📊', tsv:'📊', json:'🧾', md:'📄', txt:'📄', pdf:'📕', docx:'📝', doc:'📝',
+  html:'🌐', htm:'🌐', py:'🐍', js:'📜', ts:'📜', sh:'📜', stl:'🧊', obj:'🧊', scad:'🧊', png:'🖼', jpg:'🖼', jpeg:'🖼', gif:'🖼', svg:'🖼', webp:'🖼', zip:'🗜' };
+const iconFor = p => ICON[ext(p)] || '📦';
+const TEXT_PREVIEW = new Set(['csv','tsv','txt','md','json','py','js','ts','sh','scad','yml','yaml','html','css']);
+const SPREADSHEET = new Set(['csv','xlsx','xls','ods','tsv']);
+// Bookkeeping files: not the product itself, so tucked under "Other files" and left out of the zip.
+const INTERNAL = new Set(['job.json', 'PROGRESS.md', 'upgrade.json']);
+const isGenericTitle = t => !t || /^job\s*#?\s*\d+\s*$/i.test(t);
+
+async function gh(path, raw=false){
+  const headers = { Accept: raw ? 'application/vnd.github.raw+json' : 'application/vnd.github+json' };
+  if (cfg.token) headers.Authorization = `Bearer ${cfg.token}`;
+  const r = await fetch('https://api.github.com' + path, { headers, cache:'no-store' });
+  if (!r.ok) { const e = new Error(r.status === 403 || r.status === 429 ? 'GitHub rate limit' : `GitHub ${r.status}`); e.status = r.status; throw e; }
+  return raw ? r.text() : r.json();
+}
+
+/* ------------------------------------------------------------------ loading */
+let products = [], source = '', readmeCache = {};
+
+async function loadLive(){
+  // One call lists every file in the repo; a second (optional) gets the job titles from the issues.
+  const tree = await gh(`/repos/${cfg.owner}/${cfg.repo}/git/trees/HEAD?recursive=1`);
+  const byJob = new Map();
+  for (const t of tree.tree || []) {
+    const m = t.type === 'blob' && t.path.match(/^outputs\/job-(\d+)\/(.+)$/);
+    if (!m) continue;
+    const rel = m[2];
+    if (rel.split('/').some(p => p.startsWith('.') || p === '__pycache__')) continue;
+    const n = +m[1];
+    if (!byJob.has(n)) byJob.set(n, { job:n, title:'', meta:null, files:[] });
+    byJob.get(n).files.push({ path: rel, size: t.size });
+  }
+  const list = [...byJob.values()].sort((a, b) => b.job - a.job);
+  const issues = await gh(`/repos/${cfg.owner}/${cfg.repo}/issues?state=all&per_page=100&sort=created&direction=desc`).catch(() => []);
+  const titles = new Map(issues.filter(i => !i.pull_request).map(i => [i.number, i.title.replace(/^\[city\]\s*(🏗|🔁)?\s*/u, '').replace(/^(\p{Extended_Pictographic}️?\s*)+/u, '').replace(/^#+\s*/, '').trim()]));
+  list.forEach(p => { p.title = titles.get(p.job) || ''; });
+  // job.json (when it exists) says who built it and when. Read from the website, not the API, to save rate limit.
+  await Promise.all(list.map(async p => {
+    if (!p.files.some(f => f.path === 'job.json')) return;
+    try { const r = await fetch(fileUrl(p.job, 'job.json'), { cache:'no-store' }); if (r.ok) p.meta = await r.json(); } catch {}
+  }));
+  return { list, truncated: !!tree.truncated };
+}
+
+async function loadSnapshot(){
+  const r = await fetch('manifest.json', { cache:'no-store' });
+  if (!r.ok) throw new Error('no snapshot');
+  const snap = await r.json();
+  const list = (snap.jobs || []).map(j => ({ job:j.job, title:j.title || '', meta:j.meta && Object.keys(j.meta).length ? j.meta : null, files:j.files || [], snapshot:true }));
+  // Jobs newer than the snapshot: we can't list their files, but we can find their README on the website.
+  if (onPages) {
+    let n = Math.max(0, ...list.map(p => p.job)), misses = 0;
+    while (misses < 4 && n < 100000) {
+      n++;
+      try {
+        const r2 = await fetch(fileUrl(n, 'README.md'), { method:'HEAD', cache:'no-store' });
+        if (r2.ok) { list.unshift({ job:n, title:'', meta:null, files:[{ path:'README.md', size:null }], partial:true }); misses = 0; }
+        else misses++;
+      } catch { misses++; }
+    }
+    list.sort((a, b) => b.job - a.job);
+  }
+  return { list, generated: snap.generated };
+}
+
+async function load(){
+  $('#status').className = 'status'; $('#status').textContent = 'Loading products…';
+  try {
+    const { list, truncated } = await loadLive();
+    products = list; source = 'live';
+    $('#status').textContent = `${list.length} product${list.length === 1 ? '' : 's'} · live from ${cfg.owner}/${cfg.repo}${truncated ? ' (very large repo: list may be incomplete)' : ''}`;
+  } catch (e) {
+    try {
+      const { list, generated } = await loadSnapshot();
+      products = list; source = 'snapshot';
+      $('#status').className = 'status warn';
+      $('#status').textContent = `${e.status === 403 || e.status === 429 ? 'GitHub is busy (rate limit)' : 'Could not reach GitHub'}, showing the saved list from ${fmtDate(generated)}. Downloads still work. Try ↻ in a few minutes.`;
+    } catch {
+      products = []; source = '';
+      $('#status').className = 'status warn';
+      $('#status').textContent = `Could not load products (${e.message}). Check your connection and press ↻.`;
+    }
+  }
+  // The README heading names the finished product better than the request does ("Pop-Out Plug Door"
+  // vs "from the door you just designed…"), so prefer it; the request is kept as a subtitle.
+  render();
+  await Promise.all(products.map(async p => {
+    const md = await getReadme(p).catch(() => '');
+    const h = md.match(/^#{1,3}\s+(.+?)\s*#*\s*$/m)?.[1]?.replace(/^job\s*#?\s*\d+\s*[·:\-–]\s*/i, '');
+    if (h && !isGenericTitle(h)) { if (p.title && p.title !== h) p.request = p.title; p.title = h; }
+    else if (isGenericTitle(p.title)) {
+      // Use the first sentence of the README as a hint, e.g. "13% of 80 is 10.4."
+      const first = md.split('\n').map(l => l.replace(/[*_`#>]/g, '').trim()).find(l => l && !/^job\s*#?\d+$/i.test(l));
+      if (first) p.hint = first.length > 90 ? first.slice(0, 88) + '…' : first;
+    }
+  }));
+  render();
+}
+
+async function getReadme(p){
+  if (readmeCache[p.job] != null) return readmeCache[p.job];
+  if (!p.files.some(f => f.path === 'README.md')) return (readmeCache[p.job] = '');
+  const r = await fetch(fileUrl(p.job, 'README.md'), { cache:'no-store' });
+  if (!r.ok) throw new Error(`README ${r.status}`);
+  return (readmeCache[p.job] = await r.text());
+}
+
+/* ------------------------------------------------------------------ rendering */
+function kindOf(p){
+  if (p.meta?.mode === 'upgrade' || p.files.some(f => f.path === 'upgrade.json')) return 'upgrade';
+  return 'make';
+}
+function displayTitle(p){ return isGenericTitle(p.title) ? (p.hint ? p.hint : `Job #${p.job}`) : p.title; }
+
+function card(p, latest){
+  const main = p.files.filter(f => !INTERNAL.has(f.path));
+  const other = p.files.filter(f => INTERNAL.has(f.path));
+  // Spreadsheets and the actual product first, README last.
+  const rank = f => SPREADSHEET.has(ext(f.path)) ? 0 : f.path === 'README.md' ? 3 : f.path.includes('/') ? 2 : 1;
+  main.sort((a, b) => rank(a) - rank(b) || a.path.localeCompare(b.path));
+  const up = kindOf(p) === 'upgrade';
+  const m = p.meta || {};
+  const when = m.finished_at;
+  const hasPage = m.has_page || p.files.some(f => f.path === 'index.html');
+  const fileRow = f => `<li data-path="${esc(f.path)}"><span class="ic">${iconFor(f.path)}</span><span class="nm">${esc(f.path)}</span><span class="sz">${fmtSize(f.size)}</span>${
+    TEXT_PREVIEW.has(ext(f.path)) && f.path !== 'README.md' && (f.size == null || f.size < 400000) ? `<button class="ghost pv" data-act="preview" title="Preview">👁</button>` : ''
+  }<button class="btn dl" data-act="dl" title="Download ${esc(f.path)}">⬇</button></li>`;
+  return `<div class="card${latest ? ' latest' : ''}" data-job="${p.job}">
+    <div class="top">
+      <div class="ck${up ? ' up' : ''}">${up ? '🏗' : '✔'}</div>
+      <div style="flex:1;min-width:0">
+        <h3>${esc(displayTitle(p))}</h3>
+        ${p.request ? `<div class="ask">You asked: “${esc(p.request)}”</div>` : ''}
+        <div class="meta">
+          ${latest ? '<span class="pill new">NEWEST</span>' : ''}
+          ${up ? '<span class="pill" style="background:rgba(185,140,255,.16);color:#b98cff">city upgrade</span>' : ''}
+          <span>#${p.job}</span>
+          ${when ? `<span title="${esc(fmtDate(when))}">${esc(ago(when))}</span>` : ''}
+          ${m.agent ? `<span>by ${esc(m.agent)}</span>` : ''}
+          <span>${main.length} file${main.length === 1 ? '' : 's'}</span>
+          ${p.partial ? '<span>(file list after next refresh)</span>' : ''}
+        </div>
+      </div>
+    </div>
+    <div class="actions">
+      ${main.length > 1 ? `<button class="btn" data-act="zip">⬇ Download all (.zip)</button>` : ''}
+      ${hasPage ? `<a class="ghost" href="${esc(pageUrl(p.job))}" target="_blank" rel="noopener">▶ Open it</a>` : ''}
+      ${m.has_model ? `<a class="ghost" href="${esc(cadUrl(p.job))}" target="_blank" rel="noopener">🧊 CAD Studio</a>` : ''}
+      ${p.files.some(f => f.path === 'README.md') ? `<button class="ghost" data-act="readme">📄 What is this?</button>` : ''}
+    </div>
+    <div class="slot"></div>
+    <ul class="files">${main.map(fileRow).join('') || '<li><span class="nm" style="color:var(--muted)">No files.</span></li>'}</ul>
+    ${other.length ? `<details class="more"><summary>Other files (${other.length})</summary><ul class="files">${other.map(fileRow).join('')}</ul></details>` : ''}
+  </div>`;
+}
+
+function matches(p, q){
+  if (!q) return true;
+  const hay = `${displayTitle(p)} ${p.title} ${p.request || ''} #${p.job} ${p.meta?.agent || ''} ${p.files.map(f => f.path).join(' ')}`.toLowerCase();
+  return q.split(/\s+/).every(w => hay.includes(w));
+}
+
+function render(){
+  const q = $('#q').value.trim().toLowerCase();
+  const shown = products.filter(p => matches(p, q));
+  // "Newest" = the newest finished job, ignoring this Products page itself (job 9) and city upgrades.
+  const SELF = (location.pathname.match(/\/outputs\/job-(\d+)\//) || [])[1];
+  const isProduct = p => String(p.job) !== SELF && kindOf(p) !== 'upgrade';
+  const newest = !q ? products.find(isProduct) : null;
+  $('#latest').innerHTML = newest ? `<h2 class="sec">Latest product</h2>${card(newest, true)}` : '';
+  const rest = shown.filter(p => p !== newest);
+  $('#older').innerHTML = rest.length ? `<h2 class="sec">${q ? `Results (${rest.length})` : 'Previous products'}</h2>${rest.map(p => card(p, false)).join('')}`
+    : (!newest && source ? `<div class="empty">${q ? 'Nothing matches that search.' : 'No products yet. Finished jobs show up here automatically.'}</div>` : '');
+  $('#heroSub').textContent = products.length ? `${products.length} jobs · tap a file to download` : 'every finished job · tap a file to download';
+}
+
+/* ------------------------------------------------------------------ actions */
+async function fetchBlob(n, path){
+  const r = await fetch(fileUrl(n, path), { cache:'no-store' });
+  if (!r.ok) throw new Error(r.status === 404 ? 'not published yet (wait a minute and retry)' : `HTTP ${r.status}`);
+  return r.blob();
+}
+function saveBlob(blob, name){
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 30000);
+}
+async function download(n, path, btn){
+  btn && (btn.disabled = true);
+  try { saveBlob(await fetchBlob(n, path), path.split('/').pop()); toast(`⬇ ${path.split('/').pop()}`); }
+  catch (e) { toast(`Couldn't download ${path}: ${e.message}`, 6000); }
+  finally { btn && (btn.disabled = false); }
+}
+async function downloadZip(p, btn){
+  if (!window.JSZip) { toast('Zip tool did not load. Download files one by one instead.', 6000); return; }
+  const files = p.files.filter(f => !INTERNAL.has(f.path));
+  const label = btn.textContent; btn.disabled = true;
+  try {
+    const zip = new JSZip(), folder = zip.folder(`job-${p.job}`);
+    let done = 0, failed = [];
+    // A few at a time so phones don't choke on big jobs.
+    const queue = [...files];
+    await Promise.all(Array.from({ length: Math.min(4, queue.length) }, async () => {
+      while (queue.length) {
+        const f = queue.shift();
+        try { folder.file(f.path, await fetchBlob(p.job, f.path)); } catch { failed.push(f.path); }
+        btn.textContent = `⬇ ${++done}/${files.length}…`;
+      }
+    }));
+    if (failed.length === files.length) throw new Error('no files could be fetched');
+    saveBlob(await zip.generateAsync({ type:'blob', compression:'DEFLATE' }), `job-${p.job}.zip`);
+    toast(failed.length ? `Zip saved, but ${failed.length} file(s) were skipped: ${failed.slice(0, 3).join(', ')}` : `⬇ job-${p.job}.zip`, failed.length ? 7000 : 3200);
+  } catch (e) { toast(`Couldn't build the zip: ${e.message}`, 6000); }
+  finally { btn.disabled = false; btn.textContent = label; }
+}
+
+function parseCSV(text, delim){
+  const rows = []; let row = [], cell = '', q = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (q) { if (c === '"') { if (text[i+1] === '"') { cell += '"'; i++; } else q = false; } else cell += c; }
+    else if (c === '"') q = true;
+    else if (c === delim) { row.push(cell); cell = ''; }
+    else if (c === '\n' || c === '\r') { if (c === '\r' && text[i+1] === '\n') i++; row.push(cell); rows.push(row); row = []; cell = ''; if (rows.length > 200) break; }
+    else cell += c;
+  }
+  if (cell || row.length) { row.push(cell); rows.push(row); }
+  return rows;
+}
+async function preview(p, path, li){
+  const next = li.nextElementSibling;
+  if (next?.classList.contains('pvrow')) { next.remove(); return; }
+  const box = document.createElement('li'); box.className = 'pvrow'; box.style.display = 'block'; box.style.borderBottom = '0';
+  box.innerHTML = '<div class="preview"><pre>Loading…</pre></div>'; li.after(box);
+  try {
+    const text = await (await fetchBlob(p.job, path)).text();
+    const e = ext(path);
+    if (e === 'csv' || e === 'tsv') {
+      const rows = parseCSV(text, e === 'tsv' ? '\t' : ',');
+      const [head = [], ...body] = rows;
+      box.firstChild.innerHTML = `<table><thead><tr>${head.map(h => `<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${
+        body.slice(0, 200).map(r => `<tr>${r.map(c => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table>${
+        rows.length > 200 ? '<pre>…first 200 rows shown. Download for the full file.</pre>' : ''}`;
+    } else {
+      box.firstChild.innerHTML = `<pre>${esc(text.length > 60000 ? text.slice(0, 60000) + '\n…(cut off, download for the rest)' : text)}</pre>`;
+    }
+  } catch (err) { box.firstChild.innerHTML = `<pre>Couldn't preview: ${esc(err.message)}</pre>`; }
+}
+async function toggleReadme(p, cardEl, btn){
+  const slot = cardEl.querySelector('.slot');
+  if (slot.innerHTML) { slot.innerHTML = ''; btn.textContent = '📄 What is this?'; return; }
+  slot.innerHTML = '<div class="readme">Loading…</div>'; btn.textContent = '📄 Hide';
+  try {
+    const md = await getReadme(p);
+    const html = (window.marked && window.DOMPurify) ? DOMPurify.sanitize(marked.parse(md)) : `<pre>${esc(md)}</pre>`;
+    slot.innerHTML = `<div class="readme">${html}</div>`;
+    // Make relative links/images in the README point at the job's files.
+    slot.querySelectorAll('a[href], img[src]').forEach(el => {
+      const attr = el.tagName === 'A' ? 'href' : 'src', v = el.getAttribute(attr);
+      if (v && !/^([a-z]+:|#|\/\/)/i.test(v)) el.setAttribute(attr, fileUrl(p.job, v.replace(/^\.\//, '')));
+      if (el.tagName === 'A') { el.target = '_blank'; el.rel = 'noopener'; }
+    });
+  } catch (e) { slot.innerHTML = `<div class="readme">Couldn't load the description (${esc(e.message)}).</div>`; }
+}
+
+document.addEventListener('click', e => {
+  const btn = e.target.closest('[data-act]'); if (!btn) return;
+  const cardEl = btn.closest('.card'); const p = products.find(x => x.job === +cardEl?.dataset.job); if (!p) return;
+  const li = btn.closest('li[data-path]');
+  switch (btn.dataset.act) {
+    case 'dl': download(p.job, li.dataset.path, btn); break;
+    case 'preview': preview(p, li.dataset.path, li); break;
+    case 'zip': downloadZip(p, btn); break;
+    case 'readme': toggleReadme(p, cardEl, btn); break;
+  }
+});
+$('#q').addEventListener('input', render);
+$('#refresh').onclick = () => { readmeCache = {}; load(); };
+$('#hero').addEventListener('click', () => $('main').scrollIntoView({ behavior:'smooth' }));
+load();
+// If the 3D library can't load (offline, blocked CDN), show the flat checkmark instead.
+setTimeout(() => { if (!window.__heroOk) { $('#hero').classList.add('nogl'); $('#scene').style.display = 'none'; } }, 6000);
+</script>
+
+<script type="module">
+/* ------------------------------------------------------------------ the checkmark building */
+import * as THREE from 'three';
+const hero = document.getElementById('hero'), canvas = document.getElementById('scene');
+let renderer;
+try { renderer = new THREE.WebGLRenderer({ canvas, antialias:true, alpha:true }); }
+catch { hero.classList.add('nogl'); canvas.style.display = 'none'; }
+if (renderer) {
+  window.__heroOk = true;
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 1.75));
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  const scene = new THREE.Scene();
+  scene.fog = new THREE.Fog(0x03050b, 40, 90);
+  const camera = new THREE.PerspectiveCamera(38, 1, .1, 200);
+
+  // Window grid texture, same look as the city's skyline.
+  function windows(){
+    const c = document.createElement('canvas'); c.width = 64; c.height = 64; const g = c.getContext('2d');
+    g.fillStyle = '#000'; g.fillRect(0, 0, 64, 64);
+    let s = 9; const rnd = () => (s = (s * 16807) % 2147483647) / 2147483647;
+    for (let y = 4; y < 64; y += 8) for (let x = 4; x < 64; x += 8) if (rnd() < .55) {
+      g.fillStyle = ['#b9ffd6', '#ffffff', '#7dffb2', '#d8ffe8'][(rnd() * 4) | 0]; g.globalAlpha = .35 + rnd() * .65; g.fillRect(x, y, 4, 4);
+    }
+    const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.wrapS = t.wrapT = THREE.RepeatWrapping;
+    t.magFilter = THREE.NearestFilter; t.repeat.set(.9, .9); return t;
+  }
+
+  // The checkmark footprint, drawn in the XY plane and extruded into a building.
+  const S = 1.6;
+  const pts = [[-4.0, 1.2], [-1.0, -1.8], [4.4, 3.6], [3.2, 4.8], [-1.0, 0.6], [-2.8, 2.4]].map(([x, y]) => new THREE.Vector2(x * S, (y + 1.8) * S));
+  const shape = new THREE.Shape(pts);
+  const geo = new THREE.ExtrudeGeometry(shape, { depth:3.2, bevelEnabled:true, bevelThickness:.25, bevelSize:.2, bevelSegments:2 });
+  geo.translate(0, 0, -1.6);
+  const tex = windows();
+  const bodyMat = new THREE.MeshStandardMaterial({ color:0x07160e, roughness:.45, metalness:.4, emissive:0xffffff, emissiveMap:tex, emissiveIntensity:.9 });
+  const building = new THREE.Group(); scene.add(building);
+  const body = new THREE.Mesh(geo, bodyMat); body.position.y = .9; building.add(body);
+  const edges = new THREE.LineSegments(new THREE.EdgesGeometry(geo, 25), new THREE.LineBasicMaterial({ color:0x3ddc84, toneMapped:false }));
+  body.add(edges);
+  // Plinth + glowing ground ring
+  const plinth = new THREE.Mesh(new THREE.CylinderGeometry(9.5, 10.2, .9, 48), new THREE.MeshStandardMaterial({ color:0x07120c, roughness:.6, metalness:.3 }));
+  plinth.position.y = .45; building.add(plinth);
+  plinth.add(new THREE.LineSegments(new THREE.EdgesGeometry(plinth.geometry, 30), new THREE.LineBasicMaterial({ color:0x1f7a48, toneMapped:false })));
+  const ring = new THREE.Mesh(new THREE.RingGeometry(10.6, 11, 64), new THREE.MeshBasicMaterial({ color:0x3ddc84, transparent:true, opacity:.5, side:THREE.DoubleSide, toneMapped:false }));
+  ring.rotation.x = -Math.PI / 2; ring.position.y = .02; scene.add(ring);
+  // Beacon on the tip of the long arm
+  const tip = new THREE.Vector3(3.8 * S, (4.2 + 1.8) * S + .9 + .4, 0);
+  const beacon = new THREE.Mesh(new THREE.SphereGeometry(.45, 16, 12), new THREE.MeshBasicMaterial({ color:0xb9ffd6, toneMapped:false }));
+  beacon.position.copy(tip); building.add(beacon);
+  const beam = new THREE.Mesh(new THREE.CylinderGeometry(.08, .5, 40, 12, 1, true), new THREE.MeshBasicMaterial({ color:0x3ddc84, transparent:true, opacity:.14, blending:THREE.AdditiveBlending, depthWrite:false, toneMapped:false }));
+  beam.position.copy(tip).add(new THREE.Vector3(0, 20, 0)); building.add(beam);
+  // Little parcels orbiting the building: the products.
+  const parcels = [];
+  const pGeo = new THREE.BoxGeometry(.9, .9, .9);
+  for (let i = 0; i < 7; i++) {
+    const m = new THREE.Mesh(pGeo, new THREE.MeshStandardMaterial({ color:0x0d2a1a, emissive:0x3ddc84, emissiveIntensity:.35, roughness:.4 }));
+    m.add(new THREE.LineSegments(new THREE.EdgesGeometry(pGeo), new THREE.LineBasicMaterial({ color:0x9dffc8, toneMapped:false })));
+    scene.add(m); parcels.push({ m, a: i / 7 * Math.PI * 2, r: 12.5 + (i % 3) * .8, y: 2 + (i % 4) * 2.2, sp: .25 + (i % 3) * .06 });
+  }
+  // Ground grid
+  const grid = new THREE.GridHelper(120, 60, 0x12324a, 0x0b1a2a); grid.material.transparent = true; grid.material.opacity = .5; scene.add(grid);
+  scene.add(new THREE.HemisphereLight(0x6fa8ff, 0x050a12, .7));
+  const key = new THREE.DirectionalLight(0xbfffe0, 1.1); key.position.set(10, 20, 14); scene.add(key);
+  const glow = new THREE.PointLight(0x3ddc84, 40, 30); glow.position.set(0, 4, 8); scene.add(glow);
+
+  function resize(){
+    const w = hero.clientWidth, h = hero.clientHeight;
+    renderer.setSize(w, h, false); camera.aspect = w / h;
+    // Pull back on narrow (phone) screens so the whole check fits.
+    const dist = w / h < 1 ? 46 : 34;
+    camera.position.set(0, 9, dist); camera.lookAt(0, 6.2, 0); camera.updateProjectionMatrix();
+  }
+  addEventListener('resize', resize); resize();
+
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let visible = true;
+  new IntersectionObserver(([e]) => visible = e.isIntersecting).observe(hero);
+  const clock = new THREE.Clock();
+  // Start turned so the checkmark reads correctly, then sway gently rather than spinning all the way round.
+  renderer.setAnimationLoop(() => {
+    const dt = Math.min(clock.getDelta(), .05), t = clock.elapsedTime;
+    if (!visible || document.hidden) return;
+    building.rotation.y = reduce ? -.25 : -.25 + Math.sin(t * .35) * .55;
+    beacon.material.color.setHSL(.4, 1, .6 + Math.sin(t * 4) * .2);
+    ring.material.opacity = .35 + Math.sin(t * 1.6) * .15;
+    parcels.forEach(p => { if (!reduce) p.a += dt * p.sp; p.m.position.set(Math.cos(p.a) * p.r, p.y + Math.sin(t + p.a * 3) * .4, Math.sin(p.a) * p.r); p.m.rotation.y += dt; p.m.rotation.x += dt * .5; });
+    renderer.render(scene, camera);
+  });
+}
+</script>
+</body>
+</html>

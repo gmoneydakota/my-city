@@ -1,0 +1,18 @@
+{
+  "job": 9,
+  "agent": "coder",
+  "model": "opus",
+  "tier": "heavy",
+  "mode": "make",
+  "route": "keyword rules (free)",
+  "escalated_from": null,
+  "builds_on": null,
+  "repeat": null,
+  "has_page": true,
+  "has_model": false,
+  "turns": 1,
+  "cost_usd_estimate": 1.9222,
+  "ok": true,
+  "subtype": "success",
+  "finished_at": "2026-10-31T21:28:10+00:00"
+}

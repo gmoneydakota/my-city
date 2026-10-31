@@ -1,0 +1,419 @@
+{
+ "generated": "2026-10-31T21:19:37+00:00",
+ "jobs": [
+  {
+   "job": 9,
+   "title": "Products building: every finished job, ready to download",
+   "meta": {},
+   "files": [
+    {
+     "path": "PROGRESS.md",
+     "size": 560
+    },
+    {
+     "path": "README.md",
+     "size": 3951
+    },
+    {
+     "path": "build_manifest.py",
+     "size": 2169
+    },
+    {
+     "path": "city-upgrade.patch",
+     "size": 5990
+    },
+    {
+     "path": "index.html",
+     "size": 32789
+    },
+    {
+     "path": "manifest.json",
+     "size": 7226
+    }
+   ]
+  },
+  {
+   "job": 8,
+   "title": "Pop-Out Plug Door (replaces the louvre door of job 7)",
+   "meta": {
+    "job": 8,
+    "agent": "cad",
+    "model": "sonnet",
+    "tier": "standard",
+    "mode": "make",
+    "route": "chosen by you",
+    "escalated_from": null,
+    "builds_on": null,
+    "repeat": null,
+    "has_page": false,
+    "has_model": true,
+    "turns": 9,
+    "cost_usd_estimate": 0.2302,
+    "ok": true,
+    "subtype": "success",
+    "finished_at": "2026-10-31T21:06:46+00:00"
+   },
+   "files": [
+    {
+     "path": "PROGRESS.md",
+     "size": 63
+    },
+    {
+     "path": "README.md",
+     "size": 1539
+    },
+    {
+     "path": "gen_model.py",
+     "size": 4861
+    },
+    {
+     "path": "job.json",
+     "size": 357
+    },
+    {
+     "path": "model.json",
+     "size": 9199
+    }
+   ]
+  },
+  {
+   "job": 7,
+   "title": "Louvre-Slide Door",
+   "meta": {
+    "job": 7,
+    "agent": "cad",
+    "model": "sonnet",
+    "tier": "standard",
+    "mode": "make",
+    "route": "chosen by you",
+    "escalated_from": null,
+    "builds_on": null,
+    "repeat": null,
+    "has_page": false,
+    "has_model": true,
+    "turns": 10,
+    "cost_usd_estimate": 0.2015,
+    "ok": true,
+    "subtype": "success",
+    "finished_at": "2026-10-31T21:02:15+00:00"
+   },
+   "files": [
+    {
+     "path": "PROGRESS.md",
+     "size": 55
+    },
+    {
+     "path": "README.md",
+     "size": 1198
+    },
+    {
+     "path": "job.json",
+     "size": 358
+    },
+    {
+     "path": "model.json",
+     "size": 11480
+    }
+   ]
+  },
+  {
+   "job": 6,
+   "title": "Job #6",
+   "meta": {
+    "job": 6,
+    "agent": "quant",
+    "model": "sonnet",
+    "tier": "standard",
+    "mode": "make",
+    "route": "keyword rules (free)",
+    "escalated_from": null,
+    "builds_on": null,
+    "repeat": null,
+    "has_page": false,
+    "turns": 36,
+    "cost_usd_estimate": 0.9646,
+    "ok": false,
+    "subtype": "error_max_turns",
+    "finished_at": "2026-10-31T21:11:15+00:00"
+   },
+   "files": [
+    {
+     "path": "README.md",
+     "size": 11
+    },
+    {
+     "path": "data/nba_games_2023.json",
+     "size": 129999
+    },
+    {
+     "path": "data/nba_games_2024.json",
+     "size": 130047
+    },
+    {
+     "path": "data/nba_games_2025.json",
+     "size": 130226
+    },
+    {
+     "path": "data/nba_games_2026.json",
+     "size": 138962
+    },
+    {
+     "path": "data/nfl_games.csv",
+     "size": 2187801
+    },
+    {
+     "path": "data/nfl_player_week_2020.csv",
+     "size": 608547
+    },
+    {
+     "path": "data/nfl_player_week_2021.csv",
+     "size": 639261
+    },
+    {
+     "path": "data/nfl_player_week_2022.csv",
+     "size": 632604
+    },
+    {
+     "path": "data/nfl_player_week_2023.csv",
+     "size": 632824
+    },
+    {
+     "path": "data/nfl_player_week_2024.csv",
+     "size": 637301
+    },
+    {
+     "path": "data/nfl_player_week_2025.csv",
+     "size": 651753
+    },
+    {
+     "path": "data/nfl_player_week_2026.csv",
+     "size": 249424
+    },
+    {
+     "path": "job.json",
+     "size": 355
+    },
+    {
+     "path": "results/games_metrics.json",
+     "size": 23250
+    },
+    {
+     "path": "results/props_metrics.json",
+     "size": 22634
+    },
+    {
+     "path": "scripts/debug_qb.py",
+     "size": 875
+    },
+    {
+     "path": "scripts/eval_games.py",
+     "size": 19462
+    },
+    {
+     "path": "scripts/eval_props.py",
+     "size": 12814
+    },
+    {
+     "path": "scripts/fetch_data.py",
+     "size": 3234
+    }
+   ]
+  },
+  {
+   "job": 4,
+   "title": "Job #4",
+   "meta": {
+    "job": 4,
+    "agent": "runner",
+    "model": "haiku",
+    "tier": "light",
+    "mode": "make",
+    "route": "chosen by you",
+    "escalated_from": null,
+    "builds_on": null,
+    "repeat": null,
+    "has_page": false,
+    "turns": 1,
+    "cost_usd_estimate": 0.0028,
+    "ok": true,
+    "subtype": "success",
+    "finished_at": "2026-10-31T20:32:26+00:00"
+   },
+   "files": [
+    {
+     "path": "README.md",
+     "size": 2975
+    },
+    {
+     "path": "job.json",
+     "size": 335
+    }
+   ]
+  },
+  {
+   "job": 3,
+   "title": "Job #3 \u00b7 City upgrade: the CAD Tower and CAD Studio",
+   "meta": {
+    "job": 3,
+    "agent": "coder",
+    "model": "opus",
+    "tier": "heavy",
+    "mode": "upgrade",
+    "route": "upgrade mode",
+    "escalated_from": null,
+    "builds_on": null,
+    "repeat": null,
+    "has_page": false,
+    "turns": 93,
+    "cost_usd_estimate": 5.1527,
+    "ok": true,
+    "subtype": "success",
+    "finished_at": "2026-10-31T20:43:30+00:00"
+   },
+   "files": [
+    {
+     "path": "README.md",
+     "size": 6947
+    },
+    {
+     "path": "job.json",
+     "size": 336
+    },
+    {
+     "path": "upgrade.json",
+     "size": 411
+    }
+   ]
+  },
+  {
+   "job": 2,
+   "title": "NFL + NBA betting model (DraftKings + Underdog)",
+   "meta": {
+    "job": 2,
+    "agent": "coder",
+    "model": "opus",
+    "tier": "heavy",
+    "route": "keyword rules (free)",
+    "escalated_from": null,
+    "turns": 95,
+    "cost_usd_estimate": 3.5209,
+    "ok": true,
+    "subtype": "success",
+    "finished_at": "2026-10-31T16:44:54+00:00"
+   },
+   "files": [
+    {
+     "path": "README.md",
+     "size": 10844
+    },
+    {
+     "path": "betmodel/__init__.py",
+     "size": 78
+    },
+    {
+     "path": "betmodel/common.py",
+     "size": 7454
+    },
+    {
+     "path": "betmodel/engine.py",
+     "size": 17769
+    },
+    {
+     "path": "betmodel/espn.py",
+     "size": 9801
+    },
+    {
+     "path": "betmodel/injuries.py",
+     "size": 3728
+    },
+    {
+     "path": "betmodel/oddsapi.py",
+     "size": 5466
+    },
+    {
+     "path": "betmodel/props.py",
+     "size": 11101
+    },
+    {
+     "path": "betmodel/ratings.py",
+     "size": 8395
+    },
+    {
+     "path": "betmodel/report.py",
+     "size": 14839
+    },
+    {
+     "path": "bets.py",
+     "size": 4087
+    },
+    {
+     "path": "history/picks.csv",
+     "size": 1752
+    },
+    {
+     "path": "job.json",
+     "size": 263
+    },
+    {
+     "path": "reports/2026-10-31_nba.md",
+     "size": 31917
+    },
+    {
+     "path": "reports/2026-10-31_nba_all_prices.csv",
+     "size": 2782
+    },
+    {
+     "path": "reports/2026-10-31_nba_projections.csv",
+     "size": 19329
+    },
+    {
+     "path": "reports/2026-10-31_nfl.md",
+     "size": 36768
+    },
+    {
+     "path": "reports/2026-10-31_nfl_all_prices.csv",
+     "size": 5031
+    },
+    {
+     "path": "reports/2026-10-31_nfl_projections.csv",
+     "size": 23435
+    },
+    {
+     "path": "sample_lines.csv",
+     "size": 646
+    },
+    {
+     "path": "test_betmodel.py",
+     "size": 4683
+    }
+   ]
+  },
+  {
+   "job": 1,
+   "title": "Job #1",
+   "meta": {
+    "job": 1,
+    "agent": "runner",
+    "model": "haiku",
+    "tier": "light",
+    "route": "keyword rules (free)",
+    "escalated_from": null,
+    "turns": 1,
+    "cost_usd_estimate": 0.002,
+    "ok": true,
+    "subtype": "success",
+    "finished_at": "2026-10-31T16:18:59+00:00"
+   },
+   "files": [
+    {
+     "path": "README.md",
+     "size": 159
+    },
+    {
+     "path": "job.json",
+     "size": 263
+    }
+   ]
+  }
+ ]
+}

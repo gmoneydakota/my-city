@@ -48,7 +48,15 @@ jobs:
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python3 scripts/city_job.py run
+        run: |
+          # an unset secret arrives as an empty string; drop it so it can't shadow the other one
+          [ -z "$ANTHROPIC_API_KEY" ] && unset ANTHROPIC_API_KEY
+          [ -z "$CLAUDE_CODE_OAUTH_TOKEN" ] && unset CLAUDE_CODE_OAUTH_TOKEN
+          if [ -z "$ANTHROPIC_API_KEY" ] && [ -z "$CLAUDE_CODE_OAUTH_TOKEN" ]; then
+            echo "No Claude secret found" > "$RUNNER_TEMP/city-error.txt"; exit 1
+          fi
+          claude --version
+          python3 scripts/city_job.py run
       - name: Save the results to the repo
         run: |
           git config user.name "agent-city[bot]"

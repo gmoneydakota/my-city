@@ -141,6 +141,10 @@ def run_agent(agent: dict, request: str, job: int, out_dir: str) -> dict:
         res = json.loads(p.stdout.strip().splitlines()[-1])
     except Exception:  # noqa: BLE001
         res = {"is_error": True, "result": (p.stdout + "\n" + p.stderr)[-3000:]}
+    if res.get("is_error") or p.returncode:
+        detail = f"exit {p.returncode}\nresult: {str(res.get('result'))[:1500]}\nstderr: {p.stderr[-1500:]}"
+        print(detail, file=sys.stderr)
+        (Path(os.environ.get("RUNNER_TEMP", "/tmp")) / "city-error.txt").write_text(detail)
     res["_agent"], res["_model"], res["_tier"] = agent["name"], agent["model"], agent["tier"]
     return res
 
@@ -213,9 +217,16 @@ def cmd_fail():
     run = f"{os.environ.get('GITHUB_SERVER_URL')}/{os.environ.get('GITHUB_REPOSITORY')}/actions/runs/{os.environ.get('GITHUB_RUN_ID')}"
     gh("label", "create", "status:failed", "--color", "ff5c5c", "--force")
     gh("issue", "edit", job, "--add-label", "status:failed", "--remove-label", "status:working")
+    err_file = Path(os.environ.get("RUNNER_TEMP", "/tmp")) / "city-error.txt"
+    err = err_file.read_text()[-2500:] if err_file.exists() else "(no details captured)"
+    for secret in ("CLAUDE_CODE_OAUTH_TOKEN", "ANTHROPIC_API_KEY"):
+        val = os.environ.get(secret)
+        if val:
+            err = err.replace(val, "***")
     gh("issue", "comment", job, "--body",
-       f"❌ The job failed. Log: {run}\n\nMost common causes: the `ANTHROPIC_API_KEY` / `CLAUDE_CODE_OAUTH_TOKEN` "
-       f"secret is missing or expired. Add the `run-again` label to retry.")
+       f"❌ The job failed. Log: {run}\n\n<details><summary>Error details</summary>\n\n```\n{err}\n```\n</details>\n\n"
+       f"Most common cause: the `CLAUDE_CODE_OAUTH_TOKEN` (or `ANTHROPIC_API_KEY`) secret is missing, mistyped or expired. "
+       f"Add the `run-again` label to retry.")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,26 @@
+[
+  {
+    "date": "2026-10-31",
+    "lessons": [
+      "Not enough finished games yet to change anything. Still collecting results."
+    ],
+    "scoreboard": {
+      "graded_bets": 0,
+      "graded_projections": 0,
+      "model_leans": {
+        "w": 0,
+        "l": 0,
+        "p": 0,
+        "hit_rate": null,
+        "roi_per_bet": null
+      },
+      "strong_leans": {
+        "w": 0,
+        "l": 0,
+        "p": 0,
+        "hit_rate": null,
+        "roi_per_bet": null
+      }
+    }
+  }
+]

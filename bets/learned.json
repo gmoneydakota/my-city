@@ -1,0 +1,46 @@
+{
+  "updated": "2026-10-31T17:03:17+00:00",
+  "game_weights": {
+    "ML": 0.3,
+    "Spread": 0.3,
+    "Total": 0.3
+  },
+  "fit_stats": {
+    "ML": {
+      "n": 0,
+      "needs": 40
+    },
+    "Spread": {
+      "n": 0,
+      "needs": 40
+    },
+    "Total": {
+      "n": 0,
+      "needs": 40
+    },
+    "Prop": {
+      "n": 0,
+      "needs": 40
+    }
+  },
+  "calibration": {},
+  "prop_weight": 0.5,
+  "scoreboard": {
+    "graded_bets": 0,
+    "graded_projections": 0,
+    "model_leans": {
+      "w": 0,
+      "l": 0,
+      "p": 0,
+      "hit_rate": null,
+      "roi_per_bet": null
+    },
+    "strong_leans": {
+      "w": 0,
+      "l": 0,
+      "p": 0,
+      "hit_rate": null,
+      "roi_per_bet": null
+    }
+  }
+}

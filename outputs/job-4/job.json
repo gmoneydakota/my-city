@@ -1,0 +1,17 @@
+{
+  "job": 4,
+  "agent": "runner",
+  "model": "haiku",
+  "tier": "light",
+  "mode": "make",
+  "route": "chosen by you",
+  "escalated_from": null,
+  "builds_on": null,
+  "repeat": null,
+  "has_page": false,
+  "turns": 1,
+  "cost_usd_estimate": 0.0028,
+  "ok": true,
+  "subtype": "success",
+  "finished_at": "2026-10-31T20:32:26+00:00"
+}

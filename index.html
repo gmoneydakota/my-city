@@ -154,6 +154,9 @@ tr.sym{cursor:pointer} tr.sym:hover td{background:rgba(255,255,255,.03)}
 #modal label{display:block;font-size:12px;color:var(--muted);margin:12px 0 4px}
 #toast{position:fixed;left:50%;top:18px;transform:translateX(-50%);padding:10px 16px;z-index:12;display:none;font-size:14px}
 #toast.on{display:block}
+#warp{position:fixed;inset:0;z-index:20;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle,rgba(125,252,255,.18),#03050b 70%);opacity:0;pointer-events:none;transition:opacity .9s ease-in}
+#warp.on{opacity:1;pointer-events:auto}
+#warp b{font-size:15px;letter-spacing:.3em;text-transform:uppercase;color:#7dfcff;text-shadow:0 0 14px #7dfcff}
 
 @media (max-width: 820px){
   #panel{left:16px;right:16px;width:auto;top:auto;bottom:48px;height:46vh}
@@ -244,6 +247,7 @@ tr.sym{cursor:pointer} tr.sym:hover td{background:rgba(255,255,255,.03)}
   <div class="row" style="justify-content:flex-end"><button class="iconbtn" id="sCancel">Cancel</button><button class="go" id="sSave">Save</button></div>
 </div></div>
 <div id="toast" class="glass"></div>
+<div id="warp"><b></b></div>
 
 <script type="module">
 import * as THREE from 'three';
@@ -266,11 +270,13 @@ const AGENTS = [
   {id:'analyst', name:'Analyst', tier:'heavy',    role:'Deep, multi-pass analysis', shape:'octa'},
   {id:'coder',   name:'Coder',   tier:'heavy',    role:'Builds apps, sites, scripts, games', shape:'spire'},
   {id:'forge',   name:'Forge',   tier:'heavy',    role:'Builds MCP connectors', shape:'forge'},
+  {id:'cad',     name:'CAD',     tier:'standard', role:'3D models that move & make sense', shape:'cad', app:'cad/', appName:'CAD Studio'},
 ];
 const byId = Object.fromEntries(AGENTS.map(a => [a.id, a]));
 // same keyword routing the cloud runner uses (scripts/city_job.py), shown live as you type
 const RULES = [
   ['quant', /\b(stock|stocks|ticker|share price|buy signal|when to buy|sell signal|portfolio|backtest|trading|invest|etf|crypto|bitcoin|options|dividend|earnings|market model|market news|the market|watchlist)\b/],
+  ['cad', /\b(3[- ]?d (model|print|part|design|object|asset|printable)\w*|cad|stl|openscad|3d-printable)\b/],
   ['forge', /\b(mcp server|mcp connector|build (a|an) connector)\b/],
   ['scout', /\b(connector idea|what should i connect|find (an? )?(api|data source))\b/],
   ['tutor', /^(explain|teach me|how does|what is|why does)\b/m],
@@ -294,6 +300,7 @@ const EXAMPLES = [
   'Plan a 4-week project to launch a small online store',
   'Rewrite my cover letter to sound more confident',
   'Make a little browser game with neon spaceships',
+  'Make me a 3D model of a drone with spinning propellers',
 ];
 
 const store = {
@@ -474,6 +481,16 @@ function buildTower(a, pos){
       addPart(g, new THREE.BoxGeometry(11, 10, 8), 5, col); addPart(g, new THREE.CylinderGeometry(1.4, 1.8, 16, 12), 14, col).position.x = 3;
       const ember = new THREE.Mesh(new THREE.SphereGeometry(1.2, 12, 12), new THREE.MeshBasicMaterial({ color:0xff6a1a, toneMapped:false })); ember.position.set(3, 22.5, 0); g.add(ember); g.userData.ember = ember; top = 26; break;
     }
+    case 'cad': {   // CAD Studio: a "3D printer" gantry with a spinning wireframe hologram and a sweeping scan layer
+      addPart(g, new THREE.BoxGeometry(7, 20, 7), 10, col);
+      addPart(g, new THREE.CylinderGeometry(4.8, 5.4, 1.2, 6), 20.6, col);
+      for (const [x, z] of [[-4,-4],[4,-4],[4,4],[-4,4]]) addPart(g, new THREE.BoxGeometry(.35, 10, .35), 26, col).position.set(x, 26, z);
+      for (const [x, z, w, d] of [[0,-4,8.35,.35],[0,4,8.35,.35],[-4,0,.35,8.35],[4,0,.35,8.35]]) addPart(g, new THREE.BoxGeometry(w, .35, d), 31, col).position.set(x, 31, z);
+      const holo = new THREE.Mesh(new THREE.TorusKnotGeometry(2, .55, 80, 10), new THREE.MeshBasicMaterial({ color:0x7dfcff, wireframe:true, transparent:true, opacity:.85, toneMapped:false }));
+      holo.position.y = 26; g.add(holo); g.userData.spinner = holo; g.userData.spinSpeed = .9;
+      const scan = new THREE.Mesh(new THREE.PlaneGeometry(7.6, 7.6), new THREE.MeshBasicMaterial({ color:0x7dfcff, transparent:true, opacity:.22, side:THREE.DoubleSide, depthWrite:false, blending:THREE.AdditiveBlending, toneMapped:false }));
+      scan.rotation.x = -Math.PI/2; scan.position.y = 22; g.add(scan); g.userData.scan = scan; top = 33; break;
+    }
   }
   const beacon = new THREE.Mesh(new THREE.SphereGeometry(.7, 12, 12), new THREE.MeshBasicMaterial({ color:col, toneMapped:false }));
   beacon.position.y = top; g.add(beacon);
@@ -482,7 +499,7 @@ function buildTower(a, pos){
   g.traverse(o => { if (o.isMesh) { o.userData.agent = a.id; pickables.push(o); } });
 
   const tag = document.createElement('div'); tag.className = 'tag'; tag.style.color = TIER[a.tier].css;
-  tag.innerHTML = `<b>${a.name}</b><small>${TIER[a.tier].model} · ${a.role}</small><span class="badge"></span>`;
+  tag.innerHTML = `<b>${a.name}</b><small>${TIER[a.tier].model} · ${a.role}${a.app ? ` · click to open ${a.appName}` : ''}</small><span class="badge"></span>`;
   tag.addEventListener('click', () => focusAgent(a.id));
   const lo = new CSS2DObject(tag); lo.position.y = top + 4; g.add(lo);
   Object.assign(a, { group:g, top, beam, beacon, badge:tag.querySelector('.badge'), pos });
@@ -656,11 +673,23 @@ canvas.addEventListener('pointerup', e => {
 let tween = null;
 function flyTo(target, camPos){ tween = { t:0, fromT: controls.target.clone(), toT: target, fromC: camera.position.clone(), toC: camPos }; controls.autoRotate = false; }
 function focusAgent(id){
-  const a = byId[id];
+  const a = byId[id]; if (!a) return;
+  if (a.app) { enterApp(a); return; }
   const dir = a.pos.clone().normalize(), side = new THREE.Vector3(dir.z, 0, -dir.x);
   flyTo(a.pos.clone().setY(a.top*.55), a.pos.clone().addScaledVector(dir, 34).addScaledVector(side, 18).setY(a.top*.55 + 16));
   showAgent(a);
 }
+// towers with their own application (CAD Studio): swoop in, fade out, open it
+let entering = false;
+function enterApp(a){
+  if (entering) return; entering = true;
+  const dir = a.pos.clone().normalize();
+  flyTo(a.pos.clone().setY(a.top*.8), a.pos.clone().addScaledVector(dir, 12).setY(a.top*.8 + 4));
+  const w = document.getElementById('warp'); w.querySelector('b').textContent = `Entering ${a.appName || a.name}…`; w.classList.add('on');
+  setTimeout(() => { location.href = a.app; }, 1100);
+  setTimeout(() => { entering = false; w.classList.remove('on'); }, 4000);   // in case navigation was blocked
+}
+addEventListener('pageshow', e => { if (e.persisted) { entering = false; document.getElementById('warp').classList.remove('on'); } });   // back button from the app
 
 /* ------------------------------------------------------------------ animate */
 const clock = new THREE.Clock(); let frame = 0;
@@ -675,6 +704,7 @@ function animate(){
     a.beacon.scale.setScalar(1 + (busy ? Math.sin(t*6)*.4 + .3 : Math.sin(t*1.5)*.1));
     if (a.group.userData.spinner) a.group.userData.spinner.rotation.y += dt * (a.group.userData.spinSpeed || 1.2);
     if (a.group.userData.ember) a.group.userData.ember.scale.setScalar(1 + Math.sin(t*9)*.18 + (busy?.5:0));
+    if (a.group.userData.scan) a.group.userData.scan.position.y = 21.8 + ((t * (busy ? 4 : 1.6)) % 9);
   });
   for (const b of beacons) b.visible = ((t + b.userData.blink) % 2.4) < 1.2;
   for (let i=0;i<CARS;i++){ const c = cars[i]; c.a += c.s*dt; carPos[i*3] = Math.cos(c.a)*c.r; carPos[i*3+1] = c.y + Math.sin(t+c.wob)*.6; carPos[i*3+2] = Math.sin(c.a)*c.r; }
@@ -747,7 +777,7 @@ const REPEAT_WORDS = { daily:'every day', weekdays:'every weekday', weekly:'ever
 
 function guessAgent(text){
   const t = text.toLowerCase(); const hits = RULES.filter(([,re]) => re.test(t)).map(([a]) => a);
-  if (hits[0] === 'quant' || hits.length === 1) return { id:hits[0], how:'free keyword match' };
+  if (hits[0] === 'quant' || hits[0] === 'cad' || hits.length === 1) return { id:hits[0], how:'free keyword match' };
   if (hits.length && hits.every(h => h === 'coder')) return { id:'coder', how:'free keyword match' };
   return { id:null, how:'a tiny Haiku call will pick' };
 }
@@ -882,6 +912,7 @@ async function openJob(n){
         else acts.push(`<a class="go" href="${esc(up.pr_url)}" target="_blank" rel="noopener">🏗 Review &amp; approve ↗</a>`);
       } else if (up?.compare_url) acts.push(`<a class="go" href="${esc(up.compare_url)}" target="_blank" rel="noopener">🏗 Approve upgrade ↗</a>`);
     } else {
+      if (meta?.has_model) acts.push(`<a class="go" href="cad/?job=${n}">🧊 Open in CAD Studio</a>`);
       if (meta?.has_page) acts.push(`<a class="go" href="${pagesBase()}outputs/job-${n}/" target="_blank" rel="noopener">▶ Open it</a>`);
       acts.push(`<button class="ghost" id="remixBtn">✏️ Change this</button>`);
     }
@@ -1046,6 +1077,7 @@ installBtn.onclick = async () => {
 };
 addEventListener('appinstalled', () => { installBtn.style.display = 'none'; });
 if (connected()) refreshAll(); else { startDemo(); refreshMarket(); refreshBets(); }
+if (location.hash === '#settings') { openSettings(); history.replaceState(null, '', location.pathname + location.search); }
 (function poll(){ setTimeout(() => { if (connected() && !document.hidden) refreshJobs(); poll(); }, jobs.some(j => j.status !== 'done' && j.status !== 'failed') ? 30000 : 120000); })();
 setInterval(() => { if (connected() && !document.hidden) { refreshMarket(); refreshBets(); } }, 15 * 60e3);
 </script>

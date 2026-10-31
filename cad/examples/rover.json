@@ -1,0 +1,50 @@
+{
+  "format": "agent-city-cad/1",
+  "name": "Explorer rover",
+  "description": "A small four-wheeled rover with steerable front wheels, a camera mast that pans, and a cargo bay with an opening lid.",
+  "units": "mm",
+  "how_it_works": [
+    "All four wheels turn together to roll the rover forward; the front wheels pivot on vertical kingpins to steer.",
+    "Both front wheels are linked, so they always point the same way (like a car's steering rack).",
+    "Suspension blocks connect the axles to the chassis and keep the wheels on the ground.",
+    "The camera head on the mast pans left and right to look around without moving the rover.",
+    "The cargo lid is hinged at the back edge and swings up to load samples."
+  ],
+  "assumptions": ["Electric hub motors are inside the wheel hubs, so no drive shafts are modelled."],
+  "parts": [
+    {"id": "chassis", "name": "Chassis", "shape": "box", "size": {"w": 300, "h": 40, "d": 180}, "pos": [0, 80, 0], "color": "#d9dde3", "material": "paint", "parent": null, "role": "Main frame everything bolts to"},
+    {"id": "rear_axle", "name": "Rear axle", "shape": "cylinder", "size": {"r": 6, "h": 250}, "pos": [-100, 45, 0], "rot": [90, 0, 0], "color": "#7b8494", "material": "metal", "parent": "chassis", "role": "Carries the rear wheels"},
+    {"id": "rear_susp_l", "name": "Rear suspension (left)", "shape": "box", "size": {"w": 30, "h": 20, "d": 20}, "pos": [-100, 55, 70], "color": "#3a3f4b", "material": "rubber", "parent": "chassis", "role": "Rubber block that cushions bumps"},
+    {"id": "rear_susp_r", "name": "Rear suspension (right)", "shape": "box", "size": {"w": 30, "h": 20, "d": 20}, "pos": [-100, 55, -70], "color": "#3a3f4b", "material": "rubber", "parent": "chassis", "role": "Rubber block that cushions bumps"},
+    {"id": "front_beam", "name": "Front axle beam", "shape": "box", "size": {"w": 16, "h": 12, "d": 170}, "pos": [100, 50, 0], "color": "#7b8494", "material": "metal", "parent": "chassis", "role": "Holds the two steering kingpins"},
+    {"id": "front_susp_l", "name": "Front suspension (left)", "shape": "box", "size": {"w": 24, "h": 8, "d": 20}, "pos": [100, 58, 60], "color": "#3a3f4b", "material": "rubber", "parent": "chassis", "role": "Cushions the front axle"},
+    {"id": "front_susp_r", "name": "Front suspension (right)", "shape": "box", "size": {"w": 24, "h": 8, "d": 20}, "pos": [100, 58, -60], "color": "#3a3f4b", "material": "rubber", "parent": "chassis", "role": "Cushions the front axle"},
+    {"id": "knuckle_l", "name": "Left steering knuckle", "shape": "cylinder", "size": {"r": 8, "h": 30}, "pos": [100, 50, 92], "color": "#c4cad4", "material": "metal", "parent": "front_beam", "role": "Kingpin the left front wheel steers around"},
+    {"id": "knuckle_r", "name": "Right steering knuckle", "shape": "cylinder", "size": {"r": 8, "h": 30}, "pos": [100, 50, -92], "color": "#c4cad4", "material": "metal", "parent": "front_beam", "role": "Kingpin the right front wheel steers around"},
+    {"id": "wheel_fl", "name": "Front left wheel", "shape": "cylinder", "size": {"r": 45, "h": 30}, "pos": [100, 45, 115], "rot": [90, 0, 0], "color": "#22252b", "material": "rubber", "parent": "knuckle_l", "role": "Grips the ground and steers"},
+    {"id": "wheel_fr", "name": "Front right wheel", "shape": "cylinder", "size": {"r": 45, "h": 30}, "pos": [100, 45, -115], "rot": [90, 0, 0], "color": "#22252b", "material": "rubber", "parent": "knuckle_r", "role": "Grips the ground and steers"},
+    {"id": "wheel_rl", "name": "Rear left wheel", "shape": "cylinder", "size": {"r": 45, "h": 30}, "pos": [-100, 45, 115], "rot": [90, 0, 0], "color": "#22252b", "material": "rubber", "parent": "rear_axle", "role": "Drives the rover"},
+    {"id": "wheel_rr", "name": "Rear right wheel", "shape": "cylinder", "size": {"r": 45, "h": 30}, "pos": [-100, 45, -115], "rot": [90, 0, 0], "color": "#22252b", "material": "rubber", "parent": "rear_axle", "role": "Drives the rover"},
+    {"id": "hub_fl", "name": "Front left hub", "shape": "cylinder", "size": {"r": 20, "h": 32, "sides": 6}, "pos": [100, 45, 115], "rot": [90, 0, 0], "color": "#e8a33d", "material": "metal", "parent": "wheel_fl", "role": "Hub motor that turns the wheel"},
+    {"id": "hub_fr", "name": "Front right hub", "shape": "cylinder", "size": {"r": 20, "h": 32, "sides": 6}, "pos": [100, 45, -115], "rot": [90, 0, 0], "color": "#e8a33d", "material": "metal", "parent": "wheel_fr", "role": "Hub motor that turns the wheel"},
+    {"id": "hub_rl", "name": "Rear left hub", "shape": "cylinder", "size": {"r": 20, "h": 32, "sides": 6}, "pos": [-100, 45, 115], "rot": [90, 0, 0], "color": "#e8a33d", "material": "metal", "parent": "wheel_rl", "role": "Hub motor that turns the wheel"},
+    {"id": "hub_rr", "name": "Rear right hub", "shape": "cylinder", "size": {"r": 20, "h": 32, "sides": 6}, "pos": [-100, 45, -115], "rot": [90, 0, 0], "color": "#e8a33d", "material": "metal", "parent": "wheel_rr", "role": "Hub motor that turns the wheel"},
+    {"id": "cargo_bay", "name": "Cargo bay", "shape": "box", "size": {"w": 140, "h": 50, "d": 150}, "pos": [-60, 125, 0], "color": "#4c78a8", "material": "paint", "parent": "chassis", "role": "Storage box for collected samples"},
+    {"id": "lid", "name": "Cargo lid", "shape": "box", "size": {"w": 140, "h": 8, "d": 150}, "pos": [-60, 154, 0], "color": "#5d8fc4", "material": "paint", "parent": "cargo_bay", "role": "Keeps dust out of the cargo bay"},
+    {"id": "mast", "name": "Camera mast", "shape": "cylinder", "size": {"r": 6, "h": 120}, "pos": [90, 160, 0], "color": "#c4cad4", "material": "metal", "parent": "chassis", "role": "Raises the camera for a better view"},
+    {"id": "camera_head", "name": "Camera head", "shape": "box", "size": {"w": 40, "h": 30, "d": 60}, "pos": [90, 235, 0], "color": "#2e3440", "material": "plastic", "parent": "mast", "role": "Holds the camera"},
+    {"id": "lens", "name": "Camera lens", "shape": "cylinder", "size": {"r": 10, "h": 12}, "pos": [116, 235, 0], "rot": [0, 0, 90], "color": "#5fd1ff", "material": "glass", "parent": "camera_head", "role": "Looks where the head points"},
+    {"id": "light_l", "name": "Left headlight", "shape": "cylinder", "size": {"r": 12, "h": 6}, "pos": [152, 80, 55], "rot": [0, 0, 90], "color": "#fff6d5", "material": "emissive", "parent": "chassis", "role": "Lights the way ahead"},
+    {"id": "light_r", "name": "Right headlight", "shape": "cylinder", "size": {"r": 12, "h": 6}, "pos": [152, 80, -55], "rot": [0, 0, 90], "color": "#fff6d5", "material": "emissive", "parent": "chassis", "role": "Lights the way ahead"}
+  ],
+  "joints": [
+    {"id": "drive", "name": "Rear left wheel (drive)", "type": "continuous", "part": "wheel_rl", "pivot": [-100, 45, 115], "axis": [0, 0, 1], "rpm": -30},
+    {"id": "drive_rr", "name": "Rear right wheel", "type": "continuous", "part": "wheel_rr", "pivot": [-100, 45, -115], "axis": [0, 0, 1], "follows": {"joint": "drive", "ratio": 1}},
+    {"id": "spin_fl", "name": "Front left wheel spin", "type": "continuous", "part": "wheel_fl", "pivot": [100, 45, 115], "axis": [0, 0, 1], "follows": {"joint": "drive", "ratio": 1}},
+    {"id": "spin_fr", "name": "Front right wheel spin", "type": "continuous", "part": "wheel_fr", "pivot": [100, 45, -115], "axis": [0, 0, 1], "follows": {"joint": "drive", "ratio": 1}},
+    {"id": "steer", "name": "Steering", "type": "revolute", "part": "knuckle_l", "pivot": [100, 50, 92], "axis": [0, 1, 0], "min": -30, "max": 30, "default": 0, "period": 6},
+    {"id": "steer_r", "name": "Steering (right)", "type": "revolute", "part": "knuckle_r", "pivot": [100, 50, -92], "axis": [0, 1, 0], "min": -30, "max": 30, "follows": {"joint": "steer", "ratio": 1}},
+    {"id": "pan", "name": "Camera pan", "type": "revolute", "part": "camera_head", "pivot": [90, 235, 0], "axis": [0, 1, 0], "min": -90, "max": 90, "default": 0, "period": 8},
+    {"id": "lid_hinge", "name": "Lid hinge", "type": "revolute", "part": "lid", "pivot": [-130, 150, 0], "axis": [0, 0, 1], "min": 0, "max": 110, "default": 0, "period": 5}
+  ]
+}

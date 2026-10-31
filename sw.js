@@ -1,7 +1,8 @@
 // Agent City service worker: makes the city installable and lets it open offline.
 // The city page and its libraries are cached; live GitHub data is never cached.
-const CACHE = 'agent-city-v1';
-const SHELL = ['./', './index.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png', './favicon.png'];
+const CACHE = 'agent-city-v2';
+const SHELL = ['./', './index.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png', './favicon.png',
+  './cad/', './cad/examples/lamp.json', './cad/examples/gearbox.json', './cad/examples/rover.json'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
@@ -23,6 +24,6 @@ self.addEventListener('fetch', e => {
   if (url.origin === location.origin) { // the city itself: network first so updates show up, cache when offline
     e.respondWith(fetch(e.request).then(res => {
       const copy = res.clone(); caches.open(CACHE).then(c => c.put(e.request, copy)); return res;
-    }).catch(() => caches.match(e.request).then(hit => hit || caches.match('./index.html'))));
+    }).catch(() => caches.match(e.request, { ignoreSearch: true }).then(hit => hit || caches.match('./index.html'))));
   }
 });

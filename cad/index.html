@@ -1,0 +1,722 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CAD Studio · Agent City</title>
+<meta name="description" content="Describe anything and Agent City's CAD agent designs a working 3D model of it: real sizes, moving joints, STL export.">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#03050b">
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+<style>
+:root{
+  --bg:#03050b; --panel:rgba(10,14,28,.82); --line:rgba(120,160,255,.16);
+  --text:#e8eeff; --muted:#8b97b8; --light:#4fd1ff; --standard:#b98cff; --heavy:#ffb547;
+  --good:#3ddc84; --bad:#ff5c5c; --warn:#f7c948; --accent:#4fd1ff; --holo:#7dfcff;
+  --r:14px; --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font-family:'Space Grotesk',system-ui,sans-serif;overflow:hidden}
+#view{position:fixed;inset:0;display:block;touch-action:none}
+button,input,select,textarea{font:inherit;color:inherit}
+.glass{background:var(--panel);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);border:1px solid var(--line);border-radius:var(--r)}
+h2{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:16px 0 8px;font-weight:500}
+h2:first-child{margin-top:0}
+a{color:var(--accent)}
+
+#top{position:fixed;left:16px;top:16px;display:flex;gap:12px;align-items:center;padding:8px 12px;z-index:5}
+#top h1{margin:0;font-size:15px;letter-spacing:.3em;font-weight:700;white-space:nowrap}
+#top h1 span{color:var(--holo);text-shadow:0 0 12px var(--holo)}
+#conn{font-family:var(--mono);font-size:11px;color:var(--muted);display:flex;align-items:center;gap:6px;white-space:nowrap}
+#conn i{width:8px;height:8px;border-radius:50%;background:var(--warn);box-shadow:0 0 8px currentColor;display:inline-block}
+#conn.live i{background:var(--good)}
+.iconbtn{background:none;border:1px solid var(--line);border-radius:10px;padding:6px 10px;cursor:pointer;color:var(--muted);text-decoration:none;font-size:13px;white-space:nowrap}
+.iconbtn:hover{color:var(--text);border-color:var(--accent)}
+#mt{display:none;gap:4px}
+
+.side{position:fixed;top:72px;bottom:16px;width:340px;display:flex;flex-direction:column;z-index:5;overflow:hidden}
+.side .scroll{overflow:auto;padding:16px;flex:1}
+#left{left:16px}
+#right{right:16px;width:330px}
+#right header{padding:14px 16px 10px;border-bottom:1px solid var(--line)}
+#right header b{display:block;font-size:16px;line-height:1.25}
+#right header small{display:block;font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:4px}
+
+textarea{width:100%;min-height:96px;resize:vertical;background:rgba(0,0,0,.35);border:1px solid var(--line);border-radius:10px;padding:12px;outline:none;line-height:1.45}
+textarea:focus,select:focus{border-color:var(--accent)}
+select{background:rgba(0,0,0,.35);border:1px solid var(--line);border-radius:8px;padding:5px 8px;outline:none}
+.go{color:#fff;text-decoration:none;display:inline-block;text-align:center;background:linear-gradient(135deg,#19c6d6,#7b5cff);border:0;border-radius:10px;padding:10px 16px;font-weight:700;cursor:pointer;white-space:nowrap;box-shadow:0 0 24px rgba(125,252,255,.3)}
+.go:disabled{opacity:.5;cursor:default}
+.ghost{background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:10px;padding:7px 11px;cursor:pointer;color:var(--text);font-size:13px;text-decoration:none;display:inline-block}
+.ghost:hover{border-color:var(--accent)}
+.ghost.on{border-color:var(--holo);background:rgba(125,252,255,.12)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.chip{font-size:12px;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:99px;padding:5px 10px;cursor:pointer;color:var(--muted);text-align:left}
+.chip:hover{color:var(--text);border-color:var(--accent)}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.hint{font-size:12px;color:var(--muted);line-height:1.5;margin:10px 0 0}
+.remix{display:none;justify-content:space-between;align-items:center;gap:8px;font-size:13px;background:rgba(247,201,72,.1);border:1px solid rgba(247,201,72,.35);color:var(--warn);border-radius:10px;padding:6px 10px;margin-bottom:8px}
+.remix button{background:none;border:0;color:inherit;cursor:pointer;font-size:14px}
+
+.item{border:1px solid var(--line);border-radius:12px;padding:9px 12px;margin-bottom:7px;cursor:pointer;background:rgba(255,255,255,.02)}
+.item:hover{border-color:var(--accent)}
+.item.cur{border-color:var(--holo);background:rgba(125,252,255,.07)}
+.item .t{font-weight:500;font-size:14px;line-height:1.3}
+.item .m{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:3px;display:flex;gap:8px;flex-wrap:wrap}
+.pill{font-family:var(--mono);font-size:10px;padding:1px 7px;border-radius:99px;border:1px solid currentColor;text-transform:uppercase;letter-spacing:.06em}
+.s-queued{color:var(--muted)} .s-working{color:var(--warn)} .s-done{color:var(--good)} .s-failed{color:var(--bad)}
+.empty{color:var(--muted);font-size:13px;line-height:1.5;padding:4px 2px 8px}
+
+.desc{font-size:14px;line-height:1.5;margin:0 0 6px}
+ol.how{margin:0;padding-left:20px;font-size:13px;line-height:1.5;color:#cdd6f0}
+ol.how li{margin:3px 0}
+.joint{margin:8px 0 10px}
+.joint label{display:flex;justify-content:space-between;font-size:13px;gap:8px}
+.joint label span{font-family:var(--mono);font-size:11px;color:var(--muted);white-space:nowrap}
+.joint small{display:block;font-size:11px;color:var(--muted)}
+input[type=range]{width:100%;accent-color:#7dfcff}
+input[type=range]:disabled{opacity:.45}
+.check{font-size:12.5px;line-height:1.45;margin:4px 0;display:flex;gap:6px}
+.check.ok{color:var(--good)} .check.warn{color:var(--warn)} .check.bad{color:var(--bad)}
+.check span{color:var(--text)}
+.parts{max-height:220px;overflow:auto;border:1px solid var(--line);border-radius:10px}
+.part{display:flex;align-items:center;gap:8px;padding:6px 10px;font-size:13px;cursor:pointer;border-bottom:1px solid rgba(255,255,255,.04)}
+.part:hover,.part.cur{background:rgba(125,252,255,.08)}
+.part i{width:12px;height:12px;border-radius:3px;flex:none;border:1px solid rgba(255,255,255,.25)}
+.part em{margin-left:auto;font-style:normal;font-family:var(--mono);font-size:10px;color:var(--muted)}
+#sel{display:none;border:1px solid rgba(125,252,255,.4);background:rgba(125,252,255,.06);border-radius:12px;padding:10px 12px;margin-top:12px;font-size:13px;line-height:1.45}
+#sel b{color:var(--holo)} #sel small{display:block;font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:4px}
+details summary{cursor:pointer;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:16px 0 8px}
+details ul{margin:0;padding-left:18px;font-size:12.5px;color:var(--muted);line-height:1.5}
+
+#tip{position:fixed;pointer-events:none;padding:5px 9px;font-size:12px;z-index:7;display:none;white-space:nowrap}
+#status{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);padding:14px 20px;z-index:4;display:none;font-size:14px;text-align:center;max-width:min(420px,80vw);line-height:1.5}
+#status.on{display:block}
+#toast{position:fixed;left:50%;top:18px;transform:translateX(-50%);padding:10px 16px;z-index:12;display:none;font-size:14px;max-width:90vw}
+#toast.on{display:block}
+#legend{position:fixed;left:372px;bottom:16px;font-family:var(--mono);font-size:11px;color:var(--muted);z-index:3;padding:6px 10px}
+
+@media (max-width: 900px){
+  #mt{display:flex}
+  .side{left:8px!important;right:8px!important;width:auto!important;top:auto;bottom:8px;height:46vh}
+  body:not(.show-model) #right{display:none}
+  body.show-model #left{display:none}
+  #top{left:8px;right:8px;top:8px;flex-wrap:wrap}
+  #legend{display:none}
+}
+</style>
+</head>
+<body>
+<canvas id="view"></canvas>
+
+<div id="top" class="glass">
+  <a class="iconbtn" href="../" title="Back to Agent City">← City</a>
+  <h1>CAD<span>STUDIO</span></h1>
+  <div id="conn"><i></i><span>examples only</span></div>
+  <div id="mt"><button class="iconbtn" data-p="make">🛠 Make</button><button class="iconbtn" data-p="model">🧊 Model</button></div>
+</div>
+
+<aside id="left" class="side glass"><div class="scroll">
+  <h2>Make a 3D model of anything</h2>
+  <div class="remix" id="remixBar"><span>✏️ Changing <b id="remixName"></b>: say what to change</span><button id="remixX" title="Start a new model instead">✕</button></div>
+  <textarea id="req" placeholder="Describe anything: a working clock, a drone, a treehouse, a phone stand you can 3D-print…"></textarea>
+  <div class="chips" id="chips"></div>
+  <div class="row"><button class="go" id="send" style="flex:1">Design it ▶</button></div>
+  <p class="hint">The <b style="color:var(--standard)">CAD</b> agent (Sonnet) designs every part at real size in millimetres, adds the hinges, wheels, gears and sliders that make it work, explains how it works, and checks that nothing floats. It usually takes 3–10 minutes on GitHub’s servers; this page updates by itself.</p>
+  <h2>Your models</h2>
+  <div id="jobs"></div>
+  <h2>Examples</h2>
+  <div id="examples"></div>
+</div></aside>
+
+<aside id="right" class="side glass">
+  <header><b id="mName">Loading…</b><small id="mSize"></small></header>
+  <div class="scroll" id="mBody"></div>
+</aside>
+
+<div id="legend" class="glass">drag: orbit · right-drag: pan · scroll: zoom · click a part to inspect</div>
+<div id="tip" class="glass"></div>
+<div id="status" class="glass"></div>
+<div id="toast" class="glass"></div>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { STLExporter } from 'three/addons/exporters/STLExporter.js';
+import { GLTFExporter } from 'three/addons/exporters/GLTFExporter.js';
+
+/* ------------------------------------------------------------------ config (shared with the city page) */
+const store = {
+  get(k){ try { return localStorage.getItem('agentcity.'+k) || ''; } catch { return ''; } },
+};
+function detectRepo(){
+  const m = location.hostname.match(/^([^.]+)\.github\.io$/);
+  if (!m) return null;
+  const seg = location.pathname.split('/').filter(Boolean)[0];
+  // user/org sites (owner.github.io) serve this page at /cad/, so the first segment isn't a repo name
+  return { owner:m[1], repo: seg && seg !== 'cad' ? seg : `${m[1]}.github.io` };
+}
+const d0 = detectRepo();
+const cfg = { owner: store.get('owner') || d0?.owner || '', repo: store.get('repo') || d0?.repo || '', token: store.get('token') };
+const connected = () => !!(cfg.owner && cfg.repo);
+
+const EXAMPLES = [
+  { id:'lamp', name:'Articulated desk lamp', note:'swivel · 3 hinges · push switch' },
+  { id:'gearbox', name:'Hand-crank gear train', note:'3 meshing gears · 2:3 ratio' },
+  { id:'rover', name:'Explorer rover', note:'4 wheels · steering · camera · lid' },
+];
+const IDEAS = [
+  'A working mechanical clock with gears and hands that turn',
+  'A drone with four spinning propellers and a camera gimbal',
+  'A treasure chest whose lid opens on hinges',
+  'A 3D-printable phone stand with an adjustable angle',
+  'A wind turbine whose blades spin and whose head turns into the wind',
+  'A robot arm with a gripper that opens and closes',
+];
+
+/* ------------------------------------------------------------------ helpers */
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function toast(msg, ms=4000){ const t = $('#toast'); t.textContent = msg; t.classList.add('on'); clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove('on'), ms); }
+function status(msg){ const s = $('#status'); s.innerHTML = msg || ''; s.classList.toggle('on', !!msg); }
+const isNum = v => typeof v === 'number' && Number.isFinite(v);
+const pos = (v, d) => isNum(v) && v > 0 ? v : d;
+const vec3 = (v, d=[0,0,0]) => Array.isArray(v) && v.length === 3 && v.every(isNum) ? v : d;
+const COLOR_RE = /^#([0-9a-f]{3}|[0-9a-f]{6})$/i;
+const safeColor = (c, d='#9aa7bd') => typeof c === 'string' && COLOR_RE.test(c) ? c : d;
+const fmt = v => (Math.round(v * 10) / 10).toLocaleString();
+function setPanel(p){ document.body.classList.toggle('show-model', p === 'model'); }
+document.querySelectorAll('#mt button').forEach(b => b.onclick = () => setPanel(b.dataset.p));
+
+async function gh(path, opts={}, raw=false){
+  const headers = { 'Accept': raw ? 'application/vnd.github.raw+json' : 'application/vnd.github+json' };
+  if (cfg.token) headers.Authorization = `Bearer ${cfg.token}`;
+  if (opts.body) headers['Content-Type'] = 'application/json';
+  const r = await fetch('https://api.github.com' + path, { ...opts, headers, cache:'no-store' });
+  if (!r.ok) { const e = new Error(r.status === 404 ? 'not found' : r.status === 403 ? 'GitHub rate limit hit, add a token in the city’s ⚙ Settings' : `GitHub ${r.status}`); e.status = r.status; throw e; }
+  return raw ? r.text() : r.json();
+}
+
+/* ------------------------------------------------------------------ renderer + scene */
+const canvas = $('#view');
+let renderer;
+try { renderer = new THREE.WebGLRenderer({ canvas, antialias:true, preserveDrawingBuffer:false }); }
+catch { status('Your browser couldn’t start 3D graphics (WebGL). Try another browser or turn on hardware acceleration.'); throw new Error('no webgl'); }
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.setSize(innerWidth, innerHeight);
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.0;
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x070b16);
+const pmrem = new THREE.PMREMGenerator(renderer);
+scene.environment = pmrem.fromScene(new RoomEnvironment(renderer), 0.04).texture;
+
+const camera = new THREE.PerspectiveCamera(42, innerWidth/innerHeight, 1, 100000);
+camera.position.set(400, 300, 500);
+const controls = new OrbitControls(camera, canvas);
+controls.enableDamping = true; controls.dampingFactor = 0.08;
+
+scene.add(new THREE.HemisphereLight(0xbcd2ff, 0x1a1f2e, 0.7));
+const sun = new THREE.DirectionalLight(0xffffff, 1.6);
+sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048); sun.shadow.bias = -0.0004;
+scene.add(sun, sun.target);
+const fill = new THREE.DirectionalLight(0x7dfcff, 0.35); scene.add(fill);
+
+const floor = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.ShadowMaterial({ opacity:.35 }));
+floor.rotation.x = -Math.PI/2; floor.receiveShadow = true; scene.add(floor);
+let grid = null;
+const selBox = new THREE.BoxHelper(undefined, 0x7dfcff); selBox.visible = false; selBox.material.toneMapped = false; scene.add(selBox);
+
+/* ------------------------------------------------------------------ geometry for each shape (see cad/SCHEMA.md) */
+function gearShape(r, teeth, bore){
+  const N = Math.max(6, Math.min(400, Math.round(teeth))), m = 2*r/N, ra = r + m, rf = Math.max(r - 1.25*m, r*.3), P = Math.PI*2/N;
+  const s = new THREE.Shape(), pt = (R, a) => [R*Math.cos(a), R*Math.sin(a)];
+  for (let i=0;i<N;i++){
+    const c = i*P;
+    const seq = [[rf, c - P*.5], [rf, c - P*.3], [ra, c - P*.13], [ra, c + P*.13], [rf, c + P*.3]];
+    seq.forEach(([R, a], k) => { const [x, y] = pt(R, a); (i === 0 && k === 0) ? s.moveTo(x, y) : s.lineTo(x, y); });
+  }
+  s.closePath();
+  if (bore > 0) { const h = new THREE.Path(); h.absarc(0, 0, Math.min(bore, rf*.8), 0, Math.PI*2, true); s.holes.push(h); }
+  return s;
+}
+function alongY(shape, h, segs=48){   // extrude a 2D outline (XY) into a solid along Y, centred
+  const g = new THREE.ExtrudeGeometry(shape, { depth:h, bevelEnabled:false, curveSegments:segs });
+  g.rotateX(-Math.PI/2); g.translate(0, -h/2, 0); return g;
+}
+function geometryFor(p, warn){
+  const s = (p.size && typeof p.size === 'object') ? p.size : {};
+  switch (p.shape) {
+    case 'box': return new THREE.BoxGeometry(pos(s.w,10), pos(s.h,10), pos(s.d,10));
+    case 'cylinder': {
+      const r = pos(s.r, 10), rt = isNum(s.rTop) && s.rTop >= 0 ? s.rTop : r, rb = isNum(s.rBottom) && s.rBottom >= 0 ? s.rBottom : r;
+      const sides = Math.max(3, Math.min(128, Math.round(pos(s.sides, 48))));
+      return new THREE.CylinderGeometry(rt || (rb ? 0 : r), rb || (rt ? 0 : r), pos(s.h,10), sides);
+    }
+    case 'cone': return new THREE.ConeGeometry(pos(s.r,10), pos(s.h,10), 48);
+    case 'sphere': return s.half ? new THREE.SphereGeometry(pos(s.r,10), 48, 16, 0, Math.PI*2, 0, Math.PI/2) : new THREE.SphereGeometry(pos(s.r,10), 48, 32);
+    case 'capsule': { const r = pos(s.r,5); return new THREE.CapsuleGeometry(r, Math.max(0, pos(s.h, 4*r) - 2*r), 12, 32); }
+    case 'torus': { const r = pos(s.r,20), t = Math.min(pos(s.tube,4), r*.95); return new THREE.TorusGeometry(r, t, 24, 96).rotateX(Math.PI/2); }
+    case 'tube': {
+      const r = pos(s.r,10), ri = Math.min(pos(s.ri, r*.7), r*.98);
+      const sh = new THREE.Shape(); sh.absarc(0, 0, r, 0, Math.PI*2, false);
+      const hole = new THREE.Path(); hole.absarc(0, 0, ri, 0, Math.PI*2, true); sh.holes.push(hole);
+      return alongY(sh, pos(s.h,10), 48);
+    }
+    case 'gear': return alongY(gearShape(pos(s.r,20), pos(s.teeth,12), isNum(s.bore) ? s.bore : 0), pos(s.h,8), 24);
+    case 'extrude': {
+      const pts = Array.isArray(s.points) ? s.points.filter(q => Array.isArray(q) && q.length === 2 && q.every(isNum)) : [];
+      if (pts.length < 3) { warn(`“${p.name || p.id}”: extrude needs at least 3 points; drew a box instead`); return new THREE.BoxGeometry(10,10,10); }
+      const g = new THREE.ExtrudeGeometry(new THREE.Shape(pts.map(([x,y]) => new THREE.Vector2(x, y))), { depth:pos(s.depth,10), bevelEnabled:false });
+      g.translate(0, 0, -pos(s.depth,10)/2); return g;
+    }
+    case 'lathe': {
+      const pts = Array.isArray(s.points) ? s.points.filter(q => Array.isArray(q) && q.length === 2 && q.every(isNum)) : [];
+      if (pts.length < 2) { warn(`“${p.name || p.id}”: lathe needs at least 2 points; drew a cylinder instead`); return new THREE.CylinderGeometry(10,10,10,32); }
+      return new THREE.LatheGeometry(pts.map(([r,y]) => new THREE.Vector2(Math.max(0, r), y)), 64);
+    }
+    default:
+      warn(`“${p.name || p.id}”: unknown shape “${p.shape}”; drew a box instead`);
+      return new THREE.BoxGeometry(pos(s.w,10), pos(s.h,10), pos(s.d,10));
+  }
+}
+const MATS = {
+  metal:{ metalness:.9, roughness:.3 }, plastic:{ metalness:0, roughness:.42 }, wood:{ metalness:0, roughness:.78 },
+  rubber:{ metalness:0, roughness:.95 }, glass:{ metalness:0, roughness:.05, transparent:true, opacity:.42 },
+  fabric:{ metalness:0, roughness:1 }, stone:{ metalness:0, roughness:.9 }, paint:{ metalness:.25, roughness:.38 }, emissive:{ metalness:0, roughness:.5 },
+};
+const OPEN = new Set(['lathe']);  // open shells: draw both sides
+function materialFor(p){
+  const color = new THREE.Color(safeColor(p.color)), kind = MATS[p.material] ? p.material : 'plastic';
+  const m = new THREE.MeshStandardMaterial({ color, ...MATS[kind], side: OPEN.has(p.shape) || (p.shape === 'sphere' && p.size?.half) ? THREE.DoubleSide : THREE.FrontSide });
+  if (kind === 'emissive') { m.emissive = color.clone(); m.emissiveIntensity = 1.4; }
+  m.userData.baseOpacity = m.opacity; m.userData.baseTransparent = m.transparent;
+  return m;
+}
+
+/* ------------------------------------------------------------------ model: parts, hierarchy, joints */
+let model = null;     // { spec, root, parts:{id:{p,node,mesh,...}}, joints:[...], source }
+const view = { playing:false, speed:1, explode:0, edges:true, xray:false, selected:null, t:0 };
+
+function disposeModel(){
+  if (!model) return;
+  scene.remove(model.root);
+  model.root.traverse(o => { o.geometry?.dispose(); if (o.material) [].concat(o.material).forEach(m => m.dispose()); });
+  model = null; selBox.visible = false; view.selected = null;
+}
+
+function buildModel(spec, source){
+  disposeModel();
+  const warnings = [];
+  const warn = w => warnings.push(w);
+  if (!spec || typeof spec !== 'object' || !Array.isArray(spec.parts) || !spec.parts.length) throw new Error('This file has no parts to draw.');
+  const root = new THREE.Group(); root.name = spec.name || 'model';
+  const parts = {}, order = [];
+  spec.parts.slice(0, 600).forEach((p, i) => {
+    if (!p || typeof p !== 'object') return;
+    let id = typeof p.id === 'string' && p.id ? p.id : `part_${i}`;
+    if (parts[id]) { warn(`two parts are called “${id}”; renamed the second one`); id = `${id}_${i}`; }
+    const node = new THREE.Group(); node.matrixAutoUpdate = false; node.name = id;
+    const mesh = new THREE.Mesh(geometryFor(p, warn), materialFor(p));
+    mesh.name = String(p.name || id);
+    mesh.position.fromArray(vec3(p.pos));
+    const r = vec3(p.rot); mesh.rotation.set(THREE.MathUtils.degToRad(r[0]), THREE.MathUtils.degToRad(r[1]), THREE.MathUtils.degToRad(r[2]), 'XYZ');
+    mesh.castShadow = mesh.receiveShadow = true;
+    const edges = new THREE.LineSegments(new THREE.EdgesGeometry(mesh.geometry, 28), new THREE.LineBasicMaterial({ color:0x0b1020, transparent:true, opacity:.55 }));
+    edges.userData.isEdge = true; mesh.add(edges);
+    mesh.userData.partId = id; node.add(mesh);
+    parts[id] = { id, p, node, mesh, basePos: mesh.position.clone(), joint:null };
+    order.push(id);
+  });
+  if (!order.length) throw new Error('This file has no usable parts.');
+  // hierarchy: a part moves with its parent. Bad or looping parents fall back to the root.
+  for (const id of order) {
+    const par = parts[id].p.parent;
+    let ok = par != null && parts[par] && par !== id;
+    if (par != null && !parts[par]) warn(`“${id}” is attached to a missing part “${par}”`);
+    if (ok) { const seen = new Set([id]); let cur = par; while (cur != null && parts[cur]) { if (seen.has(cur)) { ok = false; warn(`“${id}” has a parent loop; attached it to the ground`); break; } seen.add(cur); cur = parts[cur].p.parent; } }
+    (ok ? parts[par].node : root).add(parts[id].node);
+  }
+  // joints
+  const joints = [], jById = {};
+  (Array.isArray(spec.joints) ? spec.joints : []).forEach((j, i) => {
+    if (!j || typeof j !== 'object') return;
+    const id = typeof j.id === 'string' && j.id ? j.id : `joint_${i}`;
+    const name = j.name || id;
+    if (!['revolute','continuous','prismatic'].includes(j.type)) { warn(`joint “${name}”: unknown type “${j.type}”, ignored`); return; }
+    const part = parts[j.part];
+    if (!part) { warn(`joint “${name}” moves a missing part “${j.part}”, ignored`); return; }
+    if (part.joint) { warn(`“${j.part}” has two joints; only “${part.joint.name}” is used`); return; }
+    if (jById[id]) { warn(`two joints are called “${id}”; the second is ignored`); return; }
+    const axis = new THREE.Vector3().fromArray(vec3(j.axis, [0,1,0]));
+    if (axis.lengthSq() < 1e-12) { warn(`joint “${name}” has a zero axis, ignored`); return; }
+    axis.normalize();
+    const prism = j.type === 'prismatic';
+    let min = isNum(j.min) ? j.min : prism ? 0 : -90, max = isNum(j.max) ? j.max : prism ? 50 : 90;
+    if (min >= max) { warn(`joint “${name}”: min must be below max`); [min, max] = prism ? [0, 50] : [-90, 90]; }
+    const def = isNum(j.default) ? (j.type === 'continuous' ? j.default : THREE.MathUtils.clamp(j.default, min, max)) : (j.type === 'continuous' ? 0 : THREE.MathUtils.clamp(0, min, max));
+    const jt = { id, name, type:j.type, part, axis, pivot: new THREE.Vector3().fromArray(vec3(j.pivot, vec3(part.p.pos))),
+      min, max, def, value:def, rpm: isNum(j.rpm) ? j.rpm : 30, period: pos(j.period, 4), phase:0,
+      follows: j.follows && typeof j.follows === 'object' ? { joint:j.follows.joint, ratio: isNum(j.follows.ratio) ? j.follows.ratio : 1, offset: isNum(j.follows.offset) ? j.follows.offset : 0 } : null };
+    part.joint = jt; joints.push(jt); jById[id] = jt;
+  });
+  for (const jt of joints) if (jt.follows && (!jById[jt.follows.joint] || jt.follows.joint === jt.id)) { warn(`joint “${jt.name}” follows a missing joint; it moves on its own`); jt.follows = null; }
+  for (const jt of joints) { const seen = new Set([jt.id]); let cur = jt.follows && jById[jt.follows.joint]; while (cur) { if (seen.has(cur.id)) { warn(`joint “${jt.name}” is part of a follow loop; unlinked it`); jt.follows = null; break; } seen.add(cur.id); cur = cur.follows && jById[cur.follows.joint]; } }
+
+  scene.add(root);
+  root.updateMatrixWorld(true);
+  // rest-pose measurements (all joints at 0)
+  const box = new THREE.Box3();
+  for (const id of order) { const pb = new THREE.Box3().setFromObject(parts[id].mesh, true); parts[id].box = pb; parts[id].center = pb.getCenter(new THREE.Vector3()); box.union(pb); }
+  model = { spec, source, root, parts, order, joints, jById, box, warnings, center: box.getCenter(new THREE.Vector3()), size: box.getSize(new THREE.Vector3()) };
+  const drivers = joints.filter(j => j.type === 'continuous' && !j.follows).map(j => Math.abs(j.rpm));
+  model.rpmScale = Math.min(1, 60 / Math.max(1, ...drivers));   // keep fast motors watchable; ratios stay exact
+  model.checks = runChecks(model);
+  applyJoints(); fitView(); applyView();
+  return model;
+}
+
+function jointValue(jt, depth=0){
+  if (jt.follows && depth < 32) { const lead = model.jById[jt.follows.joint]; let v = jointValue(lead, depth+1) * jt.follows.ratio + jt.follows.offset; if (jt.type !== 'continuous') v = THREE.MathUtils.clamp(v, jt.min, jt.max); return v; }
+  return jt.value;
+}
+const _m = new THREE.Matrix4(), _t = new THREE.Matrix4(), _r = new THREE.Matrix4();
+function applyJoints(){
+  if (!model) return;
+  for (const jt of model.joints) {
+    const v = jointValue(jt), node = jt.part.node;
+    if (jt.type === 'prismatic') node.matrix.makeTranslation(jt.axis.x*v, jt.axis.y*v, jt.axis.z*v);
+    else {
+      _t.makeTranslation(jt.pivot.x, jt.pivot.y, jt.pivot.z);
+      _r.makeRotationAxis(jt.axis, THREE.MathUtils.degToRad(v));
+      _m.makeTranslation(-jt.pivot.x, -jt.pivot.y, -jt.pivot.z);
+      node.matrix.copy(_t).multiply(_r).multiply(_m);
+    }
+    node.matrixWorldNeedsUpdate = true;
+  }
+}
+
+function runChecks(m){
+  const out = [], ids = m.order, P = m.parts;
+  const diag = m.size.length() || 1, tol = Math.max(.5, diag * .004);
+  const solid = ids.filter(id => !P[id].p.loose);
+  const adj = new Map(solid.map(id => [id, []]));
+  for (let i=0;i<solid.length;i++) for (let k=i+1;k<solid.length;k++) {
+    const a = P[solid[i]], b = P[solid[k]];
+    const touch = a.box.clone().expandByScalar(tol).intersectsBox(b.box) || a.p.parent === b.id || b.p.parent === a.id;
+    if (touch) { adj.get(a.id).push(b.id); adj.get(b.id).push(a.id); }
+  }
+  const seen = new Set(), groups = [];
+  for (const id of solid) { if (seen.has(id)) continue; const comp = [], st = [id]; seen.add(id);
+    while (st.length) { const c = st.pop(); comp.push(c); for (const n of adj.get(c)) if (!seen.has(n)) { seen.add(n); st.push(n); } } groups.push(comp); }
+  groups.sort((a, b) => b.length - a.length);
+  if (groups.length <= 1) out.push(['ok', `All ${solid.length} parts are connected`]);
+  else groups.slice(1).forEach(g => out.push(['warn', `Floating: ${g.map(id => P[id].p.name || id).slice(0, 4).join(', ')}${g.length > 4 ? '…' : ''} doesn’t touch the rest`]));
+  const bottom = m.box.min.y;
+  out.push(Math.abs(bottom) <= Math.max(2, diag * .02) ? ['ok', 'Stands on the floor'] : ['warn', `Lowest point is at ${fmt(bottom)} mm, not on the floor`]);
+  const nj = m.joints.length;
+  out.push(nj ? ['ok', `${nj} moving joint${nj === 1 ? '' : 's'}${m.joints.some(j => j.follows) ? ', some linked together' : ''}`] : ['warn', 'Nothing moves (no joints)']);
+  for (const jt of m.joints) if (jt.type !== 'prismatic' && jt.part.box.distanceToPoint(jt.pivot) > Math.max(5, diag * .05))
+    out.push(['warn', `Joint “${jt.name}” pivots ${fmt(jt.part.box.distanceToPoint(jt.pivot))} mm away from its part`]);
+  m.warnings.forEach(w => out.push(['bad', w]));
+  return out;
+}
+
+/* ------------------------------------------------------------------ view */
+function niceStep(x){ const p = Math.pow(10, Math.floor(Math.log10(x))), f = x / p; return (f < 2 ? 1 : f < 5 ? 2 : 5) * p; }
+function fitView(){
+  const s = model.size, c = model.center, R = Math.max(s.x, s.y, s.z, 1);
+  controls.target.copy(c);
+  const dir = new THREE.Vector3(1, .75, 1.25).normalize();
+  camera.position.copy(c).addScaledVector(dir, R * 2.1 * Math.max(1, 1.1 / camera.aspect));   // back off on narrow (phone) screens
+  camera.near = R / 200; camera.far = R * 200; camera.updateProjectionMatrix();
+  controls.minDistance = R * .2; controls.maxDistance = R * 20;
+  sun.position.copy(c).add(new THREE.Vector3(.6, 1.4, .8).multiplyScalar(R * 1.6)); sun.target.position.copy(c);
+  const sc = sun.shadow.camera; sc.left = sc.bottom = -R * 1.3; sc.right = sc.top = R * 1.3; sc.near = R * .1; sc.far = R * 6; sc.updateProjectionMatrix();
+  fill.position.copy(c).add(new THREE.Vector3(-1, .5, -1).multiplyScalar(R * 2));
+  const cell = niceStep(R / 8), size = cell * 40;
+  if (grid) { scene.remove(grid); grid.geometry.dispose(); grid.material.dispose(); }
+  grid = new THREE.GridHelper(size, 40, 0x2a6cff, 0x15224a); grid.position.set(c.x, Math.min(0, model.box.min.y) - .01, c.z);
+  grid.material.transparent = true; grid.material.opacity = .55; scene.add(grid);
+  floor.scale.set(size, size, 1); floor.position.set(c.x, grid.position.y, c.z);
+  $('#legend').textContent = `grid squares = ${fmt(cell)} mm · drag: orbit · right-drag: pan · scroll: zoom · click a part`;
+}
+function applyView(){
+  if (!model) return;
+  const k = view.explode * 1.1;
+  for (const id of model.order) {
+    const P = model.parts[id];
+    P.mesh.position.copy(P.basePos).addScaledVector(P.center.clone().sub(model.center), k);
+    P.mesh.children.forEach(e => { if (e.userData.isEdge) e.visible = view.edges; });
+    const m = P.mesh.material;
+    m.transparent = view.xray || m.userData.baseTransparent; m.opacity = view.xray ? Math.min(.3, m.userData.baseOpacity) : m.userData.baseOpacity;
+    m.depthWrite = !view.xray; m.needsUpdate = true;
+  }
+}
+
+/* ------------------------------------------------------------------ inspector panel */
+const unitOf = jt => jt.type === 'prismatic' ? 'mm' : '°';
+function sizeLine(m){ const s = m.size, inch = v => (v / 25.4).toFixed(1); return `${fmt(s.x)} × ${fmt(s.y)} × ${fmt(s.z)} mm (W×H×D) · ${inch(s.x)} × ${inch(s.y)} × ${inch(s.z)} in`; }
+function renderInspector(){
+  const m = model, sp = m.spec, src = m.source;
+  $('#mName').textContent = sp.name || 'Untitled model';
+  $('#mSize').textContent = `${src.kind === 'job' ? `Job #${src.n}` : 'Example'} · ${m.order.length} parts · ${sizeLine(m)}`;
+  const how = Array.isArray(sp.how_it_works) ? sp.how_it_works.filter(x => typeof x === 'string') : [];
+  const assume = Array.isArray(sp.assumptions) ? sp.assumptions.filter(x => typeof x === 'string') : [];
+  const drivers = m.joints.filter(j => !j.follows);
+  const jointsHtml = m.joints.map(jt => {
+    const lead = jt.follows && m.jById[jt.follows.joint];
+    const [lo, hi] = jt.type === 'continuous' ? [-180, 180] : [jt.min, jt.max];
+    const step = jt.type === 'prismatic' ? Math.max((hi - lo) / 200, .01) : .5;
+    return `<div class="joint"><label for="j-${esc(jt.id)}">${esc(jt.name)} <span id="jv-${esc(jt.id)}"></span></label>
+      <input type="range" id="j-${esc(jt.id)}" data-j="${esc(jt.id)}" min="${lo}" max="${hi}" step="${step}" ${lead ? 'disabled' : ''}>
+      <small>${jt.type === 'continuous' ? `spins${jt.follows ? '' : ` · ${fmt(jt.rpm)} rpm`}` : jt.type === 'revolute' ? `hinge ${fmt(jt.min)}° to ${fmt(jt.max)}°` : `slides ${fmt(jt.min)} to ${fmt(jt.max)} mm`}${lead ? ` · driven by “${esc(lead.name)}” ×${Math.round(jt.follows.ratio * 1000) / 1000}` : ''} · moves ${esc(jt.part.p.name || jt.part.id)}</small></div>`;
+  }).join('');
+  $('#mBody').innerHTML = `
+    <p class="desc">${esc(sp.description || '')}</p>
+    <h2>Make it move</h2>
+    ${m.joints.length ? `<div class="row"><button class="go" id="play" style="padding:7px 14px">${view.playing ? '❚❚ Pause' : '▶ Play'}</button><button class="ghost" id="resetJ">⟲ Reset pose</button>
+      <select id="speed" title="Playback speed">${[.25,.5,1,2].map(v => `<option value="${v}" ${v === view.speed ? 'selected' : ''}>${v}×</option>`).join('')}</select></div>
+      ${m.rpmScale < 1 ? `<p class="hint" style="margin-top:6px">Spinning parts shown at ${Math.round(m.rpmScale*100)}% of real speed so you can see them.</p>` : ''}
+      ${jointsHtml}` : '<p class="hint">This model has no moving joints.</p>'}
+    <h2>View</h2>
+    <div class="joint"><label for="explode">Exploded view <span id="exV">${Math.round(view.explode*100)}%</span></label><input type="range" id="explode" min="0" max="1" step=".01" value="${view.explode}"></div>
+    <div class="row"><button class="ghost ${view.edges ? 'on' : ''}" id="tEdges">Edges</button><button class="ghost ${view.xray ? 'on' : ''}" id="tXray">X-ray</button><button class="ghost" id="fit">Fit view</button></div>
+    ${how.length ? `<h2>How it works</h2><ol class="how">${how.map(x => `<li>${esc(x)}</li>`).join('')}</ol>` : ''}
+    <div id="sel"></div>
+    <h2>Parts (${m.order.length})</h2>
+    <div class="parts">${m.order.map(id => { const p = m.parts[id].p; return `<div class="part" data-id="${esc(id)}"><i style="background:${safeColor(p.color)}"></i>${esc(p.name || id)}${m.parts[id].joint ? '<em>moves</em>' : ''}</div>`; }).join('')}</div>
+    <h2>Checks</h2>
+    ${m.checks.map(([k, t]) => `<div class="check ${k}">${k === 'ok' ? '✓' : k === 'warn' ? '⚠' : '✗'} <span>${esc(t)}</span></div>`).join('')}
+    <h2>Export</h2>
+    <div class="row"><button class="ghost" id="xStl" title="For 3D printers and slicers (Cura, PrusaSlicer, Bambu Studio)">⬇ STL</button><button class="ghost" id="xGlb" title="For Blender, Windows 3D Viewer, game engines, AR">⬇ GLB</button><button class="ghost" id="xJson" title="The model file itself">⬇ JSON</button></div>
+    <p class="hint" style="margin-top:6px">Exports the pose you see now, in millimetres.</p>
+    ${src.kind === 'job' ? `<div class="row" style="margin-top:12px"><button class="ghost" id="remix">✏️ Change this model</button>${connected() ? `<a class="ghost" target="_blank" rel="noopener" href="https://github.com/${encodeURIComponent(cfg.owner)}/${encodeURIComponent(cfg.repo)}/tree/HEAD/outputs/job-${src.n}">📁 Files ↗</a>` : ''}</div>` : ''}
+    ${assume.length ? `<details><summary>Assumptions</summary><ul>${assume.map(x => `<li>${esc(x)}</li>`).join('')}</ul></details>` : ''}`;
+  syncSliders();
+  $('#mBody').querySelectorAll('input[data-j]').forEach(inp => inp.oninput = () => {
+    const jt = model.jById[inp.dataset.j]; jt.value = +inp.value; view.playing = false; syncPlay(); applyJoints(); syncSliders();
+  });
+  const play = $('#play'); if (play) play.onclick = () => { view.playing ? stopPlay() : startPlay(); };
+  const rs = $('#resetJ'); if (rs) rs.onclick = () => { stopPlay(); model.joints.forEach(j => j.value = j.def); applyJoints(); syncSliders(); };
+  const sp_ = $('#speed'); if (sp_) sp_.onchange = () => { view.speed = +sp_.value; };
+  $('#explode').oninput = e => { view.explode = +e.target.value; $('#exV').textContent = Math.round(view.explode*100) + '%'; applyView(); };
+  $('#tEdges').onclick = e => { view.edges = !view.edges; e.target.classList.toggle('on', view.edges); applyView(); };
+  $('#tXray').onclick = e => { view.xray = !view.xray; e.target.classList.toggle('on', view.xray); applyView(); };
+  $('#fit').onclick = fitView;
+  $('#mBody').querySelectorAll('.part').forEach(el => el.onclick = () => select(el.dataset.id, true));
+  $('#xStl').onclick = exportSTL; $('#xGlb').onclick = exportGLB; $('#xJson').onclick = () => download(new Blob([JSON.stringify(sp, null, 2)], { type:'application/json' }), fileBase() + '.json');
+  const rx = $('#remix'); if (rx) rx.onclick = () => { setRemix(src.n, sp.name); setPanel('make'); $('#req').focus(); };
+}
+function syncSliders(){
+  if (!model) return;
+  for (const jt of model.joints) {
+    const v = jointValue(jt), inp = document.getElementById('j-' + jt.id), lab = document.getElementById('jv-' + jt.id);
+    const shown = jt.type === 'continuous' ? ((v % 360) + 540) % 360 - 180 : v;
+    if (inp && document.activeElement !== inp) inp.value = shown;
+    if (lab) lab.textContent = `${fmt(shown)} ${unitOf(jt)}`;
+  }
+}
+function syncPlay(){ const b = $('#play'); if (b) b.textContent = view.playing ? '❚❚ Pause' : '▶ Play'; }
+function startPlay(){
+  if (!model) return;
+  view.playing = true; view.t = 0;
+  for (const jt of model.joints) if (jt.type !== 'continuous' && !jt.follows) {   // start the swing from where the joint is now
+    const mid = (jt.min + jt.max) / 2, amp = (jt.max - jt.min) / 2;
+    jt.phase = Math.asin(THREE.MathUtils.clamp((jt.value - mid) / amp, -1, 1));
+  }
+  syncPlay();
+}
+function stopPlay(){ view.playing = false; syncPlay(); }
+function animateJoints(dt){
+  view.t += dt * view.speed;
+  for (const jt of model.joints) {
+    if (jt.follows) continue;
+    if (jt.type === 'continuous') jt.value += jt.rpm * 6 * dt * view.speed * model.rpmScale;   // rpm → °/s
+    else { const mid = (jt.min + jt.max) / 2, amp = (jt.max - jt.min) / 2; jt.value = mid + amp * Math.sin(jt.phase + view.t * Math.PI * 2 / jt.period); }
+  }
+  applyJoints();
+}
+
+/* ------------------------------------------------------------------ picking */
+const ray = new THREE.Raycaster(), ndc = new THREE.Vector2();
+function hitPart(e){
+  if (!model) return null;
+  const r = canvas.getBoundingClientRect();
+  ndc.set((e.clientX - r.left) / r.width * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1); ray.setFromCamera(ndc, camera);
+  const hit = ray.intersectObjects(model.order.map(id => model.parts[id].mesh), false)[0];
+  return hit ? hit.object.userData.partId : null;
+}
+function select(id, focus=false){
+  view.selected = id && model.parts[id] ? id : null;
+  document.querySelectorAll('.part').forEach(el => el.classList.toggle('cur', el.dataset.id === view.selected));
+  const box = $('#sel');
+  if (!view.selected) { selBox.visible = false; if (box) box.style.display = 'none'; return; }
+  const P = model.parts[view.selected], p = P.p, s = p.size && typeof p.size === 'object' ? p.size : {};
+  selBox.setFromObject(P.mesh); selBox.visible = true;
+  const dims = Object.entries(s).filter(([, v]) => isNum(v)).map(([k, v]) => `${k} ${fmt(v)}`).join(' · ');
+  box.style.display = 'block';
+  box.innerHTML = `<b>${esc(p.name || id)}</b><br>${esc(p.role || '')}<small>${esc(p.shape)}${dims ? ` · ${esc(dims)}${p.shape === 'gear' ? '' : ' mm'}` : ''} · ${esc(p.material || 'plastic')}${P.joint ? ` · moved by “${esc(P.joint.name)}”` : ''}${p.parent && model.parts[p.parent] ? ` · attached to ${esc(model.parts[p.parent].p.name || p.parent)}` : ''}</small>`;
+  if (focus) { const el = document.querySelector(`.part[data-id="${CSS.escape(view.selected)}"]`); el?.scrollIntoView({ block:'nearest' }); box.scrollIntoView({ block:'nearest', behavior:'smooth' }); }
+}
+let down = null, lastMove = 0;
+canvas.addEventListener('pointerdown', e => down = [e.clientX, e.clientY]);
+canvas.addEventListener('pointerup', e => {
+  if (!down || Math.hypot(e.clientX - down[0], e.clientY - down[1]) > 5) return;
+  const id = hitPart(e); select(id, true); if (id && innerWidth <= 900) setPanel('model');
+});
+canvas.addEventListener('pointermove', e => {
+  const now = performance.now(); if (now - lastMove < 50 || e.buttons) return; lastMove = now;
+  const id = hitPart(e), tip = $('#tip');
+  if (!id) { tip.style.display = 'none'; canvas.style.cursor = ''; return; }
+  tip.textContent = model.parts[id].p.name || id; tip.style.display = 'block'; tip.style.left = (e.clientX + 14) + 'px'; tip.style.top = (e.clientY + 12) + 'px'; canvas.style.cursor = 'pointer';
+});
+canvas.addEventListener('pointerleave', () => { $('#tip').style.display = 'none'; });
+
+/* ------------------------------------------------------------------ export */
+function fileBase(){ return (model?.spec?.name || 'model').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60) || 'model'; }
+function download(blob, name){ const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name; document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 5000); }
+function exportSTL(){
+  if (!model) return;
+  model.root.updateMatrixWorld(true);
+  const data = new STLExporter().parse(model.root, { binary:true });
+  download(new Blob([data], { type:'model/stl' }), fileBase() + '.stl'); toast('STL saved, in millimetres. Open it in your slicer or CAD app.');
+}
+function exportGLB(){
+  if (!model) return;
+  model.root.updateMatrixWorld(true);
+  const was = view.edges; view.edges = false; applyView();
+  // glTF uses metres: export a scaled copy so it opens at real size
+  const holder = new THREE.Group(); holder.scale.setScalar(.001); scene.remove(model.root); holder.add(model.root);
+  const restore = () => { holder.remove(model.root); scene.add(model.root); view.edges = was; applyView(); };
+  try {
+    new GLTFExporter().parse(holder, glb => { restore(); download(new Blob([glb], { type:'model/gltf-binary' }), fileBase() + '.glb'); toast('GLB saved at real size (glTF uses metres).'); },
+      err => { restore(); toast('Couldn’t export GLB: ' + (err?.message || err)); }, { binary:true, onlyVisible:true });
+  } catch (err) { restore(); toast('Couldn’t export GLB: ' + (err?.message || err)); }
+}
+
+/* ------------------------------------------------------------------ loading models */
+let current = null;   // { kind:'example', id } | { kind:'job', n }
+async function fetchJobModel(n){
+  if (connected()) {
+    try { return JSON.parse(await gh(`/repos/${cfg.owner}/${cfg.repo}/contents/outputs/job-${n}/model.json`, {}, true)); }
+    catch (e) {
+      if (e.status === 404) throw new Error(`Job #${n} has no model.json yet.`);
+      if (e instanceof SyntaxError) throw new Error(`Job #${n}'s model.json isn't valid JSON.`);
+      const r = await fetch(`https://raw.githubusercontent.com/${encodeURIComponent(cfg.owner)}/${encodeURIComponent(cfg.repo)}/HEAD/outputs/job-${n}/model.json`, { cache:'no-store' });
+      if (!r.ok) throw new Error(`Couldn’t load job #${n} (${e.message}).`); return r.json();
+    }
+  }
+  const r = await fetch(`../outputs/job-${n}/model.json`, { cache:'no-store' });
+  if (!r.ok) throw new Error(`Job #${n} has no model.json here.`); return r.json();
+}
+async function load(src){
+  status('Loading model…'); stopPlay();
+  try {
+    const spec = src.kind === 'job' ? await fetchJobModel(src.n) : await (await fetch(`examples/${encodeURIComponent(src.id)}.json`, { cache:'no-cache' })).json();
+    buildModel(spec, src); current = src; view.explode = 0; renderInspector(); status('');
+    const q = src.kind === 'job' ? `?job=${src.n}` : `?example=${encodeURIComponent(src.id)}`;
+    history.replaceState(null, '', location.pathname + q);
+    document.title = `${spec.name || 'Model'} · CAD Studio`;
+    renderLists();
+    if (model.joints.length) startPlay();
+  } catch (e) {
+    status(`⚠ ${esc(e.message || e)}<br><button class="ghost" style="margin-top:10px" onclick="this.parentNode.classList.remove('on')">OK</button>`);
+  }
+}
+
+/* ------------------------------------------------------------------ jobs: sending + listing */
+let jobs = [], remixOf = null, watching = new Set(JSON.parse(sessionStorage.getItem('cad.watch') || '[]'));
+const saveWatch = () => sessionStorage.setItem('cad.watch', JSON.stringify([...watching]));
+function setRemix(n, name){ remixOf = n || null; $('#remixBar').style.display = n ? 'flex' : 'none'; if (n) $('#remixName').textContent = `#${n} ${name || ''}`.trim(); }
+$('#remixX').onclick = () => setRemix(null);
+IDEAS.forEach(t => { const c = document.createElement('button'); c.className = 'chip'; c.textContent = t.length > 44 ? t.slice(0, 42) + '…' : t; c.title = t; c.onclick = () => { $('#req').value = t; $('#req').focus(); }; $('#chips').append(c); });
+
+$('#send').onclick = async () => {
+  const text = $('#req').value.trim();
+  if (!text) { toast('Describe what you want modelled first.'); return; }
+  if (!connected()) { toast('Connect your GitHub repo in the city first (⚙ Settings). Opening it now…', 5000); setTimeout(() => location.href = '../#settings', 1200); return; }
+  const title = '[city] 🧊 ' + text.split('\n')[0].slice(0, 76) + (text.length > 76 ? '…' : '');
+  const lines = ['Agent: cad']; if (remixOf) lines.push(`Builds on: ${remixOf}`);
+  const body = `${lines.join('\n')}\n<!-- sent from Agent City CAD Studio -->\n\n3D model request: ${text}`;
+  $('#send').disabled = true; $('#send').textContent = 'Sending…';
+  try {
+    if (cfg.token) {
+      const issue = await gh(`/repos/${cfg.owner}/${cfg.repo}/issues`, { method:'POST', body: JSON.stringify({ title, body }) });
+      watching.add(issue.number); saveWatch();
+      toast('Sent! The CAD agent is designing it. This page will open the model when it’s ready.', 7000);
+      $('#req').value = ''; setRemix(null); setTimeout(refreshJobs, 3000);
+    } else {
+      window.open(`https://github.com/${encodeURIComponent(cfg.owner)}/${encodeURIComponent(cfg.repo)}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`, '_blank', 'noopener');
+      toast('GitHub opened in a new tab. Click “Create” and the CAD agent starts work.', 7000);
+    }
+  } catch (e) { toast('Could not send: ' + e.message, 7000); }
+  $('#send').disabled = false; $('#send').textContent = 'Design it ▶';
+};
+
+function parseJob(i){
+  const L = i.labels.map(l => l.name);
+  const status = L.includes('status:failed') ? 'failed' : L.includes('status:done') ? 'done' : L.includes('status:working') ? 'working' : (i.state === 'closed' ? 'done' : 'queued');
+  return { n:i.number, title:i.title.replace(/^\[city\]\s*(🧊|🏗|🔁)?\s*/u, ''), status, url:i.html_url, created:i.created_at };
+}
+function ago(d){ const s = (Date.now() - new Date(d)) / 1000; return s < 60 ? 'just now' : s < 3600 ? `${s/60|0}m ago` : s < 86400 ? `${s/3600|0}h ago` : `${s/86400|0}d ago`; }
+function renderLists(){
+  const jb = $('#jobs');
+  if (!connected()) jb.innerHTML = '<div class="empty">Connect your repo in the city’s ⚙ Settings to design your own models. The examples below work right now.</div>';
+  else jb.innerHTML = jobs.length ? jobs.map(j => `<div class="item ${current?.kind === 'job' && current.n === j.n ? 'cur' : ''}" data-n="${j.n}"><div class="t">🧊 ${esc(j.title)}</div><div class="m"><span class="pill s-${j.status}">${j.status === 'working' ? 'designing' : j.status}</span><span>#${j.n}</span><span>${ago(j.created)}</span></div></div>`).join('')
+    : '<div class="empty">No models yet. Describe one above, or tap an idea.</div>';
+  jb.querySelectorAll('.item').forEach(el => el.onclick = () => {
+    const j = jobs.find(x => x.n === +el.dataset.n);
+    if (j.status === 'done') { load({ kind:'job', n:j.n }); setPanel('model'); }
+    else if (j.status === 'failed') { toast('That job failed. Open it on GitHub and add the run-again label to retry.', 6000); window.open(j.url, '_blank', 'noopener'); }
+    else toast('Still designing… it opens here automatically when it’s done.', 5000);
+  });
+  $('#examples').innerHTML = EXAMPLES.map(x => `<div class="item ${current?.kind === 'example' && current.id === x.id ? 'cur' : ''}" data-id="${x.id}"><div class="t">${esc(x.name)}</div><div class="m"><span>${esc(x.note)}</span></div></div>`).join('');
+  $('#examples').querySelectorAll('.item').forEach(el => el.onclick = () => { load({ kind:'example', id:el.dataset.id }); setPanel('model'); });
+}
+async function refreshJobs(){
+  if (!connected()) { renderLists(); return; }
+  try {
+    const list = await gh(`/repos/${cfg.owner}/${cfg.repo}/issues?state=all&per_page=50&sort=created&direction=desc`);
+    const before = new Map(jobs.map(j => [j.n, j.status]));
+    jobs = list.filter(i => !i.pull_request && (i.labels.some(l => l.name === 'agent:cad') || /^\[city\]\s*🧊/u.test(i.title))).map(parseJob);
+    for (const j of jobs) if (j.status === 'done' && watching.has(j.n) && before.get(j.n) !== 'done') {
+      watching.delete(j.n); saveWatch(); toast(`🧊 Your model is ready: ${j.title}`, 7000); load({ kind:'job', n:j.n });
+    }
+    const c = $('#conn'); c.classList.add('live'); c.querySelector('span').textContent = `${cfg.owner}/${cfg.repo}`;
+  } catch (e) { const c = $('#conn'); c.classList.remove('live'); c.querySelector('span').textContent = e.status === 404 ? 'repo not found' : e.message; }
+  renderLists();
+}
+(function poll(){ setTimeout(() => { if (connected() && !document.hidden) refreshJobs(); poll(); }, jobs.some(j => j.status === 'queued' || j.status === 'working') || watching.size ? 20000 : 90000); })();
+
+/* ------------------------------------------------------------------ loop */
+addEventListener('resize', () => { camera.aspect = innerWidth/innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth, innerHeight); });
+const clock = new THREE.Clock(); let frame = 0;
+renderer.setAnimationLoop(() => {
+  const dt = Math.min(clock.getDelta(), .05); frame++;
+  if (model && view.playing) { animateJoints(dt); if (frame % 3 === 0) syncSliders(); }
+  if (view.selected && selBox.visible) selBox.setFromObject(model.parts[view.selected].mesh);
+  controls.update(); renderer.render(scene, camera);
+});
+
+/* ------------------------------------------------------------------ start */
+const qs = new URLSearchParams(location.search);
+const qJob = parseInt(qs.get('job'), 10), qEx = qs.get('example');
+renderLists();
+if (qJob > 0) { load({ kind:'job', n:qJob }); setPanel('model'); }
+else load({ kind:'example', id: EXAMPLES.some(x => x.id === qEx) ? qEx : 'lamp' });
+refreshJobs();
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+# Free daily market scan: plain Python, no Claude usage at all.
+# Scores every ticker in watchlist.json after the US close and saves
+# outputs/signals/latest.json, which the city's Market tab and billboard show.
+name: market-signals
+on:
+  schedule:
+    - cron: "37 21 * * 1-5"   # 21:37 UTC weekdays, just after the 4pm ET close
+  workflow_dispatch: {}        # "Run workflow" button in the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: market-signals
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 scripts/signals.py
+      - name: Save signals
+        run: |
+          git config user.name "agent-city[bot]"
+          git config user.email "agent-city@users.noreply.github.com"
+          git add outputs/signals
+          git commit -m "Market signals $(date -u +%F)" || exit 0
+          for i in 1 2 3 4; do
+            git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && break
+            sleep $((i * 3))
+          done

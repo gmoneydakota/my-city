@@ -1,0 +1,680 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Agent City</title>
+<meta name="description" content="A 3D city of AI agents that build things for you in the cloud.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+<style>
+:root{
+  --bg:#03050b; --panel:rgba(10,14,28,.78); --panel-solid:#0a0e1c; --line:rgba(120,160,255,.16);
+  --text:#e8eeff; --muted:#8b97b8; --light:#4fd1ff; --standard:#b98cff; --heavy:#ffb547;
+  --good:#3ddc84; --bad:#ff5c5c; --warn:#f7c948; --accent:#4fd1ff;
+  --r:14px; --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font-family:'Space Grotesk',system-ui,sans-serif;overflow:hidden}
+#scene{position:fixed;inset:0}
+#labels{position:fixed;inset:0;pointer-events:none}
+button,input,select,textarea{font:inherit;color:inherit}
+.glass{background:var(--panel);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);border:1px solid var(--line);border-radius:var(--r)}
+
+/* tower labels */
+.tag{transform:translateY(-8px);text-align:center;pointer-events:auto;cursor:pointer;user-select:none}
+.tag b{display:block;font-size:13px;letter-spacing:.14em;text-transform:uppercase;text-shadow:0 0 10px currentColor}
+.tag small{display:none;font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:2px}
+.tag:hover small{display:block}
+.tag:hover{z-index:2}
+.tag .badge{display:inline-block;margin-top:4px;font-family:var(--mono);font-size:10px;padding:1px 7px;border-radius:99px;background:rgba(247,201,72,.18);color:var(--warn);border:1px solid rgba(247,201,72,.4)}
+.tag .badge:empty{display:none}
+
+/* top bar */
+#top{position:fixed;left:16px;top:16px;display:flex;gap:12px;align-items:center;padding:10px 14px;z-index:5}
+#top h1{margin:0;font-size:16px;letter-spacing:.32em;font-weight:700}
+#top h1 span{color:var(--accent);text-shadow:0 0 12px var(--accent)}
+#conn{font-family:var(--mono);font-size:11px;color:var(--muted);display:flex;align-items:center;gap:6px}
+#conn i{width:8px;height:8px;border-radius:50%;background:var(--warn);box-shadow:0 0 8px currentColor;display:inline-block}
+#conn.live i{background:var(--good)}
+.iconbtn{background:none;border:1px solid var(--line);border-radius:10px;padding:6px 10px;cursor:pointer;color:var(--muted)}
+.iconbtn:hover{color:var(--text);border-color:var(--accent)}
+
+/* side panel */
+#panel{position:fixed;right:16px;top:16px;bottom:56px;width:380px;display:flex;flex-direction:column;z-index:5;overflow:hidden}
+#tabs{display:flex;border-bottom:1px solid var(--line)}
+#tabs button{flex:1;background:none;border:0;padding:12px 6px;cursor:pointer;color:var(--muted);font-weight:500;letter-spacing:.06em;border-bottom:2px solid transparent}
+#tabs button.on{color:var(--text);border-color:var(--accent)}
+.view{display:none;padding:16px;overflow:auto;flex:1}
+.view.on{display:block}
+h2{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 10px;font-weight:500}
+textarea{width:100%;min-height:120px;resize:vertical;background:rgba(0,0,0,.35);border:1px solid var(--line);border-radius:10px;padding:12px;outline:none;line-height:1.45}
+textarea:focus,input:focus,select:focus{border-color:var(--accent)}
+.row{display:flex;gap:8px;margin-top:10px;align-items:center}
+select,input[type=text],input[type=password]{background:rgba(0,0,0,.35);border:1px solid var(--line);border-radius:10px;padding:9px 10px;outline:none;width:100%}
+.go{background:linear-gradient(135deg,#2bb6ff,#7b5cff);border:0;border-radius:10px;padding:10px 16px;font-weight:700;cursor:pointer;white-space:nowrap;box-shadow:0 0 24px rgba(79,209,255,.35)}
+.go:disabled{opacity:.5;cursor:default}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 4px}
+.chip{font-size:12px;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:99px;padding:5px 10px;cursor:pointer;color:var(--muted)}
+.chip:hover{color:var(--text);border-color:var(--accent)}
+.hint{font-size:12px;color:var(--muted);line-height:1.5;margin-top:12px}
+.hint code{font-family:var(--mono);font-size:11px;background:rgba(255,255,255,.06);padding:1px 5px;border-radius:5px}
+#route{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:8px;min-height:16px}
+#route b{font-weight:600}
+
+.job{border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:8px;cursor:pointer;background:rgba(255,255,255,.02)}
+.job:hover{border-color:var(--accent)}
+.job .t{font-weight:500;font-size:14px;line-height:1.3}
+.job .m{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:4px;display:flex;gap:8px;flex-wrap:wrap}
+.pill{font-family:var(--mono);font-size:10px;padding:1px 7px;border-radius:99px;border:1px solid currentColor;text-transform:uppercase;letter-spacing:.06em}
+.s-queued{color:var(--muted)} .s-working{color:var(--warn)} .s-done{color:var(--good)} .s-failed{color:var(--bad)}
+.empty{color:var(--muted);font-size:13px;line-height:1.5;padding:12px 2px}
+
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{font-weight:500;color:var(--muted);text-align:left;font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:6px 4px;border-bottom:1px solid var(--line)}
+td{padding:8px 4px;border-bottom:1px solid rgba(255,255,255,.04);font-family:var(--mono);font-size:12px;vertical-align:top}
+tr.sym{cursor:pointer} tr.sym:hover td{background:rgba(255,255,255,.03)}
+.sig{font-size:10px;font-weight:600;padding:2px 6px;border-radius:6px;white-space:nowrap}
+.sig-buy{background:rgba(61,220,132,.16);color:var(--good)} .sig-watch{background:rgba(79,209,255,.14);color:var(--light)}
+.sig-hold{background:rgba(255,255,255,.07);color:var(--muted)} .sig-avoid{background:rgba(255,92,92,.14);color:var(--bad)}
+.up{color:var(--good)} .down{color:var(--bad)}
+.why{font-family:'Space Grotesk',sans-serif;font-size:12px;color:var(--muted);padding:2px 4px 10px}
+.why li{margin:2px 0}
+.disc{font-size:11px;color:var(--muted);margin-top:12px;line-height:1.5;border-left:2px solid var(--warn);padding-left:8px}
+.demo{display:inline-block;font-family:var(--mono);font-size:10px;color:var(--warn);border:1px solid var(--warn);border-radius:6px;padding:1px 6px;margin-left:6px}
+
+/* drawer for job output / agent detail */
+#drawer{position:fixed;left:16px;bottom:56px;width:min(640px,calc(100vw - 428px));max-height:60vh;display:none;flex-direction:column;z-index:6}
+#drawer.on{display:flex}
+#drawer header{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid var(--line);gap:10px}
+#drawer header b{font-size:15px}
+#drawerBody{padding:14px 18px;overflow:auto;line-height:1.55;font-size:14px}
+#drawerBody pre{background:rgba(0,0,0,.4);padding:10px;border-radius:8px;overflow:auto;font-size:12px}
+#drawerBody code{font-family:var(--mono);font-size:12px}
+#drawerBody a{color:var(--accent)}
+#drawerBody table td{font-family:inherit}
+
+/* ticker */
+#ticker{position:fixed;left:0;right:0;bottom:0;height:40px;display:flex;align-items:center;overflow:hidden;border-radius:0;border-left:0;border-right:0;border-bottom:0;z-index:4}
+#tickerInner{display:flex;gap:36px;white-space:nowrap;font-family:var(--mono);font-size:12px;padding-left:100%;animation:tick 60s linear infinite}
+#tickerInner span b{color:var(--text)}
+@keyframes tick{to{transform:translateX(-100%)}}
+
+/* settings modal */
+#modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;z-index:10;padding:16px}
+#modal.on{display:flex}
+#modal .box{width:min(460px,100%);padding:20px}
+#modal label{display:block;font-size:12px;color:var(--muted);margin:12px 0 4px}
+#toast{position:fixed;left:50%;top:18px;transform:translateX(-50%);padding:10px 16px;z-index:12;display:none;font-size:14px}
+#toast.on{display:block}
+
+@media (max-width: 820px){
+  #panel{left:16px;right:16px;width:auto;top:auto;bottom:48px;height:46vh}
+  #drawer{left:16px;right:16px;width:auto;bottom:calc(46vh + 56px);max-height:36vh}
+  #top{right:16px;justify-content:space-between}
+  .tag small{display:none}
+}
+</style>
+</head>
+<body>
+<canvas id="scene"></canvas>
+<div id="labels"></div>
+
+<div id="top" class="glass">
+  <h1>AGENT<span>CITY</span></h1>
+  <div id="conn"><i></i><span>demo mode</span></div>
+  <button class="iconbtn" id="openSettings" title="Settings">⚙</button>
+</div>
+
+<div id="panel" class="glass">
+  <div id="tabs">
+    <button data-v="make" class="on">Make</button>
+    <button data-v="jobs">Jobs</button>
+    <button data-v="market">Market</button>
+  </div>
+
+  <section class="view on" id="v-make">
+    <h2>What should the city build?</h2>
+    <textarea id="req" placeholder="e.g. Build me a model that tells me when to buy NVDA, using this week's data and news."></textarea>
+    <div class="chips" id="chips"></div>
+    <div class="row">
+      <select id="agentPick" title="Who does it">
+        <option value="auto">Auto: cheapest agent that fits</option>
+      </select>
+      <button class="go" id="send">Send ▶</button>
+    </div>
+    <div id="route"></div>
+    <p class="hint">Jobs run on GitHub's servers, so you can close your laptop. Results show up under <b>Jobs</b>, usually within 2–15 minutes. Easy requests go to cheap agents first and only move up a tier if they need to.</p>
+  </section>
+
+  <section class="view" id="v-jobs"><div id="jobs"></div></section>
+
+  <section class="view" id="v-market">
+    <h2 id="mktTitle">Daily signals</h2>
+    <div id="market"></div>
+  </section>
+</div>
+
+<div id="drawer" class="glass">
+  <header><b id="drawerTitle"></b><span style="display:flex;gap:8px"><a id="drawerLink" class="iconbtn" target="_blank" rel="noopener">Open on GitHub ↗</a><button class="iconbtn" id="closeDrawer">✕</button></span></header>
+  <div id="drawerBody"></div>
+</div>
+
+<div id="ticker" class="glass"><div id="tickerInner"></div></div>
+
+<div id="modal"><div class="box glass">
+  <h2>Connect your city</h2>
+  <p class="hint" style="margin-top:0">Point this page at the GitHub repo you pushed Agent City to. On GitHub Pages it's detected automatically.</p>
+  <label>Owner (your GitHub username)</label><input type="text" id="sOwner" autocomplete="off">
+  <label>Repository</label><input type="text" id="sRepo" placeholder="agent-city" autocomplete="off">
+  <label>Token (optional: lets the city send jobs without opening GitHub, and read a private repo)</label>
+  <input type="password" id="sToken" placeholder="fine-grained token: Issues + Contents read/write" autocomplete="off">
+  <p class="hint">The token stays in this browser only. Without one, “Send” opens a pre-filled GitHub page; you just click <i>Create</i>.</p>
+  <div class="row" style="justify-content:flex-end"><button class="iconbtn" id="sCancel">Cancel</button><button class="go" id="sSave">Save</button></div>
+</div></div>
+<div id="toast" class="glass"></div>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+
+/* ------------------------------------------------------------------ data */
+const TIER = { light:{c:0x4fd1ff, css:'var(--light)', model:'Haiku'}, standard:{c:0xb98cff, css:'var(--standard)', model:'Sonnet'}, heavy:{c:0xffb547, css:'var(--heavy)', model:'Opus'} };
+const AGENTS = [
+  {id:'runner',  name:'Runner',  tier:'light',    role:'Quick answers, math, lookups', shape:'needle'},
+  {id:'scribe',  name:'Scribe',  tier:'light',    role:'Writing, emails, docs, rewrites', shape:'stack'},
+  {id:'planner', name:'Planner', tier:'standard', role:'Step-by-step plans', shape:'ziggurat'},
+  {id:'tutor',   name:'Tutor',   tier:'standard', role:'Explains anything', shape:'dome'},
+  {id:'scout',   name:'Scout',   tier:'standard', role:'Research & connector ideas', shape:'radar'},
+  {id:'quant',   name:'Quant',   tier:'standard', role:'Stock models & buy signals', shape:'ticker'},
+  {id:'analyst', name:'Analyst', tier:'heavy',    role:'Deep, multi-pass analysis', shape:'octa'},
+  {id:'coder',   name:'Coder',   tier:'heavy',    role:'Builds apps, sites, scripts, games', shape:'spire'},
+  {id:'forge',   name:'Forge',   tier:'heavy',    role:'Builds MCP connectors', shape:'forge'},
+];
+const byId = Object.fromEntries(AGENTS.map(a => [a.id, a]));
+// same keyword routing the cloud runner uses (scripts/city_job.py), shown live as you type
+const RULES = [
+  ['quant', /\b(stock|stocks|ticker|share price|buy signal|when to buy|sell signal|portfolio|backtest|trading|invest|etf|crypto|bitcoin|options|dividend|earnings|market model)\b/],
+  ['forge', /\b(mcp server|mcp connector|build (a|an) connector)\b/],
+  ['scout', /\b(connector idea|what should i connect|find (an? )?(api|data source))\b/],
+  ['tutor', /^(explain|teach me|how does|what is|why does)\b/m],
+  ['planner', /\b(plan|roadmap|break (this|it) down|steps to)\b/],
+  ['scribe', /\b(rewrite|proofread|reword|edit my|cover letter|email|essay|readme|summari[sz]e)\b/],
+  ['runner', /^(convert|how many|what's|whats|calculate)\b/m],
+  ['coder', /\b(build|make|create|code|script|app|website|site|game|tool|bot|program|spreadsheet|dashboard|automate|fix)\b/],
+];
+const EXAMPLES = [
+  'Build me a model that tells me when to buy NVDA, using current prices and news',
+  'Make a personal budget tracker web app I can open on my phone',
+  'Explain how compound interest works with a real example',
+  'Plan a 4-week project to launch a small online store',
+  'Rewrite my cover letter to sound more confident',
+  'Make a little browser game with neon spaceships',
+];
+
+const store = {
+  get(k){ try { return localStorage.getItem('agentcity.'+k) || ''; } catch { return ''; } },
+  set(k,v){ try { localStorage.setItem('agentcity.'+k, v); } catch {} },
+};
+function detectRepo(){
+  const h = location.hostname, m = h.match(/^([^.]+)\.github\.io$/);
+  if (m) { const seg = location.pathname.split('/').filter(Boolean)[0]; return { owner:m[1], repo: seg || `${m[1]}.github.io` }; }
+  return null;
+}
+const cfg = { owner:'', repo:'', token:'' };
+function loadCfg(){
+  const d = detectRepo();
+  cfg.owner = store.get('owner') || d?.owner || '';
+  cfg.repo  = store.get('repo')  || d?.repo  || '';
+  cfg.token = store.get('token');
+}
+loadCfg();
+const connected = () => !!(cfg.owner && cfg.repo);
+
+/* ------------------------------------------------------------------ renderer */
+const canvas = document.getElementById('scene');
+const renderer = new THREE.WebGLRenderer({ canvas, antialias:true, powerPreference:'high-performance' });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 1.75));
+renderer.setSize(innerWidth, innerHeight);
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.05;
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x03050b);
+scene.fog = new THREE.FogExp2(0x050914, 0.0065);
+
+const camera = new THREE.PerspectiveCamera(50, innerWidth/innerHeight, 0.5, 1200);
+camera.position.set(-70, 62, 108);
+
+const labelRenderer = new CSS2DRenderer({ element: document.getElementById('labels') });
+labelRenderer.setSize(innerWidth, innerHeight);
+
+const controls = new OrbitControls(camera, canvas);
+controls.enableDamping = true; controls.dampingFactor = 0.06;
+controls.maxPolarAngle = Math.PI * 0.47; controls.minDistance = 25; controls.maxDistance = 260;
+controls.autoRotate = true; controls.autoRotateSpeed = 0.35;
+controls.target.set(0, 8, 0);
+controls.addEventListener('start', () => { controls.autoRotate = false; clearTimeout(resumeSpin); });
+controls.addEventListener('end', () => { resumeSpin = setTimeout(() => controls.autoRotate = true, 12000); });
+let resumeSpin;
+
+const composer = new EffectComposer(renderer);
+composer.addPass(new RenderPass(scene, camera));
+const bloom = new UnrealBloomPass(new THREE.Vector2(innerWidth/2, innerHeight/2), 1.05, 0.55, 0.12);
+composer.addPass(bloom);
+composer.addPass(new OutputPass());
+
+scene.add(new THREE.HemisphereLight(0x3a4a8a, 0x05060a, 0.55));
+const moon = new THREE.DirectionalLight(0x8fa8ff, 0.5); moon.position.set(-60, 120, 40); scene.add(moon);
+
+/* ------------------------------------------------------------------ ground + roads */
+const ground = new THREE.Mesh(new THREE.PlaneGeometry(1400, 1400), new THREE.MeshStandardMaterial({ color:0x04060d, roughness:.95 }));
+ground.rotation.x = -Math.PI/2; scene.add(ground);
+const grid = new THREE.GridHelper(480, 16, 0x1b2a55, 0x0d1530); grid.position.y = 0.02; scene.add(grid);
+
+const RING = 40;
+const towerPos = AGENTS.map((a, i) => {
+  const ang = (i / AGENTS.length) * Math.PI * 2 - Math.PI/2;
+  return new THREE.Vector3(Math.cos(ang) * RING, 0, Math.sin(ang) * RING);
+});
+
+function glowLine(points, color, opacity=0.8){
+  const g = new THREE.BufferGeometry().setFromPoints(points);
+  return new THREE.Line(g, new THREE.LineBasicMaterial({ color, transparent:true, opacity, toneMapped:false }));
+}
+// ring road + spokes
+const ringPts = []; for (let i=0;i<=128;i++){ const t=i/128*Math.PI*2; ringPts.push(new THREE.Vector3(Math.cos(t)*RING,0.06,Math.sin(t)*RING)); }
+scene.add(glowLine(ringPts, 0x2a6cff, .55));
+const ringPts2 = ringPts.map(p => p.clone().multiplyScalar(1.6)); scene.add(glowLine(ringPts2, 0x1a3a99, .35));
+AGENTS.forEach((a,i) => scene.add(glowLine([new THREE.Vector3(0,.06,0), towerPos[i].clone().setY(.06)], TIER[a.tier].c, .45)));
+
+/* ------------------------------------------------------------------ filler city */
+function windowTexture(seed){
+  const c = document.createElement('canvas'); c.width = 64; c.height = 128;
+  const g = c.getContext('2d'); g.fillStyle = '#000'; g.fillRect(0,0,64,128);
+  let s = seed; const rnd = () => (s = (s*16807) % 2147483647) / 2147483647;
+  const pal = ['#ffd38a','#ffe7b8','#9fd8ff','#c8b6ff','#ffffff'];
+  for (let y=4; y<128; y+=8) for (let x=4; x<64; x+=8) {
+    if (rnd() < .38) { g.fillStyle = pal[(rnd()*pal.length)|0]; g.globalAlpha = .35 + rnd()*.65; g.fillRect(x, y, 4, 4); }
+  }
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace;
+  t.wrapS = t.wrapT = THREE.RepeatWrapping; t.magFilter = THREE.NearestFilter; return t;
+}
+const beacons = [];
+function distToSeg(p, a, b){ const ab=b.clone().sub(a), t=Math.max(0,Math.min(1,p.clone().sub(a).dot(ab)/ab.lengthSq())); return p.distanceTo(a.clone().add(ab.multiplyScalar(t))); }
+(function buildFiller(){
+  let s = 1234; const rnd = () => (s = (s*16807) % 2147483647) / 2147483647;
+  const buckets = [[],[],[]];
+  const origin = new THREE.Vector3();
+  for (let x=-150; x<=150; x+=7) for (let z=-150; z<=150; z+=7) {
+    const p = new THREE.Vector3(x + (rnd()-.5)*2.5, 0, z + (rnd()-.5)*2.5);
+    const r = p.length();
+    if (r < 18 || r > 158) continue;
+    if (Math.abs(r - RING) < 4.5 || Math.abs(r - RING*1.6) < 3.5) continue;
+    if (towerPos.some(t => t.distanceTo(p) < 11)) continue;
+    if (towerPos.some(t => distToSeg(p, origin, t) < 4)) continue;
+    if (rnd() < .18) continue;
+    const fall = Math.max(.15, 1 - r/170);
+    const h = 3 + Math.pow(rnd(), 2.2) * 34 * fall + rnd()*4;
+    const w = 3 + rnd()*2.6, d = 3 + rnd()*2.6;
+    buckets[h < 9 ? 0 : h < 20 ? 1 : 2].push({p, h, w, d});
+  }
+  const geo = new THREE.BoxGeometry(1,1,1); geo.translate(0,.5,0);
+  const dummy = new THREE.Object3D();
+  buckets.forEach((list, bi) => {
+    const tex = windowTexture(77 + bi*31); tex.repeat.set(1, [1,2.2,4][bi]);
+    const mat = new THREE.MeshStandardMaterial({ color:0x0a0f1e, roughness:.6, metalness:.3, emissive:0xffffff, emissiveMap:tex, emissiveIntensity:.85 });
+    const mesh = new THREE.InstancedMesh(geo, mat, list.length);
+    list.forEach((b, i) => { dummy.position.copy(b.p); dummy.scale.set(b.w, b.h, b.d); dummy.rotation.y = 0; dummy.updateMatrix(); mesh.setMatrixAt(i, dummy.matrix); });
+    scene.add(mesh);
+    // rooftop beacons on the tall ones
+    if (bi === 2) list.forEach(b => {
+      const m = new THREE.Mesh(new THREE.SphereGeometry(.28, 6, 6), new THREE.MeshBasicMaterial({ color:0xff3355, toneMapped:false }));
+      m.position.set(b.p.x, b.h + .4, b.p.z); m.userData.blink = rnd()*6; scene.add(m); beacons.push(m);
+    });
+  });
+})();
+
+/* ------------------------------------------------------------------ hub */
+const hub = new THREE.Group(); scene.add(hub);
+{
+  const base = new THREE.Mesh(new THREE.CylinderGeometry(9, 10, 1.2, 48), new THREE.MeshStandardMaterial({ color:0x0b1226, metalness:.6, roughness:.3, emissive:0x0a2a66, emissiveIntensity:.6 }));
+  base.position.y = .6; hub.add(base);
+  const spire = new THREE.Mesh(new THREE.ConeGeometry(2.2, 26, 6), new THREE.MeshStandardMaterial({ color:0x0b1226, emissive:0x2a7bff, emissiveIntensity:.5, metalness:.8, roughness:.2 }));
+  spire.position.y = 14; hub.add(spire);
+  spire.add(new THREE.LineSegments(new THREE.EdgesGeometry(spire.geometry), new THREE.LineBasicMaterial({ color:0x9fe4ff, toneMapped:false })));
+  for (let i=0;i<3;i++){
+    const ring = new THREE.Mesh(new THREE.TorusGeometry(5 + i*1.6, .09, 8, 96), new THREE.MeshBasicMaterial({ color:[0x4fd1ff,0xb98cff,0xffb547][i], toneMapped:false }));
+    ring.rotation.x = Math.PI/2; ring.position.y = 6 + i*5; ring.userData.spin = (i%2? -1:1) * (.3 + i*.15); hub.add(ring);
+  }
+  const core = new THREE.Mesh(new THREE.IcosahedronGeometry(1.6, 1), new THREE.MeshBasicMaterial({ color:0xdff6ff, toneMapped:false }));
+  core.position.y = 28.5; hub.add(core); hub.userData.core = core;
+  const tag = document.createElement('div'); tag.className = 'tag'; tag.innerHTML = '<b style="color:#9fe4ff">Dispatch</b><small>routes every request</small>';
+  const lo = new CSS2DObject(tag); lo.position.set(0, 32, 0); hub.add(lo);
+  tag.addEventListener('click', () => switchTab('make'));
+}
+
+/* ------------------------------------------------------------------ towers */
+const pickables = [];
+let tickerCanvas, tickerTex, tickerText = 'QUANT · MARKET SIGNALS · LOADING …', tickerX = 0;
+
+function edgeMesh(geo, color){ return new THREE.LineSegments(new THREE.EdgesGeometry(geo, 20), new THREE.LineBasicMaterial({ color, toneMapped:false })); }
+function bodyMat(color){ return new THREE.MeshStandardMaterial({ color:0x0b1022, metalness:.55, roughness:.35, emissive:color, emissiveIntensity:.08 }); }
+function addPart(group, geo, y, color, mat){
+  const m = new THREE.Mesh(geo, mat || bodyMat(color)); m.position.y = y; group.add(m); m.add(edgeMesh(geo, color)); return m;
+}
+function buildTower(a, pos){
+  const g = new THREE.Group(); g.position.copy(pos); scene.add(g);
+  const col = TIER[a.tier].c; let top = 24;
+  const pad = new THREE.Mesh(new THREE.CylinderGeometry(7.5, 7.5, .3, 40), new THREE.MeshBasicMaterial({ color:col, transparent:true, opacity:.12, toneMapped:false }));
+  pad.position.y = .15; g.add(pad);
+  const padRing = new THREE.Mesh(new THREE.TorusGeometry(7.5, .12, 6, 80), new THREE.MeshBasicMaterial({ color:col, toneMapped:false })); padRing.rotation.x = Math.PI/2; padRing.position.y = .3; g.add(padRing);
+  switch (a.shape) {
+    case 'needle': addPart(g, new THREE.CylinderGeometry(1.2, 2.4, 22, 12), 11, col); addPart(g, new THREE.CylinderGeometry(.3, .3, 8, 6), 26, col); top = 30; break;
+    case 'stack': for (let i=0;i<5;i++) { const s=5-i*.7; const m = addPart(g, new THREE.BoxGeometry(s, 4, s), 2 + i*4.2, col); m.rotation.y = i*.35; } top = 22; break;
+    case 'ziggurat': for (let i=0;i<6;i++) addPart(g, new THREE.BoxGeometry(10-i*1.5, 3, 10-i*1.5), 1.5 + i*3, col); addPart(g, new THREE.CylinderGeometry(.2,.2,6,6), 21, col); top = 24; break;
+    case 'dome': addPart(g, new THREE.CylinderGeometry(5, 5.5, 8, 24), 4, col); addPart(g, new THREE.SphereGeometry(5, 24, 12, 0, Math.PI*2, 0, Math.PI/2), 8, col); addPart(g, new THREE.CylinderGeometry(.6, .6, 6, 8), 15, col); top = 19; break;
+    case 'radar': { addPart(g, new THREE.CylinderGeometry(1.6, 3.2, 20, 8), 10, col); const dish = addPart(g, new THREE.SphereGeometry(4, 20, 8, 0, Math.PI*2, 0, Math.PI/3.2), 22, col); dish.rotation.x = Math.PI*.75; g.userData.spinner = dish; top = 26; break; }
+    case 'ticker': {
+      addPart(g, new THREE.BoxGeometry(6, 26, 6), 13, col);
+      tickerCanvas = document.createElement('canvas'); tickerCanvas.width = 1024; tickerCanvas.height = 96;
+      tickerTex = new THREE.CanvasTexture(tickerCanvas); tickerTex.colorSpace = THREE.SRGBColorSpace;
+      const bb = new THREE.Mesh(new THREE.CylinderGeometry(5.2, 5.2, 2.6, 48, 1, true), new THREE.MeshBasicMaterial({ map:tickerTex, side:THREE.DoubleSide, toneMapped:false }));
+      bb.position.y = 21; g.add(bb); g.userData.spinner = bb; g.userData.spinSpeed = .25; top = 29; break;
+    }
+    case 'octa': addPart(g, new THREE.CylinderGeometry(3.4, 4.4, 30, 8), 15, col); addPart(g, new THREE.OctahedronGeometry(2.6), 33, col); top = 37; break;
+    case 'spire': addPart(g, new THREE.BoxGeometry(6, 34, 6), 17, col); addPart(g, new THREE.BoxGeometry(4, 6, 4), 37, col); addPart(g, new THREE.ConeGeometry(1.4, 8, 4), 44, col); top = 48; break;
+    case 'forge': {
+      addPart(g, new THREE.BoxGeometry(11, 10, 8), 5, col); addPart(g, new THREE.CylinderGeometry(1.4, 1.8, 16, 12), 14, col).position.x = 3;
+      const ember = new THREE.Mesh(new THREE.SphereGeometry(1.2, 12, 12), new THREE.MeshBasicMaterial({ color:0xff6a1a, toneMapped:false })); ember.position.set(3, 22.5, 0); g.add(ember); g.userData.ember = ember; top = 26; break;
+    }
+  }
+  const beacon = new THREE.Mesh(new THREE.SphereGeometry(.7, 12, 12), new THREE.MeshBasicMaterial({ color:col, toneMapped:false }));
+  beacon.position.y = top; g.add(beacon);
+  const beam = new THREE.Mesh(new THREE.CylinderGeometry(1.4, 1.4, 120, 16, 1, true), new THREE.MeshBasicMaterial({ color:col, transparent:true, opacity:0, depthWrite:false, blending:THREE.AdditiveBlending, toneMapped:false }));
+  beam.position.y = top + 60; g.add(beam);
+  g.traverse(o => { if (o.isMesh) { o.userData.agent = a.id; pickables.push(o); } });
+
+  const tag = document.createElement('div'); tag.className = 'tag'; tag.style.color = TIER[a.tier].css;
+  tag.innerHTML = `<b>${a.name}</b><small>${TIER[a.tier].model} · ${a.role}</small><span class="badge"></span>`;
+  tag.addEventListener('click', () => focusAgent(a.id));
+  const lo = new CSS2DObject(tag); lo.position.y = top + 4; g.add(lo);
+  Object.assign(a, { group:g, top, beam, beacon, badge:tag.querySelector('.badge'), pos });
+}
+AGENTS.forEach((a,i) => buildTower(a, towerPos[i]));
+
+/* ------------------------------------------------------------------ traffic */
+const CARS = 260, carGeo = new THREE.BufferGeometry(), carPos = new Float32Array(CARS*3), carCol = new Float32Array(CARS*3), cars = [];
+for (let i=0;i<CARS;i++){
+  const c = new THREE.Color([0x4fd1ff,0xff4f8b,0xffd38a,0xb98cff][i%4]);
+  carCol.set([c.r,c.g,c.b], i*3);
+  cars.push({ r: 22 + Math.random()*120, y: 6 + Math.random()*36, a: Math.random()*Math.PI*2, s: (.04 + Math.random()*.12) * (Math.random()<.5?-1:1), wob: Math.random()*6 });
+}
+carGeo.setAttribute('position', new THREE.BufferAttribute(carPos, 3));
+carGeo.setAttribute('color', new THREE.BufferAttribute(carCol, 3));
+scene.add(new THREE.Points(carGeo, new THREE.PointsMaterial({ size:.9, vertexColors:true, toneMapped:false, transparent:true, opacity:.9 })));
+
+// job packets: glowing orbs flying from Dispatch to the agent's tower
+const packets = [];
+const packetGeo = new THREE.SphereGeometry(.55, 10, 10);
+function spawnPacket(agentId, back=false){
+  const a = byId[agentId]; if (!a) return;
+  const from = new THREE.Vector3(0, 28.5, 0), to = a.pos.clone().setY(a.top);
+  const mid = from.clone().lerp(to, .5); mid.y += 14;
+  const curve = new THREE.QuadraticBezierCurve3(back ? to : from, mid, back ? from : to);
+  const m = new THREE.Mesh(packetGeo, new THREE.MeshBasicMaterial({ color: back ? 0x3ddc84 : TIER[a.tier].c, toneMapped:false }));
+  scene.add(m); packets.push({ m, curve, t:0, speed: .35 + Math.random()*.15, agentId, back });
+}
+function burst(agentId){ // completed job: ring pulse
+  const a = byId[agentId]; if (!a) return;
+  const ring = new THREE.Mesh(new THREE.TorusGeometry(1, .15, 8, 64), new THREE.MeshBasicMaterial({ color:0x3ddc84, transparent:true, toneMapped:false }));
+  ring.rotation.x = Math.PI/2; ring.position.copy(a.pos).setY(a.top); scene.add(ring); pulses.push({ ring, t:0 });
+}
+const pulses = [];
+
+/* ------------------------------------------------------------------ picking + camera focus */
+const ray = new THREE.Raycaster(), mouse = new THREE.Vector2(); let downAt = null;
+canvas.addEventListener('pointerdown', e => downAt = [e.clientX, e.clientY]);
+canvas.addEventListener('pointerup', e => {
+  if (!downAt || Math.hypot(e.clientX-downAt[0], e.clientY-downAt[1]) > 6) return;
+  mouse.set(e.clientX/innerWidth*2-1, -(e.clientY/innerHeight)*2+1); ray.setFromCamera(mouse, camera);
+  const hit = ray.intersectObjects(pickables, false)[0];
+  if (hit) focusAgent(hit.object.userData.agent);
+});
+let tween = null;
+function flyTo(target, camPos){ tween = { t:0, fromT: controls.target.clone(), toT: target, fromC: camera.position.clone(), toC: camPos }; controls.autoRotate = false; }
+function focusAgent(id){
+  const a = byId[id];
+  const dir = a.pos.clone().normalize(), side = new THREE.Vector3(dir.z, 0, -dir.x);
+  flyTo(a.pos.clone().setY(a.top*.55), a.pos.clone().addScaledVector(dir, 34).addScaledVector(side, 18).setY(a.top*.55 + 16));
+  showAgent(a);
+}
+
+/* ------------------------------------------------------------------ animate */
+const clock = new THREE.Clock(); let frame = 0;
+function animate(){
+  requestAnimationFrame(animate);
+  const dt = Math.min(clock.getDelta(), .05), t = clock.elapsedTime; frame++;
+  hub.children.forEach(o => { if (o.userData.spin) o.rotation.z += o.userData.spin*dt; });
+  hub.userData.core.rotation.y += dt*.8; hub.userData.core.scale.setScalar(1 + Math.sin(t*2.2)*.12);
+  AGENTS.forEach(a => {
+    const busy = a.busy || 0;
+    a.beam.material.opacity += ((busy ? .16 + Math.sin(t*3)*.05 : 0) - a.beam.material.opacity) * .08;
+    a.beacon.scale.setScalar(1 + (busy ? Math.sin(t*6)*.4 + .3 : Math.sin(t*1.5)*.1));
+    if (a.group.userData.spinner) a.group.userData.spinner.rotation.y += dt * (a.group.userData.spinSpeed || 1.2);
+    if (a.group.userData.ember) a.group.userData.ember.scale.setScalar(1 + Math.sin(t*9)*.18 + (busy?.5:0));
+  });
+  for (const b of beacons) b.visible = ((t + b.userData.blink) % 2.4) < 1.2;
+  for (let i=0;i<CARS;i++){ const c = cars[i]; c.a += c.s*dt; carPos[i*3] = Math.cos(c.a)*c.r; carPos[i*3+1] = c.y + Math.sin(t+c.wob)*.6; carPos[i*3+2] = Math.sin(c.a)*c.r; }
+  carGeo.attributes.position.needsUpdate = true;
+  for (let i=packets.length-1;i>=0;i--){ const p = packets[i]; p.t += dt*p.speed; if (p.t >= 1){ scene.remove(p.m); p.m.material.dispose(); packets.splice(i,1); continue; } p.m.position.copy(p.curve.getPoint(p.t)); }
+  for (let i=pulses.length-1;i>=0;i--){ const p = pulses[i]; p.t += dt; p.ring.scale.setScalar(1 + p.t*6); p.ring.material.opacity = .7 * (1 - p.t/1.6); if (p.t > 1.6){ scene.remove(p.ring); pulses.splice(i,1);} }
+  if (frame % 2 === 0 && tickerCanvas) drawTicker(dt*2);
+  if (tween){ tween.t = Math.min(1, tween.t + dt/1.3); const k = 1 - Math.pow(1-tween.t, 3);
+    controls.target.lerpVectors(tween.fromT, tween.toT, k); camera.position.lerpVectors(tween.fromC, tween.toC, k); if (tween.t >= 1) tween = null; }
+  controls.update(); composer.render(); labelRenderer.render(scene, camera);
+}
+function drawTicker(dt){
+  const g = tickerCanvas.getContext('2d'); g.fillStyle = '#020611'; g.fillRect(0,0,1024,96);
+  g.font = '600 46px JetBrains Mono, monospace'; g.textBaseline = 'middle';
+  const w = g.measureText(tickerText).width + 120; tickerX = (tickerX + dt*90) % w;
+  for (let x = -tickerX; x < 1024; x += w) { g.fillStyle = '#7dffb0'; g.fillText(tickerText, x, 50); }
+  tickerTex.needsUpdate = true;
+}
+addEventListener('resize', () => {
+  camera.aspect = innerWidth/innerHeight; camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight); composer.setSize(innerWidth, innerHeight); labelRenderer.setSize(innerWidth, innerHeight);
+});
+animate();
+setInterval(() => AGENTS.forEach(a => { for (let i=0;i<(a.busy||0);i++) spawnPacket(a.id); }), 1400);
+
+/* ------------------------------------------------------------------ UI */
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function toast(msg, ms=3500){ const t = $('#toast'); t.textContent = msg; t.classList.add('on'); clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove('on'), ms); }
+function switchTab(v){ document.querySelectorAll('#tabs button').forEach(b => b.classList.toggle('on', b.dataset.v === v)); document.querySelectorAll('.view').forEach(s => s.classList.toggle('on', s.id === 'v-'+v)); }
+document.querySelectorAll('#tabs button').forEach(b => b.onclick = () => switchTab(b.dataset.v));
+
+const pick = $('#agentPick');
+AGENTS.forEach(a => pick.insertAdjacentHTML('beforeend', `<option value="${a.id}">${a.name} (${TIER[a.tier].model}): ${a.role}</option>`));
+EXAMPLES.forEach(x => { const c = document.createElement('button'); c.className = 'chip'; c.textContent = x.length > 42 ? x.slice(0,40)+'…' : x; c.title = x; c.onclick = () => { $('#req').value = x; previewRoute(); }; $('#chips').append(c); });
+
+function guessAgent(text){
+  const t = text.toLowerCase(); const hits = RULES.filter(([,re]) => re.test(t)).map(([a]) => a);
+  if (hits[0] === 'quant' || hits.length === 1) return { id:hits[0], how:'free keyword match' };
+  if (hits.length && hits.every(h => h === 'coder')) return { id:'coder', how:'free keyword match' };
+  return { id:null, how:'a tiny Haiku call will pick' };
+}
+function previewRoute(){
+  const v = $('#req').value.trim(), el = $('#route');
+  if (!v) { el.innerHTML = ''; return; }
+  if (pick.value !== 'auto') { const a = byId[pick.value]; el.innerHTML = `→ <b style="color:${TIER[a.tier].css}">${a.name}</b> on ${TIER[a.tier].model} (your choice)`; return; }
+  const g = guessAgent(v);
+  el.innerHTML = g.id ? `→ likely <b style="color:${TIER[byId[g.id].tier].css}">${byId[g.id].name}</b> on ${TIER[byId[g.id].tier].model} · ${g.how}` : `→ ${g.how}`;
+}
+$('#req').addEventListener('input', previewRoute); pick.addEventListener('change', previewRoute);
+
+$('#send').onclick = async () => {
+  const text = $('#req').value.trim();
+  if (!text) { toast('Describe what you want built first.'); return; }
+  if (!connected()) { openSettings(); toast('Connect your GitHub repo first. It only takes a minute.'); return; }
+  const title = '[city] ' + (text.split('\n')[0].slice(0, 80) + (text.length > 80 ? '…' : ''));
+  const body = `Agent: ${pick.value}\n<!-- sent from Agent City -->\n\n${text}`;
+  const g = guessAgent(text); const target = pick.value !== 'auto' ? pick.value : (g.id || 'planner');
+  if (cfg.token) {
+    $('#send').disabled = true;
+    try {
+      await gh(`/repos/${cfg.owner}/${cfg.repo}/issues`, { method:'POST', body: JSON.stringify({ title, body }) });
+      toast('Sent! Dispatch is routing it now.'); $('#req').value = ''; previewRoute();
+      spawnPacket(target); setTimeout(refreshJobs, 4000); switchTab('jobs');
+    } catch (e) { toast('Could not send: ' + e.message, 6000); }
+    $('#send').disabled = false;
+  } else {
+    const url = `https://github.com/${cfg.owner}/${cfg.repo}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+    window.open(url, '_blank', 'noopener'); spawnPacket(target);
+    toast('GitHub opened in a new tab. Click “Create” and the city starts working.', 6000);
+  }
+};
+
+/* settings */
+function openSettings(){ $('#sOwner').value = cfg.owner; $('#sRepo').value = cfg.repo; $('#sToken').value = cfg.token; $('#modal').classList.add('on'); }
+$('#openSettings').onclick = openSettings; $('#sCancel').onclick = () => $('#modal').classList.remove('on');
+$('#sSave').onclick = () => {
+  store.set('owner', $('#sOwner').value.trim()); store.set('repo', $('#sRepo').value.trim()); store.set('token', $('#sToken').value.trim());
+  loadCfg(); $('#modal').classList.remove('on'); stopDemo(); refreshAll();
+};
+
+/* drawer */
+$('#closeDrawer').onclick = () => $('#drawer').classList.remove('on');
+function openDrawer(title, html, link){ $('#drawerTitle').textContent = title; $('#drawerBody').innerHTML = html; const l = $('#drawerLink'); l.style.display = link ? '' : 'none'; if (link) l.href = link; $('#drawer').classList.add('on'); }
+const md = s => (window.DOMPurify && window.marked) ? DOMPurify.sanitize(marked.parse(s)) : `<pre>${esc(s)}</pre>`;
+
+function showAgent(a){
+  const mine = jobs.filter(j => j.agent === a.id);
+  openDrawer(`${a.name} · ${TIER[a.tier].model} tower`,
+    `<p style="color:var(--muted);margin-top:0">${esc(a.role)}. ${a.tier === 'light' ? 'Cheapest tier: handles quick jobs and hands bigger ones up.' : a.tier === 'standard' ? 'Mid tier: real work at moderate cost, escalates to the heavy towers when needed.' : 'Heavy tier: most capable and most expensive, used only when lighter agents can’t do it.'}</p>
+     <h2>Jobs at this tower</h2>${mine.length ? mine.map(jobCard).join('') : '<div class="empty">No jobs yet.</div>'}
+     <div class="row"><button class="go" id="askThis">Give ${esc(a.name)} a job</button></div>`, null);
+  wireJobCards($('#drawerBody'));
+  $('#askThis').onclick = () => { pick.value = a.id; switchTab('make'); $('#req').focus(); previewRoute(); };
+}
+
+/* ------------------------------------------------------------------ GitHub data */
+async function gh(path, opts={}, raw=false){
+  const headers = { 'Accept': raw ? 'application/vnd.github.raw+json' : 'application/vnd.github+json' };
+  if (cfg.token) headers.Authorization = `Bearer ${cfg.token}`;
+  if (opts.body) headers['Content-Type'] = 'application/json';
+  const r = await fetch('https://api.github.com' + path, { ...opts, headers, cache:'no-store' });
+  if (r.status === 404) { const e = new Error('not found'); e.status = 404; throw e; }
+  if (!r.ok) { const e = new Error(r.status === 403 ? 'GitHub rate limit hit, add a token in Settings' : `GitHub ${r.status}`); e.status = r.status; throw e; }
+  return raw ? r.text() : r.json();
+}
+let jobs = [], seenDone = new Set(), firstLoad = true;
+function parseJob(i){
+  const L = i.labels.map(l => l.name);
+  const agent = (L.find(l => l.startsWith('agent:')) || '').slice(6) || null;
+  const status = L.includes('status:failed') ? 'failed' : L.includes('status:done') ? 'done' : L.includes('status:working') ? 'working' : (i.state === 'closed' ? 'done' : 'queued');
+  return { n:i.number, title:i.title.replace(/^\[city\]\s*/i,''), agent, status, url:i.html_url, created:i.created_at, comments:i.comments };
+}
+function ago(d){ const s = (Date.now() - new Date(d))/1000; return s < 60 ? 'just now' : s < 3600 ? `${s/60|0}m ago` : s < 86400 ? `${s/3600|0}h ago` : `${s/86400|0}d ago`; }
+function jobCard(j){
+  const a = byId[j.agent];
+  return `<div class="job" data-n="${j.n}"><div class="t">${esc(j.title)}</div><div class="m"><span class="pill s-${j.status}">${j.status}</span>${a ? `<span style="color:${TIER[a.tier].css}">${a.name}</span>` : '<span>routing…</span>'}<span>#${j.n}</span><span>${ago(j.created)}</span></div></div>`;
+}
+function wireJobCards(root){ root.querySelectorAll('.job').forEach(el => el.onclick = () => openJob(+el.dataset.n)); }
+function renderJobs(){
+  const box = $('#jobs');
+  box.innerHTML = jobs.length ? jobs.map(jobCard).join('') : `<div class="empty">${connected() ? 'No jobs yet. Head to <b>Make</b> and ask for something.' : 'Connect your repo in ⚙ Settings to see real jobs.'}</div>`;
+  wireJobCards(box);
+  AGENTS.forEach(a => { a.busy = jobs.filter(j => j.agent === a.id && j.status === 'working').length; a.badge.textContent = a.busy ? `● building ${a.busy}` : ''; });
+  const q = jobs.filter(j => j.status === 'queued').length; if (q) for (let i=0;i<q;i++) spawnPacket(AGENTS[(Math.random()*AGENTS.length)|0].id);
+}
+async function openJob(n){
+  const j = jobs.find(x => x.n === n); if (!j) return;
+  if (demoTimer) { openDrawer(`#${n} · ${j.title}`, md(`**Demo job.** In your real city this panel shows the README the agent wrote, plus links to every file it made.\n\nStatus: **${j.status}**`), null); return; }
+  const folder = `https://github.com/${cfg.owner}/${cfg.repo}/tree/HEAD/outputs/job-${n}`;
+  openDrawer(`#${n} · ${j.title}`, '<div class="empty">Loading…</div>', j.status === 'done' ? folder : j.url);
+  if (j.status !== 'done') {
+    openDrawer(`#${n} · ${j.title}`, `<p>Status: <span class="pill s-${j.status}">${j.status}</span></p><p class="hint">${j.status === 'failed' ? 'Open the issue to see what went wrong. Add the <code>run-again</code> label to retry.' : 'The agent is working on GitHub’s servers. You can close this page; results will be here when you come back.'}</p>`, j.url); return;
+  }
+  try {
+    const [readme, meta] = await Promise.all([
+      gh(`/repos/${cfg.owner}/${cfg.repo}/contents/outputs/job-${n}/README.md`, {}, true),
+      gh(`/repos/${cfg.owner}/${cfg.repo}/contents/outputs/job-${n}/job.json`, {}, true).then(JSON.parse).catch(() => null),
+    ]);
+    const head = meta ? `<p class="hint" style="margin-top:0">Built by <b>${esc(meta.agent)}</b> on ${esc(meta.model)} · ${meta.turns} turns · ≈ $${(+meta.cost_usd_estimate).toFixed(2)}${meta.escalated_from ? ` · escalated from ${esc(meta.escalated_from)}` : ''}</p>` : '';
+    openDrawer(`#${n} · ${j.title}`, head + md(readme), folder);
+  } catch (e) { openDrawer(`#${n} · ${j.title}`, `<p class="hint">Couldn’t load the result (${esc(e.message)}). Open it on GitHub instead.</p>`, j.url); }
+}
+async function refreshJobs(){
+  if (!connected()) return;
+  try {
+    const list = await gh(`/repos/${cfg.owner}/${cfg.repo}/issues?state=all&per_page=40&sort=created&direction=desc`);
+    jobs = list.filter(i => !i.pull_request && (/^\[city\]/i.test(i.title) || i.labels.some(l => l.name === 'city-job'))).map(parseJob);
+    jobs.forEach(j => { if (j.status === 'done' && !seenDone.has(j.n)) { if (!firstLoad) { burst(j.agent); spawnPacket(j.agent, true); toast(`✅ ${byId[j.agent]?.name || 'An agent'} finished: ${j.title}`, 6000); } seenDone.add(j.n); } });
+    firstLoad = false; setConn(true); renderJobs();
+  } catch (e) { setConn(false, e.status === 404 ? 'repo not found' : e.message); }
+}
+function setConn(ok, msg){ const c = $('#conn'); c.classList.toggle('live', ok); c.querySelector('span').textContent = ok ? `${cfg.owner}/${cfg.repo}` : (msg || 'demo mode'); }
+
+/* market */
+function sigClass(s){ return /BUY/.test(s) ? 'sig-buy' : /WATCH/.test(s) ? 'sig-watch' : /AVOID/.test(s) ? 'sig-avoid' : 'sig-hold'; }
+function renderMarket(d, isDemo){
+  const rows = d.symbols.filter(s => !s.error);
+  $('#mktTitle').innerHTML = `Daily signals · ${esc(rows[0]?.as_of || '')}${isDemo || d.demo ? '<span class="demo">DEMO DATA</span>' : ''}`;
+  $('#market').innerHTML = `<table><thead><tr><th>Ticker</th><th>Price</th><th>Day</th><th>Signal</th></tr></thead><tbody>${rows.map((s,i) => `
+    <tr class="sym" data-i="${i}"><td><b>${esc(s.symbol)}</b></td><td>${s.price}</td><td class="${s.change_pct >= 0 ? 'up' : 'down'}">${s.change_pct >= 0 ? '+' : ''}${s.change_pct}%</td><td><span class="sig ${sigClass(s.signal)}">${esc(s.signal)}</span></td></tr>
+    <tr class="whyrow" data-i="${i}" style="display:none"><td colspan="4" class="why"><ul>${s.reasons.map(r => `<li>${esc(r)}</li>`).join('')}</ul>
+      RSI ${s.rsi} · stop idea ${s.suggested_stop} · ${s.pct_from_52w_high}% from 52-wk high<br>
+      Past BUY ZONE days: ${s.backtest.signal_days ? `${s.backtest.win_rate_pct_when_signal}% up after 20 days (avg ${s.backtest.avg_fwd_return_pct_when_signal}% vs ${s.backtest.avg_fwd_return_pct_any_day}% any day)` : 'none yet'}</td></tr>`).join('')}</tbody></table>
+    ${d.symbols.filter(s => s.error).map(s => `<div class="hint">${esc(s.symbol)}: ${esc(s.error)}</div>`).join('')}
+    <div class="disc">${esc(d.disclaimer)} Data: ${esc(d.data_source)}, updated ${esc(new Date(d.generated_at).toLocaleString())}.</div>
+    <p class="hint">Want a deeper model for one stock? <a href="#" id="askQuant" style="color:var(--accent)">Ask Quant</a>. To track more tickers, edit <code>watchlist.json</code>.</p>`;
+  document.querySelectorAll('tr.sym').forEach(tr => tr.onclick = () => { const w = document.querySelector(`tr.whyrow[data-i="${tr.dataset.i}"]`); w.style.display = w.style.display === 'none' ? '' : 'none'; });
+  $('#askQuant').onclick = e => { e.preventDefault(); pick.value = 'quant'; $('#req').value = `Build me a model that tells me when to buy ${rows[0]?.symbol || 'NVDA'}, using current prices and recent news. Backtest it.`; switchTab('make'); previewRoute(); };
+  tickerText = rows.map(s => `${s.symbol} ${s.price} ${s.change_pct >= 0 ? '▲' : '▼'}${Math.abs(s.change_pct)}% ${s.signal}`).join('   ·   ') + (d.demo || isDemo ? '   ·   DEMO DATA' : '');
+  $('#tickerInner').innerHTML = rows.map(s => `<span><b>${esc(s.symbol)}</b> ${s.price} <span class="${s.change_pct >= 0 ? 'up' : 'down'}">${s.change_pct >= 0 ? '▲' : '▼'} ${Math.abs(s.change_pct)}%</span> <span class="sig ${sigClass(s.signal)}">${esc(s.signal)}</span></span>`).join('') + (d.demo || isDemo ? '<span class="demo">DEMO DATA</span>' : '');
+}
+async function refreshMarket(){
+  try {
+    let d;
+    if (connected()) d = JSON.parse(await gh(`/repos/${cfg.owner}/${cfg.repo}/contents/outputs/signals/latest.json`, {}, true));
+    else d = await (await fetch('outputs/signals/latest.json', { cache:'no-store' })).json();
+    renderMarket(d, !connected());
+  } catch (e) {
+    $('#market').innerHTML = `<div class="empty">No signals yet. ${connected() ? 'They appear after the free <b>market-signals</b> workflow runs (weekdays after the US close, or press “Run workflow” in your repo’s Actions tab).' : 'Connect your repo in ⚙ Settings.'}</div>`;
+    tickerText = 'QUANT · MARKET SIGNALS · WAITING FOR FIRST SCAN'; $('#tickerInner').innerHTML = '<span>Market signals appear here after the first daily scan.</span>';
+  }
+}
+
+/* ------------------------------------------------------------------ demo mode (no repo connected) */
+let demoTimer = null;
+function startDemo(){
+  const titles = ['Model: when to buy NVDA', 'Budget tracker web app', 'Explain index funds', 'Launch plan for an online store', 'Neon spaceship browser game', 'Rewrite my cover letter'];
+  const ids = ['quant','coder','tutor','planner','coder','scribe'];
+  jobs = titles.map((t,i) => ({ n: 100+i, title:t, agent:ids[i], status: i < 2 ? 'working' : i < 5 ? 'done' : 'queued', created: new Date(Date.now() - i*3600e3).toISOString() }));
+  renderJobs(); let k = 0;
+  demoTimer = setInterval(() => { const j = jobs[k++ % jobs.length]; if (j.status === 'working') { j.status = 'done'; burst(j.agent); spawnPacket(j.agent, true); } else j.status = 'working'; renderJobs(); }, 7000);
+}
+function stopDemo(){ clearInterval(demoTimer); demoTimer = null; jobs = []; }
+
+function refreshAll(){ refreshJobs(); refreshMarket(); }
+if (connected()) refreshAll(); else { startDemo(); refreshMarket(); }
+(function poll(){ setTimeout(() => { if (connected() && !document.hidden) refreshJobs(); poll(); }, jobs.some(j => j.status !== 'done' && j.status !== 'failed') ? 30000 : 120000); })();
+setInterval(() => { if (connected() && !document.hidden) refreshMarket(); }, 15 * 60e3);
+</script>
+</body>
+</html>

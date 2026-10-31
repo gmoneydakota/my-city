@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Agent City</title>
 <meta name="description" content="A 3D city of AI agents that build things for you in the cloud.">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#03050b">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Agent City">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <script type="importmap">
@@ -131,6 +137,7 @@ tr.sym{cursor:pointer} tr.sym:hover td{background:rgba(255,255,255,.03)}
 <div id="top" class="glass">
   <h1>AGENT<span>CITY</span></h1>
   <div id="conn"><i></i><span>demo mode</span></div>
+  <button class="iconbtn" id="installApp" title="Install Agent City as a desktop app" style="display:none">⬇ Install app</button>
   <button class="iconbtn" id="openSettings" title="Settings">⚙</button>
 </div>
 
@@ -672,6 +679,18 @@ function startDemo(){
 function stopDemo(){ clearInterval(demoTimer); demoTimer = null; jobs = []; }
 
 function refreshAll(){ refreshJobs(); refreshMarket(); }
+
+/* ------------------------------------------------------------------ desktop app (PWA) */
+if ('serviceWorker' in navigator && location.protocol === 'https:') navigator.serviceWorker.register('sw.js').catch(() => {});
+let installEvt = null;
+const installBtn = $('#installApp');
+addEventListener('beforeinstallprompt', e => { e.preventDefault(); installEvt = e; installBtn.style.display = ''; });
+installBtn.onclick = async () => {
+  if (!installEvt) return;
+  installEvt.prompt(); const { outcome } = await installEvt.userChoice; installEvt = null; installBtn.style.display = 'none';
+  if (outcome === 'accepted') toast('Installed! Agent City is now in your Start menu / Applications and can be pinned to your desktop.', 7000);
+};
+addEventListener('appinstalled', () => { installBtn.style.display = 'none'; });
 if (connected()) refreshAll(); else { startDemo(); refreshMarket(); }
 (function poll(){ setTimeout(() => { if (connected() && !document.hidden) refreshJobs(); poll(); }, jobs.some(j => j.status !== 'done' && j.status !== 'failed') ? 30000 : 120000); })();
 setInterval(() => { if (connected() && !document.hidden) refreshMarket(); }, 15 * 60e3);

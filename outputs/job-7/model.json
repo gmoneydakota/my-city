@@ -1,0 +1,722 @@
+{
+ "format": "agent-city-cad/1",
+ "name": "Louvre-Slide Door",
+ "description": "A step-free sliding door whose four wooden slats turn like blinds for airflow and privacy, then the whole frame slides away into a parking bay.",
+ "units": "mm",
+ "how_it_works": [
+  "Closed, four slats sit edge to edge with brush seals, forming a solid wall like a normal door.",
+  "Turning the single dial a quarter turn swivels all four slats together, so air and light pass between them.",
+  "Because the slats turn on their own axes, the door needs no swing space, unlike a hinged door that sweeps a big arc.",
+  "To pass through, grip the handle and slide the frame along the overhead track, parking it in front of the wall beside the opening.",
+  "The frame hangs from the top, so the floor stays flat with no step to trip over."
+ ],
+ "assumptions": [
+  "Opening is 900 x 2100 mm; slats are 26 mm solid timber.",
+  "Dial-to-slat link is simplified to a direct coupling; a real one would use a cord or gear train.",
+  "No lock is modelled."
+ ],
+ "parts": [
+  {
+   "id": "floor_track",
+   "name": "Floor guide track",
+   "shape": "box",
+   "size": {
+    "w": 1900,
+    "h": 12,
+    "d": 40
+   },
+   "pos": [
+    475,
+    6,
+    50
+   ],
+   "color": "#6b7280",
+   "material": "metal",
+   "parent": null,
+   "role": "Keeps the bottom of the door from swinging and guides the slide"
+  },
+  {
+   "id": "threshold",
+   "name": "Threshold",
+   "shape": "box",
+   "size": {
+    "w": 950,
+    "h": 20,
+    "d": 100
+   },
+   "pos": [
+    0,
+    10,
+    0
+   ],
+   "color": "#9aa0a8",
+   "material": "metal",
+   "parent": "floor_track",
+   "role": "Flat, step-free sill"
+  },
+  {
+   "id": "jamb_l",
+   "name": "Left jamb",
+   "shape": "box",
+   "size": {
+    "w": 50,
+    "h": 2135,
+    "d": 60
+   },
+   "pos": [
+    -475,
+    1067.5,
+    0
+   ],
+   "color": "#8b5e3c",
+   "material": "wood",
+   "parent": "floor_track",
+   "role": "Left side of the door frame"
+  },
+  {
+   "id": "jamb_r",
+   "name": "Right jamb",
+   "shape": "box",
+   "size": {
+    "w": 50,
+    "h": 2135,
+    "d": 60
+   },
+   "pos": [
+    475,
+    1067.5,
+    0
+   ],
+   "color": "#8b5e3c",
+   "material": "wood",
+   "parent": "floor_track",
+   "role": "Right side of the frame"
+  },
+  {
+   "id": "head_rail",
+   "name": "Head rail",
+   "shape": "box",
+   "size": {
+    "w": 1900,
+    "h": 50,
+    "d": 120
+   },
+   "pos": [
+    475,
+    2110,
+    20
+   ],
+   "color": "#6b7280",
+   "material": "metal",
+   "parent": "jamb_l",
+   "role": "Overhead track the door hangs from"
+  },
+  {
+   "id": "wall_stub",
+   "name": "Parking wall",
+   "shape": "box",
+   "size": {
+    "w": 900,
+    "h": 2135,
+    "d": 20
+   },
+   "pos": [
+    950,
+    1067.5,
+    -20
+   ],
+   "color": "#d9d4c7",
+   "material": "paint",
+   "parent": "head_rail",
+   "role": "Wall beside the doorway the open door parks in front of"
+  },
+  {
+   "id": "carrier",
+   "name": "Door frame top bar",
+   "shape": "box",
+   "size": {
+    "w": 900,
+    "h": 40,
+    "d": 40
+   },
+   "pos": [
+    0,
+    2040,
+    50
+   ],
+   "color": "#2f3a4a",
+   "material": "metal",
+   "parent": "head_rail",
+   "role": "Top bar of the sliding frame"
+  },
+  {
+   "id": "bottom_bar",
+   "name": "Bottom bar",
+   "shape": "box",
+   "size": {
+    "w": 900,
+    "h": 40,
+    "d": 40
+   },
+   "pos": [
+    0,
+    32,
+    50
+   ],
+   "color": "#2f3a4a",
+   "material": "metal",
+   "parent": "carrier",
+   "role": "Bottom of the frame"
+  },
+  {
+   "id": "stile_l",
+   "name": "Left stile",
+   "shape": "box",
+   "size": {
+    "w": 40,
+    "h": 2000,
+    "d": 40
+   },
+   "pos": [
+    -430,
+    1040,
+    50
+   ],
+   "color": "#2f3a4a",
+   "material": "metal",
+   "parent": "carrier",
+   "role": "Left upright"
+  },
+  {
+   "id": "stile_r",
+   "name": "Right stile",
+   "shape": "box",
+   "size": {
+    "w": 40,
+    "h": 2000,
+    "d": 40
+   },
+   "pos": [
+    430,
+    1040,
+    50
+   ],
+   "color": "#2f3a4a",
+   "material": "metal",
+   "parent": "carrier",
+   "role": "Right upright"
+  },
+  {
+   "id": "hanger_l",
+   "name": "Hanger rod",
+   "shape": "cylinder",
+   "size": {
+    "r": 8,
+    "h": 34
+   },
+   "pos": [
+    -300,
+    2072,
+    50
+   ],
+   "color": "#c9ced6",
+   "material": "metal",
+   "parent": "carrier",
+   "role": "Hangs the frame from the overhead track"
+  },
+  {
+   "id": "hanger_r",
+   "name": "Hanger rod",
+   "shape": "cylinder",
+   "size": {
+    "r": 8,
+    "h": 34
+   },
+   "pos": [
+    300,
+    2072,
+    50
+   ],
+   "color": "#c9ced6",
+   "material": "metal",
+   "parent": "carrier",
+   "role": "Hangs the frame from the overhead track"
+  },
+  {
+   "id": "guide_shoe",
+   "name": "Guide shoe",
+   "shape": "box",
+   "size": {
+    "w": 120,
+    "h": 14,
+    "d": 20
+   },
+   "pos": [
+    0,
+    18,
+    50
+   ],
+   "color": "#c9ced6",
+   "material": "metal",
+   "parent": "carrier",
+   "role": "Slides in the floor track"
+  },
+  {
+   "id": "slat1",
+   "name": "Louvre slat 1",
+   "shape": "box",
+   "size": {
+    "w": 206,
+    "h": 1990,
+    "d": 26
+   },
+   "pos": [
+    -315,
+    1035,
+    50
+   ],
+   "color": "#c58a4a",
+   "material": "wood",
+   "parent": "carrier",
+   "role": "Turns on its own axis: closed = solid wall, turned = air gap"
+  },
+  {
+   "id": "seal1",
+   "name": "Slat 1 brush seal",
+   "shape": "box",
+   "size": {
+    "w": 206,
+    "h": 1960,
+    "d": 4
+   },
+   "pos": [
+    -315,
+    1035,
+    64
+   ],
+   "color": "#222222",
+   "material": "rubber",
+   "parent": "slat1",
+   "role": "Seals joints between closed slats"
+  },
+  {
+   "id": "pin1",
+   "name": "Slat 1 pivot pin",
+   "shape": "cylinder",
+   "size": {
+    "r": 6,
+    "h": 50
+   },
+   "pos": [
+    -315,
+    2035,
+    50
+   ],
+   "color": "#c9ced6",
+   "material": "metal",
+   "parent": "slat1",
+   "role": "Pin the slat turns on"
+  },
+  {
+   "id": "slat2",
+   "name": "Louvre slat 2",
+   "shape": "box",
+   "size": {
+    "w": 206,
+    "h": 1990,
+    "d": 26
+   },
+   "pos": [
+    -105,
+    1035,
+    50
+   ],
+   "color": "#c58a4a",
+   "material": "wood",
+   "parent": "carrier",
+   "role": "Turns on its own axis: closed = solid wall, turned = air gap"
+  },
+  {
+   "id": "seal2",
+   "name": "Slat 2 brush seal",
+   "shape": "box",
+   "size": {
+    "w": 206,
+    "h": 1960,
+    "d": 4
+   },
+   "pos": [
+    -105,
+    1035,
+    64
+   ],
+   "color": "#222222",
+   "material": "rubber",
+   "parent": "slat2",
+   "role": "Seals joints between closed slats"
+  },
+  {
+   "id": "pin2",
+   "name": "Slat 2 pivot pin",
+   "shape": "cylinder",
+   "size": {
+    "r": 6,
+    "h": 50
+   },
+   "pos": [
+    -105,
+    2035,
+    50
+   ],
+   "color": "#c9ced6",
+   "material": "metal",
+   "parent": "slat2",
+   "role": "Pin the slat turns on"
+  },
+  {
+   "id": "slat3",
+   "name": "Louvre slat 3",
+   "shape": "box",
+   "size": {
+    "w": 206,
+    "h": 1990,
+    "d": 26
+   },
+   "pos": [
+    105,
+    1035,
+    50
+   ],
+   "color": "#c58a4a",
+   "material": "wood",
+   "parent": "carrier",
+   "role": "Turns on its own axis: closed = solid wall, turned = air gap"
+  },
+  {
+   "id": "seal3",
+   "name": "Slat 3 brush seal",
+   "shape": "box",
+   "size": {
+    "w": 206,
+    "h": 1960,
+    "d": 4
+   },
+   "pos": [
+    105,
+    1035,
+    64
+   ],
+   "color": "#222222",
+   "material": "rubber",
+   "parent": "slat3",
+   "role": "Seals joints between closed slats"
+  },
+  {
+   "id": "pin3",
+   "name": "Slat 3 pivot pin",
+   "shape": "cylinder",
+   "size": {
+    "r": 6,
+    "h": 50
+   },
+   "pos": [
+    105,
+    2035,
+    50
+   ],
+   "color": "#c9ced6",
+   "material": "metal",
+   "parent": "slat3",
+   "role": "Pin the slat turns on"
+  },
+  {
+   "id": "slat4",
+   "name": "Louvre slat 4",
+   "shape": "box",
+   "size": {
+    "w": 206,
+    "h": 1990,
+    "d": 26
+   },
+   "pos": [
+    315,
+    1035,
+    50
+   ],
+   "color": "#c58a4a",
+   "material": "wood",
+   "parent": "carrier",
+   "role": "Turns on its own axis: closed = solid wall, turned = air gap"
+  },
+  {
+   "id": "seal4",
+   "name": "Slat 4 brush seal",
+   "shape": "box",
+   "size": {
+    "w": 206,
+    "h": 1960,
+    "d": 4
+   },
+   "pos": [
+    315,
+    1035,
+    64
+   ],
+   "color": "#222222",
+   "material": "rubber",
+   "parent": "slat4",
+   "role": "Seals joints between closed slats"
+  },
+  {
+   "id": "pin4",
+   "name": "Slat 4 pivot pin",
+   "shape": "cylinder",
+   "size": {
+    "r": 6,
+    "h": 50
+   },
+   "pos": [
+    315,
+    2035,
+    50
+   ],
+   "color": "#c9ced6",
+   "material": "metal",
+   "parent": "slat4",
+   "role": "Pin the slat turns on"
+  },
+  {
+   "id": "knob_base",
+   "name": "Control plate",
+   "shape": "box",
+   "size": {
+    "w": 60,
+    "h": 100,
+    "d": 8
+   },
+   "pos": [
+    400,
+    1000,
+    74
+   ],
+   "color": "#c9ced6",
+   "material": "metal",
+   "parent": "carrier",
+   "role": "Mount for the louvre dial"
+  },
+  {
+   "id": "knob",
+   "name": "Louvre dial",
+   "shape": "cylinder",
+   "size": {
+    "r": 22,
+    "h": 22
+   },
+   "pos": [
+    400,
+    1000,
+    89
+   ],
+   "color": "#e0473a",
+   "material": "plastic",
+   "parent": "knob_base",
+   "role": "Quarter turn opens all slats",
+   "rot": [
+    90,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "pull",
+   "name": "Pull handle",
+   "shape": "cylinder",
+   "size": {
+    "r": 8,
+    "h": 400
+   },
+   "pos": [
+    330,
+    1050,
+    85
+   ],
+   "color": "#c9ced6",
+   "material": "metal",
+   "parent": "carrier",
+   "role": "Grip for sliding the door"
+  },
+  {
+   "id": "post_900",
+   "name": "Handle post",
+   "shape": "cylinder",
+   "size": {
+    "r": 6,
+    "h": 30
+   },
+   "pos": [
+    330,
+    900,
+    70
+   ],
+   "color": "#c9ced6",
+   "material": "metal",
+   "parent": "pull",
+   "role": "Holds handle off the door",
+   "rot": [
+    90,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "post_1200",
+   "name": "Handle post",
+   "shape": "cylinder",
+   "size": {
+    "r": 6,
+    "h": 30
+   },
+   "pos": [
+    330,
+    1200,
+    70
+   ],
+   "color": "#c9ced6",
+   "material": "metal",
+   "parent": "pull",
+   "role": "Holds handle off the door",
+   "rot": [
+    90,
+    0,
+    0
+   ]
+  }
+ ],
+ "joints": [
+  {
+   "id": "slide",
+   "name": "Door slide",
+   "type": "prismatic",
+   "part": "carrier",
+   "axis": [
+    1,
+    0,
+    0
+   ],
+   "min": 0,
+   "max": 880,
+   "period": 6
+  },
+  {
+   "id": "dial",
+   "name": "Louvre dial",
+   "type": "revolute",
+   "part": "knob",
+   "pivot": [
+    400,
+    1000,
+    89
+   ],
+   "axis": [
+    0,
+    0,
+    1
+   ],
+   "min": 0,
+   "max": 90,
+   "period": 4
+  },
+  {
+   "id": "louvre1",
+   "name": "Slat 1 turn",
+   "type": "revolute",
+   "part": "slat1",
+   "pivot": [
+    -315,
+    1035,
+    50
+   ],
+   "axis": [
+    0,
+    1,
+    0
+   ],
+   "min": 0,
+   "max": 90,
+   "follows": {
+    "joint": "dial",
+    "ratio": 1,
+    "offset": 0
+   }
+  },
+  {
+   "id": "louvre2",
+   "name": "Slat 2 turn",
+   "type": "revolute",
+   "part": "slat2",
+   "pivot": [
+    -105,
+    1035,
+    50
+   ],
+   "axis": [
+    0,
+    1,
+    0
+   ],
+   "min": 0,
+   "max": 90,
+   "follows": {
+    "joint": "dial",
+    "ratio": 1,
+    "offset": 0
+   }
+  },
+  {
+   "id": "louvre3",
+   "name": "Slat 3 turn",
+   "type": "revolute",
+   "part": "slat3",
+   "pivot": [
+    105,
+    1035,
+    50
+   ],
+   "axis": [
+    0,
+    1,
+    0
+   ],
+   "min": 0,
+   "max": 90,
+   "follows": {
+    "joint": "dial",
+    "ratio": 1,
+    "offset": 0
+   }
+  },
+  {
+   "id": "louvre4",
+   "name": "Slat 4 turn",
+   "type": "revolute",
+   "part": "slat4",
+   "pivot": [
+    315,
+    1035,
+    50
+   ],
+   "axis": [
+    0,
+    1,
+    0
+   ],
+   "min": 0,
+   "max": 90,
+   "follows": {
+    "joint": "dial",
+    "ratio": 1,
+    "offset": 0
+   }
+  }
+ ]
+}

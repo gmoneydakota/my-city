@@ -1,0 +1,18 @@
+{
+  "job": 7,
+  "agent": "cad",
+  "model": "sonnet",
+  "tier": "standard",
+  "mode": "make",
+  "route": "chosen by you",
+  "escalated_from": null,
+  "builds_on": null,
+  "repeat": null,
+  "has_page": false,
+  "has_model": true,
+  "turns": 10,
+  "cost_usd_estimate": 0.2015,
+  "ok": true,
+  "subtype": "success",
+  "finished_at": "2026-10-31T21:02:15+00:00"
+}

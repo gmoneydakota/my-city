@@ -14,11 +14,12 @@ the agents interactively.
   for prices, WebSearch for news. State the date of the data.
 
 ## Spend usage like it's yours (it is)
-Nine agents in three tiers:
+Ten agents in three tiers (`cad` lives in `agents/cad.md`; the job runner reads both folders):
 
 - **Light (Haiku): `runner`, `scribe`**: quick answers, writing, rewrites.
-- **Standard (Sonnet): `planner`, `tutor`, `scout`, `quant`**: plans,
-  explanations, research, stock models.
+- **Standard (Sonnet): `planner`, `tutor`, `scout`, `quant`, `cad`**: plans,
+  explanations, research, stock models, working 3D models (`model.json` for CAD Studio,
+  checked with `python3 scripts/cad_check.py`).
 - **Heavy (Opus): `analyst`, `coder`, `forge`**: real implementation, deep
   analysis, MCP servers.
 
@@ -31,6 +32,7 @@ data) should be a script, not an agent call.
 - `planner`/`tutor`/`scout` → `coder`, `analyst`, or `forge` when it needs building,
   rigorous multi-angle analysis, or a working server.
 - `quant` → `coder` only when the request is a large application, not a model.
+- `cad` → `coder` only when the request isn't really a 3D object.
 - `scout` → `forge`: pass its findings straight over, don't re-research.
 
 In unattended runs, an agent escalates by replying with one line:

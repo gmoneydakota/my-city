@@ -1,0 +1,34 @@
+{
+  "format": "agent-city-cad/1",
+  "name": "Articulated desk lamp",
+  "description": "A weighted desk lamp with a swivel base, two hinged arms and a tilting shade, so you can aim the light anywhere on the desk.",
+  "units": "mm",
+  "how_it_works": [
+    "The heavy steel base keeps the centre of gravity low, so the lamp doesn't tip when the arm reaches forward.",
+    "The swivel turns the whole arm around the vertical axis to point at a different part of the desk.",
+    "The shoulder hinge leans the lower arm forward or back; the elbow hinge raises or lowers the upper arm.",
+    "The head hinge tilts the shade so the bulb shines straight down on whatever is under it.",
+    "Pressing the push switch on the base turns the bulb on and off."
+  ],
+  "assumptions": ["Hinges are friction hinges (tight enough to hold their angle), so no springs are modelled."],
+  "parts": [
+    {"id": "foot_pad", "name": "Rubber foot pad", "shape": "cylinder", "size": {"r": 72, "h": 2}, "pos": [0, 1, 0], "color": "#1b1b1f", "material": "rubber", "parent": null, "role": "Grips the desk and stops scratches"},
+    {"id": "base", "name": "Weighted base", "shape": "cylinder", "size": {"rTop": 70, "rBottom": 75, "h": 18}, "pos": [0, 11, 0], "color": "#2c3440", "material": "metal", "parent": "foot_pad", "role": "Heavy steel disc that keeps the lamp from tipping over"},
+    {"id": "switch", "name": "Push switch", "shape": "box", "size": {"w": 16, "h": 6, "d": 12}, "pos": [45, 23, 0], "color": "#e0473a", "material": "plastic", "parent": "base", "role": "Turns the bulb on and off"},
+    {"id": "swivel", "name": "Swivel turret", "shape": "cylinder", "size": {"r": 22, "h": 14}, "pos": [0, 27, 0], "color": "#c9ced6", "material": "metal", "parent": "base", "role": "Bearing that lets the whole arm rotate around the base"},
+    {"id": "shoulder_knuckle", "name": "Shoulder hinge", "shape": "cylinder", "size": {"r": 10, "h": 30}, "pos": [0, 42, 0], "rot": [90, 0, 0], "color": "#c9ced6", "material": "metal", "parent": "swivel", "role": "Friction hinge the lower arm pivots on"},
+    {"id": "lower_arm", "name": "Lower arm", "shape": "box", "size": {"w": 14, "h": 200, "d": 10}, "pos": [0, 142, 0], "color": "#f2b134", "material": "paint", "parent": "swivel", "role": "Lifts the head up above the desk"},
+    {"id": "elbow_knuckle", "name": "Elbow hinge", "shape": "cylinder", "size": {"r": 9, "h": 26}, "pos": [0, 242, 0], "rot": [90, 0, 0], "color": "#c9ced6", "material": "metal", "parent": "lower_arm", "role": "Friction hinge between the two arms"},
+    {"id": "upper_arm", "name": "Upper arm", "shape": "box", "size": {"w": 180, "h": 10, "d": 9}, "pos": [90, 242, 0], "color": "#f2b134", "material": "paint", "parent": "lower_arm", "role": "Reaches forward over the desk"},
+    {"id": "head_knuckle", "name": "Head hinge", "shape": "cylinder", "size": {"r": 8, "h": 22}, "pos": [180, 242, 0], "rot": [90, 0, 0], "color": "#c9ced6", "material": "metal", "parent": "upper_arm", "role": "Lets the shade tilt"},
+    {"id": "shade", "name": "Shade", "shape": "lathe", "size": {"points": [[0, -2], [18, -2], [22, -12], [52, -66], [56, -72]]}, "pos": [180, 240, 0], "color": "#f2b134", "material": "paint", "parent": "head_knuckle", "role": "Cone that directs the light downward and hides the bulb from your eyes"},
+    {"id": "bulb", "name": "LED bulb", "shape": "sphere", "size": {"r": 20}, "pos": [180, 196, 0], "color": "#fff3c4", "material": "emissive", "parent": "shade", "role": "Light source"}
+  ],
+  "joints": [
+    {"id": "swivel_turn", "name": "Base swivel", "type": "revolute", "part": "swivel", "pivot": [0, 27, 0], "axis": [0, 1, 0], "min": -170, "max": 170, "default": 0, "period": 9},
+    {"id": "shoulder", "name": "Shoulder hinge", "type": "revolute", "part": "lower_arm", "pivot": [0, 42, 0], "axis": [0, 0, 1], "min": -45, "max": 30, "default": -15, "period": 6},
+    {"id": "elbow", "name": "Elbow hinge", "type": "revolute", "part": "upper_arm", "pivot": [0, 242, 0], "axis": [0, 0, 1], "min": -50, "max": 50, "default": 10, "period": 5},
+    {"id": "head_tilt", "name": "Shade tilt", "type": "revolute", "part": "shade", "pivot": [180, 242, 0], "axis": [0, 0, 1], "min": -45, "max": 45, "default": 0, "period": 4},
+    {"id": "switch_press", "name": "Switch press", "type": "prismatic", "part": "switch", "axis": [0, -1, 0], "min": 0, "max": 3, "default": 0, "period": 1.5}
+  ]
+}

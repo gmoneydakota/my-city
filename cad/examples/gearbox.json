@@ -1,0 +1,31 @@
+{
+  "format": "agent-city-cad/1",
+  "name": "Hand-crank gear train",
+  "description": "Three spur gears on a base plate: turn the crank and the gears pass the motion along, slowing it down and reversing it at every mesh.",
+  "units": "mm",
+  "how_it_works": [
+    "You turn the crank, which spins the small 12-tooth driver gear.",
+    "The driver meshes with the 24-tooth middle gear. Twice the teeth means it turns at half the speed, in the opposite direction, with twice the torque.",
+    "The middle gear meshes with the 18-tooth output gear, which turns 4/3 as fast as the middle gear and in the same direction as the crank.",
+    "Overall ratio: output turns 2/3 of a turn for every crank turn. The pointer on the output gear shows it.",
+    "All gears share a 4 mm module, so their teeth are the same size and mesh cleanly; each pair sits exactly one radius plus the other apart."
+  ],
+  "assumptions": ["Gears spin freely on fixed steel shafts pressed into the base plate."],
+  "parts": [
+    {"id": "plate", "name": "Base plate", "shape": "box", "size": {"w": 260, "h": 12, "d": 130}, "pos": [0, 6, 0], "color": "#3b4252", "material": "metal", "parent": null, "role": "Rigid plate that holds the shafts at exact distances"},
+    {"id": "shaft_a", "name": "Driver shaft", "shape": "cylinder", "size": {"r": 6, "h": 60}, "pos": [-78, 42, 0], "color": "#d8dee9", "material": "metal", "parent": "plate", "role": "Fixed axle for the driver gear"},
+    {"id": "shaft_b", "name": "Middle shaft", "shape": "cylinder", "size": {"r": 6, "h": 46}, "pos": [-6, 35, 0], "color": "#d8dee9", "material": "metal", "parent": "plate", "role": "Fixed axle for the middle gear"},
+    {"id": "shaft_c", "name": "Output shaft", "shape": "cylinder", "size": {"r": 6, "h": 46}, "pos": [78, 35, 0], "color": "#d8dee9", "material": "metal", "parent": "plate", "role": "Fixed axle for the output gear"},
+    {"id": "gear_a", "name": "Driver gear (12 teeth)", "shape": "gear", "size": {"r": 24, "teeth": 12, "h": 14, "bore": 6}, "pos": [-78, 40, 0], "color": "#e5a50a", "material": "metal", "parent": "shaft_a", "role": "Takes the crank's motion and pushes on the middle gear"},
+    {"id": "crank_arm", "name": "Crank arm", "shape": "box", "size": {"w": 50, "h": 8, "d": 14}, "pos": [-53, 51, 0], "color": "#5e81ac", "material": "paint", "parent": "gear_a", "role": "Lever that gives your hand leverage on the driver gear"},
+    {"id": "crank_knob", "name": "Crank knob", "shape": "cylinder", "size": {"r": 7, "h": 30}, "pos": [-34, 70, 0], "color": "#bf616a", "material": "plastic", "parent": "crank_arm", "role": "Handle you hold to turn the crank"},
+    {"id": "gear_b", "name": "Middle gear (24 teeth)", "shape": "gear", "size": {"r": 48, "teeth": 24, "h": 14, "bore": 6}, "pos": [-6, 40, 0], "rot": [0, 7.5, 0], "color": "#88c0d0", "material": "metal", "parent": "shaft_b", "role": "Reduces speed by 2:1 and reverses direction"},
+    {"id": "gear_c", "name": "Output gear (18 teeth)", "shape": "gear", "size": {"r": 36, "teeth": 18, "h": 14, "bore": 6}, "pos": [78, 40, 0], "color": "#a3be8c", "material": "metal", "parent": "shaft_c", "role": "Delivers the final motion"},
+    {"id": "pointer", "name": "Output pointer", "shape": "box", "size": {"w": 34, "h": 4, "d": 6}, "pos": [95, 49, 0], "color": "#ebcb8b", "material": "paint", "parent": "gear_c", "role": "Makes the output rotation easy to see"}
+  ],
+  "joints": [
+    {"id": "crank", "name": "Crank / driver gear", "type": "continuous", "part": "gear_a", "pivot": [-78, 40, 0], "axis": [0, 1, 0], "rpm": 20},
+    {"id": "middle", "name": "Middle gear", "type": "continuous", "part": "gear_b", "pivot": [-6, 40, 0], "axis": [0, 1, 0], "follows": {"joint": "crank", "ratio": -0.5}},
+    {"id": "output", "name": "Output gear", "type": "continuous", "part": "gear_c", "pivot": [78, 40, 0], "axis": [0, 1, 0], "follows": {"joint": "middle", "ratio": -1.3333333}}
+  ]
+}

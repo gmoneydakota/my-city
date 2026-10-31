@@ -34,6 +34,8 @@ from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parent.parent
 AGENTS_DIR = ROOT / ".claude" / "agents"
+# Extra agents kept outside .claude/ (e.g. agents/cad.md). If a name exists in both, .claude/agents wins.
+EXTRA_AGENTS_DIR = ROOT / "agents"
 SCHEDULES = ROOT / "schedules.json"
 TMP = Path(os.environ.get("RUNNER_TEMP", "/tmp"))
 STATE = TMP / "city-job.json"
@@ -51,6 +53,7 @@ REPEAT_DAYS = {"daily": [0, 1, 2, 3, 4, 5, 6], "weekdays": [0, 1, 2, 3, 4]}
 RULES = [
     ("quant", r"\b(stock|stocks|ticker|share price|buy signal|when to buy|sell signal|portfolio|"
               r"backtest|trading|invest|etf|crypto|bitcoin|options|dividend|earnings|market model|market news|the market|watchlist)\b"),
+    ("cad", r"\b(3[- ]?d (model|print|part|design|object|asset|printable)\w*|cad|stl|openscad|3d-printable)\b"),
     ("forge", r"\b(mcp server|mcp connector|build (a|an) connector)\b"),
     ("scout", r"\b(connector idea|what should i connect|find (an? )?(api|data source))\b"),
     ("tutor", r"^(explain|teach me|how does|what is|why does)\b"),
@@ -79,12 +82,22 @@ def pages_url() -> str:
     return f"https://{owner}.github.io/{repo}/" if repo != f"{owner}.github.io" else f"https://{repo}/"
 
 
+def agent_file(name: str) -> Path | None:
+    for d in (AGENTS_DIR, EXTRA_AGENTS_DIR):
+        p = d / f"{name}.md"
+        if p.exists():
+            return p
+    return None
+
+
 def load_agent(name: str) -> dict:
-    p = AGENTS_DIR / f"{name}.md"
-    if not p.exists():
+    p = agent_file(name)
+    if not p:
         raise SystemExit(f"unknown agent: {name}")
     txt = p.read_text()
     m = re.match(r"^---\n(.*?)\n---\n(.*)$", txt, re.S)
+    if not m:
+        raise SystemExit(f"agent file {p} has no --- frontmatter ---")
     meta = dict(re.findall(r"^(\w+):\s*(.+)$", m.group(1), re.M))
     tools = [t.strip() for t in meta.get("tools", "").split(",") if t.strip()]
     return {"name": name, "model": meta.get("model", "sonnet"), "tier": TIER_OF.get(meta.get("model"), "standard"),
@@ -92,7 +105,8 @@ def load_agent(name: str) -> dict:
 
 
 def all_agents() -> dict:
-    return {p.stem: load_agent(p.stem) for p in sorted(AGENTS_DIR.glob("*.md"))}
+    names = {p.stem for d in (AGENTS_DIR, EXTRA_AGENTS_DIR) for p in d.glob("*.md")}
+    return {n: load_agent(n) for n in sorted(names)}
 
 
 # ---------------------------------------------------------------- request parsing
@@ -151,7 +165,8 @@ def save_schedules(data: dict):
 def route(request: str, agents: dict) -> tuple[str, str]:
     text = request.lower()
     hits = [a for a, pat in RULES if re.search(pat, text, re.M)]
-    if len(hits) == 1 or (hits and hits[0] == "quant"):
+    # quant and cad are specialists: when their keywords match, they win over generic "build/make" words
+    if len(hits) == 1 or (hits and hits[0] in ("quant", "cad")):
         return hits[0], "keyword rules (free)"
     if hits and len(set(hits) - {"coder"}) == 0:
         return "coder", "keyword rules (free)"
@@ -178,6 +193,8 @@ Map of the city:
 - .claude/agents/<name>.md: an agent = frontmatter (name, description, tools, model: haiku|sonnet|opus) + prompt.
   A new agent also needs: an entry in AGENTS in index.html (pick an existing shape or add one in buildTower),
   and optionally a keyword rule in RULES in both index.html and scripts/city_job.py.
+  agents/<name>.md works the same way (used for agents that can't be written under .claude/, e.g. cad).
+- cad/: CAD Studio (cad/index.html) for the CAD tower; model format in cad/SCHEMA.md, checker scripts/cad_check.py.
 - scripts/city_job.py (job runner), scripts/city_schedule.py (recurring jobs), scripts/signals.py (market scan),
   watchlist.json (tickers), schedules.json (recurring jobs: id, title, request, agent, every, time, tz, days).
 - bets/: the self-learning NFL/NBA betting model (bets.py, betmodel/*.py, tests in bets/test_betmodel.py,
@@ -409,6 +426,7 @@ def cmd_run():
             "mode": mode, "route": how, "escalated_from": runs[0]["_agent"] if len(runs) > 1 else None,
             "builds_on": builds_on, "repeat": describe_repeat(schedule) if schedule else None,
             "has_page": (out / "index.html").exists(),
+            "has_model": (out / "model.json").exists(),
             "turns": sum(int(r.get("num_turns") or 0) for r in runs), "cost_usd_estimate": round(cost, 4),
             "ok": not final.get("is_error"), "subtype": final.get("subtype"),
             "finished_at": datetime.now(timezone.utc).isoformat(timespec="seconds")}
@@ -534,6 +552,8 @@ def cmd_finish():
     else:
         if st.get("has_page"):
             head += f"▶ **Open it:** {pages_url()}{st['out_dir']}/ (live about a minute after this message)\n\n"
+        if st.get("has_model"):
+            head += f"🧊 **Open the 3D model in CAD Studio:** {pages_url()}cad/?job={job}\n\n"
         if st.get("repeat"):
             head += f"🔁 Repeats {st['repeat']}. Stop it from the city's Jobs tab.\n\n"
     body = head + f"📁 **Files:** {link}\n\n---\n\n{st['summary']}"

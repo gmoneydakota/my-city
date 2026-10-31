@@ -23,6 +23,9 @@ result is waiting in the city (and in your repo).
 |---|---|
 | `index.html` | The 3D city (Three.js). Towers are agents. Orbs fly to a tower when it's working, and beams light up while it builds. Tabs: **Make**, **Jobs**, **Market**. |
 | `.claude/agents/*.md` | The 9 agents: your original 8 plus **quant** for stock models. |
+| `agents/cad.md` | The 10th agent, **CAD**: designs working 3D models. The job runner loads agents from here too. |
+| `cad/` | **CAD Studio**, the app behind the CAD tower: `index.html` (viewer/animator/exporter), `SCHEMA.md` (model format), `examples/`. |
+| `scripts/cad_check.py` | Checks a CAD model for errors and physical nonsense (floating parts, not on the floor). No Claude usage. |
 | `scripts/city_job.py` | The cloud job runner: routes, runs the agent on its tier, escalates once if asked, saves output. |
 | `scripts/market_data.py` | Fresh daily prices, no API key (Yahoo Finance, falling back to Stooq). |
 | `scripts/signals.py` | Daily buy/hold/avoid signals with reasons and an honest backtest. **Uses zero Claude usage.** |
@@ -81,6 +84,24 @@ gh repo create agent-city --public --source . --push
 Upgrades can't edit `.github/` (GitHub blocks that). For the approval page to be created automatically, tick
 **Settings → Actions → General → Allow GitHub Actions to create and approve pull requests**. Without it, the
 job gives you a link to create it with one click.
+
+## 🧊 CAD Tower: 3D models of anything
+
+Click the **CAD** tower (the one with the spinning hologram) and the city flies you into **CAD Studio** (`cad/`).
+
+- Describe anything ("a treasure chest whose lid opens", "a 3D-printable phone stand") and press **Design it**. The
+  **CAD** agent (Sonnet) designs it at real size in millimetres, adds the hinges, wheels, gears and sliders that make
+  it work, writes "how it works" steps, and runs `scripts/cad_check.py` so no part floats. That takes about 3–10
+  minutes, and the studio opens the model by itself when it's ready.
+- In the studio: **▶ Play** to watch it work, drag the joint sliders, use **exploded view** and **X-ray**, click any part to see
+  what it's for, then **⬇ STL** (3D printing), **⬇ GLB** (Blender, AR, game engines) or **⬇ JSON**.
+- **✏️ Change this model** sends a follow-up that edits the earlier design instead of starting over.
+- Three working examples (desk lamp, gear train, rover) are there even before you connect a repo.
+- Requests in the normal Make box that mention "3D model", "3D print", "CAD" or "STL" go to the CAD agent too.
+
+The CAD agent lives in `agents/cad.md`, not `.claude/agents/`, because the upgrade job that built it wasn't allowed to
+write inside `.claude/`. The job runner reads both folders. To also use it as a Claude Code subagent on your own
+computer, copy it with `cp agents/cad.md .claude/agents/`. That's optional, and the copy in `.claude/agents/` wins.
 
 ## 🎰 Lucky Tower: the self-learning betting model
 

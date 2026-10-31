@@ -133,7 +133,7 @@ LV @ NYJ,LV,Ashton Jeanty,anytime_td,0.51,0.72,42% (+139),,,
 LV @ NYJ,LV,Kirk Cousins,pass_yds,248.40,99.19,248.5,232.5,264.5,
 LV @ NYJ,LV,Kirk Cousins,pass_tds,1.85,1.37,1.5,0.5,2.5,
 LV @ NYJ,LV,Kirk Cousins,rush_yds,0.93,2.62,0.5,,0.5,
-LV @ NYJ,LV,Brock Bowers,rec_yds,75.67,33.08,75.5,69.5,81.5,
+LV @ NYJ,LV,Brock Bowers,rec_yds,75.68,33.08,75.5,69.5,81.5,
 LV @ NYJ,LV,Brock Bowers,receptions,6.05,2.48,5.5,4.5,6.5,
 LV @ NYJ,LV,Brock Bowers,anytime_td,0.52,0.73,42% (+137),,,
 LV @ NYJ,LV,Tre Tucker,rec_yds,60.99,34.34,60.5,55.5,66.5,
@@ -194,7 +194,7 @@ ATL @ TB,ATL,Drake London,receptions,5.20,2.30,5.5,4.5,5.5,
 ATL @ TB,ATL,Kyle Pitts Sr.,rec_yds,32.54,24.33,32.5,28.5,36.5,
 ATL @ TB,ATL,Kyle Pitts Sr.,receptions,3.47,2.21,3.5,2.5,4.5,
 ATL @ TB,ATL,Kyle Pitts Sr.,anytime_td,0.55,0.75,44% (+130),,,
-IND @ JAX,JAX,Bhayshul Tuten,rush_yds,56.24,27.67,56.5,51.5,61.5,
+IND @ JAX,JAX,Bhayshul Tuten,rush_yds,56.25,27.67,56.5,51.5,61.5,
 IND @ JAX,JAX,Bhayshul Tuten,rec_yds,20.05,15.95,20.5,17.5,23.5,
 IND @ JAX,JAX,Bhayshul Tuten,receptions,2.00,1.43,1.5,1.5,2.5,
 IND @ JAX,JAX,Bhayshul Tuten,anytime_td,0.75,0.90,51% (-105),,,
@@ -297,8 +297,6 @@ NE @ MIA,NE,Rhamondre Stevenson,rush_yds,42.93,23.16,42.5,38.5,47.5,
 NE @ MIA,NE,Rhamondre Stevenson,rec_yds,31.75,29.20,31.5,26.5,36.5,
 NE @ MIA,NE,Rhamondre Stevenson,receptions,2.82,1.86,2.5,1.5,3.5,
 NE @ MIA,NE,Rhamondre Stevenson,anytime_td,0.60,0.79,45% (+120),,,
-NE @ MIA,NE,A.J. Brown,rec_yds,52.26,32.89,52.5,46.5,57.5,Questionable
-NE @ MIA,NE,A.J. Brown,receptions,4.17,2.32,3.5,3.5,4.5,Questionable
 NE @ MIA,NE,TreVeyon Henderson,rush_yds,39.03,29.30,39.5,33.5,44.5,Questionable
 NE @ MIA,NE,TreVeyon Henderson,rec_yds,9.25,6.88,7.5,6.5,9.5,Questionable
 NE @ MIA,NE,TreVeyon Henderson,receptions,1.14,1.15,0.5,0.5,1.5,Questionable

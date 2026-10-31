@@ -131,3 +131,15 @@ when to buy, so treat it as one input among several.
   Node, and package managers, and they're told to write only inside their job folder.
 - Your Claude token lives in GitHub Secrets. Your optional GitHub token lives only in your
   browser's local storage.
+
+## Connections (optional)
+
+Jobs run on GitHub's servers, so they can't use the connectors on your claude.ai account. Instead, each service gets
+its own key under **Settings → Secrets and variables → Actions**. A connection is off until its secret exists.
+Details are in `scripts/city_connect.py`.
+
+| Secret | What it turns on |
+|---|---|
+| `FIRECRAWL_API_KEY` | Web search and page scraping tools for standard and heavy agents (not the light tier) |
+| `CITY_MCP_SERVERS` | Any other remote MCP server, as JSON: `{"name": {"type": "http", "url": "https://...", "headers": {"Authorization": "Bearer KEY"}}}`. Only `https` servers are accepted. |
+| `SLACK_WEBHOOK_URL` | A Slack message when a job finishes, pauses, fails, or has an upgrade to approve |

@@ -54,6 +54,9 @@ jobs:
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # optional connections (see scripts/city_connect.py); each is off until its secret exists
+          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+          CITY_MCP_SERVERS: ${{ secrets.CITY_MCP_SERVERS }}
         run: |
           # pasted tokens often pick up line breaks/spaces from terminal wrapping; strip them
           export CLAUDE_CODE_OAUTH_TOKEN="$(printf '%s' "$CLAUDE_CODE_OAUTH_TOKEN" | tr -d '[:space:]')"
@@ -69,7 +72,11 @@ jobs:
       - name: Save the results (or open an upgrade pull request)
         run: python3 scripts/city_job.py save
       - name: Report back on the issue
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         run: python3 scripts/city_job.py finish
       - name: Report failure
         if: failure()
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         run: python3 scripts/city_job.py fail

@@ -13,8 +13,9 @@ BASE = "https://api.the-odds-api.com/v4"
 SPORT = {"nba": "basketball_nba", "nfl": "americanfootball_nfl"}
 
 # Sportsbooks used for the consensus "fair" price (DFS apps excluded from consensus).
+# 9 books + Underdog = 10 bookmakers = billed as ONE region (5 credits per game for 5 prop markets)
 CONSENSUS_BOOKS = ["draftkings", "fanduel", "betmgm", "williamhill_us", "espnbet", "betrivers", "fanatics",
-                   "pinnacle", "lowvig", "betonlineag"]
+                   "pinnacle", "betonlineag"]
 DFS_BOOKS = ["underdog"]
 
 PROP_MARKETS = {
@@ -111,3 +112,69 @@ def event_props(league: str, key: str, event_id: str, markets: list[str]) -> lis
                 quotes.append({"player": player, "stat": stat, "line": float(line), "side": side,
                                "price": o.get("price"), "book": b["key"]})
     return quotes
+
+
+# --------------------------------------------------------------------------- credit budget
+# The free Odds API plan has ~500 credits/month. Spread them evenly over the month (unused credits
+# roll forward), never go over, and reuse the morning's prop lines for later runs the same day.
+import os as _os
+from datetime import datetime as _dt, timezone as _tz
+import calendar as _cal
+import json as _json
+from .common import ROOT as _ROOT
+
+USAGE = _ROOT / "history" / "odds_usage.json"
+MONTHLY_BUDGET = int(_os.environ.get("ODDS_MONTHLY_BUDGET", "480"))
+
+
+def _usage() -> dict:
+    month = _dt.now(_tz.utc).strftime("%Y-%m")
+    try:
+        u = _json.loads(USAGE.read_text())
+    except Exception:  # noqa: BLE001
+        u = {}
+    if u.get("month") != month:
+        u = {"month": month, "used": 0, "days": {}}
+    return u
+
+
+def allowance() -> int:
+    """Credits we may still spend today (even share of what's left this month)."""
+    u, now = _usage(), _dt.now(_tz.utc)
+    days_left = _cal.monthrange(now.year, now.month)[1] - now.day + 1
+    left = MONTHLY_BUDGET - u["used"]
+    spent_today = u["days"].get(now.strftime("%d"), 0)
+    per_day = (left + spent_today) / days_left
+    return max(0, int(per_day - spent_today))
+
+
+def spend(credits: int) -> None:
+    u, now = _usage(), _dt.now(_tz.utc)
+    u["used"] += credits
+    d = now.strftime("%d")
+    u["days"][d] = u["days"].get(d, 0) + credits
+    USAGE.parent.mkdir(parents=True, exist_ok=True)
+    USAGE.write_text(_json.dumps(u, indent=1))
+
+
+def prop_cost(markets: list[str]) -> int:
+    regions = -(-len(CONSENSUS_BOOKS + DFS_BOOKS) // 10)
+    return len(markets) * regions
+
+
+QUOTES = _ROOT / "history" / "prop_quotes"
+
+
+def save_quotes(league: str, quotes: list[dict]) -> None:
+    QUOTES.mkdir(parents=True, exist_ok=True)
+    (QUOTES / f"{league}.json").write_text(_json.dumps({"fetched_at": _dt.now(_tz.utc).isoformat(timespec="seconds"),
+                                                        "quotes": quotes}))
+
+
+def load_quotes(league: str, max_age_hours: float = 20) -> tuple[list[dict], str | None]:
+    try:
+        d = _json.loads((QUOTES / f"{league}.json").read_text())
+        age = (_dt.now(_tz.utc) - _dt.fromisoformat(d["fetched_at"])).total_seconds() / 3600
+        return (d["quotes"], d["fetched_at"]) if age <= max_age_hours else ([], None)
+    except Exception:  # noqa: BLE001
+        return [], None

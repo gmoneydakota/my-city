@@ -48,9 +48,22 @@ def daily(a) -> int:
         print(f"learned: {lesson}", file=sys.stderr)
     key = os.environ.get("ODDS_API_KEY") or None
     results, errors = [], []
+    # Share today's Odds API credits: if NFL plays within ~30h, NBA gets half and NFL the rest.
+    nfl_soon = False
+    if key:
+        try:
+            from datetime import datetime, timedelta, timezone
+            from betmodel import oddsapi
+            soon = datetime.now(timezone.utc) + timedelta(hours=30)
+            nfl_soon = any(datetime.fromisoformat(e["commence_time"].replace("Z", "+00:00")) <= soon
+                           for e in oddsapi.events("nfl", key))
+            print(f"Odds API credits available today: {oddsapi.allowance()}", file=sys.stderr)
+        except Exception:  # noqa: BLE001
+            pass
     for lg in ("nba", "nfl"):
         try:
-            res = engine.run(lg, None, key, a.lines, not a.no_props, a.max_events, a.per_team, True)
+            share = 0.5 if (lg == "nba" and nfl_soon) else 1.0
+            res = engine.run(lg, None, key, a.lines, not a.no_props, a.max_events, a.per_team, True, share)
             picks = report.select(res, a.min_edge, a.min_edge_prop, a.bankroll)
             report.write_outputs(res, picks, report.markdown(res, picks, a.bankroll, engine.ud_breakeven(3)))
             report.log_picks(res, picks, a.bankroll)

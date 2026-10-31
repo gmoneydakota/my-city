@@ -12,7 +12,7 @@ from __future__ import annotations
 import csv
 import itertools
 import statistics
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 from . import espn, injuries, oddsapi, props, ratings
 from . import learn
@@ -305,7 +305,7 @@ def projection_sheet(league: str, games: list[dict], model, pbook: props.PlayerB
 
 
 def run(league: str, date: str | None, odds_key: str | None, lines_csv: str | None, want_props: bool,
-        max_events: int, per_team: int, sheet: bool) -> dict:
+        max_events: int, per_team: int, sheet: bool, budget_share: float = 1.0) -> dict:
     now = datetime.now(timezone.utc)
     games_all = espn.slate(league, date)
     games = [g for g in games_all if g["state"] == "pre"]
@@ -317,12 +317,7 @@ def run(league: str, date: str | None, odds_key: str | None, lines_csv: str | No
     model = ratings.build(league, now)
     res["model"] = model
     inj = espn.injuries(league)
-    consensus = {}
-    if odds_key:
-        try:
-            consensus = oddsapi.game_lines(league, odds_key)
-        except Exception as e:  # keep going with DK-only
-            res["warnings"].append(f"Odds API game lines failed: {e}")
+    consensus = {}  # multi-book game lines cost credits; ESPN already gives DraftKings' lines for free
     pbook = props.PlayerBook(league, espn.current_season(league))
     pbook.load_teams({t for g in games for t in (g["home"], g["away"])})
     try:
@@ -340,13 +335,32 @@ def run(league: str, date: str | None, odds_key: str | None, lines_csv: str | No
             tm = espn.teams(league)
             ours = {(oddsapi.nickname(tm[g["home"]]["name"]), oddsapi.nickname(tm[g["away"]]["name"])) for g in games
                     if g["home"] in tm and g["away"] in tm}
+            markets = oddsapi.DEFAULT_PROP_MARKETS[league]
+            cost = oddsapi.prop_cost(markets)
+            budget = int(oddsapi.allowance() * budget_share)
+            fetched = []
             try:
-                evs = [e for e in oddsapi.events(league, odds_key)
-                       if (oddsapi.nickname(e["home_team"]), oddsapi.nickname(e["away_team"])) in ours]
+                soon = now + timedelta(hours=30)
+                evs = [e for e in oddsapi.events(league, odds_key)  # free call
+                       if (oddsapi.nickname(e["home_team"]), oddsapi.nickname(e["away_team"])) in ours
+                       and datetime.fromisoformat(e["commence_time"].replace("Z", "+00:00")) <= soon]
                 for e in sorted(evs, key=lambda e: e["commence_time"])[:max_events]:
-                    quotes += oddsapi.event_props(league, odds_key, e["id"], oddsapi.DEFAULT_PROP_MARKETS[league])
+                    if budget < cost:
+                        break
+                    fetched += oddsapi.event_props(league, odds_key, e["id"], markets)
+                    oddsapi.spend(cost)
+                    budget -= cost
             except Exception as e:
                 res["warnings"].append(f"Odds API props failed: {e}")
+            if fetched:
+                oddsapi.save_quotes(league, fetched)
+                quotes += fetched
+            else:
+                saved, when = oddsapi.load_quotes(league)
+                if saved:
+                    quotes += saved
+                    res["warnings"].append(f"Prop lines reused from {when[:16].replace('T', ' ')} UTC to save "
+                                           f"Odds API credits; re-check prices in the app.")
         if quotes:
             dk, legs, warn = prop_bets(league, games, model, pbook, quotes, inj)
             res["prop_bets"], res["ud_legs"] = dk, legs

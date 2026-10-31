@@ -8,19 +8,22 @@ name: city-job
 on:
   issues:
     types: [opened, labeled]
+  workflow_call:          # used by city-schedule.yml for recurring jobs
+    inputs:
+      issue_number: { type: string, required: true }
+      issue_title: { type: string, required: true }
+      issue_body: { type: string, required: true }
 
 permissions:
   contents: write
   issues: write
-
-concurrency:
-  group: city-job-${{ github.event.issue.number }}
-  cancel-in-progress: false
+  pull-requests: write    # upgrade mode delivers changes as a pull request
 
 jobs:
   work:
     # Only YOU can spend your usage: issues from anyone else are ignored.
     if: >-
+      github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' ||
       github.event.issue.user.login == github.repository_owner &&
       (
         (github.event.action == 'opened' &&
@@ -28,12 +31,15 @@ jobs:
         (github.event.action == 'labeled' && github.event.label.name == 'run-again')
       )
     runs-on: ubuntu-latest
-    timeout-minutes: 50
+    timeout-minutes: 55
+    concurrency:
+      group: city-job-${{ inputs.issue_number || github.event.issue.number }}
+      cancel-in-progress: false
     env:
       GH_TOKEN: ${{ github.token }}
-      ISSUE_NUMBER: ${{ github.event.issue.number }}
-      ISSUE_TITLE: ${{ github.event.issue.title }}
-      ISSUE_BODY: ${{ github.event.issue.body }}
+      ISSUE_NUMBER: ${{ inputs.issue_number || github.event.issue.number }}
+      ISSUE_TITLE: ${{ inputs.issue_title || github.event.issue.title }}
+      ISSUE_BODY: ${{ inputs.issue_body || github.event.issue.body }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -60,16 +66,8 @@ jobs:
           fi
           claude --version
           python3 scripts/city_job.py run
-      - name: Save the results to the repo
-        run: |
-          git config user.name "agent-city[bot]"
-          git config user.email "agent-city@users.noreply.github.com"
-          git add "outputs/job-${ISSUE_NUMBER}" watchlist.json
-          git commit -m "Job #${ISSUE_NUMBER}: ${ISSUE_TITLE//\[city\] /}" || echo "nothing to commit"
-          for i in 1 2 3 4; do
-            git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && break
-            sleep $((i * 3))
-          done
+      - name: Save the results (or open an upgrade pull request)
+        run: python3 scripts/city_job.py save
       - name: Report back on the issue
         run: python3 scripts/city_job.py finish
       - name: Report failure

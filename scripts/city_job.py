@@ -2,8 +2,16 @@
 """Runs one Agent City job inside GitHub Actions. Called by .github/workflows/city-job.yml.
 
     python3 scripts/city_job.py run      # route -> run agent -> maybe escalate -> write outputs
+    python3 scripts/city_job.py save     # commit results (or open an upgrade pull request)
     python3 scripts/city_job.py finish   # comment on the issue, label it done, close it
     python3 scripts/city_job.py fail     # label failed + explain
+
+Request lines the city adds to the issue body (all optional):
+    Agent: auto | <agent name>
+    Mode: make | upgrade            upgrade = change the city itself, delivered as a pull request
+    Repeat: daily|weekdays|weekly HH:MM Area/City
+    Builds on: <job number>         remix an earlier job's files
+    Command: stop-schedule <id>     free housekeeping, no model call
 
 Cost control, cheapest first:
   1. Routing uses keyword rules (free). Only ambiguous requests get one Haiku call.
@@ -11,7 +19,7 @@ Cost control, cheapest first:
      so there's no extra "manager" model sitting on top burning tokens.
   3. Light/standard agents can answer `ESCALATE: <agent>` instead of struggling;
      only then is a heavier model used (one hop max).
-  4. Every tier has a hard turn cap.
+  4. Every tier has a hard turn cap. Commands never call a model.
 """
 from __future__ import annotations
 
@@ -22,22 +30,27 @@ import subprocess
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parent.parent
 AGENTS_DIR = ROOT / ".claude" / "agents"
-STATE = Path(os.environ.get("RUNNER_TEMP", "/tmp")) / "city-job.json"
+SCHEDULES = ROOT / "schedules.json"
+TMP = Path(os.environ.get("RUNNER_TEMP", "/tmp"))
+STATE = TMP / "city-job.json"
 
 TIER_OF = {"haiku": "light", "sonnet": "standard", "opus": "heavy"}
-RANK = {"light": 0, "standard": 1, "heavy": 2}
 MAX_TURNS = {"light": 12, "standard": 35, "heavy": 70}
+UPGRADE_TURNS = 90
 # Tools an agent may use headlessly. Bash is limited to interpreters/package managers.
 BASH_OK = ["Bash(python3:*)", "Bash(python:*)", "Bash(pip:*)", "Bash(pip3:*)", "Bash(node:*)",
-           "Bash(npm:*)", "Bash(npx:*)", "Bash(ls:*)", "Bash(mkdir:*)", "Bash(cat:*)", "Bash(head:*)"]
+           "Bash(npm:*)", "Bash(npx:*)", "Bash(ls:*)", "Bash(mkdir:*)", "Bash(cat:*)", "Bash(head:*)",
+           "Bash(cp:*)"]
+REPEAT_DAYS = {"daily": [0, 1, 2, 3, 4, 5, 6], "weekdays": [0, 1, 2, 3, 4]}
 
 # Keyword routing: (agent, pattern). First match with a unique winner skips the LLM entirely.
 RULES = [
     ("quant", r"\b(stock|stocks|ticker|share price|buy signal|when to buy|sell signal|portfolio|"
-              r"backtest|trading|invest|etf|crypto|bitcoin|options|dividend|earnings|market model)\b"),
+              r"backtest|trading|invest|etf|crypto|bitcoin|options|dividend|earnings|market model|market news|the market|watchlist)\b"),
     ("forge", r"\b(mcp server|mcp connector|build (a|an) connector)\b"),
     ("scout", r"\b(connector idea|what should i connect|find (an? )?(api|data source))\b"),
     ("tutor", r"^(explain|teach me|how does|what is|why does)\b"),
@@ -57,6 +70,15 @@ def gh(*args: str, check=False):
     return sh(["gh", *args], check=check)
 
 
+def git(*args: str, check=True):
+    return sh(["git", *args], check=check, cwd=ROOT)
+
+
+def pages_url() -> str:
+    owner, _, repo = os.environ.get("GITHUB_REPOSITORY", "owner/repo").partition("/")
+    return f"https://{owner}.github.io/{repo}/" if repo != f"{owner}.github.io" else f"https://{repo}/"
+
+
 def load_agent(name: str) -> dict:
     p = AGENTS_DIR / f"{name}.md"
     if not p.exists():
@@ -73,19 +95,58 @@ def all_agents() -> dict:
     return {p.stem: load_agent(p.stem) for p in sorted(AGENTS_DIR.glob("*.md"))}
 
 
-def parse_request() -> tuple[str, str | None]:
+# ---------------------------------------------------------------- request parsing
+
+FIELDS = ("Agent", "Mode", "Repeat", "Builds on", "Command")
+
+
+def parse_request() -> tuple[str, dict, str]:
     title = os.environ.get("ISSUE_TITLE", "")
     body = os.environ.get("ISSUE_BODY", "") or ""
-    forced = None
-    m = re.search(r"^\s*Agent:\s*([a-z]+)\s*$", body, re.I | re.M)
-    if m and m.group(1).lower() != "auto":
-        forced = m.group(1).lower()
-    body = re.sub(r"^\s*Agent:.*$", "", body, flags=re.I | re.M)
-    body = re.sub(r"<!--.*?-->", "", body, flags=re.S).strip()
-    clean_title = re.sub(r"^\[city\]\s*", "", title, flags=re.I).strip()
+    fields = {}
+    for key in FIELDS:
+        m = re.search(rf"^\s*{key}:\s*(.+?)\s*$", body, re.I | re.M)
+        if m:
+            fields[key.lower()] = m.group(1).strip()
+        body = re.sub(rf"^\s*{key}:.*$", "", body, flags=re.I | re.M)
+    body = re.sub(r"<!--.*?-->", "", body, flags=re.S)
+    body = re.sub(r"^Scheduled run of recurring job.*$", "", body, flags=re.M).strip()
+    clean_title = re.sub(r"^\[city\]\s*(🔁\s*)?", "", title, flags=re.I).strip()
     request = body if len(body) > len(clean_title) else f"{clean_title}\n\n{body}".strip()
-    return request, forced
+    return request, fields, clean_title
 
+
+def parse_repeat(text: str) -> dict | None:
+    m = re.match(r"(daily|weekdays|weekly)\s+(\d{1,2}):(\d{2})\s*(\S+)?", text.strip(), re.I)
+    if not m:
+        return None
+    every, hh, mm, tz = m.group(1).lower(), int(m.group(2)), int(m.group(3)), m.group(4) or "UTC"
+    try:
+        zone = ZoneInfo(tz)
+    except Exception:  # noqa: BLE001
+        tz, zone = "UTC", ZoneInfo("UTC")
+    days = REPEAT_DAYS.get(every) or [datetime.now(zone).weekday()]
+    return {"every": every, "time": f"{hh:02d}:{mm:02d}", "tz": tz, "days": days}
+
+
+def describe_repeat(s: dict) -> str:
+    names = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+    when = {"daily": "every day", "weekdays": "every weekday"}.get(s["every"], f"every {names[s['days'][0]]}")
+    return f"{when} at {s['time']} ({s['tz']})"
+
+
+def load_schedules() -> dict:
+    try:
+        return json.loads(SCHEDULES.read_text())
+    except Exception:  # noqa: BLE001
+        return {"schedules": []}
+
+
+def save_schedules(data: dict):
+    SCHEDULES.write_text(json.dumps(data, indent=2) + "\n")
+
+
+# ---------------------------------------------------------------- routing + prompts
 
 def route(request: str, agents: dict) -> tuple[str, str]:
     text = request.lower()
@@ -99,8 +160,7 @@ def route(request: str, agents: dict) -> tuple[str, str]:
               f"Request:\n<<<\n{request[:3000]}\n>>>\n\nReply with only the agent name, lowercase.")
     try:
         out = sh(["claude", "-p", prompt, "--model", "haiku", "--max-turns", "1"], timeout=120).stdout.strip().lower()
-        pick = re.findall(r"[a-z]+", out)
-        pick = next((p for p in pick if p in agents), None)
+        pick = next((p for p in re.findall(r"[a-z]+", out) if p in agents), None)
         if pick:
             return pick, "one Haiku routing call"
     except Exception as exc:  # noqa: BLE001
@@ -108,35 +168,71 @@ def route(request: str, agents: dict) -> tuple[str, str]:
     return (hits[0] if hits else "planner"), "fallback"
 
 
-def build_prompt(agent: dict, request: str, job: int, out_dir: str, can_write: bool) -> tuple[str, str]:
-    today = datetime.now(timezone.utc).strftime("%A %d %B %Y")
-    system = agent["prompt"] + f"""
+UPGRADE_RULES = """--- Agent City UPGRADE job ---
+You are upgrading Agent City itself: this repository. Make the requested change directly in the repo files.
+Your change is sent to the owner as a pull request; nothing goes live until they approve it.
+Map of the city:
+- index.html: the whole 3D city (Three.js, one file). AGENTS lists the towers (id, name, tier, role, shape);
+  buildTower() draws each shape; RULES is the live routing preview; EXAMPLES are the idea chips.
+- .claude/agents/<name>.md: an agent = frontmatter (name, description, tools, model: haiku|sonnet|opus) + prompt.
+  A new agent also needs: an entry in AGENTS in index.html (pick an existing shape or add one in buildTower),
+  and optionally a keyword rule in RULES in both index.html and scripts/city_job.py.
+- scripts/city_job.py (job runner), scripts/city_schedule.py (recurring jobs), scripts/signals.py (market scan),
+  watchlist.json (tickers), schedules.json (recurring jobs: id, title, request, agent, every, time, tz, days).
+Rules:
+- Never edit anything under .github/ (GitHub blocks it). If the upgrade truly needs a workflow change,
+  do everything else and explain the needed workflow change in the README.
+- Keep every existing feature working unless asked to remove it. Keep changes focused and in the existing style.
+- After editing JavaScript in index.html, extract the module script and check it parses:
+  python3 -c "import re;s=open('index.html').read();open('/tmp/city.mjs','w').write(re.findall(r'<script type=\\"module\\">(.*?)</script>',s,re.S)[0])" && node --check /tmp/city.mjs
+  For Python run: python3 -m py_compile <file>. Fix anything that fails.
+- Write {out_dir}/README.md: what changed, which files, and what the owner will see after approving."""
 
---- Agent City cloud job rules ---
-Today is {today} (UTC). You are running unattended on a GitHub Actions server; nobody can answer
+
+def build_prompt(agent: dict, request: str, job: int, out_dir: str, can_write: bool,
+                 mode: str, builds_on: int | None) -> tuple[str, str]:
+    today = datetime.now(timezone.utc).strftime("%A %d %B %Y")
+    common = f"""Today is {today} (UTC). You are running unattended on a GitHub Actions server; nobody can answer
 questions, so make sensible assumptions and list them at the end.
-{"Save every file you create in " + out_dir + "/ (create it). Never edit files outside it, except watchlist.json when asked to track a ticker. Always include "
- + out_dir + "/README.md explaining what you made and exactly how to use or run it." if can_write else
- "You cannot write files; your final reply is saved as the deliverable, so make it complete and well formatted in Markdown."}
 For anything time-sensitive (prices, news, versions, laws) get fresh data with your tools and state the date
-of the data. Never rely on memory for current facts.
-If this request is clearly beyond what you should handle, do no work and reply with exactly one line:
-ESCALATE: <agent-name> - <short reason>"""
+of the data. Never rely on memory for current facts."""
+    if mode == "upgrade":
+        system = agent["prompt"] + "\n\n" + UPGRADE_RULES.format(out_dir=out_dir) + "\n" + common
+    else:
+        if can_write:
+            files = (f"Save every file you create in {out_dir}/ (create it). Never edit files outside it, except "
+                     f"watchlist.json when asked to track a ticker. Always include {out_dir}/README.md explaining "
+                     f"what you made and exactly how to use or run it.\n"
+                     f"If you build anything visual or interactive (website, game, app, dashboard, tool), make it a "
+                     f"self-contained static page at {out_dir}/index.html (libraries from a CDN are fine, no server, "
+                     f"no build step) so it opens straight from the city at {pages_url()}{out_dir}/ and works on a phone.")
+        else:
+            files = ("You cannot write files; your final reply is saved as the deliverable, so make it complete "
+                     "and well formatted in Markdown.")
+        remix = ""
+        if builds_on:
+            remix = (f"\nThis request changes or continues job #{builds_on}. Its files are in outputs/job-{builds_on}/: "
+                     f"read them first. Do not modify that folder. Save the complete new version in {out_dir}/ "
+                     f"(copy what you keep, then change it), and say in the README what changed.")
+        system = (agent["prompt"] + "\n\n--- Agent City cloud job rules ---\n" + common + "\n" + files + remix +
+                  "\nIf this request is clearly beyond what you should handle, do no work and reply with exactly "
+                  "one line:\nESCALATE: <agent-name> - <short reason>")
     user = f"Agent City job #{job}. The request from the city's owner:\n\n<<<\n{request}\n>>>"
     return system, user
 
 
-def run_agent(agent: dict, request: str, job: int, out_dir: str) -> dict:
+def run_agent(agent: dict, request: str, job: int, out_dir: str, mode: str, builds_on: int | None) -> dict:
     can_write = "Write" in agent["tools"]
     tools = list(agent["tools"])
     if "Bash" in tools:
         tools = [t for t in tools if t != "Bash"] + BASH_OK
-    system, user = build_prompt(agent, request, job, out_dir, can_write)
-    cmd = ["claude", "-p", user, "--model", agent["model"], "--max-turns", str(MAX_TURNS[agent["tier"]]),
+    turns = UPGRADE_TURNS if mode == "upgrade" else MAX_TURNS[agent["tier"]]
+    system, user = build_prompt(agent, request, job, out_dir, can_write, mode, builds_on)
+    cmd = ["claude", "-p", user, "--model", agent["model"], "--max-turns", str(turns),
            "--output-format", "json", "--append-system-prompt", system,
            "--allowedTools", ",".join(tools), "--permission-mode", "acceptEdits"]
-    print(f"running {agent['name']} on {agent['model']} (max {MAX_TURNS[agent['tier']]} turns)")
-    p = sh(cmd, check=False, timeout=60 * 40, cwd=ROOT)
+    print(f"running {agent['name']} on {agent['model']} ({mode}, max {turns} turns)")
+    p = sh(cmd, check=False, timeout=60 * 45, cwd=ROOT)
     try:
         res = json.loads(p.stdout.strip().splitlines()[-1])
     except Exception:  # noqa: BLE001
@@ -144,43 +240,87 @@ def run_agent(agent: dict, request: str, job: int, out_dir: str) -> dict:
     if res.get("is_error") or p.returncode:
         detail = f"exit {p.returncode}\nresult: {str(res.get('result'))[:1500]}\nstderr: {p.stderr[-1500:]}"
         print(detail, file=sys.stderr)
-        (Path(os.environ.get("RUNNER_TEMP", "/tmp")) / "city-error.txt").write_text(detail)
+        (TMP / "city-error.txt").write_text(detail)
     res["_agent"], res["_model"], res["_tier"] = agent["name"], agent["model"], agent["tier"]
     return res
 
 
+def ensure_labels(*names: str):
+    colors = {"city-job": "4fd1ff", "status:working": "f7c948", "status:done": "3ddc84", "status:failed": "ff5c5c",
+              "mode:upgrade": "ff7ad9", "mode:repeat": "7dffb0"}
+    for n in names:
+        gh("label", "create", n, "--color", colors.get(n, "b98cff"), "--force")
+
+
+# ---------------------------------------------------------------- commands
+
 def cmd_run():
     job = int(os.environ["ISSUE_NUMBER"])
     out_dir = f"outputs/job-{job}"
+    out = ROOT / out_dir
+    request, f, title = parse_request()
+    mode = "upgrade" if f.get("mode", "").lower() == "upgrade" else "make"
+
+    # free housekeeping commands: no model call at all
+    if f.get("command"):
+        m = re.match(r"stop-schedule\s+#?(\d+)", f["command"], re.I)
+        data = load_schedules()
+        before = len(data["schedules"])
+        if m:
+            data["schedules"] = [s for s in data["schedules"] if str(s["id"]) != m.group(1)]
+            save_schedules(data)
+        msg = (f"🛑 Stopped recurring job #{m.group(1)}." if m and len(data["schedules"]) < before
+               else f"Nothing to do for command `{f['command']}`.")
+        STATE.write_text(json.dumps({"job": job, "command": True, "summary": msg, "mode": "command"}))
+        print(msg)
+        return
+
     agents = all_agents()
-    request, forced = parse_request()
-    if forced and forced in agents:
-        name, how = forced, "chosen by you"
+    if f.get("agent", "auto").lower() in agents:
+        name, how = f["agent"].lower(), "chosen by you"
+    elif mode == "upgrade":
+        name, how = "coder", "upgrade mode"
     else:
         name, how = route(request, agents)
     agent = agents[name]
 
-    for lbl, color in [("city-job", "4fd1ff"), ("status:working", "f7c948"), ("status:done", "3ddc84"),
-                       ("status:failed", "ff5c5c"), (f"agent:{name}", "b98cff")]:
-        gh("label", "create", lbl, "--color", color, "--force")
-    gh("issue", "edit", str(job), "--add-label", f"city-job,status:working,agent:{name}",
-       "--remove-label", "status:done,status:failed")
-    gh("issue", "comment", str(job), "--body",
-       f"🏗️ Routed to **{name}** ({agent['tier']} · {agent['model']}) via {how}. Working on it…")
+    builds_on = None
+    if f.get("builds on"):
+        n = re.search(r"\d+", f["builds on"])
+        if n and (ROOT / f"outputs/job-{n.group()}").exists():
+            builds_on = int(n.group())
 
-    runs = [run_agent(agent, request, job, out_dir)]
+    schedule = None
+    if f.get("repeat") and mode == "make":
+        schedule = parse_repeat(f["repeat"])
+        if schedule:
+            data = load_schedules()
+            data["schedules"] = [s for s in data["schedules"] if s["id"] != job]
+            data["schedules"].append({"id": job, "title": title[:100], "request": request, "agent": name, **schedule,
+                                      "created": datetime.now(timezone.utc).date().isoformat(), "last_run": None})
+            save_schedules(data)
+
+    labels = ["city-job", "status:working", f"agent:{name}"] + (["mode:upgrade"] if mode == "upgrade" else []) \
+        + (["mode:repeat"] if schedule else [])
+    ensure_labels(*labels)
+    gh("issue", "edit", str(job), "--add-label", ",".join(labels), "--remove-label", "status:done,status:failed")
+    extra = (" 🏗️ Upgrade mode: you'll get a pull request to approve." if mode == "upgrade" else "") + \
+        (f" ✏️ Remixing job #{builds_on}." if builds_on else "") + \
+        (f" 🔁 Will repeat {describe_repeat(schedule)}." if schedule else "")
+    gh("issue", "comment", str(job), "--body",
+       f"🏗️ Routed to **{name}** ({agent['tier']} · {agent['model']}) via {how}. Working on it…{extra}")
+
+    runs = [run_agent(agent, request, job, out_dir, mode, builds_on)]
     m = re.match(r"\s*ESCALATE:\s*([a-z]+)\s*[-–—:]?\s*(.*)", runs[-1].get("result") or "", re.I)
-    if m and m.group(1).lower() in agents:
+    if m and m.group(1).lower() in agents and m.group(1).lower() != name:
         nxt = agents[m.group(1).lower()]
-        if nxt["name"] != agent["name"]:
-            gh("issue", "comment", str(job), "--body",
-               f"⬆️ **{agent['name']}** handed off to **{nxt['name']}** ({nxt['tier']} · {nxt['model']}): {m.group(2)}")
-            gh("label", "create", f"agent:{nxt['name']}", "--color", "b98cff", "--force")
-            gh("issue", "edit", str(job), "--add-label", f"agent:{nxt['name']}", "--remove-label", f"agent:{name}")
-            runs.append(run_agent(nxt, request, job, out_dir))
+        gh("issue", "comment", str(job), "--body",
+           f"⬆️ **{name}** handed off to **{nxt['name']}** ({nxt['tier']} · {nxt['model']}): {m.group(2)}")
+        ensure_labels(f"agent:{nxt['name']}")
+        gh("issue", "edit", str(job), "--add-label", f"agent:{nxt['name']}", "--remove-label", f"agent:{name}")
+        runs.append(run_agent(nxt, request, job, out_dir, mode, builds_on))
 
     final = runs[-1]
-    out = ROOT / out_dir
     out.mkdir(parents=True, exist_ok=True)
     readme = out / "README.md"
     text = (final.get("result") or "").strip()
@@ -188,36 +328,118 @@ def cmd_run():
         readme.write_text(f"# Job #{job}\n\n{text}\n")
     cost = sum(float(r.get("total_cost_usd") or 0) for r in runs)
     meta = {"job": job, "agent": final["_agent"], "model": final["_model"], "tier": final["_tier"],
-            "route": how, "escalated_from": runs[0]["_agent"] if len(runs) > 1 else None,
+            "mode": mode, "route": how, "escalated_from": runs[0]["_agent"] if len(runs) > 1 else None,
+            "builds_on": builds_on, "repeat": describe_repeat(schedule) if schedule else None,
+            "has_page": (out / "index.html").exists(),
             "turns": sum(int(r.get("num_turns") or 0) for r in runs), "cost_usd_estimate": round(cost, 4),
             "ok": not final.get("is_error"), "subtype": final.get("subtype"),
             "finished_at": datetime.now(timezone.utc).isoformat(timespec="seconds")}
     (out / "job.json").write_text(json.dumps(meta, indent=2))
-    STATE.write_text(json.dumps({**meta, "summary": text[:3500], "out_dir": out_dir}))
+    STATE.write_text(json.dumps({**meta, "summary": text[:3500], "out_dir": out_dir, "title": title}))
     print(json.dumps(meta, indent=2))
     if final.get("is_error") and final.get("subtype") != "error_max_turns":
         sys.exit(1)
 
 
+def push_main():
+    branch = os.environ.get("GITHUB_REF_NAME", "main")
+    for i in range(4):
+        if git("pull", "--rebase", "origin", branch, check=False).returncode == 0 and \
+                git("push", "origin", f"HEAD:{branch}", check=False).returncode == 0:
+            return True
+        sh(["sleep", str(3 * (i + 1))])
+    return False
+
+
+def cmd_save():
+    st = json.loads(STATE.read_text())
+    job, base = st["job"], os.environ.get("GITHUB_REF_NAME", "main")
+    git("config", "user.name", "agent-city[bot]")
+    git("config", "user.email", "agent-city@users.noreply.github.com")
+    msg = f"Job #{job}: {st.get('title', '')}"[:120]
+
+    if st.get("mode") != "upgrade":
+        paths = [p for p in (st.get("out_dir"), "watchlist.json", "schedules.json") if p and (ROOT / p).exists()]
+        git("add", *paths)
+        git("commit", "-m", msg, check=False)
+        push_main()
+        return
+
+    # Upgrade: everything except .github goes on a branch and becomes a pull request.
+    git("checkout", "--", ".github", check=False)
+    git("clean", "-fdq", ".github", check=False)
+    branch = f"upgrade/job-{job}"
+    git("checkout", "-B", branch)
+    git("add", "-A")
+    changed = git("diff", "--cached", "--name-only").stdout.split()
+    code_changes = [c for c in changed if not c.startswith(st["out_dir"])]
+    git("commit", "-m", f"Upgrade: {st.get('title', '')}"[:120], check=False)
+    up = {"branch": branch, "files": code_changes, "pr_url": None, "compare_url": None}
+    if code_changes and git("push", "-f", "origin", branch, check=False).returncode == 0:
+        repo = os.environ["GITHUB_REPOSITORY"]
+        body = (f"Requested in #{job}. **Merge** to make it live (the city updates about a minute later); "
+                f"**Close** to throw it away.\n\n---\n\n{st.get('summary', '')}")
+        pr = gh("pr", "create", "--base", base, "--head", branch, "--title", f"🏗️ City upgrade: {st.get('title', '')}"[:200],
+                "--body", body)
+        if pr.returncode == 0:
+            up["pr_url"] = pr.stdout.strip().splitlines()[-1]
+        else:
+            print(pr.stderr, file=sys.stderr)
+            up["compare_url"] = f"https://github.com/{repo}/compare/{base}...{branch}?expand=1"
+    # the job's notes go to main right away so the city can show them (identical files merge cleanly later)
+    git("checkout", base)
+    git("checkout", branch, "--", st["out_dir"], check=False)
+    (ROOT / st["out_dir"] / "upgrade.json").write_text(json.dumps(up, indent=2))
+    git("add", st["out_dir"])
+    git("commit", "-m", f"Job #{job}: upgrade notes", check=False)
+    push_main()
+    st["upgrade"] = up
+    STATE.write_text(json.dumps(st))
+
+
 def cmd_finish():
     st = json.loads(STATE.read_text())
     repo, ref = os.environ["GITHUB_REPOSITORY"], os.environ.get("GITHUB_REF_NAME", "main")
+    job = str(st["job"])
+    if st.get("command"):
+        gh("issue", "comment", job, "--body", st["summary"])
+        gh("issue", "edit", job, "--add-label", "status:done", "--remove-label", "status:working,run-again")
+        gh("issue", "close", job)
+        return
     link = f"https://github.com/{repo}/tree/{ref}/{st['out_dir']}"
     note = " (hit its turn limit; result may be partial; add the `run-again` label to retry)" \
         if st.get("subtype") == "error_max_turns" else ""
-    body = (f"✅ **Done by {st['agent']}** · {st['tier']} · `{st['model']}` · {st['turns']} turns · "
-            f"≈ ${st['cost_usd_estimate']:.2f}{note}\n\n📁 **Files:** {link}\n\n---\n\n{st['summary']}")
-    gh("issue", "comment", str(st["job"]), "--body", body)
-    gh("issue", "edit", str(st["job"]), "--add-label", "status:done", "--remove-label", "status:working,run-again")
-    gh("issue", "close", str(st["job"]))
+    head = f"✅ **Done by {st['agent']}** · {st['tier']} · `{st['model']}` · {st['turns']} turns · " \
+           f"≈ ${st['cost_usd_estimate']:.2f}{note}\n\n"
+    if st.get("mode") == "upgrade":
+        up = st.get("upgrade") or {}
+        if up.get("pr_url"):
+            head += f"🏗️ **Your upgrade is ready to approve:** {up['pr_url']}\nOpen it and click **Merge pull request** " \
+                    f"to make it live, or **Close** to throw it away.\n\n"
+        elif up.get("compare_url"):
+            head += (f"🏗️ The upgrade is ready, but GitHub didn't let the city open the approval page itself. "
+                     f"Open {up['compare_url']} and click **Create pull request**, then **Merge**.\n"
+                     f"(To make this automatic: Settings → Actions → General → tick *Allow GitHub Actions to create "
+                     f"and approve pull requests*.)\n\n")
+        else:
+            head += "🏗️ No code changes were made; see the notes below.\n\n"
+    else:
+        if st.get("has_page"):
+            head += f"▶ **Open it:** {pages_url()}{st['out_dir']}/ (live about a minute after this message)\n\n"
+        if st.get("repeat"):
+            head += f"🔁 Repeats {st['repeat']}. Stop it from the city's Jobs tab.\n\n"
+    body = head + f"📁 **Files:** {link}\n\n---\n\n{st['summary']}"
+    gh("issue", "comment", job, "--body", body)
+    gh("issue", "edit", job, "--add-label", "status:done", "--remove-label", "status:working,run-again")
+    gh("issue", "close", job)
 
 
 def cmd_fail():
     job = os.environ["ISSUE_NUMBER"]
     run = f"{os.environ.get('GITHUB_SERVER_URL')}/{os.environ.get('GITHUB_REPOSITORY')}/actions/runs/{os.environ.get('GITHUB_RUN_ID')}"
-    gh("label", "create", "status:failed", "--color", "ff5c5c", "--force")
+    ensure_labels("status:failed")
     gh("issue", "edit", job, "--add-label", "status:failed", "--remove-label", "status:working")
-    err_file = Path(os.environ.get("RUNNER_TEMP", "/tmp")) / "city-error.txt"
+    err_file = TMP / "city-error.txt"
     err = err_file.read_text()[-2500:] if err_file.exists() else "(no details captured)"
     for secret in ("CLAUDE_CODE_OAUTH_TOKEN", "ANTHROPIC_API_KEY"):
         val = os.environ.get(secret)
@@ -230,4 +452,4 @@ def cmd_fail():
 
 
 if __name__ == "__main__":
-    {"run": cmd_run, "finish": cmd_finish, "fail": cmd_fail}[sys.argv[1]]()
+    {"run": cmd_run, "save": cmd_save, "finish": cmd_finish, "fail": cmd_fail}[sys.argv[1]]()

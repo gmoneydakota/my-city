@@ -68,6 +68,19 @@ gh repo create agent-city --public --source . --push
   file is in `outputs/job-N/` in your repo.
 - To retry a failed job, add the `run-again` label to its issue.
 
+## Modes
+
+| Mode | How | What happens |
+|---|---|---|
+| 🛠 **Make** | Type a request, press Send | The cheapest fitting agent builds it into `outputs/job-N/`. Websites, games and apps come with a **▶ Open it** link. |
+| 🔁 **Repeat** | Pick *Every day / weekday / week* and a time | Runs now, then on schedule in your time zone. A free hourly check (`city-schedule.yml`) starts it; stop it from **Jobs → Recurring**. |
+| ✏️ **Change this** | Open a finished job, click *Change this* | The agent reads that job's files and makes an improved copy, so it doesn't start from scratch. |
+| 🏗 **Upgrade city** | Switch to *Upgrade city* | Coder changes the city itself (new agents, buildings, features) and sends you a pull request. Nothing goes live until you click **Merge**. |
+
+Upgrades can't edit `.github/` (GitHub blocks that). For the approval page to be created automatically, tick
+**Settings → Actions → General → Allow GitHub Actions to create and approve pull requests**. Without it, the
+job gives you a link to create it with one click.
+
 ## How it saves usage
 
 1. **No model for mechanical work.** Market data and signals are plain Python on a

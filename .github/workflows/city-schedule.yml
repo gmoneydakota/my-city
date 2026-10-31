@@ -1,0 +1,56 @@
+# Recurring jobs ("every weekday at 8am…"). Checks schedules.json once an hour.
+# The check itself is plain Python and uses no Claude usage; only due jobs run an agent.
+name: city-schedule
+on:
+  schedule:
+    - cron: "11 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: city-schedule
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      runs: ${{ steps.due.outputs.runs }}
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - id: due
+        run: python3 scripts/city_schedule.py
+      - name: Remember what ran
+        run: |
+          git config user.name "agent-city[bot]"
+          git config user.email "agent-city@users.noreply.github.com"
+          git add schedules.json
+          git commit -m "Recurring jobs: $(date -u +%FT%H:%M)" || exit 0
+          for i in 1 2 3 4; do
+            git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && break
+            sleep $((i * 3))
+          done
+
+  run:
+    needs: check
+    if: needs.check.outputs.runs != '' && needs.check.outputs.runs != '[]'
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        job: ${{ fromJSON(needs.check.outputs.runs) }}
+    uses: ./.github/workflows/city-job.yml
+    with:
+      issue_number: ${{ matrix.job.number }}
+      issue_title: ${{ matrix.job.title }}
+      issue_body: ${{ matrix.job.body }}
+    secrets: inherit

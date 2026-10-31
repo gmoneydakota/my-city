@@ -66,9 +66,24 @@ textarea{width:100%;min-height:120px;resize:vertical;background:rgba(0,0,0,.35);
 textarea:focus,input:focus,select:focus{border-color:var(--accent)}
 .row{display:flex;gap:8px;margin-top:10px;align-items:center}
 select,input[type=text],input[type=password]{background:rgba(0,0,0,.35);border:1px solid var(--line);border-radius:10px;padding:9px 10px;outline:none;width:100%}
-.go{background:linear-gradient(135deg,#2bb6ff,#7b5cff);border:0;border-radius:10px;padding:10px 16px;font-weight:700;cursor:pointer;white-space:nowrap;box-shadow:0 0 24px rgba(79,209,255,.35)}
+.go{color:#fff;text-decoration:none;display:inline-block;background:linear-gradient(135deg,#2bb6ff,#7b5cff);border:0;border-radius:10px;padding:10px 16px;font-weight:700;cursor:pointer;white-space:nowrap;box-shadow:0 0 24px rgba(79,209,255,.35)}
 .go:disabled{opacity:.5;cursor:default}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 4px}
+.modes{display:flex;gap:4px;background:rgba(0,0,0,.35);border:1px solid var(--line);border-radius:12px;padding:4px;margin-bottom:14px}
+.modes button{flex:1;background:none;border:0;border-radius:9px;padding:8px 6px;cursor:pointer;color:var(--muted);font-weight:500}
+.modes button.on{background:rgba(79,209,255,.14);color:var(--text);box-shadow:inset 0 0 0 1px rgba(79,209,255,.35)}
+.modes button[data-m=upgrade].on{background:rgba(255,122,217,.14);box-shadow:inset 0 0 0 1px rgba(255,122,217,.45)}
+.remix{display:flex;justify-content:space-between;align-items:center;font-size:13px;background:rgba(247,201,72,.1);border:1px solid rgba(247,201,72,.35);color:var(--warn);border-radius:10px;padding:6px 10px;margin-bottom:8px}
+.remix button{background:none;border:0;color:inherit;cursor:pointer;font-size:14px}
+input[type=time]{background:rgba(0,0,0,.35);border:1px solid var(--line);border-radius:10px;padding:8px 10px;outline:none;color-scheme:dark}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}
+.actions a,.actions button{text-decoration:none;font-size:13px}
+.ghost{background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:10px;padding:8px 12px;cursor:pointer;color:var(--text)}
+.ghost:hover{border-color:var(--accent)}
+.sched{display:flex;justify-content:space-between;align-items:center;gap:8px;border:1px dashed rgba(125,255,176,.35);border-radius:12px;padding:8px 12px;margin-bottom:8px;font-size:13px}
+.sched small{display:block;color:var(--muted);font-family:var(--mono);font-size:11px;margin-top:2px}
+.sched button{background:none;border:1px solid var(--line);border-radius:8px;color:var(--muted);cursor:pointer;padding:4px 8px;white-space:nowrap}
+.sched button:hover{color:var(--bad);border-color:var(--bad)}
 .chip{font-size:12px;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:99px;padding:5px 10px;cursor:pointer;color:var(--muted)}
 .chip:hover{color:var(--text);border-color:var(--accent)}
 .hint{font-size:12px;color:var(--muted);line-height:1.5;margin-top:12px}
@@ -149,20 +164,34 @@ tr.sym{cursor:pointer} tr.sym:hover td{background:rgba(255,255,255,.03)}
   </div>
 
   <section class="view on" id="v-make">
-    <h2>What should the city build?</h2>
+    <div class="modes" id="modes">
+      <button data-m="make" class="on" title="Make something new">🛠 Make</button>
+      <button data-m="upgrade" title="Change the city itself. You approve before it goes live.">🏗 Upgrade city</button>
+    </div>
+    <h2 id="makeTitle">What should the city build?</h2>
+    <div class="remix" id="remixBar" style="display:none"><span>✏️ Changing job #<b id="remixN"></b>: describe what to change</span><button id="remixX" title="Start fresh instead">✕</button></div>
     <textarea id="req" placeholder="e.g. Build me a model that tells me when to buy NVDA, using this week's data and news."></textarea>
     <div class="chips" id="chips"></div>
-    <div class="row">
+    <div class="row" id="repeatRow">
+      <select id="repeat" title="Run once, or on a schedule">
+        <option value="">Run once</option>
+        <option value="daily">🔁 Every day</option>
+        <option value="weekdays">🔁 Every weekday (Mon–Fri)</option>
+        <option value="weekly">🔁 Every week (same weekday)</option>
+      </select>
+      <input type="time" id="repeatAt" value="08:00" title="What time (your time zone)" style="display:none">
+    </div>
+    <div class="row" id="agentRow">
       <select id="agentPick" title="Who does it">
         <option value="auto">Auto: cheapest agent that fits</option>
       </select>
-      <button class="go" id="send">Send ▶</button>
     </div>
+    <div class="row"><button class="go" id="send" style="flex:1">Send ▶</button></div>
     <div id="route"></div>
     <p class="hint">Jobs run on GitHub's servers, so you can close your laptop. Results show up under <b>Jobs</b>, usually within 2–15 minutes. Easy requests go to cheap agents first and only move up a tier if they need to.</p>
   </section>
 
-  <section class="view" id="v-jobs"><div id="jobs"></div></section>
+  <section class="view" id="v-jobs"><div id="recurring"></div><div id="jobs"></div></section>
 
   <section class="view" id="v-market">
     <h2 id="mktTitle">Daily signals</h2>
@@ -214,7 +243,7 @@ const AGENTS = [
 const byId = Object.fromEntries(AGENTS.map(a => [a.id, a]));
 // same keyword routing the cloud runner uses (scripts/city_job.py), shown live as you type
 const RULES = [
-  ['quant', /\b(stock|stocks|ticker|share price|buy signal|when to buy|sell signal|portfolio|backtest|trading|invest|etf|crypto|bitcoin|options|dividend|earnings|market model)\b/],
+  ['quant', /\b(stock|stocks|ticker|share price|buy signal|when to buy|sell signal|portfolio|backtest|trading|invest|etf|crypto|bitcoin|options|dividend|earnings|market model|market news|the market|watchlist)\b/],
   ['forge', /\b(mcp server|mcp connector|build (a|an) connector)\b/],
   ['scout', /\b(connector idea|what should i connect|find (an? )?(api|data source))\b/],
   ['tutor', /^(explain|teach me|how does|what is|why does)\b/m],
@@ -223,7 +252,15 @@ const RULES = [
   ['runner', /^(convert|how many|what's|whats|calculate)\b/m],
   ['coder', /\b(build|make|create|code|script|app|website|site|game|tool|bot|program|spreadsheet|dashboard|automate|fix)\b/],
 ];
+const UPGRADE_EXAMPLES = [
+  'Add a Chef agent tower that makes meal plans and grocery lists',
+  'Make it gently snow over the city at night',
+  'Play a soft chime when a job finishes',
+  'Add a day/night cycle that follows my real local time',
+  'Show a small cost meter of what my jobs have used this week',
+];
 const EXAMPLES = [
+  { text:'Summarize the most important market news for my watchlist', repeat:'weekdays', at:'08:00' },
   'Build me a model that tells me when to buy NVDA, using current prices and news',
   'Make a personal budget tracker web app I can open on my phone',
   'Explain how compound interest works with a real example',
@@ -517,7 +554,39 @@ document.querySelectorAll('#tabs button').forEach(b => b.onclick = () => switchT
 
 const pick = $('#agentPick');
 AGENTS.forEach(a => pick.insertAdjacentHTML('beforeend', `<option value="${a.id}">${a.name} (${TIER[a.tier].model}): ${a.role}</option>`));
-EXAMPLES.forEach(x => { const c = document.createElement('button'); c.className = 'chip'; c.textContent = x.length > 42 ? x.slice(0,40)+'…' : x; c.title = x; c.onclick = () => { $('#req').value = x; previewRoute(); }; $('#chips').append(c); });
+let mode = 'make', remixOf = null;
+function renderChips(){
+  const list = mode === 'upgrade' ? UPGRADE_EXAMPLES : EXAMPLES;
+  $('#chips').innerHTML = '';
+  list.forEach(x => {
+    const ex = typeof x === 'string' ? { text:x } : x;
+    const c = document.createElement('button'); c.className = 'chip';
+    c.textContent = (ex.repeat ? '🔁 ' : '') + (ex.text.length > 42 ? ex.text.slice(0,40)+'…' : ex.text); c.title = ex.text;
+    c.onclick = () => { $('#req').value = ex.text; if (ex.repeat) { $('#repeat').value = ex.repeat; $('#repeatAt').value = ex.at; syncRepeat(); } previewRoute(); };
+    $('#chips').append(c);
+  });
+}
+function setMode(m){
+  mode = m;
+  document.querySelectorAll('#modes button').forEach(b => b.classList.toggle('on', b.dataset.m === m));
+  const up = m === 'upgrade';
+  $('#makeTitle').textContent = up ? 'How should the city change?' : 'What should the city build?';
+  $('#req').placeholder = up ? 'e.g. Add a Chef agent tower that makes meal plans. You’ll approve the change before it goes live.' : 'e.g. Build me a model that tells me when to buy NVDA, using this week’s data and news.';
+  $('#repeatRow').style.display = up ? 'none' : '';
+  $('#agentRow').style.display = up ? 'none' : '';
+  if (up) setRemix(null);
+  renderChips(); previewRoute();
+}
+document.querySelectorAll('#modes button').forEach(b => b.onclick = () => setMode(b.dataset.m));
+function syncRepeat(){ $('#repeatAt').style.display = $('#repeat').value ? '' : 'none'; previewRoute(); }
+$('#repeat').addEventListener('change', syncRepeat); $('#repeatAt').addEventListener('change', previewRoute);
+function setRemix(n){
+  remixOf = n; $('#remixBar').style.display = n ? '' : 'none'; if (n) $('#remixN').textContent = n;
+}
+$('#remixX').onclick = () => setRemix(null);
+renderChips();
+const userTZ = (() => { try { return Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC'; } catch { return 'UTC'; } })();
+const REPEAT_WORDS = { daily:'every day', weekdays:'every weekday', weekly:'every week' };
 
 function guessAgent(text){
   const t = text.toLowerCase(); const hits = RULES.filter(([,re]) => re.test(t)).map(([a]) => a);
@@ -528,32 +597,43 @@ function guessAgent(text){
 function previewRoute(){
   const v = $('#req').value.trim(), el = $('#route');
   if (!v) { el.innerHTML = ''; return; }
-  if (pick.value !== 'auto') { const a = byId[pick.value]; el.innerHTML = `→ <b style="color:${TIER[a.tier].css}">${a.name}</b> on ${TIER[a.tier].model} (your choice)`; return; }
+  if (mode === 'upgrade') { el.innerHTML = `→ <b style="color:var(--heavy)">Coder</b> on Opus · you approve the change before it goes live`; return; }
+  const rep = $('#repeat').value ? ` · 🔁 ${REPEAT_WORDS[$('#repeat').value]} at ${$('#repeatAt').value}` : '';
+  const rmx = remixOf ? ` · ✏️ changing #${remixOf}` : '';
+  if (pick.value !== 'auto') { const a = byId[pick.value]; el.innerHTML = `→ <b style="color:${TIER[a.tier].css}">${a.name}</b> on ${TIER[a.tier].model} (your choice)${rep}${rmx}`; return; }
   const g = guessAgent(v);
-  el.innerHTML = g.id ? `→ likely <b style="color:${TIER[byId[g.id].tier].css}">${byId[g.id].name}</b> on ${TIER[byId[g.id].tier].model} · ${g.how}` : `→ ${g.how}`;
+  el.innerHTML = (g.id ? `→ likely <b style="color:${TIER[byId[g.id].tier].css}">${byId[g.id].name}</b> on ${TIER[byId[g.id].tier].model} · ${g.how}` : `→ ${g.how}`) + rep + rmx;
 }
 $('#req').addEventListener('input', previewRoute); pick.addEventListener('change', previewRoute);
 
+async function sendIssue(title, body){
+  if (cfg.token) { await gh(`/repos/${cfg.owner}/${cfg.repo}/issues`, { method:'POST', body: JSON.stringify({ title, body }) }); return 'sent'; }
+  window.open(`https://github.com/${cfg.owner}/${cfg.repo}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`, '_blank', 'noopener');
+  return 'opened';
+}
 $('#send').onclick = async () => {
   const text = $('#req').value.trim();
-  if (!text) { toast('Describe what you want built first.'); return; }
+  if (!text) { toast(mode === 'upgrade' ? 'Describe how the city should change first.' : 'Describe what you want built first.'); return; }
   if (!connected()) { openSettings(); toast('Connect your GitHub repo first. It only takes a minute.'); return; }
-  const title = '[city] ' + (text.split('\n')[0].slice(0, 80) + (text.length > 80 ? '…' : ''));
-  const body = `Agent: ${pick.value}\n<!-- sent from Agent City -->\n\n${text}`;
-  const g = guessAgent(text); const target = pick.value !== 'auto' ? pick.value : (g.id || 'planner');
-  if (cfg.token) {
-    $('#send').disabled = true; $('#send').textContent = 'Sending…';
-    try {
-      await gh(`/repos/${cfg.owner}/${cfg.repo}/issues`, { method:'POST', body: JSON.stringify({ title, body }) });
-      toast('Sent! Dispatch is routing it now.'); $('#req').value = ''; previewRoute();
-      spawnPacket(target); setTimeout(refreshJobs, 4000); switchTab('jobs');
-    } catch (e) { toast('Could not send: ' + e.message, 6000); }
-    $('#send').disabled = false; $('#send').textContent = 'Send ▶';
-  } else {
-    const url = `https://github.com/${cfg.owner}/${cfg.repo}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
-    window.open(url, '_blank', 'noopener'); spawnPacket(target);
-    toast('GitHub opened in a new tab. Click “Create” and the city starts working.', 6000);
-  }
+  const up = mode === 'upgrade', repeat = !up && $('#repeat').value;
+  const title = '[city] ' + (up ? '🏗 ' : '') + (text.split('\n')[0].slice(0, 80) + (text.length > 80 ? '…' : ''));
+  const lines = [`Agent: ${up ? 'auto' : pick.value}`];
+  if (up) lines.push('Mode: upgrade');
+  if (repeat) lines.push(`Repeat: ${repeat} ${$('#repeatAt').value} ${userTZ}`);
+  if (remixOf && !up) lines.push(`Builds on: ${remixOf}`);
+  const body = `${lines.join('\n')}\n<!-- sent from Agent City -->\n\n${text}`;
+  const g = guessAgent(text); const target = up ? 'coder' : pick.value !== 'auto' ? pick.value : (g.id || 'planner');
+  $('#send').disabled = true; $('#send').textContent = 'Sending…';
+  try {
+    const how = await sendIssue(title, body);
+    spawnPacket(target);
+    if (how === 'sent') {
+      toast(up ? 'Upgrade request sent! You’ll get a change to approve when it’s ready.' : repeat ? `Sent! It runs now, then ${REPEAT_WORDS[repeat]} at ${$('#repeatAt').value}.` : 'Sent! Dispatch is routing it now.', 6000);
+      $('#req').value = ''; $('#repeat').value = ''; syncRepeat(); setRemix(null); previewRoute();
+      setTimeout(refreshJobs, 4000); switchTab('jobs');
+    } else toast('GitHub opened in a new tab. Click “Create” and the city starts working.', 6000);
+  } catch (e) { toast('Could not send: ' + e.message, 6000); }
+  $('#send').disabled = false; $('#send').textContent = 'Send ▶';
 };
 
 /* settings */
@@ -604,12 +684,14 @@ function parseJob(i){
   const L = i.labels.map(l => l.name);
   const agent = (L.find(l => l.startsWith('agent:')) || '').slice(6) || null;
   const status = L.includes('status:failed') ? 'failed' : L.includes('status:done') ? 'done' : L.includes('status:working') ? 'working' : (i.state === 'closed' ? 'done' : 'queued');
-  return { n:i.number, title:i.title.replace(/^\[city\]\s*/i,''), agent, status, url:i.html_url, created:i.created_at, comments:i.comments };
+  const kind = L.includes('mode:upgrade') ? 'upgrade' : /^\[city\]\s*🔁/.test(i.title) ? 'scheduled' : L.includes('mode:repeat') ? 'repeat' : 'make';
+  return { n:i.number, title:i.title.replace(/^\[city\]\s*(🏗|🔁)?\s*/u,''), agent, status, kind, url:i.html_url, created:i.created_at, comments:i.comments };
 }
 function ago(d){ const s = (Date.now() - new Date(d))/1000; return s < 60 ? 'just now' : s < 3600 ? `${s/60|0}m ago` : s < 86400 ? `${s/3600|0}h ago` : `${s/86400|0}d ago`; }
 function jobCard(j){
   const a = byId[j.agent];
-  return `<div class="job" data-n="${j.n}"><div class="t">${esc(j.title)}</div><div class="m"><span class="pill s-${j.status}">${j.status}</span>${a ? `<span style="color:${TIER[a.tier].css}">${a.name}</span>` : '<span>routing…</span>'}<span>#${j.n}</span><span>${ago(j.created)}</span></div></div>`;
+  const icon = { upgrade:'🏗 ', scheduled:'🔁 ', repeat:'🔁 ' }[j.kind] || '';
+  return `<div class="job" data-n="${j.n}"><div class="t">${icon}${esc(j.title)}</div><div class="m"><span class="pill s-${j.status}">${j.status}</span>${a ? `<span style="color:${TIER[a.tier].css}">${a.name}</span>` : '<span>routing…</span>'}<span>#${j.n}</span><span>${ago(j.created)}</span></div></div>`;
 }
 function wireJobCards(root){ root.querySelectorAll('.job').forEach(el => el.onclick = () => openJob(+el.dataset.n)); }
 function renderJobs(){
@@ -632,16 +714,48 @@ async function openJob(n){
       gh(`/repos/${cfg.owner}/${cfg.repo}/contents/outputs/job-${n}/README.md`, {}, true),
       gh(`/repos/${cfg.owner}/${cfg.repo}/contents/outputs/job-${n}/job.json`, {}, true).then(JSON.parse).catch(() => null),
     ]);
-    const head = meta ? `<p class="hint" style="margin-top:0">Built by <b>${esc(meta.agent)}</b> on ${esc(meta.model)} · ${meta.turns} turns · ≈ $${(+meta.cost_usd_estimate).toFixed(2)}${meta.escalated_from ? ` · escalated from ${esc(meta.escalated_from)}` : ''}</p>` : '';
-    openDrawer(`#${n} · ${j.title}`, head + md(readme), folder);
+    const head = meta ? `<p class="hint" style="margin-top:0">Built by <b>${esc(meta.agent)}</b> on ${esc(meta.model)} · ${meta.turns} turns · ≈ $${(+meta.cost_usd_estimate).toFixed(2)}${meta.escalated_from ? ` · escalated from ${esc(meta.escalated_from)}` : ''}${meta.builds_on ? ` · remix of #${meta.builds_on}` : ''}${meta.repeat ? ` · 🔁 ${esc(meta.repeat)}` : ''}</p>` : '';
+    const acts = [];
+    if (meta?.mode === 'upgrade') {
+      const up = await gh(`/repos/${cfg.owner}/${cfg.repo}/contents/outputs/job-${n}/upgrade.json`, {}, true).then(JSON.parse).catch(() => null);
+      if (up?.pr_url) {
+        const pr = await gh(`/repos/${cfg.owner}/${cfg.repo}/pulls/${up.pr_url.split('/').pop()}`).catch(() => null);
+        if (pr?.merged_at) acts.push(`<span class="pill s-done" style="padding:6px 10px">✅ Live in your city</span>`);
+        else if (pr?.state === 'closed') acts.push(`<span class="pill s-queued" style="padding:6px 10px">Not applied (closed)</span>`);
+        else acts.push(`<a class="go" href="${esc(up.pr_url)}" target="_blank" rel="noopener">🏗 Review &amp; approve ↗</a>`);
+      } else if (up?.compare_url) acts.push(`<a class="go" href="${esc(up.compare_url)}" target="_blank" rel="noopener">🏗 Approve upgrade ↗</a>`);
+    } else {
+      if (meta?.has_page) acts.push(`<a class="go" href="${pagesBase()}outputs/job-${n}/" target="_blank" rel="noopener">▶ Open it</a>`);
+      acts.push(`<button class="ghost" id="remixBtn">✏️ Change this</button>`);
+    }
+    openDrawer(`#${n} · ${j.title}`, head + (acts.length ? `<div class="actions">${acts.join('')}</div>` : '') + md(readme), folder);
+    const rb = $('#remixBtn'); if (rb) rb.onclick = () => { setMode('make'); setRemix(n); if (meta?.agent && byId[meta.agent]) pick.value = meta.agent; switchTab('make'); $('#req').focus(); previewRoute(); $('#drawer').classList.remove('on'); };
   } catch (e) { openDrawer(`#${n} · ${j.title}`, `<p class="hint">Couldn’t load the result (${esc(e.message)}). Open it on GitHub instead.</p>`, j.url); }
+}
+function pagesBase(){ return cfg.repo.toLowerCase() === `${cfg.owner}.github.io`.toLowerCase() ? `https://${cfg.repo}/` : `https://${cfg.owner}.github.io/${cfg.repo}/`; }
+async function refreshSchedules(){
+  const box = $('#recurring');
+  if (!connected()) { box.innerHTML = ''; return; }
+  try {
+    const data = JSON.parse(await gh(`/repos/${cfg.owner}/${cfg.repo}/contents/schedules.json`, {}, true));
+    const list = data.schedules || [];
+    box.innerHTML = list.length ? `<h2>Recurring</h2>${list.map(s => `<div class="sched"><div>🔁 ${esc(s.title)}<small>${esc(REPEAT_WORDS[s.every] || s.every)} at ${esc(s.time)} · ${esc(s.tz)} · ${esc(s.agent)}${s.last_run ? ` · last ${esc(s.last_run)}` : ''}</small></div><button data-id="${s.id}">Stop</button></div>`).join('')}<h2 style="margin-top:16px">Jobs</h2>` : '';
+    box.querySelectorAll('button[data-id]').forEach(b => b.onclick = async () => {
+      if (!confirm('Stop this recurring job? (Past results stay.)')) return;
+      b.disabled = true; b.textContent = 'Stopping…';
+      try { const how = await sendIssue(`[city] Stop recurring job #${b.dataset.id}`, `Command: stop-schedule ${b.dataset.id}\n<!-- sent from Agent City -->`);
+        toast(how === 'sent' ? 'Stopping it. Takes about a minute.' : 'GitHub opened: click “Create” to confirm.', 5000); setTimeout(refreshSchedules, 60000);
+      } catch (e) { toast('Could not stop: ' + e.message, 6000); b.disabled = false; b.textContent = 'Stop'; }
+    });
+  } catch { box.innerHTML = ''; }
 }
 async function refreshJobs(){
   if (!connected()) return;
+  refreshSchedules();
   try {
     const list = await gh(`/repos/${cfg.owner}/${cfg.repo}/issues?state=all&per_page=40&sort=created&direction=desc`);
     jobs = list.filter(i => !i.pull_request && (/^\[city\]/i.test(i.title) || i.labels.some(l => l.name === 'city-job'))).map(parseJob);
-    jobs.forEach(j => { if (j.status === 'done' && !seenDone.has(j.n)) { if (!firstLoad) { burst(j.agent); spawnPacket(j.agent, true); toast(`✅ ${byId[j.agent]?.name || 'An agent'} finished: ${j.title}`, 6000); } seenDone.add(j.n); } });
+    jobs.forEach(j => { if (j.status === 'done' && !seenDone.has(j.n)) { if (!firstLoad) { burst(j.agent); spawnPacket(j.agent, true); toast(j.kind === 'upgrade' ? `🏗 Upgrade ready to approve: ${j.title}` : `✅ ${byId[j.agent]?.name || 'An agent'} finished: ${j.title}`, 6000); } seenDone.add(j.n); } });
     firstLoad = false; setConn(true); renderJobs();
   } catch (e) { setConn(false, e.status === 404 ? 'repo not found' : e.message); }
 }

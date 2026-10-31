@@ -1,0 +1,13 @@
+{
+  "job": 2,
+  "agent": "coder",
+  "model": "opus",
+  "tier": "heavy",
+  "route": "keyword rules (free)",
+  "escalated_from": null,
+  "turns": 95,
+  "cost_usd_estimate": 3.5209,
+  "ok": true,
+  "subtype": "success",
+  "finished_at": "2026-10-31T16:44:54+00:00"
+}

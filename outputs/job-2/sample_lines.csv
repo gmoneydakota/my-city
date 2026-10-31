@@ -1,0 +1,13 @@
+league,player,stat,line,book,over_odds,under_odds,mult_over,mult_under
+nba,Keyonte George,points,24.5,underdog,,,,
+nba,Tyrese Maxey,points,26.5,draftkings,-115,-105,,
+nba,Tyrese Maxey,points,26.5,underdog,,,,
+nba,Deni Avdija,pra,39.5,underdog,,,,
+nba,Brandon Miller,threes,2.5,underdog,,,1.05,0.9
+nba,Moussa Diabate,rebounds,10.5,draftkings,+110,-140,,
+nba,Naz Reid,points,15.5,underdog,,,,
+nba,Damian Lillard,threes,3.5,underdog,,,,
+nba,Jrue Holiday,assists,4.5,draftkings,-130,+100,,
+nfl,Josh Allen,passing yards,245.5,underdog,,,,
+nfl,Lamar Jackson,rushing yards,52.5,draftkings,-115,-115,,
+nfl,Ja'Marr Chase,receiving yards,80.5,underdog,,,,

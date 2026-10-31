@@ -1,0 +1,539 @@
+{
+ "format": "agent-city-cad/1",
+ "name": "Pop-Out Plug Door",
+ "description": "A sealed flat door that a cam lever pushes 40 mm off its gasket, then slides sideways along the outside of the wall on an overhead rail: no swing space, no floor track.",
+ "units": "mm",
+ "how_it_works": [
+  "Closed, the flat door is squeezed against a rubber gasket all round, so it is draughtproof and quiet.",
+  "Lift the red cam lever 90 degrees. A cam behind the wall turns that rotation into a 40 mm straight push, moving the rail and the door outward.",
+  "The door has now left the gasket, so nothing rubs when it moves: that is why it seals better than a normal sliding door.",
+  "Pull the bar sideways; two roller trolleys carry the weight along the rail and a pin in the floor groove stops the bottom swinging.",
+  "The door parks against the wall beside the opening, leaving a full 900 mm step-free gap.",
+  "Lever down: the cam pulls the door back onto the gasket. Same idea as train and aircraft plug doors."
+ ],
+ "assumptions": [
+  "Cam/bell-crank behind the wall is simplified to the lever's follows link.",
+  "Door is shown closed at rest; pop first (lever), then slide.",
+  "Wall is 100 mm; rail passes through guide blocks."
+ ],
+ "parts": [
+  {
+   "id": "wall_l",
+   "name": "Left wall",
+   "shape": "box",
+   "size": {
+    "w": 500,
+    "h": 2400,
+    "d": 100
+   },
+   "pos": [
+    -700,
+    1200,
+    0
+   ],
+   "color": "#d8d2c4",
+   "material": "stone",
+   "parent": null,
+   "role": "Wall beside the opening; carries the cam lever"
+  },
+  {
+   "id": "wall_r",
+   "name": "Right wall (parking side)",
+   "shape": "box",
+   "size": {
+    "w": 1050,
+    "h": 2400,
+    "d": 100
+   },
+   "pos": [
+    975,
+    1200,
+    0
+   ],
+   "color": "#d8d2c4",
+   "material": "stone",
+   "parent": null,
+   "role": "Wall the open door parks against"
+  },
+  {
+   "id": "header",
+   "name": "Header",
+   "shape": "box",
+   "size": {
+    "w": 900,
+    "h": 300,
+    "d": 100
+   },
+   "pos": [
+    0,
+    2250,
+    0
+   ],
+   "color": "#d8d2c4",
+   "material": "stone",
+   "parent": null,
+   "role": "Closes the wall above the opening"
+  },
+  {
+   "id": "gasket_left",
+   "name": "Frame gasket left",
+   "shape": "box",
+   "size": {
+    "w": 30,
+    "h": 2100,
+    "d": 10
+   },
+   "pos": [
+    -465,
+    1050,
+    55
+   ],
+   "color": "#222222",
+   "material": "rubber",
+   "parent": null,
+   "role": "Rubber seal the door is pressed onto when closed"
+  },
+  {
+   "id": "gasket_right",
+   "name": "Frame gasket right",
+   "shape": "box",
+   "size": {
+    "w": 30,
+    "h": 2100,
+    "d": 10
+   },
+   "pos": [
+    465,
+    1050,
+    55
+   ],
+   "color": "#222222",
+   "material": "rubber",
+   "parent": null,
+   "role": "Rubber seal the door is pressed onto when closed"
+  },
+  {
+   "id": "gasket_top",
+   "name": "Frame gasket top",
+   "shape": "box",
+   "size": {
+    "w": 900,
+    "h": 30,
+    "d": 10
+   },
+   "pos": [
+    0,
+    2085,
+    55
+   ],
+   "color": "#222222",
+   "material": "rubber",
+   "parent": null,
+   "role": "Rubber seal the door is pressed onto when closed"
+  },
+  {
+   "id": "floor_plate",
+   "name": "Floor guide plate",
+   "shape": "box",
+   "size": {
+    "w": 2000,
+    "h": 5,
+    "d": 110
+   },
+   "pos": [
+    500,
+    2.5,
+    95
+   ],
+   "color": "#777777",
+   "material": "metal",
+   "parent": null,
+   "role": "Flat floor plate (no step) that guides the bottom pin"
+  },
+  {
+   "id": "lip_a",
+   "name": "Floor lip inner",
+   "shape": "box",
+   "size": {
+    "w": 2000,
+    "h": 15,
+    "d": 10
+   },
+   "pos": [
+    500,
+    7.5,
+    45
+   ],
+   "color": "#777777",
+   "material": "metal",
+   "parent": "floor_plate",
+   "role": "Wall of the guide groove"
+  },
+  {
+   "id": "lip_b",
+   "name": "Floor lip outer",
+   "shape": "box",
+   "size": {
+    "w": 2000,
+    "h": 15,
+    "d": 10
+   },
+   "pos": [
+    500,
+    7.5,
+    145
+   ],
+   "color": "#777777",
+   "material": "metal",
+   "parent": "floor_plate",
+   "role": "Wall of the guide groove"
+  },
+  {
+   "id": "bracket0",
+   "name": "Rail guide block 1",
+   "shape": "box",
+   "size": {
+    "w": 60,
+    "h": 70,
+    "d": 50
+   },
+   "pos": [
+    -400,
+    2205,
+    75
+   ],
+   "color": "#555555",
+   "material": "metal",
+   "parent": null,
+   "role": "Fixed block bolted to the wall; the rail slides in/out through it"
+  },
+  {
+   "id": "bracket1",
+   "name": "Rail guide block 2",
+   "shape": "box",
+   "size": {
+    "w": 60,
+    "h": 70,
+    "d": 50
+   },
+   "pos": [
+    500,
+    2205,
+    75
+   ],
+   "color": "#555555",
+   "material": "metal",
+   "parent": null,
+   "role": "Fixed block bolted to the wall; the rail slides in/out through it"
+  },
+  {
+   "id": "bracket2",
+   "name": "Rail guide block 3",
+   "shape": "box",
+   "size": {
+    "w": 60,
+    "h": 70,
+    "d": 50
+   },
+   "pos": [
+    1400,
+    2205,
+    75
+   ],
+   "color": "#555555",
+   "material": "metal",
+   "parent": null,
+   "role": "Fixed block bolted to the wall; the rail slides in/out through it"
+  },
+  {
+   "id": "rail",
+   "name": "Pop-out rail",
+   "shape": "box",
+   "size": {
+    "w": 2000,
+    "h": 50,
+    "d": 30
+   },
+   "pos": [
+    500,
+    2205,
+    100
+   ],
+   "color": "#8a8f98",
+   "material": "metal",
+   "parent": null,
+   "role": "Overhead rail; pushed 40 mm outward to lift the door off its seal"
+  },
+  {
+   "id": "trolley_a",
+   "name": "Trolley A",
+   "shape": "box",
+   "size": {
+    "w": 120,
+    "h": 80,
+    "d": 40
+   },
+   "pos": [
+    -250,
+    2140,
+    90
+   ],
+   "color": "#444444",
+   "material": "metal",
+   "parent": "rail",
+   "role": "Roller carriage hanging the door from the rail"
+  },
+  {
+   "id": "trolley_b",
+   "name": "Trolley B",
+   "shape": "box",
+   "size": {
+    "w": 120,
+    "h": 80,
+    "d": 40
+   },
+   "pos": [
+    250,
+    2140,
+    90
+   ],
+   "color": "#444444",
+   "material": "metal",
+   "parent": "trolley_a",
+   "role": "Roller carriage hanging the door from the rail"
+  },
+  {
+   "id": "panel",
+   "name": "Door panel",
+   "shape": "box",
+   "size": {
+    "w": 960,
+    "h": 2080,
+    "d": 40
+   },
+   "pos": [
+    0,
+    1060,
+    78
+   ],
+   "color": "#3f6e8c",
+   "material": "paint",
+   "parent": "trolley_b",
+   "role": "Flat plug door, sealed against the gasket when closed"
+  },
+  {
+   "id": "window",
+   "name": "Glass window",
+   "shape": "box",
+   "size": {
+    "w": 300,
+    "h": 900,
+    "d": 44
+   },
+   "pos": [
+    0,
+    1300,
+    78
+   ],
+   "color": "#a8d8ea",
+   "material": "glass",
+   "parent": "panel",
+   "role": "Vision panel"
+  },
+  {
+   "id": "pull",
+   "name": "Pull bar",
+   "shape": "cylinder",
+   "size": {
+    "r": 12,
+    "h": 600
+   },
+   "pos": [
+    380,
+    1050,
+    115
+   ],
+   "color": "#c0c0c0",
+   "material": "metal",
+   "parent": "panel",
+   "role": "Grab handle for sliding"
+  },
+  {
+   "id": "pullpost0",
+   "name": "Pull post",
+   "shape": "cylinder",
+   "size": {
+    "r": 8,
+    "h": 30
+   },
+   "pos": [
+    380,
+    800,
+    103
+   ],
+   "color": "#c0c0c0",
+   "material": "metal",
+   "parent": "panel",
+   "role": "Stand-off",
+   "rot": [
+    90,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "pullpost1",
+   "name": "Pull post",
+   "shape": "cylinder",
+   "size": {
+    "r": 8,
+    "h": 30
+   },
+   "pos": [
+    380,
+    1300,
+    103
+   ],
+   "color": "#c0c0c0",
+   "material": "metal",
+   "parent": "panel",
+   "role": "Stand-off",
+   "rot": [
+    90,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "dropseal",
+   "name": "Bottom brush seal",
+   "shape": "box",
+   "size": {
+    "w": 960,
+    "h": 22,
+    "d": 30
+   },
+   "pos": [
+    0,
+    11,
+    78
+   ],
+   "color": "#222222",
+   "material": "rubber",
+   "parent": "panel",
+   "role": "Closes the 20 mm floor gap"
+  },
+  {
+   "id": "pin",
+   "name": "Floor guide pin",
+   "shape": "cylinder",
+   "size": {
+    "r": 8,
+    "h": 40
+   },
+   "pos": [
+    0,
+    25,
+    78
+   ],
+   "color": "#c0c0c0",
+   "material": "metal",
+   "parent": "panel",
+   "role": "Keeps the bottom of the door in line in the groove"
+  },
+  {
+   "id": "hub",
+   "name": "Cam shaft hub",
+   "shape": "cylinder",
+   "size": {
+    "r": 24,
+    "h": 30
+   },
+   "pos": [
+    -700,
+    1050,
+    65
+   ],
+   "color": "#555555",
+   "material": "metal",
+   "parent": null,
+   "role": "Shaft that turns the cam behind the wall",
+   "rot": [
+    90,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "lever",
+   "name": "Cam lever",
+   "shape": "box",
+   "size": {
+    "w": 150,
+    "h": 26,
+    "d": 20
+   },
+   "pos": [
+    -625,
+    1050,
+    85
+   ],
+   "color": "#d33a2c",
+   "material": "plastic",
+   "parent": "hub",
+   "role": "Lever: lift 90 deg to push the door out"
+  }
+ ],
+ "joints": [
+  {
+   "id": "handle",
+   "name": "Cam lever",
+   "type": "revolute",
+   "part": "hub",
+   "pivot": [
+    -700,
+    1050,
+    65
+   ],
+   "axis": [
+    0,
+    0,
+    1
+   ],
+   "min": 0,
+   "max": 90
+  },
+  {
+   "id": "popout",
+   "name": "Door pop-out",
+   "type": "prismatic",
+   "part": "rail",
+   "axis": [
+    0,
+    0,
+    1
+   ],
+   "min": 0,
+   "max": 40,
+   "follows": {
+    "joint": "handle",
+    "ratio": 0.4444,
+    "offset": 0
+   }
+  },
+  {
+   "id": "slide",
+   "name": "Door slide",
+   "type": "prismatic",
+   "part": "trolley_a",
+   "axis": [
+    1,
+    0,
+    0
+   ],
+   "min": 0,
+   "max": 960,
+   "period": 6
+  }
+ ]
+}

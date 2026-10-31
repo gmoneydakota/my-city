@@ -1,0 +1,13 @@
+{
+  "job": 1,
+  "agent": "runner",
+  "model": "haiku",
+  "tier": "light",
+  "route": "keyword rules (free)",
+  "escalated_from": null,
+  "turns": 1,
+  "cost_usd_estimate": 0.002,
+  "ok": true,
+  "subtype": "success",
+  "finished_at": "2026-10-31T16:18:59+00:00"
+}

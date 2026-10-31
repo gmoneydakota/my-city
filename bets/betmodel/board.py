@@ -60,8 +60,34 @@ def build(results, bankroll: float, be3: float) -> dict:
                                 "fair": r["fair"], "higher_if_le": r["over_at"], "lower_if_ge": r["under_at"],
                                 "last5": r["last5"], "status": r["status"]})
         warnings += [f"{lg.upper()}: {w}" for w in res["warnings"]]
-    bets.sort(key=lambda b: (TIER_ORDER[b["tier"]], -(b["ev"] or -9)))
-    return {"bets": bets, "projections": projections, "warnings": warnings[:30]}
+    return {"bets": finalize(bets), "projections": projections, "warnings": warnings[:30]}
+
+
+MAX_BEST = 30           # the 🔥 list stays short enough to actually use
+MAX_SANE_PROP_EV = 0.25  # bigger "edges" on props are nearly always stale lines or missing news
+
+
+def score(b) -> float:
+    """Rank by edge AND likelihood, so +1200 long shots don't crowd out solid bets."""
+    return min(b["ev"] or 0, 0.20) * (0.5 + (b["prob"] or 0))
+
+
+def finalize(bets: list[dict]) -> list[dict]:
+    for b in bets:
+        ev, p = b["ev"] or 0, b["prob"] or 0
+        suspicious = ((b["kind"] == "Prop" and ev > MAX_SANE_PROP_EV) or
+                      (b["kind"] == "Underdog" and p > 0.75) or
+                      (b["kind"] == "Prop" and "anytime_td" in b["selection"] and p < 0.30 and ev > 0.10))
+        if suspicious and b["tier"] in ("best", "lean"):
+            b["tier"] = "check"
+            b["note"] = ("Edge looks too big: probably a stale line or news the model doesn't know. "
+                         + (b.get("note") or "")).strip()
+            b["stake"] = 0
+    best = sorted((b for b in bets if b["tier"] == "best" and b["kind"] != "Entry"), key=score, reverse=True)
+    for b in best[MAX_BEST:]:
+        b["tier"] = "lean"
+    bets.sort(key=lambda b: (TIER_ORDER[b["tier"]], b["kind"] == "Entry", -score(b)))
+    return bets
 
 
 def write(results, learned: dict, lessons: list, record_text: str, bankroll: float, be3: float,

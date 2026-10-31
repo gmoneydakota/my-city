@@ -28,7 +28,7 @@ jobs:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         run: |
           [ -z "$ODDS_API_KEY" ] && unset ODDS_API_KEY
-          cd bets && python3 bets.py daily --max-events 4
+          cd bets && python3 bets.py daily --max-events 16
       - name: Save
         if: always()
         run: |

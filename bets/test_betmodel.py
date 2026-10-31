@@ -10,7 +10,7 @@ from datetime import datetime, timedelta, timezone
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from betmodel import common, engine, props, ratings  # noqa: E402
+from betmodel import common, engine, oddsapi, props, ratings  # noqa: E402
 
 
 class OddsMath(unittest.TestCase):
@@ -106,6 +106,46 @@ class Stats(unittest.TestCase):
         self.assertEqual(props.canon_stat("nba", "Pts+Rebs+Asts"), "pra")
         self.assertEqual(props.canon_stat("nfl", "Receiving Yards"), "rec_yds")
         self.assertIsNone(props.canon_stat("nba", "fantasy points"))
+
+
+class OddsBudget(unittest.TestCase):
+    """Heavy days (Sunday NFL) get a bigger share of the monthly credits; a game is only paid for once."""
+
+    def setUp(self):
+        import tempfile
+        from pathlib import Path
+        self.tmp = Path(tempfile.mkdtemp())
+        self._old = (oddsapi.USAGE, oddsapi.QUOTES)
+        oddsapi.USAGE, oddsapi.QUOTES = self.tmp / "usage.json", self.tmp / "quotes"
+
+    def tearDown(self):
+        oddsapi.USAGE, oddsapi.QUOTES = self._old
+
+    def test_sunday_gets_more_than_a_weekday(self):
+        sun = oddsapi.allowance(datetime(2026, 11, 1, 15, tzinfo=timezone.utc))   # Sunday
+        mon = oddsapi.allowance(datetime(2026, 11, 2, 15, tzinfo=timezone.utc))   # Monday
+        self.assertGreaterEqual(sun, 45)      # ~9 games at 5 credits
+        self.assertLessEqual(mon, 12)
+        self.assertGreater(sun, 4 * mon)
+
+    def test_never_over_month_or_day_cap(self):
+        for d in range(1, 31):
+            self.assertLessEqual(oddsapi.allowance(datetime(2026, 11, d, 15, tzinfo=timezone.utc)), oddsapi.DAY_CAP)
+        oddsapi.spend(480)
+        self.assertEqual(oddsapi.allowance(), 0)
+
+    def test_spent_today_reduces_allowance(self):
+        now = datetime.now(timezone.utc)
+        before = oddsapi.allowance(now)
+        oddsapi.spend(10)
+        self.assertLessEqual(oddsapi.allowance(now), max(0, before - 9))
+
+    def test_event_cache(self):
+        self.assertIsNone(oddsapi.cached_event("nfl", "g1"))
+        oddsapi.store_event("nfl", "g1", [{"player": "A", "stat": "pass_yds", "line": 250.5, "side": "over"}])
+        self.assertEqual(len(oddsapi.cached_event("nfl", "g1")), 1)
+        self.assertIsNone(oddsapi.cached_event("nfl", "g1", max_age_hours=-1))   # too old
+        self.assertIsNone(oddsapi.cached_event("nba", "g1"))                      # per league
 
 
 if __name__ == "__main__":

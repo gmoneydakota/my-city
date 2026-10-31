@@ -344,12 +344,25 @@ def run(league: str, date: str | None, odds_key: str | None, lines_csv: str | No
                 evs = [e for e in oddsapi.events(league, odds_key)  # free call
                        if (oddsapi.nickname(e["home_team"]), oddsapi.nickname(e["away_team"])) in ours
                        and datetime.fromisoformat(e["commence_time"].replace("Z", "+00:00")) <= soon]
-                for e in sorted(evs, key=lambda e: e["commence_time"])[:max_events]:
+                reused = 0
+                for e in sorted(evs, key=lambda e: e["commence_time"])[:max_events]:   # earliest kickoffs first
+                    saved_q = oddsapi.cached_event(league, e["id"])   # already paid for: no credits
+                    if saved_q is not None:
+                        fetched += saved_q
+                        reused += 1
+                        continue
                     if budget < cost:
+                        res["warnings"].append(f"Out of Odds API credits for today: props skipped for games "
+                                               f"from {e['commence_time'][:16].replace('T', ' ')} UTC onward.")
                         break
-                    fetched += oddsapi.event_props(league, odds_key, e["id"], markets)
+                    q = oddsapi.event_props(league, odds_key, e["id"], markets)
                     oddsapi.spend(cost)
                     budget -= cost
+                    oddsapi.store_event(league, e["id"], q)
+                    fetched += q
+                if reused:
+                    res["warnings"].append(f"{reused} game(s) reused prop lines fetched earlier (saves Odds API credits); "
+                                           f"re-check prices in the app.")
             except Exception as e:
                 res["warnings"].append(f"Odds API props failed: {e}")
             if fetched:

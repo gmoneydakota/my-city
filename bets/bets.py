@@ -48,21 +48,23 @@ def daily(a) -> int:
         print(f"learned: {lesson}", file=sys.stderr)
     key = os.environ.get("ODDS_API_KEY") or None
     results, errors = [], []
-    # Share today's Odds API credits: if NFL plays within ~30h, NBA gets half and NFL the rest.
-    nfl_soon = False
+    # Share today's Odds API credits. NBA runs first, so on a busy NFL day (Sunday) it only takes a small slice and
+    # the NFL slate gets the rest; with a few NFL games it takes half; with none it takes everything.
+    nfl_soon = 0
     if key:
         try:
             from datetime import datetime, timedelta, timezone
             from betmodel import oddsapi
             soon = datetime.now(timezone.utc) + timedelta(hours=30)
-            nfl_soon = any(datetime.fromisoformat(e["commence_time"].replace("Z", "+00:00")) <= soon
+            nfl_soon = sum(datetime.fromisoformat(e["commence_time"].replace("Z", "+00:00")) <= soon
                            for e in oddsapi.events("nfl", key))
-            print(f"Odds API credits available today: {oddsapi.allowance()}", file=sys.stderr)
+            print(f"Odds API credits available today: {oddsapi.allowance()} ({nfl_soon} NFL games within 30h)",
+                  file=sys.stderr)
         except Exception:  # noqa: BLE001
             pass
     for lg in ("nba", "nfl"):
         try:
-            share = 0.5 if (lg == "nba" and nfl_soon) else 1.0
+            share = (0.2 if nfl_soon >= 6 else 0.5 if nfl_soon else 1.0) if lg == "nba" else 1.0
             res = engine.run(lg, None, key, a.lines, not a.no_props, a.max_events, a.per_team, True, share)
             picks = report.select(res, a.min_edge, a.min_edge_prop, a.bankroll)
             report.write_outputs(res, picks, report.markdown(res, picks, a.bankroll, engine.ud_breakeven(3)))

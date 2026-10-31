@@ -138,14 +138,27 @@ def _usage() -> dict:
     return u
 
 
-def allowance() -> int:
-    """Credits we may still spend today (even share of what's left this month)."""
-    u, now = _usage(), _dt.now(_tz.utc)
-    days_left = _cal.monthrange(now.year, now.month)[1] - now.day + 1
+# Not every day needs the same credits: a Sunday NFL slate is ~13 games, a quiet Tuesday ~2. Each day gets a
+# weight; today's allowance is (credits left, counting today's spend) x today's weight / sum of the remaining weights.
+# Unspent credits from quiet days therefore flow into the heavy ones. DAY_CAP stops one run draining the month.
+DAY_WEIGHT = {6: 5.0}                                   # weekday(): Sunday = 6; every other day = 1
+DAY_CAP = int(_os.environ.get("ODDS_DAILY_CAP", "60"))
+
+
+def _weight(day) -> float:
+    return DAY_WEIGHT.get(day.weekday(), 1.0)
+
+
+def allowance(now=None) -> int:
+    """Credits we may still spend today."""
+    now = now or _dt.now(_tz.utc)
+    u = _usage()
+    dim = _cal.monthrange(now.year, now.month)[1]
+    total_w = sum(_weight(now.replace(day=d)) for d in range(now.day, dim + 1))
     left = MONTHLY_BUDGET - u["used"]
     spent_today = u["days"].get(now.strftime("%d"), 0)
-    per_day = (left + spent_today) / days_left
-    return max(0, int(per_day - spent_today))
+    today = (left + spent_today) * _weight(now) / total_w
+    return max(0, int(min(today, DAY_CAP) - spent_today))
 
 
 def spend(credits: int) -> None:
@@ -178,3 +191,43 @@ def load_quotes(league: str, max_age_hours: float = 20) -> tuple[list[dict], str
         return (d["quotes"], d["fetched_at"]) if age <= max_age_hours else ([], None)
     except Exception:  # noqa: BLE001
         return [], None
+
+
+# --------------------------------------------------------------------------- per-game prop cache
+# Props cost credits per game, so a game we already paid for is not fetched again for EVENT_TTL_HOURS. This is
+# what lets Saturday evening pre-load some of Sunday's games and Sunday morning pay only for the rest.
+EVENTS_FILE_TTL_HOURS = 60
+
+
+def _events_path(league: str):
+    return QUOTES / f"{league}_events.json"
+
+
+def _read_events(league: str) -> dict:
+    try:
+        return _json.loads(_events_path(league).read_text())
+    except Exception:  # noqa: BLE001
+        return {}
+
+
+def cached_event(league: str, event_id: str, max_age_hours: float = 20):
+    """Saved prop quotes for one game if fetched recently enough, else None."""
+    e = _read_events(league).get(event_id)
+    if not e:
+        return None
+    try:
+        age = (_dt.now(_tz.utc) - _dt.fromisoformat(e["fetched_at"])).total_seconds() / 3600
+    except Exception:  # noqa: BLE001
+        return None
+    return e["quotes"] if age <= max_age_hours else None
+
+
+def store_event(league: str, event_id: str, quotes: list[dict]) -> None:
+    now = _dt.now(_tz.utc)
+    data = _read_events(league)
+    data[event_id] = {"fetched_at": now.isoformat(timespec="seconds"), "quotes": quotes}
+    for k in [k for k, v in data.items()
+              if (now - _dt.fromisoformat(v["fetched_at"])).total_seconds() > EVENTS_FILE_TTL_HOURS * 3600]:
+        del data[k]
+    QUOTES.mkdir(parents=True, exist_ok=True)
+    _events_path(league).write_text(_json.dumps(data))

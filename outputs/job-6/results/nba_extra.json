@@ -1,0 +1,15 @@
+{
+ "n": 4403,
+ "note": "no market totals cached for NBA; proxy line = mean of both teams' trailing-10 totals",
+ "mae_A": 15.935421851805135,
+ "bias_A": -0.38183357036209414,
+ "mae_B": 15.495538640867947,
+ "bias_B": -0.40123507273714926,
+ "mae_C": 15.493479289897122,
+ "bias_C": -0.993467641440304,
+ "mae_proxy": 15.013763343175109,
+ "bias_proxy": 0.03527140585964144,
+ "proxy_over_logloss_C": 0.7097794815477602,
+ "proxy_over_logloss_naive50": 0.6931,
+ "sd_total": 19.549222033273857
+}

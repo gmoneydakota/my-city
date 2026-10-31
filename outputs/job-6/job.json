@@ -9,9 +9,10 @@
   "builds_on": null,
   "repeat": null,
   "has_page": false,
-  "turns": 36,
-  "cost_usd_estimate": 0.9646,
-  "ok": false,
-  "subtype": "error_max_turns",
-  "finished_at": "2026-10-31T21:11:15+00:00"
+  "has_model": false,
+  "turns": 20,
+  "cost_usd_estimate": 0.3773,
+  "ok": true,
+  "subtype": "success",
+  "finished_at": "2026-10-31T21:18:19+00:00"
 }

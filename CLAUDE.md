@@ -9,6 +9,11 @@ the agents interactively.
 - Every job's deliverables go in `outputs/job-<n>/`, with a `README.md` that says
   what was made and exactly how to use it. Don't edit files outside that folder,
   except `watchlist.json` when asked to track a ticker.
+- **Anything that must appear IN the city (a building, tower, landmark, or a change to how the city looks or
+  behaves) means editing `index.html`, which only an upgrade job may do.** The runner now switches such requests to
+  upgrade mode by itself. If a make-mode job ever finds it needs to change the city, don't hand over a patch: reply
+  `ESCALATE: coder - this changes the city itself, it needs an upgrade (pull request)`. A finished page from a normal job
+  (like `outputs/job-9/`) is fine, but the building that opens it must be added in `index.html` in the same job.
 - `outputs/signals/` is written only by `scripts/signals.py` (the free daily scan).
 - Use fresh data for anything time-sensitive: `python3 scripts/market_data.py TICKER`
   for prices, WebSearch for news. State the date of the data.

@@ -370,6 +370,7 @@ const towerPos = AGENTS.map((a, i) => {
 });
 
 const CASINO_POS = new THREE.Vector3(40, 0, -64);
+const PRODUCTS_POS = new THREE.Vector3(-40, 0, -64);   // Products: the checkmark building (finished jobs + downloads)
 function glowLine(points, color, opacity=0.8){
   const g = new THREE.BufferGeometry().setFromPoints(points);
   return new THREE.Line(g, new THREE.LineBasicMaterial({ color, transparent:true, opacity, toneMapped:false }));
@@ -403,7 +404,7 @@ function distToSeg(p, a, b){ const ab=b.clone().sub(a), t=Math.max(0,Math.min(1,
     const r = p.length();
     if (r < 18 || r > 158) continue;
     if (Math.abs(r - RING) < 4.5 || Math.abs(r - RING*1.6) < 3.5) continue;
-    if (towerPos.some(t => t.distanceTo(p) < 11) || CASINO_POS.distanceTo(p) < 19) continue;
+    if (towerPos.some(t => t.distanceTo(p) < 11) || CASINO_POS.distanceTo(p) < 19 || PRODUCTS_POS.distanceTo(p) < 23) continue;
     if (distToSeg(p, CASINO_POS.clone().setLength(18), CASINO_POS) < 9) continue;   // Lucky Tower boulevard
     if (towerPos.some(t => distToSeg(p, origin, t) < 4)) continue;
     if (rnd() < .18) continue;
@@ -567,6 +568,41 @@ const SYMBOLS = ['7','🍒','💎','🏀','🏈','★','$','🔔'];
   tag.addEventListener('click', () => focusCasino());
   const lo = new CSS2DObject(tag); lo.position.y = 47; g.add(lo); casino.badge = tag.querySelector('.badge');
 }
+/* ------------------------------------------------------------------ Products: the checkmark building */
+const products = { beacon:null, ring:null, parcels:[] };
+{
+  const g = new THREE.Group(); g.position.copy(PRODUCTS_POS); scene.add(g); g.lookAt(0, 0, 0); products.group = g;
+  const green = 0x3ddc84;
+  const S = 3.2;   // checkmark footprint drawn in XY, extruded into a building
+  const shape = new THREE.Shape([[-4.0, 1.2], [-1.0, -1.8], [4.4, 3.6], [3.2, 4.8], [-1.0, 0.6], [-2.8, 2.4]].map(([x, y]) => new THREE.Vector2(x * S, (y + 1.8) * S)));
+  const geo = new THREE.ExtrudeGeometry(shape, { depth:5, bevelEnabled:true, bevelThickness:.3, bevelSize:.25, bevelSegments:2 }); geo.translate(0, 0, -2.5);
+  const tex = windowTexture(909); tex.repeat.set(.8, .8);
+  const body = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ color:0x07160e, roughness:.45, metalness:.4, emissive:0xb9ffd6, emissiveMap:tex, emissiveIntensity:.9 }));
+  body.position.y = 1.4; body.add(edgeMesh(geo, green)); g.add(body);
+  const plinthGeo = new THREE.CylinderGeometry(18, 19, 1.4, 48);
+  const plinth = new THREE.Mesh(plinthGeo, new THREE.MeshStandardMaterial({ color:0x07120c, roughness:.6, metalness:.3 })); plinth.position.y = .7; plinth.add(edgeMesh(plinthGeo, 0x1f7a48)); g.add(plinth);
+  products.ring = new THREE.Mesh(new THREE.RingGeometry(19.6, 20.2, 64), new THREE.MeshBasicMaterial({ color:green, transparent:true, opacity:.5, side:THREE.DoubleSide, toneMapped:false }));
+  products.ring.rotation.x = -Math.PI / 2; products.ring.position.y = .06; g.add(products.ring);
+  products.beacon = new THREE.Mesh(new THREE.SphereGeometry(.6, 16, 12), new THREE.MeshBasicMaterial({ color:0xb9ffd6, toneMapped:false }));
+  products.beacon.position.set(3.8 * S, 6 * S + 2, 0); g.add(products.beacon);
+  const pGeo = new THREE.BoxGeometry(1.2, 1.2, 1.2);
+  for (let i = 0; i < 6; i++) {   // parcels orbiting = the products
+    const m = new THREE.Mesh(pGeo, new THREE.MeshStandardMaterial({ color:0x0d2a1a, emissive:green, emissiveIntensity:.4 })); m.add(edgeMesh(pGeo, 0x9dffc8));
+    g.add(m); products.parcels.push({ m, a:i / 6 * Math.PI * 2, r:22 + (i % 3) * 1.5, y:4 + (i % 3) * 4 });
+  }
+  scene.add(glowLine([PRODUCTS_POS.clone().setLength(20).setY(.08), PRODUCTS_POS.clone().setLength(PRODUCTS_POS.length() - 21).setY(.08)], green, .6));
+  g.traverse(o => { if (o.isMesh) { o.userData.products = true; pickables.push(o); } });
+  const tag = document.createElement('div'); tag.className = 'tag'; tag.style.color = '#3ddc84';
+  tag.innerHTML = '<b>✔ Products</b><small>finished jobs · download</small>';
+  tag.addEventListener('click', () => openProducts());
+  const lo = new CSS2DObject(tag); lo.position.y = 6 * S + 6; g.add(lo);
+}
+function openProducts(){ location.href = 'outputs/job-9/'; }
+function animateProducts(t, dt){
+  products.beacon.material.color.setHSL(.4, 1, .6 + Math.sin(t * 4) * .2);
+  products.ring.material.opacity = .35 + Math.sin(t * 1.6) * .15;
+  products.parcels.forEach(p => { p.a += dt * .3; p.m.position.set(Math.cos(p.a) * p.r, p.y + Math.sin(t + p.a * 3) * .5, Math.sin(p.a) * p.r); p.m.rotation.y += dt; });
+}
 function pullLever(){ if (casino.pullT >= 0) return; casino.pullT = 0; casino.spinT = 0;
   casino.target = casino.jackpot ? [0,0,0] : [0,1,2].map(() => (Math.random()*SYMBOLS.length)|0); }
 function drawReels(dt){
@@ -668,7 +704,7 @@ canvas.addEventListener('pointerup', e => {
   if (!downAt || Math.hypot(e.clientX-downAt[0], e.clientY-downAt[1]) > 6) return;
   mouse.set(e.clientX/innerWidth*2-1, -(e.clientY/innerHeight)*2+1); ray.setFromCamera(mouse, camera);
   const hit = ray.intersectObjects(pickables, false)[0];
-  if (hit) hit.object.userData.casino ? focusCasino() : focusAgent(hit.object.userData.agent);
+  if (hit) hit.object.userData.products ? openProducts() : hit.object.userData.casino ? focusCasino() : focusAgent(hit.object.userData.agent);
 });
 let tween = null;
 function flyTo(target, camPos){ tween = { t:0, fromT: controls.target.clone(), toT: target, fromC: camera.position.clone(), toC: camPos }; controls.autoRotate = false; }
@@ -713,6 +749,7 @@ function animate(){
   for (let i=pulses.length-1;i>=0;i--){ const p = pulses[i]; p.t += dt; p.ring.scale.setScalar(1 + p.t*6); p.ring.material.opacity = .7 * (1 - p.t/1.6); if (p.t > 1.6){ scene.remove(p.ring); pulses.splice(i,1);} }
   if (frame % 2 === 0 && tickerCanvas) drawTicker(dt*2);
   if (frame % 2 === 0) { drawReels(dt*2); drawPicks(dt*2); }
+  animateProducts(t, dt);
   animateCasino(dt, t);
   if (tween){ tween.t = Math.min(1, tween.t + dt/1.3); const k = 1 - Math.pow(1-tween.t, 3);
     controls.target.lerpVectors(tween.fromT, tween.toT, k); camera.position.lerpVectors(tween.fromC, tween.toC, k); if (tween.t >= 1) tween = null; }

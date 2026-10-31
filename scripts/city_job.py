@@ -130,6 +130,22 @@ def parse_request() -> tuple[str, dict, str]:
     return request, fields, clean_title
 
 
+# A request to put something IN the city (a building, tower, landmark) has to change index.html. Make-mode jobs may only
+# write inside outputs/job-N/, so they can't do that (job #9 "Products" ended as a side page plus a patch nobody applied).
+# So: unless the owner chose a Mode, these requests run as upgrades (a pull request to approve).
+_CITY_THING = re.compile(r"\b(add|make|build|create|put|give|want|place|need)\b(?:(?!\b(?:of|about|spreadsheet|report|list|table|chart|costs?)\b)[^.\n]){0,50}?"
+                         r"\b(building|tower|landmark|district)\b", re.I)
+_CITY_PLACE = re.compile(r"\b(in|to|into|on)\s+(my|the|our)\s+(agent\s+)?city\b", re.I)
+_NOT_CITY = re.compile(r"tower defen[cs]e|floor ?plan|blueprint|architect|real estate|construction|"
+                       r"3[- ]?d[- ](model|print)|\bcad\b|\bstl\b|eiffel|skyscraper (model|design)", re.I)
+
+
+def wants_city_change(request: str) -> bool:
+    if _NOT_CITY.search(request):
+        return False
+    return bool(_CITY_THING.search(request) or (_CITY_PLACE.search(request) and re.search(r"\b(add|put|place|build)\b", request, re.I)))
+
+
 def parse_repeat(text: str) -> dict | None:
     m = re.match(r"(daily|weekdays|weekly)\s+(\d{1,2}):(\d{2})\s*(\S+)?", text.strip(), re.I)
     if not m:
@@ -194,6 +210,8 @@ Map of the city:
   A new agent also needs: an entry in AGENTS in index.html (pick an existing shape or add one in buildTower),
   and optionally a keyword rule in RULES in both index.html and scripts/city_job.py.
   agents/<name>.md works the same way (used for agents that can't be written under .claude/, e.g. cad).
+- outputs/job-N/index.html pages (e.g. job 9's Products page at outputs/job-9/) are normal job outputs that the city
+  can link to: a building in index.html opens them when clicked (see the PRODUCTS block for the pattern).
 - cad/: CAD Studio (cad/index.html) for the CAD tower; model format in cad/SCHEMA.md, checker scripts/cad_check.py.
 - scripts/city_job.py (job runner), scripts/city_schedule.py (recurring jobs), scripts/signals.py (market scan),
   watchlist.json (tickers), schedules.json (recurring jobs: id, title, request, agent, every, time, tz, days).
@@ -343,7 +361,9 @@ def cmd_run():
     out_dir = f"outputs/job-{job}"
     out = ROOT / out_dir
     request, f, title = parse_request()
-    mode = "upgrade" if f.get("mode", "").lower() == "upgrade" else "make"
+    explicit = f.get("mode", "").lower()
+    auto_upgrade = explicit not in ("upgrade", "make") and not f.get("command") and wants_city_change(request)
+    mode = "upgrade" if explicit == "upgrade" or auto_upgrade else "make"
 
     # free housekeeping commands: no model call at all
     if f.get("command"):
@@ -363,7 +383,7 @@ def cmd_run():
     if f.get("agent", "auto").lower() in agents:
         name, how = f["agent"].lower(), "chosen by you"
     elif mode == "upgrade":
-        name, how = "coder", "upgrade mode"
+        name, how = "coder", "upgrade mode (this changes the city itself, so it comes as a pull request)" if auto_upgrade else "upgrade mode"
     else:
         name, how = route(request, agents)
     agent = agents[name]

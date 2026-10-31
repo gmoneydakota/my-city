@@ -1,0 +1,17 @@
+{
+  "job": 3,
+  "agent": "coder",
+  "model": "opus",
+  "tier": "heavy",
+  "mode": "upgrade",
+  "route": "upgrade mode",
+  "escalated_from": null,
+  "builds_on": null,
+  "repeat": null,
+  "has_page": false,
+  "turns": 93,
+  "cost_usd_estimate": 5.1527,
+  "ok": true,
+  "subtype": "success",
+  "finished_at": "2026-10-31T20:43:30+00:00"
+}

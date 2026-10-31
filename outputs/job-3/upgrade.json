@@ -1,0 +1,19 @@
+{
+  "branch": "upgrade/job-3",
+  "files": [
+    "CLAUDE.md",
+    "README.md",
+    "agents/cad.md",
+    "cad/SCHEMA.md",
+    "cad/examples/gearbox.json",
+    "cad/examples/lamp.json",
+    "cad/examples/rover.json",
+    "cad/index.html",
+    "index.html",
+    "scripts/cad_check.py",
+    "scripts/city_job.py",
+    "sw.js"
+  ],
+  "pr_url": "https://github.com/gmoneydakota/my-city/pull/5",
+  "compare_url": null
+}

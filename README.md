@@ -29,6 +29,7 @@ result is waiting in the city (and in your repo).
 | `watchlist.json` | Tickers the daily scan covers. Edit freely. |
 | `.github/workflows/city-job.yml` | Runs a job whenever you send one from the city. |
 | `.github/workflows/market-signals.yml` | Free weekday scan after the US market close. |
+| `.github/workflows/city-resume.yml` + `scripts/city_resume.py` | If a job stops because your Claude usage limit ran out, it is **paused** (label `status:paused`, progress saved on branch `checkpoint/job-N`). Every 30 minutes this checks (free, no Claude usage) and restarts it from where it left off once the limit has reset. |
 
 ## Setup (about 10 minutes, once)
 

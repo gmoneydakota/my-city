@@ -28,7 +28,7 @@ import os
 import re
 import subprocess
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -192,8 +192,64 @@ Rules:
 - Write {out_dir}/README.md: what changed, which files, and what the owner will see after approving."""
 
 
+# ---------------------------------------------------------------- usage limit: pause + resume
+# When Claude says "You've hit your 5-hour limit · resets 8pm (UTC)" the job is not failed, it is
+# PAUSED: work so far is saved to branch checkpoint/job-N, the issue gets the status:paused label and a
+# hidden "city-resume-at" marker, and scripts/city_resume.py (free, runs twice an hour) restarts the job
+# once the limit has reset. The restart restores the saved files and tells the agent to continue.
+LIMIT_RE = re.compile(r"hit your .{0,40}limit|usage limit reached|limit will reset", re.I)
+RESET_RE = re.compile(r"resets?\s+(?:at\s+)?(\d{1,2})(?::(\d{2}))?\s*(am|pm)?(?:\s*\(([^)]+)\))?", re.I)
+
+
+def limit_reset(text: str) -> datetime | None:
+    """If `text` is a Claude usage-limit message, return when it resets (aware UTC datetime), else None."""
+    if not LIMIT_RE.search(text or ""):
+        return None
+    now = datetime.now(timezone.utc)
+    m = RESET_RE.search(text)
+    if not m:
+        return now + timedelta(hours=5, minutes=5)       # no time given: assume a fresh 5-hour window
+    h, mi, ap, tz = int(m.group(1)), int(m.group(2) or 0), (m.group(3) or "").lower(), (m.group(4) or "UTC").strip()
+    if ap == "pm" and h < 12:
+        h += 12
+    if ap == "am" and h == 12:
+        h = 0
+    if h > 23 or mi > 59:
+        return now + timedelta(hours=5, minutes=5)
+    try:
+        zone = ZoneInfo("UTC" if tz.upper() in ("UTC", "GMT", "Z") else tz)
+    except Exception:  # noqa: BLE001
+        zone = timezone.utc
+    local = now.astimezone(zone)
+    t = local.replace(hour=h, minute=mi, second=0, microsecond=0)
+    if t <= local:
+        t += timedelta(days=1)
+    return t.astimezone(timezone.utc)
+
+
+def restore_checkpoint(job: int) -> str:
+    """Bring back the files an earlier, paused run saved. Returns a note for the agent ('' if none)."""
+    br = f"checkpoint/job-{job}"
+    if git("fetch", "--depth=2", "origin", f"{br}:refs/remotes/origin/{br}", check=False).returncode != 0:
+        return ""
+    # only the files the checkpoint itself changed (its parent is main as it was), so newer main stays intact
+    names = git("diff", "--name-only", "-z", "--diff-filter=AM", f"origin/{br}~1", f"origin/{br}",
+                check=False).stdout.split("\0")
+    files = [n for n in names if n and not n.startswith(".github/")]
+    if not files:
+        return ""
+    git("checkout", f"origin/{br}", "--", *files)
+    git("reset", "-q", check=False)
+    shown = "\n".join(f"- {n}" for n in files[:40])
+    return (f"\n\nRESUMING: an earlier run of this job stopped part-way because the owner's usage limit was hit. "
+            f"Its work so far has been restored to disk ({len(files)} files):\n{shown}\n"
+            f"Read what exists (and any PROGRESS.md) first. Do NOT start over: finish the remaining work, "
+            f"then make sure everything is complete and the README is accurate. Keep a short "
+            f"{{out_dir}}/PROGRESS.md of what is done and what is left as you go, so a further pause loses nothing.")
+
+
 def build_prompt(agent: dict, request: str, job: int, out_dir: str, can_write: bool,
-                 mode: str, builds_on: int | None) -> tuple[str, str]:
+                 mode: str, builds_on: int | None, resume: str = "") -> tuple[str, str]:
     today = datetime.now(timezone.utc).strftime("%A %d %B %Y")
     common = f"""Today is {today} (UTC). You are running unattended on a GitHub Actions server; nobody can answer
 questions, so make sensible assumptions and list them at the end.
@@ -221,16 +277,21 @@ of the data. Never rely on memory for current facts."""
                   "\nIf this request is clearly beyond what you should handle, do no work and reply with exactly "
                   "one line:\nESCALATE: <agent-name> - <short reason>")
     user = f"Agent City job #{job}. The request from the city's owner:\n\n<<<\n{request}\n>>>"
+    user += resume.replace("{out_dir}", out_dir)
+    if mode == "upgrade" or can_write:
+        system += (f"\nBecause the owner's usage can run out mid-job: save files as you go (never hold everything "
+                   f"until the end) and keep {out_dir}/PROGRESS.md updated with done / still-to-do.")
     return system, user
 
 
-def run_agent(agent: dict, request: str, job: int, out_dir: str, mode: str, builds_on: int | None) -> dict:
+def run_agent(agent: dict, request: str, job: int, out_dir: str, mode: str, builds_on: int | None,
+              resume: str = "") -> dict:
     can_write = "Write" in agent["tools"]
     tools = list(agent["tools"])
     if "Bash" in tools:
         tools = [t for t in tools if t != "Bash"] + BASH_OK
     turns = UPGRADE_TURNS if mode == "upgrade" else MAX_TURNS[agent["tier"]]
-    system, user = build_prompt(agent, request, job, out_dir, can_write, mode, builds_on)
+    system, user = build_prompt(agent, request, job, out_dir, can_write, mode, builds_on, resume)
     cmd = ["claude", "-p", user, "--model", agent["model"], "--max-turns", str(turns),
            "--output-format", "json", "--append-system-prompt", system,
            "--allowedTools", ",".join(tools), "--permission-mode", "acceptEdits"]
@@ -244,13 +305,16 @@ def run_agent(agent: dict, request: str, job: int, out_dir: str, mode: str, buil
         detail = f"exit {p.returncode}\nresult: {str(res.get('result'))[:1500]}\nstderr: {p.stderr[-1500:]}"
         print(detail, file=sys.stderr)
         (TMP / "city-error.txt").write_text(detail)
+        reset = limit_reset(f"{res.get('result')}\n{p.stdout}\n{p.stderr}")
+        if reset:
+            res["_limit_reset"] = reset.isoformat(timespec="minutes")
     res["_agent"], res["_model"], res["_tier"] = agent["name"], agent["model"], agent["tier"]
     return res
 
 
 def ensure_labels(*names: str):
     colors = {"city-job": "4fd1ff", "status:working": "f7c948", "status:done": "3ddc84", "status:failed": "ff5c5c",
-              "mode:upgrade": "ff7ad9", "mode:repeat": "7dffb0"}
+              "status:paused": "ffa94d", "mode:upgrade": "ff7ad9", "mode:repeat": "7dffb0"}
     for n in names:
         gh("label", "create", n, "--color", colors.get(n, "b98cff"), "--force")
 
@@ -305,15 +369,20 @@ def cmd_run():
 
     labels = ["city-job", "status:working", f"agent:{name}"] + (["mode:upgrade"] if mode == "upgrade" else []) \
         + (["mode:repeat"] if schedule else [])
-    ensure_labels(*labels)
-    gh("issue", "edit", str(job), "--add-label", ",".join(labels), "--remove-label", "status:done,status:failed")
+    ensure_labels(*labels, "status:paused")
+    gh("issue", "edit", str(job), "--add-label", ",".join(labels),
+       "--remove-label", "status:done,status:failed,status:paused")
+    resume = restore_checkpoint(job)
+    if resume:
+        print("resuming from checkpoint")
     extra = (" 🏗️ Upgrade mode: you'll get a pull request to approve." if mode == "upgrade" else "") + \
         (f" ✏️ Remixing job #{builds_on}." if builds_on else "") + \
         (f" 🔁 Will repeat {describe_repeat(schedule)}." if schedule else "")
     gh("issue", "comment", str(job), "--body",
-       f"🏗️ Routed to **{name}** ({agent['tier']} · {agent['model']}) via {how}. Working on it…{extra}")
+       f"🏗️ Routed to **{name}** ({agent['tier']} · {agent['model']}) via {how}. Working on it…{extra}"
+       + (" ▶️ **Resuming** from the progress saved before the usage limit." if resume else ""))
 
-    runs = [run_agent(agent, request, job, out_dir, mode, builds_on)]
+    runs = [run_agent(agent, request, job, out_dir, mode, builds_on, resume)]
     m = re.match(r"\s*ESCALATE:\s*([a-z]+)\s*[-–—:]?\s*(.*)", runs[-1].get("result") or "", re.I)
     if m and m.group(1).lower() in agents and m.group(1).lower() != name:
         nxt = agents[m.group(1).lower()]
@@ -321,9 +390,15 @@ def cmd_run():
            f"⬆️ **{name}** handed off to **{nxt['name']}** ({nxt['tier']} · {nxt['model']}): {m.group(2)}")
         ensure_labels(f"agent:{nxt['name']}")
         gh("issue", "edit", str(job), "--add-label", f"agent:{nxt['name']}", "--remove-label", f"agent:{name}")
-        runs.append(run_agent(nxt, request, job, out_dir, mode, builds_on))
+        runs.append(run_agent(nxt, request, job, out_dir, mode, builds_on, resume))
 
     final = runs[-1]
+    if final.get("_limit_reset"):
+        # usage limit hit: not a failure. Pause; `save` checkpoints the files, `finish` explains and labels.
+        STATE.write_text(json.dumps({"job": job, "paused": True, "resume_at": final["_limit_reset"],
+                                     "mode": mode, "title": title, "out_dir": out_dir, "agent": final["_agent"]}))
+        print(f"usage limit hit; job paused until {final['_limit_reset']}")
+        return
     out.mkdir(parents=True, exist_ok=True)
     readme = out / "README.md"
     text = (final.get("result") or "").strip()
@@ -360,6 +435,21 @@ def cmd_save():
     git("config", "user.name", "agent-city[bot]")
     git("config", "user.email", "agent-city@users.noreply.github.com")
     msg = f"Job #{job}: {st.get('title', '')}"[:120]
+
+    if st.get("paused"):
+        # save progress on its own branch (parent = main as it is now) so the resumed run can pick it up
+        git("checkout", "--", ".github", check=False)
+        git("clean", "-fdq", ".github", check=False)
+        git("checkout", "-B", f"checkpoint/job-{job}")
+        git("add", "-A")
+        files = [n for n in git("diff", "--cached", "--name-only").stdout.split() if n]
+        if files:
+            git("commit", "-m", f"Checkpoint for job #{job} (usage limit)", check=False)
+            if git("push", "-f", "origin", f"checkpoint/job-{job}", check=False).returncode != 0:
+                files = []
+        st["saved_files"] = len(files)
+        STATE.write_text(json.dumps(st))
+        return
 
     if st.get("mode") != "upgrade":
         paths = [p for p in (st.get("out_dir"), "watchlist.json", "schedules.json") if p and (ROOT / p).exists()]
@@ -404,9 +494,24 @@ def cmd_finish():
     st = json.loads(STATE.read_text())
     repo, ref = os.environ["GITHUB_REPOSITORY"], os.environ.get("GITHUB_REF_NAME", "main")
     job = str(st["job"])
+    if st.get("paused"):
+        when = datetime.fromisoformat(st["resume_at"]).astimezone(timezone.utc)
+        saved = st.get("saved_files", 0)
+        ensure_labels("status:paused")
+        gh("issue", "comment", job, "--body",
+           f"⏸️ **Paused: your Claude usage limit was hit.** It resets about **{when:%H:%M} UTC** "
+           f"({when:%a %d %b}).\n\n"
+           + (f"💾 Progress is saved ({saved} files on branch `checkpoint/job-{job}`). " if saved else
+              "Nothing had been built yet, so it will start fresh. ")
+           + "**Nothing for you to do:** the city checks every 30 minutes and restarts this job on its own once "
+             "the limit has reset, continuing from what's saved. To restart it sooner, add the `run-again` label.\n\n"
+             f"<!-- city-resume-at: {st['resume_at']} -->")
+        gh("issue", "edit", job, "--add-label", "status:paused", "--remove-label", "status:working,run-again,status:failed")
+        return
+    git("push", "origin", "--delete", f"checkpoint/job-{job}", check=False)   # finished: drop any saved checkpoint
     if st.get("command"):
         gh("issue", "comment", job, "--body", st["summary"])
-        gh("issue", "edit", job, "--add-label", "status:done", "--remove-label", "status:working,run-again")
+        gh("issue", "edit", job, "--add-label", "status:done", "--remove-label", "status:working,run-again,status:paused")
         gh("issue", "close", job)
         return
     link = f"https://github.com/{repo}/tree/{ref}/{st['out_dir']}"
@@ -433,7 +538,7 @@ def cmd_finish():
             head += f"🔁 Repeats {st['repeat']}. Stop it from the city's Jobs tab.\n\n"
     body = head + f"📁 **Files:** {link}\n\n---\n\n{st['summary']}"
     gh("issue", "comment", job, "--body", body)
-    gh("issue", "edit", job, "--add-label", "status:done", "--remove-label", "status:working,run-again")
+    gh("issue", "edit", job, "--add-label", "status:done", "--remove-label", "status:working,run-again,status:paused")
     gh("issue", "close", job)
 
 

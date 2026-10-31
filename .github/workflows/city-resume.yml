@@ -1,0 +1,46 @@
+# Restarts jobs that were paused because your Claude usage limit ran out, once it has reset.
+# The check is plain Python and uses no Claude usage; it only starts jobs that are paused and due.
+name: city-resume
+on:
+  schedule:
+    - cron: "7,37 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: city-resume
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      runs: ${{ steps.due.outputs.runs }}
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - id: due
+        run: python3 scripts/city_resume.py
+
+  run:
+    needs: check
+    if: needs.check.outputs.runs != '' && needs.check.outputs.runs != '[]'
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        job: ${{ fromJSON(needs.check.outputs.runs) }}
+    uses: ./.github/workflows/city-job.yml
+    with:
+      issue_number: ${{ matrix.job.number }}
+      issue_title: ${{ matrix.job.title }}
+      issue_body: ${{ matrix.job.body }}
+    secrets: inherit

@@ -171,6 +171,7 @@ def route(request: str, agents: dict) -> tuple[str, str]:
 UPGRADE_RULES = """--- Agent City UPGRADE job ---
 You are upgrading Agent City itself: this repository. Make the requested change directly in the repo files.
 Your change is sent to the owner as a pull request; nothing goes live until they approve it.
+In upgrade mode these rules replace any 'only save files in your job folder' rule from your agent profile.
 Map of the city:
 - index.html: the whole 3D city (Three.js, one file). AGENTS lists the towers (id, name, tier, role, shape);
   buildTower() draws each shape; RULES is the live routing preview; EXAMPLES are the idea chips.
@@ -179,6 +180,8 @@ Map of the city:
   and optionally a keyword rule in RULES in both index.html and scripts/city_job.py.
 - scripts/city_job.py (job runner), scripts/city_schedule.py (recurring jobs), scripts/signals.py (market scan),
   watchlist.json (tickers), schedules.json (recurring jobs: id, title, request, agent, every, time, tz, days).
+- bets/: the self-learning NFL/NBA betting model (bets.py, betmodel/*.py, tests in bets/test_betmodel.py,
+  learned.json + history/ = what it has learned). index.html shows bets/board/latest.json in the Bets tab.
 Rules:
 - Never edit anything under .github/ (GitHub blocks it). If the upgrade truly needs a workflow change,
   do everything else and explain the needed workflow change in the README.

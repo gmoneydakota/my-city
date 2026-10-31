@@ -41,7 +41,8 @@ def main():
         if not is_due:
             continue
         title = f"[city] 🔁 {s['title']}"[:200]
-        body = (f"Scheduled run of recurring job #{s['id']} for @{owner}\n\nAgent: {s.get('agent', 'auto')}\n"
+        mode = f"Mode: {s['mode']}\n" if s.get("mode") else ""
+        body = (f"Scheduled run of recurring job #{s['id']} for @{owner}\n\nAgent: {s.get('agent', 'auto')}\n{mode}"
                 f"<!-- scheduled -->\n\n{s['request']}")
         p = subprocess.run(["gh", "api", "-X", "POST", f"repos/{os.environ['GITHUB_REPOSITORY']}/issues",
                             "-f", f"title={title}", "-f", f"body={body}", "-f", "labels[]=city-job",

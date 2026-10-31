@@ -81,6 +81,23 @@ Upgrades can't edit `.github/` (GitHub blocks that). For the approval page to be
 **Settings → Actions → General → Allow GitHub Actions to create and approve pull requests**. Without it, the
 job gives you a link to create it with one click.
 
+## 🎰 Lucky Tower: the self-learning betting model
+
+The slot-machine building is an NFL + NBA betting model (`bets/`) for DraftKings and Underdog. Click it, or open
+the **Bets** tab, to see today's board: 🔥 best bets, 👍 leans, every game line, DK props, Underdog legs/entries and
+hundreds of player projections, with search and filters.
+
+- **Twice a day** (`bets-daily.yml`, about 11:20am and 5:50pm ET) it grades finished games, retunes itself,
+  and builds a fresh board. This is plain Python, so it uses **no Claude usage**.
+- **It learns every day:** every priced bet and projection is recorded and graded. It relearns how much to trust its
+  model versus the market for each bet type, and corrects each stat's projections (too high or low, too
+  confident or not enough). What it learned shows in the Bets tab and `bets/history/learning_log.json`.
+- **It gets coached weekly:** every Monday, Quant reviews the results and proposes code improvements as a pull
+  request you approve (a recurring job, which uses a little usage; stop it under Jobs → Recurring).
+- Optional: add a free `ODDS_API_KEY` secret (the-odds-api.com) for DraftKings player props and Underdog lines.
+
+Estimates, not guarantees. Gambling problem? Call 1-800-GAMBLER.
+
 ## How it saves usage
 
 1. **No model for mechanical work.** Market data and signals are plain Python on a

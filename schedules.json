@@ -1,1 +1,19 @@
-{"schedules": []}
+{
+  "schedules": [
+    {
+      "id": 9001,
+      "title": "Weekly betting model coaching session",
+      "agent": "quant",
+      "mode": "upgrade",
+      "every": "weekly",
+      "time": "09:00",
+      "tz": "America/New_York",
+      "days": [
+        0
+      ],
+      "created": "2026-10-31",
+      "last_run": null,
+      "request": "Weekly self-improvement for the betting model in bets/. Study what it learned this week: bets/history/learning_log.json, bets/learned.json, graded results in bets/history/shadow_bets.csv and bets/history/projections_log.csv, and the latest bets/board/latest.json. Find the 1-3 biggest weaknesses backed by the data (markets, stats, or situations where it loses money or is badly calibrated, or useful information it ignores). Make focused, testable improvements to bets/betmodel/ and add tests to bets/test_betmodel.py; run `cd bets && python3 test_betmodel.py` and make sure everything passes. Do not edit bets/history/ or learned.json (the daily learner owns those). If the data is still too thin to justify a change, change nothing and write a short report of what you see. Explain every change, with the numbers that justify it, in the README."
+    }
+  ]
+}

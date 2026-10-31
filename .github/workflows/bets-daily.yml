@@ -1,0 +1,42 @@
+# Daily betting card + self-learning. Plain Python: uses NO Claude usage.
+# Each run: grade finished games -> retune the model -> build today's NBA/NFL card -> update the city board.
+# Optional secret ODDS_API_KEY (free at the-odds-api.com) adds DraftKings player props and Underdog lines.
+name: bets-daily
+on:
+  schedule:
+    - cron: "23 15 * * *"   # ~11:20am ET: morning card (NFL Sunday early games, NBA slate)
+    - cron: "53 21 * * *"   # ~5:50pm ET: refresh with late injury news before evening games
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bets-daily
+
+jobs:
+  card:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Learn from yesterday, build today's board
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: |
+          [ -z "$ODDS_API_KEY" ] && unset ODDS_API_KEY
+          cd bets && python3 bets.py daily --max-events 4
+      - name: Save
+        if: always()
+        run: |
+          git config user.name "agent-city[bot]"
+          git config user.email "agent-city@users.noreply.github.com"
+          git add bets/board bets/history bets/reports bets/learned.json 2>/dev/null || true
+          git commit -m "Bets board $(date -u +%F\ %H:%M)" || exit 0
+          for i in 1 2 3 4; do
+            git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && break
+            sleep $((i * 3))
+          done

@@ -57,6 +57,24 @@ button,input,select,textarea{font:inherit;color:inherit}
 /* side panel */
 #panel{position:fixed;right:16px;top:16px;bottom:56px;width:380px;display:flex;flex-direction:column;z-index:5;overflow:hidden}
 #tabs{display:flex;border-bottom:1px solid var(--line)}
+.chip.on{color:var(--text);border-color:var(--accent);background:rgba(79,209,255,.12)}
+.bet{border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:8px;background:rgba(255,255,255,.02)}
+.bet.best{border-color:rgba(255,209,102,.55);background:linear-gradient(135deg,rgba(255,209,102,.08),rgba(255,92,140,.05))}
+.bet .top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.bet .sel{font-weight:600;font-size:14px;line-height:1.3}
+.bet .odds{font-family:var(--mono);font-size:13px;white-space:nowrap}
+.bet .meta{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:4px;display:flex;gap:8px;flex-wrap:wrap}
+.bet .note{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.4}
+.bar{height:5px;background:rgba(255,255,255,.08);border-radius:5px;margin:8px 0 2px;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:5px;background:linear-gradient(90deg,#3ddc84,#4fd1ff)}
+.tier{font-family:var(--mono);font-size:10px;padding:1px 7px;border-radius:99px;border:1px solid currentColor;text-transform:uppercase}
+.t-best{color:#ffd166}.t-lean{color:var(--light)}.t-check{color:var(--bad)}.t-pass{color:var(--muted)}
+.brain{border:1px solid rgba(185,140,255,.4);background:rgba(185,140,255,.07);border-radius:12px;padding:10px 12px;margin-bottom:12px;font-size:12px;line-height:1.5}
+.brain b{color:var(--standard)} .brain ul{margin:6px 0 0;padding-left:18px;color:var(--muted)}
+.statrow{display:flex;gap:8px;margin-bottom:12px}
+.stat{flex:1;border:1px solid var(--line);border-radius:10px;padding:8px;text-align:center}
+.stat b{display:block;font-size:18px;font-family:var(--mono)} .stat small{color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.08em}
+#betSearch{margin:4px 0 8px}
 #tabs button{flex:1;background:none;border:0;padding:12px 6px;cursor:pointer;color:var(--muted);font-weight:500;letter-spacing:.06em;border-bottom:2px solid transparent}
 #tabs button.on{color:var(--text);border-color:var(--accent)}
 .view{display:none;padding:16px;overflow:auto;flex:1}
@@ -160,6 +178,7 @@ tr.sym{cursor:pointer} tr.sym:hover td{background:rgba(255,255,255,.03)}
   <div id="tabs">
     <button data-v="make" class="on">Make</button>
     <button data-v="jobs">Jobs</button>
+    <button data-v="bets">🎰 Bets</button>
     <button data-v="market">Market</button>
   </div>
 
@@ -192,6 +211,14 @@ tr.sym{cursor:pointer} tr.sym:hover td{background:rgba(255,255,255,.03)}
   </section>
 
   <section class="view" id="v-jobs"><div id="recurring"></div><div id="jobs"></div></section>
+
+  <section class="view" id="v-bets">
+    <div id="betHead"></div>
+    <div class="chips" id="betLeague"></div>
+    <div class="chips" id="betKinds" style="margin-top:0"></div>
+    <input type="text" id="betSearch" placeholder="Search a team or player…" autocomplete="off">
+    <div id="betList"></div>
+  </section>
 
   <section class="view" id="v-market">
     <h2 id="mktTitle">Daily signals</h2>
@@ -335,6 +362,7 @@ const towerPos = AGENTS.map((a, i) => {
   return new THREE.Vector3(Math.cos(ang) * RING, 0, Math.sin(ang) * RING);
 });
 
+const CASINO_POS = new THREE.Vector3(40, 0, -64);
 function glowLine(points, color, opacity=0.8){
   const g = new THREE.BufferGeometry().setFromPoints(points);
   return new THREE.Line(g, new THREE.LineBasicMaterial({ color, transparent:true, opacity, toneMapped:false }));
@@ -368,7 +396,8 @@ function distToSeg(p, a, b){ const ab=b.clone().sub(a), t=Math.max(0,Math.min(1,
     const r = p.length();
     if (r < 18 || r > 158) continue;
     if (Math.abs(r - RING) < 4.5 || Math.abs(r - RING*1.6) < 3.5) continue;
-    if (towerPos.some(t => t.distanceTo(p) < 11)) continue;
+    if (towerPos.some(t => t.distanceTo(p) < 11) || CASINO_POS.distanceTo(p) < 19) continue;
+    if (distToSeg(p, CASINO_POS.clone().setLength(18), CASINO_POS) < 9) continue;   // Lucky Tower boulevard
     if (towerPos.some(t => distToSeg(p, origin, t) < 4)) continue;
     if (rnd() < .18) continue;
     const fall = Math.max(.15, 1 - r/170);
@@ -460,6 +489,132 @@ function buildTower(a, pos){
 }
 AGENTS.forEach((a,i) => buildTower(a, towerPos[i]));
 
+/* ------------------------------------------------------------------ Lucky Tower: the betting slot machine */
+const casino = { reelCanvas:null, reelTex:null, pickCanvas:null, pickTex:null, lights:[], lever:null, pullT:-1, spinT:-1,
+  reels:[0,0,0], target:[0,0,0], picks:['LUCKY TOWER · LOADING TODAY’S BOARD'], pickX:0, coins:[], beams:[], jackpot:false };
+const SYMBOLS = ['7','🍒','💎','🏀','🏈','★','$','🔔'];
+{
+  const g = new THREE.Group(); g.position.copy(CASINO_POS); scene.add(g); g.lookAt(0, 0, 0); casino.group = g;
+  for (const off of [-5, 5]) {   // boulevard lined with gold light strips
+    const side = new THREE.Vector3(CASINO_POS.z, 0, -CASINO_POS.x).setLength(off);
+    scene.add(glowLine([CASINO_POS.clone().setLength(20).add(side).setY(.08), CASINO_POS.clone().setLength(CASINO_POS.length() - 12).add(side).setY(.08)], 0xffc84a, .7));
+  }
+  const gold = 0xffc84a, red = 0xff2d55;
+  const mat = c => new THREE.MeshStandardMaterial({ color:0x1a0610, metalness:.6, roughness:.35, emissive:c, emissiveIntensity:.07 });
+  const part = (geo, y, c, edge=gold, m) => { const o = new THREE.Mesh(geo, m || mat(c)); o.position.y = y; g.add(o); o.add(edgeMesh(geo, edge)); return o; };
+  part(new THREE.BoxGeometry(28, 2, 20), 1, 0x400010);                       // plinth
+  part(new THREE.BoxGeometry(22, 34, 14), 19, red);                         // cabinet
+  const crown = part(new THREE.CylinderGeometry(11, 11, 14, 32, 1, false, 0, Math.PI), 36, red);
+  crown.rotation.z = Math.PI / 2; crown.rotation.y = Math.PI / 2;
+  part(new THREE.BoxGeometry(23, 2.2, 15), 36.2, 0x400010);                  // crown trim
+  // reel window
+  casino.reelCanvas = document.createElement('canvas'); casino.reelCanvas.width = 768; casino.reelCanvas.height = 384;
+  casino.reelTex = new THREE.CanvasTexture(casino.reelCanvas); casino.reelTex.colorSpace = THREE.SRGBColorSpace;
+  const reel = new THREE.Mesh(new THREE.PlaneGeometry(17, 8.5), new THREE.MeshBasicMaterial({ map:casino.reelTex, color:0xa8a8a8, toneMapped:false }));
+  reel.position.set(0, 25, 7.05); g.add(reel);
+  // pick display
+  casino.pickCanvas = document.createElement('canvas'); casino.pickCanvas.width = 1024; casino.pickCanvas.height = 128;
+  casino.pickTex = new THREE.CanvasTexture(casino.pickCanvas); casino.pickTex.colorSpace = THREE.SRGBColorSpace;
+  const pick = new THREE.Mesh(new THREE.PlaneGeometry(18, 2.6), new THREE.MeshBasicMaterial({ map:casino.pickTex, color:0xb0b0b0, toneMapped:false }));
+  pick.position.set(0, 17.5, 7.05); g.add(pick);
+  // marquee sign on the crown
+  const sc = document.createElement('canvas'); sc.width = 1024; sc.height = 256; const sg = sc.getContext('2d');
+  sg.fillStyle = '#12020a'; sg.fillRect(0, 0, 1024, 256); sg.textAlign = 'center'; sg.textBaseline = 'middle';
+  sg.font = '800 120px Space Grotesk, sans-serif'; sg.shadowColor = '#ffc84a'; sg.shadowBlur = 30; sg.fillStyle = '#ffe08a'; sg.fillText('★ JACKPOT ★', 512, 120);
+  sg.font = '600 46px JetBrains Mono, monospace'; sg.shadowBlur = 12; sg.fillStyle = '#ff7a9c'; sg.fillText('NFL · NBA · LEARNS DAILY', 512, 215);
+  const signTex = new THREE.CanvasTexture(sc); signTex.colorSpace = THREE.SRGBColorSpace;
+  const sign = new THREE.Mesh(new THREE.PlaneGeometry(19, 4.75), new THREE.MeshBasicMaterial({ map:signTex, color:0xc0c0c0, toneMapped:false }));
+  sign.position.set(0, 39.5, 8.5); g.add(sign);
+  // chasing bulbs around the reel window
+  const bulbGeo = new THREE.SphereGeometry(.32, 8, 8);
+  const ring = []; for (let x=-9; x<=9; x+=1.5) { ring.push([x, 29.8]); } for (let y=28.3; y>=20.2; y-=1.5) ring.push([9, y]);
+  for (let x=9; x>=-9; x-=1.5) ring.push([x, 19.9]); for (let y=21.4; y<=28.4; y+=1.5) ring.push([-9, y]);
+  ring.forEach(([x,y]) => { const b = new THREE.Mesh(bulbGeo, new THREE.MeshBasicMaterial({ color:0xffe08a, toneMapped:false })); b.position.set(x, y, 7.2); g.add(b); casino.lights.push(b); });
+  // lever on the right side
+  const lever = new THREE.Group(); lever.position.set(11.6, 21, 0); g.add(lever);
+  const hub = new THREE.Mesh(new THREE.CylinderGeometry(1.4, 1.4, 1.6, 16), mat(gold)); hub.rotation.z = Math.PI/2; hub.position.x = .8; lever.add(hub);
+  const arm = new THREE.Mesh(new THREE.CylinderGeometry(.35, .35, 13, 10), new THREE.MeshStandardMaterial({ color:0xd8d8e8, metalness:.9, roughness:.2 }));
+  arm.position.set(1.8, 6.5, 0); lever.add(arm);
+  const knob = new THREE.Mesh(new THREE.SphereGeometry(1.5, 20, 16), new THREE.MeshBasicMaterial({ color:0xff1f4b, toneMapped:false }));
+  knob.position.set(1.8, 13.3, 0); lever.add(knob); casino.lever = lever;
+  // coin tray
+  part(new THREE.BoxGeometry(16, 2.4, 4), 4, 0x402000, gold).position.z = 8.5;
+  // searchlights
+  for (const sx of [-7, 7]) {
+    const cone = new THREE.Mesh(new THREE.ConeGeometry(4, 70, 24, 1, true), new THREE.MeshBasicMaterial({ color:0xffd37a, transparent:true, opacity:.07, depthWrite:false, blending:THREE.AdditiveBlending, side:THREE.DoubleSide, toneMapped:false }));
+    cone.geometry.translate(0, -35, 0); cone.rotation.x = Math.PI; const holder = new THREE.Group(); holder.position.set(sx, 43, 0); holder.add(cone); g.add(holder); casino.beams.push(holder);
+  }
+  g.traverse(o => { if (o.isMesh) { o.userData.casino = true; pickables.push(o); } });
+  const tag = document.createElement('div'); tag.className = 'tag'; tag.style.color = '#ffd166';
+  tag.innerHTML = '<b>Lucky Tower</b><small>NFL + NBA bets · learns every day</small><span class="badge"></span>';
+  tag.addEventListener('click', () => focusCasino());
+  const lo = new CSS2DObject(tag); lo.position.y = 47; g.add(lo); casino.badge = tag.querySelector('.badge');
+}
+function pullLever(){ if (casino.pullT >= 0) return; casino.pullT = 0; casino.spinT = 0;
+  casino.target = casino.jackpot ? [0,0,0] : [0,1,2].map(() => (Math.random()*SYMBOLS.length)|0); }
+function drawReels(dt){
+  const c = casino.reelCanvas, g = c.getContext('2d'); g.fillStyle = '#12020a'; g.fillRect(0,0,768,384);
+  const spinning = casino.spinT >= 0; if (spinning) casino.spinT += dt;
+  for (let i=0;i<3;i++){
+    const x = 24 + i*248, stopAt = 1.2 + i*.55;
+    g.fillStyle = '#efe3cc'; g.fillRect(x, 24, 224, 336);
+    let off;
+    if (spinning && casino.spinT < stopAt) { casino.reels[i] += dt * 14; off = casino.reels[i]; }
+    else { casino.reels[i] = casino.target[i]; off = casino.target[i]; }
+    g.save(); g.beginPath(); g.rect(x, 24, 224, 336); g.clip();
+    g.textAlign = 'center'; g.textBaseline = 'middle';
+    const base = Math.floor(off), frac = off - base;
+    for (let k=-1;k<=1;k++){
+      const sym = SYMBOLS[((base + k) % SYMBOLS.length + SYMBOLS.length) % SYMBOLS.length];
+      const y = 192 + (k - frac) * 150;
+      g.font = sym === '7' ? '900 150px Space Grotesk, sans-serif' : sym === '$' || sym === '★' ? '800 130px Space Grotesk, sans-serif' : '120px sans-serif';
+      g.fillStyle = sym === '7' ? '#e0002a' : sym === '$' ? '#0a8a3a' : '#c78a00';
+      g.fillText(sym, x + 112, y);
+    }
+    g.restore();
+    g.strokeStyle = '#ffc84a'; g.lineWidth = 6; g.strokeRect(x, 24, 224, 336);
+  }
+  g.strokeStyle = 'rgba(255,40,80,.85)'; g.lineWidth = 5; g.beginPath(); g.moveTo(10, 192); g.lineTo(758, 192); g.stroke();
+  if (spinning && casino.spinT > 2.6) { casino.spinT = -1; if (casino.jackpot) burstCoins(40); }
+  casino.reelTex.needsUpdate = true;
+}
+function drawPicks(dt){
+  const c = casino.pickCanvas, g = c.getContext('2d'); g.fillStyle = '#05010a'; g.fillRect(0,0,1024,128);
+  const text = casino.picks.join('     ★     ');
+  g.font = '700 54px JetBrains Mono, monospace'; g.textBaseline = 'middle';
+  const w = g.measureText(text).width + 160; casino.pickX = (casino.pickX + dt*110) % w;
+  g.fillStyle = '#ffe08a'; g.shadowColor = '#ffb547'; g.shadowBlur = 14;
+  for (let x = -casino.pickX; x < 1024; x += w) g.fillText(text, x, 66);
+  g.shadowBlur = 0; casino.pickTex.needsUpdate = true;
+}
+const coinGeo = new THREE.CylinderGeometry(.55, .55, .14, 14);
+const coinMat = new THREE.MeshStandardMaterial({ color:0xffc84a, metalness:1, roughness:.25, emissive:0x8a5a00, emissiveIntensity:.6 });
+function burstCoins(n){
+  for (let i=0;i<n;i++){
+    const m = new THREE.Mesh(coinGeo, coinMat); const local = new THREE.Vector3((Math.random()-.5)*12, 6, 9);
+    m.position.copy(casino.group.localToWorld(local)); scene.add(m);
+    const out = new THREE.Vector3(0,0,1).applyQuaternion(casino.group.quaternion);
+    casino.coins.push({ m, v: out.multiplyScalar(4 + Math.random()*6).add(new THREE.Vector3((Math.random()-.5)*6, 8 + Math.random()*8, (Math.random()-.5)*6)), spin: Math.random()*10, life: 0 });
+  }
+}
+function animateCasino(dt, t){
+  casino.lights.forEach((b, i) => b.visible = ((i + Math.floor(t*10)) % 4) < 2);
+  casino.beams.forEach((b, i) => { b.rotation.z = Math.sin(t*.6 + i*2) * .45; b.rotation.x = Math.cos(t*.45 + i) * .3; });
+  if (casino.pullT >= 0) { casino.pullT += dt; const k = casino.pullT < .35 ? casino.pullT/.35 : Math.max(0, 1 - (casino.pullT-.35)/.6);
+    casino.lever.rotation.x = k * 1.1; if (casino.pullT > 1) { casino.pullT = -1; casino.lever.rotation.x = 0; } }
+  for (let i=casino.coins.length-1;i>=0;i--){ const c = casino.coins[i]; c.life += dt; c.v.y -= 30*dt; c.m.position.addScaledVector(c.v, dt);
+    c.m.rotation.x += c.spin*dt; c.m.rotation.z += c.spin*.7*dt;
+    if (c.m.position.y < .2) { c.m.position.y = .2; c.v.multiplyScalar(.3); c.v.y = Math.abs(c.v.y) * .3; }
+    if (c.life > 4) { scene.remove(c.m); casino.coins.splice(i,1); } }
+}
+setInterval(() => { if (!document.hidden) pullLever(); }, 11000);
+setTimeout(pullLever, 2500);
+function focusCasino(){
+  const dir = CASINO_POS.clone().normalize();
+  flyTo(CASINO_POS.clone().setY(22), CASINO_POS.clone().addScaledVector(dir, -66).add(new THREE.Vector3(0, 34, 0)).addScaledVector(new THREE.Vector3(dir.z, 0, -dir.x), 8));
+  pullLever(); switchTab('bets');
+}
+
 /* ------------------------------------------------------------------ traffic */
 const CARS = 260, carGeo = new THREE.BufferGeometry(), carPos = new Float32Array(CARS*3), carCol = new Float32Array(CARS*3), cars = [];
 for (let i=0;i<CARS;i++){
@@ -496,7 +651,7 @@ canvas.addEventListener('pointerup', e => {
   if (!downAt || Math.hypot(e.clientX-downAt[0], e.clientY-downAt[1]) > 6) return;
   mouse.set(e.clientX/innerWidth*2-1, -(e.clientY/innerHeight)*2+1); ray.setFromCamera(mouse, camera);
   const hit = ray.intersectObjects(pickables, false)[0];
-  if (hit) focusAgent(hit.object.userData.agent);
+  if (hit) hit.object.userData.casino ? focusCasino() : focusAgent(hit.object.userData.agent);
 });
 let tween = null;
 function flyTo(target, camPos){ tween = { t:0, fromT: controls.target.clone(), toT: target, fromC: camera.position.clone(), toC: camPos }; controls.autoRotate = false; }
@@ -527,6 +682,8 @@ function animate(){
   for (let i=packets.length-1;i>=0;i--){ const p = packets[i]; p.t += dt*p.speed; if (p.t >= 1){ scene.remove(p.m); p.m.material.dispose(); packets.splice(i,1); continue; } p.m.position.copy(p.curve.getPoint(p.t)); }
   for (let i=pulses.length-1;i>=0;i--){ const p = pulses[i]; p.t += dt; p.ring.scale.setScalar(1 + p.t*6); p.ring.material.opacity = .7 * (1 - p.t/1.6); if (p.t > 1.6){ scene.remove(p.ring); pulses.splice(i,1);} }
   if (frame % 2 === 0 && tickerCanvas) drawTicker(dt*2);
+  if (frame % 2 === 0) { drawReels(dt*2); drawPicks(dt*2); }
+  animateCasino(dt, t);
   if (tween){ tween.t = Math.min(1, tween.t + dt/1.3); const k = 1 - Math.pow(1-tween.t, 3);
     controls.target.lerpVectors(tween.fromT, tween.toT, k); camera.position.lerpVectors(tween.fromC, tween.toC, k); if (tween.t >= 1) tween = null; }
   controls.update(); composer.render(); labelRenderer.render(scene, camera);
@@ -761,6 +918,79 @@ async function refreshJobs(){
 }
 function setConn(ok, msg){ const c = $('#conn'); c.classList.toggle('live', ok); c.querySelector('span').textContent = ok ? `${cfg.owner}/${cfg.repo}` : (msg || 'demo mode'); }
 
+/* bets (Lucky Tower) */
+let board = null, betLeague = 'all', betKind = 'best', betLimit = 40;
+const BET_KINDS = [['best','🔥 Best'],['lean','👍 Leans'],['game','Game lines'],['prop','DK props'],['ud','Underdog'],['proj','Projections'],['all','Everything']];
+function fmtOdds(o){ return o == null ? '' : typeof o === 'string' ? o : (o > 0 ? '+' : '') + Math.round(o); }
+function fmtTime(iso){ try { return new Date(iso).toLocaleString([], { weekday:'short', hour:'numeric', minute:'2-digit' }); } catch { return ''; } }
+function pct(x){ return x == null ? '–' : (x*100).toFixed(1) + '%'; }
+function betMatches(b){
+  if (betLeague !== 'all' && b.league !== betLeague) return false;
+  const q = $('#betSearch').value.trim().toLowerCase();
+  if (q && !(`${b.selection} ${b.game} ${b.player||''} ${b.team||''}`.toLowerCase().includes(q))) return false;
+  switch (betKind) {
+    case 'best': return b.tier === 'best';
+    case 'lean': return b.tier === 'lean';
+    case 'game': return ['ML','Spread','Total'].includes(b.kind) && b.tier !== 'pass';
+    case 'prop': return b.kind === 'Prop' && b.tier !== 'pass';
+    case 'ud': return b.kind === 'Underdog' || b.kind === 'Entry';
+    default: return true;
+  }
+}
+function betCard(b){
+  const tierName = { best:'🔥 best', lean:'lean', check:'check line', pass:'pass' }[b.tier];
+  return `<div class="bet ${b.tier}"><div class="top"><div class="sel">${esc(b.selection)}</div><div class="odds">${esc(fmtOdds(b.odds))}</div></div>
+    <div class="bar"><i style="width:${Math.round((b.prob||0)*100)}%"></i></div>
+    <div class="meta"><span class="tier t-${b.tier}">${tierName}</span><span>${b.league.toUpperCase()} · ${esc(b.kind)}</span><span>win ${pct(b.prob)}</span>${b.market_prob != null ? `<span>market ${pct(b.market_prob)}</span>` : ''}${b.ev != null ? `<span>edge ${(b.ev*100).toFixed(1)}%</span>` : ''}${b.stake ? `<span>stake $${b.stake.toFixed(2)}</span>` : ''}</div>
+    <div class="note">${esc(b.game)} · ${esc(fmtTime(b.start))} · ${esc(b.book)}${b.model_line ? ` · model ${esc(b.model_line)}` : ''}${b.note ? ` · ${esc(b.note)}` : ''}</div></div>`;
+}
+function projCard(p){
+  return `<div class="bet"><div class="top"><div class="sel">${esc(p.player)} <span style="color:var(--muted);font-weight:400">${esc(p.team)}</span></div><div class="odds">${esc(p.stat)} ${p.proj}</div></div>
+    <div class="meta"><span>${p.league.toUpperCase()}</span><span>fair ${esc(p.fair)}</span>${p.higher_if_le != null ? `<span class="up">Higher if line ≤ ${p.higher_if_le}</span>` : ''}${p.lower_if_ge != null ? `<span class="down">Lower if line ≥ ${p.lower_if_ge}</span>` : ''}</div>
+    <div class="note">${esc(p.game)} · ${esc(fmtTime(p.start))} · last 5: ${esc((p.last5||[]).map(v => v == null ? '-' : v).join(', '))}${p.status ? ` · ${esc(p.status)}` : ''}</div></div>`;
+}
+function renderBets(){
+  const head = $('#betHead'), list = $('#betList');
+  if (!board) { head.innerHTML = ''; list.innerHTML = `<div class="empty">🎰 The Lucky Tower hasn’t printed a board yet. It runs by itself twice a day (about 11:20am and 5:50pm ET), or press <b>Run workflow</b> on <b>bets-daily</b> in your repo’s Actions tab.</div>`; return; }
+  const L = board.learning || {}, sb = L.scoreboard || {}, ml = sb.model_leans || {}, c = board.counts || {};
+  head.innerHTML = `<div class="statrow"><div class="stat"><b>${c.best||0}</b><small>best bets</small></div><div class="stat"><b>${c.lean||0}</b><small>leans</small></div><div class="stat"><b>${ml.w != null ? `${ml.w}-${ml.l}` : '0-0'}</b><small>lean record</small></div></div>
+    <div class="brain"><b>🧠 What it learned</b> <span style="color:var(--muted)">· updated ${esc(fmtTime(board.generated))}</span><ul>${(L.lessons||[]).map(x => `<li>${esc(x)}</li>`).join('')}</ul>
+    <div style="margin-top:6px;color:var(--muted)">Graded so far: ${sb.graded_bets||0} bets, ${sb.graded_projections||0} player projections${ml.roi_per_bet != null ? ` · lean ROI ${(ml.roi_per_bet*100).toFixed(1)}%` : ''}. Trusts its model vs the market: ML ${pct(L.game_weights?.ML)}, spread ${pct(L.game_weights?.Spread)}, total ${pct(L.game_weights?.Total)}.</div></div>`;
+  $('#betLeague').innerHTML = [['all','All'],['nba','🏀 NBA'],['nfl','🏈 NFL']].map(([k,v]) => `<button class="chip ${betLeague===k?'on':''}" data-l="${k}">${v}</button>`).join('');
+  $('#betKinds').innerHTML = BET_KINDS.map(([k,v]) => `<button class="chip ${betKind===k?'on':''}" data-k="${k}">${v}</button>`).join('');
+  $('#betLeague').querySelectorAll('button').forEach(b => b.onclick = () => { betLeague = b.dataset.l; betLimit = 40; renderBets(); });
+  $('#betKinds').querySelectorAll('button').forEach(b => b.onclick = () => { betKind = b.dataset.k; betLimit = 40; renderBets(); });
+  let items, card;
+  if (betKind === 'proj') {
+    const q = $('#betSearch').value.trim().toLowerCase();
+    items = (board.projections||[]).filter(p => (betLeague === 'all' || p.league === betLeague) && (!q || `${p.player} ${p.team} ${p.game} ${p.stat}`.toLowerCase().includes(q)));
+    card = projCard;
+  } else { items = (board.bets||[]).filter(betMatches); card = betCard; }
+  const hint = betKind === 'best' && !items.length ? '<div class="empty">No bet clears the bar right now. That’s normal, and passing is a bet too. Check <b>👍 Leans</b> or <b>Projections</b>.</div>' : '';
+  list.innerHTML = hint + items.slice(0, betLimit).map(card).join('') +
+    (items.length > betLimit ? `<button class="ghost" id="betMore" style="width:100%">Show more (${items.length - betLimit} left)</button>` : '') +
+    (board.errors?.length ? `<div class="hint">⚠ ${board.errors.map(esc).join(' · ')}</div>` : '') +
+    `<div class="disc">${esc(board.disclaimer || '')} ${esc(board.record || '')}</div>`;
+  const more = $('#betMore'); if (more) more.onclick = () => { betLimit += 40; renderBets(); };
+}
+$('#betSearch').addEventListener('input', () => { betLimit = 40; renderBets(); });
+async function refreshBets(){
+  try {
+    let d;
+    if (connected()) {
+      try { d = JSON.parse(await gh(`/repos/${cfg.owner}/${cfg.repo}/contents/bets/board/latest.json`, {}, true)); }
+      catch (e) { if (e.status === 404) throw e; d = await (await fetch(`https://raw.githubusercontent.com/${cfg.owner}/${cfg.repo}/HEAD/bets/board/latest.json`, { cache:'no-store' })).json(); }
+    } else d = await (await fetch('bets/board/latest.json', { cache:'no-store' })).json();
+    board = d;
+    const best = d.bets.filter(b => b.tier === 'best');
+    casino.jackpot = best.length > 0;
+    casino.badge.textContent = best.length ? `🔥 ${best.length} best bets` : `${d.counts?.lean || 0} leans`;
+    const top = (best.length ? best : d.bets.filter(b => b.tier === 'lean')).slice(0, 8);
+    casino.picks = top.length ? top.map(b => `${b.selection} ${fmtOdds(b.odds)} · ${pct(b.prob)}`) : ['NO EDGE TODAY · PASSING IS A BET TOO'];
+  } catch { board = null; casino.badge.textContent = ''; casino.picks = ['LUCKY TOWER · FIRST BOARD COMING SOON']; }
+  renderBets();
+}
+
 /* market */
 function sigClass(s){ return /BUY/.test(s) ? 'sig-buy' : /WATCH/.test(s) ? 'sig-watch' : /AVOID/.test(s) ? 'sig-avoid' : 'sig-hold'; }
 function renderMarket(d, isDemo){
@@ -802,7 +1032,7 @@ function startDemo(){
 }
 function stopDemo(){ clearInterval(demoTimer); demoTimer = null; jobs = []; }
 
-function refreshAll(){ refreshJobs(); refreshMarket(); }
+function refreshAll(){ refreshJobs(); refreshMarket(); refreshBets(); }
 
 /* ------------------------------------------------------------------ desktop app (PWA) */
 if ('serviceWorker' in navigator && location.protocol === 'https:') navigator.serviceWorker.register('sw.js').catch(() => {});
@@ -815,9 +1045,9 @@ installBtn.onclick = async () => {
   if (outcome === 'accepted') toast('Installed! Agent City is now in your Start menu / Applications and can be pinned to your desktop.', 7000);
 };
 addEventListener('appinstalled', () => { installBtn.style.display = 'none'; });
-if (connected()) refreshAll(); else { startDemo(); refreshMarket(); }
+if (connected()) refreshAll(); else { startDemo(); refreshMarket(); refreshBets(); }
 (function poll(){ setTimeout(() => { if (connected() && !document.hidden) refreshJobs(); poll(); }, jobs.some(j => j.status !== 'done' && j.status !== 'failed') ? 30000 : 120000); })();
-setInterval(() => { if (connected() && !document.hidden) refreshMarket(); }, 15 * 60e3);
+setInterval(() => { if (connected() && !document.hidden) { refreshMarket(); refreshBets(); } }, 15 * 60e3);
 </script>
 </body>
 </html>

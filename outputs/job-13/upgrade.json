@@ -1,0 +1,28 @@
+{
+  "branch": "upgrade/job-13",
+  "files": [
+    "CLAUDE.md",
+    "README.md",
+    "brain/INDEX.md",
+    "brain/brain.json",
+    "brain/index.html",
+    "brain/skills/add-city-building.md",
+    "brain/skills/betting-model-learning.md",
+    "brain/skills/budget-template.md",
+    "brain/skills/cad-model.md",
+    "brain/skills/escalate-one-hop.md",
+    "brain/skills/learn-a-skill.md",
+    "brain/skills/mcp-connector.md",
+    "brain/skills/pause-and-resume.md",
+    "brain/skills/quick-answer.md",
+    "brain/skills/static-job-page.md",
+    "brain/skills/stock-signal-model.md",
+    "index.html",
+    "schedules.json",
+    "scripts/brain.py",
+    "scripts/city_job.py",
+    "sw.js"
+  ],
+  "pr_url": "https://github.com/gmoneydakota/my-city/pull/14",
+  "compare_url": null
+}

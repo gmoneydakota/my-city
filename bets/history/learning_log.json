@@ -22,5 +22,39 @@
         "roi_per_bet": 0.1039
       }
     }
+  },
+  {
+    "date": "2026-11-01",
+    "lessons": [
+      "Player props: trusting the model 71% \u2192 88% after 454 graded props.",
+      "NBA assists: projections ran too high (avg 3.84 projected vs 3.33 actual over 54 players) \u2192 now scaled \u00d70.946.",
+      "NBA assists: was underconfident about player swings \u2192 uncertainty \u00d70.959.",
+      "NBA points: projections ran too high (avg 17.5 projected vs 15.44 actual over 54 players) \u2192 now scaled \u00d70.953.",
+      "NBA points: was overconfident about player swings \u2192 uncertainty \u00d71.138.",
+      "NBA pra: projections ran too high (avg 27.3 projected vs 24.02 actual over 54 players) \u2192 now scaled \u00d70.952.",
+      "NBA pra: was overconfident about player swings \u2192 uncertainty \u00d71.077.",
+      "NBA rebounds: projections ran too high (avg 5.96 projected vs 5.24 actual over 54 players) \u2192 now scaled \u00d70.952.",
+      "NBA rebounds: was underconfident about player swings \u2192 uncertainty \u00d70.929.",
+      "NBA threes: projections ran too high (avg 1.96 projected vs 1.68 actual over 47 players) \u2192 now scaled \u00d70.947.",
+      "NBA threes: was overconfident about player swings \u2192 uncertainty \u00d71.063."
+    ],
+    "scoreboard": {
+      "graded_bets": 508,
+      "graded_projections": 263,
+      "model_leans": {
+        "w": 73,
+        "l": 54,
+        "p": 0,
+        "hit_rate": 0.5748,
+        "roi_per_bet": 0.0847
+      },
+      "strong_leans": {
+        "w": 45,
+        "l": 31,
+        "p": 0,
+        "hit_rate": 0.5921,
+        "roi_per_bet": 0.1242
+      }
+    }
   }
 ]

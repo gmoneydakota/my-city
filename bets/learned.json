@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-31T22:21:34+00:00",
+  "updated": "2026-11-01T15:54:31+00:00",
   "game_weights": {
     "ML": 0.3,
     "Spread": 0.3,
@@ -7,43 +7,79 @@
   },
   "fit_stats": {
     "ML": {
-      "n": 2,
-      "needs": 38
+      "n": 14,
+      "needs": 26
     },
     "Spread": {
-      "n": 2,
-      "needs": 38
+      "n": 14,
+      "needs": 26
     },
     "Total": {
-      "n": 2,
-      "needs": 38
+      "n": 26,
+      "needs": 14
     },
     "Prop": {
-      "n": 112,
+      "n": 454,
       "raw_best": 1.0,
-      "logloss_model": 0.6241,
-      "logloss_market": 0.6618,
-      "logloss_blend": 0.6297
+      "logloss_model": 0.6643,
+      "logloss_market": 0.6788,
+      "logloss_blend": 0.6644
     }
   },
-  "calibration": {},
-  "prop_weight": 0.714,
+  "calibration": {
+    "nba:assists": {
+      "scale": 0.9464,
+      "sd_scale": 0.9588,
+      "n": 54,
+      "avg_proj": 3.84,
+      "avg_actual": 3.33
+    },
+    "nba:points": {
+      "scale": 0.9528,
+      "sd_scale": 1.1378,
+      "n": 54,
+      "avg_proj": 17.5,
+      "avg_actual": 15.44
+    },
+    "nba:pra": {
+      "scale": 0.9515,
+      "sd_scale": 1.0765,
+      "n": 54,
+      "avg_proj": 27.3,
+      "avg_actual": 24.02
+    },
+    "nba:rebounds": {
+      "scale": 0.9515,
+      "sd_scale": 0.9294,
+      "n": 54,
+      "avg_proj": 5.96,
+      "avg_actual": 5.24
+    },
+    "nba:threes": {
+      "scale": 0.9471,
+      "sd_scale": 1.063,
+      "n": 47,
+      "avg_proj": 1.96,
+      "avg_actual": 1.68
+    }
+  },
+  "prop_weight": 0.876,
   "scoreboard": {
-    "graded_bets": 118,
-    "graded_projections": 44,
+    "graded_bets": 508,
+    "graded_projections": 263,
     "model_leans": {
-      "w": 21,
-      "l": 15,
+      "w": 73,
+      "l": 54,
       "p": 0,
-      "hit_rate": 0.5833,
-      "roi_per_bet": 0.0935
+      "hit_rate": 0.5748,
+      "roi_per_bet": 0.0847
     },
     "strong_leans": {
-      "w": 12,
-      "l": 9,
+      "w": 45,
+      "l": 31,
       "p": 0,
-      "hit_rate": 0.5714,
-      "roi_per_bet": 0.1039
+      "hit_rate": 0.5921,
+      "roi_per_bet": 0.1242
     }
   }
 }

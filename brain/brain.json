@@ -1,13 +1,13 @@
 {
  "format": "agent-city-brain/1",
- "generated": "2026-11-01T17:16:02+00:00",
+ "generated": "2026-11-01T21:34:41+00:00",
  "counts": {
   "skills": 11,
   "agents": 10,
-  "jobs": 10,
+  "jobs": 11,
   "tools": 10,
   "topics": 1,
-  "links": 81
+  "links": 83
  },
  "nodes": [
   {
@@ -38,7 +38,7 @@
    "summary": "Implements features, fixes bugs, and writes scripts, then reviews its own diff before handing it back. Use for any real code-writing task.",
    "body": "You are Coder. Implement the task directly in the codebase, matching its existing style and patterns rather than introducing new ones. Handle errors and edge cases, not just the happy path. Once the change is written, reread your own diff as a reviewer would: check for bugs, missing imports, unsafe inputs, and unclear naming, and fix what you find before finishing. Run the project's tests or linter if one is configured, and report the result. End with a short \"what changed and why\" summary, not a step-by-step narration.",
    "path": ".claude/agents/coder.md",
-   "uses": 3
+   "uses": 5
   },
   {
    "id": "agent:forge",
@@ -469,14 +469,27 @@
    "id": "job:13",
    "type": "job",
    "label": "#13 City upgrade: the Second Brain building",
-   "summary": "? · make · running",
+   "summary": "coder · upgrade · 2026-11-01",
    "body": "# Job 13 · City upgrade: the Second Brain building\n\nA new landmark: a glowing, wrinkled **brain** with synapses firing inside it. Click it and you fly into the\n**Second Brain**, a live web of everything the city knows: the skills its agents learned, the agents and\ntools that use them, and every past job. It isn't only a picture. The agents read the brain before each job\nand write new skills into it afterwards, so the city learns as it goes.\n\n## What you'll see after approving (Merge)\n\n**In the city:** past the Quant tower, on a pink-lit plinth, a two-hemisphere brain with a brain stem,\na cerebellum and a pink wireframe skin. Hundreds of synapse sparks twinkle inside it, linked by flickering nerves, and the\nwhole thing slowly \"breathes\". One small crystal orbits it for every skill it knows (up to 30). The label says\n**🧠 Second Brain**, and its badge shows e.g. `11 skills · 10 memories`. Click the brain or its label:\nthe camera swoops in, the screen fades, and the brain page opens.\n\n**The brain page (`brain/`):**\n- A brain-shaped neural web (two lobes) of **skills** (pink hexagons), **agents** (big glowing dots, coloured by\n  Haiku/Sonnet/Opus tier, sized by how many jobs they've done), **tools** (yellow squares), **jobs = history** (green dots) and\n  **topics** (grey). Sparks travel along the links. Drag to pan, scroll or pinch to zoom, drag nodes around.\n- Hover a node to light up its connections. Click it to read it: a skill's full how-to, an agent's prompt, a job's\n  README, plus links to the file on GitHub, **▶ Open it** for job pages and **🧊 CAD Studio** for models.\n- A search box over everything, a **library** list of all skills, the latest memories (jobs), and a legend that shows or hides each kind of node.\n- **✨ Teach it something:** type a lesson and press *Add ",
    "path": "outputs/job-13/",
    "n": 13,
+   "mode": "upgrade",
+   "has_page": false,
+   "has_model": false,
+   "finished": "2026-11-01"
+  },
+  {
+   "id": "job:15",
+   "type": "job",
+   "label": "#15 ESCALATE: coder - this changes the city itself, it needs an upgrade (pull request); auto-m…",
+   "summary": "coder · make · 2026-11-01",
+   "body": "# Job #15\n\nESCALATE: coder - this changes the city itself, it needs an upgrade (pull request); auto-merging without the owner's approval isn't allowed\n",
+   "path": "outputs/job-15/",
+   "n": 15,
    "mode": "make",
    "has_page": false,
    "has_model": false,
-   "finished": ""
+   "finished": "2026-11-01"
   }
  ],
  "links": [
@@ -883,6 +896,16 @@
   {
    "source": "job:12",
    "target": "agent:forge",
+   "kind": "done by"
+  },
+  {
+   "source": "job:13",
+   "target": "agent:coder",
+   "kind": "done by"
+  },
+  {
+   "source": "job:15",
+   "target": "agent:coder",
    "kind": "done by"
   }
  ],

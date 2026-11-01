@@ -38,4 +38,5 @@ you start. If you work out something reusable that isn't here, add a skill (see 
 - #8 Pop-Out Plug Door (replaces the louvre door of job 7) (cad · make · 2026-10-31)
 - #9 Products building: every finished job, ready to download (coder · make · 2026-10-31)
 - #12 Lean Reader: an MCP connector that saves Claude usage on web reading (forge · make · 2026-10-31)
-- #13 City upgrade: the Second Brain building (? · make · running)
+- #13 City upgrade: the Second Brain building (coder · upgrade · 2026-11-01)
+- #15 ESCALATE: coder - this changes the city itself, it needs an upgrade (pull request); auto-m… (coder · make · 2026-11-01)

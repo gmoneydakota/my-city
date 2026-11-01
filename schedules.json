@@ -27,7 +27,7 @@
         6
       ],
       "created": "2026-11-01",
-      "last_run": null,
+      "last_run": "2026-11-01",
       "request": "Brain dream. Review what the city did this week: the newest outputs/job-*/README.md files (especially any 'Skill learned:' notes), brain/INDEX.md and the skills in brain/skills/. Then add 1-2 skills the brain is missing, or improve the weakest existing skill with what the jobs showed. Be creative: one of them may be a new technique you invent by combining tools and skills the city already has, as long as it is practical. Save each as brain/skills/<kebab-slug>.md using the exact format in brain/skills/learn-a-skill.md, with `related` pointing at real skills from brain/INDEX.md. If a skill on the same thing already exists, improve that file instead of adding a twin. Write practical, reusable methods (steps, commands, gotchas), not one-off answers. If nothing new happened this week and every skill is solid, change nothing and say so. In the README, name the skill files you wrote or changed and summarize each in 2-3 lines."
     }
   ]

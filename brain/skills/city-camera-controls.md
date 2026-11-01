@@ -25,7 +25,16 @@ overview view, or limits on where the camera can go.
    auto-spin timer.
 6. Check that the module parses (`node --check` on the extracted module script).
 
+7. Mouse-friendly travel (learned_from: 19): map-style `LEFT: PAN, RIGHT: ROTATE`, with a toggle saved in `store`
+   for people who want left-drag to orbit. Set `MIDDLE: PAN`, since the wheel already zooms. Turn on
+   `controls.zoomToCursor = true` (three r155+) so scrolling travels toward the pointer. Add a `dblclick` glide:
+   raycast pickables first and bail if one is hit, then use `ray.ray.intersectPlane(groundPlane)`, clamp the point
+   to the roam radius, and `flyTo` it with the camera offset unchanged. Show `cursor:grab` on the canvas in pan mode.
+   Hide the toggle under `@media (hover:none)`.
+
 ## Gotchas
+- With `LEFT: PAN`, OrbitControls turns Shift/Ctrl/Meta+left-drag into rotate by itself, so both actions stay
+  reachable with one button.
 - Tap detection on touch: use `e.isPrimary` on pointerdown. A primary pointer starts a new gesture; a
   non-primary one means multi-touch, so skip the pick on pointerup. Don't count pointers up and down:
   a lost pointerup leaves the count stuck.

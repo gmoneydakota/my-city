@@ -31,6 +31,7 @@
 *{box-sizing:border-box}
 html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font-family:'Space Grotesk',system-ui,sans-serif;overflow:hidden}
 #scene{position:fixed;inset:0}
+#scene.pan{cursor:grab} #scene.pan:active{cursor:grabbing}
 #labels{position:fixed;inset:0;pointer-events:none}
 button,input,select,textarea{font:inherit;color:inherit}
 .glass{background:var(--panel);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);border:1px solid var(--line);border-radius:var(--r)}
@@ -168,7 +169,9 @@ tr.sym{cursor:pointer} tr.sym:hover td{background:rgba(255,255,255,.03)}
 #navHelp b{color:var(--text);font-weight:500}
 #navHelp kbd{font-family:var(--mono);font-size:10px;border:1px solid var(--line);border-radius:5px;padding:0 5px;color:var(--text)}
 #navHelp .touch{display:none}
-@media (hover:none){ #navHelp .desk{display:none} #navHelp .touch{display:block} }
+#nav #dragBtn.on{border-color:var(--accent)}
+#navHelp .orbit{display:none} #navHelp.orbitMode .orbit{display:inline} #navHelp.orbitMode .panm{display:none}
+@media (hover:none){ #navHelp .desk{display:none} #navHelp .touch{display:block} #nav #dragBtn{display:none} }
 
 @media (max-width: 820px){
   #nav{top:72px} #nav button{padding:7px 11px}
@@ -194,10 +197,12 @@ tr.sym{cursor:pointer} tr.sym:hover td{background:rgba(255,255,255,.03)}
 
 <div id="nav">
   <button class="glass" id="homeBtn" title="Back to the overview of the whole city (H)">⌂ Overview</button>
+  <button class="glass" id="dragBtn" title="Switch what a left-drag of the mouse does: pan (slide the map) or orbit (turn around) (M)">✋ Pan</button>
   <button class="glass" id="helpBtn" title="How to move around">✥ Move</button>
 </div>
 <div id="navHelp" class="glass">
-  <div class="desk"><b>Drag</b> to orbit · <b>right-drag</b> or <b>Shift+drag</b> to pan · <b>scroll</b> to zoom<br>
+  <div class="desk"><span class="panm"><b>Drag</b> to pan like a map · <b>right-drag</b> to orbit</span><span class="orbit"><b>Drag</b> to orbit · <b>right-drag</b> to pan</span> · <b>middle-drag</b> pans too<br>
+  <b>Scroll</b> zooms toward the mouse · <b>double-click</b> the ground to glide there · <kbd>M</kbd> or <b>✋/⟲</b> swaps drag mode<br>
   <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> / arrows to fly · <kbd>Q</kbd><kbd>E</kbd> down / up · hold <kbd>Shift</kbd> to go faster<br>
   <b>Click</b> a building to fly in · <kbd>H</kbd> back to overview</div>
   <div class="touch"><b>One finger</b> to orbit · <b>two fingers</b> to pan<br><b>Pinch</b> to zoom · <b>tap</b> a building to fly in<br><b>⌂ Overview</b> takes you back</div>
@@ -370,9 +375,23 @@ const controls = new OrbitControls(camera, canvas);
 controls.enableDamping = true; controls.dampingFactor = 0.06;
 controls.maxPolarAngle = Math.PI * 0.47; controls.minDistance = 8; controls.maxDistance = 300;
 controls.autoRotate = true; controls.autoRotateSpeed = 0.35;
-// free movement: right-drag / Shift+drag / two fingers pan across the ground (not the screen), so you can roam the streets
+// free movement: drag / middle-drag / two fingers pan across the ground (not the screen), so you can roam the streets
 controls.screenSpacePanning = false; controls.panSpeed = 1.2; controls.zoomSpeed = 1.1;
-controls.mouseButtons = { LEFT: THREE.MOUSE.ROTATE, MIDDLE: THREE.MOUSE.DOLLY, RIGHT: THREE.MOUSE.PAN };
+controls.zoomToCursor = true;   // the scroll wheel zooms toward whatever the mouse points at, so a mouse alone can travel
+// mouse drag mode: 'pan' (default) = left-drag slides the city like a map, right-drag orbits; 'orbit' swaps them.
+// Shift/Ctrl+left-drag always does the other one (OrbitControls built-in). Middle-drag always pans; the wheel zooms.
+function setDragMode(mode){
+  const pan = mode !== 'orbit';
+  controls.mouseButtons = pan ? { LEFT: THREE.MOUSE.PAN, MIDDLE: THREE.MOUSE.PAN, RIGHT: THREE.MOUSE.ROTATE }
+                              : { LEFT: THREE.MOUSE.ROTATE, MIDDLE: THREE.MOUSE.PAN, RIGHT: THREE.MOUSE.PAN };
+  canvas.classList.toggle('pan', pan);
+  const b = document.getElementById('dragBtn');
+  if (b) { b.textContent = pan ? '✋ Pan' : '⟲ Orbit'; b.classList.toggle('on', pan); }
+  document.getElementById('navHelp')?.classList.toggle('orbitMode', !pan);
+  return pan ? 'pan' : 'orbit';
+}
+let dragMode = setDragMode(store.get('dragMode') || 'pan');
+function toggleDragMode(){ dragMode = setDragMode(dragMode === 'pan' ? 'orbit' : 'pan'); store.set('dragMode', dragMode); }
 controls.touches = { ONE: THREE.TOUCH.ROTATE, TWO: THREE.TOUCH.DOLLY_PAN };
 const HOME = { target: new THREE.Vector3(0, 8, 0), cam: new THREE.Vector3(-70, 62, 108) };
 controls.target.copy(HOME.target);
@@ -827,7 +846,7 @@ canvas.addEventListener('pointerdown', e => {
 });
 canvas.addEventListener('pointercancel', () => downAt = null);
 canvas.addEventListener('pointerup', e => {
-  if (multiTouch || e.button > 0) return;   // a pinch / two-finger pan or a right-drag pan is not a click
+  if (multiTouch || e.button > 0) return;   // a pinch / two-finger pan or a right/middle drag is not a click
   if (!downAt || Math.hypot(e.clientX-downAt[0], e.clientY-downAt[1]) > 6) return;
   mouse.set(e.clientX/innerWidth*2-1, -(e.clientY/innerHeight)*2+1); ray.setFromCamera(mouse, camera);
   const hit = ray.intersectObjects(pickables, false)[0];
@@ -861,6 +880,7 @@ const typing = () => { const el = document.activeElement; return !!el && (/^(INP
 addEventListener('keydown', e => {
   if (typing() || e.ctrlKey || e.metaKey || e.altKey || document.getElementById('modal').classList.contains('on')) return;
   if (e.code === 'KeyH' || e.code === 'Home') { goHome(); e.preventDefault(); return; }
+  if (e.code === 'KeyM' && !e.repeat) { toggleDragMode(); return; }
   if (!FLY_KEYS[e.code]) return;
   keys.add(e.code); if (e.code.startsWith('Arrow')) e.preventDefault();   // arrows would scroll the side panel
 });
@@ -890,6 +910,17 @@ function goHome(){
 }
 const homeBtn = document.getElementById('homeBtn'), navHelp = document.getElementById('navHelp');
 homeBtn.addEventListener('click', goHome);
+document.getElementById('dragBtn').addEventListener('click', toggleDragMode);
+// double-click empty ground: glide there, keeping the same viewing angle and zoom (a mouse-only way to travel)
+const _ground = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0), _hitPt = new THREE.Vector3();
+canvas.addEventListener('dblclick', e => {
+  mouse.set(e.clientX/innerWidth*2-1, -(e.clientY/innerHeight)*2+1); ray.setFromCamera(mouse, camera);
+  if (ray.intersectObjects(pickables, false).length) return;   // a building: the single click already flew in
+  if (!ray.ray.intersectPlane(_ground, _hitPt)) return;          // pointing at the sky
+  const r = Math.hypot(_hitPt.x, _hitPt.z); if (r > ROAM_R) _hitPt.multiplyScalar(ROAM_R / r);
+  const to = _hitPt.setY(controls.target.y).clone(), off = camera.position.clone().sub(controls.target);
+  userMoved(); flyTo(to, to.clone().add(off)); scheduleSpin();
+});
 document.getElementById('helpBtn').addEventListener('click', () => { navHelp.classList.toggle('on'); store.set('navHelpSeen', '1'); });
 if (!store.get('navHelpSeen')) {   // first visit: show how to move for a few seconds
   navHelp.classList.add('on'); store.set('navHelpSeen', '1');

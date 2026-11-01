@@ -1,0 +1,123 @@
+{
+ "models": [
+  {
+   "name": "TOTAL: weather only",
+   "n_test": 2223,
+   "corr_pred_vs_market_miss": 0.0618,
+   "bets": 943,
+   "win_rate": 0.5111,
+   "breakeven": 0.5238,
+   "roi_at_minus110": -0.0242,
+   "coef": {
+    "intercept": 1.26,
+    "wind10": -0.171,
+    "cold": 0.038,
+    "dome": 0.086
+   }
+  },
+  {
+   "name": "TOTAL: defenses+offenses form",
+   "n_test": 2223,
+   "corr_pred_vs_market_miss": 0.0361,
+   "bets": 275,
+   "win_rate": 0.5091,
+   "breakeven": 0.5238,
+   "roi_at_minus110": -0.0281,
+   "coef": {
+    "intercept": 0.496,
+    "def_sum": -0.14,
+    "off_sum": -0.028
+   }
+  },
+  {
+   "name": "TOTAL: weather+form+rest/div",
+   "n_test": 2223,
+   "corr_pred_vs_market_miss": 0.0632,
+   "bets": 1128,
+   "win_rate": 0.5213,
+   "breakeven": 0.5238,
+   "roi_at_minus110": -0.0048,
+   "coef": {
+    "intercept": 1.57,
+    "wind10": -0.168,
+    "cold": 0.038,
+    "dome": 0.156,
+    "def_sum": -0.136,
+    "off_sum": -0.037,
+    "div": -0.789,
+    "thu": 0.296
+   }
+  },
+  {
+   "name": "SPREAD: defense/offense gap + rest",
+   "n_test": 2223,
+   "corr_pred_vs_market_miss": 0.0117,
+   "bets": 306,
+   "win_rate": 0.4706,
+   "breakeven": 0.5238,
+   "roi_at_minus110": -0.1016,
+   "coef": {
+    "intercept": 0.02,
+    "def_diff": 0.04,
+    "off_diff": 0.079,
+    "rest_diff": 0.041
+   }
+  },
+  {
+   "name": "SPREAD: all factors",
+   "n_test": 2223,
+   "corr_pred_vs_market_miss": 0.0124,
+   "bets": 557,
+   "win_rate": 0.5189,
+   "breakeven": 0.5238,
+   "roi_at_minus110": -0.0095,
+   "coef": {
+    "intercept": -0.062,
+    "def_diff": 0.037,
+    "off_diff": 0.077,
+    "rest_diff": 0.035,
+    "div": -0.363,
+    "thu": -0.336,
+    "wind10": 0.029,
+    "cold": 0.042
+   }
+  }
+ ],
+ "rules": {
+  "wind >=15 mph, outdoors": {
+   "n": 159,
+   "under_rate": 0.5723,
+   "avg_miss_pts": -1.85
+  },
+  "wind >=20 mph, outdoors": {
+   "n": 33,
+   "under_rate": 0.4848,
+   "avg_miss_pts": 0.2
+  },
+  "temp <=32F, outdoors": {
+   "n": 96,
+   "under_rate": 0.4792,
+   "avg_miss_pts": 0.58
+  },
+  "dome / closed roof": {
+   "n": 691,
+   "under_rate": 0.4877,
+   "avg_miss_pts": 1.65
+  },
+  "both defenses strong (def_sum <= -2)": {
+   "n": 642,
+   "under_rate": 0.5047,
+   "avg_miss_pts": 0.8
+  },
+  "both defenses weak (def_sum >= +2)": {
+   "n": 833,
+   "under_rate": 0.5426,
+   "avg_miss_pts": -0.34
+  },
+  "all games (baseline)": {
+   "n": 2310,
+   "under_rate": 0.5121,
+   "avg_miss_pts": 0.55
+  }
+ }
+}

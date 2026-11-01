@@ -8,6 +8,7 @@ you start. If you work out something reusable that isn't here, add a skill (see 
 - betting-model-learning: Improve the self-learning betting model [bets, nfl, nba, calibration, walk-forward, learning] (agents: coder, quant)
 - budget-template: Make a budget or planning template [budget, money, template, spreadsheet, csv] (agents: planner, runner, scribe)
 - cad-model: Make a working 3D model for CAD Studio [cad, 3d, model.json, mechanism, stl] (agents: cad)
+- city-camera-controls: Change how you move around the city (camera controls) [city, three.js, camera, orbitcontrols, mobile, touch, keyboard, upgrade] (agents: coder)
 - escalate-one-hop: Pick the cheapest agent, escalate once [routing, cost, escalate, tiers] (agents: analyst, cad, coder, forge, planner, quant, runner, scout, scribe, tutor)
 - learn-a-skill: Teach the brain a new skill [brain, memory, learning, skills, meta] (agents: analyst, cad, coder, forge, planner, quant, runner, scout, scribe, tutor)
 - mcp-connector: Build an MCP connector [mcp, connector, server, api, typescript, security] (agents: forge, scout)
@@ -30,7 +31,6 @@ you start. If you work out something reusable that isn't here, add a skill (see 
 - watchlist.json: Tickers the free daily market scan follows
 
 ## Recent jobs (outputs/job-N/)
-- #1 13% of 80 is 10.4. The key step is 0.13 × 80 = 10.4. (runner · make · 2026-10-31)
 - #2 NFL + NBA betting model (DraftKings + Underdog) (coder · make · 2026-10-31)
 - #3 City upgrade: the CAD Tower and CAD Studio (coder · upgrade · 2026-10-31)
 - #4 Personal Monthly Budget (Job #4) (runner · make · 2026-10-31)
@@ -40,5 +40,6 @@ you start. If you work out something reusable that isn't here, add a skill (see 
 - #9 Products building: every finished job, ready to download (coder · make · 2026-10-31)
 - #12 Lean Reader: an MCP connector that saves Claude usage on web reading (forge · make · 2026-10-31)
 - #13 City upgrade: the Second Brain building (coder · upgrade · 2026-11-01)
-- #15 ESCALATE: coder - this changes the city itself, it needs an upgrade (pull request); auto-m… (coder · make · 2026-11-01)
+- #15 Free movement around the city (coder · upgrade · 2026-11-01)
 - #16 Brain dream (week of 26 Oct to 1 Nov 2026) (scribe · make · 2026-11-01)
+- #18 The pan lives in the city's index.html, and this is a make-mode job (I may only write in o… (coder · make · 2026-11-01)

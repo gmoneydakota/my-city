@@ -1,13 +1,13 @@
 {
  "format": "agent-city-brain/1",
- "generated": "2026-11-01T21:38:27+00:00",
+ "generated": "2026-11-01T21:44:38+00:00",
  "counts": {
-  "skills": 12,
+  "skills": 13,
   "agents": 10,
-  "jobs": 12,
+  "jobs": 13,
   "tools": 10,
-  "topics": 3,
-  "links": 95
+  "topics": 6,
+  "links": 106
  },
  "nodes": [
   {
@@ -38,7 +38,7 @@
    "summary": "Implements features, fixes bugs, and writes scripts, then reviews its own diff before handing it back. Use for any real code-writing task.",
    "body": "You are Coder. Implement the task directly in the codebase, matching its existing style and patterns rather than introducing new ones. Handle errors and edge cases, not just the happy path. Once the change is written, reread your own diff as a reviewer would: check for bugs, missing imports, unsafe inputs, and unclear naming, and fix what you find before finishing. Run the project's tests or linter if one is configured, and report the result. End with a short \"what changed and why\" summary, not a step-by-step narration.",
    "path": ".claude/agents/coder.md",
-   "uses": 5
+   "uses": 6
   },
   {
    "id": "agent:forge",
@@ -181,6 +181,12 @@
    "path": "watchlist.json"
   },
   {
+   "id": "topic:city",
+   "type": "topic",
+   "label": "city",
+   "summary": "2 skills tagged city"
+  },
+  {
    "id": "topic:learning",
    "type": "topic",
    "label": "learning",
@@ -197,6 +203,18 @@
    "type": "topic",
    "label": "security",
    "summary": "2 skills tagged security"
+  },
+  {
+   "id": "topic:three.js",
+   "type": "topic",
+   "label": "three.js",
+   "summary": "2 skills tagged three.js"
+  },
+  {
+   "id": "topic:upgrade",
+   "type": "topic",
+   "label": "upgrade",
+   "summary": "2 skills tagged upgrade"
   },
   {
    "id": "skill:add-city-building",
@@ -256,6 +274,24 @@
     "model.json",
     "mechanism",
     "stl"
+   ]
+  },
+  {
+   "id": "skill:city-camera-controls",
+   "type": "skill",
+   "label": "Change how you move around the city (camera controls)",
+   "summary": "city, three.js, camera, orbitcontrols, mobile, touch, keyboard, upgrade",
+   "body": "## When to use\nThe owner wants different navigation in the 3D city: free movement, fly keys, touch gestures, a home or\noverview view, or limits on where the camera can go.\n\n## How\n1. The camera code is the `OrbitControls` block right after `labelRenderer` in `index.html`, and the\n   \"picking + camera focus\" section (`flyTo`, `tween`, `pointerup`). Tune OrbitControls first, before you\n   write your own: `screenSpacePanning=false` pans along the ground, `mouseButtons`/`touches` map the\n   gestures (`TOUCH.DOLLY_PAN` = pinch zoom plus two-finger pan), and Shift/Ctrl+left-drag already pans.\n2. For keyboard flight, keep a `Set` of held `e.code`s (keydown/keyup, and clear it on window `blur`).\n   Each frame in `animate()`, move **both** `controls.target` and `camera.position` by the same vector\n   (camera forward flattened to XZ, plus the right vector). Scale the speed with camera-to-target\n   distance. Skip keys while an INPUT/TEXTAREA/SELECT has focus or the modal is open.\n3. Clamp roaming in a `controls 'change'` listener: push target and camera by the same correction so the\n   orbit offset is unchanged.\n4. Any user input (`controls 'start'`, a fly key) should set `tween = null` so it cancels a running `flyTo`.\n5. Overview or home: keep the start view in a `HOME` constant and `flyTo(HOME...)`, then restart the\n   auto-spin timer.\n6. Check that the module parses (`node --check` on the extracted module script).\n\n## Gotchas\n- Tap detection on touch: use `e.isPrimary` on pointerdown. A primary pointer starts a new gesture; a\n  non-primary one means multi-touch, so skip the pick on pointerup. Don't count pointers up and down:\n  a lost pointerup leaves the count stuck.\n- `e.button > 0` on pointerup means a right or middle drag, never a pick.\n- `minDistance` clamps `flyTo` close-ups too, because `controls.update()` runs after the tween.\n- Don't judge \"away from home\" by camera position: the idle auto-rotate circles the camera. Compare the\n  target and the zoom distance instead.\n- `foo?.()` on an undeclared name still throws a ReferenceError. Look up the real helper name.\n- On phones the side panel takes the bottom 46vh. Put floating buttons under the top bar, not at the\n  bottom.\n- Chrome may not be allowed on the job server. If it isn't, say the change is untested in a browser.",
+   "path": "brain/skills/city-camera-controls.md",
+   "tags": [
+    "city",
+    "three.js",
+    "camera",
+    "orbitcontrols",
+    "mobile",
+    "touch",
+    "keyboard",
+    "upgrade"
    ]
   },
   {
@@ -510,12 +546,12 @@
   {
    "id": "job:15",
    "type": "job",
-   "label": "#15 ESCALATE: coder - this changes the city itself, it needs an upgrade (pull request); auto-m…",
-   "summary": "coder · make · 2026-11-01",
-   "body": "# Job #15\n\nESCALATE: coder - this changes the city itself, it needs an upgrade (pull request); auto-merging without the owner's approval isn't allowed\n",
+   "label": "#15 Free movement around the city",
+   "summary": "coder · upgrade · 2026-11-01",
+   "body": "# Job 15: Free movement around the city\n\n## What changed\nThe 3D city is no longer locked onto one spot. You can roam it freely:\n\n| Desktop | Phone / tablet |\n|---|---|\n| **Drag** to orbit | **One finger** to orbit |\n| **Right-drag** or **Shift+drag** to pan across the ground | **Two fingers** to pan |\n| **Scroll** to zoom (now much closer: down to street level) | **Pinch** to zoom |\n| **W A S D** / **arrow keys** to fly, **Q / E** down / up, hold **Shift** to go faster | |\n| **H** or **Home** to go back to the overview | |\n\n- **⌂ Overview** button (top-left, under the AGENT CITY bar) flies you back to the starting view of the\n  whole city and closes any open detail drawer. It glows when you've wandered away.\n- **✥ Move** button shows or hides a short cheat-sheet of the controls. On your first visit it opens on\n  its own for a few seconds. Phones get the touch version.\n- Clicking or tapping a building still flies you in to it: Lucky Tower, Products, the Brain, CAD Studio and\n  every agent tower work as before. Grabbing the city mid-flight now stops the fly-in, so you're never\n  fighting the camera.\n- Panning now moves along the ground, like walking the streets, instead of sliding the screen sideways.\n- You can't wander off into the empty void: the focus point stays within the city (radius 230) and the\n  camera stays above the ground.\n- Pinches and two-finger pans no longer count as a tap, so they can't open a building by accident. A\n  right-drag pan doesn't either.\n- Keys are ignored while you type in the Make box, search, or settings, so typing \"w\" or \"s\" won't move\n  the camera.\n- The slow showcase spin still comes back after 12 seconds of no input.\n\n## Files\n- `index.html`: camera controls setup, keyboard flight (`flyKeys`), `goHome()`, the Overview/Move\n  buttons and",
    "path": "outputs/job-15/",
    "n": 15,
-   "mode": "make",
+   "mode": "upgrade",
    "has_page": false,
    "has_model": false,
    "finished": "2026-11-01"
@@ -528,6 +564,19 @@
    "body": "# Job #16 · Brain dream (week of 26 Oct to 1 Nov 2026)\n\nA weekly review of what the city did, and the skills it took from it. No app, no page, and nothing in the\ncity itself changed. The deliverables are two skill files in the brain.\n\n## What I reviewed\n- `brain/INDEX.md` and all 11 skills in `brain/skills/`\n- The newest job folders: `outputs/job-12` (Lean Reader MCP connector), `job-13` (Second Brain upgrade),\n  `job-15` (an escalation, no build), `job-9` (Products page)\n- No \"Skill learned:\" notes were found this week, so the review was based on the job files.\n- I checked job 12's `src/server.ts` against its README. The code matches the README: IP checks at DNS time,\n  manual redirects, a port allowlist, a timing-safe secret compare and a per-IP rate limit.\n\n## Skill files written or changed\n\n**1. `brain/skills/mcp-connector.md`: improved (learned_from: 12)**\nThe old version had 4 short steps and nothing on security. The new version adds the measured token savings\nfrom job 12 (66,300 → 4,800 → 420 tokens for one article), the URL-secret auth pattern that Claude's\nconnector form forces, what to test and ship, and gotchas about tool-definition cost and sleeping free hosts.\n\n**2. `brain/skills/secure-public-fetch.md`: new (learned_from: 12)**\nA method for any tool that fetches a URL a user gives it: check the address when the connection is made\n(not just the URL text), block private and metadata ranges including mapped IPv6, follow redirects by hand,\ncap time and size, and a test list. It is split out from the connector skill because it applies to any\nfetch tool, not only MCP servers.\n\nBoth files link to each other, and to `escalate-one-hop` and `learn-a-skill`, which exist in `brain/INDEX.md`.\n\n## How to use them\n- A future job that builds a connector or any URL-fetchin",
    "path": "outputs/job-16/",
    "n": 16,
+   "mode": "make",
+   "has_page": false,
+   "has_model": false,
+   "finished": "2026-11-01"
+  },
+  {
+   "id": "job:18",
+   "type": "job",
+   "label": "#18 The pan lives in the city's index.html, and this is a make-mode job (I may only write in o…",
+   "summary": "coder · make · 2026-11-01",
+   "body": "# Job #18\n\nThe pan lives in the city's `index.html`, and this is a make-mode job (I may only write in `outputs/job-18/`), so changing city controls needs an upgrade job.\n\nESCALATE: coder - this changes the city itself, it needs an upgrade (pull request)\n",
+   "path": "outputs/job-18/",
+   "n": 18,
    "mode": "make",
    "has_page": false,
    "has_model": false,
@@ -564,6 +613,21 @@
    "source": "skill:add-city-building",
    "target": "job:13",
    "kind": "learned from"
+  },
+  {
+   "source": "skill:add-city-building",
+   "target": "topic:city",
+   "kind": "topic"
+  },
+  {
+   "source": "skill:add-city-building",
+   "target": "topic:three.js",
+   "kind": "topic"
+  },
+  {
+   "source": "skill:add-city-building",
+   "target": "topic:upgrade",
+   "kind": "topic"
   },
   {
    "source": "skill:add-city-building",
@@ -659,6 +723,41 @@
    "source": "skill:cad-model",
    "target": "tool:cad-studio",
    "kind": "uses tool"
+  },
+  {
+   "source": "skill:city-camera-controls",
+   "target": "skill:add-city-building",
+   "kind": "related"
+  },
+  {
+   "source": "skill:city-camera-controls",
+   "target": "skill:static-job-page",
+   "kind": "related"
+  },
+  {
+   "source": "skill:city-camera-controls",
+   "target": "agent:coder",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:city-camera-controls",
+   "target": "job:15",
+   "kind": "learned from"
+  },
+  {
+   "source": "skill:city-camera-controls",
+   "target": "topic:city",
+   "kind": "topic"
+  },
+  {
+   "source": "skill:city-camera-controls",
+   "target": "topic:three.js",
+   "kind": "topic"
+  },
+  {
+   "source": "skill:city-camera-controls",
+   "target": "topic:upgrade",
+   "kind": "topic"
   },
   {
    "source": "skill:escalate-one-hop",
@@ -1008,6 +1107,11 @@
   {
    "source": "job:16",
    "target": "agent:scribe",
+   "kind": "done by"
+  },
+  {
+   "source": "job:18",
+   "target": "agent:coder",
    "kind": "done by"
   }
  ],

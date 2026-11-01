@@ -3,16 +3,16 @@
   "agent": "coder",
   "model": "opus",
   "tier": "heavy",
-  "mode": "make",
-  "route": "keyword rules (free)",
+  "mode": "upgrade",
+  "route": "upgrade mode",
   "escalated_from": null,
   "builds_on": null,
   "repeat": null,
   "has_page": false,
   "has_model": false,
-  "turns": 2,
-  "cost_usd_estimate": 0.1017,
+  "turns": 35,
+  "cost_usd_estimate": 0.9935,
   "ok": true,
   "subtype": "success",
-  "finished_at": "2026-11-01T21:34:40+00:00"
+  "finished_at": "2026-11-01T21:41:59+00:00"
 }

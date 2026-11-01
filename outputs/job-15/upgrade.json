@@ -1,0 +1,9 @@
+{
+  "branch": "upgrade/job-15",
+  "files": [
+    "brain/skills/city-camera-controls.md",
+    "index.html"
+  ],
+  "pr_url": "https://github.com/gmoneydakota/my-city/pull/17",
+  "compare_url": null
+}

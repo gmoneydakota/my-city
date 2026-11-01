@@ -10,9 +10,10 @@ you start. If you work out something reusable that isn't here, add a skill (see 
 - cad-model: Make a working 3D model for CAD Studio [cad, 3d, model.json, mechanism, stl] (agents: cad)
 - escalate-one-hop: Pick the cheapest agent, escalate once [routing, cost, escalate, tiers] (agents: analyst, cad, coder, forge, planner, quant, runner, scout, scribe, tutor)
 - learn-a-skill: Teach the brain a new skill [brain, memory, learning, skills, meta] (agents: analyst, cad, coder, forge, planner, quant, runner, scout, scribe, tutor)
-- mcp-connector: Build an MCP connector [mcp, connector, server, api, typescript] (agents: forge, scout)
+- mcp-connector: Build an MCP connector [mcp, connector, server, api, typescript, security] (agents: forge, scout)
 - pause-and-resume: Survive a usage limit mid-job [progress, checkpoint, resume, limits] (agents: analyst, cad, coder, forge, quant)
 - quick-answer: Give a quick, exact answer [math, answer, lookup] (agents: runner)
+- secure-public-fetch: Fetch user-given public URLs safely [security, fetch, ssrf, dns, redirects, mcp] (agents: coder, forge)
 - static-job-page: Ship an app as a static page [web, html, app, game, dashboard, github-pages] (agents: coder, quant)
 - stock-signal-model: Build a stock buy/sell signal model [stocks, quant, backtest, signals, market] (agents: quant)
 
@@ -40,3 +41,4 @@ you start. If you work out something reusable that isn't here, add a skill (see 
 - #12 Lean Reader: an MCP connector that saves Claude usage on web reading (forge · make · 2026-10-31)
 - #13 City upgrade: the Second Brain building (coder · upgrade · 2026-11-01)
 - #15 ESCALATE: coder - this changes the city itself, it needs an upgrade (pull request); auto-m… (coder · make · 2026-11-01)
+- #16 Brain dream (week of 26 Oct to 1 Nov 2026) (scribe · make · 2026-11-01)

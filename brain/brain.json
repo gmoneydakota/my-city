@@ -1,13 +1,13 @@
 {
  "format": "agent-city-brain/1",
- "generated": "2026-11-01T21:34:41+00:00",
+ "generated": "2026-11-01T21:38:27+00:00",
  "counts": {
-  "skills": 11,
+  "skills": 12,
   "agents": 10,
-  "jobs": 11,
+  "jobs": 12,
   "tools": 10,
-  "topics": 1,
-  "links": 83
+  "topics": 3,
+  "links": 95
  },
  "nodes": [
   {
@@ -98,7 +98,7 @@
    "summary": "Rewrites, comments, commit messages, READMEs, docstrings - anything that's mostly wordsmithing rather than logic. Use after code is working to document or clean up prose.",
    "body": "You are Scribe: a writing and documentation agent. Do exactly what's asked with the text or code it's attached to - tighten a comment, write a commit message, draft a README section, fix a docstring. Keep the project's existing voice and formatting conventions. Don't change logic; if you spot a bug while writing docs, note it separately instead of fixing it silently.",
    "path": ".claude/agents/scribe.md",
-   "uses": 0
+   "uses": 1
   },
   {
    "id": "agent:tutor",
@@ -185,6 +185,18 @@
    "type": "topic",
    "label": "learning",
    "summary": "2 skills tagged learning"
+  },
+  {
+   "id": "topic:mcp",
+   "type": "topic",
+   "label": "mcp",
+   "summary": "2 skills tagged mcp"
+  },
+  {
+   "id": "topic:security",
+   "type": "topic",
+   "label": "security",
+   "summary": "2 skills tagged security"
   },
   {
    "id": "skill:add-city-building",
@@ -279,15 +291,16 @@
    "id": "skill:mcp-connector",
    "type": "skill",
    "label": "Build an MCP connector",
-   "summary": "mcp, connector, server, api, typescript",
-   "body": "## When to use\nConnecting Claude to an app or data source.\n\n## How\n1. Scout first checks that no good server already exists; forge builds only when none does, using scout's findings as they are.\n2. Keep the tools few and sharp, read-only unless asked, each with a clear description (job 12 had 5).\n3. Save usage: return an outline and the relevant slice first, with paging to reach everything (job 12 cut a page from ~66k tokens to ~420).\n4. Ship `package.json`, `.env.example`, tests, and a README with measured numbers and deploy steps.",
+   "summary": "mcp, connector, server, api, typescript, security",
+   "body": "## When to use\nConnecting Claude to an app, API or data source through a custom connector (Streamable HTTP server).\n\n## How\n1. Scout first checks that no good server already exists. Forge builds only when none does, using scout's findings as they are.\n2. Keep the tools few and sharp, read-only unless asked, each with a clear description and zod-validated inputs (job 12 had 5).\n3. Save usage: return an outline and the relevant slice first, with paging to reach everything. Job 12 cut a Wikipedia article from ~66,300 tokens (raw HTML) to ~4,800 (clean text) and ~420 (one section). Put the workflow in the server's instructions field so Claude uses it.\n4. Measure the numbers before you claim them: count tokens for raw vs. sliced output and put the table in the README.\n5. Protect the endpoint. Claude's custom-connector form only offers OAuth or no auth, so use an unguessable secret path segment (`/mcp/<SECRET>`), compare it with `timingSafeEqual` on hashes, also accept `Authorization: Bearer`, and rate-limit per IP. With no secret set, log a loud warning at startup (job 12 started open and warned; say so in the README). Any fetch of user-given URLs follows `secure-public-fetch`.\n6. Ship `package.json`, `.env.example` (no real secrets), an end-to-end smoke test that calls every tool, and a README with local run, MCP Inspector steps, deploy steps and the `claude mcp add --transport http` line.\n\n## Gotchas\n- Tool definitions cost tokens on every turn the connector is on (job 12 measured ~1,200). Tell the owner to switch it off in chats that don't read the web or APIs.\n- Free hosts like Render sleep when idle; the first call can take ~30 s. Say so in the README.\n- Connector menus and plan rules change. Mark them \"as of the job date\" and point to the vendor's help page.\n- Never return raw HTML or whole API responses by default; a shape map (`json_pick` with no paths) beats dumping 86 top-level keys.",
    "path": "brain/skills/mcp-connector.md",
    "tags": [
     "mcp",
     "connector",
     "server",
     "api",
-    "typescript"
+    "typescript",
+    "security"
    ]
   },
   {
@@ -315,6 +328,22 @@
     "math",
     "answer",
     "lookup"
+   ]
+  },
+  {
+   "id": "skill:secure-public-fetch",
+   "type": "skill",
+   "label": "Fetch user-given public URLs safely",
+   "summary": "security, fetch, ssrf, dns, redirects, mcp",
+   "body": "## When to use\nAny tool or server that fetches a URL a user or Claude gives it. Without these checks, a\nfetch tool can be pointed at the host's own network (localhost, cloud metadata at 169.254.169.254, LAN).\n\n## How\n1. Parse the URL. Allow only `http:` and `https:`. Reject URLs with credentials (`user:pass@`). Allow only ports 80, 443, 8080 and 8443 (job 12's list).\n2. Check the address at connection time, not only from the URL text. Pass a custom `lookup` to the HTTP client that resolves with `dns.lookup(host, { all: true })`, rejects every private address, and only then connects. This also stops DNS-rebinding tricks.\n3. Block these ranges (IPv4 and IPv4-mapped IPv6): 0/8, 10/8, 100.64/10 (CGNAT), 127/8, 169.254/16 (metadata), 172.16/12, 192.168/16, 224/4 (multicast), 240/4 (reserved), plus the IPv6 loopback, link-local (fe80::/10), unique-local (fc00::/7) and `::ffff:` forms of all the above.\n4. Follow redirects by hand: `redirect: \"manual\"`, run the same check on each hop, stop after 5.\n5. Limit time and size: 10-second timeout, and a download cap (job 12 used 3 MB) that cuts the page off and tells the reader it was cut.\n6. Rate-limit the endpoint per client IP (job 12: 60/min), and cache fetched pages briefly (10 min) so an outline and a read don't download twice.\n7. Test it: each blocked range, a redirect to 127.0.0.1, a hostname that resolves to a private address, and a credentialed URL should all fail, and a normal public page should pass.\n\n## Gotchas\n- Checking the URL string alone is not enough: a public name can resolve to 127.0.0.1.\n- Mapped IPv6 forms such as `::ffff:10.0.0.1` slip past plain IPv4 checks.\n- Don't follow redirects automatically; the second hop can go somewhere private.\n- If the server is open with no secret, anyone who finds it can use your bandwidth. Say so in the README.",
+   "path": "brain/skills/secure-public-fetch.md",
+   "tags": [
+    "security",
+    "fetch",
+    "ssrf",
+    "dns",
+    "redirects",
+    "mcp"
    ]
   },
   {
@@ -486,6 +515,19 @@
    "body": "# Job #15\n\nESCALATE: coder - this changes the city itself, it needs an upgrade (pull request); auto-merging without the owner's approval isn't allowed\n",
    "path": "outputs/job-15/",
    "n": 15,
+   "mode": "make",
+   "has_page": false,
+   "has_model": false,
+   "finished": "2026-11-01"
+  },
+  {
+   "id": "job:16",
+   "type": "job",
+   "label": "#16 Brain dream (week of 26 Oct to 1 Nov 2026)",
+   "summary": "scribe · make · 2026-11-01",
+   "body": "# Job #16 · Brain dream (week of 26 Oct to 1 Nov 2026)\n\nA weekly review of what the city did, and the skills it took from it. No app, no page, and nothing in the\ncity itself changed. The deliverables are two skill files in the brain.\n\n## What I reviewed\n- `brain/INDEX.md` and all 11 skills in `brain/skills/`\n- The newest job folders: `outputs/job-12` (Lean Reader MCP connector), `job-13` (Second Brain upgrade),\n  `job-15` (an escalation, no build), `job-9` (Products page)\n- No \"Skill learned:\" notes were found this week, so the review was based on the job files.\n- I checked job 12's `src/server.ts` against its README. The code matches the README: IP checks at DNS time,\n  manual redirects, a port allowlist, a timing-safe secret compare and a per-IP rate limit.\n\n## Skill files written or changed\n\n**1. `brain/skills/mcp-connector.md`: improved (learned_from: 12)**\nThe old version had 4 short steps and nothing on security. The new version adds the measured token savings\nfrom job 12 (66,300 → 4,800 → 420 tokens for one article), the URL-secret auth pattern that Claude's\nconnector form forces, what to test and ship, and gotchas about tool-definition cost and sleeping free hosts.\n\n**2. `brain/skills/secure-public-fetch.md`: new (learned_from: 12)**\nA method for any tool that fetches a URL a user gives it: check the address when the connection is made\n(not just the URL text), block private and metadata ranges including mapped IPv6, follow redirects by hand,\ncap time and size, and a test list. It is split out from the connector skill because it applies to any\nfetch tool, not only MCP servers.\n\nBoth files link to each other, and to `escalate-one-hop` and `learn-a-skill`, which exist in `brain/INDEX.md`.\n\n## How to use them\n- A future job that builds a connector or any URL-fetchin",
+   "path": "outputs/job-16/",
+   "n": 16,
    "mode": "make",
    "has_page": false,
    "has_model": false,
@@ -750,6 +792,16 @@
   },
   {
    "source": "skill:mcp-connector",
+   "target": "skill:secure-public-fetch",
+   "kind": "related"
+  },
+  {
+   "source": "skill:mcp-connector",
+   "target": "skill:learn-a-skill",
+   "kind": "related"
+  },
+  {
+   "source": "skill:mcp-connector",
    "target": "agent:scout",
    "kind": "used by"
   },
@@ -762,6 +814,16 @@
    "source": "skill:mcp-connector",
    "target": "job:12",
    "kind": "learned from"
+  },
+  {
+   "source": "skill:mcp-connector",
+   "target": "topic:mcp",
+   "kind": "topic"
+  },
+  {
+   "source": "skill:mcp-connector",
+   "target": "topic:security",
+   "kind": "topic"
   },
   {
    "source": "skill:pause-and-resume",
@@ -797,6 +859,41 @@
    "source": "skill:quick-answer",
    "target": "job:1",
    "kind": "learned from"
+  },
+  {
+   "source": "skill:secure-public-fetch",
+   "target": "skill:escalate-one-hop",
+   "kind": "related"
+  },
+  {
+   "source": "skill:secure-public-fetch",
+   "target": "skill:learn-a-skill",
+   "kind": "related"
+  },
+  {
+   "source": "skill:secure-public-fetch",
+   "target": "agent:forge",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:secure-public-fetch",
+   "target": "agent:coder",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:secure-public-fetch",
+   "target": "job:12",
+   "kind": "learned from"
+  },
+  {
+   "source": "skill:secure-public-fetch",
+   "target": "topic:security",
+   "kind": "topic"
+  },
+  {
+   "source": "skill:secure-public-fetch",
+   "target": "topic:mcp",
+   "kind": "topic"
   },
   {
    "source": "skill:static-job-page",
@@ -906,6 +1003,11 @@
   {
    "source": "job:15",
    "target": "agent:coder",
+   "kind": "done by"
+  },
+  {
+   "source": "job:16",
+   "target": "agent:scribe",
    "kind": "done by"
   }
  ],

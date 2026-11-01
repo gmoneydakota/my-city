@@ -217,6 +217,8 @@ Map of the city:
   watchlist.json (tickers), schedules.json (recurring jobs: id, title, request, agent, every, time, tz, days).
 - bets/: the self-learning NFL/NBA betting model (bets.py, betmodel/*.py, tests in bets/test_betmodel.py,
   learned.json + history/ = what it has learned). index.html shows bets/board/latest.json in the Bets tab.
+- brain/: the Second Brain (the brain building opens brain/index.html). Skills are brain/skills/*.md;
+  scripts/brain.py generates brain/brain.json + brain/INDEX.md from skills, agents, scripts and outputs/.
 Rules:
 - Never edit anything under .github/ (GitHub blocks it). If the upgrade truly needs a workflow change,
   do everything else and explain the needed workflow change in the README.
@@ -283,6 +285,28 @@ def restore_checkpoint(job: int) -> str:
             f"{{out_dir}}/PROGRESS.md of what is done and what is left as you go, so a further pause loses nothing.")
 
 
+BRAIN_INDEX = ROOT / "brain" / "INDEX.md"
+BRAIN_GENERATED = ["brain/brain.json", "brain/INDEX.md"]   # rebuilt by scripts/brain.py, never hand-edited
+
+
+def brain_notes(job: int, can_write: bool) -> str:
+    """The second brain in the prompt: what the city already knows how to do, and how to teach it something new."""
+    try:
+        index = BRAIN_INDEX.read_text()
+    except OSError:
+        return ""
+    index = index.split("\n## Tools")[0].strip()   # only the skill list goes in the prompt (tokens cost usage)
+    if len(index) > 4000:
+        index = index[:4000].rsplit("\n", 1)[0] + "\n…(more in brain/INDEX.md)"
+    learn = (f"After the job, if you worked out a reusable method that isn't in the brain yet (or a better way than an "
+             f"existing skill), save it as brain/skills/<kebab-slug>.md (format: brain/skills/learn-a-skill.md, put "
+             f"learned_from: {job}) or improve the existing skill file. Write the method, not this job's answer. "
+             f"No secrets or personal data. Skip it if you learned nothing new." if can_write else
+             "If you learned a reusable method, end your reply with a short 'Skill learned:' note so it can be saved.")
+    return (f"\n--- The city's second brain ---\nThe city remembers how it did past jobs as skills. Before you start, "
+            f"read the skill files in brain/skills/ that match this job and follow them.\n{learn}\n\n{index}")
+
+
 def build_prompt(agent: dict, request: str, job: int, out_dir: str, can_write: bool,
                  mode: str, builds_on: int | None, resume: str = "") -> tuple[str, str]:
     today = datetime.now(timezone.utc).strftime("%A %d %B %Y")
@@ -295,7 +319,8 @@ of the data. Never rely on memory for current facts."""
     else:
         if can_write:
             files = (f"Save every file you create in {out_dir}/ (create it). Never edit files outside it, except "
-                     f"watchlist.json when asked to track a ticker. Always include {out_dir}/README.md explaining "
+                     f"watchlist.json when asked to track a ticker and skill files in brain/skills/. "
+                     f"Always include {out_dir}/README.md explaining "
                      f"what you made and exactly how to use or run it.\n"
                      f"If you build anything visual or interactive (website, game, app, dashboard, tool), make it a "
                      f"self-contained static page at {out_dir}/index.html (libraries from a CDN are fine, no server, "
@@ -311,6 +336,7 @@ of the data. Never rely on memory for current facts."""
         system = (agent["prompt"] + "\n\n--- Agent City cloud job rules ---\n" + common + "\n" + files + remix +
                   "\nIf this request is clearly beyond what you should handle, do no work and reply with exactly "
                   "one line:\nESCALATE: <agent-name> - <short reason>")
+    system += brain_notes(job, can_write or mode == "upgrade")
     user = f"Agent City job #{job}. The request from the city's owner:\n\n<<<\n{request}\n>>>"
     user += resume.replace("{out_dir}", out_dir)
     if mode == "upgrade" or can_write:
@@ -467,6 +493,29 @@ def push_main():
     return False
 
 
+def refresh_brain():
+    """Rebuild brain/brain.json + INDEX.md from main as it is now, so the Brain building shows the new job and skills.
+    Runs after the job's own commit is pushed. The index is generated from the tree, so on a push race we just
+    take the newer main and rebuild; it can never lose anything."""
+    if not (ROOT / "scripts" / "brain.py").exists():
+        return
+    branch = os.environ.get("GITHUB_REF_NAME", "main")
+    for i in range(4):
+        if git("fetch", "origin", branch, check=False).returncode != 0:
+            return
+        git("reset", "-q", "--hard", f"origin/{branch}", check=False)   # our job commit is already on origin
+        if sh([sys.executable, "scripts/brain.py"], check=False, cwd=ROOT).returncode != 0:
+            print("brain index rebuild failed", file=sys.stderr)
+            return
+        git("add", *BRAIN_GENERATED)
+        if git("diff", "--cached", "--quiet", check=False).returncode == 0:
+            return   # nothing changed
+        git("commit", "-m", "Brain: refresh index", check=False)
+        if git("push", "origin", f"HEAD:{branch}", check=False).returncode == 0:
+            return
+        sh(["sleep", str(3 * (i + 1))])
+
+
 def cmd_save():
     st = json.loads(STATE.read_text())
     job, base = st["job"], os.environ.get("GITHUB_REF_NAME", "main")
@@ -490,15 +539,24 @@ def cmd_save():
         return
 
     if st.get("mode") != "upgrade":
-        paths = [p for p in (st.get("out_dir"), "watchlist.json", "schedules.json") if p and (ROOT / p).exists()]
+        paths = [p for p in (st.get("out_dir"), "watchlist.json", "schedules.json", "brain/skills") if p and (ROOT / p).exists()]
+        for g in BRAIN_GENERATED:   # never commit the generated index with the job: concurrent jobs would conflict on it
+            if (ROOT / g).exists():
+                git("checkout", "HEAD", "--", g, check=False)
         git("add", *paths)
         git("commit", "-m", msg, check=False)
-        push_main()
+        if push_main():
+            refresh_brain()
         return
 
     # Upgrade: everything except .github goes on a branch and becomes a pull request.
     git("checkout", "--", ".github", check=False)
     git("clean", "-fdq", ".github", check=False)
+    # the brain index is rebuilt on main after every job; a PR that also changed it would conflict on merge.
+    # (The first PR that creates it, when main has none yet, keeps it.)
+    for g in BRAIN_GENERATED:
+        if git("cat-file", "-e", f"HEAD:{g}", check=False).returncode == 0:
+            git("checkout", "HEAD", "--", g, check=False)
     branch = f"upgrade/job-{job}"
     git("checkout", "-B", branch)
     git("add", "-A")

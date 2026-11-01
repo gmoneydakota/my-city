@@ -1,0 +1,18 @@
+{
+  "job": 13,
+  "agent": "coder",
+  "model": "opus",
+  "tier": "heavy",
+  "mode": "upgrade",
+  "route": "upgrade mode (this changes the city itself, so it comes as a pull request)",
+  "escalated_from": null,
+  "builds_on": null,
+  "repeat": null,
+  "has_page": false,
+  "has_model": false,
+  "turns": 100,
+  "cost_usd_estimate": 4.2796,
+  "ok": true,
+  "subtype": "success",
+  "finished_at": "2026-11-01T17:16:30+00:00"
+}

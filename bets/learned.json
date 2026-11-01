@@ -1,29 +1,32 @@
 {
-  "updated": "2026-11-01T15:54:31+00:00",
+  "updated": "2026-11-01T22:22:29+00:00",
   "game_weights": {
     "ML": 0.3,
     "Spread": 0.3,
-    "Total": 0.3
+    "Total": 0.459
   },
   "fit_stats": {
     "ML": {
-      "n": 14,
-      "needs": 26
+      "n": 30,
+      "needs": 10
     },
     "Spread": {
-      "n": 14,
-      "needs": 26
+      "n": 32,
+      "needs": 8
     },
     "Total": {
-      "n": 26,
-      "needs": 14
+      "n": 44,
+      "raw_best": 1.0,
+      "logloss_model": 0.6792,
+      "logloss_market": 0.6954,
+      "logloss_blend": 0.6855
     },
     "Prop": {
-      "n": 454,
-      "raw_best": 1.0,
-      "logloss_model": 0.6643,
-      "logloss_market": 0.6788,
-      "logloss_blend": 0.6644
+      "n": 1109,
+      "raw_best": 0.2,
+      "logloss_model": 0.6941,
+      "logloss_market": 0.6794,
+      "logloss_blend": 0.6786
     }
   },
   "calibration": {
@@ -61,25 +64,46 @@
       "n": 47,
       "avg_proj": 1.96,
       "avg_actual": 1.68
+    },
+    "nfl:rec_yds": {
+      "scale": 0.959,
+      "sd_scale": 1.0599,
+      "n": 58,
+      "avg_proj": 41.4,
+      "avg_actual": 37.36
+    },
+    "nfl:receptions": {
+      "scale": 0.9527,
+      "sd_scale": 1.0267,
+      "n": 58,
+      "avg_proj": 3.83,
+      "avg_actual": 3.4
+    },
+    "nfl:rush_yds": {
+      "scale": 1.0293,
+      "sd_scale": 1.1487,
+      "n": 38,
+      "avg_proj": 40.95,
+      "avg_actual": 44.68
     }
   },
-  "prop_weight": 0.876,
+  "prop_weight": 0.236,
   "scoreboard": {
-    "graded_bets": 508,
-    "graded_projections": 263,
+    "graded_bets": 1323,
+    "graded_projections": 449,
     "model_leans": {
-      "w": 73,
-      "l": 54,
+      "w": 199,
+      "l": 258,
       "p": 0,
-      "hit_rate": 0.5748,
-      "roi_per_bet": 0.0847
+      "hit_rate": 0.4354,
+      "roi_per_bet": -0.0517
     },
     "strong_leans": {
-      "w": 45,
-      "l": 31,
+      "w": 149,
+      "l": 215,
       "p": 0,
-      "hit_rate": 0.5921,
-      "roi_per_bet": 0.1242
+      "hit_rate": 0.4093,
+      "roi_per_bet": -0.0753
     }
   }
 }

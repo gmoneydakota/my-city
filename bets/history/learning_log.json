@@ -26,34 +26,31 @@
   {
     "date": "2026-11-01",
     "lessons": [
-      "Player props: trusting the model 71% \u2192 88% after 454 graded props.",
-      "NBA assists: projections ran too high (avg 3.84 projected vs 3.33 actual over 54 players) \u2192 now scaled \u00d70.946.",
-      "NBA assists: was underconfident about player swings \u2192 uncertainty \u00d70.959.",
-      "NBA points: projections ran too high (avg 17.5 projected vs 15.44 actual over 54 players) \u2192 now scaled \u00d70.953.",
-      "NBA points: was overconfident about player swings \u2192 uncertainty \u00d71.138.",
-      "NBA pra: projections ran too high (avg 27.3 projected vs 24.02 actual over 54 players) \u2192 now scaled \u00d70.952.",
-      "NBA pra: was overconfident about player swings \u2192 uncertainty \u00d71.077.",
-      "NBA rebounds: projections ran too high (avg 5.96 projected vs 5.24 actual over 54 players) \u2192 now scaled \u00d70.952.",
-      "NBA rebounds: was underconfident about player swings \u2192 uncertainty \u00d70.929.",
-      "NBA threes: projections ran too high (avg 1.96 projected vs 1.68 actual over 47 players) \u2192 now scaled \u00d70.947.",
-      "NBA threes: was overconfident about player swings \u2192 uncertainty \u00d71.063."
+      "Total: trusting the model 30% \u2192 46% (vs the market) after 44 graded bets \u2014 the model has been the better predictor so far.",
+      "Player props: trusting the model 88% \u2192 24% after 1109 graded props.",
+      "NFL rec_yds: projections ran too high (avg 41.4 projected vs 37.36 actual over 58 players) \u2192 now scaled \u00d70.959.",
+      "NFL rec_yds: was overconfident about player swings \u2192 uncertainty \u00d71.060.",
+      "NFL receptions: projections ran too high (avg 3.83 projected vs 3.4 actual over 58 players) \u2192 now scaled \u00d70.953.",
+      "NFL receptions: was overconfident about player swings \u2192 uncertainty \u00d71.027.",
+      "NFL rush_yds: projections ran too low (avg 40.95 projected vs 44.68 actual over 38 players) \u2192 now scaled \u00d71.029.",
+      "NFL rush_yds: was overconfident about player swings \u2192 uncertainty \u00d71.149."
     ],
     "scoreboard": {
-      "graded_bets": 508,
-      "graded_projections": 263,
+      "graded_bets": 1323,
+      "graded_projections": 449,
       "model_leans": {
-        "w": 73,
-        "l": 54,
+        "w": 199,
+        "l": 258,
         "p": 0,
-        "hit_rate": 0.5748,
-        "roi_per_bet": 0.0847
+        "hit_rate": 0.4354,
+        "roi_per_bet": -0.0517
       },
       "strong_leans": {
-        "w": 45,
-        "l": 31,
+        "w": 149,
+        "l": 215,
         "p": 0,
-        "hit_rate": 0.5921,
-        "roi_per_bet": 0.1242
+        "hit_rate": 0.4093,
+        "roi_per_bet": -0.0753
       }
     }
   }

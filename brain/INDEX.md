@@ -31,8 +31,6 @@ you start. If you work out something reusable that isn't here, add a skill (see 
 - watchlist.json: Tickers the free daily market scan follows
 
 ## Recent jobs (outputs/job-N/)
-- #2 NFL + NBA betting model (DraftKings + Underdog) (coder · make · 2026-10-31)
-- #3 City upgrade: the CAD Tower and CAD Studio (coder · upgrade · 2026-10-31)
 - #4 Personal Monthly Budget (Job #4) (runner · make · 2026-10-31)
 - #6 Lucky Tower accuracy lab (quant · make · 2026-10-31)
 - #7 Louvre-Slide Door (cad · make · 2026-10-31)
@@ -43,3 +41,5 @@ you start. If you work out something reusable that isn't here, add a skill (see 
 - #15 Free movement around the city (coder · upgrade · 2026-11-01)
 - #16 Brain dream (week of 26 Oct to 1 Nov 2026) (scribe · make · 2026-11-01)
 - #18 The pan lives in the city's index.html, and this is a make-mode job (I may only write in o… (coder · make · 2026-11-01)
+- #19 easy mouse movement in the city (coder · upgrade · 2026-11-01)
+- #21 Lucky Tower factor study (weather, defenses, rest, more) (quant · make · 2026-11-01)

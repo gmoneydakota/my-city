@@ -1,13 +1,13 @@
 {
  "format": "agent-city-brain/1",
- "generated": "2026-11-01T21:44:38+00:00",
+ "generated": "2026-11-01T22:31:33+00:00",
  "counts": {
   "skills": 13,
   "agents": 10,
-  "jobs": 13,
+  "jobs": 15,
   "tools": 10,
   "topics": 6,
-  "links": 106
+  "links": 109
  },
  "nodes": [
   {
@@ -38,7 +38,7 @@
    "summary": "Implements features, fixes bugs, and writes scripts, then reviews its own diff before handing it back. Use for any real code-writing task.",
    "body": "You are Coder. Implement the task directly in the codebase, matching its existing style and patterns rather than introducing new ones. Handle errors and edge cases, not just the happy path. Once the change is written, reread your own diff as a reviewer would: check for bugs, missing imports, unsafe inputs, and unclear naming, and fix what you find before finishing. Run the project's tests or linter if one is configured, and report the result. End with a short \"what changed and why\" summary, not a step-by-step narration.",
    "path": ".claude/agents/coder.md",
-   "uses": 6
+   "uses": 7
   },
   {
    "id": "agent:forge",
@@ -68,7 +68,7 @@
    "summary": "Builds stock and market models - buy/sell signal models, screeners, backtests, watchlist reports, portfolio analysis - always using freshly downloaded prices and current news. Use for anything about stocks, ETFs, crypto, or \"when should I buy\".",
    "body": "You are Quant. You build working market models, not opinions.\n\n1. Get fresh data every time. Run `python3 scripts/market_data.py TICKER --years 5 --csv <out_dir>/TICKER.csv` for prices (no API key needed) and use WebSearch for news, earnings dates, and anything from the last few weeks. State the \"as of\" date of every number. Never quote a price from memory.\n2. Build the model as a runnable Python script in the job folder (standard library first; `pip install pandas numpy` is fine if needed). Reuse the indicator functions in `scripts/signals.py` where they fit.\n3. Backtest it on history the rule didn't see, and report honestly: number of signals, average forward return vs buy-and-hold, win rate, worst drawdown. If the edge is weak or noisy, say so plainly.\n4. Give the current reading in plain words: \"BUY ZONE / WATCH / HOLD / AVOID\", why, the price level that would change your mind, and a suggested stop.\n5. If the person wants it tracked daily, add the ticker to `watchlist.json` (the only file outside your job folder you may edit) and explain that the free daily `market-signals` workflow will now score it every weekday.\n\nAlways end with: \"This is an educational model, not financial advice. Markets can move against any signal.\"\nIf the request needs a large custom application rather than a model, reply `ESCALATE: coder - <reason>`.",
    "path": ".claude/agents/quant.md",
-   "uses": 1
+   "uses": 2
   },
   {
    "id": "agent:runner",
@@ -281,7 +281,7 @@
    "type": "skill",
    "label": "Change how you move around the city (camera controls)",
    "summary": "city, three.js, camera, orbitcontrols, mobile, touch, keyboard, upgrade",
-   "body": "## When to use\nThe owner wants different navigation in the 3D city: free movement, fly keys, touch gestures, a home or\noverview view, or limits on where the camera can go.\n\n## How\n1. The camera code is the `OrbitControls` block right after `labelRenderer` in `index.html`, and the\n   \"picking + camera focus\" section (`flyTo`, `tween`, `pointerup`). Tune OrbitControls first, before you\n   write your own: `screenSpacePanning=false` pans along the ground, `mouseButtons`/`touches` map the\n   gestures (`TOUCH.DOLLY_PAN` = pinch zoom plus two-finger pan), and Shift/Ctrl+left-drag already pans.\n2. For keyboard flight, keep a `Set` of held `e.code`s (keydown/keyup, and clear it on window `blur`).\n   Each frame in `animate()`, move **both** `controls.target` and `camera.position` by the same vector\n   (camera forward flattened to XZ, plus the right vector). Scale the speed with camera-to-target\n   distance. Skip keys while an INPUT/TEXTAREA/SELECT has focus or the modal is open.\n3. Clamp roaming in a `controls 'change'` listener: push target and camera by the same correction so the\n   orbit offset is unchanged.\n4. Any user input (`controls 'start'`, a fly key) should set `tween = null` so it cancels a running `flyTo`.\n5. Overview or home: keep the start view in a `HOME` constant and `flyTo(HOME...)`, then restart the\n   auto-spin timer.\n6. Check that the module parses (`node --check` on the extracted module script).\n\n## Gotchas\n- Tap detection on touch: use `e.isPrimary` on pointerdown. A primary pointer starts a new gesture; a\n  non-primary one means multi-touch, so skip the pick on pointerup. Don't count pointers up and down:\n  a lost pointerup leaves the count stuck.\n- `e.button > 0` on pointerup means a right or middle drag, never a pick.\n- `minDistance` clamps `flyTo` close-ups too, because `controls.update()` runs after the tween.\n- Don't judge \"away from home\" by camera position: the idle auto-rotate circles the camera. Compare the\n  target and the zoom distance instead.\n- `foo?.()` on an undeclared name still throws a ReferenceError. Look up the real helper name.\n- On phones the side panel takes the bottom 46vh. Put floating buttons under the top bar, not at the\n  bottom.\n- Chrome may not be allowed on the job server. If it isn't, say the change is untested in a browser.",
+   "body": "## When to use\nThe owner wants different navigation in the 3D city: free movement, fly keys, touch gestures, a home or\noverview view, or limits on where the camera can go.\n\n## How\n1. The camera code is the `OrbitControls` block right after `labelRenderer` in `index.html`, and the\n   \"picking + camera focus\" section (`flyTo`, `tween`, `pointerup`). Tune OrbitControls first, before you\n   write your own: `screenSpacePanning=false` pans along the ground, `mouseButtons`/`touches` map the\n   gestures (`TOUCH.DOLLY_PAN` = pinch zoom plus two-finger pan), and Shift/Ctrl+left-drag already pans.\n2. For keyboard flight, keep a `Set` of held `e.code`s (keydown/keyup, and clear it on window `blur`).\n   Each frame in `animate()`, move **both** `controls.target` and `camera.position` by the same vector\n   (camera forward flattened to XZ, plus the right vector). Scale the speed with camera-to-target\n   distance. Skip keys while an INPUT/TEXTAREA/SELECT has focus or the modal is open.\n3. Clamp roaming in a `controls 'change'` listener: push target and camera by the same correction so the\n   orbit offset is unchanged.\n4. Any user input (`controls 'start'`, a fly key) should set `tween = null` so it cancels a running `flyTo`.\n5. Overview or home: keep the start view in a `HOME` constant and `flyTo(HOME...)`, then restart the\n   auto-spin timer.\n6. Check that the module parses (`node --check` on the extracted module script).\n\n7. Mouse-friendly travel (learned_from: 19): map-style `LEFT: PAN, RIGHT: ROTATE`, with a toggle saved in `store`\n   for people who want left-drag to orbit. Set `MIDDLE: PAN`, since the wheel already zooms. Turn on\n   `controls.zoomToCursor = true` (three r155+) so scrolling travels toward the pointer. Add a `dblclick` glide:\n   raycast pickables first and bail if one is hit, then use `ray.ray.intersectPlane(groundPlane)`, clamp the point\n   to the roam radius, and `flyTo` it with the camera offset unchanged. Show `cursor:grab` on the canvas in pan mode.\n   Hide the toggle under `@media (hover:none)`.\n\n## Gotchas\n- With `LEFT: PAN`, OrbitControls turns Shift/Ctrl/Meta+left-drag into rotate by itself, so both actions stay\n  reachable with one button.\n- Tap detection on touch: use `e.isPrimary` on pointerdown. A primary pointer starts a new gesture; a\n  non-primary one means multi-touch, so skip the pick on pointerup. Don't count pointers up and down:\n  a lost pointerup leaves the count stuck.\n- `e.button > 0` on pointerup means a right or middle drag, never a pick.\n- `minDistance` clamps `flyTo` close-ups too, because `controls.update()` runs after the tween.\n- Don't judge \"away from home\" by camera position: the idle auto-rotate circles the camera. Compare the\n  target and the zoom distance instead.\n- `foo?.()` on an undeclared name still throws a ReferenceError. Look up the real helper name.\n- On phones the side panel takes the bottom 46vh. Put floating buttons under the top bar, not at the\n  bottom.\n- Chrome may not be allowed on the job server. If it isn't, say the change is untested in a browser.",
    "path": "brain/skills/city-camera-controls.md",
    "tags": [
     "city",
@@ -577,6 +577,32 @@
    "body": "# Job #18\n\nThe pan lives in the city's `index.html`, and this is a make-mode job (I may only write in `outputs/job-18/`), so changing city controls needs an upgrade job.\n\nESCALATE: coder - this changes the city itself, it needs an upgrade (pull request)\n",
    "path": "outputs/job-18/",
    "n": 18,
+   "mode": "make",
+   "has_page": false,
+   "has_model": false,
+   "finished": "2026-11-01"
+  },
+  {
+   "id": "job:19",
+   "type": "job",
+   "label": "#19 easy mouse movement in the city",
+   "summary": "coder · upgrade · 2026-11-01",
+   "body": "# Job 19: easy mouse movement in the city\n\n## What changed\nPanning (sliding around the city) now works well with a mouse, not just with touch and keys:\n\n- **Drag to pan, like a map.** A left-drag now slides the city under the cursor (the cursor shows a grab hand).\n  Right-drag orbits (turns around).\n- **✋ Pan / ⟲ Orbit button** next to ⌂ Overview (and the **M** key) switches back to the old setup, where left-drag\n  orbits and right-drag pans. The browser remembers your choice. The button only shows on devices with a mouse;\n  phones keep one finger to orbit and two fingers to pan.\n- **Middle-drag (wheel button) pans** in both modes. Scrolling still zooms.\n- **Scroll zooms toward the mouse pointer.** Point at a spot and scroll to travel there.\n- **Double-click empty ground** to glide there. The viewing angle and zoom stay the same. Double-clicking a building\n  still flies in, as a single click always did.\n- Shift/Ctrl + drag still does the other action. WASD/arrows, Q/E, H/Home, click-to-fly and the roaming limit all\n  work as before.\n- The **✥ Move** help card now lists the mouse controls for whichever drag mode is on.\n\n## Files\n- `index.html`: grab cursor CSS, the drag-mode button, help text, `setDragMode`/`toggleDragMode`, `zoomToCursor`,\n  the M key and the double-click glide.\n- `brain/skills/city-camera-controls.md`: added notes on mouse panning.\n\n## What you'll see after approving\nOpen the city with a mouse. Dragging moves you across the streets right away. The ✋ Pan button sits next to\n⌂ Overview. Click it (or press M) if you'd rather drag to orbit.\n\n## Assumptions\n- Mouse users get **pan** as the default left-drag. That's what \"easy for a mouse user to move\" seemed to ask for. Orbit\n  is one click away and the choice is remembered.\n- Middle-drag used to dolly (zoo",
+   "path": "outputs/job-19/",
+   "n": 19,
+   "mode": "upgrade",
+   "has_page": false,
+   "has_model": false,
+   "finished": "2026-11-01"
+  },
+  {
+   "id": "job:21",
+   "type": "job",
+   "label": "#21 Lucky Tower factor study (weather, defenses, rest, more)",
+   "summary": "quant · make · 2026-11-01",
+   "body": "# Job 21: Lucky Tower factor study (weather, defenses, rest, more)\n\nData as of **Sun 1 Nov 2026 (UTC)**. Weather: Open-Meteo forecast pulled 1 Nov. Prices/lines: `bets/reports/2026-11-01_*.md` (DraftKings via ESPN, pulled 22:22 UTC). Injuries: web search, no final inactives list was available.\n\n## Short answer\n**Weather, defense form and rest do not beat the closing line.** I tested them on 2,310 NFL games (2018-2025, walk-forward: fit on earlier seasons, bet the next one). The line already contains them. So the honest \"best odds to win\" is *not* a factor-built pick; it is \"don't bet against the market unless you have news the market lacks\".\n\n## Backtest (`factor_backtest.py`, results in `backtest_results.json`)\nBreak-even at -110 is 52.4%.\n\n| Model (predicts how far the game misses the line) | Bets | Win rate | Verdict |\n|---|---|---|---|\n| Totals: weather only (wind, cold, dome) | 943 | 51.1% | below break-even |\n| Totals: both teams' scoring form | 275 | 50.9% | below break-even |\n| Totals: weather + form + division + Thursday | 1128 | 52.1% | about break-even, loses to vig |\n| Spreads: defense/offense gap + rest | 306 | 47.1% | loses |\n| Spreads: all factors | 557 | 51.9% | below break-even |\n\nSimple rules (share of games going UNDER; baseline all games 51.2%):\n- Outdoor wind >= 15 mph: **57.2% under, n=159**, average 1.9 pts below the line. The only mildly interesting one, but ~1.8 standard errors, found after looking, and wind-20+ (n=33) shows nothing. Treat as a possible small lean, not proven.\n- Cold <= 32F: 47.9% under (n=96). Dome: 48.8% under (n=691). Both near coin flips.\n- Two strong defenses: 50.5% under. Two weak defenses: 54.3% under (n=833). Small, below useful.\n\nCoefficients tell the same story: 10 mph more wind moves the total only ~1.7 points, and th",
+   "path": "outputs/job-21/",
+   "n": 21,
    "mode": "make",
    "has_page": false,
    "has_model": false,
@@ -1113,6 +1139,21 @@
    "source": "job:18",
    "target": "agent:coder",
    "kind": "done by"
+  },
+  {
+   "source": "job:19",
+   "target": "agent:coder",
+   "kind": "done by"
+  },
+  {
+   "source": "job:21",
+   "target": "agent:quant",
+   "kind": "done by"
+  },
+  {
+   "source": "job:21",
+   "target": "tool:bets-model",
+   "kind": "uses tool"
   }
  ],
  "problems": []

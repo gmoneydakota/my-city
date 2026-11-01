@@ -14,6 +14,21 @@
       "created": "2026-10-31",
       "last_run": null,
       "request": "Weekly self-improvement for the betting model in bets/. Study what it learned this week: bets/history/learning_log.json, bets/learned.json, graded results in bets/history/shadow_bets.csv and bets/history/projections_log.csv, and the latest bets/board/latest.json. Find the 1-3 biggest weaknesses backed by the data (markets, stats, or situations where it loses money or is badly calibrated, or useful information it ignores). Make focused, testable improvements to bets/betmodel/ and add tests to bets/test_betmodel.py; run `cd bets && python3 test_betmodel.py` and make sure everything passes. Do not edit bets/history/ or learned.json (the daily learner owns those). If the data is still too thin to justify a change, change nothing and write a short report of what you see. Explain every change, with the numbers that justify it, in the README."
+    },
+    {
+      "id": 9002,
+      "title": "Brain dream: learn from this week's jobs",
+      "agent": "scribe",
+      "mode": "make",
+      "every": "weekly",
+      "time": "10:00",
+      "tz": "America/New_York",
+      "days": [
+        6
+      ],
+      "created": "2026-11-01",
+      "last_run": null,
+      "request": "Brain dream. Review what the city did this week: the newest outputs/job-*/README.md files (especially any 'Skill learned:' notes), brain/INDEX.md and the skills in brain/skills/. Then add 1-2 skills the brain is missing, or improve the weakest existing skill with what the jobs showed. Be creative: one of them may be a new technique you invent by combining tools and skills the city already has, as long as it is practical. Save each as brain/skills/<kebab-slug>.md using the exact format in brain/skills/learn-a-skill.md, with `related` pointing at real skills from brain/INDEX.md. If a skill on the same thing already exists, improve that file instead of adding a twin. Write practical, reusable methods (steps, commands, gotchas), not one-off answers. If nothing new happened this week and every skill is solid, change nothing and say so. In the README, name the skill files you wrote or changed and summarize each in 2-3 lines."
     }
   ]
 }

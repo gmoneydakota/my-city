@@ -1,0 +1,890 @@
+{
+ "format": "agent-city-brain/1",
+ "generated": "2026-11-01T17:16:02+00:00",
+ "counts": {
+  "skills": 11,
+  "agents": 10,
+  "jobs": 10,
+  "tools": 10,
+  "topics": 1,
+  "links": 81
+ },
+ "nodes": [
+  {
+   "id": "agent:cad",
+   "type": "agent",
+   "label": "Cad",
+   "model": "sonnet",
+   "summary": "Designs a working 3D model of anything (gadgets, machines, furniture, vehicles, 3D-printable parts) as a CAD Studio model.json with real dimensions, moving joints, and a plain explanation of how it works. Use for any \"3D model\", \"CAD\", \"STL\" or \"3D print\" request.",
+   "body": "You are CAD, Agent City's 3D designer. You turn \"make me a 3D model of X\" into a model that looks right, **works**, and **makes sense physically**. Your deliverable is a single file the city's CAD Studio renders, animates and exports to STL/GLB.\n\n## Deliverable\n- `<job folder>/model.json` in the `agent-city-cad/1` format. **Read `cad/SCHEMA.md` first**, and at least one of `cad/examples/*.json` (lamp = hinges, gearbox = meshing gears, rover = wheels + steering + lid) before you write anything.\n- `<job folder>/README.md`: what you modelled, overall size, the parts list grouped by sub-assembly, what moves and how, assumptions, and: \"Open it in CAD Studio: `cad/?job=<n>` (or click the CAD tower in the city). Use ⬇ STL to 3D-print it.\"\n- Do **not** write an `index.html` viewer; the CAD Studio is the viewer.\n- If this job changes an earlier model, start from that job's `model.json`, keep the parts that still fit, and list what changed in the README.\n\n## How to design it\n1. **Understand the object as an engineer.** List its sub-assemblies, what each one does, and which parts move relative to which. Decide real-world dimensions in millimetres (use WebSearch only if you genuinely don't know a typical size, e.g. a specific product).\n2. **Build it from the floor up** (y = 0 is the floor, Y is up). Every `pos`/`pivot` is in world coordinates in the rest pose, so there is no parent-relative maths: put each part where it physically sits. Parts must touch or overlap slightly where they joi",
+   "path": "agents/cad.md",
+   "uses": 2
+  },
+  {
+   "id": "agent:analyst",
+   "type": "agent",
+   "label": "Analyst",
+   "model": "opus",
+   "summary": "Thorough research or architecture analysis that needs to be right - comparing approaches, investigating a gnarly bug's root cause, evaluating a dependency. Use for the hard, high-stakes questions, not routine lookups.",
+   "body": "You are Analyst. Work in three passes, visibly: (1) break the question into the 3-6 things that actually need answering and what evidence each needs; (2) write a full, well-organized answer that covers each of them, with file and line references where relevant, being explicit about what's confirmed versus inferred; (3) reread your own draft as a skeptical reviewer, correct any overconfident claims or gaps, and output only the corrected final version. Don't skip the self-review pass even under time pressure - it's the point of using this subagent instead of a quick answer.",
+   "path": ".claude/agents/analyst.md",
+   "uses": 0
+  },
+  {
+   "id": "agent:coder",
+   "type": "agent",
+   "label": "Coder",
+   "model": "opus",
+   "summary": "Implements features, fixes bugs, and writes scripts, then reviews its own diff before handing it back. Use for any real code-writing task.",
+   "body": "You are Coder. Implement the task directly in the codebase, matching its existing style and patterns rather than introducing new ones. Handle errors and edge cases, not just the happy path. Once the change is written, reread your own diff as a reviewer would: check for bugs, missing imports, unsafe inputs, and unclear naming, and fix what you find before finishing. Run the project's tests or linter if one is configured, and report the result. End with a short \"what changed and why\" summary, not a step-by-step narration.",
+   "path": ".claude/agents/coder.md",
+   "uses": 3
+  },
+  {
+   "id": "agent:forge",
+   "type": "agent",
+   "label": "Forge",
+   "model": "opus",
+   "summary": "Designs and writes a complete, deployable remote MCP server for a specific app or data source, usually handed off from scout. Use only when the target has been confirmed to lack an existing server.",
+   "body": "You are Forge. Given an app or data source (ideally already scouted and confirmed to lack an MCP server), design 2-5 focused tools - prefer read-only and publicly or user-owned data - then write the complete project: the server code (TypeScript with @modelcontextprotocol/sdk by default, or the language requested), package/dependency file, a .env.example for any secrets, and a README covering what it does, how to run and test it locally with the MCP Inspector, how to deploy it somewhere with a public HTTPS address, and how to add it to Claude as a custom connector. Never hard-code secrets, validate every tool input, put a timeout on outbound requests, and avoid shell/eval on untrusted input. Flag any auth gaps (no auth means anyone with the URL can call it) before calling the project done.",
+   "path": ".claude/agents/forge.md",
+   "uses": 1
+  },
+  {
+   "id": "agent:planner",
+   "type": "agent",
+   "label": "Planner",
+   "model": "sonnet",
+   "summary": "Breaks a feature request, migration, or bug into an ordered implementation plan before any code is written. Use at the start of a nontrivial task.",
+   "body": "You are Planner. Read enough of the relevant code to understand the real shape of the task, then produce a short numbered plan: what changes, in what order, and what could break. Call out files you expect to touch and any open questions before implementation starts. You don't write or edit code yourself - hand the plan back for the main agent or the coder subagent to execute.",
+   "path": ".claude/agents/planner.md",
+   "uses": 0
+  },
+  {
+   "id": "agent:quant",
+   "type": "agent",
+   "label": "Quant",
+   "model": "sonnet",
+   "summary": "Builds stock and market models - buy/sell signal models, screeners, backtests, watchlist reports, portfolio analysis - always using freshly downloaded prices and current news. Use for anything about stocks, ETFs, crypto, or \"when should I buy\".",
+   "body": "You are Quant. You build working market models, not opinions.\n\n1. Get fresh data every time. Run `python3 scripts/market_data.py TICKER --years 5 --csv <out_dir>/TICKER.csv` for prices (no API key needed) and use WebSearch for news, earnings dates, and anything from the last few weeks. State the \"as of\" date of every number. Never quote a price from memory.\n2. Build the model as a runnable Python script in the job folder (standard library first; `pip install pandas numpy` is fine if needed). Reuse the indicator functions in `scripts/signals.py` where they fit.\n3. Backtest it on history the rule didn't see, and report honestly: number of signals, average forward return vs buy-and-hold, win rate, worst drawdown. If the edge is weak or noisy, say so plainly.\n4. Give the current reading in plain words: \"BUY ZONE / WATCH / HOLD / AVOID\", why, the price level that would change your mind, and a suggested stop.\n5. If the person wants it tracked daily, add the ticker to `watchlist.json` (the only file outside your job folder you may edit) and explain that the free daily `market-signals` workflow will now score it every weekday.\n\nAlways end with: \"This is an educational model, not financial advice. Markets can move against any signal.\"\nIf the request needs a large custom application rather than a model, reply `ESCALATE: coder - <reason>`.",
+   "path": ".claude/agents/quant.md",
+   "uses": 1
+  },
+  {
+   "id": "agent:runner",
+   "type": "agent",
+   "label": "Runner",
+   "model": "haiku",
+   "summary": "Quick factual answers, small math, unit conversions, one-line lookups. Use for anything that doesn't need the codebase.",
+   "body": "You are Runner: fast, short answers. Answer in at most three sentences. Give numbers with units and show the one key step of any math. If the question actually needs real depth or spans multiple files, say so in one line and suggest the planner or analyst subagent instead of trying to cover it all yourself.",
+   "path": ".claude/agents/runner.md",
+   "uses": 2
+  },
+  {
+   "id": "agent:scout",
+   "type": "agent",
+   "label": "Scout",
+   "model": "sonnet",
+   "summary": "Researches candidate apps or data sources to connect Claude to via a new MCP server, checking whether one already exists first. Use before building a new connector.",
+   "body": "You are Scout. Given an area of interest (or asked generally), find apps, services, or data sources worth connecting Claude to that do not already have a well-known MCP server. Search the official MCP registry and GitHub for existing servers before suggesting anything - the point is to find real gaps, not to repeat what already exists (Notion, Slack, GitHub, Google Drive/Gmail/Calendar, Jira, Linear, Asana, Figma, Stripe, Shopify, Salesforce, HubSpot, Spotify, Strava, and similar are already covered). For each idea give: what Claude could do once connected, roughly which tools the server would need, how the server would get the data (public API, OAuth, export), and anything to double-check before building it. Hand promising ideas to the forge subagent to build.",
+   "path": ".claude/agents/scout.md",
+   "uses": 0
+  },
+  {
+   "id": "agent:scribe",
+   "type": "agent",
+   "label": "Scribe",
+   "model": "haiku",
+   "summary": "Rewrites, comments, commit messages, READMEs, docstrings - anything that's mostly wordsmithing rather than logic. Use after code is working to document or clean up prose.",
+   "body": "You are Scribe: a writing and documentation agent. Do exactly what's asked with the text or code it's attached to - tighten a comment, write a commit message, draft a README section, fix a docstring. Keep the project's existing voice and formatting conventions. Don't change logic; if you spot a bug while writing docs, note it separately instead of fixing it silently.",
+   "path": ".claude/agents/scribe.md",
+   "uses": 0
+  },
+  {
+   "id": "agent:tutor",
+   "type": "agent",
+   "label": "Tutor",
+   "model": "sonnet",
+   "summary": "Explains how a part of this codebase or a concept works, with a concrete example from the actual code. Use when the person wants to understand rather than change something.",
+   "body": "You are Tutor. Explain the topic or code path in plain language, grounded in a real example pulled from this repo rather than a generic textbook one. End with 2-3 questions the person could answer to check they followed it, with the answers in a separate section at the end so they can self-test first.",
+   "path": ".claude/agents/tutor.md",
+   "uses": 0
+  },
+  {
+   "id": "tool:brain",
+   "type": "tool",
+   "label": "brain.py",
+   "summary": "The city's second brain: turns skills, agents, tools and job history into one web. Free: no model calls",
+   "path": "scripts/brain.py"
+  },
+  {
+   "id": "tool:cad_check",
+   "type": "tool",
+   "label": "cad_check.py",
+   "summary": "Checks an Agent City CAD model (agent-city-cad/1, see cad/SCHEMA.md). No model calls, stdlib only",
+   "path": "scripts/cad_check.py"
+  },
+  {
+   "id": "tool:city_job",
+   "type": "tool",
+   "label": "city_job.py",
+   "summary": "Runs one Agent City job inside GitHub Actions. Called by .github/workflows/city-job.yml",
+   "path": "scripts/city_job.py"
+  },
+  {
+   "id": "tool:city_resume",
+   "type": "tool",
+   "label": "city_resume.py",
+   "summary": "Restarts jobs that were paused by a Claude usage limit, once the limit has reset",
+   "path": "scripts/city_resume.py"
+  },
+  {
+   "id": "tool:city_schedule",
+   "type": "tool",
+   "label": "city_schedule.py",
+   "summary": "Hourly check for recurring Agent City jobs (free: no model calls)",
+   "path": "scripts/city_schedule.py"
+  },
+  {
+   "id": "tool:market_data",
+   "type": "tool",
+   "label": "market_data.py",
+   "summary": "Fresh daily price history with no API key and no third-party packages",
+   "path": "scripts/market_data.py"
+  },
+  {
+   "id": "tool:signals",
+   "type": "tool",
+   "label": "signals.py",
+   "summary": "Daily market signals for the watchlist. Pure Python, zero Claude usage",
+   "path": "scripts/signals.py"
+  },
+  {
+   "id": "tool:cad-studio",
+   "type": "tool",
+   "label": "CAD Studio",
+   "summary": "Opens and checks 3D models (model.json)",
+   "path": "cad/"
+  },
+  {
+   "id": "tool:bets-model",
+   "type": "tool",
+   "label": "Betting model",
+   "summary": "Self-learning NFL/NBA model behind the Lucky Tower",
+   "path": "bets/"
+  },
+  {
+   "id": "tool:watchlist",
+   "type": "tool",
+   "label": "Watchlist",
+   "summary": "Tickers the free daily market scan follows",
+   "path": "watchlist.json"
+  },
+  {
+   "id": "topic:learning",
+   "type": "topic",
+   "label": "learning",
+   "summary": "2 skills tagged learning"
+  },
+  {
+   "id": "skill:add-city-building",
+   "type": "skill",
+   "label": "Add a building to the city",
+   "summary": "city, three.js, upgrade, index.html",
+   "body": "## When to use\nThe owner wants something to appear IN the 3D city: a tower, landmark, building, or a change to how the city looks.\n\n## How\n1. This must be an **upgrade** job (a pull request). Make-mode jobs cannot touch `index.html`; reply `ESCALATE: coder - ...` instead of handing over a patch (job 9 made a patch nobody applied).\n2. Pick a free spot. Towers sit on a ring of radius 40, Lucky Tower at (40, -64), Products at (-40, -64), the Brain at (0, 82). Add the new spot to the filler-city exclusion test in `buildFiller()` so houses don't grow through it.\n3. Build it as a `THREE.Group`, reuse `edgeMesh()` / `windowTexture()` / `glowLine()` so it matches the neon style, and give its meshes a `userData` flag and push them into `pickables`.\n4. Add a CSS2D `.tag` label and handle the flag in the `pointerup` click handler.\n5. If it opens a page, give the page its own folder (`cad/`, `brain/`) or use an `outputs/job-N/` page, and use the warp fade (`enterApp`) for the transition.\n6. Animate it in its own `animateX(t, dt)` called from `animate()`.\n7. Check the module parses: extract the `<script type=\"module\">` and run `node --check`.\n\n## Gotchas\n- `g.lookAt(0,0,0)` turns the building's front toward the city centre.\n- Keep geometry light; the city already draws ~1,400 filler buildings.",
+   "path": "brain/skills/add-city-building.md",
+   "tags": [
+    "city",
+    "three.js",
+    "upgrade",
+    "index.html"
+   ]
+  },
+  {
+   "id": "skill:betting-model-learning",
+   "type": "skill",
+   "label": "Improve the self-learning betting model",
+   "summary": "bets, nfl, nba, calibration, walk-forward, learning",
+   "body": "## When to use\nChanges to the Lucky Tower model in `bets/`, or measuring whether it is any good.\n\n## How\n1. Read what it has learned: `bets/learned.json`, `bets/history/learning_log.json`, graded results in `bets/history/*.csv`.\n2. Test ideas walk-forward (fit on the past, test on the next period) like job 6's accuracy lab. Report calibration, not just win rate.\n3. Change `bets/betmodel/`, add a test to `bets/test_betmodel.py`, run `cd bets && python3 test_betmodel.py`.\n4. Never edit `bets/history/` or `learned.json`; the daily learner owns them.\n\n## Gotchas\n- With thin data, the right change is often no change plus a short report.",
+   "path": "brain/skills/betting-model-learning.md",
+   "tags": [
+    "bets",
+    "nfl",
+    "nba",
+    "calibration",
+    "walk-forward",
+    "learning"
+   ]
+  },
+  {
+   "id": "skill:budget-template",
+   "type": "skill",
+   "label": "Make a budget or planning template",
+   "summary": "budget, money, template, spreadsheet, csv",
+   "body": "## How\n1. Give a Markdown table (Category, Group, Planned, Actual, Difference) with example amounts clearly marked as placeholders.\n2. Add the same data as CSV so it pastes straight into a spreadsheet.\n3. Include totals and one or two simple rules of thumb (e.g. 50/30/20).\n4. If the owner wants to use it on a phone every day, it is really an app: see static-job-page.",
+   "path": "brain/skills/budget-template.md",
+   "tags": [
+    "budget",
+    "money",
+    "template",
+    "spreadsheet",
+    "csv"
+   ]
+  },
+  {
+   "id": "skill:cad-model",
+   "type": "skill",
+   "label": "Make a working 3D model for CAD Studio",
+   "summary": "cad, 3d, model.json, mechanism, stl",
+   "body": "## When to use\n\"Make me a 3D model of ...\", printable parts, mechanisms with moving joints.\n\n## How\n1. Read `cad/SCHEMA.md` and one example in `cad/examples/` (lamp = hinge, gearbox = gears, rover = wheels and a lid).\n2. Units are mm, Y is up, the floor is y = 0. Every `pos`, `pivot` and `axis` is in world coordinates in the rest pose.\n3. For many repeated parts, write a small generator script (job 8 used `gen_model.py`) instead of typing coordinates by hand.\n4. Run `python3 scripts/cad_check.py outputs/job-N/model.json`. Fix every error and the warnings that matter (floating parts, pivots far from their part).\n5. Fill `how_it_works` and `assumptions` so the owner understands the mechanism.\n\n## Gotchas\n- A remix (job 8 replaced job 7's door) copies the old model first, then changes it.",
+   "path": "brain/skills/cad-model.md",
+   "tags": [
+    "cad",
+    "3d",
+    "model.json",
+    "mechanism",
+    "stl"
+   ]
+  },
+  {
+   "id": "skill:escalate-one-hop",
+   "type": "skill",
+   "label": "Pick the cheapest agent, escalate once",
+   "summary": "routing, cost, escalate, tiers",
+   "body": "## How\n1. Light (Haiku): runner, scribe. Standard (Sonnet): planner, tutor, scout, quant, cad. Heavy (Opus): analyst, coder, forge.\n2. If a request is beyond you, do no work and reply with one line: `ESCALATE: <agent> - <reason>`. The runner allows one hop.\n3. Anything that needs no model (prices, indicators, reformatting) should be a script, not an agent call.",
+   "path": "brain/skills/escalate-one-hop.md",
+   "tags": [
+    "routing",
+    "cost",
+    "escalate",
+    "tiers"
+   ]
+  },
+  {
+   "id": "skill:learn-a-skill",
+   "type": "skill",
+   "label": "Teach the brain a new skill",
+   "summary": "brain, memory, learning, skills, meta",
+   "body": "## When to use\nAt the end of any job where you worked out a reusable way of doing something that isn't in `brain/INDEX.md` yet, or found a better way than an existing skill.\n\n## How\n1. Pick a short kebab-case slug, e.g. `scrape-a-table`. If a skill about the same thing exists, improve that file instead of adding a twin.\n2. Write `brain/skills/<slug>.md`:\n   ```\n   ---\n   title: Scrape a table from a web page\n   tags: web, data, scraping\n   agents: coder, quant\n   learned_from: 14\n   related: static-job-page\n   ---\n   ## When to use\n   ## How\n   1. ...\n   ## Gotchas\n   ```\n3. Write the method, not the job's answer: steps a future agent can follow, the commands that worked, the traps you hit.\n4. `related` links skills into the web. Use slugs of skills that really exist.\n5. Optional: `python3 scripts/brain.py` refreshes the index (the runner does it after every job anyway).\n\n## Gotchas\n- One skill per file, under ~60 lines. Never put secrets, tokens or personal data in a skill.",
+   "path": "brain/skills/learn-a-skill.md",
+   "tags": [
+    "brain",
+    "memory",
+    "learning",
+    "skills",
+    "meta"
+   ]
+  },
+  {
+   "id": "skill:mcp-connector",
+   "type": "skill",
+   "label": "Build an MCP connector",
+   "summary": "mcp, connector, server, api, typescript",
+   "body": "## When to use\nConnecting Claude to an app or data source.\n\n## How\n1. Scout first checks that no good server already exists; forge builds only when none does, using scout's findings as they are.\n2. Keep the tools few and sharp, read-only unless asked, each with a clear description (job 12 had 5).\n3. Save usage: return an outline and the relevant slice first, with paging to reach everything (job 12 cut a page from ~66k tokens to ~420).\n4. Ship `package.json`, `.env.example`, tests, and a README with measured numbers and deploy steps.",
+   "path": "brain/skills/mcp-connector.md",
+   "tags": [
+    "mcp",
+    "connector",
+    "server",
+    "api",
+    "typescript"
+   ]
+  },
+  {
+   "id": "skill:pause-and-resume",
+   "type": "skill",
+   "label": "Survive a usage limit mid-job",
+   "summary": "progress, checkpoint, resume, limits",
+   "body": "## How\n1. Save files as you go, never all at the end.\n2. Keep `outputs/job-N/PROGRESS.md` up to date with done / still-to-do.\n3. When a job is resumed, read PROGRESS.md and the restored files first; continue, don't start over.",
+   "path": "brain/skills/pause-and-resume.md",
+   "tags": [
+    "progress",
+    "checkpoint",
+    "resume",
+    "limits"
+   ]
+  },
+  {
+   "id": "skill:quick-answer",
+   "type": "skill",
+   "label": "Give a quick, exact answer",
+   "summary": "math, answer, lookup",
+   "body": "## How\n1. Put the answer first, in bold.\n2. Show the one key step (e.g. 0.13 × 80 = 10.4) so it can be checked.\n3. If the question is duplicated or unclear, answer once and say what you assumed.\n4. Don't escalate a question one sentence can answer.",
+   "path": "brain/skills/quick-answer.md",
+   "tags": [
+    "math",
+    "answer",
+    "lookup"
+   ]
+  },
+  {
+   "id": "skill:static-job-page",
+   "type": "skill",
+   "label": "Ship an app as a static page",
+   "summary": "web, html, app, game, dashboard, github-pages",
+   "body": "## When to use\nAnything visual or interactive: a web app, game, dashboard, tracker or tool.\n\n## How\n1. Write one self-contained `outputs/job-N/index.html`. Libraries from a CDN are fine; no server, no build step.\n2. Make it work on a phone: viewport meta tag, flexible layout, big touch targets.\n3. Save the user's data in `localStorage` (prefix keys with the app name).\n4. Data the page needs goes next to it as JSON, loaded with a relative `fetch()`; that works on GitHub Pages.\n5. The README gives the link: `https://<owner>.github.io/<repo>/outputs/job-N/`.\n\n## Gotchas\n- GitHub Pages is static: no secrets and no server code in the page.",
+   "path": "brain/skills/static-job-page.md",
+   "tags": [
+    "web",
+    "html",
+    "app",
+    "game",
+    "dashboard",
+    "github-pages"
+   ]
+  },
+  {
+   "id": "skill:stock-signal-model",
+   "type": "skill",
+   "label": "Build a stock buy/sell signal model",
+   "summary": "stocks, quant, backtest, signals, market",
+   "body": "## When to use\n\"When should I buy X\", screeners, watchlist reports, backtests.\n\n## How\n1. Never guess prices: `python3 scripts/market_data.py TICKER --years 5 --csv outputs/job-N/ticker.csv` (Yahoo, Stooq fallback, no key needed).\n2. Get current news with WebSearch and state the date of the data.\n3. Start from the indicators in `scripts/signals.py` (trend, RSI, distance from the 52-week high) and backtest them: what happened 20 days after past signal days, compared with any day.\n4. Report the signal, the reasons in plain words, a stop idea and the backtest numbers.\n5. To track a ticker every day, add it to `watchlist.json`.\n\n## Gotchas\n- Always include the data date and a \"not financial advice\" note.",
+   "path": "brain/skills/stock-signal-model.md",
+   "tags": [
+    "stocks",
+    "quant",
+    "backtest",
+    "signals",
+    "market"
+   ]
+  },
+  {
+   "id": "job:1",
+   "type": "job",
+   "label": "#1 13% of 80 is 10.4. The key step is 0.13 × 80 = 10.4.",
+   "summary": "runner · make · 2026-10-31",
+   "body": "# Job #1\n\n**13% of 80 is 10.4.** The key step is 0.13 × 80 = 10.4.\n\nAssumption: the duplicated \"whats 13% of 80\" line is one question, so I answered it once.\n",
+   "path": "outputs/job-1/",
+   "n": 1,
+   "mode": "make",
+   "has_page": false,
+   "has_model": false,
+   "finished": "2026-10-31"
+  },
+  {
+   "id": "job:2",
+   "type": "job",
+   "label": "#2 NFL + NBA betting model (DraftKings + Underdog)",
+   "summary": "coder · make · 2026-10-31",
+   "body": "# NFL + NBA betting model (DraftKings + Underdog)\n\nA command-line model that builds a daily **betting card** for NBA and NFL:\n\n1. **DraftKings game bets:** moneylines, spreads and totals where our probability beats the DK price.\n2. **DraftKings player props:** points, rebounds, assists, threes, PRA, pass/rush/receiving yards, receptions, anytime TD.\n3. **Underdog pick'em:** each leg's win probability compared with Underdog's break-even, plus the best 2–5-pick entries.\n4. **Projection sheet:** a projection and a \"take Higher if the line is ≤ X / take Lower if ≥ Y\" range for the main players in every game. You can hold it up against the Underdog or DK app even when you haven't loaded any lines.\n\nIt runs on Python 3.9+ with **no packages to install**. Data comes from free ESPN endpoints. An\n[Odds API](https://the-odds-api.com) key is optional and adds a lot (see below).\n\nExample cards from this run (data pulled **31 Oct 2026, ~16:40 UTC**) are in `reports/`.\n\n---\n\n## Quick start\n\n```bash\ncd outputs/job-2\npython3 bets.py nba            # tonight's NBA card\npython3 bets.py nfl            # this week's NFL card\npython3 bets.py all            # both\n```\n\nEach run prints the card and saves:\n\n| File | What's in it |\n|---|---|\n| `reports/<date>_<league>.md` | The card (open it in any Markdown viewer or on GitHub) |\n| `reports/<date>_<league>_all_prices.csv` | Every bet that was priced, including the ones that didn't qualify |\n| `reports/<date>_<league>_projections.csv` | Projection sheet in spreadsheet form |\n| `history/picks.csv` | Every recommended DK bet, so it can be graded later |\n\nThe first run of the day takes about 1–3 minutes because it downloads game logs. Runs after that use the cache in `.cache/` (pruned after 3 days).\n\n### Options\n\n```\n--date YYYYMMDD     slate for a",
+   "path": "outputs/job-2/",
+   "n": 2,
+   "mode": "make",
+   "has_page": false,
+   "has_model": false,
+   "finished": "2026-10-31"
+  },
+  {
+   "id": "job:3",
+   "type": "job",
+   "label": "#3 City upgrade: the CAD Tower and CAD Studio",
+   "summary": "coder · upgrade · 2026-10-31",
+   "body": "# Job #3 · City upgrade: the CAD Tower and CAD Studio\n\n**Request:** \"Add a CAD Tower where I can click on the tower and it takes me into an application where I can ask\nfor it to make me a 3D model of anything, and it makes it function and make sense.\"\n\n## What you'll see after you merge\n\n1. **A new tower in the ring: CAD** (purple, Sonnet tier). It's a slim building topped with a 3D-printer-style\n   gantry, a spinning cyan wireframe hologram, and a glowing scan layer that sweeps up through it. The sweep speeds up\n   while it's designing something.\n2. **Click the tower** (the building or its label). The camera swoops in, the screen fades, and you land in\n   **CAD Studio** (`/cad/`). Use **← City** to go back.\n3. **In CAD Studio:**\n   - **Make a 3D model of anything:** type a request (or tap an idea such as a clock, a drone or a treasure chest)\n     and press **Design it ▶**. This sends a job to the new **CAD** agent. When the model is ready (usually 3–10 min),\n     the studio loads it by itself if you've saved a token in ⚙ Settings. Without a token, GitHub opens in a new tab;\n     click *Create*, then open the model from **Your models** once it says *done*.\n   - **It plays straight away:** hinges swing, wheels and gears spin, and lids open. Linked parts move together (gear\n     ratios, both front wheels steering). **▶ Play / ❚❚ Pause**, speed, one slider per joint, and **⟲ Reset pose**.\n   - **It explains itself:** a *How it works* list, each part's purpose (click a part in 3D or in the list), the\n     overall size in mm and inches, and **Checks**: every part connected, standing on the floor, joints where they\n     belong.\n   - **Exploded view**, **X-ray**, **Edges**, **Fit view**.\n   - **Export:** ⬇ **STL** (3D printers and slicers), ⬇ **GLB** (Blender, AR, game engines",
+   "path": "outputs/job-3/",
+   "n": 3,
+   "mode": "upgrade",
+   "has_page": false,
+   "has_model": false,
+   "finished": "2026-10-31"
+  },
+  {
+   "id": "job:4",
+   "type": "job",
+   "label": "#4 Personal Monthly Budget (Job #4)",
+   "summary": "runner · make · 2026-10-31",
+   "body": "# Job #4\n\n# Personal Monthly Budget (Job #4)\n\n**Deliverable:** this template. Save it as `outputs/job-4/budget.md` (or paste the CSV below into a spreadsheet). Example amounts are placeholders in USD.\n\n## 1. Monthly Budget Table\n\n| Category | Group | Planned | Actual | Difference (Planned − Actual) |\n|---|---|---:|---:|---:|\n| **INCOME** | | | | |\n| Salary (after tax) | Income | 3,000 | | |\n| Side income | Income | 0 | | |\n| **Total income** | | **=SUM** | **=SUM** | |\n| **FIXED EXPENSES** | | | | |\n| Rent / mortgage | Needs | 1,000 | | |\n| Utilities | Needs | 150 | | |\n| Phone & internet | Needs | 80 | | |\n| Insurance | Needs | 150 | | |\n| Transport (fuel / transit) | Needs | 120 | | |\n| Minimum debt payments | Needs | 100 | | |\n| **VARIABLE EXPENSES** | | | | |\n| Groceries | Needs | 350 | | |\n| Dining out & coffee | Wants | 100 | | |\n| Entertainment & subscriptions | Wants | 50 | | |\n| Clothing & personal care | Wants | 60 | | |\n| Health & medical | Needs | 50 | | |\n| Gifts & misc. | Wants | 40 | | |\n| **SAVINGS & GOALS** | | | | |\n| Emergency fund | Savings | 200 | | |\n| Retirement / investing | Savings | 150 | | |\n| Sinking fund (annual bills ÷ 12) | Savings | 50 | | |\n| **Total expenses** | | **=SUM** | **=SUM** | |\n| **Left over (income − expenses)** | | **=Income − Expenses** | **=Income − Expenses** | |\n\n## 2. Rules to Check Against\n\n- **50/30/20 check:** Needs ≈ 50% of income, Wants ≈ 30%, Savings ≈ 20%. With the example numbers, Needs total 1,600 (53%), Wants 250 (8%), Savings 400 (13%).\n- **Target:** Left over should be **≥ 0**. Any negative value means cutting a category before the month starts.\n- **Savings first:** Move the savings rows to the top of your payday routine so they are paid before discretionary spending.\n\n## 3. CSV Version (paste into Sheets or",
+   "path": "outputs/job-4/",
+   "n": 4,
+   "mode": "make",
+   "has_page": false,
+   "has_model": false,
+   "finished": "2026-10-31"
+  },
+  {
+   "id": "job:6",
+   "type": "job",
+   "label": "#6 Lucky Tower accuracy lab",
+   "summary": "quant · make · 2026-10-31",
+   "body": "# Job 6: Lucky Tower accuracy lab\n\nWalk-forward tests of whether the Lucky Tower betting model can be made better calibrated, and a drop-in shadow module.\n\n| Path | What |\n|---|---|\n| `REPORT.md` | Findings: old-vs-new table per bet type, plain-English meaning, limits, next experiments |\n| `PROGRESS.md` | How the current model works, what is done / not done |\n| `data/` | Cached history: NFL games + closing lines, NFL player-weeks 2020-26, NBA team games 2023-26 (ESPN) |\n| `scripts/fetch_data.py` | Downloads data (skips files already present) |\n| `scripts/eval_games.py` | Moneyline / spread / total tests, NFL + NBA -> `results/games_metrics.json` |\n| `scripts/eval_props.py` | NFL player-prop tests -> `results/props_metrics.json` |\n| `scripts/eval_nba_totals.py` | NBA totals + NBA prop feasibility -> `results/nba_extra.json` |\n| `shadow/` | `shadow_model.py` + `INTEGRATE.md` for running the new logic beside the current model |\n\nRun (needs `pip install numpy pandas scikit-learn`; seeds are fixed):\n```\npython3 outputs/job-6/scripts/eval_games.py\npython3 outputs/job-6/scripts/eval_props.py\npython3 outputs/job-6/scripts/eval_nba_totals.py\npython3 outputs/job-6/shadow/shadow_model.py     # self-test\n```\nNothing outside `outputs/job-6/` was changed. This is an educational model, not financial advice.\n",
+   "path": "outputs/job-6/",
+   "n": 6,
+   "mode": "make",
+   "has_page": false,
+   "has_model": false,
+   "finished": "2026-10-31"
+  },
+  {
+   "id": "job:7",
+   "type": "job",
+   "label": "#7 Louvre-Slide Door",
+   "summary": "cad · make · 2026-10-31",
+   "body": "# Louvre-Slide Door\n\nA step-free sliding door whose four wooden slats turn like blinds (airflow + privacy), then the whole frame slides along an overhead track into a parking bay beside the opening. It needs no swing space and has no floor step.\n\nSize: opening 900 x 2100 mm; whole assembly 1925 x 2135 x 150 mm.\n\n## Parts (30)\n- **Frame/track:** floor guide track, threshold, left/right jambs, head rail, parking wall\n- **Sliding frame:** top bar, bottom bar, 2 stiles, 2 hanger rods, guide shoe\n- **Louvres:** 4 timber slats, each with a brush seal and pivot pin\n- **Controls:** control plate, red louvre dial, pull handle + 2 posts\n\n## What moves\n- **Louvre dial** (0-90 deg) turns all 4 slats together (linked with `follows`).\n- **Door slide** (0-880 mm) slides the frame along the head rail.\n\n## Assumptions\nSlats are 26 mm timber; dial coupling simplified (real: cord/gear); no lock modelled. Print the slats and frame parts flat; the model has a flat base on y = 0.\n\nOpen it in CAD Studio: `cad/?job=7` (or click the CAD tower in the city). Use ⬇ STL to 3D-print it.\n\nCheck result: `Louvre-Slide Door: 30 parts, 6 joints, 1925.0 × 2135.0 × 150.0 mm (W×H×D)` / `✓ valid, no warnings`\n",
+   "path": "outputs/job-7/",
+   "n": 7,
+   "mode": "make",
+   "has_page": false,
+   "has_model": true,
+   "finished": "2026-10-31"
+  },
+  {
+   "id": "job:8",
+   "type": "job",
+   "label": "#8 Pop-Out Plug Door (replaces the louvre door of job 7)",
+   "summary": "cad · make · 2026-10-31",
+   "body": "# Pop-Out Plug Door (replaces the louvre door of job 7)\n\nLouvres are gone. The problem with most sliding doors is that they leak air and rub on their seals. This door works like a train or aircraft **plug door**: it is pressed onto a rubber gasket when closed, then a lever pushes it 40 mm clear so it can slide sideways with no friction.\n\nSize: opening 900 x 2100 mm; assembly 2450 x 2400 x 200 mm. 24 parts.\n\n## Parts\n- **Wall:** left wall, right (parking) wall, header, 3 gasket strips\n- **Floor:** flat guide plate (no step) + two lips forming a groove\n- **Rail group:** pop-out rail, 3 fixed guide blocks, 2 roller trolleys\n- **Door:** panel, glass window, pull bar + 2 posts, bottom brush seal, floor guide pin\n- **Control:** cam hub + red cam lever\n\n## What moves\n1. **Cam lever** (0-90 deg) drives **Door pop-out** (0-40 mm outward, linked with `follows`).\n2. **Door slide** (0-960 mm) moves the trolleys and door along the rail.\nDo them in that order: lever up, then slide. Reverse to close.\n\n## Changes from job 7\nLouvres, dial and slats removed; new sealing + pop-out mechanism, glass window, floor groove guide.\n\n## Assumptions\nThe cam/bell-crank behind the wall is simplified to a linked joint. The viewer lets you slide without popping (a real interlock would prevent it). Print parts flat on y = 0.\n\nOpen it in CAD Studio: `cad/?job=8` (or click the CAD tower in the city). Use ⬇ STL to 3D-print it.\n\nCheck result: `Pop-Out Plug Door: 24 parts, 3 joints, 2450.0 × 2400.0 × 200.0 mm (W×H×D)` / `✓ valid, no warnings`\n",
+   "path": "outputs/job-8/",
+   "n": 8,
+   "mode": "make",
+   "has_page": false,
+   "has_model": true,
+   "finished": "2026-10-31"
+  },
+  {
+   "id": "job:9",
+   "type": "job",
+   "label": "#9 Products building: every finished job, ready to download",
+   "summary": "coder · make · 2026-10-31",
+   "body": "# Products building: every finished job, ready to download\n\nA **Products** page with a glowing green **checkmark-shaped building** on top. Below it you get\nyour **latest product**, then **all previous products**. Each one has a download button for every\nfile, plus **Download all (.zip)**. You never have to open GitHub.\n\n**Open it:** https://gmoneydakota.github.io/my-city/outputs/job-9/\n(Bookmark it or use \"Add to Home Screen\" on your phone.)\n\n## What you can do on the page\n- **⬇** next to any file downloads it straight to your phone or computer (spreadsheets, `.csv`, `.py`, `.json`, models, and so on).\n- **⬇ Download all (.zip)** bundles a whole job's files into one zip.\n- **👁** previews a file in place. CSV spreadsheets show up as a table (first 200 rows).\n- **📄 What is this?** shows the job's README (what was made and how to use it).\n- **▶ Open it** / **🧊 CAD Studio** show up when a job built a web page or a 3D model.\n- The search box filters by product name, request, or file name. **↻** checks for new products.\n- New jobs show up on their own, with no extra setup. Spreadsheets are listed first in each job.\n\n## How it works (no server)\n- The page reads the list of files from GitHub's public API: one call lists every file under\n  `outputs/job-*`, and a second call gets the job names. If you saved a token in the city's ⚙ Settings,\n  the page uses that token too (both pages live on the same site, so they share the setting).\n- Downloads come from your city's own website (`gmoneydakota.github.io`), not from github.com.\n- If GitHub's API is busy (60 calls/hour without a token), the page falls back to `manifest.json`,\n  a saved snapshot of the file list. Downloads still work in that case, and it still finds the READMEs of newer jobs.\n- A just-finished job can take about 1 mi",
+   "path": "outputs/job-9/",
+   "n": 9,
+   "mode": "make",
+   "has_page": true,
+   "has_model": false,
+   "finished": "2026-10-31"
+  },
+  {
+   "id": "job:12",
+   "type": "job",
+   "label": "#12 Lean Reader: an MCP connector that saves Claude usage on web reading",
+   "summary": "forge · make · 2026-10-31",
+   "body": "# Lean Reader: an MCP connector that saves Claude usage on web reading\n\n**Job #12, built 31 October 2026.** You asked for a connector that uses your Claude usage as efficiently as possible without taking away any of Claude's abilities.\n\n## The idea\n\nMuch of a Claude conversation's usage goes to **reading**. When Claude reads a whole web page or API response, all of it lands in the conversation: navigation menus, footers, reference lists, and long JSON fields nobody asked for. That text is then re-read on every later turn.\n\nLean Reader lets Claude read **like a person skimming**. It looks at the table of contents first, then reads only the parts it needs. Nothing is hidden. Every word of every page is still reachable through paging, so Claude can still read everything. It just doesn't receive everything at once by default.\n\nReal numbers from the test run (31 Oct 2026, Wikipedia's \"Model Context Protocol\" article):\n\n| How Claude reads it | Approx. tokens |\n|---|---|\n| Raw HTML of the page | ~66,300 |\n| Whole page as clean text (`page_read`, all sections) | ~4,800 |\n| Outline only (`page_outline`) | ~120 |\n| Outline + the one section needed (`page_read sections:[1]`) | ~420 |\n| Just the 2 best paragraphs answering a question (`page_search`) | ~280 |\n\nThe JSON side is similar. A GitHub API repo response has 86 top-level keys and well over 1,000 tokens of JSON. `json_pick` with four paths returned about 50 tokens.\n\n## The 5 tools (all read-only, public web data only)\n\n| Tool | What it does |\n|---|---|\n| `page_outline` | Title, description, and numbered sections with a token estimate for each. Use it first. |\n| `page_read` | Clean text of chosen sections (or the whole page), paged by `offset` / `max_chars`. |\n| `page_search` | Paragraphs that match keywords, labelled with the",
+   "path": "outputs/job-12/",
+   "n": 12,
+   "mode": "make",
+   "has_page": false,
+   "has_model": false,
+   "finished": "2026-10-31"
+  },
+  {
+   "id": "job:13",
+   "type": "job",
+   "label": "#13 City upgrade: the Second Brain building",
+   "summary": "? · make · running",
+   "body": "# Job 13 · City upgrade: the Second Brain building\n\nA new landmark: a glowing, wrinkled **brain** with synapses firing inside it. Click it and you fly into the\n**Second Brain**, a live web of everything the city knows: the skills its agents learned, the agents and\ntools that use them, and every past job. It isn't only a picture. The agents read the brain before each job\nand write new skills into it afterwards, so the city learns as it goes.\n\n## What you'll see after approving (Merge)\n\n**In the city:** past the Quant tower, on a pink-lit plinth, a two-hemisphere brain with a brain stem,\na cerebellum and a pink wireframe skin. Hundreds of synapse sparks twinkle inside it, linked by flickering nerves, and the\nwhole thing slowly \"breathes\". One small crystal orbits it for every skill it knows (up to 30). The label says\n**🧠 Second Brain**, and its badge shows e.g. `11 skills · 10 memories`. Click the brain or its label:\nthe camera swoops in, the screen fades, and the brain page opens.\n\n**The brain page (`brain/`):**\n- A brain-shaped neural web (two lobes) of **skills** (pink hexagons), **agents** (big glowing dots, coloured by\n  Haiku/Sonnet/Opus tier, sized by how many jobs they've done), **tools** (yellow squares), **jobs = history** (green dots) and\n  **topics** (grey). Sparks travel along the links. Drag to pan, scroll or pinch to zoom, drag nodes around.\n- Hover a node to light up its connections. Click it to read it: a skill's full how-to, an agent's prompt, a job's\n  README, plus links to the file on GitHub, **▶ Open it** for job pages and **🧊 CAD Studio** for models.\n- A search box over everything, a **library** list of all skills, the latest memories (jobs), and a legend that shows or hides each kind of node.\n- **✨ Teach it something:** type a lesson and press *Add ",
+   "path": "outputs/job-13/",
+   "n": 13,
+   "mode": "make",
+   "has_page": false,
+   "has_model": false,
+   "finished": ""
+  }
+ ],
+ "links": [
+  {
+   "source": "skill:add-city-building",
+   "target": "skill:static-job-page",
+   "kind": "related"
+  },
+  {
+   "source": "skill:add-city-building",
+   "target": "skill:learn-a-skill",
+   "kind": "related"
+  },
+  {
+   "source": "skill:add-city-building",
+   "target": "agent:coder",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:add-city-building",
+   "target": "job:3",
+   "kind": "learned from"
+  },
+  {
+   "source": "skill:add-city-building",
+   "target": "job:9",
+   "kind": "learned from"
+  },
+  {
+   "source": "skill:add-city-building",
+   "target": "job:13",
+   "kind": "learned from"
+  },
+  {
+   "source": "skill:add-city-building",
+   "target": "tool:cad-studio",
+   "kind": "uses tool"
+  },
+  {
+   "source": "skill:betting-model-learning",
+   "target": "skill:stock-signal-model",
+   "kind": "related"
+  },
+  {
+   "source": "skill:betting-model-learning",
+   "target": "agent:quant",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:betting-model-learning",
+   "target": "agent:coder",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:betting-model-learning",
+   "target": "job:2",
+   "kind": "learned from"
+  },
+  {
+   "source": "skill:betting-model-learning",
+   "target": "job:6",
+   "kind": "learned from"
+  },
+  {
+   "source": "skill:betting-model-learning",
+   "target": "topic:learning",
+   "kind": "topic"
+  },
+  {
+   "source": "skill:betting-model-learning",
+   "target": "tool:bets-model",
+   "kind": "uses tool"
+  },
+  {
+   "source": "skill:budget-template",
+   "target": "skill:static-job-page",
+   "kind": "related"
+  },
+  {
+   "source": "skill:budget-template",
+   "target": "agent:runner",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:budget-template",
+   "target": "agent:scribe",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:budget-template",
+   "target": "agent:planner",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:budget-template",
+   "target": "job:4",
+   "kind": "learned from"
+  },
+  {
+   "source": "skill:cad-model",
+   "target": "skill:learn-a-skill",
+   "kind": "related"
+  },
+  {
+   "source": "skill:cad-model",
+   "target": "agent:cad",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:cad-model",
+   "target": "job:7",
+   "kind": "learned from"
+  },
+  {
+   "source": "skill:cad-model",
+   "target": "job:8",
+   "kind": "learned from"
+  },
+  {
+   "source": "skill:cad-model",
+   "target": "tool:cad_check",
+   "kind": "uses tool"
+  },
+  {
+   "source": "skill:cad-model",
+   "target": "tool:cad-studio",
+   "kind": "uses tool"
+  },
+  {
+   "source": "skill:escalate-one-hop",
+   "target": "skill:pause-and-resume",
+   "kind": "related"
+  },
+  {
+   "source": "skill:escalate-one-hop",
+   "target": "skill:quick-answer",
+   "kind": "related"
+  },
+  {
+   "source": "skill:escalate-one-hop",
+   "target": "agent:runner",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:escalate-one-hop",
+   "target": "agent:scribe",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:escalate-one-hop",
+   "target": "agent:planner",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:escalate-one-hop",
+   "target": "agent:tutor",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:escalate-one-hop",
+   "target": "agent:scout",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:escalate-one-hop",
+   "target": "agent:quant",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:escalate-one-hop",
+   "target": "agent:cad",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:escalate-one-hop",
+   "target": "agent:analyst",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:escalate-one-hop",
+   "target": "agent:coder",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:escalate-one-hop",
+   "target": "agent:forge",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:learn-a-skill",
+   "target": "agent:runner",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:learn-a-skill",
+   "target": "agent:scribe",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:learn-a-skill",
+   "target": "agent:planner",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:learn-a-skill",
+   "target": "agent:tutor",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:learn-a-skill",
+   "target": "agent:scout",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:learn-a-skill",
+   "target": "agent:quant",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:learn-a-skill",
+   "target": "agent:cad",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:learn-a-skill",
+   "target": "agent:analyst",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:learn-a-skill",
+   "target": "agent:coder",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:learn-a-skill",
+   "target": "agent:forge",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:learn-a-skill",
+   "target": "job:13",
+   "kind": "learned from"
+  },
+  {
+   "source": "skill:learn-a-skill",
+   "target": "topic:learning",
+   "kind": "topic"
+  },
+  {
+   "source": "skill:learn-a-skill",
+   "target": "tool:brain",
+   "kind": "uses tool"
+  },
+  {
+   "source": "skill:mcp-connector",
+   "target": "skill:escalate-one-hop",
+   "kind": "related"
+  },
+  {
+   "source": "skill:mcp-connector",
+   "target": "agent:scout",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:mcp-connector",
+   "target": "agent:forge",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:mcp-connector",
+   "target": "job:12",
+   "kind": "learned from"
+  },
+  {
+   "source": "skill:pause-and-resume",
+   "target": "agent:coder",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:pause-and-resume",
+   "target": "agent:quant",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:pause-and-resume",
+   "target": "agent:cad",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:pause-and-resume",
+   "target": "agent:forge",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:pause-and-resume",
+   "target": "agent:analyst",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:quick-answer",
+   "target": "agent:runner",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:quick-answer",
+   "target": "job:1",
+   "kind": "learned from"
+  },
+  {
+   "source": "skill:static-job-page",
+   "target": "agent:coder",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:static-job-page",
+   "target": "agent:quant",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:static-job-page",
+   "target": "job:9",
+   "kind": "learned from"
+  },
+  {
+   "source": "skill:stock-signal-model",
+   "target": "agent:quant",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:stock-signal-model",
+   "target": "tool:market_data",
+   "kind": "uses tool"
+  },
+  {
+   "source": "skill:stock-signal-model",
+   "target": "tool:signals",
+   "kind": "uses tool"
+  },
+  {
+   "source": "skill:stock-signal-model",
+   "target": "tool:watchlist",
+   "kind": "uses tool"
+  },
+  {
+   "source": "job:1",
+   "target": "agent:runner",
+   "kind": "done by"
+  },
+  {
+   "source": "job:2",
+   "target": "agent:coder",
+   "kind": "done by"
+  },
+  {
+   "source": "job:2",
+   "target": "tool:bets-model",
+   "kind": "uses tool"
+  },
+  {
+   "source": "job:3",
+   "target": "agent:coder",
+   "kind": "done by"
+  },
+  {
+   "source": "job:4",
+   "target": "agent:runner",
+   "kind": "done by"
+  },
+  {
+   "source": "job:6",
+   "target": "agent:quant",
+   "kind": "done by"
+  },
+  {
+   "source": "job:6",
+   "target": "tool:bets-model",
+   "kind": "uses tool"
+  },
+  {
+   "source": "job:7",
+   "target": "agent:cad",
+   "kind": "done by"
+  },
+  {
+   "source": "job:7",
+   "target": "tool:cad-studio",
+   "kind": "uses tool"
+  },
+  {
+   "source": "job:8",
+   "target": "agent:cad",
+   "kind": "done by"
+  },
+  {
+   "source": "job:8",
+   "target": "tool:cad-studio",
+   "kind": "uses tool"
+  },
+  {
+   "source": "job:9",
+   "target": "agent:coder",
+   "kind": "done by"
+  },
+  {
+   "source": "job:12",
+   "target": "agent:forge",
+   "kind": "done by"
+  }
+ ],
+ "problems": []
+}

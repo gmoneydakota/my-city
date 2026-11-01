@@ -371,6 +371,7 @@ const towerPos = AGENTS.map((a, i) => {
 
 const CASINO_POS = new THREE.Vector3(40, 0, -64);
 const PRODUCTS_POS = new THREE.Vector3(-40, 0, -64);   // Products: the checkmark building (finished jobs + downloads)
+const BRAIN_POS = new THREE.Vector3(0, 0, 82);          // Second Brain: every skill, tool and job as one web (brain/)
 function glowLine(points, color, opacity=0.8){
   const g = new THREE.BufferGeometry().setFromPoints(points);
   return new THREE.Line(g, new THREE.LineBasicMaterial({ color, transparent:true, opacity, toneMapped:false }));
@@ -404,8 +405,9 @@ function distToSeg(p, a, b){ const ab=b.clone().sub(a), t=Math.max(0,Math.min(1,
     const r = p.length();
     if (r < 18 || r > 158) continue;
     if (Math.abs(r - RING) < 4.5 || Math.abs(r - RING*1.6) < 3.5) continue;
-    if (towerPos.some(t => t.distanceTo(p) < 11) || CASINO_POS.distanceTo(p) < 19 || PRODUCTS_POS.distanceTo(p) < 23) continue;
+    if (towerPos.some(t => t.distanceTo(p) < 11) || CASINO_POS.distanceTo(p) < 19 || PRODUCTS_POS.distanceTo(p) < 23 || BRAIN_POS.distanceTo(p) < 21) continue;
     if (distToSeg(p, CASINO_POS.clone().setLength(18), CASINO_POS) < 9) continue;   // Lucky Tower boulevard
+    if (distToSeg(p, BRAIN_POS.clone().setLength(48), BRAIN_POS) < 7) continue;     // Brain boulevard
     if (towerPos.some(t => distToSeg(p, origin, t) < 4)) continue;
     if (rnd() < .18) continue;
     const fall = Math.max(.15, 1 - r/170);
@@ -598,6 +600,81 @@ const products = { beacon:null, ring:null, parcels:[] };
   const lo = new CSS2DObject(tag); lo.position.y = 6 * S + 6; g.add(lo);
 }
 function openProducts(){ location.href = 'outputs/job-9/'; }
+/* ------------------------------------------------------------------ Second Brain: a glowing brain full of synapses */
+const brainB = { lobes:null, sparks:null, nerves:null, orbit:null, orbiters:[], badge:null, skills:0 };
+{
+  const g = new THREE.Group(); g.position.copy(BRAIN_POS); scene.add(g); g.lookAt(0, 0, 0); brainB.group = g;
+  const pink = 0xff7ad9, violet = 0xb98cff;
+  const plinthGeo = new THREE.CylinderGeometry(14, 15, 1.4, 48);
+  const plinth = new THREE.Mesh(plinthGeo, new THREE.MeshStandardMaterial({ color:0x120818, roughness:.6, metalness:.3 })); plinth.position.y = .7; plinth.add(edgeMesh(plinthGeo, 0x7a2f66)); g.add(plinth);
+  const pad = new THREE.Mesh(new THREE.RingGeometry(15.4, 16, 64), new THREE.MeshBasicMaterial({ color:pink, transparent:true, opacity:.45, side:THREE.DoubleSide, toneMapped:false }));
+  pad.rotation.x = -Math.PI / 2; pad.position.y = .06; g.add(pad); brainB.pad = pad;
+  const stemGeo = new THREE.CylinderGeometry(1.6, 2.6, 11, 16);   // brain stem = the building's core
+  const stem = new THREE.Mesh(stemGeo, bodyMat(violet)); stem.position.set(0, 6.5, -2); stem.rotation.x = -.18; stem.add(edgeMesh(stemGeo, violet)); g.add(stem);
+  const lobes = new THREE.Group(); lobes.position.y = 19; g.add(lobes); brainB.lobes = lobes;
+  const lobeMat = new THREE.MeshStandardMaterial({ color:0x2a0c24, roughness:.45, metalness:.25, emissive:pink, emissiveIntensity:.22 });
+  const wireMat = new THREE.MeshBasicMaterial({ color:pink, wireframe:true, transparent:true, opacity:.22, toneMapped:false });
+  for (const side of [-1, 1]) {   // two wrinkled hemispheres with a fissure between them
+    const geo = new THREE.SphereGeometry(7, 56, 36), pos = geo.attributes.position, v = new THREE.Vector3();
+    for (let i = 0; i < pos.count; i++) {
+      v.fromBufferAttribute(pos, i); const n = v.clone().normalize();
+      const fold = Math.sin(n.y * 13 + Math.sin(n.z * 9) * 2.2) * Math.sin(n.z * 12 + Math.sin(n.x * 8) * 2);
+      v.multiplyScalar(1 + .07 * Math.abs(fold) - .03);
+      v.set(v.x * .85, v.y * .82, v.z * 1.3);
+      if (v.x * side < 0) v.x *= .3;      // flat inner face
+      if (v.y < -2) v.y = -2 + (v.y + 2) * .55;   // flatter underside
+      pos.setXYZ(i, v.x, v.y, v.z);
+    }
+    geo.computeVertexNormals();
+    const lobe = new THREE.Mesh(geo, lobeMat); lobe.position.x = side * 3.4; lobes.add(lobe);
+    const wire = new THREE.Mesh(geo, wireMat); wire.scale.setScalar(1.015); lobe.add(wire);
+  }
+  const cbGeo = new THREE.SphereGeometry(3.6, 24, 16); cbGeo.scale(1.5, .7, 1);   // cerebellum at the back
+  const cb = new THREE.Mesh(cbGeo, lobeMat); cb.position.set(0, -4.2, -6.4); cb.add(new THREE.Mesh(cbGeo, wireMat)); lobes.add(cb);
+  // synapses inside: twinkling points joined by faint nerves (the knowledge web)
+  const P = 260, pts = new Float32Array(P * 3), pv = [];
+  for (let i = 0; i < P; i++) {
+    const side = i % 2 ? 1 : -1, u = Math.random() * Math.PI * 2, w = Math.acos(2 * Math.random() - 1), r = Math.cbrt(Math.random()) * 5.6;
+    const p = new THREE.Vector3(side * 3.4 + Math.sin(w) * Math.cos(u) * r * .8, Math.cos(w) * r * .75, Math.sin(w) * Math.sin(u) * r * 1.25);
+    pts.set([p.x, p.y, p.z], i * 3); pv.push(p);
+  }
+  const spGeo = new THREE.BufferGeometry(); spGeo.setAttribute('position', new THREE.BufferAttribute(pts, 3));
+  brainB.sparks = new THREE.Points(spGeo, new THREE.PointsMaterial({ color:0xffd6f4, size:.45, transparent:true, opacity:.9, depthWrite:false, blending:THREE.AdditiveBlending, toneMapped:false }));
+  lobes.add(brainB.sparks);
+  const segs = [];
+  pv.forEach((p, i) => { for (let k = 0; k < 2; k++) { const q = pv[(i + 1 + ((Math.random() * 18) | 0)) % P]; if (p.distanceTo(q) < 4.2) segs.push(p, q); } });
+  brainB.nerves = new THREE.LineSegments(new THREE.BufferGeometry().setFromPoints(segs), new THREE.LineBasicMaterial({ color:violet, transparent:true, opacity:.35, depthWrite:false, blending:THREE.AdditiveBlending, toneMapped:false }));
+  lobes.add(brainB.nerves);
+  // orbiting skill nodes: one per learned skill (filled in when brain/brain.json loads)
+  brainB.orbit = new THREE.Group(); brainB.orbit.position.y = 19; g.add(brainB.orbit);
+  scene.add(glowLine([BRAIN_POS.clone().setLength(49).setY(.08), BRAIN_POS.clone().setLength(BRAIN_POS.length() - 16).setY(.08)], pink, .6));
+  g.traverse(o => { if (o.isMesh) { o.userData.brain = true; pickables.push(o); } });
+  const tag = document.createElement('div'); tag.className = 'tag'; tag.style.color = '#ff7ad9';
+  tag.innerHTML = '<b>🧠 Second Brain</b><small>every skill, tool &amp; job it remembers · click to explore</small><span class="badge"></span>';
+  tag.addEventListener('click', () => openBrain());
+  const lo = new CSS2DObject(tag); lo.position.y = 31; g.add(lo); brainB.badge = tag.querySelector('.badge');
+}
+const orbGeo = new THREE.OctahedronGeometry(.55);
+function setBrainSkills(n){
+  brainB.skills = n;
+  brainB.orbiters.forEach(o => { brainB.orbit.remove(o.m); o.m.material.dispose(); });
+  brainB.orbiters = [];
+  const shown = Math.min(n, 30);
+  for (let i = 0; i < shown; i++) {
+    const m = new THREE.Mesh(orbGeo, new THREE.MeshBasicMaterial({ color: i % 3 ? 0xff7ad9 : 0xb98cff, toneMapped:false }));
+    m.userData.brain = true; brainB.orbit.add(m);
+    brainB.orbiters.push({ m, a: i / shown * Math.PI * 2, r: 12 + (i % 3) * 1.6, tilt: (i % 5 - 2) * .25, s: .25 + (i % 4) * .06 });
+  }
+}
+function openBrain(){ enterApp({ pos:BRAIN_POS, top:20, app:'brain/', appName:'the Second Brain' }); }
+function animateBrain(t, dt){
+  brainB.lobes.scale.setScalar(1 + Math.sin(t * 1.3) * .018);          // breathing
+  brainB.sparks.material.opacity = .55 + Math.sin(t * 7) * .2 + Math.sin(t * 2.3) * .15;
+  brainB.sparks.material.size = .4 + Math.sin(t * 3.1) * .12;
+  brainB.nerves.material.opacity = .22 + Math.max(0, Math.sin(t * 2.2)) * .3;
+  brainB.pad.material.opacity = .3 + Math.sin(t * 1.4) * .15;
+  brainB.orbiters.forEach(o => { o.a += dt * o.s; o.m.position.set(Math.cos(o.a) * o.r, Math.sin(o.a * 2 + o.tilt * 4) * 2.5 + o.tilt * 4, Math.sin(o.a) * o.r); o.m.rotation.y += dt * 2; });
+}
 function animateProducts(t, dt){
   products.beacon.material.color.setHSL(.4, 1, .6 + Math.sin(t * 4) * .2);
   products.ring.material.opacity = .35 + Math.sin(t * 1.6) * .15;
@@ -704,7 +781,7 @@ canvas.addEventListener('pointerup', e => {
   if (!downAt || Math.hypot(e.clientX-downAt[0], e.clientY-downAt[1]) > 6) return;
   mouse.set(e.clientX/innerWidth*2-1, -(e.clientY/innerHeight)*2+1); ray.setFromCamera(mouse, camera);
   const hit = ray.intersectObjects(pickables, false)[0];
-  if (hit) hit.object.userData.products ? openProducts() : hit.object.userData.casino ? focusCasino() : focusAgent(hit.object.userData.agent);
+  if (hit) hit.object.userData.brain ? openBrain() : hit.object.userData.products ? openProducts() : hit.object.userData.casino ? focusCasino() : focusAgent(hit.object.userData.agent);
 });
 let tween = null;
 function flyTo(target, camPos){ tween = { t:0, fromT: controls.target.clone(), toT: target, fromC: camera.position.clone(), toC: camPos }; controls.autoRotate = false; }
@@ -750,6 +827,7 @@ function animate(){
   if (frame % 2 === 0 && tickerCanvas) drawTicker(dt*2);
   if (frame % 2 === 0) { drawReels(dt*2); drawPicks(dt*2); }
   animateProducts(t, dt);
+  animateBrain(t, dt);
   animateCasino(dt, t);
   if (tween){ tween.t = Math.min(1, tween.t + dt/1.3); const k = 1 - Math.pow(1-tween.t, 3);
     controls.target.lerpVectors(tween.fromT, tween.toT, k); camera.position.lerpVectors(tween.fromC, tween.toC, k); if (tween.t >= 1) tween = null; }
@@ -1059,6 +1137,20 @@ async function refreshBets(){
   renderBets();
 }
 
+/* second brain: how many skills it knows (the building's orbiting nodes + badge) */
+async function refreshBrain(){
+  try {
+    let d;
+    if (connected()) {
+      try { d = JSON.parse(await gh(`/repos/${cfg.owner}/${cfg.repo}/contents/brain/brain.json`, {}, true)); }
+      catch (e) { if (e.status === 404) throw e; d = await (await fetch(`https://raw.githubusercontent.com/${cfg.owner}/${cfg.repo}/HEAD/brain/brain.json`, { cache:'no-store' })).json(); }
+    } else d = await (await fetch('brain/brain.json', { cache:'no-store' })).json();
+    const n = d.counts?.skills || 0;
+    if (n !== brainB.skills) setBrainSkills(n);
+    brainB.badge.textContent = `${n} skill${n === 1 ? '' : 's'} · ${d.counts?.jobs || 0} memories`;
+  } catch { brainB.badge.textContent = ''; }
+}
+
 /* market */
 function sigClass(s){ return /BUY/.test(s) ? 'sig-buy' : /WATCH/.test(s) ? 'sig-watch' : /AVOID/.test(s) ? 'sig-avoid' : 'sig-hold'; }
 function renderMarket(d, isDemo){
@@ -1100,7 +1192,7 @@ function startDemo(){
 }
 function stopDemo(){ clearInterval(demoTimer); demoTimer = null; jobs = []; }
 
-function refreshAll(){ refreshJobs(); refreshMarket(); refreshBets(); }
+function refreshAll(){ refreshJobs(); refreshMarket(); refreshBets(); refreshBrain(); }
 
 /* ------------------------------------------------------------------ desktop app (PWA) */
 if ('serviceWorker' in navigator && location.protocol === 'https:') navigator.serviceWorker.register('sw.js').catch(() => {});
@@ -1113,10 +1205,10 @@ installBtn.onclick = async () => {
   if (outcome === 'accepted') toast('Installed! Agent City is now in your Start menu / Applications and can be pinned to your desktop.', 7000);
 };
 addEventListener('appinstalled', () => { installBtn.style.display = 'none'; });
-if (connected()) refreshAll(); else { startDemo(); refreshMarket(); refreshBets(); }
+if (connected()) refreshAll(); else { startDemo(); refreshMarket(); refreshBets(); refreshBrain(); }
 if (location.hash === '#settings') { openSettings(); history.replaceState(null, '', location.pathname + location.search); }
 (function poll(){ setTimeout(() => { if (connected() && !document.hidden) refreshJobs(); poll(); }, jobs.some(j => j.status !== 'done' && j.status !== 'failed') ? 30000 : 120000); })();
-setInterval(() => { if (connected() && !document.hidden) { refreshMarket(); refreshBets(); } }, 15 * 60e3);
+setInterval(() => { if (connected() && !document.hidden) { refreshMarket(); refreshBets(); refreshBrain(); } }, 15 * 60e3);
 </script>
 </body>
 </html>

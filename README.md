@@ -27,6 +27,7 @@ result is waiting in the city (and in your repo).
 | `cad/` | **CAD Studio**, the app behind the CAD tower: `index.html` (viewer/animator/exporter), `SCHEMA.md` (model format), `examples/`. |
 | `scripts/cad_check.py` | Checks a CAD model for errors and physical nonsense (floating parts, not on the floor). No Claude usage. |
 | `scripts/city_job.py` | The cloud job runner: routes, runs the agent on its tier, escalates once if asked, saves output. |
+| `brain/` + `scripts/brain.py` | The **Second Brain**: skills the agents learned (`brain/skills/*.md`), the web page behind the brain building, and the free script that links skills, agents, tools and job history into `brain/brain.json`. |
 | `scripts/market_data.py` | Fresh daily prices, no API key (Yahoo Finance, falling back to Stooq). |
 | `scripts/signals.py` | Daily buy/hold/avoid signals with reasons and an honest backtest. **Uses zero Claude usage.** |
 | `watchlist.json` | Tickers the daily scan covers. Edit freely. |
@@ -119,6 +120,22 @@ hundreds of player projections, with search and filters.
 - Optional: add a free `ODDS_API_KEY` secret (the-odds-api.com) for DraftKings player props and Underdog lines.
 
 Estimates, not guarantees. Gambling problem? Call 1-800-GAMBLER.
+
+## 🧠 Second Brain: what the city has learned
+
+The glowing pink brain just past the Quant tower is the city's memory. Click it and you fly into `brain/`: a live web of
+every **skill** (hexagons) the agents have learned, the **agents** that use them, the **tools** (scripts, CAD Studio,
+the betting model) and every past **job** (the history). Drag, zoom, search, and click a node to read it.
+
+- **Agents use it:** every job's prompt lists the skills, and the agent reads the ones that match before it starts.
+- **Agents grow it:** when an agent works out a reusable method, it saves it to `brain/skills/<slug>.md`. After every
+  job the runner rebuilds the web (`scripts/brain.py`, free, no Claude usage), so new skills and jobs appear by themselves.
+- **You can teach it:** type a lesson in the brain page (“when I ask for a workout plan, always add warm-ups”) and
+  Scribe (Haiku, the cheapest tier) writes it in as a skill.
+- **It dreams on its own:** every Sunday at 10:00 ET, Scribe reviews the week's jobs and adds or improves 1–2 skills,
+  sometimes inventing a technique from tools it already has. Stop it under **Jobs → Recurring** like any repeat job.
+- Skills are plain Markdown, so you can edit or delete them on GitHub too. `python3 scripts/brain.py --check`
+  lists broken links between skills.
 
 ## How it saves usage
 

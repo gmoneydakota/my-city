@@ -1,8 +1,8 @@
 // Agent City service worker: makes the city installable and lets it open offline.
 // The city page and its libraries are cached; live GitHub data is never cached.
-const CACHE = 'agent-city-v2';
+const CACHE = 'agent-city-v3';
 const SHELL = ['./', './index.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png', './favicon.png',
-  './cad/', './cad/examples/lamp.json', './cad/examples/gearbox.json', './cad/examples/rover.json'];
+  './cad/', './brain/', './cad/examples/lamp.json', './cad/examples/gearbox.json', './cad/examples/rover.json'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));

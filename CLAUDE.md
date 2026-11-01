@@ -8,7 +8,12 @@ the agents interactively.
 ## Where things go
 - Every job's deliverables go in `outputs/job-<n>/`, with a `README.md` that says
   what was made and exactly how to use it. Don't edit files outside that folder,
-  except `watchlist.json` when asked to track a ticker.
+  except `watchlist.json` when asked to track a ticker, and skills in `brain/skills/`.
+- **The second brain (`brain/`)** is what the city has learned. Before a job, read the
+  skills in `brain/INDEX.md` that match it. After a job, if you worked out a reusable
+  method that isn't there, save it as `brain/skills/<slug>.md` (format:
+  `brain/skills/learn-a-skill.md`). Don't edit `brain/brain.json` or `brain/INDEX.md`:
+  `scripts/brain.py` regenerates them after every job.
 - **Anything that must appear IN the city (a building, tower, landmark, or a change to how the city looks or
   behaves) means editing `index.html`, which only an upgrade job may do.** The runner now switches such requests to
   upgrade mode by itself. If a make-mode job ever finds it needs to change the city, don't hand over a patch: reply

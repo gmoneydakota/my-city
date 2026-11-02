@@ -39,14 +39,12 @@ def card(league: str, a) -> None:
 
 
 def nba_share(nba_games: int, nfl_games: int) -> float:
-    """NBA runs first; give it a slice of today's credits in proportion to how many games each league has
-    (an NFL game is worth ~1.5 NBA games because Sunday/Monday cards are the big-money ones), so a 15-game
-    NBA night is not starved by one NFL game, and the NFL keeps something back when it has a real slate."""
-    if not nfl_games:
-        return 1.0
+    """Slice of today's Odds API credits NBA player props may use (NBA runs first). The model trusts NBA props
+    least, so they get a small slice: 35% on days the NFL has games (the rest goes to NFL props) and 60% on
+    NBA-only days. Whatever is not spent carries over to later days, so every day still has credits."""
     if not nba_games:
         return 0.0
-    return max(0.3, min(0.85, nba_games / (nba_games + 1.5 * nfl_games)))
+    return 0.35 if nfl_games else 0.6
 
 
 def daily(a) -> int:

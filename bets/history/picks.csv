@@ -407,3 +407,6 @@ logged_at,league,event_id,start,kind,selection,athlete_id,stat,side,line,price,p
 2026-11-01T22:23:20+00:00,nfl,401873036,2026-11-03T01:15:00+00:00,Prop,Emanuel Wilson over 18.5 rush_yds,4887558,rush_yds,over,18.5,-108,0.5629,0.0841,2.00,draftkings,,
 2026-11-01T22:23:20+00:00,nfl,401873036,2026-11-03T01:15:00+00:00,Prop,Sam Roush under 5.5 rec_yds,4685504,rec_yds,under,5.5,-107,0.5485,0.0611,1.63,draftkings,,
 2026-11-01T22:23:20+00:00,nfl,401873036,2026-11-03T01:15:00+00:00,Prop,Zach Charbonnet over 32.5 rush_yds,4426385,rush_yds,over,32.5,-109,0.5452,0.0454,1.24,draftkings,,
+2026-11-02T15:12:31+00:00,nba,401909912,2026-11-03T00:30:00+00:00,Total,Under 238.5,,,,238.5,-107.0,0.5894,0.1402,2.00,draftkings,,
+2026-11-02T15:12:31+00:00,nba,401909919,2026-11-03T03:00:00+00:00,Total,Over 228.5,,,,228.5,-106.0,0.5445,0.0582,1.54,draftkings,,
+2026-11-02T15:12:31+00:00,nba,401909910,2026-11-03T00:30:00+00:00,Spread,BKN +14.5,,,,14.5,-106.0,0.5361,0.0418,1.11,draftkings,,

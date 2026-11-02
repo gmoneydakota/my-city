@@ -38,6 +38,17 @@ def card(league: str, a) -> None:
           file=sys.stderr)
 
 
+def nba_share(nba_games: int, nfl_games: int) -> float:
+    """NBA runs first; give it a slice of today's credits in proportion to how many games each league has
+    (an NFL game is worth ~1.5 NBA games because Sunday/Monday cards are the big-money ones), so a 15-game
+    NBA night is not starved by one NFL game, and the NFL keeps something back when it has a real slate."""
+    if not nfl_games:
+        return 1.0
+    if not nba_games:
+        return 0.0
+    return max(0.3, min(0.85, nba_games / (nba_games + 1.5 * nfl_games)))
+
+
 def daily(a) -> int:
     """Grade -> learn -> build today's cards -> record every prediction -> write the city board."""
     from betmodel import board, learn
@@ -50,21 +61,22 @@ def daily(a) -> int:
     results, errors = [], []
     # Share today's Odds API credits. NBA runs first, so on a busy NFL day (Sunday) it takes about 40% and
     # the NFL slate gets the rest; with a few NFL games it takes half; with none it takes everything.
-    nfl_soon = 0
+    n_soon = {"nba": 0, "nfl": 0}
     if key:
         try:
             from datetime import datetime, timedelta, timezone
             from betmodel import oddsapi
             soon = datetime.now(timezone.utc) + timedelta(hours=30)
-            nfl_soon = sum(datetime.fromisoformat(e["commence_time"].replace("Z", "+00:00")) <= soon
-                           for e in oddsapi.events("nfl", key))
-            print(f"Odds API credits available today: {oddsapi.allowance()} ({nfl_soon} NFL games within 30h)",
-                  file=sys.stderr)
+            for lg in n_soon:
+                n_soon[lg] = sum(datetime.fromisoformat(e["commence_time"].replace("Z", "+00:00")) <= soon
+                                 for e in oddsapi.events(lg, key))
+            print(f"Odds API credits available today: {oddsapi.allowance()} "
+                  f"({n_soon['nba']} NBA / {n_soon['nfl']} NFL games within 30h)", file=sys.stderr)
         except Exception:  # noqa: BLE001
             pass
     for lg in ("nba", "nfl"):
         try:
-            share = (0.4 if nfl_soon >= 6 else 0.5 if nfl_soon else 1.0) if lg == "nba" else 1.0
+            share = nba_share(n_soon["nba"], n_soon["nfl"]) if lg == "nba" else 1.0
             res = engine.run(lg, None, key, a.lines, not a.no_props, a.max_events, a.per_team, True, share)
             picks = report.select(res, a.min_edge, a.min_edge_prop, a.bankroll)
             report.write_outputs(res, picks, report.markdown(res, picks, a.bankroll, engine.ud_breakeven(3)))

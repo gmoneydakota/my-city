@@ -334,6 +334,16 @@ def projection_sheet(league: str, games: list[dict], model, pbook: props.PlayerB
     return rows
 
 
+def pick_markets(league: str, n_games: int, budget: int) -> list[str]:
+    """Most prop stats we can afford while still reaching every game: all of them if the budget covers it,
+    else the top two, else just the first (points / receiving yards). Never fewer than one."""
+    full = oddsapi.DEFAULT_PROP_MARKETS[league]
+    for k in (len(full), 2, 1):
+        if n_games == 0 or oddsapi.prop_cost(full[:k]) * n_games <= budget:
+            return full[:k]
+    return full[:1]
+
+
 def run(league: str, date: str | None, odds_key: str | None, lines_csv: str | None, want_props: bool,
         max_events: int, per_team: int, sheet: bool, budget_share: float = 1.0) -> dict:
     now = datetime.now(timezone.utc)
@@ -374,8 +384,6 @@ def run(league: str, date: str | None, odds_key: str | None, lines_csv: str | No
             tm = espn.teams(league)
             ours = {(oddsapi.nickname(tm[g["home"]]["name"]), oddsapi.nickname(tm[g["away"]]["name"])) for g in games
                     if g["home"] in tm and g["away"] in tm}
-            markets = oddsapi.DEFAULT_PROP_MARKETS[league]
-            cost = oddsapi.prop_cost(markets)
             budget = int(oddsapi.allowance() * budget_share)
             fetched = []
             try:
@@ -384,7 +392,14 @@ def run(league: str, date: str | None, odds_key: str | None, lines_csv: str | No
                        if (oddsapi.nickname(e["home_team"]), oddsapi.nickname(e["away_team"])) in ours
                        and datetime.fromisoformat(e["commence_time"].replace("Z", "+00:00")) <= soon]
                 reused = 0
-                for e in sorted(evs, key=lambda e: e["commence_time"])[:max_events]:   # earliest kickoffs first
+                todo = sorted(evs, key=lambda e: e["commence_time"])[:max_events]
+                markets = pick_markets(league, len([e for e in todo if oddsapi.cached_event(league, e["id"]) is None]),
+                                       budget)
+                cost = oddsapi.prop_cost(markets)
+                if len(markets) < len(oddsapi.DEFAULT_PROP_MARKETS[league]):
+                    res["warnings"].append(f"Credits are tight today, so props cover {len(markets)} stat(s) per game "
+                                           f"({', '.join(m.replace('player_', '') for m in markets)}) to reach more games.")
+                for e in todo:   # earliest kickoffs first
                     saved_q = oddsapi.cached_event(league, e["id"])   # already paid for: no credits
                     if saved_q is not None:
                         fetched += saved_q

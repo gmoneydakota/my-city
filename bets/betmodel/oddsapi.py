@@ -35,9 +35,10 @@ PROP_MARKETS = {
 }
 DEFAULT_PROP_MARKETS = {
     # Free plan = ~480 credits a month and every market costs 1 credit per game, so we keep the most-bet stats
-    # (3 per NBA game, 4 per NFL game) to cover ~40% more games than the full 5-market set.
+    # (3 per NBA game, 4 per NFL game). The list is in priority order: when credits are short the engine uses only
+    # the first 1-2 markets so MORE games get at least some props (see engine.pick_markets). to cover ~40% more games than the full 5-market set.
     "nba": ["player_points", "player_rebounds", "player_assists"],
-    "nfl": ["player_pass_yds", "player_rush_yds", "player_reception_yds", "player_receptions"],
+    "nfl": ["player_reception_yds", "player_rush_yds", "player_pass_yds", "player_receptions"],
 }
 
 def _get(path: str, key: str, params: dict, ttl: float):

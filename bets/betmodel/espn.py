@@ -117,11 +117,40 @@ def _odds_side(block: dict | None, side: str) -> tuple[float | None, float | Non
     return line, parse_american(node.get("odds"))
 
 
+SLATE_DAYS_AHEAD = 3  # with no date given, also look this many days ahead so no upcoming game is missed
+
+
 def slate(league: str, date: str | None = None) -> list[dict]:
     """Upcoming games on the ESPN scoreboard with DraftKings odds when posted.
 
-    date: 'YYYYMMDD' (NBA: that day; NFL: the week containing it). None = today/this week.
+    date: 'YYYYMMDD' (NBA: that day; NFL: the week containing it). None = every game from today through the
+    next few days (ESPN's default scoreboard alone can come back empty or on the wrong day around its
+    date rollover, so we ask for explicit Eastern-time dates and merge them).
     """
+    if date:
+        return _slate_one(league, date)
+    from datetime import timedelta
+    try:
+        from zoneinfo import ZoneInfo
+        today = datetime.now(ZoneInfo("America/New_York")).date()
+    except Exception:  # noqa: BLE001  (no tz database: fall back to UTC)
+        today = datetime.now(timezone.utc).date()
+    merged: dict[str, dict] = {}
+    errors = 0
+    for d in [None] + [(today + timedelta(days=i)).strftime("%Y%m%d") for i in range(SLATE_DAYS_AHEAD + 1)]:
+        try:
+            for g in _slate_one(league, d):
+                merged.setdefault(g["event_id"], g)
+        except DataError:
+            errors += 1
+            if d is None and errors > SLATE_DAYS_AHEAD:
+                raise
+    if not merged and errors:
+        raise DataError(f"{league.upper()} scoreboard unavailable")
+    return sorted(merged.values(), key=lambda g: g["date"])
+
+
+def _slate_one(league: str, date: str | None = None) -> list[dict]:
     params = {"dates": date} if date else None
     d = get_json(f"{SITE}/{_path(league)}/scoreboard", params, ttl_hours=0.25)
     out = []

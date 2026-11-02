@@ -4,9 +4,16 @@
 name: bets-daily
 on:
   schedule:
-    - cron: "0 9 * * *"     # 9am Central: morning card (NFL Sunday early games, NBA slate)
+    # Every day, Central time. More runs = fresher injury/lineup news; props reuse lines already paid for.
+    - cron: "0 9 * * *"     # morning card
       timezone: "America/Chicago"
-    - cron: "0 18 * * *"    # 6pm Central: refresh with late injury news before evening games
+    - cron: "0 12 * * *"    # midday news refresh
+      timezone: "America/Chicago"
+    - cron: "0 15 * * *"    # afternoon news refresh
+      timezone: "America/Chicago"
+    - cron: "0 18 * * *"    # evening refresh before most tip-offs
+      timezone: "America/Chicago"
+    - cron: "30 20 * * *"   # last look: late scratches before the West Coast games
       timezone: "America/Chicago"
   workflow_dispatch: {}
 
@@ -30,7 +37,7 @@ jobs:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         run: |
           [ -z "$ODDS_API_KEY" ] && unset ODDS_API_KEY
-          cd bets && python3 bets.py daily --max-events 16
+          cd bets && python3 bets.py daily --max-events 40 --per-team 8
       - name: Save
         if: always()
         run: |

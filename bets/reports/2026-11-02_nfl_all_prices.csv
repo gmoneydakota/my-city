@@ -1,93 +1,51 @@
 kind,game,selection,line,dk_odds,p_model,p_market,p_blend,ev
-ML,CHI @ SEA,SEA ML,,-180.0,0.4740,0.6240,0.5889,-0.0840
-ML,CHI @ SEA,CHI ML,,150.0,0.5260,0.3760,0.4111,0.0278
+ML,CHI @ SEA,SEA ML,,-170.0,0.4740,0.6105,0.5785,-0.0812
+ML,CHI @ SEA,CHI ML,,142.0,0.5260,0.3895,0.4215,0.0200
 Spread,CHI @ SEA,SEA -3,-3.0,-120.0,0.3719,0.5232,0.4881,-0.1051
-Spread,CHI @ SEA,CHI +3,3.0,100.0,0.6281,0.4768,0.5119,0.0237
+Spread,CHI @ SEA,CHI +3,3.0,100.0,0.6281,0.4768,0.5119,0.0238
 Total,CHI @ SEA,Over 46.5,46.5,-110.0,0.4691,0.5000,0.4845,-0.0750
-Total,CHI @ SEA,Under 46.5,46.5,-110.0,0.5309,0.5000,0.5155,-0.0160
-ML,JAX @ BAL,BAL ML,,330.0,0.1635,0.2051,0.1954,-0.1600
+Total,CHI @ SEA,Under 46.5,46.5,-110.0,0.5309,0.5000,0.5155,-0.0159
+ML,JAX @ BAL,BAL ML,,330.0,0.1635,0.2051,0.1954,-0.1599
 ML,JAX @ BAL,JAX ML,,-425.0,0.8365,0.7949,0.8046,-0.0060
-Spread,JAX @ BAL,BAL +8.5,8.5,-115.0,0.4054,0.5116,0.4870,-0.0896
-Spread,JAX @ BAL,JAX -8.5,-8.5,-105.0,0.5946,0.4884,0.5130,0.0017
-Total,JAX @ BAL,Over 43.5,43.5,-110.0,0.5477,0.5000,0.5239,0.0001
-Total,JAX @ BAL,Under 43.5,43.5,-110.0,0.4523,0.5000,0.4761,-0.0910
-Prop,CHI @ SEA,Jaxon Smith-Njigba over 0.5 anytime_td,0.5,-115,,,0.4963,-0.0721
-Prop,CHI @ SEA,D'Andre Swift over 0.5 anytime_td,0.5,-110,,,0.5040,-0.0378
-Prop,CHI @ SEA,Zach Charbonnet over 0.5 anytime_td,0.5,130,,,0.4220,-0.0295
-Prop,CHI @ SEA,Luther Burden III over 0.5 anytime_td,0.5,230,,,0.2787,-0.0803
-Prop,CHI @ SEA,AJ Barner over 0.5 anytime_td,0.5,235,,,0.2657,-0.1100
-Prop,CHI @ SEA,Colston Loveland over 0.5 anytime_td,0.5,235,,,0.2684,-0.1010
-Prop,CHI @ SEA,Rome Odunze over 0.5 anytime_td,0.5,260,,,0.2323,-0.1636
-Prop,CHI @ SEA,Cooper Kupp over 0.5 anytime_td,0.5,300,,,0.2239,-0.1045
-Prop,CHI @ SEA,Roschon Johnson over 0.5 anytime_td,0.5,330,,,0.2126,-0.0857
-Prop,CHI @ SEA,Emanuel Wilson over 0.5 anytime_td,0.5,360,,,0.2177,0.0015
-Prop,CHI @ SEA,Tory Horton over 0.5 anytime_td,0.5,390,,,0.1876,-0.0809
-Prop,CHI @ SEA,Kalif Raymond over 0.5 anytime_td,0.5,550,,,0.1390,-0.0964
-Prop,CHI @ SEA,George Holani over 0.5 anytime_td,0.5,600,,,0.1369,-0.0415
-Prop,CHI @ SEA,Sam Roush over 0.5 anytime_td,0.5,750,,,0.1056,-0.1020
-Prop,CHI @ SEA,Eric Saubert over 0.5 anytime_td,0.5,1200,,,0.0732,-0.0479
-Prop,CHI @ SEA,Zavion Thomas over 0.5 anytime_td,0.5,1200,,,0.0763,-0.0084
-Prop,CHI @ SEA,Jahdae Walker over 0.5 anytime_td,0.5,1800,,,0.0504,-0.0418
-Prop,CHI @ SEA,Brady Russell over 0.5 anytime_td,0.5,2200,,,0.0355,-0.1831
-Prop,CHI @ SEA,Nick Kallerup over 0.5 anytime_td,0.5,2800,,,0.0345,-0.0006
-Prop,CHI @ SEA,Zavier Scott over 0.5 anytime_td,0.5,3000,,,0.0450,0.3936
-Prop,CHI @ SEA,Sam Darnold over 237.5 pass_yds,237.5,-111,,,0.4975,-0.0544
-Prop,CHI @ SEA,Sam Darnold under 237.5 pass_yds,237.5,-113,,,0.5025,-0.0527
-Prop,CHI @ SEA,Caleb Williams over 234.5 pass_yds,234.5,-111,,,0.4917,-0.0653
-Prop,CHI @ SEA,Caleb Williams under 234.5 pass_yds,234.5,-113,,,0.5083,-0.0419
-Prop,CHI @ SEA,Jaxon Smith-Njigba over 97.5 rec_yds,97.5,-113,,,0.5077,-0.0431
-Prop,CHI @ SEA,Jaxon Smith-Njigba under 97.5 rec_yds,97.5,-111,,,0.4923,-0.0641
-Prop,CHI @ SEA,Luther Burden III over 52.5 rec_yds,52.5,-110,,,0.5018,-0.0419
-Prop,CHI @ SEA,Luther Burden III under 52.5 rec_yds,52.5,-114,,,0.4982,-0.0649
-Prop,CHI @ SEA,Colston Loveland over 43.5 rec_yds,43.5,-109,,,0.4895,-0.0615
-Prop,CHI @ SEA,Colston Loveland under 43.5 rec_yds,43.5,-115,,,0.5105,-0.0455
-Prop,CHI @ SEA,Rome Odunze over 41.5 rec_yds,41.5,-112,,,0.5033,-0.0473
-Prop,CHI @ SEA,Rome Odunze under 41.5 rec_yds,41.5,-112,,,0.4967,-0.0598
-Prop,CHI @ SEA,Cooper Kupp over 28.5 rec_yds,28.5,-114,,,0.5039,-0.0541
-Prop,CHI @ SEA,Cooper Kupp under 28.5 rec_yds,28.5,-110,,,0.4961,-0.0529
-Prop,CHI @ SEA,AJ Barner over 28.5 rec_yds,28.5,-111,,,0.4983,-0.0528
-Prop,CHI @ SEA,AJ Barner under 28.5 rec_yds,28.5,-113,,,0.5017,-0.0543
-Prop,CHI @ SEA,Tory Horton over 19.5 rec_yds,19.5,-112,,,0.4816,-0.0884
-Prop,CHI @ SEA,Tory Horton under 19.5 rec_yds,19.5,-112,,,0.5184,-0.0187
-Prop,CHI @ SEA,D'Andre Swift over 18.5 rec_yds,18.5,-114,,,0.5004,-0.0606
-Prop,CHI @ SEA,D'Andre Swift under 18.5 rec_yds,18.5,-110,,,0.4996,-0.0462
-Prop,CHI @ SEA,Kalif Raymond over 16.5 rec_yds,16.5,-109,,,0.5017,-0.0380
-Prop,CHI @ SEA,Kalif Raymond under 16.5 rec_yds,16.5,-115,,,0.4983,-0.0684
-Prop,CHI @ SEA,Zach Charbonnet over 7.5 rec_yds,7.5,-108,,,0.4993,-0.0384
-Prop,CHI @ SEA,Zach Charbonnet under 7.5 rec_yds,7.5,-116,,,0.5007,-0.0676
-Prop,CHI @ SEA,Sam Roush over 5.5 rec_yds,5.5,-117,,,0.4934,-0.0848
-Prop,CHI @ SEA,Sam Roush under 5.5 rec_yds,5.5,-107,,,0.5066,-0.0200
-Prop,CHI @ SEA,Jaxon Smith-Njigba over 7.5 receptions,7.5,115,,,0.4534,-0.0252
-Prop,CHI @ SEA,Jaxon Smith-Njigba under 7.5 receptions,7.5,-147,,,0.5466,-0.0816
-Prop,CHI @ SEA,Luther Burden III over 4.5 receptions,4.5,112,,,0.4317,-0.0847
-Prop,CHI @ SEA,Luther Burden III under 4.5 receptions,4.5,-142,,,0.5683,-0.0316
-Prop,CHI @ SEA,Colston Loveland over 4.5 receptions,4.5,114,,,0.4279,-0.0842
-Prop,CHI @ SEA,Colston Loveland under 4.5 receptions,4.5,-145,,,0.5721,-0.0334
-Prop,CHI @ SEA,AJ Barner over 3.5 receptions,3.5,123,,,0.4128,-0.0794
-Prop,CHI @ SEA,AJ Barner under 3.5 receptions,3.5,-158,,,0.5872,-0.0412
-Prop,CHI @ SEA,D'Andre Swift over 3.5 receptions,3.5,132,,,0.3849,-0.1071
-Prop,CHI @ SEA,D'Andre Swift under 3.5 receptions,3.5,-169,,,0.6151,-0.0209
-Prop,CHI @ SEA,Rome Odunze over 3.5 receptions,3.5,132,,,0.3975,-0.0778
-Prop,CHI @ SEA,Rome Odunze under 3.5 receptions,3.5,-169,,,0.6025,-0.0410
-Prop,CHI @ SEA,Cooper Kupp over 2.5 receptions,2.5,-140,,,0.5545,-0.0495
-Prop,CHI @ SEA,Cooper Kupp under 2.5 receptions,2.5,110,,,0.4455,-0.0644
-Prop,CHI @ SEA,Kalif Raymond over 2.5 receptions,2.5,136,,,0.3944,-0.0693
-Prop,CHI @ SEA,Kalif Raymond under 2.5 receptions,2.5,-174,,,0.6056,-0.0463
-Prop,CHI @ SEA,Tory Horton over 1.5 receptions,1.5,-173,,,0.5945,-0.0619
-Prop,CHI @ SEA,Tory Horton under 1.5 receptions,1.5,135,,,0.4055,-0.0470
-Prop,CHI @ SEA,Zach Charbonnet over 1.5 receptions,1.5,137,,,0.3909,-0.0735
-Prop,CHI @ SEA,Zach Charbonnet under 1.5 receptions,1.5,-175,,,0.6091,-0.0429
-Prop,CHI @ SEA,Sam Roush over 0.5 receptions,0.5,-210,,,0.6372,-0.0594
-Prop,CHI @ SEA,Sam Roush under 0.5 receptions,0.5,163,,,0.3628,-0.0458
-Prop,CHI @ SEA,D'Andre Swift over 60.5 rush_yds,60.5,-110,,,0.4979,-0.0494
-Prop,CHI @ SEA,D'Andre Swift under 60.5 rush_yds,60.5,-114,,,0.5021,-0.0575
-Prop,CHI @ SEA,Zach Charbonnet over 32.5 rush_yds,32.5,-109,,,0.5070,-0.0278
-Prop,CHI @ SEA,Zach Charbonnet under 32.5 rush_yds,32.5,-115,,,0.4930,-0.0784
-Prop,CHI @ SEA,Caleb Williams over 22.5 rush_yds,22.5,-116,,,0.5034,-0.0627
-Prop,CHI @ SEA,Caleb Williams under 22.5 rush_yds,22.5,-108,,,0.4966,-0.0436
-Prop,CHI @ SEA,Emanuel Wilson over 18.5 rush_yds,18.5,-108,,,0.5108,-0.0162
-Prop,CHI @ SEA,Emanuel Wilson under 18.5 rush_yds,18.5,-116,,,0.4892,-0.0891
-Prop,CHI @ SEA,Roschon Johnson over 12.5 rush_yds,12.5,-115,,,0.5060,-0.0540
-Prop,CHI @ SEA,Roschon Johnson under 12.5 rush_yds,12.5,-109,,,0.4940,-0.0528
-Prop,CHI @ SEA,Sam Darnold over 5.5 rush_yds,5.5,-119,,,0.5089,-0.0634
-Prop,CHI @ SEA,Sam Darnold under 5.5 rush_yds,5.5,-106,,,0.4911,-0.0457
+Spread,JAX @ BAL,BAL +8.5,8.5,-115.0,0.4055,0.5116,0.4870,-0.0896
+Spread,JAX @ BAL,JAX -8.5,-8.5,-105.0,0.5945,0.4884,0.5130,0.0016
+Total,JAX @ BAL,Over 43.5,43.5,-105.0,0.5478,0.4884,0.5181,0.0115
+Total,JAX @ BAL,Under 43.5,43.5,-115.0,0.4522,0.5116,0.4819,-0.0990
+Prop,CHI @ SEA,Jaxon Smith-Njigba over 99.5 rec_yds,99.5,-113,,,0.5060,-0.0463
+Prop,CHI @ SEA,Jaxon Smith-Njigba under 99.5 rec_yds,99.5,-111,,,0.4940,-0.0609
+Prop,CHI @ SEA,Luther Burden III over 52.5 rec_yds,52.5,-114,,,0.5084,-0.0457
+Prop,CHI @ SEA,Luther Burden III under 52.5 rec_yds,52.5,-110,,,0.4916,-0.0614
+Prop,CHI @ SEA,Colston Loveland over 42.5 rec_yds,42.5,-114,,,0.5009,-0.0596
+Prop,CHI @ SEA,Colston Loveland under 42.5 rec_yds,42.5,-110,,,0.4991,-0.0473
+Prop,CHI @ SEA,Rome Odunze over 39.5 rec_yds,39.5,-109,,,0.4917,-0.0573
+Prop,CHI @ SEA,Rome Odunze under 39.5 rec_yds,39.5,-115,,,0.5083,-0.0496
+Prop,CHI @ SEA,AJ Barner over 29.5 rec_yds,29.5,-111,,,0.4975,-0.0543
+Prop,CHI @ SEA,AJ Barner under 29.5 rec_yds,29.5,-113,,,0.5025,-0.0528
+Prop,CHI @ SEA,Cooper Kupp over 29.5 rec_yds,29.5,-109,,,0.4986,-0.0440
+Prop,CHI @ SEA,Cooper Kupp under 29.5 rec_yds,29.5,-115,,,0.5014,-0.0626
+Prop,CHI @ SEA,Tory Horton over 22.5 rec_yds,22.5,-115,,,0.4897,-0.0844
+Prop,CHI @ SEA,Tory Horton under 22.5 rec_yds,22.5,-109,,,0.5103,-0.0216
+Prop,CHI @ SEA,D'Andre Swift over 18.5 rec_yds,18.5,-109,,,0.4849,-0.0703
+Prop,CHI @ SEA,D'Andre Swift under 18.5 rec_yds,18.5,-115,,,0.5151,-0.0369
+Prop,CHI @ SEA,Kalif Raymond over 17.5 rec_yds,17.5,-109,,,0.5038,-0.0339
+Prop,CHI @ SEA,Kalif Raymond under 17.5 rec_yds,17.5,-115,,,0.4962,-0.0724
+Prop,CHI @ SEA,Sam Roush over 9.5 rec_yds,9.5,-112,,,0.4789,-0.0935
+Prop,CHI @ SEA,Sam Roush under 9.5 rec_yds,9.5,-112,,,0.5211,-0.0136
+Prop,CHI @ SEA,Zach Charbonnet over 7.5 rec_yds,7.5,-109,,,0.5020,-0.0375
+Prop,CHI @ SEA,Zach Charbonnet under 7.5 rec_yds,7.5,-115,,,0.4980,-0.0689
+Prop,CHI @ SEA,Roschon Johnson over 5.5 rec_yds,5.5,-122,,,0.5143,-0.0642
+Prop,CHI @ SEA,Roschon Johnson under 5.5 rec_yds,5.5,-103,,,0.4857,-0.0427
+Prop,CHI @ SEA,D'Andre Swift over 60.5 rush_yds,60.5,-111,,,0.4979,-0.0535
+Prop,CHI @ SEA,D'Andre Swift under 60.5 rush_yds,60.5,-113,,,0.5021,-0.0536
+Prop,CHI @ SEA,Zach Charbonnet over 27.5 rush_yds,27.5,-114,,,0.5104,-0.0418
+Prop,CHI @ SEA,Zach Charbonnet under 27.5 rush_yds,27.5,-110,,,0.4896,-0.0654
+Prop,CHI @ SEA,Caleb Williams over 23.5 rush_yds,23.5,-112,,,0.4985,-0.0564
+Prop,CHI @ SEA,Caleb Williams under 23.5 rush_yds,23.5,-112,,,0.5015,-0.0507
+Prop,CHI @ SEA,Emanuel Wilson over 22.5 rush_yds,22.5,-108,,,0.5108,-0.0162
+Prop,CHI @ SEA,Emanuel Wilson under 22.5 rush_yds,22.5,-117,,,0.4892,-0.0927
+Prop,CHI @ SEA,Roschon Johnson over 12.5 rush_yds,12.5,-111,,,0.5011,-0.0474
+Prop,CHI @ SEA,Roschon Johnson under 12.5 rush_yds,12.5,-113,,,0.4989,-0.0597
+Prop,CHI @ SEA,Sam Darnold over 4.5 rush_yds,4.5,-112,,,0.5073,-0.0397
+Prop,CHI @ SEA,Sam Darnold under 4.5 rush_yds,4.5,-112,,,0.4927,-0.0674
+Prop,CHI @ SEA,Luther Burden III over 3.5 rush_yds,3.5,-116,,,0.4828,-0.1009
+Prop,CHI @ SEA,Luther Burden III under 3.5 rush_yds,3.5,-108,,,0.5172,-0.0040

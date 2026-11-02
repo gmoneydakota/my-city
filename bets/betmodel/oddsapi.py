@@ -34,8 +34,10 @@ PROP_MARKETS = {
     },
 }
 DEFAULT_PROP_MARKETS = {
-    "nba": ["player_points", "player_rebounds", "player_assists", "player_threes", "player_points_rebounds_assists"],
-    "nfl": ["player_pass_yds", "player_rush_yds", "player_reception_yds", "player_receptions", "player_anytime_td"],
+    # Free plan = ~480 credits a month and every market costs 1 credit per game, so we keep the most-bet stats
+    # (3 per NBA game, 4 per NFL game) to cover ~40% more games than the full 5-market set.
+    "nba": ["player_points", "player_rebounds", "player_assists"],
+    "nfl": ["player_pass_yds", "player_rush_yds", "player_reception_yds", "player_receptions"],
 }
 
 def _get(path: str, key: str, params: dict, ttl: float):

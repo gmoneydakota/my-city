@@ -48,7 +48,7 @@ def daily(a) -> int:
         print(f"learned: {lesson}", file=sys.stderr)
     key = os.environ.get("ODDS_API_KEY") or None
     results, errors = [], []
-    # Share today's Odds API credits. NBA runs first, so on a busy NFL day (Sunday) it only takes a small slice and
+    # Share today's Odds API credits. NBA runs first, so on a busy NFL day (Sunday) it takes about 40% and
     # the NFL slate gets the rest; with a few NFL games it takes half; with none it takes everything.
     nfl_soon = 0
     if key:
@@ -64,7 +64,7 @@ def daily(a) -> int:
             pass
     for lg in ("nba", "nfl"):
         try:
-            share = (0.2 if nfl_soon >= 6 else 0.5 if nfl_soon else 1.0) if lg == "nba" else 1.0
+            share = (0.4 if nfl_soon >= 6 else 0.5 if nfl_soon else 1.0) if lg == "nba" else 1.0
             res = engine.run(lg, None, key, a.lines, not a.no_props, a.max_events, a.per_team, True, share)
             picks = report.select(res, a.min_edge, a.min_edge_prop, a.bankroll)
             report.write_outputs(res, picks, report.markdown(res, picks, a.bankroll, engine.ud_breakeven(3)))

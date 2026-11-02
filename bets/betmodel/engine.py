@@ -159,6 +159,22 @@ def load_lines_csv(path: str, league: str) -> list[dict]:
     return quotes
 
 
+ONE_SIDED_STATS = {"anytime_td"}  # books post only the "yes" price, so there is no under to de-vig against
+ONE_SIDED_HOLD = 0.90             # typical anytime-TD hold is ~10%: fair prob ~ implied x 0.90
+
+
+def one_sided_fair(books: dict) -> list[float]:
+    """Approximate fair P(over) from one-sided 'yes' prices (non-DFS books), hold removed.
+    Job 22: with no market anchor the model priced +2500 long shots at 10% (they won 5.5%, n=55)."""
+    out = []
+    for bk, sides in books.items():
+        price = (sides.get("over") or {}).get("price")
+        if bk in oddsapi.DFS_BOOKS or not price or sides.get("under"):
+            continue
+        out.append(min(0.99, (1 / american_to_decimal(price)) * ONE_SIDED_HOLD))
+    return out
+
+
 def prop_bets(league: str, games: list[dict], model, pbook: props.PlayerBook, quotes: list[dict],
               inj: dict) -> tuple[list[dict], list[dict], list[str]]:
     """Returns (DraftKings prop bets, Underdog legs, warnings)."""
@@ -204,6 +220,8 @@ def prop_bets(league: str, games: list[dict], model, pbook: props.PlayerBook, qu
                     fair.append(devig_two_way(o, u)[0])
                 except (ValueError, ZeroDivisionError):
                     pass
+        if not fair and stat in ONE_SIDED_STATS:
+            fair = one_sided_fair(grp["books"])
         p_mkt = statistics.median(fair) if fair else None
         played = mo + mu_
         p_over_model = mo / played if played else 0.5

@@ -1,0 +1,27 @@
+game,team,player,stat,proj,sd,fair_line,higher_if_line_le,lower_if_line_ge,status
+CHI @ SEA,SEA,Emanuel Wilson,rush_yds,56.58,42.16,56.5,49.5,63.5,
+CHI @ SEA,SEA,Emanuel Wilson,rec_yds,8.74,11.40,4.5,2.5,6.5,
+CHI @ SEA,SEA,Emanuel Wilson,receptions,0.87,1.09,0.5,,1.5,
+CHI @ SEA,SEA,Emanuel Wilson,anytime_td,0.55,0.78,43% (+134),,,
+CHI @ SEA,SEA,Sam Darnold,pass_yds,227.31,109.03,227.5,209.5,245.5,
+CHI @ SEA,SEA,Sam Darnold,pass_tds,1.28,1.34,1.5,0.5,1.5,
+CHI @ SEA,SEA,Sam Darnold,rush_yds,9.03,7.93,6.5,5.5,8.5,
+CHI @ SEA,SEA,Jaxon Smith-Njigba,rec_yds,114.46,47.23,114.5,106.5,122.5,
+CHI @ SEA,SEA,Jaxon Smith-Njigba,receptions,7.83,2.85,7.5,6.5,8.5,
+CHI @ SEA,SEA,Jaxon Smith-Njigba,anytime_td,0.96,1.02,58% (-138),,,
+CHI @ SEA,SEA,Zach Charbonnet,rush_yds,52.63,34.54,52.5,46.5,58.5,
+CHI @ SEA,SEA,Zach Charbonnet,rec_yds,10.58,8.73,8.5,6.5,10.5,
+CHI @ SEA,SEA,Zach Charbonnet,receptions,1.51,1.38,1.5,0.5,1.5,
+CHI @ SEA,SEA,Zach Charbonnet,anytime_td,0.83,0.92,55% (-122),,,
+CHI @ SEA,CHI,D'Andre Swift,rush_yds,60.75,34.42,60.5,54.5,66.5,
+CHI @ SEA,CHI,D'Andre Swift,rec_yds,17.49,13.06,17.5,14.5,20.5,
+CHI @ SEA,CHI,D'Andre Swift,receptions,2.72,1.68,2.5,1.5,3.5,
+CHI @ SEA,CHI,D'Andre Swift,anytime_td,0.80,0.91,54% (-116),,,
+CHI @ SEA,CHI,Caleb Williams,pass_yds,222.00,103.41,222.5,205.5,238.5,2 games back from a 3-game absence
+CHI @ SEA,CHI,Caleb Williams,pass_tds,1.18,1.26,0.5,0.5,1.5,2 games back from a 3-game absence
+CHI @ SEA,CHI,Caleb Williams,rush_yds,23.63,25.44,23.5,19.5,28.5,2 games back from a 3-game absence
+CHI @ SEA,CHI,Luther Burden III,rec_yds,61.73,35.47,61.5,55.5,67.5,
+CHI @ SEA,CHI,Luther Burden III,receptions,4.35,2.12,4.5,3.5,5.5,
+CHI @ SEA,CHI,Colston Loveland,rec_yds,36.83,25.84,36.5,32.5,41.5,
+CHI @ SEA,CHI,Colston Loveland,receptions,3.83,2.36,3.5,2.5,4.5,
+CHI @ SEA,CHI,Colston Loveland,anytime_td,0.34,0.59,33% (+206),,,

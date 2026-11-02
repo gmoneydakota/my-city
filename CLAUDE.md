@@ -20,6 +20,7 @@ the agents interactively.
   `ESCALATE: coder - this changes the city itself, it needs an upgrade (pull request)`. A finished page from a normal job
   (like `outputs/job-9/`) is fine, but the building that opens it must be added in `index.html` in the same job.
 - `outputs/signals/` is written only by `scripts/signals.py` (the free daily scan).
+- `trading/data/` is written only by `scripts/trading_floor.py` (the Trading Floor's paper traders; `trading/demo/` is synthetic). Never hand-edit it, and never add code that places real orders without the owner's explicit approval in a pull request.
 - Use fresh data for anything time-sensitive: `python3 scripts/market_data.py TICKER`
   for prices, WebSearch for news. State the date of the data.
 

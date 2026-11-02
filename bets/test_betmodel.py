@@ -148,5 +148,47 @@ class OddsBudget(unittest.TestCase):
         self.assertIsNone(oddsapi.cached_event("nba", "g1"))                      # per league
 
 
+class AvailabilityTests(unittest.TestCase):
+    TEAM = ["g10", "g9", "g8", "g7", "g6", "g5", "g4", "g3", "g2", "g1"]  # newest first
+
+    def rows(self, ids):
+        return [{"event_id": i} for i in ids]
+
+    def test_back_today_after_layoff(self):
+        from betmodel import availability as a
+        st = a.player_status(self.rows(["g6", "g5", "g4", "g3", "g2", "g1"]), self.TEAM, "nba")  # missed g7-g10
+        self.assertEqual(st["missed_now"], 4)
+        self.assertTrue(st["returning"])
+        self.assertGreater(a.return_haircut("nba", st), 0.05)
+
+    def test_one_game_back_fades(self):
+        from betmodel import availability as a
+        st = a.player_status(self.rows(["g10", "g5", "g4", "g3", "g2", "g1"]), self.TEAM, "nba")  # missed g6-g9
+        self.assertEqual((st["missed_now"], st["since_return"], st["last_gap"]), (0, 1, 4))
+        first = a.return_haircut("nba", {"missed_now": 4, "since_return": None, "last_gap": 4})
+        self.assertLess(a.return_haircut("nba", st), first)
+
+    def test_healthy_and_short_absence_not_returning(self):
+        from betmodel import availability as a
+        full = a.player_status(self.rows(self.TEAM), self.TEAM, "nba")
+        rest = a.player_status(self.rows([g for g in self.TEAM if g not in ("g8", "g7")]), self.TEAM, "nba")
+        self.assertFalse(full["returning"])
+        self.assertFalse(rest["returning"])  # 2-game absence, back more than 3 games ago
+
+    def test_traded_player_not_a_return(self):
+        from betmodel import availability as a
+        st = a.player_status(self.rows(["g10", "g9"]), self.TEAM, "nba")
+        self.assertFalse(st["returning"])
+
+    def test_adjust_projection(self):
+        from betmodel import availability as a
+        proj = {"mean": 20.0, "sd": 6.0}
+        out = a.adjust_projection("nba", proj, {"returning": True, "missed_now": 6, "since_return": None, "last_gap": 6})
+        self.assertLess(out["mean"], 20.0)
+        self.assertGreater(out["sd"], 6.0 * 0.9)
+        self.assertIn("returning", out["avail_note"])
+        self.assertEqual(proj["mean"], 20.0)  # input untouched
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=1)

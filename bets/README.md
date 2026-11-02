@@ -74,6 +74,17 @@ Walk-forward results on the last full season (refit every 14 days, each game pre
 
 A Brier score of 0.25 is a coin flip, and lower is better. These scores are solid for a public-data model but not as good as the closing betting line. **That is why the model never bets its own opinion alone: it blends with the market.**
 
+## Injuries and players coming back
+
+`betmodel/availability.py` handles who actually plays:
+
+- **Out / doubtful / IR / suspended:** no props on them, and their team's spread is lowered (NBA by their Game Score above a replacement player, NFL for the starting QB).
+- **Questionable / day-to-day:** their props are held back until the status is clear (the projection sheet still shows them, with the status).
+- **Coming back from injury:** a player who just missed 3+ NBA games (2+ NFL) and is not on the report is treated as returning. His projection gets a minutes/snaps haircut (about 8% after a 3-game absence, up to 20% after a long one) with a wider spread. The haircut fades over his next 3 games. His team also gets a small boost, since the ratings were fitted on games he missed.
+- **Teammates of a missing star (NBA):** a capped bump of up to +10% on their projections, only for the part the recent game logs don't already show.
+
+The weekly learner recalibrates the projections that come out of this. These adjustments are heuristics, not backtested.
+
 ---
 
 ## Getting Underdog and DraftKings prop lines in

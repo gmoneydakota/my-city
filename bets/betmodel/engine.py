@@ -14,7 +14,7 @@ import itertools
 import statistics
 from datetime import datetime, timedelta, timezone
 
-from . import espn, injuries, oddsapi, props, ratings
+from . import availability, espn, injuries, oddsapi, props, ratings
 from . import learn
 from .common import american_to_decimal, devig_two_way, expected_value, kelly_fraction, prob_to_american
 
@@ -176,8 +176,10 @@ def one_sided_fair(books: dict) -> list[float]:
 
 
 def prop_bets(league: str, games: list[dict], model, pbook: props.PlayerBook, quotes: list[dict],
-              inj: dict) -> tuple[list[dict], list[dict], list[str]]:
-    """Returns (DraftKings prop bets, Underdog legs, warnings)."""
+              inj: dict, avail=None) -> tuple[list[dict], list[dict], list[str]]:
+    """Returns (DraftKings prop bets, Underdog legs, warnings).
+    `avail` (availability.Availability) holds back questionable players and adjusts for players returning
+    from injury / teammates of injured stars."""
     team_game = {}
     for g in games:
         team_game[g["home"]] = g
@@ -204,7 +206,12 @@ def prop_bets(league: str, games: list[dict], model, pbook: props.PlayerBook, qu
         injury = inj.get(nname)
         if injury and injury["status"].lower() in OUT_STATUSES:
             continue
+        if avail and avail.uncertain(nname):
+            warnings.append(f"{p['name']} is {injury['status']}: props held back until his status is clear")
+            continue
         proj = learn.adjust(league, stat, props.project(league, pbook.log(p["id"]), stat, env_factor(model, g, p["team_id"])))
+        if avail:
+            proj = avail.project(p, proj)
         if not proj:
             warnings.append(f"not enough games for {grp['player']} {stat}")
             continue
@@ -228,6 +235,8 @@ def prop_bets(league: str, games: list[dict], model, pbook: props.PlayerBook, qu
         w_prop = learn.prop_weight(W_MODEL_PROP)
         p_over = p_over_model if p_mkt is None else w_prop * p_over_model + (1 - w_prop) * p_mkt
         note = f"{injury['status']}: {injury['detail']}" if injury else ""
+        if proj.get("avail_note"):
+            note = (note + " | " if note else "") + proj["avail_note"]
         base = dict(player=p["name"], team=g["home_abbr"] if p["team_id"] == g["home"] else g["away_abbr"],
                     game=g["name"], event_id=g["event_id"], athlete_id=p["id"], stat=stat, line=line,
                     proj=proj["mean"], sd=proj["sd"], last5=proj["last5"], p_market_over=p_mkt,
@@ -292,7 +301,7 @@ def best_entries(legs: list[dict], payouts=UD_PAYOUTS, top: int = 3, max_per_gam
 
 
 def projection_sheet(league: str, games: list[dict], model, pbook: props.PlayerBook, inj: dict,
-                     per_team: int, target: float) -> list[dict]:
+                     per_team: int, target: float, avail=None) -> list[dict]:
     """No-key mode: projections + 'bet it if the line is at/below X' thresholds."""
     rows = []
     for g in games:
@@ -306,6 +315,8 @@ def projection_sheet(league: str, games: list[dict], model, pbook: props.PlayerB
                     continue
                 for stat in props.sheet_stats(league, p["pos"]):
                     proj = learn.adjust(league, stat, props.project(league, pbook.log(p["id"]), stat, ef))
+                    if avail:
+                        proj = avail.project(p, proj)
                     if not proj or proj["mean"] < 0.3:
                         continue
                     if stat == "anytime_td":  # one-sided market: show P(score) and fair odds instead
@@ -318,7 +329,8 @@ def projection_sheet(league: str, games: list[dict], model, pbook: props.PlayerB
                                      team=g["home_abbr"] if tid == g["home"] else g["away_abbr"],
                                      player=p["name"], stat=stat, proj=proj["mean"], sd=proj["sd"],
                                      fair=fair, over_at=over_at, under_at=under_at,
-                                     last5=proj["last5"], status=injury["status"] if injury else ""))
+                                     last5=proj["last5"],
+                                     status=(injury["status"] if injury else "") or proj.get("avail_note", "")))
     return rows
 
 
@@ -343,6 +355,15 @@ def run(league: str, date: str | None, odds_key: str | None, lines_csv: str | No
     except Exception as e:  # never lose the card over the injury layer
         inj_adj, inj_desc = {}, {}
         res["warnings"].append(f"injury adjustment skipped: {e}")
+    avail = None
+    try:
+        avail = availability.Availability(league, model, pbook, inj, games)
+        ret_adj, ret_desc = injuries.returning_adjustments(league, games, inj, pbook, model, avail)
+        for t, v in ret_adj.items():
+            inj_adj[t] = inj_adj.get(t, 0.0) + v
+            inj_desc.setdefault(t, []).extend(ret_desc[t])
+    except Exception as e:  # never lose the card over the availability layer
+        res["warnings"].append(f"returning-player adjustment skipped: {e}")
     res["game_bets"] = game_bets(league, games, model, consensus, inj_adj, inj_desc)
 
     if want_props:
@@ -393,10 +414,10 @@ def run(league: str, date: str | None, odds_key: str | None, lines_csv: str | No
                     res["warnings"].append(f"Prop lines reused from {when[:16].replace('T', ' ')} UTC to save "
                                            f"Odds API credits; re-check prices in the app.")
         if quotes:
-            dk, legs, warn = prop_bets(league, games, model, pbook, quotes, inj)
+            dk, legs, warn = prop_bets(league, games, model, pbook, quotes, inj, avail)
             res["prop_bets"], res["ud_legs"] = dk, legs
             res["entries"] = best_entries(legs)
             res["warnings"] += warn[:15] + ([f"... and {len(warn) - 15} more"] if len(warn) > 15 else [])
         if sheet:
-            res["sheet"] = projection_sheet(league, games, model, pbook, inj, per_team, ud_breakeven(3))
+            res["sheet"] = projection_sheet(league, games, model, pbook, inj, per_team, ud_breakeven(3), avail)
     return res

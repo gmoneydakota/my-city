@@ -9,7 +9,7 @@ the market, which moves on them anyway.
 """
 from __future__ import annotations
 
-from . import espn
+from . import availability, espn
 
 STATUS_WEIGHT = {"out": 1.0, "doubtful": 0.85, "injured reserve": 1.0, "ir": 1.0, "suspension": 1.0,
                  "questionable": 0.4, "day-to-day": 0.3}
@@ -77,4 +77,44 @@ def team_adjustments(league: str, games: list[dict], inj: dict, pbook, model) ->
             desc.setdefault(tid, []).append(f"{p['name']} {status} (-{pts:.1f})")
     if league == "nba":
         adj = {t: max(-NBA_TEAM_CAP, v) for t, v in adj.items()}
+    return adj, desc
+
+
+RETURN_WEIGHT = {"nba": 0.5, "nfl": 0.7}
+
+
+def returning_adjustments(league: str, games: list[dict], inj: dict, pbook, model, avail) -> tuple[dict, dict]:
+    """The mirror image of team_adjustments: a player who is BACK (not on the report, just missed team games
+    or has played <=3 games since a layoff) lifts his team, because the ratings were fitted on games he sat
+    out. Worth `RETURN_WEIGHT` of his full value. Returns ({team_id: points (positive = stronger)}, {team_id: [desc]})."""
+    from . import props
+    adj, desc = {}, {}
+    for tid in {t for g in games for t in (g["home"], g["away"])}:
+        for p in props.key_players(league, pbook, tid, 8):
+            v = inj.get(espn.norm_name(p["name"]))
+            if v and v["status"].lower() in (set(STATUS_WEIGHT) | {"suspension"}):
+                continue   # still on the report: handled by team_adjustments / held back as uncertain
+            if league == "nfl" and p["pos"] != "QB":
+                continue
+            st = avail.status(p)
+            if not st["returning"]:
+                continue
+            if league == "nba":
+                pbook.prefetch([p["id"]])
+                rows = (pbook.logs.get(p["id"]) or pbook.cur.get(p["id"]) or [])[:20]
+                if not rows:
+                    continue
+                gs = sum(_game_score(r) for r in rows) / len(rows)
+                mins = sum(r.get("minutes") or 0 for r in rows) / len(rows)
+                value = max(0.0, gs - NBA_REPLACEMENT_PER_MIN * mins) * NBA_K
+            else:
+                value = NFL_QB_VALUE
+            # minutes limits shave part of the benefit on the first games back
+            value *= 1 - availability.return_haircut(league, st)
+            pts = value * RETURN_WEIGHT[league]
+            if pts >= 0.3:
+                adj[tid] = adj.get(tid, 0.0) + pts
+                desc.setdefault(tid, []).append(f"{p['name']} back from injury (+{pts:.1f})")
+        if league == "nba" and tid in adj:
+            adj[tid] = min(NBA_TEAM_CAP / 2, adj[tid])
     return adj, desc

@@ -21,7 +21,7 @@ result is waiting in the city (and in your repo).
 
 | Path | What it does |
 |---|---|
-| `index.html` | The 3D city (Three.js). Towers are agents. Orbs fly to a tower when it's working, and beams light up while it builds. Tabs: **Make**, **Jobs**, **Market**. |
+| `index.html` | The 3D city (Three.js). Towers are agents. Orbs fly to a tower when it's working, and beams light up while it builds. Tabs: **Make**, **Jobs**, **Bets** (the menu collapses with **»** or the **P** key). |
 | `.claude/agents/*.md` | The 9 agents: your original 8 plus **quant** for stock models. |
 | `agents/cad.md` | The 10th agent, **CAD**: designs working 3D models. The job runner loads agents from here too. |
 | `cad/` | **CAD Studio**, the app behind the CAD tower: `index.html` (viewer/animator/exporter), `SCHEMA.md` (model format), `examples/`. |
@@ -30,9 +30,11 @@ result is waiting in the city (and in your repo).
 | `brain/` + `scripts/brain.py` | The **Second Brain**: skills the agents learned (`brain/skills/*.md`), the web page behind the brain building, and the free script that links skills, agents, tools and job history into `brain/brain.json`. |
 | `scripts/market_data.py` | Fresh daily prices, no API key (Yahoo Finance, falling back to Stooq). |
 | `scripts/signals.py` | Daily buy/hold/avoid signals with reasons and an honest backtest. **Uses zero Claude usage.** |
+| `trading/` + `scripts/floor/` + `scripts/trading_floor.py` | The **Trading Floor**: three competing paper traders on stocks and options. `trading/index.html` is the app inside the building; `trading/data/` is written by the engine (`trading/demo/` is a clearly-labelled synthetic dataset shown until the first live run). |
 | `watchlist.json` | Tickers the daily scan covers. Edit freely. |
 | `.github/workflows/city-job.yml` | Runs a job whenever you send one from the city. |
-| `.github/workflows/market-signals.yml` | Free weekday scan after the US market close. |
+| `.github/workflows/market-signals.yml` | Free weekday scan after the US market close. Its table now lives in the Trading Floor's **Signals** tab. |
+| `.github/workflows/trading-floor.yml` | Runs the three traders hourly through the US session (9:35–3:35 ET) and once after the close. No Claude usage. |
 | `.github/workflows/city-resume.yml` + `scripts/city_resume.py` | If a job stops because your Claude usage limit ran out, it is **paused** (label `status:paused`, progress saved on branch `checkpoint/job-N`). Every 30 minutes this checks (free, no Claude usage) and restarts it from where it left off once the limit has reset. |
 
 ## Setup (about 10 minutes, once)
@@ -120,6 +122,35 @@ hundreds of player projections, with search and filters.
 - Optional: add a free `ODDS_API_KEY` secret (the-odds-api.com) for DraftKings player props and Underdog lines.
 
 Estimates, not guarantees. Gambling problem? Call 1-800-GAMBLER.
+
+## 📈 Trading Floor: three AI traders compete on stocks and options
+
+The green tower complex (west side of the city) is the Trading Floor. Click it to enter `trading/`: the leaderboard,
+each trader's open positions and written reasoning, the whole-market overview, the old daily signals table, the health
+of every data source, and the real-money scorecard. **Everything is paper money. Nothing here can place a real trade.**
+
+| Trader | Believes | How it trades |
+|---|---|---|
+| 🚀 **Momentum Mo** | Leaders keep leading | Breakouts to 20-day highs in top-20%-strength stocks, on volume, in clean uptrends. Stock + occasional calls. |
+| 🧲 **Reversion Rae** | Panic and greed overshoot | Dip buys in healthy stocks (RSI-2 / Bollinger), gap-fill day trades, puts on blow-off rallies in weak stocks. |
+| 📰 **Catalyst Cal** | News and flows move price first | Unusual volume + headline tone + earnings reactions; contrarian SPY options at Fear & Greed extremes. |
+
+- **Competition:** each starts with $100,000. The board ranks by profit for the latest session, the week, the month and all time,
+  and keeps a log of every daily, weekly and monthly winner. Tower heights in the 3D city follow today's standings.
+- **Whole market:** every run scans the S&P 500 (+ liquid ETFs). Once a day it computes trend/momentum/RSI/ATR/Bollinger/volatility and a
+  relative-strength rank for each stock; every hour it pulls live prices and 5-minute bars, then reads headlines only for the stocks a trader cares about.
+- **Public data, no keys:** Yahoo Finance (prices, VIX, sector ETFs), Stooq (fallback), FRED (Treasury yields, credit spreads), CNN Fear & Greed,
+  Google News + Yahoo Finance RSS (headlines), Nasdaq earnings calendar, Wikipedia (S&P 500 list). A failing source is reported on the
+  *Data & how it works* tab and never stops a run; if the price feed is down the run changes nothing.
+- **Risk rules (all traders):** max 5 positions (3 options), 10% of the account per stock, ~0.75% risked per stock trade, 1.5-2.5% premium per option,
+  trading stops for the day after a -3% loss, day trades are flat by the close, fees and slippage are charged.
+- **Be honest about the limits:** options are priced with Black-Scholes (there is no free live option-quote feed), decisions are hourly (GitHub's
+  scheduler can be minutes late), and free data can be delayed. Treat option results as less reliable than stock results.
+- **Real money, later:** each trader has a scorecard (60+ trading days, 40+ trades, beats SPY after costs, Sharpe ≥ 1, drawdown ≤ 15%,
+  profit factor ≥ 1.3, steady months, no single-trade fluke). Nothing connects to a broker. If a trader earns it, a broker connection
+  (for example Alpaca paper, then live with a small amount and hard limits) would be a separate pull request that you approve.
+- **Cost:** plain Python on GitHub Actions: no Claude usage. `python3 scripts/test_trading_floor.py` runs 13 offline tests;
+  `python3 scripts/trading_floor.py --demo 45` rebuilds the synthetic demo dataset.
 
 ## 🧠 Second Brain: what the city has learned
 

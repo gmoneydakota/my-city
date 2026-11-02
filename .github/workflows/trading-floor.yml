@@ -1,0 +1,42 @@
+# Trading Floor: three competing paper traders (Momentum Mo, Reversion Rae, Catalyst Cal).
+# Plain Python, uses NO Claude usage. Paper money only: nothing here can place a real trade.
+# Runs hourly through the US session (9:35 ... 15:35 ET) and once after the close (4:20 pm ET).
+# Outside market hours (weekends, holidays) the script exits immediately without changing anything.
+name: trading-floor
+on:
+  schedule:
+    - cron: "35 9-15 * * 1-5"
+      timezone: "America/New_York"
+    - cron: "20 16 * * 1-5"
+      timezone: "America/New_York"
+  workflow_dispatch: {}      # "Run workflow" button in the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: trading-floor
+  cancel-in-progress: false
+
+jobs:
+  trade:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run the trading floor
+        run: python3 scripts/trading_floor.py
+      - name: Save results
+        if: always()
+        run: |
+          git config user.name "agent-city[bot]"
+          git config user.email "agent-city@users.noreply.github.com"
+          git add trading/data
+          git commit -m "Trading floor $(date -u +%F\ %H:%M)" || exit 0
+          for i in 1 2 3 4; do
+            git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && break
+            sleep $((i * 3))
+          done

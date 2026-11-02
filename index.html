@@ -1227,7 +1227,7 @@ function projCard(p){
 }
 function renderBets(){
   const head = $('#betHead'), list = $('#betList');
-  if (!board) { head.innerHTML = ''; list.innerHTML = `<div class="empty">🎰 The Lucky Tower hasn’t printed a board yet. It runs by itself twice a day (about 11:20am and 5:50pm ET), or press <b>Run workflow</b> on <b>bets-daily</b> in your repo’s Actions tab.</div>`; return; }
+  if (!board) { head.innerHTML = ''; list.innerHTML = `<div class="empty">🎰 The Lucky Tower hasn’t printed a board yet. It runs by itself twice a day (9am and 6pm Central), or press <b>Run workflow</b> on <b>bets-daily</b> in your repo’s Actions tab.</div>`; return; }
   const L = board.learning || {}, sb = L.scoreboard || {}, ml = sb.model_leans || {}, c = board.counts || {};
   head.innerHTML = `<div class="statrow"><div class="stat"><b>${c.best||0}</b><small>best bets</small></div><div class="stat"><b>${c.lean||0}</b><small>leans</small></div><div class="stat"><b>${ml.w != null ? `${ml.w}-${ml.l}` : '0-0'}</b><small>lean record</small></div></div>
     <div class="brain"><b>🧠 What it learned</b> <span style="color:var(--muted)">· updated ${esc(fmtTime(board.generated))}</span><ul>${(L.lessons||[]).map(x => `<li>${esc(x)}</li>`).join('')}</ul>

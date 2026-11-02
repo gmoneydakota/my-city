@@ -4,8 +4,10 @@
 name: bets-daily
 on:
   schedule:
-    - cron: "23 15 * * *"   # ~11:20am ET: morning card (NFL Sunday early games, NBA slate)
-    - cron: "53 21 * * *"   # ~5:50pm ET: refresh with late injury news before evening games
+    - cron: "0 9 * * *"     # 9am Central: morning card (NFL Sunday early games, NBA slate)
+      timezone: "America/Chicago"
+    - cron: "0 18 * * *"    # 6pm Central: refresh with late injury news before evening games
+      timezone: "America/Chicago"
   workflow_dispatch: {}
 
 permissions:

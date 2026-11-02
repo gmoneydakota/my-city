@@ -110,7 +110,7 @@ The slot-machine building is an NFL + NBA betting model (`bets/`) for DraftKings
 the **Bets** tab, to see today's board: 🔥 best bets, 👍 leans, every game line, DK props, Underdog legs/entries and
 hundreds of player projections, with search and filters.
 
-- **Twice a day** (`bets-daily.yml`, about 11:20am and 5:50pm ET) it grades finished games, retunes itself,
+- **Twice a day** (`bets-daily.yml`, 9am and 6pm Central) it grades finished games, retunes itself,
   and builds a fresh board. This is plain Python, so it uses **no Claude usage**.
 - **It learns every day:** every priced bet and projection is recorded and graded. It relearns how much to trust its
   model versus the market for each bet type, and corrects each stat's projections (too high or low, too

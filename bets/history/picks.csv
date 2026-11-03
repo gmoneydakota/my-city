@@ -315,7 +315,7 @@ logged_at,league,event_id,start,kind,selection,athlete_id,stat,side,line,price,p
 2026-11-01T15:55:03+00:00,nfl,401873032,2026-11-01T21:05:00+00:00,Prop,Kyren Williams over 3.5 receptions,4430737,receptions,over,3.5,114,0.5171,0.1066,2.00,draftkings,L,-2.00
 2026-11-01T15:55:03+00:00,nfl,401873032,2026-11-01T21:05:00+00:00,Prop,Quentin Johnston under 2.5 receptions,4429025,receptions,under,2.5,-122,0.6070,0.1046,2.00,draftkings,L,-2.00
 2026-11-01T15:55:03+00:00,nfl,401873028,2026-11-01T18:00:00+00:00,Prop,Trevor Lawrence over 11.5 rush_yds,4360310,rush_yds,over,11.5,-116,0.5932,0.1045,2.00,draftkings,L,-2.00
-2026-11-01T15:55:03+00:00,nfl,401873032,2026-11-01T21:05:00+00:00,Prop,Colby Parkinson over 0.5 anytime_td,4242557,anytime_td,over,0.5,270,0.2983,0.1039,0.96,draftkings,,
+2026-11-01T15:55:03+00:00,nfl,401873032,2026-11-01T21:05:00+00:00,Prop,Colby Parkinson over 0.5 anytime_td,4242557,anytime_td,over,0.5,270,0.2983,0.1039,0.96,draftkings,VOID,0.00
 2026-11-01T15:55:03+00:00,nfl,401873030,2026-11-01T18:00:00+00:00,Prop,Kyler Murray over 24.5 rush_yds,3917315,rush_yds,over,24.5,-116,0.5919,0.1021,2.00,draftkings,W,1.72
 2026-11-01T15:55:03+00:00,nfl,401873033,2026-11-01T21:25:00+00:00,Prop,Kenneth Walker III under 3.5 receptions,4567048,receptions,under,3.5,-150,0.6612,0.1021,2.00,draftkings,L,-2.00
 2026-11-01T15:55:03+00:00,nfl,401873030,2026-11-01T18:00:00+00:00,Prop,Aaron Jones Sr. over 0.5 anytime_td,3042519,anytime_td,over,0.5,260,0.3061,0.1021,0.98,draftkings,L,-0.98
@@ -419,3 +419,5 @@ logged_at,league,event_id,start,kind,selection,athlete_id,stat,side,line,price,p
 2026-11-03T15:39:48+00:00,nba,401909293,2026-11-07T01:00:00+00:00,Prop,Bennedict Mathurin under 9.5 points,4683634,points,under,9.5,102,0.5274,0.0653,1.60,draftkings,,
 2026-11-03T18:46:05+00:00,nba,401909930,2026-11-05T01:30:00+00:00,Total,Over 220.5,,,,220.5,-110.0,0.5439,0.0383,1.05,draftkings,,
 2026-11-03T18:46:13+00:00,nfl,401873037,2026-11-06T01:15:00+00:00,Total,Over 41.5,,,,41.5,-105.0,0.5396,0.0534,1.40,draftkings,,
+2026-11-03T21:40:24+00:00,nba,401909930,2026-11-05T01:30:00+00:00,Total,Over 219.5,,,,219.5,-115.0,0.5597,0.0465,1.34,draftkings,,
+2026-11-03T21:40:32+00:00,nfl,401873037,2026-11-06T01:15:00+00:00,Total,Over 40.5,,,,40.5,-112.0,0.5619,0.0635,1.78,draftkings,,

@@ -34,7 +34,7 @@ result is waiting in the city (and in your repo).
 | `watchlist.json` | Tickers the daily scan covers. Edit freely. |
 | `.github/workflows/city-job.yml` | Runs a job whenever you send one from the city. |
 | `.github/workflows/market-signals.yml` | Free weekday scan after the US market close. Its table now lives in the Trading Floor's **Signals** tab. |
-| `.github/workflows/trading-floor.yml` | Runs the three traders hourly through the US session (9:35–3:35 ET) and once after the close. No Claude usage. |
+| `.github/workflows/trading-floor.yml` | Full market scan hourly through the US session (9:35–3:35 ET), a quick position check every 15 minutes in between, and an end-of-day close-out. No Claude usage. |
 | `.github/workflows/city-resume.yml` + `scripts/city_resume.py` | If a job stops because your Claude usage limit ran out, it is **paused** (label `status:paused`, progress saved on branch `checkpoint/job-N`). Every 30 minutes this checks (free, no Claude usage) and restarts it from where it left off once the limit has reset. |
 
 ## Setup (about 10 minutes, once)
@@ -127,7 +127,7 @@ Estimates, not guarantees. Gambling problem? Call 1-800-GAMBLER.
 
 The green tower complex (west side of the city) is the Trading Floor. Click it to enter `trading/`: the leaderboard,
 each trader's open positions and written reasoning, the whole-market overview, the old daily signals table, the health
-of every data source, and the real-money scorecard. **Everything is paper money. Nothing here can place a real trade.**
+of every data source, and the real-money scorecard. The **⚡ Live** tab (opens first) shows every open position's game plan (stop, target, trailing rule, time exit, price chart, why it bought), every buy and sell as it happens, and what each trader is watching to buy next. **Everything is paper money. Nothing here can place a real trade.**
 
 | Trader | Believes | How it trades |
 |---|---|---|
@@ -140,16 +140,17 @@ of every data source, and the real-money scorecard. **Everything is paper money.
 - **Whole market:** every run scans the S&P 500 (+ liquid ETFs). Once a day it computes trend/momentum/RSI/ATR/Bollinger/volatility and a
   relative-strength rank for each stock; every hour it pulls live prices and 5-minute bars, then reads headlines only for the stocks a trader cares about.
 - **Public data, no keys:** Yahoo Finance (prices, VIX, sector ETFs), Stooq (fallback), FRED (Treasury yields, credit spreads), CNN Fear & Greed,
-  Google News + Yahoo Finance RSS (headlines), Nasdaq earnings calendar, Wikipedia (S&P 500 list). A failing source is reported on the
+  Google News + Yahoo Finance RSS (headlines), Nasdaq earnings calendar, Wikipedia (S&P 500 list), and **CBOE delayed option chains** (real bid/ask/IV).
+  **Optional Charles Schwab market data** (read-only: real-time quotes to double-check every price before a trade, and real-time option chains) switches on when you add `SCHWAB_APP_KEY`, `SCHWAB_APP_SECRET` and `SCHWAB_REFRESH_TOKEN` as repo secrets (`python3 scripts/schwab_auth.py` does the sign-in; Schwab tokens expire every 7 days). It can never place an order. A failing source is reported on the
   *Data & how it works* tab and never stops a run; if the price feed is down the run changes nothing.
 - **Risk rules (all traders):** max 5 positions (3 options), 10% of the account per stock, ~0.75% risked per stock trade, 1.5-2.5% premium per option,
   trading stops for the day after a -3% loss, day trades are flat by the close, fees and slippage are charged.
-- **Be honest about the limits:** options are priced with Black-Scholes (there is no free live option-quote feed), decisions are hourly (GitHub's
-  scheduler can be minutes late), and free data can be delayed. Treat option results as less reliable than stock results.
+- **Real prices only:** any quote older than 20 minutes is ignored; options are bought at the real ask and sold at the real bid of a liquid contract (tight spread, real open interest). If no chain can be fetched a trade falls back to a Black-Scholes price and is labelled *model price*.
+- **Limits:** new trades are decided hourly and exits checked every 15 minutes (GitHub's scheduler can be minutes late), and free data can be delayed (Yahoo up to ~15 min, CBOE ~15 min).
 - **Real money, later:** each trader has a scorecard (60+ trading days, 40+ trades, beats SPY after costs, Sharpe ≥ 1, drawdown ≤ 15%,
   profit factor ≥ 1.3, steady months, no single-trade fluke). Nothing connects to a broker. If a trader earns it, a broker connection
   (for example Alpaca paper, then live with a small amount and hard limits) would be a separate pull request that you approve.
-- **Cost:** plain Python on GitHub Actions: no Claude usage. `python3 scripts/test_trading_floor.py` runs 13 offline tests;
+- **Cost:** plain Python on GitHub Actions: no Claude usage. `python3 scripts/test_trading_floor.py` runs 18 offline tests;
   `python3 scripts/trading_floor.py --demo 45` rebuilds the synthetic demo dataset.
 
 ## 🧠 Second Brain: what the city has learned

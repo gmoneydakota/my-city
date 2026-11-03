@@ -45,6 +45,12 @@ def http_get(url: str, timeout: int = 20, retries: int = 2, headers: dict | None
     raise RuntimeError(f"{url.split('?')[0]}: {last}")
 
 
+def http_post(url: str, data: bytes, headers: dict | None = None, timeout: int = 20) -> bytes:
+    req = urllib.request.Request(url, data=data, method="POST", headers={"User-Agent": UA, **(headers or {})})
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        return r.read()
+
+
 def pmap(fn, items, workers=8):
     """Parallel map that never raises: returns {item: result_or_None}."""
     out = {}
@@ -198,6 +204,13 @@ def earnings_on(day: str) -> set[str]:
     raw = json.loads(http_get(f"https://api.nasdaq.com/api/calendar/earnings?date={day}", timeout=15, retries=1,
                               headers={"Accept": "application/json"}))
     return parse_earnings(raw)
+
+
+def cboe_chain(symbol: str):
+    """Free, ~15-minute-delayed option chain with real bid/ask/IV from CBOE."""
+    from .options import parse_cboe
+    raw = json.loads(http_get(f"https://cdn.cboe.com/api/global/delayed_quotes/options/{urllib.parse.quote(symbol)}.json", timeout=20, retries=1))
+    return parse_cboe(raw)
 
 
 # ---------------------------------------------------------------- news

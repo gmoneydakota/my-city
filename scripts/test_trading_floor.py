@@ -19,6 +19,7 @@ import market_data  # noqa: E402
 from floor import clock, ledger, quant, sources  # noqa: E402
 from floor.engine import Floor, Store  # noqa: E402
 from floor.providers import DemoProvider, LiveProvider  # noqa: E402
+from floor import options  # noqa: E402
 from floor.traders import TRADERS  # noqa: E402
 from trading_floor import run_demo  # noqa: E402
 
@@ -210,6 +211,147 @@ def one_broken_trader_does_not_stop_the_others():
         assert a1["last_run"].get("candidates") is not None and "ERROR" not in " ".join(a1["last_run"]["notes"])
     finally:
         TRADERS[0].scan = orig
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+
+# ------------------------------------------------------------------ real option quotes, price checks, freshness, light runs
+CBOE_FIXTURE = {"data": {"current_price": 100.0, "options": [
+    {"option": "ZZZ261204C00102000", "bid": 3.0, "ask": 3.2, "iv": 0.31, "delta": 0.45, "volume": 500, "open_interest": 2000},
+    {"option": "ZZZ261204C00105000", "bid": 1.9, "ask": 2.1, "iv": 0.30, "delta": 0.33, "volume": 300, "open_interest": 1500},
+    {"option": "ZZZ261204P00098000", "bid": 0.0, "ask": 0.1, "iv": 0.3, "open_interest": 4}]}}
+
+
+@test
+def option_parsing_and_selection():
+    spot, ch = options.parse_cboe(CBOE_FIXTURE)
+    assert spot == 100.0 and len(ch) == 3
+    c = options.pick_contract(ch, "call", 100.0, date(2026, 11, 3))
+    assert c and c["strike"] == 102.0 and c["contract"] == "ZZZ261204C00102000"
+    assert options.pick_contract(ch, "put", 100.0, date(2026, 11, 3)) is None, "a one-sided quote with tiny open interest must not be tradable"
+    assert options.pick_contract(ch, "call", 100.0, date(2026, 12, 1)) is None, "nothing far enough out"
+    sraw = {"underlyingPrice": 100, "callExpDateMap": {"2026-12-04:31": {"102.0": [{"symbol": "ZZZ   261204C00102000", "bid": 3.0, "ask": 3.2, "volatility": 31.0, "openInterest": 5}]}}, "putExpDateMap": {}}
+    _, sc = options.parse_schwab_chain(sraw)
+    assert sc[0]["contract"] == "ZZZ261204C00102000" and abs(sc[0]["iv"] - 0.31) < 1e-9
+    from floor import schwab
+    q = schwab.parse_quotes({"AAPL": {"quote": {"lastPrice": 190.1, "quoteTime": 1700000000000, "netPercentChange": 1.2}}, "BAD": {}})
+    assert q["AAPL"]["last"] == 190.1 and q["AAPL"]["time"] == 1700000000.0 and "BAD" not in q
+
+
+class _RealOptDemo(DemoProvider):
+    """Demo market, but options come from a (fixture) real chain and prices can be verified."""
+    def __init__(self, *a, ref_bias=1.0, **k):
+        super().__init__(*a, **k)
+        self.ref_bias = ref_bias
+        self.asked = []
+
+    def option_chain(self, sym):
+        # a stable ladder of strikes (like a real chain), so a held contract stays quotable as the stock moves
+        base = self.series[sym][self.index[self.first_sim.isoformat()] - 1]["close"]
+        out = []
+        for i in range(25, 81):
+            kk = round(base * i * 0.02 * 2) / 2
+            for cp in ("call", "put"):
+                out.append({"contract": f"{sym}261204{'C' if cp == 'call' else 'P'}{int(kk * 1000):08d}", "cp": cp, "strike": float(kk), "expiry": "2026-12-04",
+                            "bid": 3.0, "ask": 3.2, "iv": 0.35, "delta": 0.45, "volume": 100, "oi": 500})
+        return out, "cboe"
+
+    def option_quote(self, sym, contract):
+        for c in self.option_chain(sym)[0]:
+            if c["contract"] == contract:
+                return c
+        return None
+
+    def verify_price(self, sym, price):
+        self.asked.append(sym)
+        return {"ref": price * self.ref_bias, "src": "schwab"}
+
+
+def _first_options_day(prov, fl, days=6):
+    for d in [x for x in prov.days if x >= prov.first_sim][:days]:
+        for m in (5, 65, 125, 185, 245, 305, 365):
+            t = datetime(d.year, d.month, d.day, 9, 30, tzinfo=clock.ET) + timedelta(minutes=m)
+            prov.set_time(t)
+            fl.run(t.astimezone(timezone.utc), log=lambda *_: None)
+
+
+@test
+def real_option_quotes_are_used_and_paid_at_the_ask():
+    tmp = Path(tempfile.mkdtemp())
+    try:
+        prov = _RealOptDemo(sim_days=8)
+        fl = Floor(prov, Store(tmp), demo=True)
+        _first_options_day(prov, fl)
+        opts = [o for a in fl.state["accounts"].values() for o in a["orders"] if o["kind"] != "stock" and o["side"] == "BUY"]
+        assert opts, "expected at least one option purchase in six simulated days"
+        for o in opts:
+            assert o["src"] == "cboe" and o["fill"] == 3.2, "must pay the quoted ask, not a modeled price"
+            assert o["option"]["contract"] and o["option"]["source"] == "cboe" and not o["option"]["model_priced"]
+        sells = [o for a in fl.state["accounts"].values() for o in a["orders"] if o["kind"] != "stock" and o["side"] == "SELL"]
+        assert all(o["fill"] == 3.0 for o in sells), "must sell at the quoted bid"
+        assert prov.asked, "price verification was never consulted"
+        for a in fl.state["accounts"].values():
+            assert abs(_reconcile(a) - ledger.equity(a)) < 0.5
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+@test
+def trade_refused_when_verified_price_disagrees():
+    tmp = Path(tempfile.mkdtemp())
+    try:
+        prov = _RealOptDemo(sim_days=8, ref_bias=1.05)   # the independent feed says 5% higher: something is wrong
+        fl = Floor(prov, Store(tmp), demo=True)
+        _first_options_day(prov, fl)
+        assert prov.asked
+        assert all(len(a["orders"]) == 0 for a in fl.state["accounts"].values()), "no trade may happen on an unverified price"
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+@test
+def stale_quotes_are_never_traded_on():
+    tmp = Path(tempfile.mkdtemp())
+    try:
+        prov = DemoProvider(sim_days=3)
+        real = prov.intraday
+        d = prov.first_sim
+        now = datetime(d.year, d.month, d.day, 9, 30, tzinfo=clock.ET) + timedelta(minutes=125)
+        prov.set_time(now)
+        prov.intraday = lambda s: {**real(s), "asof": now.timestamp() - 3600} if real(s) else None   # one hour old
+        fl = Floor(prov, Store(tmp), demo=True)
+        res = fl.run(now.astimezone(timezone.utc), log=lambda *_: None)
+        assert not res["changed"] and res["error"] == "stale quotes"
+        prov.intraday = lambda s: {**real(s), "asof": now.timestamp() - 30} if real(s) else None    # 30 seconds old: fine
+        assert fl.run(now.astimezone(timezone.utc), log=lambda *_: None)["changed"]
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+@test
+def manage_run_updates_positions_but_never_opens_trades():
+    tmp = Path(tempfile.mkdtemp())
+    try:
+        prov = DemoProvider(sim_days=6)
+        fl = Floor(prov, Store(tmp), demo=True)
+        d = prov.first_sim
+        for day in [x for x in prov.days if x >= prov.first_sim][:4]:
+            for m in (5, 65, 125):
+                t = datetime(day.year, day.month, day.day, 9, 30, tzinfo=clock.ET) + timedelta(minutes=m)
+                prov.set_time(t)
+                fl.run(t.astimezone(timezone.utc), log=lambda *_: None)
+        before = {a: len(v["orders"]) for a, v in fl.state["accounts"].items()}
+        npos = sum(len(v["positions"]) for v in fl.state["accounts"].values())
+        t = datetime(day.year, day.month, day.day, 9, 30, tzinfo=clock.ET) + timedelta(minutes=140)
+        prov.set_time(t)
+        res = fl.run(t.astimezone(timezone.utc), manage_only=True, log=lambda *_: None)
+        assert res["changed"] and fl.info["mode"] == "manage"
+        for a, v in fl.state["accounts"].items():
+            assert all(o["side"] == "SELL" for o in v["orders"][before[a]:]), "a manage run may only sell"
+        if npos:
+            p = next(p for v in fl.state["accounts"].values() for p in v["positions"])
+            assert len(p["track"]) >= 2, "positions must keep a price track"
+    finally:
         shutil.rmtree(tmp, ignore_errors=True)
 
 

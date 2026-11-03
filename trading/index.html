@@ -91,6 +91,40 @@ ul.rules{margin:6px 0 0;padding-left:18px;color:var(--muted);font-size:13px;line
 .pickrow button.on{border-color:var(--c);box-shadow:0 0 0 1px var(--c)}
 .regime{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
 .regime .tag{font-family:var(--mono);font-weight:600;padding:5px 12px;border-radius:99px;border:1px solid currentColor}
+
+.strip{display:flex;gap:10px 18px;flex-wrap:wrap;align-items:center;padding:12px 16px;font-size:13px}
+.strip .live{font-family:var(--mono);font-weight:600;display:flex;align-items:center;gap:7px}
+.strip .live i{width:9px;height:9px;border-radius:50%;background:var(--muted)}
+.strip .live.on i{background:var(--good);box-shadow:0 0 10px var(--good);animation:pulse 1.6s infinite}
+@keyframes pulse{50%{opacity:.35}}
+@media(prefers-reduced-motion:reduce){.strip .live.on i{animation:none}}
+.badge{font-family:var(--mono);font-size:11px;padding:2px 9px;border-radius:99px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.badge.ok{color:var(--good);border-color:rgba(61,220,132,.45)} .badge.warn{color:var(--warn);border-color:rgba(247,201,72,.45)}
+.pcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:12px}
+.pcard{padding:14px 16px;border-left:3px solid var(--c)}
+.pcard .hd{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.pcard .sym{font-size:20px;font-weight:700;letter-spacing:.02em}
+.pcard .own{font-size:12px;color:var(--muted);margin-top:2px}
+.pcard .pl{text-align:right;font-family:var(--mono);font-size:20px;font-weight:600;line-height:1.1}
+.pcard .pl small{display:block;font-size:12px;font-weight:400}
+.ladder{position:relative;height:12px;border-radius:7px;margin:16px 0 6px;background:linear-gradient(90deg,rgba(255,92,92,.35) 0 var(--e),rgba(61,220,132,.35) var(--e) 100%)}
+.ladder .mk{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--text);border-radius:1px}
+.ladder .mk.s{background:var(--bad)} .ladder .mk.t{background:var(--good)} .ladder .mk.e{background:#fff;opacity:.7}
+.ladder .now{position:absolute;top:50%;width:16px;height:16px;border-radius:50%;transform:translate(-50%,-50%);background:var(--c);border:2px solid #fff;box-shadow:0 0 12px var(--c)}
+.lad4{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;font-family:var(--mono);font-size:11px;color:var(--muted);text-align:center}
+.lad4 b{display:block;color:var(--text);font-size:12px;font-weight:600}
+.lad4 .s b{color:var(--bad)} .lad4 .t b{color:var(--good)}
+ul.sell{margin:8px 0 0;padding-left:18px;font-size:12.5px;line-height:1.55;color:var(--muted)}
+ul.sell b{color:var(--text);font-weight:500}
+.why2{font-size:12.5px;line-height:1.55;color:var(--muted);margin:8px 0 0;border-top:1px dashed var(--line);padding-top:8px}
+.why2 b{color:var(--text);font-weight:500}
+.spark{width:100%;height:auto;display:block;margin-top:8px}
+.side{font-family:var(--mono);font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px}
+.side.buy{background:rgba(61,220,132,.16);color:var(--good)} .side.sell{background:rgba(255,92,92,.15);color:var(--bad)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 10px}
+.chips button{background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--muted);border-radius:99px;padding:5px 12px;cursor:pointer;font-size:12px}
+.chips button.on{color:var(--text);border-color:var(--c,var(--accent));box-shadow:0 0 0 1px var(--c,var(--accent))}
+details.rl{margin:8px 0 0;font-size:12.5px;color:var(--muted)} details.rl summary{cursor:pointer;color:var(--text)}
 </style>
 </head>
 <body>
@@ -100,7 +134,8 @@ ul.rules{margin:6px 0 0;padding-left:18px;color:var(--muted);font-size:13px;line
   <div id="asof"></div>
 </header>
 <nav id="tabs">
-  <button data-v="board" class="on">🏆 Leaderboard</button>
+  <button data-v="live" class="on">⚡ Live</button>
+  <button data-v="board">🏆 Leaderboard</button>
   <button data-v="traders">👥 Traders</button>
   <button data-v="market">🌐 Market</button>
   <button data-v="signals">📡 Signals</button>
@@ -109,7 +144,8 @@ ul.rules{margin:6px 0 0;padding-left:18px;color:var(--muted);font-size:13px;line
 </nav>
 <main>
   <div id="banner"></div>
-  <section class="view on" id="v-board"></section>
+  <section class="view on" id="v-live"></section>
+  <section class="view" id="v-board"></section>
   <section class="view" id="v-traders"></section>
   <section class="view" id="v-market"></section>
   <section class="view" id="v-signals"></section>
@@ -182,7 +218,12 @@ function lineChart(series, { h = 220, base = 0, ylabel = '%' } = {}){
   series.forEach(s => { if (s.pts.length > 1) g += `<polyline fill="none" stroke="${s.color}" stroke-width="2" stroke-linejoin="round" points="${s.pts.map(p => sx(p[0]).toFixed(1) + ',' + sy(p[1]).toFixed(1)).join(' ')}"/>`; });
   return `<svg class="chart" viewBox="0 0 ${w} ${h}" role="img" aria-label="Equity curves">${g}</svg>`;
 }
-const curve = t => (t.equity_history || []).map(([ts, eq]) => [Date.parse(ts), (eq / S.board.start_cash - 1) * 100]);
+const curve = t => {
+  const h = (t.equity_history || []).map(([ts, eq]) => [Date.parse(ts), (eq / S.board.start_cash - 1) * 100]);
+  const t0 = h.length ? h[0][0] : Infinity;
+  const d = Object.entries(t.daily_close || {}).map(([day, eq]) => [Date.parse(day + 'T21:00:00Z'), (eq / S.board.start_cash - 1) * 100]).filter(x => x[0] < t0).sort((a, b) => a[0] - b[0]);
+  return d.concat(h);
+};
 
 /* ------------------------------------------------------------ views */
 function renderBanner(){
@@ -226,6 +267,123 @@ function renderBoard(){
   $('#perSeg').onclick = e => { const p = e.target.dataset.p; if (p) { S.period = p; renderBoard(); } };
 }
 
+
+/* ------------------------------------------------------------ live view */
+const ETZ = { timeZone:'America/New_York' };
+const fmtET = iso => { try { return new Date(iso).toLocaleString([], { ...ETZ, month:'short', day:'numeric', hour:'numeric', minute:'2-digit' }) + ' ET'; } catch { return ''; } };
+const hmET = iso => { try { return new Date(iso).toLocaleTimeString([], { ...ETZ, hour:'numeric', minute:'2-digit' }); } catch { return ''; } };
+const dET = iso => { try { return new Date(iso).toLocaleDateString([], { ...ETZ, month:'short', day:'numeric' }); } catch { return ''; } };
+const dd = ymd => fmtD(ymd + 'T12:00:00');
+const px = x => x == null ? '—' : '$' + Number(x).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const trader = id => S.board.traders.find(t => t.id === id);
+const SRC = { schwab:'Schwab real quote', cboe:'CBOE real quote (delayed)', model:'model price', yahoo:'Yahoo price' };
+
+function levels(p){
+  if (p.kind === 'stock') return { unit:'price', stop:p.stop, target:p.target, now:p.mark, entry:p.entry };
+  return { unit:'premium', stop:p.entry * (1 + p.stop / 100), target:p.entry * (1 + p.target / 100), now:p.mark, entry:p.entry };
+}
+function spark(track, L, color){
+  if (!track || track.length < 2) return '<div class="sub">Price track builds as the position is checked every 15 minutes.</div>';
+  const w = 340, h = 84, pad = 6, ys = track.map(t => t[1]);
+  const lo = Math.min(...ys, L.stop ?? Infinity) , hi = Math.max(...ys, L.target ?? -Infinity);
+  const t0 = Date.parse(track[0][0]), t1 = Date.parse(track[track.length - 1][0]) || t0 + 1;
+  const sx = t => pad + (Date.parse(t) - t0) / ((t1 - t0) || 1) * (w - 2 * pad), sy = v => pad + (1 - (v - lo) / ((hi - lo) || 1)) * (h - 2 * pad);
+  const line = (v, c) => v == null ? '' : `<line x1="${pad}" x2="${w - pad}" y1="${sy(v)}" y2="${sy(v)}" stroke="${c}" stroke-dasharray="4 4" stroke-width="1" opacity=".7"/>`;
+  return `<svg class="spark" viewBox="0 0 ${w} ${h}" role="img" aria-label="Price since entry">${line(L.stop, '#ff5c5c')}${line(L.target, '#3ddc84')}${line(L.entry, '#ffffff')}
+    <polyline fill="none" stroke="${color}" stroke-width="2" stroke-linejoin="round" points="${track.map(t => sx(t[0]).toFixed(1) + ',' + sy(t[1]).toFixed(1)).join(' ')}"/>
+    <circle cx="${sx(track[track.length - 1][0])}" cy="${sy(ys[ys.length - 1])}" r="3.5" fill="${color}"/></svg>`;
+}
+function sellPlan(p){
+  const L = levels(p), now = p.mark, out = [];
+  const away = v => pct((v / now - 1) * 100, 1);
+  if (p.kind === 'stock') {
+    const R = p.risk || (p.entry - p.stop);
+    out.push(`<b>Stop:</b> sells if price falls to ${px(p.stop)} (${away(p.stop)} from here)${p.stop >= p.entry ? ' — already raised, this now locks in profit' : ''}`);
+    out.push(`<b>Target:</b> sells if price rises to ${px(p.target)} (${away(p.target)} from here)`);
+    out.push(`<b>Trailing:</b> at ${px(p.entry + R)} (+1R) the stop moves to breakeven; at ${px(p.entry + 2 * R)} (+2R) it trails ${px(R)} under the high`);
+  } else {
+    out.push(`<b>Stop:</b> sells if the option loses ${Math.abs(p.stop)}% of its price (≤ ${px(L.stop)}, ${away(L.stop)} from here)`);
+    out.push(`<b>Target:</b> sells if it gains ${p.target}% (≥ ${px(L.target)}, ${away(L.target)} from here)`);
+    const exp = new Date(p.option.expiry + 'T12:00:00'); exp.setDate(exp.getDate() - 5);
+    out.push(`<b>Expiry:</b> always sold by ${fmtD(exp.toISOString())} (5 days before it expires ${dd(p.option.expiry)})`);
+  }
+  if (p.horizon === 'day') out.push(`<b>Time:</b> day trade — sold at the end of the session (the ~3:35 pm ET run, or 4:20 pm at the latest) if still open`);
+  else { const e = new Date(p.entry_ts); e.setDate(e.getDate() + p.max_days); out.push(`<b>Time stop:</b> sold after ${p.max_days} day${p.max_days > 1 ? 's' : ''} (around ${dET(e.toISOString())}) if nothing else triggers`); }
+  return out;
+}
+function posCard(p, t){
+  const L = levels(p), mult = p.kind === 'stock' ? 1 : 100, pn = (p.mark - p.entry) * p.qty * mult - (p.fees || 0), pc = (p.mark / p.entry - 1) * 100;
+  const lo0 = Math.min(L.stop, L.now, L.entry), hi0 = Math.max(L.target, L.now, L.entry), padv = (hi0 - lo0) * .06, lo = lo0 - padv, hi = hi0 + padv, pos = v => ((v - lo) / (hi - lo) * 100).toFixed(1);
+  const tag = p.kind === 'stock' ? `${p.qty} shares` : `${p.qty}× ${p.option.cp.toUpperCase()} $${p.option.strike} · exp ${dd(p.option.expiry)}`;
+  const toTarget = Math.max(0, Math.min(100, (L.now - L.entry) / (L.target - L.entry) * 100));
+  const src = p.kind === 'stock' ? '' : `<span class="badge ${p.mark_src && p.mark_src !== 'model' ? 'ok' : 'warn'}">${esc(SRC[p.mark_src || 'model'])}</span>`;
+  return `<div class="glass pcard" style="--c:${t.color}">
+    <div class="hd"><div><div class="sym">${esc(p.symbol)} <span class="pill" style="font-size:10px">${p.kind === 'stock' ? 'stock' : p.kind}</span> ${p.horizon === 'day' ? '<span class="pill" style="font-size:10px;color:var(--warn)">day trade</span>' : ''}</div>
+      <div class="own">${t.emoji} ${esc(t.name)} · ${esc(tag)}</div><div class="own">Bought ${esc(fmtET(p.entry_ts))} at ${px(p.entry)}${p.kind === 'stock' ? '' : ' per share'}</div></div>
+      <div class="pl ${cls(pn)}">${money(pn, true)}<small>${pct(pc)}</small></div></div>
+    <div class="ladder" style="--e:${pos(L.entry)}%"><i class="mk s" style="left:${pos(L.stop)}%"></i><i class="mk e" style="left:${pos(L.entry)}%"></i><i class="mk t" style="left:${pos(L.target)}%"></i><i class="now" style="left:${pos(L.now)}%"></i></div>
+    <div class="lad4"><div class="s">STOP<b>${px(L.stop)}</b></div><div>ENTRY<b>${px(L.entry)}</b></div><div>NOW<b>${px(L.now)}</b></div><div class="t">TARGET<b>${px(L.target)}</b></div></div>
+    <div class="sub">${L.now >= L.entry ? toTarget.toFixed(0) + '% of the way to the target' : (Math.abs(L.now - L.entry) / Math.max(L.entry - L.stop, 1e-9) * 100).toFixed(0) + '% of the way to the stop'}${p.kind === 'stock' ? '' : ` · underlying ${px(p.spot)}${p.bid ? ` · bid ${px(p.bid)} / ask ${px(p.ask)}` : ''}`} ${src}</div>
+    ${spark(p.track, L, t.color)}
+    <ul class="sell">${sellPlan(p).map(x => `<li>${x}</li>`).join('')}</ul>
+    <div class="why2"><b>Why it bought:</b> ${esc(p.thesis)}</div></div>`;
+}
+let blotterTrader = 'all', blotterSide = 'all';
+function blotterRows(b){
+  return (b.orders || []).filter(o => (blotterTrader === 'all' || o.trader === blotterTrader) && (blotterSide === 'all' || o.side === blotterSide)).slice(0, 60).map((o, i) => {
+    const t = trader(o.trader), inst = o.kind === 'stock' ? 'stock' : `${o.option.cp.toUpperCase()} $${o.option.strike} ${dd(o.option.expiry)}`;
+    const key = 'b' + o.trader + o.id + o.side;
+    const det = o.side === 'BUY' ? `<b>Why:</b> ${esc(o.why)}<br><span class="mute">Market ${px(o.ref)} → filled ${px(o.fill)} (${o.slip >= 0 ? 'cost' : 'saved'} ${money2(Math.abs(o.slip))} vs the mid/last) · fees ${money2(o.fees)} · ${esc(SRC[o.src] || o.src)} · cash left ${money(o.cash_after)}</span>`
+      : `<b>Exit reason:</b> ${esc(o.why)}<br><span class="mute">Result ${money(o.pnl, true)} (${pct(o.ret_pct, 1)}) · filled ${px(o.fill)} vs market ${px(o.ref)} · fees ${money2(o.fees)} · ${esc(SRC[o.src] || o.src)} · cash after ${money(o.cash_after)}</span>`;
+    return `<tr class="click" data-k="${key}"><td>${esc(fmtET(o.ts))}</td><td><span class="dot" style="--c:${t.color}"></span>${esc(t.name.split(' ')[0])}</td><td><span class="side ${o.side === 'BUY' ? 'buy' : 'sell'}">${o.side}</span></td><td><b>${esc(o.symbol)}</b></td><td>${esc(inst)}</td>
+      <td class="r">${o.qty}</td><td class="r">${px(o.fill)}</td><td class="r">${money(o.value)}</td><td class="r ${o.side === 'SELL' ? cls(o.pnl) : 'mute'}">${o.side === 'SELL' ? money(o.pnl, true) : '—'}</td></tr>
+      <tr class="why" data-k="${key}" style="${S.openRows.has(key) ? '' : 'display:none'}"><td colspan="9">${det}</td></tr>`;
+  }).join('');
+}
+function renderLive(){
+  const b = S.board, m = S.market, el = $('#v-live');
+  if (!b) { el.innerHTML = '<div class="empty">No trading data yet. Run <b>trading-floor</b> in your repo’s Actions tab, or wait for the next market open.</div>'; return; }
+  const open = b.phase === 'open', ri = b.run_info || {};
+  const srcs = (m?.sources || []);
+  const optSrc = Object.keys(ri.option_sources || {});
+  const sch = srcs.find(x => /Schwab/.test(x.name));
+  const cboe = srcs.find(x => /CBOE/.test(x.name));
+  const lastScan = b.last_full_run, lastCheck = b.generated_at;
+  const positions = b.traders.flatMap(t => t.open_positions.map(p => ({ p, t })));
+  const cands = b.traders.map(t => ({ t, c: (t.last_run?.candidates || []) }));
+  const cc = (t, c) => {
+    const stockPlan = c.kind === 'stock' && c.stop ? `buy ≈ ${px(c.price)} · stop ${px(c.stop)} (${pct((c.stop / c.price - 1) * 100, 1)}) · target ${px(c.target)} (${pct((c.target / c.price - 1) * 100, 1)}) · reward/risk ${((c.target - c.price) / Math.max(c.price - c.stop, 1e-9)).toFixed(1)}:1`
+      : `option on ${px(c.price)} stock · risks ${(c.premium_frac * 100).toFixed(1)}% of the account · stop ${c.stop_pct}% / target +${c.target_pct}% on the premium`;
+    const key = 'k' + t.id + c.symbol;
+    return `<tr class="click" data-k="${key}"><td><b>${esc(c.symbol)}</b></td><td>${esc(c.kind)}${c.horizon === 'day' ? ' · day' : ''}</td><td class="r">${c.score}</td><td>${c.action === 'BOUGHT' ? '<span class="side buy">BOUGHT</span>' : `<span class="mute">${esc(c.action || '')}</span>`}</td></tr>
+      <tr class="why" data-k="${key}" style="${S.openRows.has(key) ? '' : 'display:none'}"><td colspan="4"><b style="color:var(--text)">Plan:</b> ${stockPlan}<br>${esc(c.thesis)}</td></tr>`;
+  };
+  el.innerHTML = `
+    <div class="glass strip">
+      <span class="live ${open ? 'on' : ''}"><i></i>${open ? 'MARKET OPEN' : b.phase === 'post' ? 'AFTER THE CLOSE' : 'MARKET CLOSED'}</span>
+      <span>Last position check <b>${lastCheck ? esc(hmET(lastCheck)) + ' ET' : '—'}</b></span>
+      <span>Last full market scan <b>${lastScan ? esc(hmET(lastScan)) + ' ET' : '—'}</b></span>
+      <span class="mute">Scans hourly · positions checked every 15 minutes</span>
+      <span class="badge ${sch && sch.status === 'ok' ? 'ok' : ''}" title="Optional read-only Schwab market data">Schwab ${sch && sch.status === 'ok' ? 'connected' : 'not connected'}</span>
+      <span class="badge ${cboe && cboe.status === 'ok' ? 'ok' : 'warn'}">Options: ${optSrc.length ? esc(optSrc.map(x => SRC[x] || x).join(' + ')) : (cboe && cboe.status === 'ok' ? 'CBOE real quotes' : 'model-priced')}</span>
+      ${ri.stale_dropped ? `<span class="badge warn">${ri.stale_dropped} stale quotes ignored</span>` : ''}
+    </div>
+    <h2>Open positions right now — the game plan (${positions.length})</h2>
+    ${positions.length ? `<div class="pcards">${positions.map(x => posCard(x.p, x.t)).join('')}</div>` : '<div class="glass card empty">All three traders are flat right now. New positions appear here the moment one buys, with its stop, target and exit plan.</div>'}
+    <h2>Every buy and sell (newest first)</h2>
+    <div class="chips" id="bT"><button data-t="all" class="${blotterTrader === 'all' ? 'on' : ''}">All traders</button>${b.traders.map(t => `<button data-t="${t.id}" style="--c:${t.color}" class="${blotterTrader === t.id ? 'on' : ''}">${t.emoji} ${esc(t.name.split(' ')[0])}</button>`).join('')}
+      <span style="width:12px"></span><button data-s="all" class="${blotterSide === 'all' ? 'on' : ''}">Buys + sells</button><button data-s="BUY" class="${blotterSide === 'BUY' ? 'on' : ''}">Buys</button><button data-s="SELL" class="${blotterSide === 'SELL' ? 'on' : ''}">Sells</button></div>
+    <div class="glass card tblwrap">${blotterRows(b) ? `<table><thead><tr><th>Time</th><th>Trader</th><th>Side</th><th>Symbol</th><th>Instrument</th><th class="r">Qty</th><th class="r">Fill</th><th class="r">Value</th><th class="r">P&amp;L</th></tr></thead><tbody>${blotterRows(b)}</tbody></table><div class="sub">Tap a row for the reasoning, fill and fees.</div>` : '<div class="empty">No orders match yet.</div>'}</div>
+    <h2>Looking to buy — what each trader is watching</h2>
+    <div class="grid g3">${cands.map(({ t, c }) => `<div class="glass card" style="border-top:3px solid ${t.color}"><div class="tname"><i>${t.emoji}</i>${esc(t.name)}</div>
+      <div class="sub">as of ${t.last_run?.ts ? esc(hmET(t.last_run.ts)) + ' ET' : '—'} · ${esc(t.last_run?.regime || '')} market</div>
+      ${(t.last_run?.notes || []).map(n => `<div class="sub" style="color:var(--warn)">${esc(n)}</div>`).join('')}
+      ${c.length ? `<div class="tblwrap"><table><thead><tr><th>Symbol</th><th>Idea</th><th class="r">Score</th><th>Status</th></tr></thead><tbody>${c.slice(0, 8).map(x => cc(t, x)).join('')}</tbody></table></div>` : '<div class="sub" style="margin-top:8px">No setups match its rules right now.</div>'}
+      <details class="rl"><summary>When does ${esc(t.name.split(' ')[0])} buy and sell?</summary><ul class="rules">${t.rules.map(r => `<li>${esc(r)}</li>`).join('')}</ul></details></div>`).join('')}</div>`;
+  el.querySelector('#bT').onclick = e => { const x = e.target.closest('button'); if (!x) return; if (x.dataset.t) blotterTrader = x.dataset.t; if (x.dataset.s) blotterSide = x.dataset.s; renderLive(); };
+  el.querySelectorAll('tr.click').forEach(tr => tr.onclick = () => { const k = tr.dataset.k; S.openRows.has(k) ? S.openRows.delete(k) : S.openRows.add(k); const w = el.querySelector(`tr.why[data-k="${CSS.escape(k)}"]`); w.style.display = S.openRows.has(k) ? '' : 'none'; });
+}
+
 function posLabel(p){
   if (p.kind === 'stock') return `${p.qty} sh`;
   return `${p.qty}× ${p.option.cp.toUpperCase()} ${p.option.strike} · exp ${fmtD(p.option.expiry)}`;
@@ -244,7 +402,7 @@ function renderTraders(){
   const cands = (lr.candidates || []).map(c => `<tr class="click" data-k="c${c.symbol}${t.id}"><td><b>${esc(c.symbol)}</b></td><td>${esc(c.kind)}${c.horizon === 'day' ? ' · day' : ''}</td><td class="r">${c.score}</td><td>${c.action === 'BOUGHT' ? '<span class="pill up">bought</span>' : `<span class="mute">${esc(c.action || '')}</span>`}</td></tr>
     <tr class="why" data-k="c${c.symbol}${t.id}" style="${S.openRows.has('c' + c.symbol + t.id) ? '' : 'display:none'}"><td colspan="4">${esc(c.thesis)}</td></tr>`).join('');
   const trades = t.recent_trades.slice(0, 25).map(x => `<tr class="click" data-k="t${x.id}${t.id}"><td>${esc(fmtT(x.exit_ts))}</td><td><b>${esc(x.symbol)}</b></td><td>${x.kind}${x.horizon === 'day' ? ' · day' : ''}</td><td class="r ${cls(x.pnl)}">${money(x.pnl, true)}</td><td class="r ${cls(x.ret_pct)}">${pct(x.ret_pct, 1)}</td><td class="mute">${esc(x.reason)}</td></tr>
-    <tr class="why" data-k="t${x.id}${t.id}" style="${S.openRows.has('t' + x.id + t.id) ? '' : 'display:none'}"><td colspan="6">${esc(x.thesis)}</td></tr>`).join('');
+    <tr class="why" data-k="t${x.id}${t.id}" style="${S.openRows.has('t' + x.id + t.id) ? '' : 'display:none'}"><td colspan="6">${esc(x.thesis)}<br><span class="mute">Bought ${px(x.entry)} ${esc(fmtET(x.entry_ts))} → sold ${px(x.exit)} ${esc(fmtET(x.exit_ts))}</span>${spark(x.track, x.kind === 'stock' ? { stop:x.stop, target:x.target, entry:x.entry } : { entry:x.entry }, t.color)}</td></tr>`).join('');
   const st = t.stats;
   el.innerHTML = `
     <div class="pickrow">${b.traders.map(x => `<button data-t="${x.id}" style="--c:${x.color}" class="${x.id === t.id ? 'on' : ''}">${x.emoji} ${esc(x.name)}</button>`).join('')}</div>
@@ -335,9 +493,11 @@ function renderSources(){
     <h2>How a run works</h2>
     <div class="glass card"><ol class="rules" style="margin:0">
       <li><b>Once a day</b> it downloads a year of daily prices for the whole S&amp;P 500 (plus liquid ETFs) and computes trend, momentum, RSI, ATR, Bollinger bands, volatility and a relative-strength rank for every stock.</li>
-      <li><b>Every hour of the session</b> (9:35, 10:35 … 3:35 ET) it pulls live prices and 5-minute bars for every symbol, plus VIX, yields, credit spreads, Fear &amp; Greed, today's earnings calendar and market headlines.</li>
+      <li><b>Every hour of the session</b> (9:35, 10:35 … 3:35 ET) a <b>full scan</b> pulls live prices and 5-minute bars for every symbol, plus VIX, yields, credit spreads, Fear &amp; Greed, today's earnings calendar and market headlines.</li>
+      <li><b>Every 15 minutes in between</b> a <b>position check</b> refreshes only what each trader holds, so stops, targets and trailing stops react quickly.</li>
       <li>It scores the <b>market regime</b> (risk-on / neutral / risk-off) from SPY's trend, VIX, Fear &amp; Greed and how many stocks are above their 50-day.</li>
-      <li>Each trader manages its positions first (stops, targets, trailing stops, time stops), then scans the entire market with its own rules, reads headlines only for the stocks it cares about, and buys with a written reason.</li>
+      <li>Each trader manages its positions first, then scans the entire market with its own rules, reads headlines only for the stocks it cares about, and buys with a written reason. <b>Before any buy</b> the price is double-checked against a second real-time source when one is connected (Schwab), and any quote older than 20 minutes is ignored.</li>
+      <li>Options are bought at the real <b>ask</b> and sold at the real <b>bid</b> from a live chain (Schwab, else CBOE delayed) with a tight spread and real open interest. Only if no chain is available does it fall back to a model price, and the trade is labelled that way.</li>
       <li>After the close it records each account's end-of-day value. Daily, weekly and monthly winners are ranked from those records.</li></ol>
       <div class="sub">All of this is plain Python on GitHub's servers — it uses <b>no Claude usage</b>. Code: <code>scripts/floor/</code> · schedule: <code>.github/workflows/trading-floor.yml</code></div></div>
     <h2>Rules every trader must follow</h2>
@@ -348,8 +508,15 @@ function renderSources(){
       <li>Fees are charged: 3 bps slippage on stocks; a 2.5% half-spread and $0.65/contract on options.</li>
       <li>Day trades are always flat by the close; no trader ever holds one overnight.</li></ul></div>
     <h2>What to keep in mind</h2>
-    <div class="warn"><b>Options are model-priced.</b> There is no free, reliable public feed of option quotes, so calls and puts are priced with Black-Scholes using a volatility estimate. Real option prices (and fills) will differ, so treat options results as less trustworthy than stock results.</div>
-    <div class="warn"><b>Decisions are hourly, not tick-by-tick.</b> It runs on GitHub's scheduler, which can start a few minutes late. "Day trading" here means intraday positions closed by the bell, checked once an hour.</div>
+    <div class="warn"><b>Option quotes are real but delayed.</b> The free CBOE feed is about 15 minutes behind. Connecting Schwab (below) makes them real-time. If a chain can't be fetched, that trade is priced by a Black-Scholes model and is labelled "model price", so treat those as less reliable.</div>
+    <div class="warn"><b>New trades come hourly, exits every 15 minutes.</b> It runs on GitHub's scheduler, which can start a few minutes late. "Day trading" here means intraday positions closed by the bell.</div>
+    <h2>Connect Charles Schwab (optional, read-only)</h2>
+    <div class="glass card"><ol class="rules" style="margin:0">
+      <li>Create an app at <b>developer.schwab.com</b> with the <b>Market Data</b> API and callback URL <code>https://127.0.0.1</code>. Schwab must approve it (can take a few days).</li>
+      <li>On your own computer run <code>python3 scripts/schwab_auth.py</code>, sign in when it asks, and paste the address your browser lands on. Never paste your key, secret or tokens into a chat.</li>
+      <li>Save <code>SCHWAB_APP_KEY</code>, <code>SCHWAB_APP_SECRET</code> and <code>SCHWAB_REFRESH_TOKEN</code> as GitHub Actions secrets in your repo.</li>
+      <li>The next run switches on real-time price checks and real-time option chains. This page's status bar turns to <b>Schwab connected</b>.</li></ol>
+      <div class="sub"><b>Schwab sign-ins expire every 7 days</b>, so step 2–3 repeat weekly. If you skip a week the floor automatically falls back to the free sources and says so here. This connection can only <b>read</b> market data: nothing in the project can place an order.</div></div>
     <div class="warn"><b>Free data can be delayed or fail.</b> If a source goes down, the run records that here and carries on with what it has; if almost no prices come back, it skips the run and changes nothing.</div>`;
 }
 
@@ -377,7 +544,7 @@ function renderReal(){
 }
 
 function render(){
-  renderBanner(); renderBoard(); renderTraders(); renderMarket(); renderSignals(); renderSources(); renderReal();
+  renderBanner(); renderLive(); renderBoard(); renderTraders(); renderMarket(); renderSignals(); renderSources(); renderReal();
 }
 $('#tabs').onclick = e => {
   const v = e.target.closest('button')?.dataset.v; if (!v) return;
@@ -387,7 +554,7 @@ $('#tabs').onclick = e => {
 };
 const h0 = location.hash.slice(1); if (h0 && $('#v-' + h0)) $('#tabs button[data-v="' + h0 + '"]').click();
 load();
-setInterval(() => { if (!document.hidden) load(); }, 5 * 60e3);
+setInterval(() => { if (!document.hidden) load(); }, 2 * 60e3);
 })();
 </script>
 </body>

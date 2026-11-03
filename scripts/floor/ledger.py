@@ -11,7 +11,7 @@ OPT_HALF_SPREAD = 0.025      # pay 2.5% over / get 2.5% under the model mid pric
 
 
 def new_account(tid: str) -> dict:
-    return {"id": tid, "cash": START_CASH, "start_cash": START_CASH, "positions": [], "trades": [],
+    return {"id": tid, "cash": START_CASH, "start_cash": START_CASH, "positions": [], "trades": [], "orders": [],
             "daily_close": {}, "equity_history": [], "next_id": 1, "cooldown": {}, "last_run": {}}
 
 
@@ -25,14 +25,15 @@ def equity(acct: dict) -> float:
 
 
 def open_position(acct: dict, *, kind, symbol, qty, price, ts, horizon, stop, target, thesis, tags=None,
-                  option=None, max_days=5, underlying=None) -> dict | None:
-    """Buy `qty` shares (or contracts). `price` is the market mid; slippage/spread is added here."""
+                  option=None, max_days=5, underlying=None, fill=None, src="model") -> dict | None:
+    """Buy `qty` shares (or contracts). `price` is the market mid; slippage/spread is added here,
+    unless a real `fill` (e.g. the quoted ask) is given."""
     if qty <= 0:
         return None
     if kind == "stock":
-        fill, fee, mult = price * (1 + STOCK_SLIP), 0.0, 1
+        fill, fee, mult = (fill if fill is not None else price * (1 + STOCK_SLIP)), 0.0, 1
     else:
-        fill, fee, mult = price * (1 + OPT_HALF_SPREAD), OPT_COMMISSION * qty, 100
+        fill, fee, mult = (fill if fill is not None else price * (1 + OPT_HALF_SPREAD)), OPT_COMMISSION * qty, 100
     cost = qty * fill * mult + fee
     if cost > acct["cash"] + 1e-9:
         return None
@@ -43,16 +44,26 @@ def open_position(acct: dict, *, kind, symbol, qty, price, ts, horizon, stop, ta
     if option:
         pos["option"] = option
     acct["next_id"] += 1
+    pos["track"] = [[ts, round(fill, 4), round(underlying, 4) if underlying else None]]
     acct["positions"].append(pos)
+    _order(acct, {"ts": ts, "side": "BUY", "id": pos["id"], "symbol": symbol, "kind": kind, "qty": qty, "ref": round(price, 4), "fill": round(fill, 4),
+                  "fees": round(fee, 2), "value": round(qty * fill * mult, 2), "why": (thesis[:230] + "…") if len(thesis) > 230 else thesis, "src": src, "option": option,
+                  "slip": round((fill - price) * qty * mult, 2), "cash_after": round(acct["cash"], 2)})
     return pos
 
 
-def close_position(acct: dict, pos: dict, price: float, ts: str, reason: str) -> dict:
-    """Sell a position at market `price` (before slippage/spread). Returns the trade record."""
+def _order(acct, rec):
+    acct.setdefault("orders", []).append(rec)
+    if len(acct["orders"]) > 300:
+        acct["orders"] = acct["orders"][-300:]
+
+
+def close_position(acct: dict, pos: dict, price: float, ts: str, reason: str, fill=None, src="model") -> dict:
+    """Sell a position at market `price` (before slippage/spread), or at a real `fill` (e.g. the quoted bid)."""
     if pos["kind"] == "stock":
-        fill, fee, mult = price * (1 - STOCK_SLIP), 0.0, 1
+        fill, fee, mult = (fill if fill is not None else price * (1 - STOCK_SLIP)), 0.0, 1
     else:
-        fill, fee, mult = max(price * (1 - OPT_HALF_SPREAD), 0.0), OPT_COMMISSION * pos["qty"], 100
+        fill, fee, mult = (fill if fill is not None else max(price * (1 - OPT_HALF_SPREAD), 0.0)), OPT_COMMISSION * pos["qty"], 100
     proceeds = pos["qty"] * fill * mult - fee
     cost = pos["qty"] * pos["entry"] * mult + pos["fees"]
     acct["cash"] += proceeds
@@ -61,16 +72,27 @@ def close_position(acct: dict, pos: dict, price: float, ts: str, reason: str) ->
     tr = {"id": pos["id"], "symbol": pos["symbol"], "kind": pos["kind"], "horizon": pos["horizon"], "qty": pos["qty"],
           "entry": pos["entry"], "exit": round(fill, 4), "entry_ts": pos["entry_ts"], "exit_ts": ts, "pnl": round(pnl, 2),
           "ret_pct": round(pnl / cost * 100, 2) if cost else 0.0, "reason": reason, "thesis": pos["thesis"],
-          "tags": pos.get("tags", []), "option": pos.get("option")}
+          "tags": pos.get("tags", []), "option": pos.get("option"), "stop": pos.get("stop"), "target": pos.get("target"),
+          "track": _thin(pos.get("track", []), 24)}
+    _order(acct, {"ts": ts, "side": "SELL", "id": pos["id"], "symbol": pos["symbol"], "kind": pos["kind"], "qty": pos["qty"], "ref": round(price, 4),
+                  "fill": round(fill, 4), "fees": round(fee, 2), "value": round(pos["qty"] * fill * mult, 2), "why": reason, "src": src,
+                  "option": pos.get("option"), "pnl": round(pnl, 2), "ret_pct": tr["ret_pct"], "cash_after": round(acct["cash"], 2)})
     acct["trades"].append(tr)
-    if len(acct["trades"]) > 800:
-        acct["trades"] = acct["trades"][-800:]
+    if len(acct["trades"]) > 500:
+        acct["trades"] = acct["trades"][-500:]
     if pnl < 0:
         acct["cooldown"][pos["symbol"]] = ts[:10]
     return tr
 
 
-def snapshot(acct: dict, ts: str, keep: int = 2500):
+def _thin(xs, n):
+    if len(xs) <= n:
+        return xs
+    step = (len(xs) - 1) / (n - 1)
+    return [xs[round(i * step)] for i in range(n)]
+
+
+def snapshot(acct: dict, ts: str, keep: int = 420):
     acct["equity_history"].append([ts, round(equity(acct), 2)])
     if len(acct["equity_history"]) > keep:
         acct["equity_history"] = acct["equity_history"][-keep:]

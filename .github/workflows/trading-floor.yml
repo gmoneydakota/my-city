@@ -1,11 +1,18 @@
 # Trading Floor: three competing paper traders (Momentum Mo, Reversion Rae, Catalyst Cal).
 # Plain Python, uses NO Claude usage. Paper money only: nothing here can place a real trade.
-# Runs hourly through the US session (9:35 ... 15:35 ET) and once after the close (4:20 pm ET).
+#
+#   :35 each hour 9-15 ET ... FULL scan: whole market, new trades, exits
+#   :05 :20 :50 hours 9-15 ... POSITION CHECK: refresh held positions only (stops, targets, trailing stops)
+#   4:20 pm ET ............... end-of-day close-out and standings
+#
 # Outside market hours (weekends, holidays) the script exits immediately without changing anything.
+# Optional secrets (read-only Schwab market data): SCHWAB_APP_KEY, SCHWAB_APP_SECRET, SCHWAB_REFRESH_TOKEN
 name: trading-floor
 on:
   schedule:
     - cron: "35 9-15 * * 1-5"
+      timezone: "America/New_York"
+    - cron: "5,20,50 9-15 * * 1-5"
       timezone: "America/New_York"
     - cron: "20 16 * * 1-5"
       timezone: "America/New_York"
@@ -28,7 +35,17 @@ jobs:
         with:
           python-version: "3.12"
       - name: Run the trading floor
-        run: python3 scripts/trading_floor.py
+        env:
+          SCHEDULE: ${{ github.event.schedule }}
+          SCHWAB_APP_KEY: ${{ secrets.SCHWAB_APP_KEY }}
+          SCHWAB_APP_SECRET: ${{ secrets.SCHWAB_APP_SECRET }}
+          SCHWAB_REFRESH_TOKEN: ${{ secrets.SCHWAB_REFRESH_TOKEN }}
+        run: |
+          if [ "$SCHEDULE" = "5,20,50 9-15 * * 1-5" ]; then
+            python3 scripts/trading_floor.py --manage
+          else
+            python3 scripts/trading_floor.py
+          fi
       - name: Save results
         if: always()
         run: |

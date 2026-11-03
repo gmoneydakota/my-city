@@ -4,10 +4,13 @@ from __future__ import annotations
 import math
 import random
 import threading
+import time
 from datetime import date, datetime, timedelta
 from pathlib import Path
 
 from . import clock, sources
+from .options import find_contract
+from .schwab import SchwabClient
 from .sources import FALLBACK_UNIVERSE, INDEXES, SECTORS
 
 
@@ -36,6 +39,56 @@ class LiveProvider:
     def __init__(self, data_dir: Path):
         self.dir = Path(data_dir)
         self.log = _Log()
+        self.schwab = SchwabClient.from_env()   # None unless the three SCHWAB_* secrets exist (read-only market data)
+        self._chains, self._sq = {}, {}
+        if not self.schwab:
+            self.log.rec("Schwab real-time quotes + option chains (optional)", False, "not configured: add SCHWAB_APP_KEY / SCHWAB_APP_SECRET / SCHWAB_REFRESH_TOKEN secrets", note="optional")
+
+    def new_run(self):
+        self._chains, self._sq = {}, {}
+
+    def verify_price(self, sym, price):
+        """Independent real-time reference price (Schwab) used to double-check a price before a paper trade."""
+        if not self.schwab:
+            return None
+        try:
+            if sym not in self._sq:
+                self._sq.update({sym: None, **self.schwab.quotes([sym])})
+            q = self._sq.get(sym)
+            self.log.rec("Schwab real-time quotes + option chains (optional)", bool(q), None if q else "no quote")
+            if q and (not q["time"] or time.time() - q["time"] < 300):
+                return {"ref": q["last"], "src": "schwab"}
+        except Exception as e:  # noqa: BLE001
+            self.log.rec("Schwab real-time quotes + option chains (optional)", False, e)
+        return None
+
+    def option_chain(self, sym):
+        """(contracts, source) with real bid/ask: Schwab if configured, else CBOE (free, ~15 min delayed)."""
+        if sym in self._chains:
+            return self._chains[sym]
+        res = (None, None)
+        if self.schwab:
+            try:
+                _, ch = self.schwab.chain(sym)
+                self.log.rec("Schwab real-time quotes + option chains (optional)", bool(ch), None if ch else "empty chain")
+                if ch:
+                    res = (ch, "schwab")
+            except Exception as e:  # noqa: BLE001
+                self.log.rec("Schwab real-time quotes + option chains (optional)", False, e)
+        if not res[0]:
+            try:
+                _, ch = sources.cboe_chain(sym)
+                self.log.rec("Option quotes (CBOE delayed chains)", bool(ch), None if ch else "empty chain")
+                if ch:
+                    res = (ch, "cboe")
+            except Exception as e:  # noqa: BLE001
+                self.log.rec("Option quotes (CBOE delayed chains)", False, e)
+        self._chains[sym] = res
+        return res
+
+    def option_quote(self, sym, contract):
+        ch, _ = self.option_chain(sym)
+        return find_contract(ch, contract)
 
     def source_status(self):
         return self.log.status()
@@ -219,6 +272,12 @@ class DemoProvider:
         first = seen[:6]
         return {"price": price, "prev_close": prev["close"], "open": b["open"], "high": max(seen + [b["open"]]), "low": min(seen + [b["open"]]),
                 "volume": vol, "vwap": sum(seen) / len(seen), "or_high": max(first), "or_low": min(first), "n_bars": n, "asof": 0, "state": "REGULAR"}
+
+    def option_chain(self, sym):
+        return None, None   # demo uses the model-priced path
+
+    def verify_price(self, sym, price):
+        return None
 
     def macro(self):
         today = self._today()

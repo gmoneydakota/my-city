@@ -81,21 +81,7 @@
   {
     "date": "2026-11-03",
     "lessons": [
-      "ML: trusting the model 23% \u2192 20% (vs the market) after 74 graded bets \u2014 the market has been the better predictor so far.",
-      "Spread: trusting the model 23% \u2192 18% (vs the market) after 104 graded bets \u2014 the market has been the better predictor so far.",
-      "Total: trusting the model 50% \u2192 41% (vs the market) after 124 graded bets \u2014 the model has been the better predictor so far.",
-      "NBA assists: projections ran too high (avg 3.52 projected vs 3.49 actual over 250 players) \u2192 now scaled \u00d70.993.",
-      "NBA assists: was overconfident about player swings \u2192 uncertainty \u00d71.016.",
-      "NBA points: projections ran too high (avg 15.42 projected vs 14.31 actual over 251 players) \u2192 now scaled \u00d70.945.",
-      "NBA points: was underconfident about player swings \u2192 uncertainty \u00d70.995.",
-      "NBA pra: projections ran too high (avg 24.25 projected vs 22.89 actual over 251 players) \u2192 now scaled \u00d70.957.",
-      "NBA pra: was underconfident about player swings \u2192 uncertainty \u00d70.961.",
-      "NBA rebounds: projections ran too high (avg 5.33 projected vs 5.11 actual over 251 players) \u2192 now scaled \u00d70.968.",
-      "NBA rebounds: was underconfident about player swings \u2192 uncertainty \u00d70.993.",
-      "NBA threes: projections ran too high (avg 1.89 projected vs 1.8 actual over 223 players) \u2192 now scaled \u00d70.963.",
-      "NBA threes: was underconfident about player swings \u2192 uncertainty \u00d70.972.",
-      "NFL pass_yds: projections ran too high (avg 224.09 projected vs 211.46 actual over 26 players) \u2192 now scaled \u00d70.986.",
-      "NFL rush_yds: projections ran too high (avg 39.06 projected vs 37.57 actual over 65 players) \u2192 now scaled \u00d70.983."
+      "Not enough finished games yet to change anything. Still collecting results."
     ],
     "scoreboard": {
       "graded_bets": 2004,

@@ -81,17 +81,18 @@
   {
     "date": "2026-11-03",
     "lessons": [
-      "Not enough finished games yet to change anything. Still collecting results."
+      "NBA rebounds: projections ran too high (avg 5.69 projected vs 5.58 actual over 79 players) \u2192 now scaled \u00d70.990.",
+      "NBA rebounds: was overconfident about player swings \u2192 uncertainty \u00d71.034."
     ],
     "scoreboard": {
-      "graded_bets": 1738,
-      "graded_projections": 597,
+      "graded_bets": 1746,
+      "graded_projections": 649,
       "model_leans": {
-        "w": 248,
-        "l": 381,
+        "w": 249,
+        "l": 382,
         "p": 0,
-        "hit_rate": 0.3943,
-        "roi_per_bet": -0.0955
+        "hit_rate": 0.3946,
+        "roi_per_bet": -0.0953
       },
       "strong_leans": {
         "w": 190,

@@ -81,25 +81,38 @@
   {
     "date": "2026-11-03",
     "lessons": [
-      "NBA rebounds: projections ran too high (avg 5.69 projected vs 5.58 actual over 79 players) \u2192 now scaled \u00d70.990.",
-      "NBA rebounds: was overconfident about player swings \u2192 uncertainty \u00d71.034."
+      "ML: trusting the model 23% \u2192 20% (vs the market) after 74 graded bets \u2014 the market has been the better predictor so far.",
+      "Spread: trusting the model 23% \u2192 18% (vs the market) after 104 graded bets \u2014 the market has been the better predictor so far.",
+      "Total: trusting the model 50% \u2192 41% (vs the market) after 124 graded bets \u2014 the model has been the better predictor so far.",
+      "NBA assists: projections ran too high (avg 3.52 projected vs 3.49 actual over 250 players) \u2192 now scaled \u00d70.993.",
+      "NBA assists: was overconfident about player swings \u2192 uncertainty \u00d71.016.",
+      "NBA points: projections ran too high (avg 15.42 projected vs 14.31 actual over 251 players) \u2192 now scaled \u00d70.945.",
+      "NBA points: was underconfident about player swings \u2192 uncertainty \u00d70.995.",
+      "NBA pra: projections ran too high (avg 24.25 projected vs 22.89 actual over 251 players) \u2192 now scaled \u00d70.957.",
+      "NBA pra: was underconfident about player swings \u2192 uncertainty \u00d70.961.",
+      "NBA rebounds: projections ran too high (avg 5.33 projected vs 5.11 actual over 251 players) \u2192 now scaled \u00d70.968.",
+      "NBA rebounds: was underconfident about player swings \u2192 uncertainty \u00d70.993.",
+      "NBA threes: projections ran too high (avg 1.89 projected vs 1.8 actual over 223 players) \u2192 now scaled \u00d70.963.",
+      "NBA threes: was underconfident about player swings \u2192 uncertainty \u00d70.972.",
+      "NFL pass_yds: projections ran too high (avg 224.09 projected vs 211.46 actual over 26 players) \u2192 now scaled \u00d70.986.",
+      "NFL rush_yds: projections ran too high (avg 39.06 projected vs 37.57 actual over 65 players) \u2192 now scaled \u00d70.983."
     ],
     "scoreboard": {
-      "graded_bets": 1746,
-      "graded_projections": 649,
+      "graded_bets": 2004,
+      "graded_projections": 1527,
       "model_leans": {
-        "w": 249,
-        "l": 382,
+        "w": 266,
+        "l": 394,
         "p": 0,
-        "hit_rate": 0.3946,
-        "roi_per_bet": -0.0953
+        "hit_rate": 0.403,
+        "roi_per_bet": -0.0848
       },
       "strong_leans": {
-        "w": 190,
-        "l": 330,
+        "w": 197,
+        "l": 335,
         "p": 0,
-        "hit_rate": 0.3654,
-        "roi_per_bet": -0.1383
+        "hit_rate": 0.3703,
+        "roi_per_bet": -0.1331
       }
     }
   }

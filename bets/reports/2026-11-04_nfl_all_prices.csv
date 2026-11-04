@@ -1,0 +1,7 @@
+kind,game,selection,line,dk_odds,p_model,p_market,p_blend,ev
+ML,JAX @ BAL,BAL ML,,400.0,0.1280,0.1713,0.1626,-0.1871
+ML,JAX @ BAL,JAX ML,,-535.0,0.8720,0.8287,0.8374,-0.0061
+Spread,JAX @ BAL,BAL +10,10.0,-112.0,0.3958,0.5046,0.4854,-0.0813
+Spread,JAX @ BAL,JAX -10,-10.0,-108.0,0.6042,0.4954,0.5146,-0.0089
+Total,JAX @ BAL,Over 40.5,40.5,-108.0,0.6432,0.4954,0.5564,0.0716
+Total,JAX @ BAL,Under 40.5,40.5,-112.0,0.3568,0.5046,0.4436,-0.1604

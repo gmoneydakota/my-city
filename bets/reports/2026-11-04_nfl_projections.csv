@@ -1,0 +1,41 @@
+game,team,player,stat,proj,sd,fair_line,higher_if_line_le,lower_if_line_ge,status
+JAX @ BAL,BAL,Derrick Henry,rush_yds,71.58,43.96,71.5,64.5,79.5,
+JAX @ BAL,BAL,Derrick Henry,rec_yds,7.25,6.67,5.5,4.5,6.5,
+JAX @ BAL,BAL,Derrick Henry,receptions,1.22,1.11,1.5,0.5,1.5,
+JAX @ BAL,BAL,Derrick Henry,anytime_td,0.83,0.92,55% (-122),,,
+JAX @ BAL,BAL,Zay Flowers,rec_yds,68.43,45.19,68.5,60.5,76.5,
+JAX @ BAL,BAL,Zay Flowers,receptions,4.85,2.62,4.5,3.5,5.5,
+JAX @ BAL,BAL,Zay Flowers,anytime_td,0.37,0.61,34% (+191),,,
+JAX @ BAL,BAL,Justice Hill,rush_yds,15.78,22.93,15.5,11.5,19.5,
+JAX @ BAL,BAL,Justice Hill,rec_yds,12.30,8.61,12.5,10.5,14.5,
+JAX @ BAL,BAL,Justice Hill,receptions,2.09,1.45,1.5,1.5,2.5,
+JAX @ BAL,BAL,Mark Andrews,rec_yds,20.83,13.04,20.5,18.5,23.5,
+JAX @ BAL,BAL,Mark Andrews,receptions,2.98,1.74,2.5,2.5,3.5,
+JAX @ BAL,BAL,Ja'Kobi Lane,rec_yds,18.74,13.14,18.5,16.5,21.5,3 games back from a 4-game absence
+JAX @ BAL,BAL,Ja'Kobi Lane,receptions,1.98,1.70,1.5,0.5,2.5,3 games back from a 4-game absence
+JAX @ BAL,BAL,Rashod Bateman,rec_yds,26.98,22.25,26.5,22.5,31.5,
+JAX @ BAL,BAL,Rashod Bateman,receptions,1.86,1.82,1.5,0.5,2.5,
+JAX @ BAL,BAL,Josh Cuevas,rec_yds,16.80,13.48,16.5,14.5,19.5,
+JAX @ BAL,BAL,Josh Cuevas,receptions,1.30,1.27,1.5,0.5,1.5,
+JAX @ BAL,JAX,Bhayshul Tuten,rush_yds,58.95,37.11,58.5,52.5,65.5,Questionable
+JAX @ BAL,JAX,Bhayshul Tuten,rec_yds,22.78,18.37,22.5,19.5,26.5,Questionable
+JAX @ BAL,JAX,Bhayshul Tuten,receptions,1.83,1.36,1.5,0.5,2.5,Questionable
+JAX @ BAL,JAX,Bhayshul Tuten,anytime_td,0.85,0.93,55% (-124),,,Questionable
+JAX @ BAL,JAX,Trevor Lawrence,pass_yds,234.37,88.99,234.5,219.5,248.5,
+JAX @ BAL,JAX,Trevor Lawrence,pass_tds,2.25,1.52,2.5,1.5,2.5,
+JAX @ BAL,JAX,Trevor Lawrence,rush_yds,13.34,12.28,13.5,10.5,15.5,
+JAX @ BAL,JAX,Parker Washington,rec_yds,55.44,39.46,55.5,48.5,62.5,
+JAX @ BAL,JAX,Parker Washington,receptions,3.52,2.19,3.5,2.5,4.5,
+JAX @ BAL,JAX,Parker Washington,anytime_td,0.48,0.73,39% (+154),,,
+JAX @ BAL,JAX,Brenton Strange,rec_yds,45.64,24.98,45.5,41.5,50.5,
+JAX @ BAL,JAX,Brenton Strange,receptions,3.85,2.13,3.5,2.5,4.5,
+JAX @ BAL,JAX,Jakobi Meyers,rec_yds,42.17,22.57,42.5,38.5,46.5,Questionable
+JAX @ BAL,JAX,Jakobi Meyers,receptions,3.28,1.92,3.5,2.5,3.5,Questionable
+JAX @ BAL,JAX,Chris Rodriguez Jr.,rush_yds,32.42,23.44,32.5,28.5,36.5,Questionable
+JAX @ BAL,JAX,Chris Rodriguez Jr.,rec_yds,3.87,5.67,1.5,0.5,2.5,Questionable
+JAX @ BAL,JAX,Chris Rodriguez Jr.,receptions,0.33,0.58,0.5,,0.5,Questionable
+JAX @ BAL,JAX,Chris Rodriguez Jr.,anytime_td,0.45,0.68,39% (+157),,,Questionable
+JAX @ BAL,JAX,Josh Cameron,rec_yds,14.76,15.73,14.5,11.5,17.5,
+JAX @ BAL,JAX,Josh Cameron,receptions,1.01,1.17,0.5,0.5,1.5,
+JAX @ BAL,JAX,Brian Thomas Jr.,rec_yds,19.03,19.10,19.5,15.5,22.5,
+JAX @ BAL,JAX,Brian Thomas Jr.,receptions,1.53,1.43,1.5,0.5,1.5,

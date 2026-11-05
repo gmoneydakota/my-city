@@ -1,65 +1,41 @@
 kind,game,selection,line,dk_odds,p_model,p_market,p_blend,ev
-ML,MIA @ LAC,LAC ML,,180.0,0.5307,0.3335,0.3724,0.0426
-ML,MIA @ LAC,MIA ML,,-216.0,0.4693,0.6665,0.6276,-0.0818
-Spread,MIA @ LAC,LAC +6.5,6.5,-118.0,0.7161,0.5174,0.5515,0.0189
-Spread,MIA @ LAC,MIA -6.5,-6.5,-103.0,0.2839,0.4826,0.4485,-0.1161
-Total,MIA @ LAC,Over 233.5,233.5,-108.0,0.5082,0.4954,0.5035,-0.0303
-Total,MIA @ LAC,Under 233.5,233.5,-112.0,0.4918,0.5046,0.4965,-0.0602
-Prop,MIA @ LAC,Darius Garland over 21.5 points,21.5,-115,,,0.5088,-0.0488
-Prop,MIA @ LAC,Darius Garland under 21.5 points,21.5,-111,,,0.4912,-0.0663
-Prop,MIA @ GS,Bam Adebayo over 17.5 points,17.5,-115,,,0.5099,-0.0467
-Prop,MIA @ GS,Bam Adebayo under 17.5 points,17.5,-111,,,0.4901,-0.0684
-Prop,MIA @ LAC,Keaton Wagler over 11.5 points,11.5,-105,,,0.4891,-0.0451
-Prop,MIA @ LAC,Keaton Wagler under 11.5 points,11.5,-122,,,0.5109,-0.0703
-Prop,MIA @ LAC,Isaiah Jackson over 8.5 points,8.5,-108,,,0.4902,-0.0559
-Prop,MIA @ LAC,Isaiah Jackson under 8.5 points,8.5,-118,,,0.5098,-0.0581
-Prop,MIA @ GS,Andrew Wiggins over 11.5 points,11.5,-116,,,0.4999,-0.0691
-Prop,MIA @ GS,Andrew Wiggins under 11.5 points,11.5,-110,,,0.5001,-0.0453
-Prop,MIA @ LAC,Brook Lopez over 10.5 points,10.5,-114,,,0.4783,-0.1021
-Prop,MIA @ LAC,Brook Lopez under 10.5 points,10.5,-112,,,0.5217,-0.0126
-Prop,MIA @ GS,Tim Hardaway Jr. over 6.5 points,6.5,-120,,,0.5142,-0.0573
-Prop,MIA @ GS,Tim Hardaway Jr. under 6.5 points,6.5,-106,,,0.4858,-0.0559
-Prop,MIA @ GS,Klay Thompson over 9.5 points,9.5,-114,,,0.5147,-0.0337
-Prop,MIA @ GS,Klay Thompson under 9.5 points,9.5,-111,,,0.4853,-0.0776
-Prop,MIA @ LAC,Kris Dunn over 7.5 points,7.5,-107,,,0.5107,-0.0121
-Prop,MIA @ LAC,Kris Dunn under 7.5 points,7.5,-119,,,0.4893,-0.0995
-Prop,MIA @ GS,Davion Mitchell over 11.5 points,11.5,-127,,,0.5292,-0.0541
-Prop,MIA @ GS,Davion Mitchell under 11.5 points,11.5,100,,,0.4708,-0.0584
-Prop,MIA @ LAC,Darius Garland over 2.5 rebounds,2.5,-116,,,0.5050,-0.0596
-Prop,MIA @ LAC,Darius Garland under 2.5 rebounds,2.5,-113,,,0.4950,-0.0670
-Prop,MIA @ GS,Davion Mitchell over 2.5 rebounds,2.5,-131,,,0.5261,-0.0723
-Prop,MIA @ GS,Davion Mitchell under 2.5 rebounds,2.5,100,,,0.4739,-0.0522
-Prop,MIA @ GS,Andrew Wiggins over 3.5 rebounds,3.5,-120,,,0.5150,-0.0558
-Prop,MIA @ GS,Andrew Wiggins under 3.5 rebounds,3.5,-109,,,0.4850,-0.0701
-Prop,MIA @ GS,Bobby Portis over 5.5 rebounds,5.5,-124,,,0.5254,-0.0509
-Prop,MIA @ GS,Bobby Portis under 5.5 rebounds,5.5,-106,,,0.4746,-0.0777
-Prop,MIA @ LAC,Kris Dunn over 4.5 rebounds,4.5,117,,,0.4235,-0.0809
-Prop,MIA @ LAC,Kris Dunn under 4.5 rebounds,4.5,-154,,,0.5765,-0.0492
-Prop,MIA @ LAC,Derrick Jones Jr. over 4.5 rebounds,4.5,114,,,0.4224,-0.0960
-Prop,MIA @ LAC,Derrick Jones Jr. under 4.5 rebounds,4.5,-150,,,0.5776,-0.0374
-Prop,MIA @ LAC,Brook Lopez over 4.5 rebounds,4.5,-128,,,0.5239,-0.0668
-Prop,MIA @ LAC,Brook Lopez under 4.5 rebounds,4.5,-103,,,0.4761,-0.0617
-Prop,MIA @ LAC,Keaton Wagler over 3.5 rebounds,3.5,-141,,,0.5267,-0.0997
-Prop,MIA @ LAC,Keaton Wagler under 3.5 rebounds,3.5,107,,,0.4733,-0.0203
-Prop,MIA @ LAC,Isaiah Jackson over 6.5 rebounds,6.5,-132,,,0.5118,-0.1005
-Prop,MIA @ LAC,Isaiah Jackson under 6.5 rebounds,6.5,101,,,0.4882,-0.0187
-Prop,MIA @ LAC,Rui Hachimura over 5.5 rebounds,5.5,113,,,0.4387,-0.0655
-Prop,MIA @ LAC,Rui Hachimura under 5.5 rebounds,5.5,-149,,,0.5613,-0.0621
-Prop,MIA @ GS,Giannis Antetokounmpo over 11.5 rebounds,11.5,-115,,,0.5024,-0.0607
-Prop,MIA @ GS,Giannis Antetokounmpo under 11.5 rebounds,11.5,-114,,,0.4976,-0.0659
-Prop,MIA @ GS,Pelle Larsson over 3.5 rebounds,3.5,108,,,0.4647,-0.0335
-Prop,MIA @ GS,Pelle Larsson under 3.5 rebounds,3.5,-142,,,0.5353,-0.0877
-Prop,MIA @ LAC,Rui Hachimura over 14.5 points,14.5,-118,,,0.5159,-0.0469
-Prop,MIA @ LAC,Rui Hachimura under 14.5 points,14.5,-108,,,0.4841,-0.0676
-Prop,MIA @ GS,Pelle Larsson over 11.5 points,11.5,-104,,,0.4808,-0.0569
-Prop,MIA @ GS,Pelle Larsson under 11.5 points,11.5,-122,,,0.5192,-0.0553
-Prop,MIA @ GS,Klay Thompson over 2.5 rebounds,2.5,136,,,0.3904,-0.0786
-Prop,MIA @ GS,Klay Thompson under 2.5 rebounds,2.5,-181,,,0.6096,-0.0536
-Prop,MIA @ GS,Giannis Antetokounmpo over 30.5 points,30.5,-104,,,0.4575,-0.1026
-Prop,MIA @ GS,Giannis Antetokounmpo under 30.5 points,30.5,-122,,,0.5425,-0.0129
-Prop,MIA @ LAC,Derrick Jones Jr. over 9.5 points,9.5,-128,,,0.5329,-0.0508
-Prop,MIA @ LAC,Derrick Jones Jr. under 9.5 points,9.5,101,,,0.4671,-0.0611
-Prop,MIA @ GS,Bobby Portis over 8.5 points,8.5,-124,,,0.5225,-0.0562
-Prop,MIA @ GS,Bobby Portis under 8.5 points,8.5,-103,,,0.4775,-0.0588
-Prop,MIA @ GS,Bam Adebayo over 9.5 rebounds,9.5,109,,,0.4408,-0.0787
-Prop,MIA @ GS,Bam Adebayo under 9.5 rebounds,9.5,-143,,,0.5592,-0.0498
+ML,ORL @ PHX,PHX ML,,-110.0,0.5482,0.5023,0.5105,-0.0253
+ML,ORL @ PHX,ORL ML,,-108.0,0.4518,0.4977,0.4895,-0.0573
+Spread,ORL @ PHX,PHX -1.5,-1.5,-101.0,0.5018,0.4780,0.4858,-0.0333
+Spread,ORL @ PHX,ORL +1.5,1.5,-120.0,0.4982,0.5220,0.5142,-0.0573
+Total,ORL @ PHX,Over 222.5,222.5,-111.0,0.6502,0.5023,0.6070,0.1539
+Total,ORL @ PHX,Under 222.5,222.5,-109.0,0.3498,0.4977,0.3930,-0.2465
+ML,MIA @ GS,GS ML,,-279.0,0.6645,0.7201,0.7101,-0.0353
+ML,MIA @ GS,MIA ML,,228.0,0.3355,0.2799,0.2899,-0.0493
+Spread,MIA @ GS,GS -7.5,-7.5,-106.0,0.4375,0.4907,0.4734,-0.0801
+Spread,MIA @ GS,MIA +7.5,7.5,-114.0,0.5625,0.5093,0.5266,-0.0114
+Total,MIA @ GS,Over 233.5,233.5,-113.0,0.6018,0.5070,0.5741,0.0821
+Total,MIA @ GS,Under 233.5,233.5,-107.0,0.3982,0.4930,0.4259,-0.1760
+Prop,HOU @ PHX,Devin Booker over 25.5 points,25.5,-118,,,0.5008,-0.0747
+Prop,HOU @ PHX,Devin Booker under 25.5 points,25.5,-108,,,0.4992,-0.0387
+Prop,ORL @ GS,Anthony Black over 14.5 points,14.5,-124,,,0.5087,-0.0811
+Prop,ORL @ GS,Anthony Black under 14.5 points,14.5,-103,,,0.4913,-0.0317
+Prop,HOU @ PHX,Oso Ighodaro over 6.5 points,6.5,-123,,,0.5231,-0.0517
+Prop,HOU @ PHX,Oso Ighodaro under 6.5 points,6.5,-104,,,0.4769,-0.0645
+Prop,ORL @ GS,Tristan da Silva over 12.5 points,12.5,-105,,,0.4787,-0.0653
+Prop,ORL @ GS,Tristan da Silva under 12.5 points,12.5,-121,,,0.5213,-0.0479
+Prop,ORL @ GS,Desmond Bane over 20.5 points,20.5,-102,,,0.4753,-0.0587
+Prop,ORL @ GS,Desmond Bane under 20.5 points,20.5,-124,,,0.5247,-0.0522
+Prop,HOU @ PHX,Dillon Brooks over 16.5 points,16.5,-101,,,0.4772,-0.0504
+Prop,HOU @ PHX,Dillon Brooks under 16.5 points,16.5,-126,,,0.5228,-0.0622
+Prop,HOU @ PHX,Collin Gillespie over 9.5 points,9.5,-116,,,0.4896,-0.0883
+Prop,HOU @ PHX,Collin Gillespie under 9.5 points,9.5,-110,,,0.5104,-0.0256
+Prop,HOU @ PHX,Miles Bridges over 16.5 points,16.5,-114,,,0.4893,-0.0815
+Prop,HOU @ PHX,Miles Bridges under 16.5 points,16.5,-112,,,0.5107,-0.0333
+Prop,ORL @ GS,Wendell Carter Jr. over 11.5 points,11.5,-125,,,0.5076,-0.0862
+Prop,ORL @ GS,Wendell Carter Jr. under 11.5 points,11.5,-102,,,0.4924,-0.0250
+Prop,ORL @ GS,Jamal Cain over 6.5 points,6.5,-104,,,0.4631,-0.0916
+Prop,ORL @ GS,Jamal Cain under 6.5 points,6.5,-123,,,0.5369,-0.0266
+Prop,HOU @ PHX,Jalen Green over 16.5 points,16.5,-114,,,0.4767,-0.1052
+Prop,HOU @ PHX,Jalen Green under 16.5 points,16.5,-111,,,0.5233,-0.0052
+Prop,HOU @ PHX,Khaman Maluach over 5.5 points,5.5,-109,,,0.4897,-0.0609
+Prop,HOU @ PHX,Khaman Maluach under 5.5 points,5.5,-116,,,0.5103,-0.0499
+Prop,ORL @ GS,Jase Richardson over 8.5 points,8.5,-123,,,0.5144,-0.0674
+Prop,ORL @ GS,Jase Richardson under 8.5 points,8.5,-104,,,0.4856,-0.0475
+Prop,ORL @ GS,Franz Wagner over 22.5 points,22.5,-125,,,0.5370,-0.0334
+Prop,ORL @ GS,Franz Wagner under 22.5 points,22.5,-102,,,0.4630,-0.0831

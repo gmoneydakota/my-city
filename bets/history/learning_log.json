@@ -129,26 +129,30 @@
   {
     "date": "2026-11-05",
     "lessons": [
-      "Total: trusting the model 41% \u2192 64% (vs the market) after 138 graded bets \u2014 the model has been the better predictor so far.",
-      "NBA rebounds: projections ran too high (avg 5.25 projected vs 5.16 actual over 281 players) \u2192 now scaled \u00d70.987.",
-      "NBA rebounds: was overconfident about player swings \u2192 uncertainty \u00d71.032."
+      "ML: trusting the model 20% \u2192 18% (vs the market) after 102 graded bets \u2014 the market has been the better predictor so far.",
+      "Spread: trusting the model 17% \u2192 33% (vs the market) after 166 graded bets \u2014 the market has been the better predictor so far.",
+      "Total: trusting the model 64% \u2192 71% (vs the market) after 210 graded bets \u2014 the model has been the better predictor so far.",
+      "NBA assists: projections ran too high (avg 3.43 projected vs 3.29 actual over 444 players) \u2192 now scaled \u00d70.965.",
+      "NBA assists: was overconfident about player swings \u2192 uncertainty \u00d71.026.",
+      "NBA pra: was overconfident about player swings \u2192 uncertainty \u00d71.004.",
+      "NBA threes: projections ran too high (avg 1.84 projected vs 1.73 actual over 394 players) \u2192 now scaled \u00d70.949."
     ],
     "scoreboard": {
-      "graded_bets": 2080,
-      "graded_projections": 1675,
+      "graded_bets": 2432,
+      "graded_projections": 2474,
       "model_leans": {
-        "w": 272,
-        "l": 394,
+        "w": 296,
+        "l": 405,
         "p": 0,
-        "hit_rate": 0.4084,
-        "roi_per_bet": -0.0757
+        "hit_rate": 0.4223,
+        "roi_per_bet": -0.0551
       },
       "strong_leans": {
-        "w": 201,
-        "l": 335,
+        "w": 207,
+        "l": 342,
         "p": 0,
-        "hit_rate": 0.375,
-        "roi_per_bet": -0.1253
+        "hit_rate": 0.377,
+        "roi_per_bet": -0.1248
       }
     }
   }

@@ -125,5 +125,29 @@
         "roi_per_bet": -0.1331
       }
     }
+  },
+  {
+    "date": "2026-11-05",
+    "lessons": [
+      "Not enough finished games yet to change anything. Still collecting results."
+    ],
+    "scoreboard": {
+      "graded_bets": 2004,
+      "graded_projections": 1527,
+      "model_leans": {
+        "w": 266,
+        "l": 394,
+        "p": 0,
+        "hit_rate": 0.403,
+        "roi_per_bet": -0.0848
+      },
+      "strong_leans": {
+        "w": 197,
+        "l": 335,
+        "p": 0,
+        "hit_rate": 0.3703,
+        "roi_per_bet": -0.1331
+      }
+    }
   }
 ]

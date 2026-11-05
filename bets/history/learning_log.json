@@ -129,24 +129,26 @@
   {
     "date": "2026-11-05",
     "lessons": [
-      "Not enough finished games yet to change anything. Still collecting results."
+      "Total: trusting the model 41% \u2192 64% (vs the market) after 138 graded bets \u2014 the model has been the better predictor so far.",
+      "NBA rebounds: projections ran too high (avg 5.25 projected vs 5.16 actual over 281 players) \u2192 now scaled \u00d70.987.",
+      "NBA rebounds: was overconfident about player swings \u2192 uncertainty \u00d71.032."
     ],
     "scoreboard": {
-      "graded_bets": 2004,
-      "graded_projections": 1527,
+      "graded_bets": 2080,
+      "graded_projections": 1675,
       "model_leans": {
-        "w": 266,
+        "w": 272,
         "l": 394,
         "p": 0,
-        "hit_rate": 0.403,
-        "roi_per_bet": -0.0848
+        "hit_rate": 0.4084,
+        "roi_per_bet": -0.0757
       },
       "strong_leans": {
-        "w": 197,
+        "w": 201,
         "l": 335,
         "p": 0,
-        "hit_rate": 0.3703,
-        "roi_per_bet": -0.1331
+        "hit_rate": 0.375,
+        "roi_per_bet": -0.1253
       }
     }
   }

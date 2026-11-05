@@ -1,16 +1,16 @@
 kind,game,selection,line,dk_odds,p_model,p_market,p_blend,ev
-ML,ORL @ PHX,PHX ML,,-110.0,0.5482,0.5023,0.5105,-0.0253
-ML,ORL @ PHX,ORL ML,,-108.0,0.4518,0.4977,0.4895,-0.0573
-Spread,ORL @ PHX,PHX -1.5,-1.5,-101.0,0.5018,0.4780,0.4858,-0.0333
-Spread,ORL @ PHX,ORL +1.5,1.5,-120.0,0.4982,0.5220,0.5142,-0.0573
-Total,ORL @ PHX,Over 222.5,222.5,-111.0,0.6502,0.5023,0.6070,0.1539
-Total,ORL @ PHX,Under 222.5,222.5,-109.0,0.3498,0.4977,0.3930,-0.2465
-ML,MIA @ GS,GS ML,,-279.0,0.6645,0.7201,0.7101,-0.0353
-ML,MIA @ GS,MIA ML,,228.0,0.3355,0.2799,0.2899,-0.0493
-Spread,MIA @ GS,GS -7.5,-7.5,-106.0,0.4375,0.4907,0.4734,-0.0801
-Spread,MIA @ GS,MIA +7.5,7.5,-114.0,0.5625,0.5093,0.5266,-0.0114
-Total,MIA @ GS,Over 233.5,233.5,-113.0,0.6018,0.5070,0.5741,0.0821
-Total,MIA @ GS,Under 233.5,233.5,-107.0,0.3982,0.4930,0.4259,-0.1760
+ML,ORL @ PHX,PHX ML,,-114.0,0.5481,0.5117,0.5182,-0.0272
+ML,ORL @ PHX,ORL ML,,-104.0,0.4519,0.4883,0.4818,-0.0550
+Spread,ORL @ PHX,PHX -1.5,-1.5,-104.0,0.5018,0.4861,0.4912,-0.0365
+Spread,ORL @ PHX,ORL +1.5,1.5,-116.0,0.4982,0.5139,0.5088,-0.0526
+Total,ORL @ PHX,Over 222.5,222.5,-107.0,0.6502,0.4930,0.6043,0.1690
+Total,ORL @ PHX,Under 222.5,222.5,-113.0,0.3498,0.5070,0.3957,-0.2541
+ML,MIA @ GS,GS ML,,-269.0,0.6644,0.7130,0.7043,-0.0339
+ML,MIA @ GS,MIA ML,,221.0,0.3356,0.2870,0.2957,-0.0507
+Spread,MIA @ GS,GS -6.5,-6.5,-118.0,0.4681,0.5174,0.5013,-0.0739
+Spread,MIA @ GS,MIA +6.5,6.5,-103.0,0.5319,0.4826,0.4987,-0.0171
+Total,MIA @ GS,Over 233.5,233.5,-113.0,0.6015,0.5070,0.5739,0.0818
+Total,MIA @ GS,Under 233.5,233.5,-107.0,0.3985,0.4930,0.4261,-0.1757
 Prop,HOU @ PHX,Devin Booker over 25.5 points,25.5,-118,,,0.5008,-0.0747
 Prop,HOU @ PHX,Devin Booker under 25.5 points,25.5,-108,,,0.4992,-0.0387
 Prop,ORL @ GS,Anthony Black over 14.5 points,14.5,-124,,,0.5087,-0.0811
@@ -37,5 +37,29 @@ Prop,HOU @ PHX,Khaman Maluach over 5.5 points,5.5,-109,,,0.4897,-0.0609
 Prop,HOU @ PHX,Khaman Maluach under 5.5 points,5.5,-116,,,0.5103,-0.0499
 Prop,ORL @ GS,Jase Richardson over 8.5 points,8.5,-123,,,0.5144,-0.0674
 Prop,ORL @ GS,Jase Richardson under 8.5 points,8.5,-104,,,0.4856,-0.0475
-Prop,ORL @ GS,Franz Wagner over 22.5 points,22.5,-125,,,0.5370,-0.0334
+Prop,ORL @ GS,Franz Wagner over 22.5 points,22.5,-125,,,0.5370,-0.0333
 Prop,ORL @ GS,Franz Wagner under 22.5 points,22.5,-102,,,0.4630,-0.0831
+Prop,MIA @ SAC,Giannis Antetokounmpo over 28.5 points,28.5,-117,,,0.5066,-0.0604
+Prop,MIA @ SAC,Giannis Antetokounmpo under 28.5 points,28.5,-109,,,0.4934,-0.0540
+Prop,ORL @ GS,Stephen Curry over 27.5 points,27.5,-110,,,0.4952,-0.0546
+Prop,ORL @ GS,Stephen Curry under 27.5 points,27.5,-116,,,0.5048,-0.0600
+Prop,MIA @ SAC,Bam Adebayo over 20.5 points,20.5,-116,,,0.5082,-0.0536
+Prop,MIA @ SAC,Bam Adebayo under 20.5 points,20.5,-110,,,0.4918,-0.0612
+Prop,ORL @ GS,Yaxel Lendeborg over 18.5 points,18.5,-125,,,0.5257,-0.0537
+Prop,ORL @ GS,Yaxel Lendeborg under 18.5 points,18.5,-102,,,0.4743,-0.0608
+Prop,ORL @ GS,Brandin Podziemski over 16.5 points,16.5,-104,,,0.4839,-0.0509
+Prop,ORL @ GS,Brandin Podziemski under 16.5 points,16.5,-122,,,0.5161,-0.0608
+Prop,MIA @ SAC,Davion Mitchell over 12.5 points,12.5,-122,,,0.5061,-0.0791
+Prop,MIA @ SAC,Davion Mitchell under 12.5 points,12.5,-105,,,0.4939,-0.0357
+Prop,MIA @ SAC,Klay Thompson over 12.5 points,12.5,-111,,,0.5070,-0.0362
+Prop,MIA @ SAC,Klay Thompson under 12.5 points,12.5,-115,,,0.4930,-0.0783
+Prop,MIA @ SAC,Pelle Larsson over 12.5 points,12.5,-108,,,0.5055,-0.0265
+Prop,MIA @ SAC,Pelle Larsson under 12.5 points,12.5,-118,,,0.4945,-0.0863
+Prop,MIA @ SAC,Andrew Wiggins over 12.5 points,12.5,100,,,0.4664,-0.0672
+Prop,MIA @ SAC,Andrew Wiggins under 12.5 points,12.5,-127,,,0.5336,-0.0462
+Prop,ORL @ GS,De'Anthony Melton over 10.5 points,10.5,-112,,,0.4868,-0.0786
+Prop,ORL @ GS,De'Anthony Melton under 10.5 points,10.5,-114,,,0.5132,-0.0366
+Prop,ORL @ GS,Georges Niang over 7.5 points,7.5,-115,,,0.4951,-0.0744
+Prop,ORL @ GS,Georges Niang under 7.5 points,7.5,-111,,,0.5049,-0.0402
+Prop,ORL @ GS,Draymond Green over 5.5 points,5.5,-113,,,0.4888,-0.0787
+Prop,ORL @ GS,Draymond Green under 5.5 points,5.5,-113,,,0.5112,-0.0363

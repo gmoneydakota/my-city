@@ -129,13 +129,7 @@
   {
     "date": "2026-11-05",
     "lessons": [
-      "ML: trusting the model 20% \u2192 18% (vs the market) after 102 graded bets \u2014 the market has been the better predictor so far.",
-      "Spread: trusting the model 17% \u2192 33% (vs the market) after 166 graded bets \u2014 the market has been the better predictor so far.",
-      "Total: trusting the model 64% \u2192 71% (vs the market) after 210 graded bets \u2014 the model has been the better predictor so far.",
-      "NBA assists: projections ran too high (avg 3.43 projected vs 3.29 actual over 444 players) \u2192 now scaled \u00d70.965.",
-      "NBA assists: was overconfident about player swings \u2192 uncertainty \u00d71.026.",
-      "NBA pra: was overconfident about player swings \u2192 uncertainty \u00d71.004.",
-      "NBA threes: projections ran too high (avg 1.84 projected vs 1.73 actual over 394 players) \u2192 now scaled \u00d70.949."
+      "Not enough finished games yet to change anything. Still collecting results."
     ],
     "scoreboard": {
       "graded_bets": 2432,

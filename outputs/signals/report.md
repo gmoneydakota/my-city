@@ -1,25 +1,34 @@
-# Market signals - 2026-11-05
+# Market signals - 2026-11-06
 
 _Educational signals from simple technical rules, not financial advice. Past behaviour of a rule does not guarantee future results. Do your own research._
 
 | Symbol | Price | Day | Signal | Score | RSI | Stop | Past BUY-ZONE hit rate |
 |---|---|---|---|---|---|---|---|
-| AAPL | 344.17 | -1.53% | **BUY ZONE** | 6 | 53.0 | 326.43 | 66.2% of 237 |
-| AMZN | 260.21 | -2.19% | **BUY ZONE** | 5 | 55.0 | 241.29 | 56.2% of 281 |
-| MSFT | 535.93 | -3.58% | **WATCH / ACCUMULATE** | 4 | 54.5 | 504.81 | 60.7% of 168 |
-| META | 605.08 | -3.96% | **HOLD / NEUTRAL** | 2 | 34.9 | 556.26 | 64.3% of 224 |
-| SPY | 733.0 | -4.41% | **HOLD / NEUTRAL** | 1 | 33.6 | 711.81 | 69.7% of 238 |
-| QQQ | 647.05 | -6.49% | **AVOID** | -1 | 26.9 | 616.46 | 63.5% of 301 |
-| NVDA | 181.6 | -9.26% | **AVOID** | -1 | 25.4 | 166.91 | 63.8% of 282 |
-| TSLA | 343.69 | -10.77% | **AVOID** | -1 | 35.8 | 310.81 | 51.0% of 100 |
-| GOOGL | 282.57 | -2.20% | **AVOID** | -2 | 28.0 | 260.79 | 54.3% of 184 |
+| AAPL | 342.37 | -0.52% | **BUY ZONE** | 5 | 51.5 | 324.83 | 66.2% of 237 |
+| MSFT | 530.61 | -0.99% | **BUY ZONE** | 5 | 52.1 | 499.76 | 60.4% of 169 |
+| AMZN | 259.3 | -0.35% | **BUY ZONE** | 5 | 54.2 | 240.92 | 56.0% of 282 |
+| META | 610.15 | +0.84% | **HOLD / NEUTRAL** | 2 | 36.7 | 561.86 | 64.3% of 224 |
+| SPY | 735.29 | +0.31% | **HOLD / NEUTRAL** | 1 | 35.2 | 714.3 | 71.1% of 246 |
+| QQQ | 656.1 | +1.40% | **AVOID** | -1 | 31.4 | 625.2 | 63.5% of 301 |
+| NVDA | 186.64 | +2.78% | **AVOID** | -1 | 30.8 | 171.1 | 63.8% of 282 |
+| TSLA | 358.22 | +4.23% | **AVOID** | -1 | 42.4 | 324.81 | 51.0% of 100 |
+| GOOGL | 284.78 | +0.78% | **AVOID** | -2 | 29.9 | 263.42 | 54.3% of 184 |
 
 ## Why
 ### AAPL - BUY ZONE
 - price above 200-day average (long-term uptrend)
 - 50-day above 200-day (golden-cross regime)
-- up 9.9% over 3 months
+- up 11.1% over 3 months
 - outperforming the benchmark over 3 months
+- MACD momentum negative and falling
+- pulled back to the 50-day in an uptrend (classic entry zone)
+
+### MSFT - BUY ZONE
+- price above 200-day average (long-term uptrend)
+- 50-day above 200-day (golden-cross regime)
+- up 5.0% over 3 months
+- outperforming the benchmark over 3 months
+- MACD momentum negative and falling
 - pulled back to the 50-day in an uptrend (classic entry zone)
 
 ### AMZN - BUY ZONE
@@ -28,16 +37,10 @@ _Educational signals from simple technical rules, not financial advice. Past beh
 - MACD momentum positive and rising
 - pulled back to the 50-day in an uptrend (classic entry zone)
 
-### MSFT - WATCH / ACCUMULATE
-- price above 200-day average (long-term uptrend)
-- 50-day above 200-day (golden-cross regime)
-- up 7.4% over 3 months
-- outperforming the benchmark over 3 months
-
 ### META - HOLD / NEUTRAL
 - price below 200-day average (long-term downtrend)
 - 50-day above 200-day (golden-cross regime)
-- up 2.3% over 3 months
+- up 2.6% over 3 months
 - outperforming the benchmark over 3 months
 
 ### SPY - HOLD / NEUTRAL
@@ -49,22 +52,22 @@ _Educational signals from simple technical rules, not financial advice. Past beh
 - price below 200-day average (long-term downtrend)
 - 50-day above 200-day (golden-cross regime)
 - MACD momentum negative and falling
-- RSI 27: oversold
+- RSI 31: oversold
 
 ### NVDA - AVOID
 - price below 200-day average (long-term downtrend)
 - 50-day above 200-day (golden-cross regime)
 - MACD momentum negative and falling
-- RSI 25: oversold
+- RSI 31: oversold
 
 ### TSLA - AVOID
 - price below 200-day average (long-term downtrend)
 - 50-day below 200-day (death-cross regime)
-- up 4.6% over 3 months
+- up 8.3% over 3 months
 - outperforming the benchmark over 3 months
 - MACD momentum negative and falling
 
 ### GOOGL - AVOID
 - price below 200-day average (long-term downtrend)
 - 50-day below 200-day (death-cross regime)
-- RSI 28: oversold
+- RSI 30: oversold

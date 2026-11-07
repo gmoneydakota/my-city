@@ -177,24 +177,27 @@
   {
     "date": "2026-11-07",
     "lessons": [
-      "Not enough finished games yet to change anything. Still collecting results."
+      "Total: trusting the model 72% \u2192 51% (vs the market) after 236 graded bets \u2014 the model has been the better predictor so far.",
+      "NBA points: was overconfident about player swings \u2192 uncertainty \u00d71.035.",
+      "NBA pra: was overconfident about player swings \u2192 uncertainty \u00d71.037.",
+      "NBA threes: projections ran too high (avg 1.84 projected vs 1.76 actual over 440 players) \u2192 now scaled \u00d70.964."
     ],
     "scoreboard": {
-      "graded_bets": 2572,
-      "graded_projections": 2637,
+      "graded_bets": 2608,
+      "graded_projections": 2755,
       "model_leans": {
-        "w": 302,
-        "l": 409,
+        "w": 303,
+        "l": 415,
         "p": 0,
-        "hit_rate": 0.4248,
-        "roi_per_bet": -0.0524
+        "hit_rate": 0.422,
+        "roi_per_bet": -0.059
       },
       "strong_leans": {
         "w": 212,
-        "l": 344,
+        "l": 349,
         "p": 0,
-        "hit_rate": 0.3813,
-        "roi_per_bet": -0.1189
+        "hit_rate": 0.3779,
+        "roi_per_bet": -0.1267
       }
     }
   }

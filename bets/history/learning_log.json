@@ -177,9 +177,7 @@
   {
     "date": "2026-11-07",
     "lessons": [
-      "Spread: trusting the model 41% \u2192 18% (vs the market) after 226 graded bets \u2014 the market has been the better predictor so far.",
-      "Total: trusting the model 51% \u2192 50% (vs the market) after 280 graded bets \u2014 the model has been the better predictor so far.",
-      "NBA rebounds: projections ran too high (avg 5.19 projected vs 5.0 actual over 590 players) \u2192 now scaled \u00d70.968."
+      "Not enough finished games yet to change anything. Still collecting results."
     ],
     "scoreboard": {
       "graded_bets": 2836,

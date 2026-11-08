@@ -10,6 +10,7 @@ you start. If you work out something reusable that isn't here, add a skill (see 
 - cad-model: Make a working 3D model for CAD Studio [cad, 3d, model.json, mechanism, stl] (agents: cad)
 - city-camera-controls: Change how you move around the city (camera controls) [city, three.js, camera, orbitcontrols, mobile, touch, keyboard, upgrade] (agents: coder)
 - escalate-one-hop: Pick the cheapest agent, escalate once [routing, cost, escalate, tiers] (agents: analyst, cad, coder, forge, planner, quant, runner, scout, scribe, tutor)
+- factor-edge-test: Test whether a factor beats the market line [betting, backtest, walk-forward, break-even, statistics, market, factors] (agents: analyst, coder, quant)
 - learn-a-skill: Teach the brain a new skill [brain, memory, learning, skills, meta] (agents: analyst, cad, coder, forge, planner, quant, runner, scout, scribe, tutor)
 - mcp-connector: Build an MCP connector [mcp, connector, server, api, typescript, security] (agents: forge, scout)
 - pause-and-resume: Survive a usage limit mid-job [progress, checkpoint, resume, limits] (agents: analyst, cad, coder, forge, quant)
@@ -25,14 +26,15 @@ you start. If you work out something reusable that isn't here, add a skill (see 
 - scripts/city_resume.py: Restarts jobs that were paused by a Claude usage limit, once the limit has reset
 - scripts/city_schedule.py: Hourly check for recurring Agent City jobs (free: no model calls)
 - scripts/market_data.py: Fresh daily price history with no API key and no third-party packages
+- scripts/schwab_auth.py: One-time (then weekly) Schwab sign-in for the Trading Floor's READ-ONLY market data
 - scripts/signals.py: Daily market signals for the watchlist. Pure Python, zero Claude usage
+- scripts/test_trading_floor.py: Tests for the Trading Floor. Run:  python3 scripts/test_trading_floor.py
+- scripts/trading_floor.py: Run the Trading Floor: three competing paper traders. Pure Python, zero Claude usage
 - cad/: Opens and checks 3D models (model.json)
 - bets/: Self-learning NFL/NBA model behind the Lucky Tower
 - watchlist.json: Tickers the free daily market scan follows
 
 ## Recent jobs (outputs/job-N/)
-- #4 Personal Monthly Budget (Job #4) (runner · make · 2026-10-31)
-- #6 Lucky Tower accuracy lab (quant · make · 2026-10-31)
 - #7 Louvre-Slide Door (cad · make · 2026-10-31)
 - #8 Pop-Out Plug Door (replaces the louvre door of job 7) (cad · make · 2026-10-31)
 - #9 Products building: every finished job, ready to download (coder · make · 2026-10-31)
@@ -43,3 +45,5 @@ you start. If you work out something reusable that isn't here, add a skill (see 
 - #18 The pan lives in the city's index.html, and this is a make-mode job (I may only write in o… (coder · make · 2026-11-01)
 - #19 easy mouse movement in the city (coder · upgrade · 2026-11-01)
 - #21 Lucky Tower factor study (weather, defenses, rest, more) (quant · make · 2026-11-01)
+- #22 weekly betting-model self-improvement (2026-11-02) (quant · upgrade · 2026-11-02)
+- #26 Brain dream (week of 1 to 8 Nov 2026) (scribe · make · 2026-11-08)

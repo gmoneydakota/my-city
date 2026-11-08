@@ -1,13 +1,13 @@
 {
  "format": "agent-city-brain/1",
- "generated": "2026-11-01T22:31:33+00:00",
+ "generated": "2026-11-08T15:38:38+00:00",
  "counts": {
-  "skills": 13,
+  "skills": 14,
   "agents": 10,
-  "jobs": 15,
-  "tools": 10,
-  "topics": 6,
-  "links": 109
+  "jobs": 17,
+  "tools": 13,
+  "topics": 9,
+  "links": 126
  },
  "nodes": [
   {
@@ -68,7 +68,7 @@
    "summary": "Builds stock and market models - buy/sell signal models, screeners, backtests, watchlist reports, portfolio analysis - always using freshly downloaded prices and current news. Use for anything about stocks, ETFs, crypto, or \"when should I buy\".",
    "body": "You are Quant. You build working market models, not opinions.\n\n1. Get fresh data every time. Run `python3 scripts/market_data.py TICKER --years 5 --csv <out_dir>/TICKER.csv` for prices (no API key needed) and use WebSearch for news, earnings dates, and anything from the last few weeks. State the \"as of\" date of every number. Never quote a price from memory.\n2. Build the model as a runnable Python script in the job folder (standard library first; `pip install pandas numpy` is fine if needed). Reuse the indicator functions in `scripts/signals.py` where they fit.\n3. Backtest it on history the rule didn't see, and report honestly: number of signals, average forward return vs buy-and-hold, win rate, worst drawdown. If the edge is weak or noisy, say so plainly.\n4. Give the current reading in plain words: \"BUY ZONE / WATCH / HOLD / AVOID\", why, the price level that would change your mind, and a suggested stop.\n5. If the person wants it tracked daily, add the ticker to `watchlist.json` (the only file outside your job folder you may edit) and explain that the free daily `market-signals` workflow will now score it every weekday.\n\nAlways end with: \"This is an educational model, not financial advice. Markets can move against any signal.\"\nIf the request needs a large custom application rather than a model, reply `ESCALATE: coder - <reason>`.",
    "path": ".claude/agents/quant.md",
-   "uses": 2
+   "uses": 3
   },
   {
    "id": "agent:runner",
@@ -98,7 +98,7 @@
    "summary": "Rewrites, comments, commit messages, READMEs, docstrings - anything that's mostly wordsmithing rather than logic. Use after code is working to document or clean up prose.",
    "body": "You are Scribe: a writing and documentation agent. Do exactly what's asked with the text or code it's attached to - tighten a comment, write a commit message, draft a README section, fix a docstring. Keep the project's existing voice and formatting conventions. Don't change logic; if you spot a bug while writing docs, note it separately instead of fixing it silently.",
    "path": ".claude/agents/scribe.md",
-   "uses": 1
+   "uses": 2
   },
   {
    "id": "agent:tutor",
@@ -153,11 +153,32 @@
    "path": "scripts/market_data.py"
   },
   {
+   "id": "tool:schwab_auth",
+   "type": "tool",
+   "label": "schwab_auth.py",
+   "summary": "One-time (then weekly) Schwab sign-in for the Trading Floor's READ-ONLY market data",
+   "path": "scripts/schwab_auth.py"
+  },
+  {
    "id": "tool:signals",
    "type": "tool",
    "label": "signals.py",
    "summary": "Daily market signals for the watchlist. Pure Python, zero Claude usage",
    "path": "scripts/signals.py"
+  },
+  {
+   "id": "tool:test_trading_floor",
+   "type": "tool",
+   "label": "test_trading_floor.py",
+   "summary": "Tests for the Trading Floor. Run:  python3 scripts/test_trading_floor.py",
+   "path": "scripts/test_trading_floor.py"
+  },
+  {
+   "id": "tool:trading_floor",
+   "type": "tool",
+   "label": "trading_floor.py",
+   "summary": "Run the Trading Floor: three competing paper traders. Pure Python, zero Claude usage",
+   "path": "scripts/trading_floor.py"
   },
   {
    "id": "tool:cad-studio",
@@ -181,6 +202,12 @@
    "path": "watchlist.json"
   },
   {
+   "id": "topic:backtest",
+   "type": "topic",
+   "label": "backtest",
+   "summary": "2 skills tagged backtest"
+  },
+  {
    "id": "topic:city",
    "type": "topic",
    "label": "city",
@@ -191,6 +218,12 @@
    "type": "topic",
    "label": "learning",
    "summary": "2 skills tagged learning"
+  },
+  {
+   "id": "topic:market",
+   "type": "topic",
+   "label": "market",
+   "summary": "2 skills tagged market"
   },
   {
    "id": "topic:mcp",
@@ -217,6 +250,12 @@
    "summary": "2 skills tagged upgrade"
   },
   {
+   "id": "topic:walk-forward",
+   "type": "topic",
+   "label": "walk-forward",
+   "summary": "2 skills tagged walk-forward"
+  },
+  {
    "id": "skill:add-city-building",
    "type": "skill",
    "label": "Add a building to the city",
@@ -235,7 +274,7 @@
    "type": "skill",
    "label": "Improve the self-learning betting model",
    "summary": "bets, nfl, nba, calibration, walk-forward, learning",
-   "body": "## When to use\nChanges to the Lucky Tower model in `bets/`, or measuring whether it is any good.\n\n## How\n1. Read what it has learned: `bets/learned.json`, `bets/history/learning_log.json`, graded results in `bets/history/*.csv`.\n2. Test ideas walk-forward (fit on the past, test on the next period) like job 6's accuracy lab. Report calibration, not just win rate.\n3. Change `bets/betmodel/`, add a test to `bets/test_betmodel.py`, run `cd bets && python3 test_betmodel.py`.\n4. Never edit `bets/history/` or `learned.json`; the daily learner owns them.\n\n## Gotchas\n- With thin data, the right change is often no change plus a short report.",
+   "body": "## When to use\nChanges to the Lucky Tower model in `bets/`, or measuring whether it is any good.\n\n## How\n1. Read what it has learned: `bets/learned.json`, `bets/history/learning_log.json`, graded results in `bets/history/*.csv` (`shadow_bets.csv` has the graded rows).\n2. Test ideas walk-forward (fit on the past, test on the next period) like job 6's accuracy lab. Report calibration, not just win rate.\n3. **Bucket by market-implied probability before blaming the model.** Group graded bets by the implied probability of the price (under 10%, 10-20%, 20-30%...) and compare model p, market-implied p and actual win rate per bucket. Job 22 found the model floored every long shot at about 10% while long shots won 5.5%. The average looked fine; the bucket did not.\n4. Check for one-sided markets. Some props (e.g. NFL `anytime_td`) post only a \"yes\" price, so there is no two-way market to remove the vig from. Then the model runs alone, and the learned prop weight never applies. Fix: fair = implied x (1 - hold), with the hold as a named constant (`ONE_SIDED_HOLD` in `bets/betmodel/engine.py`), blended with the model by the learned weight.\n5. Change `bets/betmodel/`, add a test to `bets/test_betmodel.py`, run `cd bets && python3 test_betmodel.py`.\n6. Never edit `bets/history/` or `learned.json`; the daily learner owns them.\n\n## Gotchas\n- With thin data, the right change is often no change plus a short report. Job 22 changed one thing (one-sided props) and left NBA overs and the other markets alone: fewer than 50 graded rows each.\n- Two days of graded rows is not a trend. Say so and set a date to re-check the bucket that moved.\n- Hold figures (e.g. 10%) are typical values, not measured. Write them in the README as assumptions.\n- Before testing a new factor for an edge, run it through `factor-edge-test` (break-even and standard error).",
    "path": "brain/skills/betting-model-learning.md",
    "tags": [
     "bets",
@@ -306,6 +345,23 @@
     "cost",
     "escalate",
     "tiers"
+   ]
+  },
+  {
+   "id": "skill:factor-edge-test",
+   "type": "skill",
+   "label": "Test whether a factor beats the market line",
+   "summary": "betting, backtest, walk-forward, break-even, statistics, market, factors",
+   "body": "## When to use\nSomeone asks \"does weather / rest / form / a signal predict the result?\" before any bet or model change. Job 21 used it on 2,310 NFL games.\n\n## How\n1. Build the dataset: one row per game (or per trade), with the factor values known *before* the event and the closing line or price. Use history only, and no same-day data.\n2. Walk-forward: for each season (or period), fit any coefficients on earlier periods only, then bet the next one. Never score a model on the data it was fit on.\n3. Compute the break-even win rate: at American odds -110 it is 110/210 = **52.4%**; generally, implied = 1/decimal odds. Compare the win rate with it, not with 50%.\n4. Compare with the baseline: the same rule on all games (job 21: 51.2% under as the baseline, not 50%).\n5. Give each result n and a standard error: SE = sqrt(p(1-p)/n). A rule at 57% with n=159 is about 1.8 SE from 50%.\n6. Verdict: \"edge\" only if out-of-sample win rate beats break-even by about 2 SE with a stated reason. Otherwise write \"no edge\" and keep the rule as a *possible* lean.\n7. Save `backtest_results.json` and the script next to the README, and run it from the repo root so the paths work.\n\n## Gotchas\n- Looking at many factors and keeping the best one inflates the result. Count the rules you tried and say so; one \"mildly interesting\" rule out of ten is noise.\n- Subgroups get small fast. Check that the effect holds with the next-largest threshold (job 21: wind 20+ had n=33 and showed nothing).\n- Historical actuals (e.g. weather at kickoff) are cleaner than forecasts. Say which one you used.\n- Market lines already contain most public factors. If the factor only matches the line, the honest answer is \"no edge against the close\".\n- Stocks: the same test works with 20-day forward return vs a baseline of all days, see `stock-signal-model`.\n- Not financial or betting advice; state the sample and the date of the data.",
+   "path": "brain/skills/factor-edge-test.md",
+   "tags": [
+    "betting",
+    "backtest",
+    "walk-forward",
+    "break-even",
+    "statistics",
+    "market",
+    "factors"
    ]
   },
   {
@@ -607,6 +663,32 @@
    "has_page": false,
    "has_model": false,
    "finished": "2026-11-01"
+  },
+  {
+   "id": "job:22",
+   "type": "job",
+   "label": "#22 weekly betting-model self-improvement (2026-11-02)",
+   "summary": "quant · upgrade · 2026-11-02",
+   "body": "# Job 22: weekly betting-model self-improvement (2026-11-02)\n\n## What the data says (graded rows in shadow_bets.csv; only 2 days of history: 31 Oct and 1 Nov)\n- Model leans: 199W-258L (43.5%), ROI -5.2% per bet. Strong leans: 40.9%, ROI -7.5%.\n- Most of the damage is on 1 Nov (NFL props: 242 positive-EV bets, 35.5% win, ROI -11%).\n  31 Oct props were fine (71 bets, 56% win, ROI +6%).\n- **Weakness 1 (fixed): NFL `anytime_td` has no market anchor.** DraftKings posts only the \"yes\" price,\n  so no vig-free market probability existed and `p` was the model alone (the learned prop weight of 0.236 never applied).\n  161 graded bets: 13.8% win vs model 20.7%, ROI -15%. By the market's implied probability:\n\n  | market implied | n | model p | actual win |\n  |---|---|---|---|\n  | under 10% (long shots) | 55 | 12.2% | **5.5%** |\n  | 10-20% | 28 | 15.9% | 14.3% |\n  | 20-30% | 38 | 24.8% | 21.1% |\n\n  The model floored every long shot at about 10% (+2500 to +5500 priced at 10.1%, \"EV\" +160% to +415%), and all of them lost.\n  The market price itself was roughly right at the low end (implied about 4-6% vs 5.5% actual).\n- Seen but NOT changed (too thin): the NFL yardage/receptions scales are already being adjusted by the learner.\n  NBA overs lose while unders win, but that is 2 days of data and the learner already cut NBA projections about 5%.\n  ML, Spread and Total have fewer than 50 graded rows each.\n\n## Change\n- `bets/betmodel/engine.py`: new `one_sided_fair()` and `ONE_SIDED_STATS`. With no two-way market for `anytime_td`,\n  the fair probability is the \"yes\" price with a 10% hold removed (implied x 0.90), from non-DFS books that post no under.\n  `prop_bets` blends it with the model using the learned `prop_weight`, like every other prop.\n  Example: a +3000 long shot goes from 10.1% (mod",
+   "path": "outputs/job-22/",
+   "n": 22,
+   "mode": "upgrade",
+   "has_page": false,
+   "has_model": false,
+   "finished": "2026-11-02"
+  },
+  {
+   "id": "job:26",
+   "type": "job",
+   "label": "#26 Brain dream (week of 1 to 8 Nov 2026)",
+   "summary": "scribe · make · 2026-11-08",
+   "body": "# Job #26 · Brain dream (week of 1 to 8 Nov 2026)\n\nA weekly review of what the city did, and the skills it took from it. Nothing in the city, the bets model or any\napp changed. The deliverables are two skill files in the brain. No prices or news were used; the only date that\nmatters is the review window, 1 to 8 Nov 2026 (UTC).\n\n## What I reviewed\n- `brain/INDEX.md`, `brain/skills/` (13 files), and `brain/brain.json` (not edited)\n- The newest job folders: `outputs/job-22` (betting-model fix), `job-21` (Lucky Tower factor study), `job-19`\n  (mouse panning), `job-18` (an escalation, no build), `job-16` (last week's dream) and `job-15` (an escalation)\n- No \"Skill learned:\" notes were found this week. The review used the job files and the code they describe.\n- Checked that `brain/skills/city-camera-controls.md` already covers job 19's mouse-panning notes. No change needed.\n\n## Skill files written or changed\n\n**1. `brain/skills/betting-model-learning.md`: improved (learned_from: 2, 6, 26)**\nThe file was five lines. Job 22 showed two things worth keeping: bucket graded bets by market-implied probability\n(the model floored long shots at 10% and they won 5.5%, while the average looked fine), and check for one-sided\nmarkets (props that post only a \"yes\" price, so the model ran alone). The file now has both steps, the test command,\nand a warning that two days of data is not a trend. It links to the new factor skill.\n\n**2. `brain/skills/factor-edge-test.md`: new (learned_from: 26)**\nThe method job 21 used to test weather, defense form and rest against the line on 2,310 NFL games. It covers:\nbreak-even from the odds (-110 is 52.4%), walk-forward fitting, standard error, and a verdict rule that needs\nabout 2 SE out of sample. It also covers the traps: many rules tried, small subgroup",
+   "path": "outputs/job-26/",
+   "n": 26,
+   "mode": "make",
+   "has_page": false,
+   "has_model": false,
+   "finished": "2026-11-08"
   }
  ],
  "links": [
@@ -667,6 +749,11 @@
   },
   {
    "source": "skill:betting-model-learning",
+   "target": "skill:factor-edge-test",
+   "kind": "related"
+  },
+  {
+   "source": "skill:betting-model-learning",
    "target": "agent:quant",
    "kind": "used by"
   },
@@ -684,6 +771,16 @@
    "source": "skill:betting-model-learning",
    "target": "job:6",
    "kind": "learned from"
+  },
+  {
+   "source": "skill:betting-model-learning",
+   "target": "job:26",
+   "kind": "learned from"
+  },
+  {
+   "source": "skill:betting-model-learning",
+   "target": "topic:walk-forward",
+   "kind": "topic"
   },
   {
    "source": "skill:betting-model-learning",
@@ -844,6 +941,46 @@
    "source": "skill:escalate-one-hop",
    "target": "agent:forge",
    "kind": "used by"
+  },
+  {
+   "source": "skill:factor-edge-test",
+   "target": "skill:stock-signal-model",
+   "kind": "related"
+  },
+  {
+   "source": "skill:factor-edge-test",
+   "target": "agent:quant",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:factor-edge-test",
+   "target": "agent:coder",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:factor-edge-test",
+   "target": "agent:analyst",
+   "kind": "used by"
+  },
+  {
+   "source": "skill:factor-edge-test",
+   "target": "job:26",
+   "kind": "learned from"
+  },
+  {
+   "source": "skill:factor-edge-test",
+   "target": "topic:backtest",
+   "kind": "topic"
+  },
+  {
+   "source": "skill:factor-edge-test",
+   "target": "topic:walk-forward",
+   "kind": "topic"
+  },
+  {
+   "source": "skill:factor-edge-test",
+   "target": "topic:market",
+   "kind": "topic"
   },
   {
    "source": "skill:learn-a-skill",
@@ -1042,6 +1179,16 @@
   },
   {
    "source": "skill:stock-signal-model",
+   "target": "topic:backtest",
+   "kind": "topic"
+  },
+  {
+   "source": "skill:stock-signal-model",
+   "target": "topic:market",
+   "kind": "topic"
+  },
+  {
+   "source": "skill:stock-signal-model",
    "target": "tool:market_data",
    "kind": "uses tool"
   },
@@ -1152,6 +1299,26 @@
   },
   {
    "source": "job:21",
+   "target": "tool:bets-model",
+   "kind": "uses tool"
+  },
+  {
+   "source": "job:22",
+   "target": "agent:quant",
+   "kind": "done by"
+  },
+  {
+   "source": "job:22",
+   "target": "tool:bets-model",
+   "kind": "uses tool"
+  },
+  {
+   "source": "job:26",
+   "target": "agent:scribe",
+   "kind": "done by"
+  },
+  {
+   "source": "job:26",
    "target": "tool:bets-model",
    "kind": "uses tool"
   }

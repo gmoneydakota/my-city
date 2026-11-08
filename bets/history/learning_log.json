@@ -201,19 +201,19 @@
   {
     "date": "2026-11-08",
     "lessons": [
-      "Spread: trusting the model 18% \u2192 14% (vs the market) after 252 graded bets \u2014 the market has been the better predictor so far.",
-      "Total: trusting the model 53% \u2192 47% (vs the market) after 324 graded bets \u2014 the model has been the better predictor so far.",
-      "NBA threes: was underconfident about player swings \u2192 uncertainty \u00d70.965."
+      "Spread: trusting the model 14% \u2192 17% (vs the market) after 256 graded bets \u2014 the market has been the better predictor so far.",
+      "Total: trusting the model 47% \u2192 50% (vs the market) after 326 graded bets \u2014 the model has been the better predictor so far.",
+      "NFL rush_yds: projections ran too high (avg 38.42 projected vs 38.09 actual over 76 players) \u2192 now scaled \u00d70.996."
     ],
     "scoreboard": {
-      "graded_bets": 3012,
-      "graded_projections": 3692,
+      "graded_bets": 3046,
+      "graded_projections": 3728,
       "model_leans": {
-        "w": 329,
+        "w": 330,
         "l": 444,
         "p": 0,
-        "hit_rate": 0.4256,
-        "roi_per_bet": -0.0617
+        "hit_rate": 0.4264,
+        "roi_per_bet": -0.0605
       },
       "strong_leans": {
         "w": 222,

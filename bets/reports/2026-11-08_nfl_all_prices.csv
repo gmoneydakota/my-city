@@ -1,493 +1,507 @@
 kind,game,selection,line,dk_odds,p_model,p_market,p_blend,ev
-ML,CIN VS ATL,ATL ML,,145.0,0.3345,0.3834,0.3755,-0.0801
-ML,CIN VS ATL,CIN ML,,-175.0,0.6655,0.6166,0.6245,-0.0186
-Spread,CIN VS ATL,ATL +3,3.0,100.0,0.4340,0.4768,0.4691,-0.0618
-Spread,CIN VS ATL,CIN -3,-3.0,-120.0,0.5660,0.5232,0.5309,-0.0267
-Total,CIN VS ATL,Over 52.5,52.5,-108.0,0.4478,0.4954,0.4702,-0.0945
-Total,CIN VS ATL,Under 52.5,52.5,-112.0,0.5522,0.5046,0.5298,0.0029
-ML,DAL @ IND,IND ML,,190.0,0.4029,0.3203,0.3337,-0.0324
-ML,DAL @ IND,DAL ML,,-230.0,0.5971,0.6797,0.6663,-0.0440
-Spread,DAL @ IND,IND +5.5,5.5,-115.0,0.5923,0.5116,0.5261,-0.0165
-Spread,DAL @ IND,DAL -5.5,-5.5,-105.0,0.4077,0.4884,0.4739,-0.0747
-Total,DAL @ IND,Over 51.5,51.5,-112.0,0.6278,0.5046,0.5698,0.0785
-Total,DAL @ IND,Under 51.5,51.5,-108.0,0.3722,0.4954,0.4302,-0.1715
-ML,NYJ @ KC,KC ML,,-535.0,0.6845,0.8287,0.8054,-0.0441
-ML,NYJ @ KC,NYJ ML,,400.0,0.3155,0.1713,0.1946,-0.0268
-Spread,NYJ @ KC,KC -9.5,-9.5,-115.0,0.3641,0.5116,0.4852,-0.0929
-Spread,NYJ @ KC,NYJ +9.5,9.5,-105.0,0.6359,0.4884,0.5148,0.0051
-Total,NYJ @ KC,Over 48.5,48.5,-102.0,0.3268,0.4814,0.3996,-0.2086
-Total,NYJ @ KC,Under 48.5,48.5,-118.0,0.6732,0.5186,0.6004,0.1092
-ML,DET @ MIA,MIA ML,,235.0,0.2956,0.2727,0.2764,-0.0740
-ML,DET @ MIA,DET ML,,-290.0,0.7044,0.7273,0.7236,-0.0269
-Spread,DET @ MIA,MIA +6.5,6.5,-108.0,0.5117,0.4954,0.4983,-0.0403
-Spread,DET @ MIA,DET -6.5,-6.5,-112.0,0.4883,0.5046,0.5017,-0.0503
-Total,DET @ MIA,Over 49.5,49.5,-122.0,0.4900,0.5278,0.5078,-0.0759
-Total,DET @ MIA,Under 49.5,49.5,102.0,0.5100,0.4722,0.4922,-0.0058
-ML,CLE @ NO,NO ML,,-170.0,0.5882,0.6105,0.6069,-0.0362
-ML,CLE @ NO,CLE ML,,142.0,0.4118,0.3895,0.3931,-0.0486
-Spread,CLE @ NO,NO -3,-3.0,-120.0,0.4846,0.5232,0.5163,-0.0534
-Spread,CLE @ NO,CLE +3,3.0,100.0,0.5154,0.4768,0.4837,-0.0326
-Total,CLE @ NO,Over 42.5,42.5,-108.0,0.5398,0.4954,0.5188,-0.0007
-Total,CLE @ NO,Under 42.5,42.5,-112.0,0.4602,0.5046,0.4812,-0.0892
-ML,NYG @ PHI,PHI ML,,130.0,0.3927,0.4117,0.4086,-0.0602
-ML,NYG @ PHI,NYG ML,,-155.0,0.6073,0.5883,0.5914,-0.0271
-Spread,NYG @ PHI,PHI +3,3.0,-108.0,0.4957,0.4954,0.4954,-0.0459
-Spread,NYG @ PHI,NYG -3,-3.0,-112.0,0.5043,0.5046,0.5046,-0.0449
-Total,NYG @ PHI,Over 38.5,38.5,-108.0,0.6055,0.4954,0.5536,0.0663
-Total,NYG @ PHI,Under 38.5,38.5,-112.0,0.3945,0.5046,0.4464,-0.1551
-ML,LAR @ WSH,WSH ML,,195.0,0.4501,0.3135,0.3356,-0.0100
-ML,LAR @ WSH,LAR ML,,-238.0,0.5499,0.6865,0.6644,-0.0565
-Spread,LAR @ WSH,WSH +4.5,4.5,100.0,0.6051,0.4768,0.4997,-0.0005
-Spread,LAR @ WSH,LAR -4.5,-4.5,-120.0,0.3949,0.5232,0.5003,-0.0829
-Total,LAR @ WSH,Over 47.5,47.5,-112.0,0.4821,0.5046,0.4927,-0.0673
-Total,LAR @ WSH,Under 47.5,47.5,-108.0,0.5179,0.4954,0.5073,-0.0231
-ML,DEN @ CAR,CAR ML,,120.0,0.3937,0.4326,0.4263,-0.0622
-ML,DEN @ CAR,DEN ML,,-142.0,0.6063,0.5674,0.5737,-0.0222
-Spread,DEN @ CAR,CAR +2.5,2.5,100.0,0.4793,0.4768,0.4772,-0.0455
-Spread,DEN @ CAR,DEN -2.5,-2.5,-120.0,0.5207,0.5232,0.5228,-0.0416
-Total,DEN @ CAR,Over 44.5,44.5,-108.0,0.6142,0.4954,0.5582,0.0751
-Total,DEN @ CAR,Under 44.5,44.5,-112.0,0.3858,0.5046,0.4418,-0.1638
-ML,HOU @ LAC,LAC ML,,200.0,0.3107,0.3075,0.3080,-0.0760
-ML,HOU @ LAC,HOU ML,,-245.0,0.6893,0.6925,0.6920,-0.0256
-Spread,HOU @ LAC,LAC +6,6.0,-112.0,0.5116,0.5046,0.5059,-0.0424
-Spread,HOU @ LAC,HOU -6,-6.0,-108.0,0.4884,0.4954,0.4941,-0.0484
-Total,HOU @ LAC,Over 40.5,40.5,-110.0,0.4709,0.5000,0.4846,-0.0748
-Total,HOU @ LAC,Under 40.5,40.5,-110.0,0.5291,0.5000,0.5154,-0.0161
-ML,GB @ NE,NE ML,,-175.0,0.5984,0.6166,0.6136,-0.0357
-ML,GB @ NE,GB ML,,145.0,0.4016,0.3834,0.3864,-0.0534
-Spread,GB @ NE,NE -3.5,-3.5,-102.0,0.4777,0.4814,0.4808,-0.0479
-Spread,GB @ NE,GB +3.5,3.5,-118.0,0.5223,0.5186,0.5192,-0.0407
-Total,GB @ NE,Over 44.5,44.5,-110.0,0.3754,0.5000,0.4341,-0.1713
-Total,GB @ NE,Under 44.5,44.5,-110.0,0.6246,0.5000,0.5659,0.0804
-ML,LV @ SF,SF ML,,-500.0,0.7345,0.8195,0.8058,-0.0331
-ML,LV @ SF,LV ML,,380.0,0.2655,0.1805,0.1942,-0.0676
-Spread,LV @ SF,SF -9.5,-9.5,-115.0,0.4201,0.5116,0.4952,-0.0741
-Spread,LV @ SF,LV +9.5,9.5,-105.0,0.5799,0.4884,0.5048,-0.0145
-Total,LV @ SF,Over 51.5,51.5,-120.0,0.5925,0.5232,0.5599,0.0264
-Total,LV @ SF,Under 51.5,51.5,100.0,0.4075,0.4768,0.4401,-0.1197
-ML,ARI @ SEA,SEA ML,,-455.0,0.6453,0.8055,0.7796,-0.0491
-ML,ARI @ SEA,ARI ML,,350.0,0.3547,0.1945,0.2204,-0.0080
-Spread,ARI @ SEA,SEA -8.5,-8.5,-110.0,0.3564,0.5000,0.4743,-0.0945
-Spread,ARI @ SEA,ARI +8.5,8.5,-110.0,0.6436,0.5000,0.5257,0.0036
-Total,ARI @ SEA,Over 39.5,39.5,-112.0,0.7571,0.5046,0.6382,0.2080
-Total,ARI @ SEA,Under 39.5,39.5,-108.0,0.2429,0.4954,0.3618,-0.3032
-ML,TB @ CHI,CHI ML,,-270.0,0.6996,0.7131,0.7109,-0.0258
-ML,TB @ CHI,TB ML,,220.0,0.3004,0.2869,0.2891,-0.0748
-Spread,TB @ CHI,CHI -6,-6.0,-110.0,0.5002,0.5000,0.5000,-0.0454
-Spread,TB @ CHI,TB +6,6.0,-110.0,0.4998,0.5000,0.5000,-0.0455
-Total,TB @ CHI,Over 47.5,47.5,-105.0,0.4176,0.4884,0.4510,-0.1195
-Total,TB @ CHI,Under 47.5,47.5,-115.0,0.5824,0.5116,0.5490,0.0265
-ML,BUF @ MIN,MIN ML,,142.0,0.3389,0.3895,0.3813,-0.0772
-ML,BUF @ MIN,BUF ML,,-170.0,0.6611,0.6105,0.6187,-0.0174
-Spread,BUF @ MIN,MIN +3,3.0,-105.0,0.4388,0.4884,0.4795,-0.0638
-Spread,BUF @ MIN,BUF -3,-3.0,-115.0,0.5612,0.5116,0.5205,-0.0269
-Total,BUF @ MIN,Over 43.5,43.5,-118.0,0.5435,0.5186,0.5317,-0.0176
-Total,BUF @ MIN,Under 43.5,43.5,-102.0,0.4565,0.4814,0.4683,-0.0727
-Prop,CIN VS ATL,Ja'Marr Chase over 77.5 rec_yds,77.5,-110,,,0.4944,-0.0561
-Prop,CIN VS ATL,Ja'Marr Chase under 77.5 rec_yds,77.5,-114,,,0.5056,-0.0509
-Prop,CIN VS ATL,Drake London over 76.5 rec_yds,76.5,-113,,,0.5016,-0.0546
-Prop,CIN VS ATL,Drake London under 76.5 rec_yds,76.5,-111,,,0.4984,-0.0525
-Prop,CIN VS ATL,Tee Higgins over 76.5 rec_yds,76.5,-112,,,0.5034,-0.0472
-Prop,CIN VS ATL,Tee Higgins under 76.5 rec_yds,76.5,-112,,,0.4966,-0.0599
-Prop,CIN VS ATL,Kyle Pitts Sr. over 41.5 rec_yds,41.5,-115,,,0.5027,-0.0603
-Prop,CIN VS ATL,Kyle Pitts Sr. under 41.5 rec_yds,41.5,-109,,,0.4973,-0.0464
-Prop,CIN VS ATL,Jahan Dotson over 28.5 rec_yds,28.5,-113,,,0.5079,-0.0427
-Prop,CIN VS ATL,Jahan Dotson under 28.5 rec_yds,28.5,-111,,,0.4921,-0.0645
-Prop,CIN VS ATL,Mike Gesicki over 27.5 rec_yds,27.5,-115,,,0.5133,-0.0403
-Prop,CIN VS ATL,Mike Gesicki under 27.5 rec_yds,27.5,-109,,,0.4867,-0.0668
-Prop,CIN VS ATL,Bijan Robinson over 25.5 rec_yds,25.5,-116,,,0.5003,-0.0685
-Prop,CIN VS ATL,Bijan Robinson under 25.5 rec_yds,25.5,-109,,,0.4997,-0.0418
-Prop,CIN VS ATL,Chase Brown over 23.5 rec_yds,23.5,-115,,,0.5051,-0.0557
-Prop,CIN VS ATL,Chase Brown under 23.5 rec_yds,23.5,-109,,,0.4949,-0.0510
-Prop,CIN VS ATL,Dohnte Meyers over 16.5 rec_yds,16.5,-114,,,0.5033,-0.0552
-Prop,CIN VS ATL,Dohnte Meyers under 16.5 rec_yds,16.5,-110,,,0.4967,-0.0518
-Prop,CIN VS ATL,Olamide Zaccheaus over 9.5 rec_yds,9.5,-108,,,0.4910,-0.0544
-Prop,CIN VS ATL,Olamide Zaccheaus under 9.5 rec_yds,9.5,-116,,,0.5090,-0.0522
-Prop,CIN VS ATL,Austin Hooper over 6.5 rec_yds,6.5,-108,,,0.5031,-0.0311
-Prop,CIN VS ATL,Austin Hooper under 6.5 rec_yds,6.5,-116,,,0.4969,-0.0747
-Prop,CIN VS ATL,Samaje Perine over 5.5 rec_yds,5.5,-114,,,0.5004,-0.0607
-Prop,CIN VS ATL,Samaje Perine under 5.5 rec_yds,5.5,-110,,,0.4996,-0.0462
-Prop,CIN VS ATL,Drew Sample over 3.5 rec_yds,3.5,-118,,,0.5089,-0.0597
-Prop,CIN VS ATL,Drew Sample under 3.5 rec_yds,3.5,-106,,,0.4911,-0.0457
-Prop,DEN @ CAR,Tetairoa McMillan over 60.5 rec_yds,60.5,-111,,,0.4986,-0.0522
-Prop,DEN @ CAR,Tetairoa McMillan under 60.5 rec_yds,60.5,-113,,,0.5014,-0.0549
-Prop,DEN @ CAR,Jalen Coker over 52.5 rec_yds,52.5,-111,,,0.4975,-0.0544
-Prop,DEN @ CAR,Jalen Coker under 52.5 rec_yds,52.5,-113,,,0.5025,-0.0527
-Prop,DEN @ CAR,Jaylen Waddle over 47.5 rec_yds,47.5,-111,,,0.4969,-0.0555
-Prop,DEN @ CAR,Jaylen Waddle under 47.5 rec_yds,47.5,-113,,,0.5031,-0.0516
-Prop,DEN @ CAR,Courtland Sutton over 37.5 rec_yds,37.5,-110,,,0.4911,-0.0625
-Prop,DEN @ CAR,Courtland Sutton under 37.5 rec_yds,37.5,-114,,,0.5089,-0.0447
-Prop,DEN @ CAR,Jonah Coleman over 25.5 rec_yds,25.5,-113,,,0.5051,-0.0479
-Prop,DEN @ CAR,Jonah Coleman under 25.5 rec_yds,25.5,-111,,,0.4949,-0.0592
-Prop,DEN @ CAR,Darren Waller over 18.5 rec_yds,18.5,-112,,,0.5038,-0.0465
-Prop,DEN @ CAR,Darren Waller under 18.5 rec_yds,18.5,-112,,,0.4962,-0.0607
-Prop,DEN @ CAR,Chuba Hubbard over 18.5 rec_yds,18.5,-108,,,0.4885,-0.0593
-Prop,DEN @ CAR,Chuba Hubbard under 18.5 rec_yds,18.5,-117,,,0.5115,-0.0513
-Prop,DEN @ CAR,Evan Engram over 17.5 rec_yds,17.5,-116,,,0.5080,-0.0541
-Prop,DEN @ CAR,Evan Engram under 17.5 rec_yds,17.5,-108,,,0.4920,-0.0525
-Prop,DEN @ CAR,Tommy Tremble over 15.5 rec_yds,15.5,-113,,,0.5022,-0.0533
-Prop,DEN @ CAR,Tommy Tremble under 15.5 rec_yds,15.5,-111,,,0.4978,-0.0538
-Prop,DEN @ CAR,John Metchie III over 14.5 rec_yds,14.5,-112,,,0.5008,-0.0521
-Prop,DEN @ CAR,John Metchie III under 14.5 rec_yds,14.5,-112,,,0.4992,-0.0550
-Prop,DEN @ CAR,Marvin Mims Jr. over 9.5 rec_yds,9.5,-108,,,0.4966,-0.0435
-Prop,DEN @ CAR,Marvin Mims Jr. under 9.5 rec_yds,9.5,-116,,,0.5034,-0.0627
-Prop,DEN @ CAR,Mitchell Evans over 7.5 rec_yds,7.5,-112,,,0.5063,-0.0417
-Prop,DEN @ CAR,Mitchell Evans under 7.5 rec_yds,7.5,-112,,,0.4937,-0.0655
-Prop,DEN @ CAR,Troy Franklin over 7.5 rec_yds,7.5,-106,,,0.4895,-0.0487
-Prop,DEN @ CAR,Troy Franklin under 7.5 rec_yds,7.5,-118,,,0.5105,-0.0569
-Prop,CLE @ NO,Chris Olave over 72.5 rec_yds,72.5,-114,,,0.5055,-0.0511
-Prop,CLE @ NO,Chris Olave under 72.5 rec_yds,72.5,-110,,,0.4945,-0.0559
+ML,DAL @ IND,IND ML,,190.0,0.4030,0.3203,0.3331,-0.0340
+ML,DAL @ IND,DAL ML,,-230.0,0.5970,0.6797,0.6669,-0.0431
+Spread,DAL @ IND,IND +4.5,4.5,-105.0,0.5583,0.4884,0.4984,-0.0270
+Spread,DAL @ IND,DAL -4.5,-4.5,-115.0,0.4417,0.5116,0.5016,-0.0622
+Total,DAL @ IND,Over 51.5,51.5,-112.0,0.6275,0.5046,0.5625,0.0647
+Total,DAL @ IND,Under 51.5,51.5,-108.0,0.3725,0.4954,0.4375,-0.1574
+ML,NYJ @ KC,KC ML,,-535.0,0.6844,0.8287,0.8064,-0.0429
+ML,NYJ @ KC,NYJ ML,,400.0,0.3156,0.1713,0.1936,-0.0318
+Spread,NYJ @ KC,KC -9.5,-9.5,-115.0,0.3640,0.5116,0.4905,-0.0830
+Spread,NYJ @ KC,NYJ +9.5,9.5,-105.0,0.6360,0.4884,0.5095,-0.0053
+Total,NYJ @ KC,Over 48.5,48.5,-102.0,0.3269,0.4814,0.4086,-0.1907
+Total,NYJ @ KC,Under 48.5,48.5,-118.0,0.6731,0.5186,0.5914,0.0925
+ML,DET @ MIA,MIA ML,,245.0,0.2958,0.2633,0.2683,-0.0742
+ML,DET @ MIA,DET ML,,-305.0,0.7042,0.7367,0.7317,-0.0284
+Spread,DET @ MIA,MIA +6.5,6.5,-108.0,0.5119,0.4954,0.4977,-0.0414
+Spread,DET @ MIA,DET -6.5,-6.5,-112.0,0.4881,0.5046,0.5023,-0.0493
+Total,DET @ MIA,Over 49.5,49.5,-122.0,0.4899,0.5278,0.5100,-0.0720
+Total,DET @ MIA,Under 49.5,49.5,102.0,0.5101,0.4722,0.4900,-0.0101
+ML,CLE @ NO,NO ML,,-170.0,0.5882,0.6105,0.6070,-0.0359
+ML,CLE @ NO,CLE ML,,142.0,0.4118,0.3895,0.3930,-0.0490
+Spread,CLE @ NO,NO -3,-3.0,-120.0,0.4846,0.5232,0.5177,-0.0509
+Spread,CLE @ NO,CLE +3,3.0,100.0,0.5154,0.4768,0.4823,-0.0354
+Total,CLE @ NO,Over 42.5,42.5,-108.0,0.5398,0.4954,0.5163,-0.0057
+Total,CLE @ NO,Under 42.5,42.5,-112.0,0.4602,0.5046,0.4837,-0.0844
+ML,NYG @ PHI,PHI ML,,130.0,0.3928,0.4117,0.4088,-0.0599
+ML,NYG @ PHI,NYG ML,,-155.0,0.6072,0.5883,0.5912,-0.0273
+Spread,NYG @ PHI,PHI +3,3.0,-108.0,0.4958,0.4954,0.4954,-0.0459
+Spread,NYG @ PHI,NYG -3,-3.0,-112.0,0.5042,0.5046,0.5046,-0.0449
+Total,NYG @ PHI,Over 38.5,38.5,-105.0,0.6057,0.4884,0.5436,0.0614
+Total,NYG @ PHI,Under 38.5,38.5,-115.0,0.3943,0.5116,0.4564,-0.1468
+ML,LAR @ WSH,WSH ML,,195.0,0.4502,0.3135,0.3347,-0.0127
+ML,LAR @ WSH,LAR ML,,-238.0,0.5498,0.6865,0.6653,-0.0551
+Spread,LAR @ WSH,WSH +4.5,4.5,-105.0,0.6053,0.4884,0.5051,-0.0138
+Spread,LAR @ WSH,LAR -4.5,-4.5,-115.0,0.3947,0.5116,0.4949,-0.0748
+Total,LAR @ WSH,Over 47.5,47.5,-112.0,0.4821,0.5046,0.4940,-0.0649
+Total,LAR @ WSH,Under 47.5,47.5,-108.0,0.5179,0.4954,0.5060,-0.0256
+ML,DEN @ CAR,CAR ML,,120.0,0.3938,0.4326,0.4266,-0.0616
+ML,DEN @ CAR,DEN ML,,-142.0,0.6062,0.5674,0.5734,-0.0227
+Spread,DEN @ CAR,CAR +2.5,2.5,100.0,0.4794,0.4768,0.4772,-0.0457
+Spread,DEN @ CAR,DEN -2.5,-2.5,-120.0,0.5206,0.5232,0.5228,-0.0414
+Total,DEN @ CAR,Over 44.5,44.5,-108.0,0.6141,0.4954,0.5513,0.0617
+Total,DEN @ CAR,Under 44.5,44.5,-112.0,0.3859,0.5046,0.4487,-0.1506
+ML,HOU @ LAC,LAC ML,,190.0,0.3109,0.3203,0.3188,-0.0754
+ML,HOU @ LAC,HOU ML,,-230.0,0.6891,0.6797,0.6812,-0.0227
+Spread,HOU @ LAC,LAC +5.5,5.5,-108.0,0.4944,0.4954,0.4952,-0.0462
+Spread,HOU @ LAC,HOU -5.5,-5.5,-112.0,0.5056,0.5046,0.5048,-0.0445
+Total,HOU @ LAC,Over 40.5,40.5,-110.0,0.4712,0.5000,0.4864,-0.0714
+Total,HOU @ LAC,Under 40.5,40.5,-110.0,0.5288,0.5000,0.5136,-0.0195
+ML,GB @ NE,NE ML,,-170.0,0.5983,0.6105,0.6086,-0.0334
+ML,GB @ NE,GB ML,,142.0,0.4017,0.3895,0.3914,-0.0528
+Spread,GB @ NE,NE -3,-3.0,-112.0,0.4950,0.5046,0.5033,-0.0474
+Spread,GB @ NE,GB +3,3.0,-108.0,0.5050,0.4954,0.4967,-0.0433
+Total,GB @ NE,Over 44.5,44.5,-112.0,0.3756,0.5046,0.4439,-0.1598
+Total,GB @ NE,Under 44.5,44.5,-108.0,0.6244,0.4954,0.5561,0.0711
+ML,LV @ SF,SF ML,,-455.0,0.7343,0.8055,0.7945,-0.0309
+ML,LV @ SF,LV ML,,350.0,0.2657,0.1945,0.2055,-0.0751
+Spread,LV @ SF,SF -9.5,-9.5,-110.0,0.4200,0.5000,0.4886,-0.0673
+Spread,LV @ SF,LV +9.5,9.5,-110.0,0.5800,0.5000,0.5114,-0.0236
+Total,LV @ SF,Over 51.5,51.5,-118.0,0.5922,0.5186,0.5533,0.0221
+Total,LV @ SF,Under 51.5,51.5,-102.0,0.4078,0.4814,0.4467,-0.1153
+ML,ARI @ SEA,SEA ML,,-440.0,0.6451,0.8003,0.7763,-0.0473
+ML,ARI @ SEA,ARI ML,,340.0,0.3549,0.1997,0.2237,-0.0156
+Spread,ARI @ SEA,SEA -8.5,-8.5,-110.0,0.3562,0.5000,0.4794,-0.0847
+Spread,ARI @ SEA,ARI +8.5,8.5,-110.0,0.6438,0.5000,0.5206,-0.0062
+Total,ARI @ SEA,Over 39.5,39.5,-112.0,0.7571,0.5046,0.6235,0.1803
+Total,ARI @ SEA,Under 39.5,39.5,-108.0,0.2429,0.4954,0.3765,-0.2750
+ML,TB @ CHI,CHI ML,,-270.0,0.6996,0.7131,0.7110,-0.0257
+ML,TB @ CHI,TB ML,,220.0,0.3004,0.2869,0.2890,-0.0751
+Spread,TB @ CHI,CHI -6,-6.0,-112.0,0.5001,0.5046,0.5040,-0.0460
+Spread,TB @ CHI,TB +6,6.0,-108.0,0.4999,0.4954,0.4960,-0.0447
+Total,TB @ CHI,Over 47.5,47.5,-108.0,0.4176,0.4954,0.4587,-0.1165
+Total,TB @ CHI,Under 47.5,47.5,-112.0,0.5824,0.5046,0.5413,0.0245
+ML,BUF @ MIN,MIN ML,,142.0,0.3389,0.3895,0.3817,-0.0763
+ML,BUF @ MIN,BUF ML,,-170.0,0.6611,0.6105,0.6183,-0.0180
+Spread,BUF @ MIN,MIN +3,3.0,-102.0,0.4388,0.4814,0.4753,-0.0587
+Spread,BUF @ MIN,BUF -3,-3.0,-118.0,0.5612,0.5186,0.5247,-0.0307
+Total,BUF @ MIN,Over 43.5,43.5,-118.0,0.5435,0.5186,0.5303,-0.0203
+Total,BUF @ MIN,Under 43.5,43.5,-102.0,0.4565,0.4814,0.4697,-0.0699
+Prop,DEN @ CAR,Bryce Young over 222.5 pass_yds,222.5,-111,,,0.4991,-0.0512
+Prop,DEN @ CAR,Bryce Young under 222.5 pass_yds,222.5,-113,,,0.5009,-0.0559
+Prop,DEN @ CAR,Bo Nix over 217.5 pass_yds,217.5,-111,,,0.4949,-0.0592
+Prop,DEN @ CAR,Bo Nix under 217.5 pass_yds,217.5,-113,,,0.5051,-0.0479
+Prop,DEN @ CAR,Tetairoa McMillan over 60.5 rec_yds,60.5,-112,,,0.5024,-0.0490
+Prop,DEN @ CAR,Tetairoa McMillan under 60.5 rec_yds,60.5,-112,,,0.4976,-0.0581
+Prop,DEN @ CAR,Jalen Coker over 52.5 rec_yds,52.5,-112,,,0.4976,-0.0581
+Prop,DEN @ CAR,Jalen Coker under 52.5 rec_yds,52.5,-112,,,0.5024,-0.0490
+Prop,DEN @ CAR,Jaylen Waddle over 47.5 rec_yds,47.5,-111,,,0.4997,-0.0500
+Prop,DEN @ CAR,Jaylen Waddle under 47.5 rec_yds,47.5,-113,,,0.5003,-0.0570
+Prop,DEN @ CAR,Courtland Sutton over 34.5 rec_yds,34.5,-110,,,0.5018,-0.0421
+Prop,DEN @ CAR,Courtland Sutton under 34.5 rec_yds,34.5,-114,,,0.4982,-0.0647
+Prop,DEN @ CAR,Jonah Coleman over 25.5 rec_yds,25.5,-109,,,0.4989,-0.0434
+Prop,DEN @ CAR,Jonah Coleman under 25.5 rec_yds,25.5,-115,,,0.5011,-0.0631
+Prop,DEN @ CAR,Darren Waller over 18.5 rec_yds,18.5,-116,,,0.5080,-0.0541
+Prop,DEN @ CAR,Darren Waller under 18.5 rec_yds,18.5,-108,,,0.4920,-0.0524
+Prop,DEN @ CAR,Chuba Hubbard over 18.5 rec_yds,18.5,-115,,,0.5022,-0.0610
+Prop,DEN @ CAR,Chuba Hubbard under 18.5 rec_yds,18.5,-109,,,0.4978,-0.0456
+Prop,DEN @ CAR,Evan Engram over 18.5 rec_yds,18.5,-115,,,0.4988,-0.0675
+Prop,DEN @ CAR,Evan Engram under 18.5 rec_yds,18.5,-109,,,0.5012,-0.0389
+Prop,DEN @ CAR,Tommy Tremble over 15.5 rec_yds,15.5,-113,,,0.5027,-0.0525
+Prop,DEN @ CAR,Tommy Tremble under 15.5 rec_yds,15.5,-111,,,0.4973,-0.0546
+Prop,DEN @ CAR,John Metchie III over 14.5 rec_yds,14.5,-108,,,0.4951,-0.0464
+Prop,DEN @ CAR,John Metchie III under 14.5 rec_yds,14.5,-116,,,0.5049,-0.0599
+Prop,DEN @ CAR,Marvin Mims Jr. over 10.5 rec_yds,10.5,-107,,,0.4962,-0.0400
+Prop,DEN @ CAR,Marvin Mims Jr. under 10.5 rec_yds,10.5,-117,,,0.5038,-0.0656
+Prop,DEN @ CAR,Troy Franklin over 7.5 rec_yds,7.5,-116,,,0.5026,-0.0641
+Prop,DEN @ CAR,Troy Franklin under 7.5 rec_yds,7.5,-108,,,0.4974,-0.0421
+Prop,DEN @ CAR,Mitchell Evans over 7.5 rec_yds,7.5,-112,,,0.5059,-0.0423
+Prop,DEN @ CAR,Mitchell Evans under 7.5 rec_yds,7.5,-112,,,0.4941,-0.0648
+Prop,DEN @ CAR,Tetairoa McMillan over 4.5 receptions,4.5,-147,,,0.5729,-0.0373
+Prop,DEN @ CAR,Tetairoa McMillan under 4.5 receptions,4.5,115,,,0.4271,-0.0818
+Prop,DEN @ CAR,Jalen Coker over 4.5 receptions,4.5,-118,,,0.4945,-0.0864
+Prop,DEN @ CAR,Jalen Coker under 4.5 receptions,4.5,-108,,,0.5055,-0.0265
+Prop,DEN @ CAR,Jaylen Waddle over 4.5 receptions,4.5,-102,,,0.4550,-0.0989
+Prop,DEN @ CAR,Jaylen Waddle under 4.5 receptions,4.5,-125,,,0.5450,-0.0191
+Prop,DEN @ CAR,Jonah Coleman over 3.5 receptions,3.5,-113,,,0.4859,-0.0842
+Prop,DEN @ CAR,Jonah Coleman under 3.5 receptions,3.5,-113,,,0.5141,-0.0309
+Prop,DEN @ CAR,Courtland Sutton over 3.5 receptions,3.5,115,,,0.4019,-0.1360
+Prop,DEN @ CAR,Courtland Sutton under 3.5 receptions,3.5,-146,,,0.5981,0.0078
+Prop,DEN @ CAR,Chuba Hubbard over 2.5 receptions,2.5,-151,,,0.5738,-0.0461
+Prop,DEN @ CAR,Chuba Hubbard under 2.5 receptions,2.5,118,,,0.4262,-0.0710
+Prop,DEN @ CAR,Tommy Tremble over 2.5 receptions,2.5,148,,,0.3688,-0.0854
+Prop,DEN @ CAR,Tommy Tremble under 2.5 receptions,2.5,-191,,,0.6312,-0.0383
+Prop,DEN @ CAR,Evan Engram over 1.5 receptions,1.5,-178,,,0.6092,-0.0486
+Prop,DEN @ CAR,Evan Engram under 1.5 receptions,1.5,139,,,0.3908,-0.0660
+Prop,DEN @ CAR,Darren Waller over 1.5 receptions,1.5,-151,,,0.5692,-0.0538
+Prop,DEN @ CAR,Darren Waller under 1.5 receptions,1.5,118,,,0.4308,-0.0609
+Prop,DEN @ CAR,John Metchie III over 1.5 receptions,1.5,-129,,,0.5718,0.0150
+Prop,DEN @ CAR,John Metchie III under 1.5 receptions,1.5,101,,,0.4282,-0.1392
+Prop,DEN @ CAR,Marvin Mims Jr. over 1.5 receptions,1.5,130,,,0.4020,-0.0754
+Prop,DEN @ CAR,Marvin Mims Jr. under 1.5 receptions,1.5,-166,,,0.5980,-0.0418
+Prop,DEN @ CAR,Troy Franklin over 1.5 receptions,1.5,178,,,0.3266,-0.0921
+Prop,DEN @ CAR,Troy Franklin under 1.5 receptions,1.5,-231,,,0.6734,-0.0351
+Prop,DEN @ CAR,Mitchell Evans over 1.5 receptions,1.5,181,,,0.3242,-0.0890
+Prop,DEN @ CAR,Mitchell Evans under 1.5 receptions,1.5,-234,,,0.6758,-0.0354
+Prop,DEN @ CAR,Chuba Hubbard over 69.5 rush_yds,69.5,-112,,,0.4985,-0.0564
+Prop,DEN @ CAR,Chuba Hubbard under 69.5 rush_yds,69.5,-112,,,0.5015,-0.0507
+Prop,DEN @ CAR,Jonah Coleman over 56.5 rush_yds,56.5,-109,,,0.4864,-0.0674
+Prop,DEN @ CAR,Jonah Coleman under 56.5 rush_yds,56.5,-115,,,0.5136,-0.0397
+Prop,DEN @ CAR,J.K. Dobbins over 25.5 rush_yds,25.5,-113,,,0.5067,-0.0449
+Prop,DEN @ CAR,J.K. Dobbins under 25.5 rush_yds,25.5,-111,,,0.4933,-0.0623
+Prop,DEN @ CAR,Bo Nix over 13.5 rush_yds,13.5,-115,,,0.5016,-0.0623
+Prop,DEN @ CAR,Bo Nix under 13.5 rush_yds,13.5,-109,,,0.4984,-0.0443
+Prop,DEN @ CAR,Bryce Young over 7.5 rush_yds,7.5,-120,,,0.5105,-0.0641
+Prop,DEN @ CAR,Bryce Young under 7.5 rush_yds,7.5,-105,,,0.4895,-0.0443
+Prop,DEN @ CAR,Trevor Etienne over 6.5 rush_yds,6.5,-114,,,0.4902,-0.0798
+Prop,DEN @ CAR,Trevor Etienne under 6.5 rush_yds,6.5,-110,,,0.5098,-0.0268
+Prop,CLE @ NO,Chris Olave over 72.5 rec_yds,72.5,-114,,,0.5054,-0.0512
+Prop,CLE @ NO,Chris Olave under 72.5 rec_yds,72.5,-110,,,0.4946,-0.0558
 Prop,CLE @ NO,KC Concepcion over 46.5 rec_yds,46.5,-113,,,0.4996,-0.0583
-Prop,CLE @ NO,KC Concepcion under 46.5 rec_yds,46.5,-111,,,0.5004,-0.0487
-Prop,CLE @ NO,Harold Fannin Jr. over 43.5 rec_yds,43.5,-113,,,0.5046,-0.0488
-Prop,CLE @ NO,Harold Fannin Jr. under 43.5 rec_yds,43.5,-111,,,0.4954,-0.0583
-Prop,CLE @ NO,Denzel Boston over 43.5 rec_yds,43.5,-110,,,0.4981,-0.0491
-Prop,CLE @ NO,Denzel Boston under 43.5 rec_yds,43.5,-114,,,0.5019,-0.0578
-Prop,CLE @ NO,Devaughn Vele over 37.5 rec_yds,37.5,-110,,,0.4980,-0.0493
-Prop,CLE @ NO,Devaughn Vele under 37.5 rec_yds,37.5,-114,,,0.5020,-0.0576
-Prop,CLE @ NO,Juwan Johnson over 26.5 rec_yds,26.5,-112,,,0.5030,-0.0479
-Prop,CLE @ NO,Juwan Johnson under 26.5 rec_yds,26.5,-112,,,0.4970,-0.0592
-Prop,CLE @ NO,Dylan Sampson over 20.5 rec_yds,20.5,-112,,,0.5045,-0.0450
-Prop,CLE @ NO,Dylan Sampson under 20.5 rec_yds,20.5,-112,,,0.4955,-0.0622
-Prop,CLE @ NO,Alvin Kamara over 19.5 rec_yds,19.5,-109,,,0.4926,-0.0555
-Prop,CLE @ NO,Alvin Kamara under 19.5 rec_yds,19.5,-115,,,0.5074,-0.0513
-Prop,CLE @ NO,Jerry Jeudy over 14.5 rec_yds,14.5,-112,,,0.5040,-0.0460
-Prop,CLE @ NO,Jerry Jeudy under 14.5 rec_yds,14.5,-112,,,0.4960,-0.0612
-Prop,CLE @ NO,Quinshon Judkins over 7.5 rec_yds,7.5,-112,,,0.5072,-0.0399
-Prop,CLE @ NO,Quinshon Judkins under 7.5 rec_yds,7.5,-112,,,0.4928,-0.0672
-Prop,CLE @ NO,Noah Fant over 3.5 rec_yds,3.5,-106,,,0.4940,-0.0400
-Prop,CLE @ NO,Noah Fant under 3.5 rec_yds,3.5,-118,,,0.5060,-0.0652
-Prop,CLE @ NO,Quinshon Judkins over 68.5 rush_yds,68.5,-113,,,0.4955,-0.0660
-Prop,CLE @ NO,Quinshon Judkins under 68.5 rush_yds,68.5,-111,,,0.5045,-0.0410
-Prop,CLE @ NO,Alvin Kamara over 40.5 rush_yds,40.5,-113,,,0.4947,-0.0676
-Prop,CLE @ NO,Alvin Kamara under 40.5 rush_yds,40.5,-111,,,0.5053,-0.0394
-Prop,CLE @ NO,Shedeur Sanders over 16.5 rush_yds,16.5,-113,,,0.4921,-0.0724
-Prop,CLE @ NO,Shedeur Sanders under 16.5 rush_yds,16.5,-111,,,0.5079,-0.0345
-Prop,CLE @ NO,Dylan Sampson over 15.5 rush_yds,15.5,-114,,,0.5067,-0.0488
-Prop,CLE @ NO,Dylan Sampson under 15.5 rush_yds,15.5,-110,,,0.4933,-0.0583
-Prop,CLE @ NO,Tyler Shough over 14.5 rush_yds,14.5,-107,,,0.4999,-0.0330
-Prop,CLE @ NO,Tyler Shough under 14.5 rush_yds,14.5,-117,,,0.5001,-0.0724
-Prop,DAL @ IND,CeeDee Lamb over 87.5 rec_yds,87.5,-111,,,0.4964,-0.0564
-Prop,DAL @ IND,CeeDee Lamb under 87.5 rec_yds,87.5,-113,,,0.5036,-0.0507
-Prop,DAL @ IND,Ryan Flournoy over 44.5 rec_yds,44.5,-113,,,0.5018,-0.0541
-Prop,DAL @ IND,Ryan Flournoy under 44.5 rec_yds,44.5,-111,,,0.4982,-0.0530
-Prop,DAL @ IND,Josh Downs over 43.5 rec_yds,43.5,-111,,,0.4972,-0.0548
-Prop,DAL @ IND,Josh Downs under 43.5 rec_yds,43.5,-113,,,0.5028,-0.0523
-Prop,DAL @ IND,Keenan Allen over 42.5 rec_yds,42.5,-110,,,0.4966,-0.0519
-Prop,DAL @ IND,Keenan Allen under 42.5 rec_yds,42.5,-114,,,0.5034,-0.0551
-Prop,DAL @ IND,Tyler Warren over 41.5 rec_yds,41.5,-110,,,0.5079,-0.0304
-Prop,DAL @ IND,Tyler Warren under 41.5 rec_yds,41.5,-114,,,0.4921,-0.0762
-Prop,DAL @ IND,Jonathan Taylor over 19.5 rec_yds,19.5,-113,,,0.4984,-0.0606
-Prop,DAL @ IND,Jonathan Taylor under 19.5 rec_yds,19.5,-111,,,0.5016,-0.0464
-Prop,DAL @ IND,Laquon Treadwell over 14.5 rec_yds,14.5,-116,,,0.5100,-0.0504
-Prop,DAL @ IND,Laquon Treadwell under 14.5 rec_yds,14.5,-109,,,0.4900,-0.0604
-Prop,DAL @ IND,Javonte Williams over 8.5 rec_yds,8.5,-107,,,0.4878,-0.0563
-Prop,DAL @ IND,Javonte Williams under 8.5 rec_yds,8.5,-117,,,0.5122,-0.0501
-Prop,DAL @ IND,Tyler Goodson over 4.5 rec_yds,4.5,-112,,,0.4963,-0.0605
-Prop,DAL @ IND,Tyler Goodson under 4.5 rec_yds,4.5,-112,,,0.5037,-0.0466
-Prop,DAL @ IND,Javonte Williams over 72.5 rush_yds,72.5,-111,,,0.4977,-0.0539
-Prop,DAL @ IND,Javonte Williams under 72.5 rush_yds,72.5,-113,,,0.5023,-0.0532
+Prop,CLE @ NO,KC Concepcion under 46.5 rec_yds,46.5,-111,,,0.5004,-0.0488
+Prop,CLE @ NO,Harold Fannin Jr. over 43.5 rec_yds,43.5,-113,,,0.5045,-0.0491
+Prop,CLE @ NO,Harold Fannin Jr. under 43.5 rec_yds,43.5,-111,,,0.4955,-0.0581
+Prop,CLE @ NO,Denzel Boston over 43.5 rec_yds,43.5,-110,,,0.4980,-0.0492
+Prop,CLE @ NO,Denzel Boston under 43.5 rec_yds,43.5,-114,,,0.5020,-0.0577
+Prop,CLE @ NO,Devaughn Vele over 37.5 rec_yds,37.5,-110,,,0.4978,-0.0496
+Prop,CLE @ NO,Devaughn Vele under 37.5 rec_yds,37.5,-114,,,0.5022,-0.0573
+Prop,CLE @ NO,Juwan Johnson over 26.5 rec_yds,26.5,-112,,,0.5028,-0.0482
+Prop,CLE @ NO,Juwan Johnson under 26.5 rec_yds,26.5,-112,,,0.4972,-0.0589
+Prop,CLE @ NO,Dylan Sampson over 20.5 rec_yds,20.5,-112,,,0.5043,-0.0455
+Prop,CLE @ NO,Dylan Sampson under 20.5 rec_yds,20.5,-112,,,0.4957,-0.0617
+Prop,CLE @ NO,Alvin Kamara over 19.5 rec_yds,19.5,-109,,,0.4925,-0.0557
+Prop,CLE @ NO,Alvin Kamara under 19.5 rec_yds,19.5,-115,,,0.5075,-0.0512
+Prop,CLE @ NO,Jerry Jeudy over 14.5 rec_yds,14.5,-112,,,0.5038,-0.0464
+Prop,CLE @ NO,Jerry Jeudy under 14.5 rec_yds,14.5,-112,,,0.4962,-0.0607
+Prop,CLE @ NO,Quinshon Judkins over 7.5 rec_yds,7.5,-112,,,0.5068,-0.0407
+Prop,CLE @ NO,Quinshon Judkins under 7.5 rec_yds,7.5,-112,,,0.4932,-0.0664
+Prop,CLE @ NO,Audric Estime over 3.5 rec_yds,3.5,-107,,,0.5019,-0.0291
+Prop,CLE @ NO,Audric Estime under 3.5 rec_yds,3.5,-117,,,0.4981,-0.0761
+Prop,CLE @ NO,Noah Fant over 3.5 rec_yds,3.5,-106,,,0.4936,-0.0408
+Prop,CLE @ NO,Noah Fant under 3.5 rec_yds,3.5,-118,,,0.5064,-0.0644
+Prop,CLE @ NO,Quinshon Judkins over 68.5 rush_yds,68.5,-113,,,0.4958,-0.0654
+Prop,CLE @ NO,Quinshon Judkins under 68.5 rush_yds,68.5,-111,,,0.5042,-0.0416
+Prop,CLE @ NO,Alvin Kamara over 40.5 rush_yds,40.5,-113,,,0.4951,-0.0667
+Prop,CLE @ NO,Alvin Kamara under 40.5 rush_yds,40.5,-111,,,0.5049,-0.0403
+Prop,CLE @ NO,Audric Estime over 27.5 rush_yds,27.5,-112,,,0.5002,-0.0531
+Prop,CLE @ NO,Audric Estime under 27.5 rush_yds,27.5,-112,,,0.4998,-0.0540
+Prop,CLE @ NO,Shedeur Sanders over 16.5 rush_yds,16.5,-113,,,0.4927,-0.0713
+Prop,CLE @ NO,Shedeur Sanders under 16.5 rush_yds,16.5,-111,,,0.5073,-0.0356
+Prop,CLE @ NO,Dylan Sampson over 15.5 rush_yds,15.5,-114,,,0.5066,-0.0490
+Prop,CLE @ NO,Dylan Sampson under 15.5 rush_yds,15.5,-110,,,0.4934,-0.0581
+Prop,CLE @ NO,Tyler Shough over 14.5 rush_yds,14.5,-107,,,0.4998,-0.0331
+Prop,CLE @ NO,Tyler Shough under 14.5 rush_yds,14.5,-117,,,0.5002,-0.0723
+Prop,DAL @ IND,CeeDee Lamb over 87.5 rec_yds,87.5,-111,,,0.4963,-0.0566
+Prop,DAL @ IND,CeeDee Lamb under 87.5 rec_yds,87.5,-113,,,0.5037,-0.0505
+Prop,DAL @ IND,Ryan Flournoy over 44.5 rec_yds,44.5,-113,,,0.5016,-0.0544
+Prop,DAL @ IND,Ryan Flournoy under 44.5 rec_yds,44.5,-111,,,0.4984,-0.0527
+Prop,DAL @ IND,Josh Downs over 43.5 rec_yds,43.5,-111,,,0.4977,-0.0539
+Prop,DAL @ IND,Josh Downs under 43.5 rec_yds,43.5,-113,,,0.5023,-0.0532
+Prop,DAL @ IND,Keenan Allen over 42.5 rec_yds,42.5,-110,,,0.4968,-0.0516
+Prop,DAL @ IND,Keenan Allen under 42.5 rec_yds,42.5,-114,,,0.5032,-0.0554
+Prop,DAL @ IND,Tyler Warren over 41.5 rec_yds,41.5,-110,,,0.5082,-0.0298
+Prop,DAL @ IND,Tyler Warren under 41.5 rec_yds,41.5,-114,,,0.4918,-0.0768
+Prop,DAL @ IND,Jonathan Taylor over 19.5 rec_yds,19.5,-113,,,0.4983,-0.0606
+Prop,DAL @ IND,Jonathan Taylor under 19.5 rec_yds,19.5,-111,,,0.5017,-0.0464
+Prop,DAL @ IND,Laquon Treadwell over 14.5 rec_yds,14.5,-116,,,0.5098,-0.0507
+Prop,DAL @ IND,Laquon Treadwell under 14.5 rec_yds,14.5,-109,,,0.4902,-0.0601
+Prop,DAL @ IND,Javonte Williams over 8.5 rec_yds,8.5,-107,,,0.4878,-0.0564
+Prop,DAL @ IND,Javonte Williams under 8.5 rec_yds,8.5,-117,,,0.5122,-0.0499
+Prop,DAL @ IND,Tyler Goodson over 4.5 rec_yds,4.5,-112,,,0.4967,-0.0599
+Prop,DAL @ IND,Tyler Goodson under 4.5 rec_yds,4.5,-112,,,0.5033,-0.0472
+Prop,DAL @ IND,Javonte Williams over 72.5 rush_yds,72.5,-111,,,0.4976,-0.0542
+Prop,DAL @ IND,Javonte Williams under 72.5 rush_yds,72.5,-113,,,0.5024,-0.0529
 Prop,DAL @ IND,Jonathan Taylor over 65.5 rush_yds,65.5,-112,,,0.5021,-0.0496
-Prop,DAL @ IND,Jonathan Taylor under 65.5 rush_yds,65.5,-112,,,0.4979,-0.0575
-Prop,DAL @ IND,Seth McGowan over 26.5 rush_yds,26.5,-115,,,0.5048,-0.0562
-Prop,DAL @ IND,Seth McGowan under 26.5 rush_yds,26.5,-109,,,0.4952,-0.0505
-Prop,DAL @ IND,Tyler Goodson over 18.5 rush_yds,18.5,-117,,,0.5069,-0.0598
-Prop,DAL @ IND,Tyler Goodson under 18.5 rush_yds,18.5,-107,,,0.4931,-0.0461
-Prop,DAL @ IND,Daniel Jones over 8.5 rush_yds,8.5,-111,,,0.4959,-0.0573
-Prop,DAL @ IND,Daniel Jones under 8.5 rush_yds,8.5,-113,,,0.5041,-0.0498
-Prop,DAL @ IND,Dak Prescott over 6.5 rush_yds,6.5,-103,,,0.4957,-0.0231
-Prop,DAL @ IND,Dak Prescott under 6.5 rush_yds,6.5,-122,,,0.5043,-0.0823
-Prop,DET @ MIA,Jameson Williams over 52.5 rec_yds,52.5,-114,,,0.5080,-0.0463
-Prop,DET @ MIA,Jameson Williams under 52.5 rec_yds,52.5,-110,,,0.4920,-0.0608
+Prop,DAL @ IND,Jonathan Taylor under 65.5 rush_yds,65.5,-112,,,0.4979,-0.0576
+Prop,DAL @ IND,Seth McGowan over 26.5 rush_yds,26.5,-115,,,0.5051,-0.0557
+Prop,DAL @ IND,Seth McGowan under 26.5 rush_yds,26.5,-109,,,0.4949,-0.0510
+Prop,DAL @ IND,Tyler Goodson over 18.5 rush_yds,18.5,-117,,,0.5071,-0.0596
+Prop,DAL @ IND,Tyler Goodson under 18.5 rush_yds,18.5,-107,,,0.4929,-0.0464
+Prop,DAL @ IND,Daniel Jones over 8.5 rush_yds,8.5,-111,,,0.4961,-0.0569
+Prop,DAL @ IND,Daniel Jones under 8.5 rush_yds,8.5,-113,,,0.5039,-0.0502
+Prop,DAL @ IND,Dak Prescott over 6.5 rush_yds,6.5,-103,,,0.4953,-0.0239
+Prop,DAL @ IND,Dak Prescott under 6.5 rush_yds,6.5,-122,,,0.5047,-0.0816
+Prop,DET @ MIA,Jameson Williams over 52.5 rec_yds,52.5,-114,,,0.5078,-0.0467
+Prop,DET @ MIA,Jameson Williams under 52.5 rec_yds,52.5,-110,,,0.4922,-0.0604
 Prop,DET @ MIA,Sam LaPorta over 50.5 rec_yds,50.5,-113,,,0.5018,-0.0541
 Prop,DET @ MIA,Sam LaPorta under 50.5 rec_yds,50.5,-111,,,0.4982,-0.0530
-Prop,DET @ MIA,Malik Washington over 43.5 rec_yds,43.5,-109,,,0.4943,-0.0521
-Prop,DET @ MIA,Malik Washington under 43.5 rec_yds,43.5,-115,,,0.5057,-0.0547
-Prop,DET @ MIA,Caleb Douglas over 40.5 rec_yds,40.5,-114,,,0.5035,-0.0548
-Prop,DET @ MIA,Caleb Douglas under 40.5 rec_yds,40.5,-110,,,0.4965,-0.0521
-Prop,DET @ MIA,Greg Dulcich over 39.5 rec_yds,39.5,-109,,,0.5081,-0.0257
-Prop,DET @ MIA,Greg Dulcich under 39.5 rec_yds,39.5,-115,,,0.4919,-0.0804
-Prop,DET @ MIA,Jahmyr Gibbs over 34.5 rec_yds,34.5,-109,,,0.4764,-0.0866
-Prop,DET @ MIA,Jahmyr Gibbs under 34.5 rec_yds,34.5,-115,,,0.5236,-0.0210
-Prop,DET @ MIA,Chris Bell over 24.5 rec_yds,24.5,-111,,,0.4985,-0.0524
-Prop,DET @ MIA,Chris Bell under 24.5 rec_yds,24.5,-113,,,0.5015,-0.0547
-Prop,DET @ MIA,Isaac TeSlaa over 15.5 rec_yds,15.5,-109,,,0.5024,-0.0367
-Prop,DET @ MIA,Isaac TeSlaa under 15.5 rec_yds,15.5,-115,,,0.4976,-0.0697
-Prop,DET @ MIA,Ollie Gordon II over 8.5 rec_yds,8.5,-105,,,0.4836,-0.0558
-Prop,DET @ MIA,Ollie Gordon II under 8.5 rec_yds,8.5,-120,,,0.5164,-0.0533
-Prop,DET @ MIA,Jahmyr Gibbs over 96.5 rush_yds,96.5,-114,,,0.5059,-0.0504
-Prop,DET @ MIA,Jahmyr Gibbs under 96.5 rush_yds,96.5,-110,,,0.4941,-0.0567
-Prop,DET @ MIA,Ollie Gordon II over 70.5 rush_yds,70.5,-110,,,0.4821,-0.0796
-Prop,DET @ MIA,Ollie Gordon II under 70.5 rush_yds,70.5,-114,,,0.5179,-0.0278
-Prop,DET @ MIA,Malik Willis over 30.5 rush_yds,30.5,-113,,,0.5029,-0.0521
-Prop,DET @ MIA,Malik Willis under 30.5 rush_yds,30.5,-111,,,0.4971,-0.0550
-Prop,NYJ @ KC,Rashee Rice over 57.5 rec_yds,57.5,-112,,,0.4987,-0.0561
-Prop,NYJ @ KC,Rashee Rice under 57.5 rec_yds,57.5,-112,,,0.5013,-0.0511
-Prop,NYJ @ KC,Travis Kelce over 50.5 rec_yds,50.5,-112,,,0.5035,-0.0470
-Prop,NYJ @ KC,Travis Kelce under 50.5 rec_yds,50.5,-112,,,0.4965,-0.0602
-Prop,NYJ @ KC,Omar Cooper Jr. over 50.5 rec_yds,50.5,-110,,,0.4982,-0.0488
-Prop,NYJ @ KC,Omar Cooper Jr. under 50.5 rec_yds,50.5,-114,,,0.5018,-0.0581
-Prop,NYJ @ KC,Adonai Mitchell over 48.5 rec_yds,48.5,-109,,,0.4998,-0.0417
-Prop,NYJ @ KC,Adonai Mitchell under 48.5 rec_yds,48.5,-115,,,0.5002,-0.0648
-Prop,NYJ @ KC,Xavier Worthy over 31.5 rec_yds,31.5,-110,,,0.5012,-0.0432
-Prop,NYJ @ KC,Xavier Worthy under 31.5 rec_yds,31.5,-114,,,0.4988,-0.0636
-Prop,NYJ @ KC,Mason Taylor over 25.5 rec_yds,25.5,-116,,,0.5074,-0.0552
-Prop,NYJ @ KC,Mason Taylor under 25.5 rec_yds,25.5,-108,,,0.4926,-0.0513
+Prop,DET @ MIA,Malik Washington over 43.5 rec_yds,43.5,-109,,,0.4945,-0.0519
+Prop,DET @ MIA,Malik Washington under 43.5 rec_yds,43.5,-115,,,0.5055,-0.0549
+Prop,DET @ MIA,Caleb Douglas over 40.5 rec_yds,40.5,-114,,,0.5033,-0.0552
+Prop,DET @ MIA,Caleb Douglas under 40.5 rec_yds,40.5,-110,,,0.4967,-0.0517
+Prop,DET @ MIA,Greg Dulcich over 39.5 rec_yds,39.5,-109,,,0.5082,-0.0257
+Prop,DET @ MIA,Greg Dulcich under 39.5 rec_yds,39.5,-115,,,0.4918,-0.0805
+Prop,DET @ MIA,Jahmyr Gibbs over 34.5 rec_yds,34.5,-109,,,0.4762,-0.0869
+Prop,DET @ MIA,Jahmyr Gibbs under 34.5 rec_yds,34.5,-115,,,0.5238,-0.0208
+Prop,DET @ MIA,Chris Bell over 24.5 rec_yds,24.5,-111,,,0.4986,-0.0522
+Prop,DET @ MIA,Chris Bell under 24.5 rec_yds,24.5,-113,,,0.5014,-0.0549
+Prop,DET @ MIA,Isaac TeSlaa over 15.5 rec_yds,15.5,-109,,,0.5022,-0.0371
+Prop,DET @ MIA,Isaac TeSlaa under 15.5 rec_yds,15.5,-115,,,0.4978,-0.0693
+Prop,DET @ MIA,Ollie Gordon II over 8.5 rec_yds,8.5,-105,,,0.4843,-0.0544
+Prop,DET @ MIA,Ollie Gordon II under 8.5 rec_yds,8.5,-120,,,0.5157,-0.0546
+Prop,DET @ MIA,Jahmyr Gibbs over 96.5 rush_yds,96.5,-114,,,0.5058,-0.0505
+Prop,DET @ MIA,Jahmyr Gibbs under 96.5 rush_yds,96.5,-110,,,0.4942,-0.0565
+Prop,DET @ MIA,Ollie Gordon II over 70.5 rush_yds,70.5,-110,,,0.4823,-0.0793
+Prop,DET @ MIA,Ollie Gordon II under 70.5 rush_yds,70.5,-114,,,0.5177,-0.0281
+Prop,DET @ MIA,Malik Willis over 30.5 rush_yds,30.5,-113,,,0.5028,-0.0522
+Prop,DET @ MIA,Malik Willis under 30.5 rush_yds,30.5,-111,,,0.4972,-0.0549
+Prop,NYJ @ KC,Rashee Rice over 57.5 rec_yds,57.5,-112,,,0.4987,-0.0559
+Prop,NYJ @ KC,Rashee Rice under 57.5 rec_yds,57.5,-112,,,0.5013,-0.0512
+Prop,NYJ @ KC,Travis Kelce over 50.5 rec_yds,50.5,-112,,,0.5034,-0.0472
+Prop,NYJ @ KC,Travis Kelce under 50.5 rec_yds,50.5,-112,,,0.4966,-0.0600
+Prop,NYJ @ KC,Omar Cooper Jr. over 50.5 rec_yds,50.5,-110,,,0.4982,-0.0489
+Prop,NYJ @ KC,Omar Cooper Jr. under 50.5 rec_yds,50.5,-114,,,0.5018,-0.0580
+Prop,NYJ @ KC,Adonai Mitchell over 48.5 rec_yds,48.5,-109,,,0.4998,-0.0416
+Prop,NYJ @ KC,Adonai Mitchell under 48.5 rec_yds,48.5,-115,,,0.5002,-0.0649
+Prop,NYJ @ KC,Xavier Worthy over 31.5 rec_yds,31.5,-110,,,0.5011,-0.0433
+Prop,NYJ @ KC,Xavier Worthy under 31.5 rec_yds,31.5,-114,,,0.4989,-0.0635
+Prop,NYJ @ KC,Mason Taylor over 25.5 rec_yds,25.5,-116,,,0.5075,-0.0550
+Prop,NYJ @ KC,Mason Taylor under 25.5 rec_yds,25.5,-108,,,0.4925,-0.0515
 Prop,NYJ @ KC,Kenyon Sadiq over 18.5 rec_yds,18.5,-114,,,0.5038,-0.0542
 Prop,NYJ @ KC,Kenyon Sadiq under 18.5 rec_yds,18.5,-110,,,0.4962,-0.0528
-Prop,NYJ @ KC,Kenneth Walker III over 17.5 rec_yds,17.5,-116,,,0.5034,-0.0627
-Prop,NYJ @ KC,Kenneth Walker III under 17.5 rec_yds,17.5,-108,,,0.4966,-0.0435
-Prop,NYJ @ KC,Emmett Johnson over 15.5 rec_yds,15.5,-115,,,0.5091,-0.0481
-Prop,NYJ @ KC,Emmett Johnson under 15.5 rec_yds,15.5,-110,,,0.4909,-0.0629
-Prop,NYJ @ KC,Breece Hall over 14.5 rec_yds,14.5,-117,,,0.5153,-0.0443
-Prop,NYJ @ KC,Breece Hall under 14.5 rec_yds,14.5,-107,,,0.4847,-0.0622
-Prop,NYJ @ KC,Cyrus Allen over 14.5 rec_yds,14.5,-112,,,0.4971,-0.0590
-Prop,NYJ @ KC,Cyrus Allen under 14.5 rec_yds,14.5,-112,,,0.5029,-0.0481
-Prop,NYJ @ KC,Noah Gray over 13.5 rec_yds,13.5,-110,,,0.5027,-0.0403
-Prop,NYJ @ KC,Noah Gray under 13.5 rec_yds,13.5,-114,,,0.4973,-0.0664
-Prop,NYJ @ KC,Tim Patrick over 11.5 rec_yds,11.5,-115,,,0.5043,-0.0572
-Prop,NYJ @ KC,Tim Patrick under 11.5 rec_yds,11.5,-109,,,0.4957,-0.0495
-Prop,NYJ @ KC,Isaiah Williams over 8.5 rec_yds,8.5,-113,,,0.5072,-0.0440
-Prop,NYJ @ KC,Isaiah Williams under 8.5 rec_yds,8.5,-111,,,0.4928,-0.0631
+Prop,NYJ @ KC,Kenneth Walker III over 17.5 rec_yds,17.5,-116,,,0.5033,-0.0628
+Prop,NYJ @ KC,Kenneth Walker III under 17.5 rec_yds,17.5,-108,,,0.4967,-0.0434
+Prop,NYJ @ KC,Emmett Johnson over 15.5 rec_yds,15.5,-115,,,0.5088,-0.0487
+Prop,NYJ @ KC,Emmett Johnson under 15.5 rec_yds,15.5,-110,,,0.4912,-0.0623
+Prop,NYJ @ KC,Breece Hall over 14.5 rec_yds,14.5,-117,,,0.5150,-0.0447
+Prop,NYJ @ KC,Breece Hall under 14.5 rec_yds,14.5,-107,,,0.4850,-0.0618
+Prop,NYJ @ KC,Cyrus Allen over 14.5 rec_yds,14.5,-112,,,0.4973,-0.0587
+Prop,NYJ @ KC,Cyrus Allen under 14.5 rec_yds,14.5,-112,,,0.5027,-0.0484
+Prop,NYJ @ KC,Noah Gray over 13.5 rec_yds,13.5,-110,,,0.5023,-0.0410
+Prop,NYJ @ KC,Noah Gray under 13.5 rec_yds,13.5,-114,,,0.4977,-0.0658
+Prop,NYJ @ KC,Tim Patrick over 11.5 rec_yds,11.5,-115,,,0.5046,-0.0567
+Prop,NYJ @ KC,Tim Patrick under 11.5 rec_yds,11.5,-109,,,0.4954,-0.0500
+Prop,NYJ @ KC,Isaiah Williams over 8.5 rec_yds,8.5,-113,,,0.5069,-0.0446
+Prop,NYJ @ KC,Isaiah Williams under 8.5 rec_yds,8.5,-111,,,0.4931,-0.0626
 Prop,NYJ @ KC,Braelon Allen over 7.5 rec_yds,7.5,-105,,,0.4846,-0.0539
 Prop,NYJ @ KC,Braelon Allen under 7.5 rec_yds,7.5,-120,,,0.5154,-0.0551
-Prop,NYJ @ KC,Kenneth Walker III over 92.5 rush_yds,92.5,-113,,,0.5042,-0.0497
-Prop,NYJ @ KC,Kenneth Walker III under 92.5 rush_yds,92.5,-111,,,0.4958,-0.0575
-Prop,NYJ @ KC,Breece Hall over 37.5 rush_yds,37.5,-115,,,0.5063,-0.0535
-Prop,NYJ @ KC,Breece Hall under 37.5 rush_yds,37.5,-109,,,0.4937,-0.0534
-Prop,NYJ @ KC,Braelon Allen over 33.5 rush_yds,33.5,-112,,,0.5071,-0.0402
-Prop,NYJ @ KC,Braelon Allen under 33.5 rush_yds,33.5,-112,,,0.4929,-0.0670
-Prop,NYJ @ KC,Emmett Johnson over 12.5 rush_yds,12.5,-113,,,0.4950,-0.0669
-Prop,NYJ @ KC,Emmett Johnson under 12.5 rush_yds,12.5,-111,,,0.5050,-0.0401
-Prop,NYJ @ KC,Patrick Mahomes over 12.5 rush_yds,12.5,-111,,,0.5004,-0.0488
-Prop,NYJ @ KC,Patrick Mahomes under 12.5 rush_yds,12.5,-113,,,0.4996,-0.0583
-Prop,NYJ @ KC,Geno Smith over 6.5 rush_yds,6.5,-110,,,0.4803,-0.0831
-Prop,NYJ @ KC,Geno Smith under 6.5 rush_yds,6.5,-114,,,0.5197,-0.0244
-Prop,LAR @ WSH,Puka Nacua over 95.5 rec_yds,95.5,-111,,,0.4963,-0.0565
-Prop,LAR @ WSH,Puka Nacua under 95.5 rec_yds,95.5,-114,,,0.5037,-0.0545
-Prop,LAR @ WSH,Antonio Williams over 48.5 rec_yds,48.5,-111,,,0.4926,-0.0637
-Prop,LAR @ WSH,Antonio Williams under 48.5 rec_yds,48.5,-113,,,0.5074,-0.0435
-Prop,LAR @ WSH,Stefon Diggs over 45.5 rec_yds,45.5,-115,,,0.5050,-0.0558
-Prop,LAR @ WSH,Stefon Diggs under 45.5 rec_yds,45.5,-109,,,0.4950,-0.0509
-Prop,LAR @ WSH,Chig Okonkwo over 35.5 rec_yds,35.5,-114,,,0.5007,-0.0601
-Prop,LAR @ WSH,Chig Okonkwo under 35.5 rec_yds,35.5,-110,,,0.4993,-0.0468
-Prop,LAR @ WSH,Kyren Williams over 19.5 rec_yds,19.5,-116,,,0.5133,-0.0443
-Prop,LAR @ WSH,Kyren Williams under 19.5 rec_yds,19.5,-108,,,0.4867,-0.0626
-Prop,LAR @ WSH,Rachaad White over 15.5 rec_yds,15.5,-112,,,0.4974,-0.0585
-Prop,LAR @ WSH,Rachaad White under 15.5 rec_yds,15.5,-112,,,0.5026,-0.0487
+Prop,NYJ @ KC,Kenneth Walker III over 92.5 rush_yds,92.5,-113,,,0.5041,-0.0498
+Prop,NYJ @ KC,Kenneth Walker III under 92.5 rush_yds,92.5,-111,,,0.4959,-0.0573
+Prop,NYJ @ KC,Breece Hall over 37.5 rush_yds,37.5,-115,,,0.5061,-0.0538
+Prop,NYJ @ KC,Breece Hall under 37.5 rush_yds,37.5,-109,,,0.4939,-0.0530
+Prop,NYJ @ KC,Braelon Allen over 33.5 rush_yds,33.5,-112,,,0.5067,-0.0409
+Prop,NYJ @ KC,Braelon Allen under 33.5 rush_yds,33.5,-112,,,0.4933,-0.0662
+Prop,NYJ @ KC,Emmett Johnson over 12.5 rush_yds,12.5,-113,,,0.4953,-0.0663
+Prop,NYJ @ KC,Emmett Johnson under 12.5 rush_yds,12.5,-111,,,0.5047,-0.0407
+Prop,NYJ @ KC,Patrick Mahomes over 12.5 rush_yds,12.5,-111,,,0.5003,-0.0490
+Prop,NYJ @ KC,Patrick Mahomes under 12.5 rush_yds,12.5,-113,,,0.4997,-0.0581
+Prop,NYJ @ KC,Geno Smith over 6.5 rush_yds,6.5,-110,,,0.4807,-0.0824
+Prop,NYJ @ KC,Geno Smith under 6.5 rush_yds,6.5,-114,,,0.5193,-0.0251
+Prop,LAR @ WSH,Puka Nacua over 95.5 rec_yds,95.5,-111,,,0.4964,-0.0565
+Prop,LAR @ WSH,Puka Nacua under 95.5 rec_yds,95.5,-114,,,0.5036,-0.0546
+Prop,LAR @ WSH,Antonio Williams over 48.5 rec_yds,48.5,-111,,,0.4930,-0.0629
+Prop,LAR @ WSH,Antonio Williams under 48.5 rec_yds,48.5,-113,,,0.5070,-0.0443
+Prop,LAR @ WSH,Stefon Diggs over 45.5 rec_yds,45.5,-115,,,0.5051,-0.0556
+Prop,LAR @ WSH,Stefon Diggs under 45.5 rec_yds,45.5,-109,,,0.4949,-0.0511
+Prop,LAR @ WSH,Chig Okonkwo over 35.5 rec_yds,35.5,-114,,,0.5007,-0.0600
+Prop,LAR @ WSH,Chig Okonkwo under 35.5 rec_yds,35.5,-110,,,0.4993,-0.0469
+Prop,LAR @ WSH,Kyren Williams over 19.5 rec_yds,19.5,-116,,,0.5131,-0.0445
+Prop,LAR @ WSH,Kyren Williams under 19.5 rec_yds,19.5,-108,,,0.4869,-0.0623
+Prop,LAR @ WSH,Rachaad White over 15.5 rec_yds,15.5,-112,,,0.4976,-0.0582
+Prop,LAR @ WSH,Rachaad White under 15.5 rec_yds,15.5,-112,,,0.5024,-0.0490
 Prop,LAR @ WSH,Blake Corum over 5.5 rec_yds,5.5,-113,,,0.4998,-0.0580
 Prop,LAR @ WSH,Blake Corum under 5.5 rec_yds,5.5,-111,,,0.5002,-0.0491
-Prop,LAR @ WSH,Kyren Williams over 63.5 rush_yds,63.5,-113,,,0.5046,-0.0489
-Prop,LAR @ WSH,Kyren Williams under 63.5 rush_yds,63.5,-111,,,0.4954,-0.0583
-Prop,LAR @ WSH,Blake Corum over 48.5 rush_yds,48.5,-115,,,0.5011,-0.0632
-Prop,LAR @ WSH,Blake Corum under 48.5 rush_yds,48.5,-110,,,0.4989,-0.0475
-Prop,LAR @ WSH,Jayden Daniels over 37.5 rush_yds,37.5,-115,,,0.5078,-0.0507
-Prop,LAR @ WSH,Jayden Daniels under 37.5 rush_yds,37.5,-109,,,0.4922,-0.0562
-Prop,LAR @ WSH,Rachaad White over 35.5 rush_yds,35.5,-112,,,0.4984,-0.0566
-Prop,LAR @ WSH,Rachaad White under 35.5 rush_yds,35.5,-112,,,0.5016,-0.0505
-Prop,LAR @ WSH,Austin Ekeler over 24.5 rush_yds,24.5,-113,,,0.4980,-0.0613
-Prop,LAR @ WSH,Austin Ekeler under 24.5 rush_yds,24.5,-111,,,0.5020,-0.0457
-Prop,NYG @ PHI,Malik Nabers over 72.5 rec_yds,72.5,-110,,,0.4977,-0.0499
-Prop,NYG @ PHI,Malik Nabers under 72.5 rec_yds,72.5,-114,,,0.5023,-0.0570
-Prop,NYG @ PHI,Isaiah Likely over 41.5 rec_yds,41.5,-113,,,0.5034,-0.0512
-Prop,NYG @ PHI,Isaiah Likely under 41.5 rec_yds,41.5,-111,,,0.4966,-0.0560
-Prop,NYG @ PHI,Makai Lemon over 38.5 rec_yds,38.5,-111,,,0.4950,-0.0591
-Prop,NYG @ PHI,Makai Lemon under 38.5 rec_yds,38.5,-113,,,0.5050,-0.0480
-Prop,NYG @ PHI,Dallas Goedert over 36.5 rec_yds,36.5,-112,,,0.4973,-0.0587
-Prop,NYG @ PHI,Dallas Goedert under 36.5 rec_yds,36.5,-112,,,0.5027,-0.0485
-Prop,NYG @ PHI,Darius Cooper over 27.5 rec_yds,27.5,-113,,,0.4980,-0.0614
-Prop,NYG @ PHI,Darius Cooper under 27.5 rec_yds,27.5,-111,,,0.5020,-0.0457
-Prop,NYG @ PHI,Malachi Fields over 22.5 rec_yds,22.5,-115,,,0.5119,-0.0430
-Prop,NYG @ PHI,Malachi Fields under 22.5 rec_yds,22.5,-109,,,0.4881,-0.0640
-Prop,NYG @ PHI,Devin Singletary over 14.5 rec_yds,14.5,-109,,,0.4939,-0.0530
-Prop,NYG @ PHI,Devin Singletary under 14.5 rec_yds,14.5,-115,,,0.5061,-0.0538
-Prop,NYG @ PHI,Darnell Mooney over 12.5 rec_yds,12.5,-113,,,0.5015,-0.0546
-Prop,NYG @ PHI,Darnell Mooney under 12.5 rec_yds,12.5,-111,,,0.4985,-0.0525
-Prop,NYG @ PHI,Saquon Barkley over 9.5 rec_yds,9.5,-114,,,0.4940,-0.0726
-Prop,NYG @ PHI,Saquon Barkley under 9.5 rec_yds,9.5,-110,,,0.5060,-0.0341
-Prop,NYG @ PHI,Theo Johnson over 8.5 rec_yds,8.5,-107,,,0.5015,-0.0299
-Prop,NYG @ PHI,Theo Johnson under 8.5 rec_yds,8.5,-117,,,0.4985,-0.0754
-Prop,NYG @ PHI,Devin Singletary over 55.5 rush_yds,55.5,-112,,,0.4922,-0.0684
-Prop,NYG @ PHI,Devin Singletary under 55.5 rush_yds,55.5,-112,,,0.5078,-0.0387
-Prop,NYG @ PHI,Saquon Barkley over 53.5 rush_yds,53.5,-110,,,0.4988,-0.0477
-Prop,NYG @ PHI,Saquon Barkley under 53.5 rush_yds,53.5,-114,,,0.5012,-0.0592
-Prop,NYG @ PHI,Elijah Mitchell over 26.5 rush_yds,26.5,-111,,,0.4931,-0.0627
-Prop,NYG @ PHI,Elijah Mitchell under 26.5 rush_yds,26.5,-113,,,0.5069,-0.0445
-Prop,NYG @ PHI,Joe Milton over 23.5 rush_yds,23.5,-111,,,0.4924,-0.0640
-Prop,NYG @ PHI,Joe Milton under 23.5 rush_yds,23.5,-113,,,0.5076,-0.0432
-Prop,NYG @ PHI,J.J. McCarthy over 16.5 rush_yds,16.5,-110,,,0.4906,-0.0633
-Prop,NYG @ PHI,J.J. McCarthy under 16.5 rush_yds,16.5,-114,,,0.5094,-0.0438
+Prop,LAR @ WSH,Kyren Williams over 63.5 rush_yds,63.5,-113,,,0.5045,-0.0491
+Prop,LAR @ WSH,Kyren Williams under 63.5 rush_yds,63.5,-111,,,0.4955,-0.0580
+Prop,LAR @ WSH,Blake Corum over 48.5 rush_yds,48.5,-115,,,0.5010,-0.0633
+Prop,LAR @ WSH,Blake Corum under 48.5 rush_yds,48.5,-110,,,0.4990,-0.0474
+Prop,LAR @ WSH,Jayden Daniels over 37.5 rush_yds,37.5,-115,,,0.5077,-0.0508
+Prop,LAR @ WSH,Jayden Daniels under 37.5 rush_yds,37.5,-109,,,0.4923,-0.0561
+Prop,LAR @ WSH,Rachaad White over 35.5 rush_yds,35.5,-112,,,0.4985,-0.0564
+Prop,LAR @ WSH,Rachaad White under 35.5 rush_yds,35.5,-112,,,0.5015,-0.0507
+Prop,LAR @ WSH,Austin Ekeler over 24.5 rush_yds,24.5,-113,,,0.4983,-0.0608
+Prop,LAR @ WSH,Austin Ekeler under 24.5 rush_yds,24.5,-111,,,0.5017,-0.0463
+Prop,NYG @ PHI,Malik Nabers over 72.5 rec_yds,72.5,-110,,,0.4975,-0.0501
+Prop,NYG @ PHI,Malik Nabers under 72.5 rec_yds,72.5,-114,,,0.5025,-0.0568
+Prop,NYG @ PHI,Isaiah Likely over 41.5 rec_yds,41.5,-113,,,0.5033,-0.0513
+Prop,NYG @ PHI,Isaiah Likely under 41.5 rec_yds,41.5,-111,,,0.4967,-0.0558
+Prop,NYG @ PHI,Makai Lemon over 38.5 rec_yds,38.5,-111,,,0.4951,-0.0589
+Prop,NYG @ PHI,Makai Lemon under 38.5 rec_yds,38.5,-113,,,0.5049,-0.0483
+Prop,NYG @ PHI,Dallas Goedert over 36.5 rec_yds,36.5,-112,,,0.4973,-0.0588
+Prop,NYG @ PHI,Dallas Goedert under 36.5 rec_yds,36.5,-112,,,0.5027,-0.0484
+Prop,NYG @ PHI,Darius Cooper over 27.5 rec_yds,27.5,-113,,,0.4982,-0.0609
+Prop,NYG @ PHI,Darius Cooper under 27.5 rec_yds,27.5,-111,,,0.5018,-0.0461
+Prop,NYG @ PHI,Malachi Fields over 22.5 rec_yds,22.5,-115,,,0.5116,-0.0436
+Prop,NYG @ PHI,Malachi Fields under 22.5 rec_yds,22.5,-109,,,0.4884,-0.0635
+Prop,NYG @ PHI,Devin Singletary over 14.5 rec_yds,14.5,-109,,,0.4941,-0.0526
+Prop,NYG @ PHI,Devin Singletary under 14.5 rec_yds,14.5,-115,,,0.5059,-0.0542
+Prop,NYG @ PHI,Darnell Mooney over 12.5 rec_yds,12.5,-113,,,0.5015,-0.0548
+Prop,NYG @ PHI,Darnell Mooney under 12.5 rec_yds,12.5,-111,,,0.4985,-0.0523
+Prop,NYG @ PHI,Saquon Barkley over 9.5 rec_yds,9.5,-114,,,0.4944,-0.0720
+Prop,NYG @ PHI,Saquon Barkley under 9.5 rec_yds,9.5,-110,,,0.5056,-0.0347
+Prop,NYG @ PHI,Theo Johnson over 8.5 rec_yds,8.5,-107,,,0.5012,-0.0304
+Prop,NYG @ PHI,Theo Johnson under 8.5 rec_yds,8.5,-117,,,0.4988,-0.0749
+Prop,NYG @ PHI,Devin Singletary over 55.5 rush_yds,55.5,-112,,,0.4929,-0.0671
+Prop,NYG @ PHI,Devin Singletary under 55.5 rush_yds,55.5,-112,,,0.5071,-0.0401
+Prop,NYG @ PHI,Saquon Barkley over 53.5 rush_yds,53.5,-110,,,0.4989,-0.0476
+Prop,NYG @ PHI,Saquon Barkley under 53.5 rush_yds,53.5,-114,,,0.5011,-0.0593
+Prop,NYG @ PHI,Elijah Mitchell over 26.5 rush_yds,26.5,-111,,,0.4933,-0.0622
+Prop,NYG @ PHI,Elijah Mitchell under 26.5 rush_yds,26.5,-113,,,0.5067,-0.0450
+Prop,NYG @ PHI,Joe Milton over 23.5 rush_yds,23.5,-111,,,0.4927,-0.0635
+Prop,NYG @ PHI,Joe Milton under 23.5 rush_yds,23.5,-113,,,0.5073,-0.0437
+Prop,NYG @ PHI,J.J. McCarthy over 16.5 rush_yds,16.5,-110,,,0.4910,-0.0626
+Prop,NYG @ PHI,J.J. McCarthy under 16.5 rush_yds,16.5,-114,,,0.5090,-0.0446
 Prop,HOU @ LAC,Nico Collins over 69.5 rec_yds,69.5,-111,,,0.4977,-0.0539
-Prop,HOU @ LAC,Nico Collins under 69.5 rec_yds,69.5,-113,,,0.5023,-0.0532
-Prop,HOU @ LAC,Ladd McConkey over 52.5 rec_yds,52.5,-111,,,0.4939,-0.0611
-Prop,HOU @ LAC,Ladd McConkey under 52.5 rec_yds,52.5,-113,,,0.5061,-0.0461
-Prop,HOU @ LAC,Dalton Schultz over 35.5 rec_yds,35.5,-110,,,0.4997,-0.0460
-Prop,HOU @ LAC,Dalton Schultz under 35.5 rec_yds,35.5,-114,,,0.5003,-0.0608
-Prop,HOU @ LAC,Quentin Johnston over 29.5 rec_yds,29.5,-113,,,0.5059,-0.0464
-Prop,HOU @ LAC,Quentin Johnston under 29.5 rec_yds,29.5,-111,,,0.4941,-0.0608
-Prop,HOU @ LAC,Tre' Harris over 28.5 rec_yds,28.5,-115,,,0.5096,-0.0473
-Prop,HOU @ LAC,Tre' Harris under 28.5 rec_yds,28.5,-109,,,0.4904,-0.0597
-Prop,HOU @ LAC,Marvin Harrison Jr. over 24.5 rec_yds,24.5,-114,,,0.5041,-0.0537
-Prop,HOU @ LAC,Marvin Harrison Jr. under 24.5 rec_yds,24.5,-110,,,0.4959,-0.0533
-Prop,HOU @ LAC,Xavier Hutchinson over 21.5 rec_yds,21.5,-116,,,0.5078,-0.0544
-Prop,HOU @ LAC,Xavier Hutchinson under 21.5 rec_yds,21.5,-108,,,0.4922,-0.0521
-Prop,HOU @ LAC,Oronde Gadsden over 16.5 rec_yds,16.5,-112,,,0.5039,-0.0463
-Prop,HOU @ LAC,Oronde Gadsden under 16.5 rec_yds,16.5,-112,,,0.4961,-0.0609
-Prop,HOU @ LAC,Kayshon Boutte over 15.5 rec_yds,15.5,-116,,,0.5076,-0.0547
-Prop,HOU @ LAC,Kayshon Boutte under 15.5 rec_yds,15.5,-108,,,0.4924,-0.0518
-Prop,HOU @ LAC,Charlie Kolar over 15.5 rec_yds,15.5,-115,,,0.5033,-0.0590
-Prop,HOU @ LAC,Charlie Kolar under 15.5 rec_yds,15.5,-109,,,0.4967,-0.0476
+Prop,HOU @ LAC,Nico Collins under 69.5 rec_yds,69.5,-113,,,0.5023,-0.0533
+Prop,HOU @ LAC,Ladd McConkey over 52.5 rec_yds,52.5,-111,,,0.4942,-0.0605
+Prop,HOU @ LAC,Ladd McConkey under 52.5 rec_yds,52.5,-113,,,0.5058,-0.0467
+Prop,HOU @ LAC,Dalton Schultz over 35.5 rec_yds,35.5,-110,,,0.4995,-0.0464
+Prop,HOU @ LAC,Dalton Schultz under 35.5 rec_yds,35.5,-114,,,0.5005,-0.0605
+Prop,HOU @ LAC,Quentin Johnston over 29.5 rec_yds,29.5,-113,,,0.5058,-0.0465
+Prop,HOU @ LAC,Quentin Johnston under 29.5 rec_yds,29.5,-111,,,0.4942,-0.0606
+Prop,HOU @ LAC,Tre' Harris over 28.5 rec_yds,28.5,-115,,,0.5096,-0.0474
+Prop,HOU @ LAC,Tre' Harris under 28.5 rec_yds,28.5,-109,,,0.4904,-0.0596
+Prop,HOU @ LAC,Marvin Harrison Jr. over 24.5 rec_yds,24.5,-114,,,0.5041,-0.0538
+Prop,HOU @ LAC,Marvin Harrison Jr. under 24.5 rec_yds,24.5,-110,,,0.4959,-0.0532
+Prop,HOU @ LAC,Xavier Hutchinson over 21.5 rec_yds,21.5,-116,,,0.5075,-0.0551
+Prop,HOU @ LAC,Xavier Hutchinson under 21.5 rec_yds,21.5,-108,,,0.4925,-0.0514
+Prop,HOU @ LAC,Oronde Gadsden over 16.5 rec_yds,16.5,-112,,,0.5037,-0.0466
+Prop,HOU @ LAC,Oronde Gadsden under 16.5 rec_yds,16.5,-112,,,0.4963,-0.0606
+Prop,HOU @ LAC,Kayshon Boutte over 15.5 rec_yds,15.5,-116,,,0.5072,-0.0556
+Prop,HOU @ LAC,Kayshon Boutte under 15.5 rec_yds,15.5,-108,,,0.4928,-0.0508
+Prop,HOU @ LAC,Charlie Kolar over 15.5 rec_yds,15.5,-115,,,0.5034,-0.0588
+Prop,HOU @ LAC,Charlie Kolar under 15.5 rec_yds,15.5,-109,,,0.4966,-0.0478
 Prop,HOU @ LAC,Woody Marks over 13.5 rec_yds,13.5,-116,,,0.4991,-0.0706
-Prop,HOU @ LAC,Woody Marks under 13.5 rec_yds,13.5,-108,,,0.5009,-0.0354
-Prop,HOU @ LAC,Foster Moreau over 9.5 rec_yds,9.5,-111,,,0.4920,-0.0647
-Prop,HOU @ LAC,Foster Moreau under 9.5 rec_yds,9.5,-113,,,0.5080,-0.0425
-Prop,HOU @ LAC,Kimani Vidal over 7.5 rec_yds,7.5,-121,,,0.4963,-0.0935
-Prop,HOU @ LAC,Kimani Vidal under 7.5 rec_yds,7.5,-104,,,0.5037,-0.0121
-Prop,HOU @ LAC,Keaton Mitchell over 6.5 rec_yds,6.5,-110,,,0.4950,-0.0549
-Prop,HOU @ LAC,Keaton Mitchell under 6.5 rec_yds,6.5,-114,,,0.5050,-0.0521
-Prop,HOU @ LAC,Omarion Hampton over 6.5 rec_yds,6.5,-108,,,0.5020,-0.0331
-Prop,HOU @ LAC,Omarion Hampton under 6.5 rec_yds,6.5,-116,,,0.4980,-0.0728
-Prop,HOU @ LAC,Woody Marks over 62.5 rush_yds,62.5,-110,,,0.4877,-0.0690
-Prop,HOU @ LAC,Woody Marks under 62.5 rush_yds,62.5,-115,,,0.5123,-0.0422
-Prop,HOU @ LAC,Omarion Hampton over 36.5 rush_yds,36.5,-114,,,0.5064,-0.0493
+Prop,HOU @ LAC,Woody Marks under 13.5 rec_yds,13.5,-108,,,0.5009,-0.0353
+Prop,HOU @ LAC,Foster Moreau over 9.5 rec_yds,9.5,-111,,,0.4923,-0.0642
+Prop,HOU @ LAC,Foster Moreau under 9.5 rec_yds,9.5,-113,,,0.5077,-0.0430
+Prop,HOU @ LAC,Kimani Vidal over 7.5 rec_yds,7.5,-121,,,0.4966,-0.0929
+Prop,HOU @ LAC,Kimani Vidal under 7.5 rec_yds,7.5,-104,,,0.5034,-0.0126
+Prop,HOU @ LAC,Keaton Mitchell over 6.5 rec_yds,6.5,-110,,,0.4951,-0.0547
+Prop,HOU @ LAC,Keaton Mitchell under 6.5 rec_yds,6.5,-114,,,0.5049,-0.0523
+Prop,HOU @ LAC,Omarion Hampton over 6.5 rec_yds,6.5,-108,,,0.5020,-0.0332
+Prop,HOU @ LAC,Omarion Hampton under 6.5 rec_yds,6.5,-116,,,0.4980,-0.0727
+Prop,HOU @ LAC,Woody Marks over 62.5 rush_yds,62.5,-110,,,0.4880,-0.0684
+Prop,HOU @ LAC,Woody Marks under 62.5 rush_yds,62.5,-115,,,0.5120,-0.0427
+Prop,HOU @ LAC,Omarion Hampton over 36.5 rush_yds,36.5,-114,,,0.5064,-0.0494
 Prop,HOU @ LAC,Omarion Hampton under 36.5 rush_yds,36.5,-110,,,0.4936,-0.0577
-Prop,HOU @ LAC,Justin Herbert over 22.5 rush_yds,22.5,-112,,,0.5024,-0.0490
-Prop,HOU @ LAC,Justin Herbert under 22.5 rush_yds,22.5,-112,,,0.4976,-0.0581
-Prop,HOU @ LAC,Kimani Vidal over 19.5 rush_yds,19.5,-109,,,0.4880,-0.0643
-Prop,HOU @ LAC,Kimani Vidal under 19.5 rush_yds,19.5,-115,,,0.5120,-0.0428
-Prop,HOU @ LAC,Keaton Mitchell over 11.5 rush_yds,11.5,-114,,,0.5044,-0.0531
-Prop,HOU @ LAC,Keaton Mitchell under 11.5 rush_yds,11.5,-110,,,0.4956,-0.0539
-Prop,HOU @ LAC,C.J. Stroud over 7.5 rush_yds,7.5,-111,,,0.5000,-0.0495
-Prop,HOU @ LAC,C.J. Stroud under 7.5 rush_yds,7.5,-113,,,0.5000,-0.0576
-Prop,LV @ SF,Brock Bowers over 74.5 rec_yds,74.5,-114,,,0.5110,-0.0407
-Prop,LV @ SF,Brock Bowers under 74.5 rec_yds,74.5,-110,,,0.4890,-0.0665
-Prop,LV @ SF,George Kittle over 71.5 rec_yds,71.5,-114,,,0.5027,-0.0563
-Prop,LV @ SF,George Kittle under 71.5 rec_yds,71.5,-110,,,0.4973,-0.0507
-Prop,LV @ SF,Christian McCaffrey over 41.5 rec_yds,41.5,-113,,,0.5016,-0.0545
-Prop,LV @ SF,Christian McCaffrey under 41.5 rec_yds,41.5,-111,,,0.4984,-0.0526
-Prop,LV @ SF,Tre Tucker over 36.5 rec_yds,36.5,-113,,,0.5030,-0.0519
-Prop,LV @ SF,Tre Tucker under 36.5 rec_yds,36.5,-111,,,0.4970,-0.0552
+Prop,HOU @ LAC,Justin Herbert over 22.5 rush_yds,22.5,-112,,,0.5023,-0.0491
+Prop,HOU @ LAC,Justin Herbert under 22.5 rush_yds,22.5,-112,,,0.4977,-0.0580
+Prop,HOU @ LAC,Kimani Vidal over 19.5 rush_yds,19.5,-109,,,0.4879,-0.0645
+Prop,HOU @ LAC,Kimani Vidal under 19.5 rush_yds,19.5,-115,,,0.5121,-0.0426
+Prop,HOU @ LAC,Keaton Mitchell over 11.5 rush_yds,11.5,-114,,,0.5042,-0.0535
+Prop,HOU @ LAC,Keaton Mitchell under 11.5 rush_yds,11.5,-110,,,0.4958,-0.0534
+Prop,HOU @ LAC,C.J. Stroud over 7.5 rush_yds,7.5,-111,,,0.5000,-0.0496
+Prop,HOU @ LAC,C.J. Stroud under 7.5 rush_yds,7.5,-113,,,0.5000,-0.0575
+Prop,ARI @ SEA,Jaxon Smith-Njigba over 94.5 rec_yds,94.5,-110,,,0.5040,-0.0378
+Prop,ARI @ SEA,Jaxon Smith-Njigba under 94.5 rec_yds,94.5,-114,,,0.4960,-0.0689
+Prop,ARI @ SEA,Trey McBride over 60.5 rec_yds,60.5,-113,,,0.5018,-0.0541
+Prop,ARI @ SEA,Trey McBride under 60.5 rec_yds,60.5,-111,,,0.4982,-0.0530
+Prop,ARI @ SEA,Michael Wilson over 48.5 rec_yds,48.5,-112,,,0.5020,-0.0498
+Prop,ARI @ SEA,Michael Wilson under 48.5 rec_yds,48.5,-112,,,0.4980,-0.0573
+Prop,ARI @ SEA,Cooper Kupp over 26.5 rec_yds,26.5,-111,,,0.4910,-0.0667
+Prop,ARI @ SEA,Cooper Kupp under 26.5 rec_yds,26.5,-113,,,0.5090,-0.0405
+Prop,ARI @ SEA,AJ Barner over 25.5 rec_yds,25.5,-108,,,0.4910,-0.0545
+Prop,ARI @ SEA,AJ Barner under 25.5 rec_yds,25.5,-116,,,0.5090,-0.0521
+Prop,ARI @ SEA,Tory Horton over 17.5 rec_yds,17.5,-113,,,0.4972,-0.0628
+Prop,ARI @ SEA,Tory Horton under 17.5 rec_yds,17.5,-111,,,0.5028,-0.0442
+Prop,ARI @ SEA,Tyler Allgeier over 15.5 rec_yds,15.5,-117,,,0.5185,-0.0384
+Prop,ARI @ SEA,Tyler Allgeier under 15.5 rec_yds,15.5,-108,,,0.4815,-0.0726
+Prop,ARI @ SEA,Reggie Virgil over 13.5 rec_yds,13.5,-117,,,0.5009,-0.0710
+Prop,ARI @ SEA,Reggie Virgil under 13.5 rec_yds,13.5,-107,,,0.4991,-0.0344
+Prop,ARI @ SEA,Elijah Higgins over 13.5 rec_yds,13.5,-116,,,0.5023,-0.0647
+Prop,ARI @ SEA,Elijah Higgins under 13.5 rec_yds,13.5,-108,,,0.4977,-0.0414
+Prop,ARI @ SEA,Jadarian Price over 10.5 rec_yds,10.5,-109,,,0.4823,-0.0752
+Prop,ARI @ SEA,Jadarian Price under 10.5 rec_yds,10.5,-115,,,0.5177,-0.0321
+Prop,ARI @ SEA,Zach Charbonnet over 6.5 rec_yds,6.5,-104,,,0.4970,-0.0252
+Prop,ARI @ SEA,Zach Charbonnet under 6.5 rec_yds,6.5,-121,,,0.5030,-0.0812
+Prop,ARI @ SEA,Jadarian Price over 57.5 rush_yds,57.5,-110,,,0.4855,-0.0732
+Prop,ARI @ SEA,Jadarian Price under 57.5 rush_yds,57.5,-114,,,0.5145,-0.0341
+Prop,ARI @ SEA,Tyler Allgeier over 51.5 rush_yds,51.5,-114,,,0.5019,-0.0578
+Prop,ARI @ SEA,Tyler Allgeier under 51.5 rush_yds,51.5,-110,,,0.4981,-0.0491
+Prop,ARI @ SEA,Zach Charbonnet over 34.5 rush_yds,34.5,-109,,,0.5027,-0.0360
+Prop,ARI @ SEA,Zach Charbonnet under 34.5 rush_yds,34.5,-115,,,0.4973,-0.0703
+Prop,ARI @ SEA,Drew Lock over 6.5 rush_yds,6.5,-118,,,0.4978,-0.0804
+Prop,ARI @ SEA,Drew Lock under 6.5 rush_yds,6.5,-107,,,0.5022,-0.0284
+Prop,ARI @ SEA,Gardner Minshew II over 5.5 rush_yds,5.5,-123,,,0.4959,-0.1009
+Prop,ARI @ SEA,Gardner Minshew II under 5.5 rush_yds,5.5,-102,,,0.5041,-0.0017
+Prop,GB @ NE,Christian Watson over 69.5 rec_yds,69.5,-114,,,0.5070,-0.0482
+Prop,GB @ NE,Christian Watson under 69.5 rec_yds,69.5,-110,,,0.4930,-0.0589
+Prop,GB @ NE,Matthew Golden over 69.5 rec_yds,69.5,-110,,,0.4901,-0.0644
+Prop,GB @ NE,Matthew Golden under 69.5 rec_yds,69.5,-114,,,0.5099,-0.0427
+Prop,GB @ NE,Tucker Kraft over 45.5 rec_yds,45.5,-114,,,0.5029,-0.0559
+Prop,GB @ NE,Tucker Kraft under 45.5 rec_yds,45.5,-110,,,0.4971,-0.0510
+Prop,GB @ NE,DeMario Douglas over 41.5 rec_yds,41.5,-110,,,0.4993,-0.0468
+Prop,GB @ NE,DeMario Douglas under 41.5 rec_yds,41.5,-114,,,0.5007,-0.0600
+Prop,GB @ NE,Efton Chism III over 26.5 rec_yds,26.5,-110,,,0.4943,-0.0563
+Prop,GB @ NE,Efton Chism III under 26.5 rec_yds,26.5,-114,,,0.5057,-0.0507
+Prop,GB @ NE,Rhamondre Stevenson over 23.5 rec_yds,23.5,-108,,,0.4985,-0.0399
+Prop,GB @ NE,Rhamondre Stevenson under 23.5 rec_yds,23.5,-116,,,0.5015,-0.0662
+Prop,GB @ NE,Josh Jacobs over 21.5 rec_yds,21.5,-107,,,0.4887,-0.0546
+Prop,GB @ NE,Josh Jacobs under 21.5 rec_yds,21.5,-117,,,0.5113,-0.0516
+Prop,GB @ NE,Savion Williams over 19.5 rec_yds,19.5,-111,,,0.4963,-0.0565
+Prop,GB @ NE,Savion Williams under 19.5 rec_yds,19.5,-113,,,0.5037,-0.0506
+Prop,GB @ NE,Kyle Williams over 17.5 rec_yds,17.5,-108,,,0.5023,-0.0325
+Prop,GB @ NE,Kyle Williams under 17.5 rec_yds,17.5,-116,,,0.4977,-0.0733
+Prop,GB @ NE,Rhamondre Stevenson over 55.5 rush_yds,55.5,-114,,,0.5037,-0.0544
+Prop,GB @ NE,Rhamondre Stevenson under 55.5 rush_yds,55.5,-110,,,0.4963,-0.0526
+Prop,GB @ NE,Josh Jacobs over 46.5 rush_yds,46.5,-109,,,0.4937,-0.0534
+Prop,GB @ NE,Josh Jacobs under 46.5 rush_yds,46.5,-115,,,0.5063,-0.0534
+Prop,GB @ NE,Drake Maye over 24.5 rush_yds,24.5,-110,,,0.5088,-0.0287
+Prop,GB @ NE,Drake Maye under 24.5 rush_yds,24.5,-114,,,0.4912,-0.0779
+Prop,GB @ NE,Corey Kiner over 21.5 rush_yds,21.5,-111,,,0.5015,-0.0466
+Prop,GB @ NE,Corey Kiner under 21.5 rush_yds,21.5,-113,,,0.4985,-0.0604
+Prop,GB @ NE,Jordan Love over 3.5 rush_yds,3.5,-109,,,0.4780,-0.0835
+Prop,GB @ NE,Jordan Love under 3.5 rush_yds,3.5,-115,,,0.5220,-0.0240
+Prop,LV @ SF,Brock Bowers over 74.5 rec_yds,74.5,-114,,,0.5112,-0.0404
+Prop,LV @ SF,Brock Bowers under 74.5 rec_yds,74.5,-110,,,0.4888,-0.0668
+Prop,LV @ SF,George Kittle over 71.5 rec_yds,71.5,-114,,,0.5029,-0.0560
+Prop,LV @ SF,George Kittle under 71.5 rec_yds,71.5,-110,,,0.4971,-0.0510
+Prop,LV @ SF,Christian McCaffrey over 41.5 rec_yds,41.5,-113,,,0.5017,-0.0544
+Prop,LV @ SF,Christian McCaffrey under 41.5 rec_yds,41.5,-111,,,0.4983,-0.0527
+Prop,LV @ SF,Tre Tucker over 36.5 rec_yds,36.5,-113,,,0.5028,-0.0522
+Prop,LV @ SF,Tre Tucker under 36.5 rec_yds,36.5,-111,,,0.4972,-0.0549
 Prop,LV @ SF,Ashton Jeanty over 36.5 rec_yds,36.5,-112,,,0.5008,-0.0521
-Prop,LV @ SF,Ashton Jeanty under 36.5 rec_yds,36.5,-112,,,0.4992,-0.0551
-Prop,LV @ SF,Demarcus Robinson over 34.5 rec_yds,34.5,-110,,,0.4969,-0.0514
-Prop,LV @ SF,Demarcus Robinson under 34.5 rec_yds,34.5,-114,,,0.5031,-0.0556
-Prop,LV @ SF,Michael Mayer over 28.5 rec_yds,28.5,-113,,,0.5055,-0.0471
-Prop,LV @ SF,Michael Mayer under 28.5 rec_yds,28.5,-111,,,0.4945,-0.0601
-Prop,LV @ SF,Jordan Watkins over 26.5 rec_yds,26.5,-115,,,0.5029,-0.0597
-Prop,LV @ SF,Jordan Watkins under 26.5 rec_yds,26.5,-109,,,0.4971,-0.0469
-Prop,LV @ SF,Jalen Nailor over 21.5 rec_yds,21.5,-112,,,0.4957,-0.0617
-Prop,LV @ SF,Jalen Nailor under 21.5 rec_yds,21.5,-112,,,0.5043,-0.0455
-Prop,LV @ SF,Brandin Cooks over 16.5 rec_yds,16.5,-111,,,0.4981,-0.0531
-Prop,LV @ SF,Brandin Cooks under 16.5 rec_yds,16.5,-113,,,0.5019,-0.0540
-Prop,LV @ SF,Jack Bech over 10.5 rec_yds,10.5,-112,,,0.4953,-0.0625
-Prop,LV @ SF,Jack Bech under 10.5 rec_yds,10.5,-112,,,0.5047,-0.0446
-Prop,LV @ SF,Kyle Juszczyk over 9.5 rec_yds,9.5,-113,,,0.5055,-0.0472
-Prop,LV @ SF,Kyle Juszczyk under 9.5 rec_yds,9.5,-111,,,0.4945,-0.0600
-Prop,LV @ SF,Christian McCaffrey over 61.5 rush_yds,61.5,-114,,,0.5049,-0.0523
-Prop,LV @ SF,Christian McCaffrey under 61.5 rush_yds,61.5,-110,,,0.4951,-0.0547
-Prop,LV @ SF,Kaelon Black over 41.5 rush_yds,41.5,-114,,,0.5049,-0.0522
-Prop,LV @ SF,Kaelon Black under 41.5 rush_yds,41.5,-110,,,0.4951,-0.0548
+Prop,LV @ SF,Ashton Jeanty under 36.5 rec_yds,36.5,-112,,,0.4992,-0.0550
+Prop,LV @ SF,Demarcus Robinson over 34.5 rec_yds,34.5,-110,,,0.4971,-0.0510
+Prop,LV @ SF,Demarcus Robinson under 34.5 rec_yds,34.5,-114,,,0.5029,-0.0559
+Prop,LV @ SF,Michael Mayer over 28.5 rec_yds,28.5,-113,,,0.5054,-0.0474
+Prop,LV @ SF,Michael Mayer under 28.5 rec_yds,28.5,-111,,,0.4946,-0.0597
+Prop,LV @ SF,Jordan Watkins over 26.5 rec_yds,26.5,-115,,,0.5030,-0.0597
+Prop,LV @ SF,Jordan Watkins under 26.5 rec_yds,26.5,-109,,,0.4970,-0.0470
+Prop,LV @ SF,Jalen Nailor over 21.5 rec_yds,21.5,-112,,,0.4960,-0.0612
+Prop,LV @ SF,Jalen Nailor under 21.5 rec_yds,21.5,-112,,,0.5040,-0.0460
+Prop,LV @ SF,Brandin Cooks over 16.5 rec_yds,16.5,-111,,,0.4982,-0.0529
+Prop,LV @ SF,Brandin Cooks under 16.5 rec_yds,16.5,-113,,,0.5018,-0.0542
+Prop,LV @ SF,Jack Bech over 10.5 rec_yds,10.5,-112,,,0.4956,-0.0620
+Prop,LV @ SF,Jack Bech under 10.5 rec_yds,10.5,-112,,,0.5044,-0.0452
+Prop,LV @ SF,Kyle Juszczyk over 9.5 rec_yds,9.5,-113,,,0.5053,-0.0475
+Prop,LV @ SF,Kyle Juszczyk under 9.5 rec_yds,9.5,-111,,,0.4947,-0.0596
+Prop,LV @ SF,Christian McCaffrey over 61.5 rush_yds,61.5,-114,,,0.5048,-0.0523
+Prop,LV @ SF,Christian McCaffrey under 61.5 rush_yds,61.5,-110,,,0.4952,-0.0547
+Prop,LV @ SF,Kaelon Black over 41.5 rush_yds,41.5,-114,,,0.5050,-0.0519
+Prop,LV @ SF,Kaelon Black under 41.5 rush_yds,41.5,-110,,,0.4950,-0.0551
 Prop,LV @ SF,Mike Washington Jr. over 32.5 rush_yds,32.5,-114,,,0.5077,-0.0470
 Prop,LV @ SF,Mike Washington Jr. under 32.5 rush_yds,32.5,-110,,,0.4923,-0.0601
-Prop,LV @ SF,Ashton Jeanty over 27.5 rush_yds,27.5,-111,,,0.5007,-0.0483
-Prop,LV @ SF,Ashton Jeanty under 27.5 rush_yds,27.5,-113,,,0.4993,-0.0588
-Prop,LV @ SF,Brock Purdy over 15.5 rush_yds,15.5,-112,,,0.5087,-0.0371
-Prop,LV @ SF,Brock Purdy under 15.5 rush_yds,15.5,-112,,,0.4913,-0.0700
-Prop,LV @ SF,Kirk Cousins over 1.5 rush_yds,1.5,-109,,,0.4729,-0.0933
-Prop,LV @ SF,Kirk Cousins under 1.5 rush_yds,1.5,-115,,,0.5271,-0.0145
-Prop,ARI @ SEA,Jaxon Smith-Njigba over 94.5 rec_yds,94.5,-110,,,0.5042,-0.0374
-Prop,ARI @ SEA,Jaxon Smith-Njigba under 94.5 rec_yds,94.5,-114,,,0.4958,-0.0694
-Prop,ARI @ SEA,Trey McBride over 60.5 rec_yds,60.5,-113,,,0.5018,-0.0542
-Prop,ARI @ SEA,Trey McBride under 60.5 rec_yds,60.5,-111,,,0.4982,-0.0529
-Prop,ARI @ SEA,Michael Wilson over 48.5 rec_yds,48.5,-112,,,0.5021,-0.0496
-Prop,ARI @ SEA,Michael Wilson under 48.5 rec_yds,48.5,-112,,,0.4979,-0.0576
-Prop,ARI @ SEA,Cooper Kupp over 26.5 rec_yds,26.5,-111,,,0.4909,-0.0668
-Prop,ARI @ SEA,Cooper Kupp under 26.5 rec_yds,26.5,-113,,,0.5091,-0.0404
-Prop,ARI @ SEA,AJ Barner over 25.5 rec_yds,25.5,-108,,,0.4910,-0.0544
-Prop,ARI @ SEA,AJ Barner under 25.5 rec_yds,25.5,-116,,,0.5090,-0.0521
-Prop,ARI @ SEA,Tory Horton over 17.5 rec_yds,17.5,-113,,,0.4970,-0.0632
-Prop,ARI @ SEA,Tory Horton under 17.5 rec_yds,17.5,-111,,,0.5030,-0.0439
-Prop,ARI @ SEA,Tyler Allgeier over 15.5 rec_yds,15.5,-117,,,0.5183,-0.0386
-Prop,ARI @ SEA,Tyler Allgeier under 15.5 rec_yds,15.5,-108,,,0.4817,-0.0724
-Prop,ARI @ SEA,Reggie Virgil over 13.5 rec_yds,13.5,-117,,,0.5003,-0.0722
-Prop,ARI @ SEA,Reggie Virgil under 13.5 rec_yds,13.5,-107,,,0.4997,-0.0332
-Prop,ARI @ SEA,Elijah Higgins over 13.5 rec_yds,13.5,-116,,,0.5024,-0.0645
-Prop,ARI @ SEA,Elijah Higgins under 13.5 rec_yds,13.5,-108,,,0.4976,-0.0417
-Prop,ARI @ SEA,Jadarian Price over 10.5 rec_yds,10.5,-109,,,0.4816,-0.0765
-Prop,ARI @ SEA,Jadarian Price under 10.5 rec_yds,10.5,-115,,,0.5184,-0.0309
-Prop,ARI @ SEA,Zach Charbonnet over 6.5 rec_yds,6.5,-104,,,0.4970,-0.0250
-Prop,ARI @ SEA,Zach Charbonnet under 6.5 rec_yds,6.5,-121,,,0.5030,-0.0814
-Prop,ARI @ SEA,Jadarian Price over 57.5 rush_yds,57.5,-110,,,0.4849,-0.0743
-Prop,ARI @ SEA,Jadarian Price under 57.5 rush_yds,57.5,-114,,,0.5151,-0.0330
-Prop,ARI @ SEA,Tyler Allgeier over 51.5 rush_yds,51.5,-114,,,0.5018,-0.0581
-Prop,ARI @ SEA,Tyler Allgeier under 51.5 rush_yds,51.5,-110,,,0.4982,-0.0488
-Prop,ARI @ SEA,Zach Charbonnet over 34.5 rush_yds,34.5,-109,,,0.5029,-0.0357
-Prop,ARI @ SEA,Zach Charbonnet under 34.5 rush_yds,34.5,-115,,,0.4971,-0.0706
-Prop,ARI @ SEA,Drew Lock over 6.5 rush_yds,6.5,-118,,,0.4971,-0.0817
-Prop,ARI @ SEA,Drew Lock under 6.5 rush_yds,6.5,-107,,,0.5029,-0.0270
-Prop,ARI @ SEA,Gardner Minshew II over 5.5 rush_yds,5.5,-123,,,0.4951,-0.1023
-Prop,ARI @ SEA,Gardner Minshew II under 5.5 rush_yds,5.5,-102,,,0.5049,-0.0002
-Prop,GB @ NE,Christian Watson over 69.5 rec_yds,69.5,-114,,,0.5070,-0.0483
-Prop,GB @ NE,Christian Watson under 69.5 rec_yds,69.5,-110,,,0.4930,-0.0588
-Prop,GB @ NE,Matthew Golden over 69.5 rec_yds,69.5,-110,,,0.4898,-0.0650
-Prop,GB @ NE,Matthew Golden under 69.5 rec_yds,69.5,-114,,,0.5102,-0.0422
-Prop,GB @ NE,Tucker Kraft over 45.5 rec_yds,45.5,-114,,,0.5027,-0.0564
-Prop,GB @ NE,Tucker Kraft under 45.5 rec_yds,45.5,-110,,,0.4973,-0.0506
-Prop,GB @ NE,DeMario Douglas over 41.5 rec_yds,41.5,-110,,,0.4993,-0.0467
-Prop,GB @ NE,DeMario Douglas under 41.5 rec_yds,41.5,-114,,,0.5007,-0.0602
-Prop,GB @ NE,Efton Chism III over 26.5 rec_yds,26.5,-110,,,0.4942,-0.0565
-Prop,GB @ NE,Efton Chism III under 26.5 rec_yds,26.5,-114,,,0.5058,-0.0505
-Prop,GB @ NE,Rhamondre Stevenson over 23.5 rec_yds,23.5,-108,,,0.4986,-0.0397
-Prop,GB @ NE,Rhamondre Stevenson under 23.5 rec_yds,23.5,-116,,,0.5014,-0.0664
-Prop,GB @ NE,Josh Jacobs over 21.5 rec_yds,21.5,-107,,,0.4886,-0.0548
-Prop,GB @ NE,Josh Jacobs under 21.5 rec_yds,21.5,-117,,,0.5114,-0.0515
-Prop,GB @ NE,Savion Williams over 19.5 rec_yds,19.5,-111,,,0.4962,-0.0569
-Prop,GB @ NE,Savion Williams under 19.5 rec_yds,19.5,-113,,,0.5038,-0.0503
-Prop,GB @ NE,Kyle Williams over 17.5 rec_yds,17.5,-108,,,0.5025,-0.0322
-Prop,GB @ NE,Kyle Williams under 17.5 rec_yds,17.5,-116,,,0.4975,-0.0737
-Prop,GB @ NE,Rhamondre Stevenson over 55.5 rush_yds,55.5,-114,,,0.5037,-0.0545
-Prop,GB @ NE,Rhamondre Stevenson under 55.5 rush_yds,55.5,-110,,,0.4963,-0.0524
-Prop,GB @ NE,Josh Jacobs over 46.5 rush_yds,46.5,-109,,,0.4935,-0.0537
-Prop,GB @ NE,Josh Jacobs under 46.5 rush_yds,46.5,-115,,,0.5065,-0.0532
-Prop,GB @ NE,Drake Maye over 24.5 rush_yds,24.5,-110,,,0.5089,-0.0285
-Prop,GB @ NE,Drake Maye under 24.5 rush_yds,24.5,-114,,,0.4911,-0.0780
-Prop,GB @ NE,Corey Kiner over 21.5 rush_yds,21.5,-111,,,0.5017,-0.0464
-Prop,GB @ NE,Corey Kiner under 21.5 rush_yds,21.5,-113,,,0.4983,-0.0607
-Prop,GB @ NE,Jordan Love over 3.5 rush_yds,3.5,-109,,,0.4775,-0.0844
-Prop,GB @ NE,Jordan Love under 3.5 rush_yds,3.5,-115,,,0.5225,-0.0232
-Prop,TB @ CHI,Luther Burden III over 66.5 rec_yds,66.5,-110,,,0.4951,-0.0549
-Prop,TB @ CHI,Luther Burden III under 66.5 rec_yds,66.5,-114,,,0.5049,-0.0521
-Prop,TB @ CHI,Colston Loveland over 53.5 rec_yds,53.5,-111,,,0.4937,-0.0614
-Prop,TB @ CHI,Colston Loveland under 53.5 rec_yds,53.5,-113,,,0.5063,-0.0457
-Prop,TB @ CHI,Rome Odunze over 49.5 rec_yds,49.5,-112,,,0.5023,-0.0492
-Prop,TB @ CHI,Rome Odunze under 49.5 rec_yds,49.5,-112,,,0.4977,-0.0580
-Prop,TB @ CHI,Chris Godwin Jr. over 32.5 rec_yds,32.5,-110,,,0.4922,-0.0603
-Prop,TB @ CHI,Chris Godwin Jr. under 32.5 rec_yds,32.5,-114,,,0.5078,-0.0469
-Prop,TB @ CHI,Cade Otton over 30.5 rec_yds,30.5,-115,,,0.5003,-0.0647
-Prop,TB @ CHI,Cade Otton under 30.5 rec_yds,30.5,-109,,,0.4997,-0.0418
-Prop,TB @ CHI,Ted Hurst III over 23.5 rec_yds,23.5,-116,,,0.5056,-0.0586
-Prop,TB @ CHI,Ted Hurst III under 23.5 rec_yds,23.5,-108,,,0.4944,-0.0477
-Prop,TB @ CHI,D'Andre Swift over 21.5 rec_yds,21.5,-110,,,0.4923,-0.0601
-Prop,TB @ CHI,D'Andre Swift under 21.5 rec_yds,21.5,-114,,,0.5077,-0.0470
-Prop,TB @ CHI,Kalif Raymond over 16.5 rec_yds,16.5,-108,,,0.4982,-0.0406
-Prop,TB @ CHI,Kalif Raymond under 16.5 rec_yds,16.5,-117,,,0.5018,-0.0693
-Prop,TB @ CHI,Tez Johnson over 15.5 rec_yds,15.5,-112,,,0.5017,-0.0504
-Prop,TB @ CHI,Tez Johnson under 15.5 rec_yds,15.5,-112,,,0.4983,-0.0568
-Prop,TB @ CHI,Bucky Irving over 14.5 rec_yds,14.5,-115,,,0.5002,-0.0649
-Prop,TB @ CHI,Bucky Irving under 14.5 rec_yds,14.5,-109,,,0.4998,-0.0416
-Prop,TB @ CHI,Kenny Gainwell over 9.5 rec_yds,9.5,-119,,,0.5002,-0.0795
-Prop,TB @ CHI,Kenny Gainwell under 9.5 rec_yds,9.5,-105,,,0.4998,-0.0242
-Prop,TB @ CHI,Roschon Johnson over 3.5 rec_yds,3.5,-107,,,0.4959,-0.0406
-Prop,TB @ CHI,Roschon Johnson under 3.5 rec_yds,3.5,-117,,,0.5041,-0.0651
-Prop,TB @ CHI,Bucky Irving over 64.5 rush_yds,64.5,-114,,,0.5085,-0.0454
-Prop,TB @ CHI,Bucky Irving under 64.5 rush_yds,64.5,-110,,,0.4915,-0.0618
-Prop,TB @ CHI,D'Andre Swift over 62.5 rush_yds,62.5,-110,,,0.4976,-0.0500
-Prop,TB @ CHI,D'Andre Swift under 62.5 rush_yds,62.5,-114,,,0.5024,-0.0570
-Prop,TB @ CHI,Kenny Gainwell over 21.5 rush_yds,21.5,-115,,,0.5030,-0.0595
-Prop,TB @ CHI,Kenny Gainwell under 21.5 rush_yds,21.5,-109,,,0.4970,-0.0471
-Prop,TB @ CHI,Caleb Williams over 18.5 rush_yds,18.5,-116,,,0.5099,-0.0505
-Prop,TB @ CHI,Caleb Williams under 18.5 rush_yds,18.5,-108,,,0.4901,-0.0562
-Prop,TB @ CHI,Roschon Johnson over 16.5 rush_yds,16.5,-117,,,0.4988,-0.0749
-Prop,TB @ CHI,Roschon Johnson under 16.5 rush_yds,16.5,-107,,,0.5012,-0.0303
-Prop,TB @ CHI,Baker Mayfield over 16.5 rush_yds,16.5,-108,,,0.4939,-0.0487
-Prop,TB @ CHI,Baker Mayfield under 16.5 rush_yds,16.5,-116,,,0.5061,-0.0577
+Prop,LV @ SF,Ashton Jeanty over 27.5 rush_yds,27.5,-111,,,0.5005,-0.0486
+Prop,LV @ SF,Ashton Jeanty under 27.5 rush_yds,27.5,-113,,,0.4995,-0.0584
+Prop,LV @ SF,Brock Purdy over 15.5 rush_yds,15.5,-112,,,0.5085,-0.0376
+Prop,LV @ SF,Brock Purdy under 15.5 rush_yds,15.5,-112,,,0.4915,-0.0696
+Prop,LV @ SF,Kirk Cousins over 1.5 rush_yds,1.5,-109,,,0.4733,-0.0924
+Prop,LV @ SF,Kirk Cousins under 1.5 rush_yds,1.5,-115,,,0.5267,-0.0154
+Prop,TB @ CHI,Luther Burden III over 66.5 rec_yds,66.5,-110,,,0.4951,-0.0548
+Prop,TB @ CHI,Luther Burden III under 66.5 rec_yds,66.5,-114,,,0.5049,-0.0522
+Prop,TB @ CHI,Colston Loveland over 53.5 rec_yds,53.5,-111,,,0.4940,-0.0610
+Prop,TB @ CHI,Colston Loveland under 53.5 rec_yds,53.5,-113,,,0.5060,-0.0462
+Prop,TB @ CHI,Rome Odunze over 49.5 rec_yds,49.5,-112,,,0.5022,-0.0494
+Prop,TB @ CHI,Rome Odunze under 49.5 rec_yds,49.5,-112,,,0.4978,-0.0577
+Prop,TB @ CHI,Chris Godwin Jr. over 32.5 rec_yds,32.5,-110,,,0.4925,-0.0598
+Prop,TB @ CHI,Chris Godwin Jr. under 32.5 rec_yds,32.5,-114,,,0.5075,-0.0473
+Prop,TB @ CHI,Cade Otton over 30.5 rec_yds,30.5,-115,,,0.5006,-0.0640
+Prop,TB @ CHI,Cade Otton under 30.5 rec_yds,30.5,-109,,,0.4994,-0.0425
+Prop,TB @ CHI,Ted Hurst III over 23.5 rec_yds,23.5,-116,,,0.5059,-0.0580
+Prop,TB @ CHI,Ted Hurst III under 23.5 rec_yds,23.5,-108,,,0.4941,-0.0484
+Prop,TB @ CHI,D'Andre Swift over 21.5 rec_yds,21.5,-110,,,0.4925,-0.0597
+Prop,TB @ CHI,D'Andre Swift under 21.5 rec_yds,21.5,-114,,,0.5075,-0.0474
+Prop,TB @ CHI,Kalif Raymond over 16.5 rec_yds,16.5,-108,,,0.4980,-0.0409
+Prop,TB @ CHI,Kalif Raymond under 16.5 rec_yds,16.5,-117,,,0.5020,-0.0689
+Prop,TB @ CHI,Tez Johnson over 15.5 rec_yds,15.5,-112,,,0.5016,-0.0506
+Prop,TB @ CHI,Tez Johnson under 15.5 rec_yds,15.5,-112,,,0.4984,-0.0566
+Prop,TB @ CHI,Bucky Irving over 14.5 rec_yds,14.5,-115,,,0.5007,-0.0639
+Prop,TB @ CHI,Bucky Irving under 14.5 rec_yds,14.5,-109,,,0.4993,-0.0426
+Prop,TB @ CHI,Kenny Gainwell over 9.5 rec_yds,9.5,-119,,,0.5005,-0.0790
+Prop,TB @ CHI,Kenny Gainwell under 9.5 rec_yds,9.5,-105,,,0.4995,-0.0247
+Prop,TB @ CHI,Roschon Johnson over 3.5 rec_yds,3.5,-107,,,0.4957,-0.0411
+Prop,TB @ CHI,Roschon Johnson under 3.5 rec_yds,3.5,-117,,,0.5043,-0.0646
+Prop,TB @ CHI,Bucky Irving over 64.5 rush_yds,64.5,-114,,,0.5083,-0.0458
+Prop,TB @ CHI,Bucky Irving under 64.5 rush_yds,64.5,-110,,,0.4917,-0.0613
+Prop,TB @ CHI,D'Andre Swift over 62.5 rush_yds,62.5,-110,,,0.4976,-0.0501
+Prop,TB @ CHI,D'Andre Swift under 62.5 rush_yds,62.5,-114,,,0.5024,-0.0569
+Prop,TB @ CHI,Kenny Gainwell over 21.5 rush_yds,21.5,-115,,,0.5028,-0.0600
+Prop,TB @ CHI,Kenny Gainwell under 21.5 rush_yds,21.5,-109,,,0.4972,-0.0467
+Prop,TB @ CHI,Caleb Williams over 18.5 rush_yds,18.5,-116,,,0.5099,-0.0506
+Prop,TB @ CHI,Caleb Williams under 18.5 rush_yds,18.5,-108,,,0.4901,-0.0561
+Prop,TB @ CHI,Roschon Johnson over 16.5 rush_yds,16.5,-117,,,0.4988,-0.0748
+Prop,TB @ CHI,Roschon Johnson under 16.5 rush_yds,16.5,-107,,,0.5012,-0.0305
+Prop,TB @ CHI,Baker Mayfield over 16.5 rush_yds,16.5,-108,,,0.4940,-0.0487
+Prop,TB @ CHI,Baker Mayfield under 16.5 rush_yds,16.5,-116,,,0.5060,-0.0577

@@ -1,37 +1,105 @@
 kind,game,selection,line,dk_odds,p_model,p_market,p_blend,ev
-ML,PHI @ CHI,CHI ML,,284.0,0.2512,0.2343,0.2371,-0.0897
-ML,PHI @ CHI,PHI ML,,-356.0,0.7488,0.7657,0.7629,-0.0228
-Spread,PHI @ CHI,CHI +8.5,8.5,-106.0,0.4935,0.4907,0.4912,-0.0454
-Spread,PHI @ CHI,PHI -8.5,-8.5,-114.0,0.5065,0.5093,0.5088,-0.0449
-Total,PHI @ CHI,Over 238.5,238.5,-107.0,0.3261,0.4930,0.4047,-0.2171
-Total,PHI @ CHI,Under 238.5,238.5,-113.0,0.6739,0.5070,0.5953,0.1221
-ML,LAL @ DET,DET ML,,-185.0,0.5182,0.6311,0.6128,-0.0560
-ML,LAL @ DET,LAL ML,,155.0,0.4818,0.3689,0.3872,-0.0126
-Spread,LAL @ DET,DET -4.5,-4.5,-110.0,0.3818,0.5000,0.4788,-0.0858
-Spread,LAL @ DET,LAL +4.5,4.5,-110.0,0.6182,0.5000,0.5212,-0.0051
-Total,LAL @ DET,Over 222.5,222.5,-106.0,0.5989,0.4907,0.5479,0.0648
-Total,LAL @ DET,Under 222.5,222.5,-114.0,0.4011,0.5093,0.4521,-0.1514
-ML,UTAH @ MIN,MIN ML,,-569.0,0.8532,0.8376,0.8401,-0.0123
-ML,UTAH @ MIN,UTAH ML,,426.0,0.1468,0.1624,0.1599,-0.1589
-Spread,UTAH @ MIN,MIN -11.5,-11.5,-114.0,0.5654,0.5093,0.5193,-0.0251
-Spread,UTAH @ MIN,UTAH +11.5,11.5,-106.0,0.4346,0.4907,0.4807,-0.0659
-Total,UTAH @ MIN,Over 222.5,222.5,-114.0,0.5264,0.5093,0.5184,-0.0269
-Total,UTAH @ MIN,Under 222.5,222.5,-106.0,0.4736,0.4907,0.4816,-0.0640
-ML,BOS @ MIL,MIL ML,,473.0,0.2335,0.1459,0.1601,-0.0825
-ML,BOS @ MIL,BOS ML,,-650.0,0.7665,0.8541,0.8399,-0.0309
-Spread,BOS @ MIL,MIL +12.5,12.5,-110.0,0.5928,0.5000,0.5166,-0.0137
-Spread,BOS @ MIL,BOS -12.5,-12.5,-110.0,0.4072,0.5000,0.4834,-0.0772
-Total,BOS @ MIL,Over 222.5,222.5,-106.0,0.5604,0.4907,0.5276,0.0253
-Total,BOS @ MIL,Under 222.5,222.5,-114.0,0.4396,0.5093,0.4724,-0.1131
-ML,NO @ LAC,LAC ML,,100.0,0.3508,0.4779,0.4573,-0.0855
-ML,NO @ LAC,NO ML,,-119.0,0.6492,0.5221,0.5427,-0.0012
-Spread,NO @ LAC,LAC +1.5,1.5,-110.0,0.3945,0.5000,0.4811,-0.0815
-Spread,NO @ LAC,NO -1.5,-1.5,-110.0,0.6055,0.5000,0.5189,-0.0094
-Total,NO @ LAC,Over 230.5,230.5,-110.0,0.5260,0.5000,0.5138,-0.0192
-Total,NO @ LAC,Under 230.5,230.5,-110.0,0.4740,0.5000,0.4862,-0.0717
-ML,MIA @ SAC,SAC ML,,258.0,0.4244,0.2536,0.2813,0.0070
-ML,MIA @ SAC,MIA ML,,-320.0,0.5756,0.7464,0.7187,-0.0567
-Spread,MIA @ SAC,SAC +8.5,8.5,-114.0,0.6786,0.5093,0.5396,0.0129
-Spread,MIA @ SAC,MIA -8.5,-8.5,-106.0,0.3214,0.4907,0.4604,-0.1052
-Total,MIA @ SAC,Over 238.5,238.5,-106.0,0.4632,0.4907,0.4762,-0.0746
-Total,MIA @ SAC,Under 238.5,238.5,-114.0,0.5368,0.5093,0.5238,-0.0167
+ML,PHI @ CHI,CHI ML,,329.0,0.2338,0.2065,0.2107,-0.0959
+ML,PHI @ CHI,PHI ML,,-420.0,0.7662,0.7935,0.7893,-0.0228
+Spread,PHI @ CHI,CHI +9.5,9.5,-115.0,0.4984,0.5116,0.5097,-0.0471
+Spread,PHI @ CHI,PHI -9.5,-9.5,-105.0,0.5016,0.4884,0.4903,-0.0428
+Total,PHI @ CHI,Over 237.5,237.5,-110.0,0.3584,0.5000,0.4333,-0.1728
+Total,PHI @ CHI,Under 237.5,237.5,-110.0,0.6416,0.5000,0.5667,0.0819
+ML,LAL @ DET,DET ML,,-185.0,0.5206,0.6311,0.6140,-0.0542
+ML,LAL @ DET,LAL ML,,155.0,0.4794,0.3689,0.3860,-0.0156
+Spread,LAL @ DET,DET -4.5,-4.5,-115.0,0.3857,0.5116,0.4936,-0.0772
+Spread,LAL @ DET,LAL +4.5,4.5,-105.0,0.6143,0.4884,0.5064,-0.0113
+Total,LAL @ DET,Over 221.5,221.5,-108.0,0.6150,0.4954,0.5517,0.0626
+Total,LAL @ DET,Under 221.5,221.5,-112.0,0.3850,0.5046,0.4483,-0.1515
+ML,UTAH @ MIN,MIN ML,,-597.0,0.8462,0.8437,0.8441,-0.0145
+ML,UTAH @ MIN,UTAH ML,,443.0,0.1538,0.1563,0.1559,-0.1536
+Spread,UTAH @ MIN,MIN -11.5,-11.5,-106.0,0.5580,0.4907,0.5003,-0.0276
+Spread,UTAH @ MIN,UTAH +11.5,11.5,-114.0,0.4420,0.5093,0.4997,-0.0620
+Total,UTAH @ MIN,Over 223.5,223.5,-107.0,0.4996,0.4930,0.4961,-0.0402
+Total,UTAH @ MIN,Under 223.5,223.5,-113.0,0.5004,0.5070,0.5039,-0.0502
+ML,BKN @ DAL,DAL ML,,-324.0,0.7829,0.7487,0.7540,-0.0133
+ML,BKN @ DAL,BKN ML,,261.0,0.2171,0.2513,0.2460,-0.1120
+Spread,BKN @ DAL,DAL -7.5,-7.5,-117.0,0.5838,0.5150,0.5249,-0.0265
+Spread,BKN @ DAL,BKN +7.5,7.5,-104.0,0.4162,0.4850,0.4751,-0.0680
+Total,BKN @ DAL,Over 222.5,222.5,-106.0,0.5398,0.4907,0.5138,-0.0014
+Total,BKN @ DAL,Under 222.5,222.5,-114.0,0.4602,0.5093,0.4862,-0.0874
+ML,BOS @ MIL,MIL ML,,530.0,0.2311,0.1297,0.1454,-0.0839
+ML,BOS @ MIL,BOS ML,,-750.0,0.7689,0.8703,0.8546,-0.0315
+Spread,BOS @ MIL,MIL +13.5,13.5,-117.0,0.6146,0.5150,0.5293,-0.0183
+Spread,BOS @ MIL,BOS -13.5,-13.5,-104.0,0.3854,0.4850,0.4707,-0.0767
+Total,BOS @ MIL,Over 221.5,221.5,-110.0,0.5866,0.5000,0.5408,0.0324
+Total,BOS @ MIL,Under 221.5,221.5,-110.0,0.4134,0.5000,0.4592,-0.1233
+ML,NO @ LAC,LAC ML,,103.0,0.3531,0.4720,0.4536,-0.0792
+ML,NO @ LAC,NO ML,,-121.0,0.6469,0.5280,0.5464,-0.0020
+Spread,NO @ LAC,LAC +1.5,1.5,-110.0,0.3963,0.5000,0.4852,-0.0738
+Spread,NO @ LAC,NO -1.5,-1.5,-110.0,0.6037,0.5000,0.5148,-0.0171
+Total,NO @ LAC,Over 226.5,226.5,-108.0,0.6152,0.4954,0.5518,0.0628
+Total,NO @ LAC,Under 226.5,226.5,-112.0,0.3848,0.5046,0.4482,-0.1517
+ML,MIA @ SAC,SAC ML,,346.0,0.4290,0.1972,0.2331,0.0398
+ML,MIA @ SAC,MIA ML,,-446.0,0.5710,0.8028,0.7669,-0.0612
+Spread,MIA @ SAC,SAC +10.5,10.5,-112.0,0.7322,0.5046,0.5372,0.0168
+Spread,MIA @ SAC,MIA -10.5,-10.5,-108.0,0.2678,0.4954,0.4628,-0.1086
+Total,MIA @ SAC,Over 238.5,238.5,-105.0,0.4562,0.4884,0.4732,-0.0761
+Total,MIA @ SAC,Under 238.5,238.5,-115.0,0.5438,0.5116,0.5268,-0.0152
+Prop,BKN @ NO,Julius Randle over 4.5 assists,4.5,102,,,0.4904,-0.0093
+Prop,BKN @ NO,Julius Randle under 4.5 assists,4.5,-134,,,0.5096,-0.1102
+Prop,IND @ DAL,Naji Marshall over 3.5 assists,3.5,132,,,0.4124,-0.0431
+Prop,IND @ DAL,Naji Marshall under 3.5 assists,3.5,-174,,,0.5876,-0.0748
+Prop,BKN @ NO,Nolan Traore over 4.5 assists,4.5,108,,,0.4459,-0.0724
+Prop,BKN @ NO,Nolan Traore under 4.5 assists,4.5,-142,,,0.5541,-0.0558
+Prop,IND @ DAL,Kyrie Irving over 4.5 assists,4.5,115,,,0.4279,-0.0801
+Prop,IND @ DAL,Kyrie Irving under 4.5 assists,4.5,-152,,,0.5721,-0.0515
+Prop,IND @ DAL,Cooper Flagg over 6.5 assists,6.5,116,,,0.4166,-0.1000
+Prop,IND @ DAL,Cooper Flagg under 6.5 assists,6.5,-153,,,0.5834,-0.0354
+Prop,BKN @ NO,Day'Ron Sharpe over 3.5 assists,3.5,-101,,,0.4648,-0.0751
+Prop,BKN @ NO,Day'Ron Sharpe under 3.5 assists,3.5,-131,,,0.5352,-0.0562
+Prop,IND @ DAL,Cooper Flagg over 24.5 points,24.5,-119,,,0.4924,-0.0938
+Prop,IND @ DAL,Cooper Flagg under 24.5 points,24.5,-107,,,0.5076,-0.0181
+Prop,BKN @ NO,Julius Randle over 20.5 points,20.5,-109,,,0.4930,-0.0548
+Prop,BKN @ NO,Julius Randle under 20.5 points,20.5,-116,,,0.5070,-0.0559
+Prop,IND @ DAL,Naji Marshall over 11.5 points,11.5,-112,,,0.5161,-0.0232
+Prop,IND @ DAL,Naji Marshall under 11.5 points,11.5,-114,,,0.4839,-0.0915
+Prop,IND @ DAL,Daniel Gafford over 7.5 points,7.5,-133,,,0.5358,-0.0614
+Prop,IND @ DAL,Daniel Gafford under 7.5 points,7.5,104,,,0.4642,-0.0529
+Prop,IND @ DAL,P.J. Washington over 13.5 points,13.5,-111,,,0.4900,-0.0686
+Prop,IND @ DAL,P.J. Washington under 13.5 points,13.5,-115,,,0.5100,-0.0464
+Prop,BKN @ NO,Nolan Traore over 11.5 points,11.5,-124,,,0.5149,-0.0698
+Prop,BKN @ NO,Nolan Traore under 11.5 points,11.5,-103,,,0.4851,-0.0440
+Prop,IND @ DAL,Zaccharie Risacher over 6.5 points,6.5,-112,,,0.4988,-0.0558
+Prop,IND @ DAL,Zaccharie Risacher under 6.5 points,6.5,-114,,,0.5012,-0.0592
+Prop,BKN @ NO,Danny Wolf over 9.5 points,9.5,-106,,,0.4789,-0.0694
+Prop,BKN @ NO,Danny Wolf under 9.5 points,9.5,-121,,,0.5211,-0.0482
+Prop,IND @ DAL,Kyrie Irving over 20.5 points,20.5,-116,,,0.5138,-0.0433
+Prop,IND @ DAL,Kyrie Irving under 20.5 points,20.5,-110,,,0.4862,-0.0717
+Prop,BKN @ NO,Day'Ron Sharpe over 8.5 points,8.5,-129,,,0.5216,-0.0740
+Prop,BKN @ NO,Day'Ron Sharpe under 8.5 points,8.5,101,,,0.4784,-0.0385
+Prop,BKN @ NO,Michael Porter Jr. over 21.5 points,21.5,-123,,,0.5145,-0.0673
+Prop,BKN @ NO,Michael Porter Jr. under 21.5 points,21.5,-103,,,0.4855,-0.0431
+Prop,IND @ DAL,Naji Marshall over 3.5 rebounds,3.5,-114,,,0.4967,-0.0675
+Prop,IND @ DAL,Naji Marshall under 3.5 rebounds,3.5,-115,,,0.5033,-0.0591
+Prop,BKN @ NO,Julius Randle over 6.5 rebounds,6.5,-116,,,0.5025,-0.0643
+Prop,BKN @ NO,Julius Randle under 6.5 rebounds,6.5,-113,,,0.4975,-0.0622
+Prop,IND @ DAL,Daniel Gafford over 6.5 rebounds,6.5,-101,,,0.4823,-0.0401
+Prop,IND @ DAL,Daniel Gafford under 6.5 rebounds,6.5,-130,,,0.5177,-0.0841
+Prop,IND @ DAL,Zaccharie Risacher over 3.5 rebounds,3.5,102,,,0.4722,-0.0461
+Prop,IND @ DAL,Zaccharie Risacher under 3.5 rebounds,3.5,-134,,,0.5278,-0.0784
+Prop,IND @ DAL,P.J. Washington over 6.5 rebounds,6.5,-122,,,0.5150,-0.0629
+Prop,IND @ DAL,P.J. Washington under 6.5 rebounds,6.5,-108,,,0.4850,-0.0659
+Prop,BKN @ NO,Nolan Traore over 2.5 rebounds,2.5,143,,,0.3864,-0.0611
+Prop,BKN @ NO,Nolan Traore under 2.5 rebounds,2.5,-190,,,0.6136,-0.0634
+Prop,BKN @ NO,Danny Wolf over 4.5 rebounds,4.5,-147,,,0.5684,-0.0450
+Prop,BKN @ NO,Danny Wolf under 4.5 rebounds,4.5,112,,,0.4316,-0.0849
+Prop,IND @ DAL,Caleb Martin over 2.5 rebounds,2.5,-150,,,0.5597,-0.0672
+Prop,IND @ DAL,Caleb Martin under 2.5 rebounds,2.5,114,,,0.4403,-0.0577
+Prop,BKN @ NO,Day'Ron Sharpe over 7.5 rebounds,7.5,-130,,,0.5493,-0.0282
+Prop,BKN @ NO,Day'Ron Sharpe under 7.5 rebounds,7.5,-101,,,0.4507,-0.1030
+Prop,IND @ DAL,Kyrie Irving over 3.5 rebounds,3.5,-137,,,0.5403,-0.0653
+Prop,IND @ DAL,Kyrie Irving under 3.5 rebounds,3.5,104,,,0.4597,-0.0622
+Prop,BKN @ NO,Michael Porter Jr. over 6.5 rebounds,6.5,-134,,,0.5496,-0.0403
+Prop,BKN @ NO,Michael Porter Jr. under 6.5 rebounds,6.5,101,,,0.4504,-0.0946
+Prop,BKN @ NO,Michael Porter Jr. over 1.5 assists,1.5,-191,,,0.6149,-0.0632
+Prop,BKN @ NO,Michael Porter Jr. under 1.5 assists,1.5,144,,,0.3851,-0.0603
+Prop,IND @ DAL,Caleb Martin over 1.5 assists,1.5,-178,,,0.5983,-0.0655
+Prop,IND @ DAL,Caleb Martin under 1.5 assists,1.5,134,,,0.4017,-0.0601
+Prop,IND @ DAL,Cooper Flagg over 6.5 rebounds,6.5,-146,,,0.5621,-0.0530
+Prop,IND @ DAL,Cooper Flagg under 6.5 rebounds,6.5,110,,,0.4379,-0.0803

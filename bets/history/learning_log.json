@@ -201,24 +201,26 @@
   {
     "date": "2026-11-08",
     "lessons": [
-      "Total: trusting the model 50% \u2192 53% (vs the market) after 284 graded bets \u2014 the model has been the better predictor so far."
+      "Spread: trusting the model 18% \u2192 14% (vs the market) after 252 graded bets \u2014 the market has been the better predictor so far.",
+      "Total: trusting the model 53% \u2192 47% (vs the market) after 324 graded bets \u2014 the model has been the better predictor so far.",
+      "NBA threes: was underconfident about player swings \u2192 uncertainty \u00d70.965."
     ],
     "scoreboard": {
-      "graded_bets": 2852,
-      "graded_projections": 3294,
+      "graded_bets": 3012,
+      "graded_projections": 3692,
       "model_leans": {
-        "w": 319,
-        "l": 435,
+        "w": 329,
+        "l": 444,
         "p": 0,
-        "hit_rate": 0.4231,
-        "roi_per_bet": -0.0628
+        "hit_rate": 0.4256,
+        "roi_per_bet": -0.0617
       },
       "strong_leans": {
-        "w": 218,
-        "l": 361,
+        "w": 222,
+        "l": 366,
         "p": 0,
-        "hit_rate": 0.3765,
-        "roi_per_bet": -0.1338
+        "hit_rate": 0.3776,
+        "roi_per_bet": -0.134
       }
     }
   }

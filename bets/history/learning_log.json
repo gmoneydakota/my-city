@@ -233,31 +233,28 @@
   {
     "date": "2026-11-09",
     "lessons": [
-      "Total: trusting the model 61% \u2192 26% (vs the market) after 370 graded bets \u2014 the market has been the better predictor so far.",
-      "NFL pass_tds: projections ran too high (avg 1.52 projected vs 1.46 actual over 46 players) \u2192 now scaled \u00d70.985.",
-      "NFL pass_yds: projections ran too high (avg 227.4 projected vs 220.46 actual over 46 players) \u2192 now scaled \u00d70.989.",
-      "NFL rec_yds: projections ran too high (avg 33.96 projected vs 32.07 actual over 225 players) \u2192 now scaled \u00d70.959.",
-      "NFL rec_yds: was overconfident about player swings \u2192 uncertainty \u00d71.274.",
-      "NFL receptions: was underconfident about player swings \u2192 uncertainty \u00d70.958.",
-      "NFL rush_yds: projections ran too low (avg 36.45 projected vs 37.41 actual over 130 players) \u2192 now scaled \u00d71.016.",
-      "NFL rush_yds: was overconfident about player swings \u2192 uncertainty \u00d71.310."
+      "Total: trusting the model 26% \u2192 37% (vs the market) after 386 graded bets \u2014 the market has been the better predictor so far.",
+      "NBA points: was overconfident about player swings \u2192 uncertainty \u00d71.058.",
+      "NBA pra: was overconfident about player swings \u2192 uncertainty \u00d71.042.",
+      "NBA threes: was underconfident about player swings \u2192 uncertainty \u00d70.993.",
+      "NFL rec_yds: projections ran too high (avg 34.22 projected vs 33.2 actual over 233 players) \u2192 now scaled \u00d70.978."
     ],
     "scoreboard": {
-      "graded_bets": 3552,
-      "graded_projections": 4098,
+      "graded_bets": 3642,
+      "graded_projections": 4240,
       "model_leans": {
-        "w": 339,
-        "l": 458,
+        "w": 345,
+        "l": 459,
         "p": 0,
-        "hit_rate": 0.4253,
-        "roi_per_bet": -0.0663
+        "hit_rate": 0.4291,
+        "roi_per_bet": -0.0601
       },
       "strong_leans": {
-        "w": 227,
+        "w": 231,
         "l": 376,
         "p": 0,
-        "hit_rate": 0.3765,
-        "roi_per_bet": -0.1398
+        "hit_rate": 0.3806,
+        "roi_per_bet": -0.1328
       }
     }
   }

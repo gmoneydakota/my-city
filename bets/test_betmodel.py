@@ -190,5 +190,18 @@ class AvailabilityTests(unittest.TestCase):
         self.assertEqual(proj["mean"], 20.0)  # input untouched
 
 
+class OverBiasTest(unittest.TestCase):
+    def test_overs_shaded_unders_lifted(self):
+        from betmodel import engine
+        p = engine.over_bias_adjust(0.50, "points")
+        self.assertAlmostEqual(p, 0.50 - engine.OVER_BIAS)
+        self.assertAlmostEqual(1 - p, 0.50 + engine.OVER_BIAS)  # the under side gains what the over loses
+
+    def test_one_sided_and_bounds(self):
+        from betmodel import engine
+        self.assertEqual(engine.over_bias_adjust(0.30, "anytime_td"), 0.30)
+        self.assertEqual(engine.over_bias_adjust(0.02, "points"), 0.01)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=1)

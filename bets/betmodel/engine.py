@@ -175,6 +175,17 @@ def one_sided_fair(books: dict) -> list[float]:
     return out
 
 
+OVER_BIAS = 0.03  # job 27: graded player-prop overs won 43.2% vs 49.3% priced (n=1237, SE 1.4%, both leagues)
+
+
+def over_bias_adjust(p_over: float, stat: str, bias: float = OVER_BIAS) -> float:
+    """Shade P(over) down by `bias` for two-way props (the market p_over and the model both ran ~6 pts
+    high in the graded sample; unders won 56.8%). Half the observed gap, to be safe. One-sided stats are skipped."""
+    if stat in ONE_SIDED_STATS:
+        return p_over
+    return max(0.01, min(0.99, p_over - bias))
+
+
 def prop_bets(league: str, games: list[dict], model, pbook: props.PlayerBook, quotes: list[dict],
               inj: dict, avail=None) -> tuple[list[dict], list[dict], list[str]]:
     """Returns (DraftKings prop bets, Underdog legs, warnings).
@@ -234,6 +245,7 @@ def prop_bets(league: str, games: list[dict], model, pbook: props.PlayerBook, qu
         p_over_model = mo / played if played else 0.5
         w_prop = learn.prop_weight(W_MODEL_PROP)
         p_over = p_over_model if p_mkt is None else w_prop * p_over_model + (1 - w_prop) * p_mkt
+        p_over = over_bias_adjust(p_over, stat)
         note = f"{injury['status']}: {injury['detail']}" if injury else ""
         if proj.get("avail_note"):
             note = (note + " | " if note else "") + proj["avail_note"]

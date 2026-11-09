@@ -1,0 +1,18 @@
+{
+  "job": 27,
+  "agent": "quant",
+  "model": "sonnet",
+  "tier": "standard",
+  "mode": "upgrade",
+  "route": "chosen by you",
+  "escalated_from": null,
+  "builds_on": null,
+  "repeat": null,
+  "has_page": false,
+  "has_model": false,
+  "turns": 14,
+  "cost_usd_estimate": 0.2876,
+  "ok": true,
+  "subtype": "success",
+  "finished_at": "2026-11-09T14:25:27+00:00"
+}

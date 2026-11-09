@@ -1,91 +1,86 @@
 game,team,player,stat,proj,sd,fair_line,higher_if_line_le,lower_if_line_ge,status
-LAL @ ATL,ATL,Jalen Johnson,points,18.42,7.90,18.5,16.5,20.5,1 game back from a 3-game absence
-LAL @ ATL,ATL,Jalen Johnson,rebounds,8.14,3.38,7.5,6.5,8.5,1 game back from a 3-game absence
-LAL @ ATL,ATL,Jalen Johnson,assists,6.76,4.22,6.5,4.5,7.5,1 game back from a 3-game absence
-LAL @ ATL,ATL,Jalen Johnson,threes,1.16,1.32,0.5,0.5,1.5,1 game back from a 3-game absence
-LAL @ ATL,ATL,Jalen Johnson,pra,33.31,11.59,33.5,30.5,35.5,1 game back from a 3-game absence
-LAL @ ATL,ATL,Dyson Daniels,points,9.95,5.11,9.5,7.5,10.5,
-LAL @ ATL,ATL,Dyson Daniels,rebounds,7.44,3.85,6.5,5.5,8.5,
-LAL @ ATL,ATL,Dyson Daniels,assists,5.78,2.96,5.5,4.5,6.5,
-LAL @ ATL,ATL,Dyson Daniels,pra,23.16,8.33,23.5,21.5,24.5,
-LAL @ ATL,ATL,Nickeil Alexander-Walker,points,21.76,7.64,21.5,20.5,23.5,
+LAL @ ATL,ATL,Jalen Johnson,points,18.35,7.87,18.5,16.5,20.5,1 game back from a 3-game absence
+LAL @ ATL,ATL,Jalen Johnson,rebounds,8.13,3.37,7.5,6.5,8.5,1 game back from a 3-game absence
+LAL @ ATL,ATL,Jalen Johnson,assists,6.74,4.21,6.5,4.5,7.5,1 game back from a 3-game absence
+LAL @ ATL,ATL,Jalen Johnson,threes,1.15,1.31,0.5,0.5,1.5,1 game back from a 3-game absence
+LAL @ ATL,ATL,Jalen Johnson,pra,33.20,11.55,33.5,30.5,35.5,1 game back from a 3-game absence
+LAL @ ATL,ATL,Dyson Daniels,points,9.91,5.09,9.5,7.5,10.5,
+LAL @ ATL,ATL,Dyson Daniels,rebounds,7.43,3.84,6.5,5.5,8.5,
+LAL @ ATL,ATL,Dyson Daniels,assists,5.76,2.95,5.5,4.5,6.5,
+LAL @ ATL,ATL,Dyson Daniels,pra,23.08,8.31,23.5,21.5,24.5,
+LAL @ ATL,ATL,Nickeil Alexander-Walker,points,21.67,7.61,21.5,19.5,23.5,
 LAL @ ATL,ATL,Nickeil Alexander-Walker,rebounds,3.03,1.79,2.5,2.5,3.5,
-LAL @ ATL,ATL,Nickeil Alexander-Walker,assists,2.53,1.76,2.5,1.5,3.5,
-LAL @ ATL,ATL,Nickeil Alexander-Walker,threes,3.79,2.32,3.5,2.5,4.5,
-LAL @ ATL,ATL,Nickeil Alexander-Walker,pra,27.30,8.60,27.5,25.5,29.5,
-LAL @ ATL,ATL,Onyeka Okongwu,points,13.84,6.65,13.5,12.5,15.5,
-LAL @ ATL,ATL,Onyeka Okongwu,rebounds,7.90,3.91,7.5,6.5,8.5,
+LAL @ ATL,ATL,Nickeil Alexander-Walker,assists,2.52,1.75,2.5,1.5,3.5,
+LAL @ ATL,ATL,Nickeil Alexander-Walker,threes,3.77,2.31,3.5,2.5,4.5,
+LAL @ ATL,ATL,Nickeil Alexander-Walker,pra,27.21,8.57,27.5,25.5,29.5,
+LAL @ ATL,ATL,Onyeka Okongwu,points,13.78,6.63,13.5,12.5,15.5,
+LAL @ ATL,ATL,Onyeka Okongwu,rebounds,7.89,3.90,7.5,6.5,8.5,
 LAL @ ATL,ATL,Onyeka Okongwu,assists,2.80,1.94,2.5,1.5,3.5,
-LAL @ ATL,ATL,Onyeka Okongwu,threes,1.61,1.32,1.5,0.5,2.5,
-LAL @ ATL,ATL,Onyeka Okongwu,pra,24.56,8.88,24.5,22.5,26.5,
-LAL @ ATL,ATL,Luguentz Dort,points,9.65,6.12,8.5,7.5,9.5,
+LAL @ ATL,ATL,Onyeka Okongwu,threes,1.60,1.32,1.5,0.5,2.5,
+LAL @ ATL,ATL,Onyeka Okongwu,pra,24.48,8.85,24.5,22.5,26.5,
+LAL @ ATL,ATL,Luguentz Dort,points,9.61,6.10,8.5,7.5,9.5,
 LAL @ ATL,ATL,Luguentz Dort,rebounds,3.20,1.84,3.5,2.5,3.5,
-LAL @ ATL,ATL,Luguentz Dort,assists,1.67,1.45,1.5,0.5,2.5,
-LAL @ ATL,ATL,Luguentz Dort,threes,1.96,1.54,1.5,0.5,2.5,
-LAL @ ATL,ATL,Luguentz Dort,pra,14.53,7.82,14.5,12.5,16.5,
-LAL @ ATL,ATL,Jalen Wilson,points,10.67,6.12,9.5,8.5,11.5,
-LAL @ ATL,ATL,Jalen Wilson,rebounds,4.26,2.82,3.5,2.5,4.5,
-LAL @ ATL,ATL,Jalen Wilson,assists,2.13,2.23,1.5,0.5,2.5,
-LAL @ ATL,ATL,Jalen Wilson,threes,1.24,1.16,1.5,0.5,1.5,
-LAL @ ATL,ATL,Jalen Wilson,pra,17.05,9.52,17.5,15.5,19.5,
-LAL @ ATL,ATL,Aaron Wiggins,points,13.89,6.12,13.5,12.5,15.5,
+LAL @ ATL,ATL,Luguentz Dort,assists,1.66,1.45,1.5,0.5,2.5,
+LAL @ ATL,ATL,Luguentz Dort,threes,1.95,1.53,1.5,0.5,2.5,
+LAL @ ATL,ATL,Luguentz Dort,pra,14.48,7.80,14.5,12.5,16.5,
+LAL @ ATL,ATL,Jalen Wilson,points,10.62,6.10,9.5,8.5,11.5,
+LAL @ ATL,ATL,Jalen Wilson,rebounds,4.25,2.82,3.5,2.5,4.5,
+LAL @ ATL,ATL,Jalen Wilson,assists,2.12,2.23,1.5,0.5,2.5,
+LAL @ ATL,ATL,Jalen Wilson,threes,1.24,1.15,1.5,0.5,1.5,
+LAL @ ATL,ATL,Jalen Wilson,pra,16.99,9.49,16.5,14.5,18.5,
+LAL @ ATL,ATL,Aaron Wiggins,points,13.83,6.09,13.5,12.5,15.5,
 LAL @ ATL,ATL,Aaron Wiggins,rebounds,3.60,1.95,3.5,2.5,4.5,
-LAL @ ATL,ATL,Aaron Wiggins,assists,2.46,1.86,2.5,1.5,2.5,
-LAL @ ATL,ATL,Aaron Wiggins,threes,2.66,1.66,2.5,1.5,3.5,
-LAL @ ATL,ATL,Aaron Wiggins,pra,19.95,8.22,19.5,18.5,21.5,
-LAL @ ATL,ATL,CJ McCollum,points,12.88,6.12,12.5,11.5,14.5,
+LAL @ ATL,ATL,Aaron Wiggins,assists,2.45,1.86,2.5,1.5,2.5,
+LAL @ ATL,ATL,Aaron Wiggins,threes,2.65,1.66,2.5,1.5,3.5,
+LAL @ ATL,ATL,Aaron Wiggins,pra,19.88,8.20,19.5,18.5,21.5,
+LAL @ ATL,ATL,CJ McCollum,points,12.82,6.10,12.5,11.5,14.5,
 LAL @ ATL,ATL,CJ McCollum,rebounds,3.05,2.16,2.5,1.5,3.5,
-LAL @ ATL,ATL,CJ McCollum,assists,3.98,3.01,3.5,2.5,4.5,
-LAL @ ATL,ATL,CJ McCollum,threes,1.69,1.48,1.5,0.5,2.5,
-LAL @ ATL,ATL,CJ McCollum,pra,19.89,7.43,19.5,18.5,21.5,
-LAL @ ATL,LAL,Austin Reaves,points,24.03,8.25,24.5,22.5,25.5,
-LAL @ ATL,LAL,Austin Reaves,rebounds,3.58,1.95,3.5,2.5,4.5,
-LAL @ ATL,LAL,Austin Reaves,assists,4.50,2.29,4.5,3.5,5.5,
-LAL @ ATL,LAL,Austin Reaves,threes,2.25,1.53,2.5,1.5,2.5,
-LAL @ ATL,LAL,Austin Reaves,pra,32.17,9.48,32.5,30.5,34.5,
-LAL @ ATL,LAL,Luka Doncic,points,37.70,11.61,37.5,35.5,40.5,Day-To-Day
-LAL @ ATL,LAL,Luka Doncic,rebounds,7.45,3.02,7.5,6.5,8.5,Day-To-Day
-LAL @ ATL,LAL,Luka Doncic,assists,7.42,2.99,7.5,6.5,8.5,Day-To-Day
-LAL @ ATL,LAL,Luka Doncic,threes,5.29,2.35,5.5,4.5,5.5,Day-To-Day
-LAL @ ATL,LAL,Luka Doncic,pra,52.64,13.85,52.5,49.5,55.5,Day-To-Day
-LAL @ ATL,LAL,Walker Kessler,points,13.54,5.81,13.5,12.5,14.5,
-LAL @ ATL,LAL,Walker Kessler,rebounds,11.01,3.45,10.5,9.5,11.5,
-LAL @ ATL,LAL,Walker Kessler,assists,1.63,1.45,1.5,0.5,2.5,
-LAL @ ATL,LAL,Walker Kessler,pra,26.14,8.17,26.5,24.5,27.5,
-LAL @ ATL,LAL,Quentin Grimes,points,8.45,6.61,6.5,5.5,8.5,Day-To-Day
-LAL @ ATL,LAL,Quentin Grimes,rebounds,2.46,1.99,2.5,1.5,2.5,Day-To-Day
-LAL @ ATL,LAL,Quentin Grimes,assists,2.38,1.83,2.5,1.5,2.5,Day-To-Day
-LAL @ ATL,LAL,Quentin Grimes,threes,0.82,1.04,0.5,,1.5,Day-To-Day
-LAL @ ATL,LAL,Quentin Grimes,pra,13.29,8.64,13.5,11.5,15.5,Day-To-Day
-LAL @ ATL,LAL,Jake LaRavia,points,6.27,3.75,5.5,4.5,6.5,
-LAL @ ATL,LAL,Jake LaRavia,rebounds,3.72,2.75,3.5,2.5,4.5,
-LAL @ ATL,LAL,Jake LaRavia,assists,1.72,1.38,1.5,0.5,2.5,
-LAL @ ATL,LAL,Jake LaRavia,threes,1.07,1.05,0.5,0.5,1.5,
-LAL @ ATL,LAL,Jake LaRavia,pra,11.69,4.79,11.5,10.5,12.5,
-LAL @ ATL,LAL,Matisse Thybulle,points,6.64,4.27,5.5,4.5,7.5,
-LAL @ ATL,LAL,Matisse Thybulle,rebounds,1.82,1.39,1.5,0.5,2.5,
-LAL @ ATL,LAL,Matisse Thybulle,assists,1.05,1.12,0.5,0.5,1.5,
-LAL @ ATL,LAL,Matisse Thybulle,threes,1.49,1.29,1.5,0.5,1.5,
-LAL @ ATL,LAL,Matisse Thybulle,pra,9.52,4.59,8.5,7.5,10.5,
-LAL @ ATL,LAL,Sandro Mamukelashvili,points,8.65,4.72,7.5,6.5,9.5,
-LAL @ ATL,LAL,Sandro Mamukelashvili,rebounds,4.17,2.12,3.5,3.5,4.5,
-LAL @ ATL,LAL,Sandro Mamukelashvili,assists,1.45,1.37,1.5,0.5,1.5,
-LAL @ ATL,LAL,Sandro Mamukelashvili,threes,1.10,1.07,0.5,0.5,1.5,
-LAL @ ATL,LAL,Sandro Mamukelashvili,pra,14.27,5.95,14.5,12.5,15.5,
-LAL @ ATL,LAL,Ziaire Williams,points,10.59,4.23,10.5,9.5,11.5,
-LAL @ ATL,LAL,Ziaire Williams,rebounds,2.49,1.63,2.5,1.5,3.5,
-LAL @ ATL,LAL,Ziaire Williams,assists,1.42,1.46,1.5,0.5,1.5,
-LAL @ ATL,LAL,Ziaire Williams,threes,1.85,1.39,1.5,0.5,2.5,
-LAL @ ATL,LAL,Ziaire Williams,pra,14.53,4.60,14.5,13.5,15.5,
-CLE @ CHA,CHA,Naz Reid,points,16.74,6.52,16.5,15.5,18.5,+10% with teammates out
+LAL @ ATL,ATL,CJ McCollum,assists,3.97,3.00,3.5,2.5,4.5,
+LAL @ ATL,ATL,CJ McCollum,threes,1.68,1.48,1.5,0.5,2.5,
+LAL @ ATL,ATL,CJ McCollum,pra,19.82,7.41,19.5,18.5,21.5,
+LAL @ ATL,LAL,Austin Reaves,points,26.12,8.58,26.5,24.5,27.5,Day-To-Day
+LAL @ ATL,LAL,Austin Reaves,rebounds,3.91,2.03,3.5,2.5,4.5,Day-To-Day
+LAL @ ATL,LAL,Austin Reaves,assists,4.89,2.39,4.5,3.5,5.5,Day-To-Day
+LAL @ ATL,LAL,Austin Reaves,threes,2.44,1.59,2.5,1.5,3.5,Day-To-Day
+LAL @ ATL,LAL,Austin Reaves,pra,34.99,9.87,34.5,32.5,37.5,Day-To-Day
+LAL @ ATL,LAL,Luka Doncic,points,40.97,12.08,40.5,38.5,43.5,+9% with teammates out
+LAL @ ATL,LAL,Luka Doncic,rebounds,8.12,3.15,7.5,6.5,8.5,+9% with teammates out
+LAL @ ATL,LAL,Luka Doncic,assists,8.07,3.11,7.5,6.5,8.5,+9% with teammates out
+LAL @ ATL,LAL,Luka Doncic,threes,5.75,2.45,5.5,4.5,6.5,+9% with teammates out
+LAL @ ATL,LAL,Luka Doncic,pra,57.25,14.42,57.5,54.5,60.5,+9% with teammates out
+LAL @ ATL,LAL,Walker Kessler,points,14.71,6.05,14.5,13.5,16.5,+9% with teammates out
+LAL @ ATL,LAL,Walker Kessler,rebounds,12.00,3.61,11.5,10.5,12.5,+9% with teammates out
+LAL @ ATL,LAL,Walker Kessler,assists,1.77,1.51,1.5,0.5,2.5,+9% with teammates out
+LAL @ ATL,LAL,Walker Kessler,pra,28.43,8.50,28.5,26.5,30.5,+9% with teammates out
+LAL @ ATL,LAL,Jake LaRavia,points,6.81,3.90,6.5,5.5,7.5,+9% with teammates out
+LAL @ ATL,LAL,Jake LaRavia,rebounds,4.05,2.87,3.5,2.5,4.5,+9% with teammates out
+LAL @ ATL,LAL,Jake LaRavia,assists,1.87,1.44,1.5,0.5,2.5,+9% with teammates out
+LAL @ ATL,LAL,Jake LaRavia,threes,1.16,1.10,0.5,0.5,1.5,+9% with teammates out
+LAL @ ATL,LAL,Jake LaRavia,pra,12.72,4.99,12.5,11.5,14.5,+9% with teammates out
+LAL @ ATL,LAL,Matisse Thybulle,points,7.21,4.44,6.5,5.5,7.5,+9% with teammates out
+LAL @ ATL,LAL,Matisse Thybulle,rebounds,1.98,1.45,1.5,1.5,2.5,+9% with teammates out
+LAL @ ATL,LAL,Matisse Thybulle,assists,1.14,1.17,0.5,0.5,1.5,+9% with teammates out
+LAL @ ATL,LAL,Matisse Thybulle,threes,1.62,1.34,1.5,0.5,2.5,+9% with teammates out
+LAL @ ATL,LAL,Matisse Thybulle,pra,10.35,4.78,9.5,8.5,11.5,+9% with teammates out
+LAL @ ATL,LAL,Sandro Mamukelashvili,points,9.40,4.91,8.5,7.5,9.5,+9% with teammates out
+LAL @ ATL,LAL,Sandro Mamukelashvili,rebounds,4.55,2.21,4.5,3.5,5.5,+9% with teammates out
+LAL @ ATL,LAL,Sandro Mamukelashvili,assists,1.58,1.43,1.5,0.5,2.5,+9% with teammates out
+LAL @ ATL,LAL,Sandro Mamukelashvili,threes,1.20,1.11,1.5,0.5,1.5,+9% with teammates out
+LAL @ ATL,LAL,Sandro Mamukelashvili,pra,15.52,6.19,15.5,14.5,16.5,+9% with teammates out
+LAL @ ATL,LAL,Ziaire Williams,points,11.51,4.40,11.5,9.5,12.5,+9% with teammates out
+LAL @ ATL,LAL,Ziaire Williams,rebounds,2.72,1.70,2.5,1.5,3.5,+9% with teammates out
+LAL @ ATL,LAL,Ziaire Williams,assists,1.54,1.52,1.5,0.5,1.5,+9% with teammates out
+LAL @ ATL,LAL,Ziaire Williams,threes,2.01,1.44,1.5,1.5,2.5,+9% with teammates out
+LAL @ ATL,LAL,Ziaire Williams,pra,15.80,4.79,15.5,14.5,17.5,+9% with teammates out
+CLE @ CHA,CHA,Naz Reid,points,16.73,6.52,16.5,15.5,18.5,+10% with teammates out
 CLE @ CHA,CHA,Naz Reid,rebounds,8.10,2.95,7.5,6.5,8.5,+10% with teammates out
 CLE @ CHA,CHA,Naz Reid,assists,1.95,1.73,1.5,0.5,2.5,+10% with teammates out
 CLE @ CHA,CHA,Naz Reid,threes,2.18,1.50,2.5,1.5,2.5,+10% with teammates out
-CLE @ CHA,CHA,Naz Reid,pra,26.78,8.89,26.5,24.5,28.5,+10% with teammates out
+CLE @ CHA,CHA,Naz Reid,pra,26.78,8.88,26.5,24.5,28.5,+10% with teammates out
 CLE @ CHA,CHA,Moussa Diabate,points,8.57,3.97,8.5,7.5,9.5,Day-To-Day
 CLE @ CHA,CHA,Moussa Diabate,rebounds,9.72,3.56,9.5,8.5,10.5,Day-To-Day
 CLE @ CHA,CHA,Moussa Diabate,assists,2.26,1.58,2.5,1.5,2.5,Day-To-Day
-CLE @ CHA,CHA,Moussa Diabate,pra,20.48,6.89,20.5,18.5,22.5,Day-To-Day
+CLE @ CHA,CHA,Moussa Diabate,pra,20.47,6.89,20.5,18.5,22.5,Day-To-Day
 CLE @ CHA,CHA,Sion James,points,6.58,4.01,5.5,4.5,7.5,+10% with teammates out
 CLE @ CHA,CHA,Sion James,rebounds,3.50,1.92,3.5,2.5,4.5,+10% with teammates out
 CLE @ CHA,CHA,Sion James,assists,2.54,1.87,2.5,1.5,3.5,+10% with teammates out
@@ -95,7 +90,7 @@ CLE @ CHA,CHA,Grayson Allen,points,14.26,8.14,14.5,12.5,16.5,+10% with teammates
 CLE @ CHA,CHA,Grayson Allen,rebounds,2.86,1.74,2.5,1.5,3.5,+10% with teammates out
 CLE @ CHA,CHA,Grayson Allen,assists,2.92,1.88,2.5,1.5,3.5,+10% with teammates out
 CLE @ CHA,CHA,Grayson Allen,threes,3.09,2.11,2.5,1.5,3.5,+10% with teammates out
-CLE @ CHA,CHA,Grayson Allen,pra,20.07,9.26,20.5,18.5,22.5,+10% with teammates out
+CLE @ CHA,CHA,Grayson Allen,pra,20.06,9.26,20.5,18.5,22.5,+10% with teammates out
 CLE @ CHA,CHA,Royce O'Neale,points,5.77,4.36,4.5,3.5,6.5,+10% with teammates out
 CLE @ CHA,CHA,Royce O'Neale,rebounds,3.62,2.05,3.5,2.5,4.5,+10% with teammates out
 CLE @ CHA,CHA,Royce O'Neale,assists,1.17,1.25,0.5,0.5,1.5,+10% with teammates out
@@ -135,75 +130,75 @@ CLE @ CHA,CLE,Mario Hezonja,rebounds,7.03,3.04,6.5,5.5,7.5,+10% with teammates o
 CLE @ CHA,CLE,Mario Hezonja,assists,1.88,1.44,1.5,0.5,2.5,+10% with teammates out
 CLE @ CHA,CLE,Mario Hezonja,threes,1.49,1.24,1.5,0.5,1.5,+10% with teammates out
 CLE @ CHA,CLE,Mario Hezonja,pra,17.52,7.18,17.5,15.5,19.5,+10% with teammates out
-WSH @ DET,DET,Cade Cunningham,points,22.04,8.35,22.5,20.5,23.5,
-WSH @ DET,DET,Cade Cunningham,rebounds,5.40,2.39,5.5,4.5,6.5,
-WSH @ DET,DET,Cade Cunningham,assists,8.49,3.13,8.5,7.5,9.5,
-WSH @ DET,DET,Cade Cunningham,threes,2.03,1.51,1.5,1.5,2.5,
-WSH @ DET,DET,Cade Cunningham,pra,35.91,10.69,35.5,33.5,38.5,
-WSH @ DET,DET,Duncan Robinson,points,16.93,6.36,16.5,15.5,18.5,
-WSH @ DET,DET,Duncan Robinson,rebounds,1.92,1.54,1.5,0.5,2.5,
-WSH @ DET,DET,Duncan Robinson,assists,2.41,1.63,2.5,1.5,2.5,
-WSH @ DET,DET,Duncan Robinson,threes,3.91,2.02,3.5,2.5,4.5,
-WSH @ DET,DET,Duncan Robinson,pra,21.28,6.89,21.5,19.5,22.5,
-WSH @ DET,DET,Paul Reed,points,12.48,5.99,12.5,11.5,13.5,
-WSH @ DET,DET,Paul Reed,rebounds,7.11,2.90,6.5,5.5,7.5,
+WSH @ DET,DET,Cade Cunningham,points,22.13,8.38,22.5,20.5,23.5,
+WSH @ DET,DET,Cade Cunningham,rebounds,5.41,2.39,5.5,4.5,6.5,
+WSH @ DET,DET,Cade Cunningham,assists,8.52,3.14,8.5,7.5,9.5,
+WSH @ DET,DET,Cade Cunningham,threes,2.04,1.51,1.5,1.5,2.5,
+WSH @ DET,DET,Cade Cunningham,pra,36.03,10.73,36.5,33.5,38.5,
+WSH @ DET,DET,Duncan Robinson,points,17.00,6.39,16.5,15.5,18.5,
+WSH @ DET,DET,Duncan Robinson,rebounds,1.92,1.55,1.5,0.5,2.5,
+WSH @ DET,DET,Duncan Robinson,assists,2.42,1.63,2.5,1.5,2.5,
+WSH @ DET,DET,Duncan Robinson,threes,3.93,2.02,3.5,2.5,4.5,
+WSH @ DET,DET,Duncan Robinson,pra,21.35,6.92,21.5,19.5,22.5,
+WSH @ DET,DET,Paul Reed,points,12.54,6.02,12.5,11.5,13.5,
+WSH @ DET,DET,Paul Reed,rebounds,7.12,2.91,6.5,5.5,7.5,
 WSH @ DET,DET,Paul Reed,assists,2.11,1.72,1.5,1.5,2.5,
-WSH @ DET,DET,Paul Reed,threes,0.44,0.79,0.5,,0.5,
-WSH @ DET,DET,Paul Reed,pra,21.70,8.10,21.5,19.5,23.5,
-WSH @ DET,DET,Ausar Thompson,points,9.16,3.59,8.5,7.5,9.5,
-WSH @ DET,DET,Ausar Thompson,rebounds,7.85,3.97,7.5,6.5,8.5,
-WSH @ DET,DET,Ausar Thompson,assists,4.18,2.17,3.5,3.5,4.5,
-WSH @ DET,DET,Ausar Thompson,pra,21.15,6.51,21.5,19.5,22.5,
-WSH @ DET,DET,Daniss Jenkins,points,11.65,8.70,11.5,9.5,13.5,
+WSH @ DET,DET,Paul Reed,threes,0.45,0.79,0.5,,0.5,
+WSH @ DET,DET,Paul Reed,pra,21.77,8.13,21.5,19.5,23.5,
+WSH @ DET,DET,Ausar Thompson,points,9.20,3.61,8.5,7.5,9.5,
+WSH @ DET,DET,Ausar Thompson,rebounds,7.86,3.97,7.5,6.5,8.5,
+WSH @ DET,DET,Ausar Thompson,assists,4.20,2.17,3.5,3.5,4.5,
+WSH @ DET,DET,Ausar Thompson,pra,21.23,6.54,21.5,19.5,22.5,
+WSH @ DET,DET,Daniss Jenkins,points,11.70,8.74,11.5,9.5,13.5,
 WSH @ DET,DET,Daniss Jenkins,rebounds,3.15,2.12,2.5,2.5,3.5,
-WSH @ DET,DET,Daniss Jenkins,assists,4.57,2.40,4.5,3.5,5.5,
-WSH @ DET,DET,Daniss Jenkins,threes,1.93,2.17,1.5,0.5,2.5,
-WSH @ DET,DET,Daniss Jenkins,pra,19.36,10.70,19.5,17.5,21.5,
-WSH @ DET,DET,John Collins,points,9.92,6.77,8.5,7.5,10.5,
-WSH @ DET,DET,John Collins,rebounds,5.43,3.15,5.5,4.5,5.5,
+WSH @ DET,DET,Daniss Jenkins,assists,4.59,2.41,4.5,3.5,5.5,
+WSH @ DET,DET,Daniss Jenkins,threes,1.94,2.17,1.5,0.5,2.5,
+WSH @ DET,DET,Daniss Jenkins,pra,19.42,10.73,19.5,17.5,21.5,
+WSH @ DET,DET,John Collins,points,9.97,6.80,8.5,7.5,10.5,
+WSH @ DET,DET,John Collins,rebounds,5.44,3.15,5.5,4.5,5.5,
 WSH @ DET,DET,John Collins,assists,0.68,0.89,0.5,,1.5,
-WSH @ DET,DET,John Collins,threes,0.87,1.38,0.5,,0.5,
-WSH @ DET,DET,John Collins,pra,16.05,7.92,16.5,14.5,17.5,
-WSH @ DET,DET,Kevin Huerter,points,9.37,6.24,8.5,6.5,9.5,
+WSH @ DET,DET,John Collins,threes,0.87,1.39,0.5,,0.5,
+WSH @ DET,DET,John Collins,pra,16.10,7.95,16.5,14.5,17.5,
+WSH @ DET,DET,Kevin Huerter,points,9.41,6.27,8.5,6.5,9.5,
 WSH @ DET,DET,Kevin Huerter,rebounds,2.72,1.97,2.5,1.5,3.5,
-WSH @ DET,DET,Kevin Huerter,assists,2.52,1.80,2.5,1.5,3.5,
-WSH @ DET,DET,Kevin Huerter,threes,1.84,1.38,1.5,0.5,2.5,
-WSH @ DET,DET,Kevin Huerter,pra,14.60,8.21,14.5,12.5,16.5,
-WSH @ DET,WSH,Kyshawn George,points,17.25,7.48,17.5,15.5,18.5,
-WSH @ DET,WSH,Kyshawn George,rebounds,4.51,2.30,4.5,3.5,5.5,
-WSH @ DET,WSH,Kyshawn George,assists,4.98,2.72,4.5,3.5,5.5,
-WSH @ DET,WSH,Kyshawn George,threes,2.23,1.63,2.5,1.5,2.5,
-WSH @ DET,WSH,Kyshawn George,pra,26.82,9.59,26.5,24.5,28.5,
-WSH @ DET,WSH,Trae Young,points,16.64,6.64,16.5,15.5,18.5,
-WSH @ DET,WSH,Trae Young,rebounds,3.21,1.99,2.5,2.5,3.5,
-WSH @ DET,WSH,Trae Young,assists,8.04,3.13,7.5,6.5,8.5,
-WSH @ DET,WSH,Trae Young,threes,1.68,1.46,1.5,0.5,2.5,
-WSH @ DET,WSH,Trae Young,pra,27.98,9.01,27.5,26.5,29.5,
-WSH @ DET,WSH,Anthony Davis,points,20.65,7.70,20.5,18.5,22.5,Day-To-Day
-WSH @ DET,WSH,Anthony Davis,rebounds,9.34,3.28,9.5,8.5,10.5,Day-To-Day
-WSH @ DET,WSH,Anthony Davis,assists,2.10,1.68,1.5,1.5,2.5,Day-To-Day
+WSH @ DET,DET,Kevin Huerter,assists,2.53,1.80,2.5,1.5,3.5,
+WSH @ DET,DET,Kevin Huerter,threes,1.85,1.39,1.5,0.5,2.5,
+WSH @ DET,DET,Kevin Huerter,pra,14.65,8.24,14.5,12.5,16.5,
+WSH @ DET,WSH,Kyshawn George,points,17.34,7.51,17.5,15.5,19.5,
+WSH @ DET,WSH,Kyshawn George,rebounds,4.52,2.30,4.5,3.5,5.5,
+WSH @ DET,WSH,Kyshawn George,assists,5.00,2.73,4.5,3.5,5.5,
+WSH @ DET,WSH,Kyshawn George,threes,2.24,1.63,2.5,1.5,2.5,
+WSH @ DET,WSH,Kyshawn George,pra,26.92,9.62,26.5,24.5,28.5,
+WSH @ DET,WSH,Trae Young,points,16.72,6.67,16.5,15.5,18.5,
+WSH @ DET,WSH,Trae Young,rebounds,3.22,1.99,2.5,2.5,3.5,
+WSH @ DET,WSH,Trae Young,assists,8.08,3.14,7.5,6.5,8.5,
+WSH @ DET,WSH,Trae Young,threes,1.69,1.46,1.5,0.5,2.5,
+WSH @ DET,WSH,Trae Young,pra,28.09,9.04,28.5,26.5,30.5,
+WSH @ DET,WSH,Anthony Davis,points,20.75,7.73,20.5,19.5,22.5,Day-To-Day
+WSH @ DET,WSH,Anthony Davis,rebounds,9.36,3.28,9.5,8.5,10.5,Day-To-Day
+WSH @ DET,WSH,Anthony Davis,assists,2.11,1.69,1.5,1.5,2.5,Day-To-Day
 WSH @ DET,WSH,Anthony Davis,threes,0.68,0.95,0.5,,1.5,Day-To-Day
-WSH @ DET,WSH,Anthony Davis,pra,32.09,10.27,32.5,29.5,34.5,Day-To-Day
-WSH @ DET,WSH,AJ Dybantsa,points,14.43,4.97,14.5,13.5,15.5,
+WSH @ DET,WSH,Anthony Davis,pra,32.21,10.31,32.5,30.5,34.5,Day-To-Day
+WSH @ DET,WSH,AJ Dybantsa,points,14.50,4.99,14.5,13.5,15.5,
 WSH @ DET,WSH,AJ Dybantsa,rebounds,5.74,2.47,5.5,4.5,6.5,
-WSH @ DET,WSH,AJ Dybantsa,assists,2.24,1.57,2.5,1.5,2.5,
-WSH @ DET,WSH,AJ Dybantsa,threes,0.76,0.89,0.5,,1.5,
-WSH @ DET,WSH,AJ Dybantsa,pra,22.43,5.92,22.5,20.5,23.5,
-WSH @ DET,WSH,Alex Sarr,points,10.98,5.51,10.5,8.5,11.5,
-WSH @ DET,WSH,Alex Sarr,rebounds,7.13,3.52,6.5,5.5,7.5,
-WSH @ DET,WSH,Alex Sarr,assists,1.97,1.65,1.5,0.5,2.5,
+WSH @ DET,WSH,AJ Dybantsa,assists,2.25,1.57,2.5,1.5,2.5,
+WSH @ DET,WSH,AJ Dybantsa,threes,0.77,0.89,0.5,,1.5,
+WSH @ DET,WSH,AJ Dybantsa,pra,22.51,5.95,22.5,21.5,23.5,
+WSH @ DET,WSH,Alex Sarr,points,11.04,5.54,10.5,8.5,11.5,
+WSH @ DET,WSH,Alex Sarr,rebounds,7.14,3.52,6.5,5.5,7.5,
+WSH @ DET,WSH,Alex Sarr,assists,1.98,1.65,1.5,0.5,2.5,
 WSH @ DET,WSH,Alex Sarr,threes,0.76,0.89,0.5,,1.5,
-WSH @ DET,WSH,Alex Sarr,pra,20.00,7.32,20.5,18.5,21.5,
-WSH @ DET,WSH,Bilal Coulibaly,points,7.64,5.79,6.5,5.5,7.5,
-WSH @ DET,WSH,Bilal Coulibaly,rebounds,3.55,1.94,3.5,2.5,4.5,
+WSH @ DET,WSH,Alex Sarr,pra,20.08,7.34,20.5,18.5,21.5,
+WSH @ DET,WSH,Bilal Coulibaly,points,7.67,5.81,6.5,5.5,7.5,
+WSH @ DET,WSH,Bilal Coulibaly,rebounds,3.56,1.94,3.5,2.5,4.5,
 WSH @ DET,WSH,Bilal Coulibaly,assists,1.07,1.32,0.5,0.5,1.5,
 WSH @ DET,WSH,Bilal Coulibaly,threes,0.56,0.89,0.5,,0.5,
-WSH @ DET,WSH,Bilal Coulibaly,pra,12.25,6.35,12.5,10.5,13.5,
-WSH @ DET,WSH,Tre Johnson,points,8.98,6.20,7.5,6.5,9.5,
+WSH @ DET,WSH,Bilal Coulibaly,pra,12.30,6.37,12.5,10.5,13.5,
+WSH @ DET,WSH,Tre Johnson,points,9.03,6.23,7.5,6.5,9.5,
 WSH @ DET,WSH,Tre Johnson,rebounds,1.95,1.51,1.5,0.5,2.5,
 WSH @ DET,WSH,Tre Johnson,assists,1.19,1.30,0.5,0.5,1.5,
-WSH @ DET,WSH,Tre Johnson,threes,1.38,1.57,1.5,0.5,1.5,
-WSH @ DET,WSH,Tre Johnson,pra,12.19,6.53,12.5,10.5,13.5,
+WSH @ DET,WSH,Tre Johnson,threes,1.39,1.58,1.5,0.5,1.5,
+WSH @ DET,WSH,Tre Johnson,pra,12.24,6.55,12.5,10.5,13.5,
 MEM @ TOR,TOR,Malachi Smith,points,10.30,6.21,9.5,7.5,10.5,+2% with teammates out
 MEM @ TOR,TOR,Malachi Smith,rebounds,4.49,2.71,4.5,3.5,5.5,+2% with teammates out
 MEM @ TOR,TOR,Malachi Smith,assists,4.35,3.09,3.5,2.5,4.5,+2% with teammates out
@@ -229,11 +224,11 @@ MEM @ TOR,TOR,Ja'Kobe Walter,rebounds,3.96,2.06,3.5,2.5,4.5,+2% with teammates o
 MEM @ TOR,TOR,Ja'Kobe Walter,assists,2.29,1.59,2.5,1.5,2.5,+2% with teammates out
 MEM @ TOR,TOR,Ja'Kobe Walter,threes,2.16,1.59,1.5,1.5,2.5,+2% with teammates out
 MEM @ TOR,TOR,Ja'Kobe Walter,pra,16.95,5.95,16.5,15.5,18.5,+2% with teammates out
-MEM @ TOR,TOR,Collin Murray-Boyles,points,11.34,5.92,10.5,9.5,11.5,+2% with teammates out
-MEM @ TOR,TOR,Collin Murray-Boyles,rebounds,5.33,2.58,5.5,4.5,5.5,+2% with teammates out
-MEM @ TOR,TOR,Collin Murray-Boyles,assists,1.53,1.32,1.5,0.5,2.5,+2% with teammates out
-MEM @ TOR,TOR,Collin Murray-Boyles,threes,0.46,0.69,0.5,,0.5,+2% with teammates out
-MEM @ TOR,TOR,Collin Murray-Boyles,pra,18.21,7.29,18.5,16.5,19.5,+2% with teammates out
+MEM @ TOR,TOR,Collin Murray-Boyles,points,11.34,5.92,10.5,9.5,11.5,Day-To-Day
+MEM @ TOR,TOR,Collin Murray-Boyles,rebounds,5.33,2.58,5.5,4.5,5.5,Day-To-Day
+MEM @ TOR,TOR,Collin Murray-Boyles,assists,1.53,1.32,1.5,0.5,2.5,Day-To-Day
+MEM @ TOR,TOR,Collin Murray-Boyles,threes,0.46,0.69,0.5,,0.5,Day-To-Day
+MEM @ TOR,TOR,Collin Murray-Boyles,pra,18.21,7.29,18.5,16.5,19.5,Day-To-Day
 MEM @ TOR,TOR,Jamal Shead,points,6.24,3.93,5.5,4.5,6.5,+2% with teammates out
 MEM @ TOR,TOR,Jamal Shead,rebounds,1.91,1.42,1.5,0.5,2.5,+2% with teammates out
 MEM @ TOR,TOR,Jamal Shead,assists,6.73,4.02,6.5,5.5,7.5,+2% with teammates out
@@ -243,7 +238,7 @@ MEM @ TOR,MEM,Cameron Boozer,points,14.37,6.52,14.5,12.5,15.5,
 MEM @ TOR,MEM,Cameron Boozer,rebounds,9.47,3.17,9.5,8.5,10.5,
 MEM @ TOR,MEM,Cameron Boozer,assists,4.90,2.65,4.5,3.5,5.5,
 MEM @ TOR,MEM,Cameron Boozer,threes,1.85,1.47,1.5,0.5,2.5,
-MEM @ TOR,MEM,Cameron Boozer,pra,28.66,9.32,28.5,26.5,30.5,
+MEM @ TOR,MEM,Cameron Boozer,pra,28.67,9.32,28.5,26.5,30.5,
 MEM @ TOR,MEM,Ty Jerome,points,24.07,10.33,24.5,21.5,26.5,
 MEM @ TOR,MEM,Ty Jerome,rebounds,3.21,2.09,2.5,2.5,3.5,
 MEM @ TOR,MEM,Ty Jerome,assists,5.26,2.41,5.5,4.5,5.5,
@@ -278,216 +273,216 @@ MEM @ TOR,MEM,Zach Edey,points,8.60,5.12,7.5,6.5,9.5,
 MEM @ TOR,MEM,Zach Edey,rebounds,7.89,3.66,7.5,6.5,8.5,
 MEM @ TOR,MEM,Zach Edey,assists,0.92,1.04,0.5,0.5,1.5,
 MEM @ TOR,MEM,Zach Edey,pra,17.35,7.56,17.5,15.5,19.5,
-IND @ DAL,DAL,Cooper Flagg,points,23.21,8.56,23.5,21.5,25.5,
-IND @ DAL,DAL,Cooper Flagg,rebounds,6.66,2.66,6.5,5.5,7.5,
-IND @ DAL,DAL,Cooper Flagg,assists,6.49,3.14,6.5,5.5,7.5,
-IND @ DAL,DAL,Cooper Flagg,threes,1.18,1.25,0.5,0.5,1.5,
-IND @ DAL,DAL,Cooper Flagg,pra,36.36,10.58,36.5,34.5,38.5,
-IND @ DAL,DAL,P.J. Washington,points,14.15,7.11,14.5,12.5,15.5,
-IND @ DAL,DAL,P.J. Washington,rebounds,7.11,3.03,6.5,5.5,7.5,
-IND @ DAL,DAL,P.J. Washington,assists,1.20,1.15,1.5,0.5,1.5,
-IND @ DAL,DAL,P.J. Washington,threes,2.22,1.65,1.5,1.5,2.5,
-IND @ DAL,DAL,P.J. Washington,pra,22.47,8.96,22.5,20.5,24.5,
-IND @ DAL,DAL,Kyrie Irving,points,20.91,7.78,20.5,19.5,22.5,
-IND @ DAL,DAL,Kyrie Irving,rebounds,3.55,2.11,3.5,2.5,4.5,
-IND @ DAL,DAL,Kyrie Irving,assists,4.33,2.40,4.5,3.5,4.5,
-IND @ DAL,DAL,Kyrie Irving,threes,2.78,1.95,2.5,1.5,3.5,
-IND @ DAL,DAL,Kyrie Irving,pra,28.82,10.60,28.5,26.5,30.5,
-IND @ DAL,DAL,Naji Marshall,points,11.31,6.69,10.5,8.5,11.5,
-IND @ DAL,DAL,Naji Marshall,rebounds,2.80,1.97,2.5,1.5,3.5,
-IND @ DAL,DAL,Naji Marshall,assists,3.82,2.05,3.5,2.5,4.5,
-IND @ DAL,DAL,Naji Marshall,threes,0.79,0.99,0.5,,1.5,
-IND @ DAL,DAL,Naji Marshall,pra,17.93,8.38,17.5,16.5,19.5,
-IND @ DAL,DAL,Daniel Gafford,points,10.04,6.46,8.5,7.5,10.5,
-IND @ DAL,DAL,Daniel Gafford,rebounds,5.89,3.15,5.5,4.5,6.5,
-IND @ DAL,DAL,Daniel Gafford,assists,1.57,1.35,1.5,0.5,2.5,
-IND @ DAL,DAL,Daniel Gafford,pra,17.50,8.24,17.5,15.5,19.5,
-IND @ DAL,DAL,Zaccharie Risacher,points,7.07,4.71,6.5,5.5,7.5,
-IND @ DAL,DAL,Zaccharie Risacher,rebounds,4.68,2.23,4.5,3.5,5.5,
+IND @ DAL,DAL,Cooper Flagg,points,23.11,8.52,23.5,21.5,24.5,
+IND @ DAL,DAL,Cooper Flagg,rebounds,6.65,2.65,6.5,5.5,7.5,
+IND @ DAL,DAL,Cooper Flagg,assists,6.47,3.13,6.5,5.5,7.5,
+IND @ DAL,DAL,Cooper Flagg,threes,1.18,1.24,0.5,0.5,1.5,
+IND @ DAL,DAL,Cooper Flagg,pra,36.23,10.54,36.5,34.5,38.5,
+IND @ DAL,DAL,P.J. Washington,points,14.09,7.08,14.5,12.5,15.5,
+IND @ DAL,DAL,P.J. Washington,rebounds,7.02,2.97,6.5,5.5,7.5,
+IND @ DAL,DAL,P.J. Washington,assists,1.19,1.15,1.5,0.5,1.5,
+IND @ DAL,DAL,P.J. Washington,threes,2.21,1.65,1.5,1.5,2.5,
+IND @ DAL,DAL,P.J. Washington,pra,22.31,8.83,22.5,20.5,24.5,
+IND @ DAL,DAL,Kyrie Irving,points,20.82,7.74,20.5,19.5,22.5,
+IND @ DAL,DAL,Kyrie Irving,rebounds,3.55,2.10,3.5,2.5,4.5,
+IND @ DAL,DAL,Kyrie Irving,assists,4.32,2.40,4.5,3.5,4.5,
+IND @ DAL,DAL,Kyrie Irving,threes,2.77,1.94,2.5,1.5,3.5,
+IND @ DAL,DAL,Kyrie Irving,pra,28.72,10.56,28.5,26.5,30.5,
+IND @ DAL,DAL,Naji Marshall,points,11.26,6.66,10.5,8.5,11.5,
+IND @ DAL,DAL,Naji Marshall,rebounds,2.80,1.96,2.5,1.5,3.5,
+IND @ DAL,DAL,Naji Marshall,assists,3.81,2.05,3.5,2.5,4.5,
+IND @ DAL,DAL,Naji Marshall,threes,0.78,0.99,0.5,,1.5,
+IND @ DAL,DAL,Naji Marshall,pra,17.87,8.35,17.5,16.5,19.5,
+IND @ DAL,DAL,Daniel Gafford,points,10.00,6.44,8.5,7.5,10.5,
+IND @ DAL,DAL,Daniel Gafford,rebounds,5.88,3.14,5.5,4.5,6.5,
+IND @ DAL,DAL,Daniel Gafford,assists,1.56,1.35,1.5,0.5,2.5,
+IND @ DAL,DAL,Daniel Gafford,pra,17.44,8.21,17.5,15.5,19.5,
+IND @ DAL,DAL,Zaccharie Risacher,points,7.04,4.69,6.5,4.5,7.5,
+IND @ DAL,DAL,Zaccharie Risacher,rebounds,4.67,2.22,4.5,3.5,5.5,
 IND @ DAL,DAL,Zaccharie Risacher,assists,1.26,1.18,1.5,0.5,1.5,
-IND @ DAL,DAL,Zaccharie Risacher,threes,0.92,1.09,0.5,,1.5,
-IND @ DAL,DAL,Zaccharie Risacher,pra,13.01,6.07,13.5,11.5,14.5,
-IND @ DAL,DAL,Caleb Martin,points,4.25,4.19,3.5,2.5,4.5,
-IND @ DAL,DAL,Caleb Martin,rebounds,2.36,2.09,1.5,1.5,2.5,
-IND @ DAL,DAL,Caleb Martin,assists,0.93,1.26,0.5,,1.5,
+IND @ DAL,DAL,Zaccharie Risacher,threes,0.91,1.08,0.5,,1.5,
+IND @ DAL,DAL,Zaccharie Risacher,pra,12.96,6.04,12.5,11.5,14.5,
+IND @ DAL,DAL,Caleb Martin,points,4.23,4.17,3.5,2.5,4.5,
+IND @ DAL,DAL,Caleb Martin,rebounds,2.35,2.09,1.5,1.5,2.5,
+IND @ DAL,DAL,Caleb Martin,assists,0.92,1.26,0.5,,1.5,
 IND @ DAL,DAL,Caleb Martin,threes,0.63,0.89,0.5,,0.5,
-IND @ DAL,DAL,Caleb Martin,pra,7.53,5.01,6.5,5.5,7.5,
-IND @ DAL,DAL,Morez Johnson Jr.,points,7.71,3.83,7.5,6.5,8.5,
-IND @ DAL,DAL,Morez Johnson Jr.,rebounds,5.63,4.63,4.5,3.5,5.5,
-IND @ DAL,DAL,Morez Johnson Jr.,assists,1.33,1.21,1.5,0.5,1.5,
-IND @ DAL,DAL,Morez Johnson Jr.,pra,14.67,7.44,14.5,12.5,16.5,
-IND @ DAL,IND,Andrew Nembhard,points,17.80,6.09,17.5,16.5,19.5,+5% with teammates out
+IND @ DAL,DAL,Caleb Martin,pra,7.51,5.00,6.5,5.5,7.5,
+IND @ DAL,DAL,Morez Johnson Jr.,points,7.68,3.82,7.5,6.5,8.5,Day-To-Day
+IND @ DAL,DAL,Morez Johnson Jr.,rebounds,5.62,4.63,4.5,3.5,5.5,Day-To-Day
+IND @ DAL,DAL,Morez Johnson Jr.,assists,1.33,1.21,1.5,0.5,1.5,Day-To-Day
+IND @ DAL,DAL,Morez Johnson Jr.,pra,14.62,7.42,14.5,12.5,16.5,Day-To-Day
+IND @ DAL,IND,Andrew Nembhard,points,17.72,6.06,17.5,16.5,19.5,+5% with teammates out
 IND @ DAL,IND,Andrew Nembhard,rebounds,2.35,1.58,2.5,1.5,2.5,+5% with teammates out
-IND @ DAL,IND,Andrew Nembhard,assists,7.82,3.90,7.5,6.5,8.5,+5% with teammates out
-IND @ DAL,IND,Andrew Nembhard,threes,2.48,1.66,2.5,1.5,3.5,+5% with teammates out
-IND @ DAL,IND,Andrew Nembhard,pra,27.96,7.93,27.5,26.5,29.5,+5% with teammates out
-IND @ DAL,IND,Pascal Siakam,points,22.21,6.78,22.5,20.5,23.5,+5% with teammates out
-IND @ DAL,IND,Pascal Siakam,rebounds,6.43,3.28,6.5,5.5,7.5,+5% with teammates out
-IND @ DAL,IND,Pascal Siakam,assists,3.92,2.08,3.5,2.5,4.5,+5% with teammates out
-IND @ DAL,IND,Pascal Siakam,threes,1.36,1.26,1.5,0.5,1.5,+5% with teammates out
-IND @ DAL,IND,Pascal Siakam,pra,32.58,8.86,32.5,30.5,34.5,+5% with teammates out
-IND @ DAL,IND,Aaron Nesmith,points,12.62,5.58,12.5,11.5,14.5,+5% with teammates out
-IND @ DAL,IND,Aaron Nesmith,rebounds,2.75,1.99,2.5,1.5,3.5,+5% with teammates out
-IND @ DAL,IND,Aaron Nesmith,assists,1.74,1.38,1.5,0.5,2.5,+5% with teammates out
-IND @ DAL,IND,Aaron Nesmith,threes,1.91,1.42,1.5,0.5,2.5,+5% with teammates out
-IND @ DAL,IND,Aaron Nesmith,pra,17.12,6.07,17.5,15.5,18.5,+5% with teammates out
-IND @ DAL,IND,Jarace Walker,points,9.06,5.39,8.5,6.5,9.5,+5% with teammates out
-IND @ DAL,IND,Jarace Walker,rebounds,6.08,2.54,5.5,4.5,6.5,+5% with teammates out
-IND @ DAL,IND,Jarace Walker,assists,2.37,1.64,2.5,1.5,2.5,+5% with teammates out
-IND @ DAL,IND,Jarace Walker,threes,1.35,1.20,1.5,0.5,1.5,+5% with teammates out
-IND @ DAL,IND,Jarace Walker,pra,17.49,7.10,17.5,15.5,19.5,+5% with teammates out
-IND @ DAL,IND,Quenton Jackson,points,10.92,6.86,9.5,8.5,11.5,+5% with teammates out
-IND @ DAL,IND,Quenton Jackson,rebounds,3.63,2.25,3.5,2.5,4.5,+5% with teammates out
-IND @ DAL,IND,Quenton Jackson,assists,2.96,2.01,2.5,1.5,3.5,+5% with teammates out
-IND @ DAL,IND,Quenton Jackson,threes,1.08,1.23,0.5,0.5,1.5,+5% with teammates out
-IND @ DAL,IND,Quenton Jackson,pra,17.50,8.20,17.5,15.5,19.5,+5% with teammates out
-IND @ DAL,IND,Kelly Oubre Jr.,points,8.98,5.77,7.5,6.5,9.5,+5% with teammates out
-IND @ DAL,IND,Kelly Oubre Jr.,rebounds,2.91,2.04,2.5,1.5,3.5,+5% with teammates out
-IND @ DAL,IND,Kelly Oubre Jr.,assists,1.18,1.14,1.5,0.5,1.5,+5% with teammates out
+IND @ DAL,IND,Andrew Nembhard,assists,7.79,3.88,7.5,6.5,8.5,+5% with teammates out
+IND @ DAL,IND,Andrew Nembhard,threes,2.47,1.65,2.5,1.5,3.5,+5% with teammates out
+IND @ DAL,IND,Andrew Nembhard,pra,27.86,7.90,27.5,26.5,29.5,+5% with teammates out
+IND @ DAL,IND,Pascal Siakam,points,22.11,6.75,22.5,20.5,23.5,+5% with teammates out
+IND @ DAL,IND,Pascal Siakam,rebounds,6.42,3.28,6.5,5.5,7.5,+5% with teammates out
+IND @ DAL,IND,Pascal Siakam,assists,3.91,2.07,3.5,2.5,4.5,+5% with teammates out
+IND @ DAL,IND,Pascal Siakam,threes,1.36,1.25,1.5,0.5,1.5,+5% with teammates out
+IND @ DAL,IND,Pascal Siakam,pra,32.47,8.82,32.5,30.5,34.5,+5% with teammates out
+IND @ DAL,IND,Aaron Nesmith,points,12.56,5.56,12.5,11.5,13.5,+5% with teammates out
+IND @ DAL,IND,Aaron Nesmith,rebounds,2.74,1.98,2.5,1.5,3.5,+5% with teammates out
+IND @ DAL,IND,Aaron Nesmith,assists,1.73,1.38,1.5,0.5,2.5,+5% with teammates out
+IND @ DAL,IND,Aaron Nesmith,threes,1.90,1.41,1.5,0.5,2.5,+5% with teammates out
+IND @ DAL,IND,Aaron Nesmith,pra,17.06,6.05,17.5,15.5,18.5,+5% with teammates out
+IND @ DAL,IND,Jarace Walker,points,9.02,5.36,8.5,6.5,9.5,+5% with teammates out
+IND @ DAL,IND,Jarace Walker,rebounds,6.07,2.54,5.5,4.5,6.5,+5% with teammates out
+IND @ DAL,IND,Jarace Walker,assists,2.36,1.63,2.5,1.5,2.5,+5% with teammates out
+IND @ DAL,IND,Jarace Walker,threes,1.34,1.20,1.5,0.5,1.5,+5% with teammates out
+IND @ DAL,IND,Jarace Walker,pra,17.43,7.08,17.5,15.5,19.5,+5% with teammates out
+IND @ DAL,IND,Quenton Jackson,points,10.87,6.83,9.5,8.5,11.5,+5% with teammates out
+IND @ DAL,IND,Quenton Jackson,rebounds,3.62,2.24,3.5,2.5,4.5,+5% with teammates out
+IND @ DAL,IND,Quenton Jackson,assists,2.95,2.00,2.5,1.5,3.5,+5% with teammates out
+IND @ DAL,IND,Quenton Jackson,threes,1.07,1.22,0.5,0.5,1.5,+5% with teammates out
+IND @ DAL,IND,Quenton Jackson,pra,17.44,8.17,17.5,15.5,19.5,+5% with teammates out
+IND @ DAL,IND,Kelly Oubre Jr.,points,8.94,5.74,7.5,6.5,9.5,+5% with teammates out
+IND @ DAL,IND,Kelly Oubre Jr.,rebounds,2.90,2.03,2.5,1.5,3.5,+5% with teammates out
+IND @ DAL,IND,Kelly Oubre Jr.,assists,1.17,1.14,0.5,0.5,1.5,+5% with teammates out
 IND @ DAL,IND,Kelly Oubre Jr.,threes,1.03,1.10,0.5,0.5,1.5,+5% with teammates out
-IND @ DAL,IND,Kelly Oubre Jr.,pra,13.07,7.05,13.5,11.5,14.5,+5% with teammates out
-IND @ DAL,IND,Obi Toppin,points,13.58,5.78,13.5,12.5,14.5,2 games back from a 3-game absence; +5% with teammates out
-IND @ DAL,IND,Obi Toppin,rebounds,5.34,2.74,5.5,4.5,5.5,2 games back from a 3-game absence; +5% with teammates out
-IND @ DAL,IND,Obi Toppin,assists,1.70,1.57,1.5,0.5,2.5,2 games back from a 3-game absence; +5% with teammates out
-IND @ DAL,IND,Obi Toppin,threes,1.96,1.89,1.5,0.5,2.5,2 games back from a 3-game absence; +5% with teammates out
-IND @ DAL,IND,Obi Toppin,pra,20.63,7.12,20.5,19.5,22.5,2 games back from a 3-game absence; +5% with teammates out
-DEN @ HOU,HOU,Alperen Sengun,points,20.11,7.18,20.5,18.5,21.5,
-DEN @ HOU,HOU,Alperen Sengun,rebounds,8.59,3.02,8.5,7.5,9.5,
-DEN @ HOU,HOU,Alperen Sengun,assists,7.23,2.82,7.5,6.5,7.5,
-DEN @ HOU,HOU,Alperen Sengun,threes,0.80,0.92,0.5,,1.5,
-DEN @ HOU,HOU,Alperen Sengun,pra,35.90,9.78,35.5,33.5,37.5,
-DEN @ HOU,HOU,Jabari Smith Jr.,points,16.25,6.74,16.5,14.5,17.5,
-DEN @ HOU,HOU,Jabari Smith Jr.,rebounds,6.42,3.16,6.5,5.5,7.5,
-DEN @ HOU,HOU,Jabari Smith Jr.,assists,2.10,1.61,1.5,1.5,2.5,
-DEN @ HOU,HOU,Jabari Smith Jr.,threes,2.64,1.66,2.5,1.5,3.5,
-DEN @ HOU,HOU,Jabari Smith Jr.,pra,24.78,8.68,24.5,22.5,26.5,
-DEN @ HOU,HOU,Kevin Durant,points,20.43,6.73,20.5,18.5,21.5,
-DEN @ HOU,HOU,Kevin Durant,rebounds,5.42,2.40,5.5,4.5,6.5,
-DEN @ HOU,HOU,Kevin Durant,assists,3.43,2.03,3.5,2.5,4.5,
-DEN @ HOU,HOU,Kevin Durant,threes,1.53,1.28,1.5,0.5,2.5,
-DEN @ HOU,HOU,Kevin Durant,pra,29.32,8.65,29.5,27.5,31.5,
-DEN @ HOU,HOU,Amen Thompson,points,15.03,5.61,15.5,13.5,16.5,
-DEN @ HOU,HOU,Amen Thompson,rebounds,6.09,3.06,5.5,4.5,6.5,
-DEN @ HOU,HOU,Amen Thompson,assists,3.18,2.36,2.5,1.5,3.5,
-DEN @ HOU,HOU,Amen Thompson,pra,24.30,8.51,24.5,22.5,26.5,
-DEN @ HOU,HOU,Fred VanVleet,points,13.04,5.91,13.5,11.5,14.5,
-DEN @ HOU,HOU,Fred VanVleet,rebounds,3.26,1.86,3.5,2.5,3.5,
-DEN @ HOU,HOU,Fred VanVleet,assists,5.59,2.68,5.5,4.5,6.5,
-DEN @ HOU,HOU,Fred VanVleet,threes,2.73,1.69,2.5,1.5,3.5,
-DEN @ HOU,HOU,Fred VanVleet,pra,21.88,6.88,21.5,20.5,23.5,
-DEN @ HOU,HOU,Tari Eason,points,8.78,5.21,7.5,6.5,9.5,
-DEN @ HOU,HOU,Tari Eason,rebounds,5.90,3.09,5.5,4.5,6.5,
+IND @ DAL,IND,Kelly Oubre Jr.,pra,13.03,7.03,13.5,11.5,14.5,+5% with teammates out
+IND @ DAL,IND,Obi Toppin,points,13.52,5.75,13.5,12.5,14.5,2 games back from a 3-game absence; +5% with teammates out
+IND @ DAL,IND,Obi Toppin,rebounds,5.34,2.73,5.5,4.5,5.5,2 games back from a 3-game absence; +5% with teammates out
+IND @ DAL,IND,Obi Toppin,assists,1.69,1.57,1.5,0.5,2.5,2 games back from a 3-game absence; +5% with teammates out
+IND @ DAL,IND,Obi Toppin,threes,1.95,1.89,1.5,0.5,2.5,2 games back from a 3-game absence; +5% with teammates out
+IND @ DAL,IND,Obi Toppin,pra,20.55,7.09,20.5,18.5,22.5,2 games back from a 3-game absence; +5% with teammates out
+DEN @ HOU,HOU,Alperen Sengun,points,20.02,7.15,20.5,18.5,21.5,
+DEN @ HOU,HOU,Alperen Sengun,rebounds,8.58,3.02,8.5,7.5,9.5,
+DEN @ HOU,HOU,Alperen Sengun,assists,7.20,2.82,7.5,6.5,7.5,
+DEN @ HOU,HOU,Alperen Sengun,threes,0.80,0.91,0.5,,1.5,
+DEN @ HOU,HOU,Alperen Sengun,pra,35.78,9.75,35.5,33.5,37.5,
+DEN @ HOU,HOU,Jabari Smith Jr.,points,16.18,6.71,16.5,14.5,17.5,
+DEN @ HOU,HOU,Jabari Smith Jr.,rebounds,6.41,3.15,6.5,5.5,7.5,
+DEN @ HOU,HOU,Jabari Smith Jr.,assists,2.09,1.60,1.5,1.5,2.5,
+DEN @ HOU,HOU,Jabari Smith Jr.,threes,2.63,1.65,2.5,1.5,3.5,
+DEN @ HOU,HOU,Jabari Smith Jr.,pra,24.69,8.65,24.5,22.5,26.5,
+DEN @ HOU,HOU,Kevin Durant,points,20.34,6.70,20.5,18.5,21.5,
+DEN @ HOU,HOU,Kevin Durant,rebounds,5.41,2.39,5.5,4.5,6.5,
+DEN @ HOU,HOU,Kevin Durant,assists,3.42,2.02,3.5,2.5,3.5,
+DEN @ HOU,HOU,Kevin Durant,threes,1.52,1.27,1.5,0.5,2.5,
+DEN @ HOU,HOU,Kevin Durant,pra,29.21,8.62,29.5,27.5,31.5,
+DEN @ HOU,HOU,Amen Thompson,points,14.96,5.58,14.5,13.5,16.5,
+DEN @ HOU,HOU,Amen Thompson,rebounds,6.18,3.08,5.5,4.5,6.5,
+DEN @ HOU,HOU,Amen Thompson,assists,3.17,2.35,2.5,1.5,3.5,
+DEN @ HOU,HOU,Amen Thompson,pra,24.31,8.47,24.5,22.5,26.5,
+DEN @ HOU,HOU,Fred VanVleet,points,12.98,5.88,12.5,11.5,14.5,
+DEN @ HOU,HOU,Fred VanVleet,rebounds,3.25,1.86,3.5,2.5,3.5,
+DEN @ HOU,HOU,Fred VanVleet,assists,5.57,2.68,5.5,4.5,6.5,
+DEN @ HOU,HOU,Fred VanVleet,threes,2.72,1.68,2.5,1.5,3.5,
+DEN @ HOU,HOU,Fred VanVleet,pra,21.81,6.86,21.5,20.5,23.5,
+DEN @ HOU,HOU,Tari Eason,points,8.75,5.19,7.5,6.5,9.5,
+DEN @ HOU,HOU,Tari Eason,rebounds,5.96,3.12,5.5,4.5,6.5,
 DEN @ HOU,HOU,Tari Eason,assists,1.35,1.22,1.5,0.5,1.5,
-DEN @ HOU,HOU,Tari Eason,threes,0.89,1.06,0.5,,1.5,
-DEN @ HOU,HOU,Tari Eason,pra,16.02,6.81,16.5,14.5,17.5,
-DEN @ HOU,HOU,Marcus Smart,points,7.50,5.53,6.5,5.5,7.5,
-DEN @ HOU,HOU,Marcus Smart,rebounds,2.27,1.55,2.5,1.5,2.5,
-DEN @ HOU,HOU,Marcus Smart,assists,2.21,1.99,1.5,0.5,2.5,
-DEN @ HOU,HOU,Marcus Smart,threes,1.49,1.78,1.5,0.5,1.5,
-DEN @ HOU,HOU,Marcus Smart,pra,11.98,6.88,11.5,10.5,13.5,
-DEN @ HOU,HOU,Reed Sheppard,points,9.39,5.22,8.5,7.5,9.5,
-DEN @ HOU,HOU,Reed Sheppard,rebounds,1.96,1.87,1.5,0.5,2.5,
-DEN @ HOU,HOU,Reed Sheppard,assists,2.64,2.23,2.5,1.5,3.5,
-DEN @ HOU,HOU,Reed Sheppard,threes,2.16,1.50,1.5,1.5,2.5,
-DEN @ HOU,HOU,Reed Sheppard,pra,14.00,7.66,14.5,12.5,15.5,
-DEN @ HOU,DEN,Jamal Murray,points,21.06,10.56,21.5,18.5,23.5,Day-To-Day
-DEN @ HOU,DEN,Jamal Murray,rebounds,4.77,2.47,4.5,3.5,5.5,Day-To-Day
-DEN @ HOU,DEN,Jamal Murray,assists,5.75,2.52,5.5,4.5,6.5,Day-To-Day
-DEN @ HOU,DEN,Jamal Murray,threes,3.27,2.25,2.5,2.5,3.5,Day-To-Day
-DEN @ HOU,DEN,Jamal Murray,pra,31.77,11.25,31.5,29.5,34.5,Day-To-Day
-DEN @ HOU,DEN,Nikola Jokic,points,20.83,7.40,20.5,19.5,22.5,Day-To-Day
-DEN @ HOU,DEN,Nikola Jokic,rebounds,10.52,3.66,10.5,9.5,11.5,Day-To-Day
-DEN @ HOU,DEN,Nikola Jokic,assists,8.72,3.10,8.5,7.5,9.5,Day-To-Day
+DEN @ HOU,HOU,Tari Eason,threes,0.88,1.06,0.5,,1.5,
+DEN @ HOU,HOU,Tari Eason,pra,16.02,6.84,16.5,14.5,17.5,
+DEN @ HOU,HOU,Marcus Smart,points,7.46,5.50,6.5,5.5,7.5,
+DEN @ HOU,HOU,Marcus Smart,rebounds,2.26,1.55,2.5,1.5,2.5,
+DEN @ HOU,HOU,Marcus Smart,assists,2.21,1.98,1.5,0.5,2.5,
+DEN @ HOU,HOU,Marcus Smart,threes,1.48,1.78,0.5,0.5,1.5,
+DEN @ HOU,HOU,Marcus Smart,pra,11.94,6.85,11.5,10.5,13.5,
+DEN @ HOU,HOU,Reed Sheppard,points,9.35,5.20,8.5,7.5,9.5,
+DEN @ HOU,HOU,Reed Sheppard,rebounds,1.96,1.86,1.5,0.5,2.5,
+DEN @ HOU,HOU,Reed Sheppard,assists,2.63,2.22,2.5,1.5,3.5,
+DEN @ HOU,HOU,Reed Sheppard,threes,2.15,1.50,1.5,1.5,2.5,
+DEN @ HOU,HOU,Reed Sheppard,pra,13.95,7.64,13.5,12.5,15.5,
+DEN @ HOU,DEN,Jamal Murray,points,21.16,10.61,21.5,18.5,23.5,Day-To-Day
+DEN @ HOU,DEN,Jamal Murray,rebounds,4.78,2.47,4.5,3.5,5.5,Day-To-Day
+DEN @ HOU,DEN,Jamal Murray,assists,5.77,2.52,5.5,4.5,6.5,Day-To-Day
+DEN @ HOU,DEN,Jamal Murray,threes,3.28,2.26,2.5,2.5,3.5,Day-To-Day
+DEN @ HOU,DEN,Jamal Murray,pra,31.89,11.29,31.5,29.5,34.5,Day-To-Day
+DEN @ HOU,DEN,Nikola Jokic,points,20.93,7.43,20.5,19.5,22.5,Day-To-Day
+DEN @ HOU,DEN,Nikola Jokic,rebounds,10.53,3.66,10.5,9.5,11.5,Day-To-Day
+DEN @ HOU,DEN,Nikola Jokic,assists,8.75,3.10,8.5,7.5,9.5,Day-To-Day
 DEN @ HOU,DEN,Nikola Jokic,threes,0.94,1.03,0.5,0.5,1.5,Day-To-Day
-DEN @ HOU,DEN,Nikola Jokic,pra,39.94,11.49,39.5,37.5,42.5,Day-To-Day
-DEN @ HOU,DEN,Christian Braun,points,11.67,6.31,11.5,10.5,13.5,Day-To-Day
-DEN @ HOU,DEN,Christian Braun,rebounds,3.81,2.21,3.5,2.5,4.5,Day-To-Day
-DEN @ HOU,DEN,Christian Braun,assists,2.02,1.49,1.5,1.5,2.5,Day-To-Day
-DEN @ HOU,DEN,Christian Braun,threes,1.38,1.74,0.5,0.5,1.5,Day-To-Day
-DEN @ HOU,DEN,Christian Braun,pra,17.56,6.98,17.5,15.5,19.5,Day-To-Day
-DEN @ HOU,DEN,Aaron Gordon,points,11.30,5.46,10.5,9.5,11.5,Day-To-Day
+DEN @ HOU,DEN,Nikola Jokic,pra,40.09,11.53,40.5,37.5,42.5,Day-To-Day
+DEN @ HOU,DEN,Christian Braun,points,11.72,6.34,11.5,10.5,13.5,Day-To-Day
+DEN @ HOU,DEN,Christian Braun,rebounds,3.82,2.21,3.5,2.5,4.5,Day-To-Day
+DEN @ HOU,DEN,Christian Braun,assists,2.03,1.49,1.5,1.5,2.5,Day-To-Day
+DEN @ HOU,DEN,Christian Braun,threes,1.38,1.75,0.5,0.5,1.5,Day-To-Day
+DEN @ HOU,DEN,Christian Braun,pra,17.63,7.01,17.5,16.5,19.5,Day-To-Day
+DEN @ HOU,DEN,Aaron Gordon,points,11.36,5.48,10.5,9.5,12.5,Day-To-Day
 DEN @ HOU,DEN,Aaron Gordon,rebounds,4.92,2.60,4.5,3.5,5.5,Day-To-Day
-DEN @ HOU,DEN,Aaron Gordon,assists,2.10,1.82,1.5,0.5,2.5,Day-To-Day
-DEN @ HOU,DEN,Aaron Gordon,threes,1.12,1.10,0.5,0.5,1.5,Day-To-Day
-DEN @ HOU,DEN,Aaron Gordon,pra,18.32,6.92,18.5,16.5,19.5,Day-To-Day
-DEN @ HOU,DEN,Cameron Johnson,points,10.46,4.70,9.5,8.5,11.5,Day-To-Day
+DEN @ HOU,DEN,Aaron Gordon,assists,2.11,1.82,1.5,0.5,2.5,Day-To-Day
+DEN @ HOU,DEN,Aaron Gordon,threes,1.13,1.11,0.5,0.5,1.5,Day-To-Day
+DEN @ HOU,DEN,Aaron Gordon,pra,18.39,6.95,18.5,16.5,19.5,Day-To-Day
+DEN @ HOU,DEN,Cameron Johnson,points,10.51,4.72,9.5,8.5,11.5,Day-To-Day
 DEN @ HOU,DEN,Cameron Johnson,rebounds,3.80,2.33,3.5,2.5,4.5,Day-To-Day
-DEN @ HOU,DEN,Cameron Johnson,assists,1.94,1.46,1.5,1.5,2.5,Day-To-Day
-DEN @ HOU,DEN,Cameron Johnson,threes,1.88,1.40,1.5,0.5,2.5,Day-To-Day
-DEN @ HOU,DEN,Cameron Johnson,pra,16.24,6.32,16.5,14.5,17.5,Day-To-Day
-DEN @ HOU,DEN,DeMar DeRozan,points,10.65,7.10,9.5,7.5,10.5,Day-To-Day
+DEN @ HOU,DEN,Cameron Johnson,assists,1.95,1.47,1.5,1.5,2.5,Day-To-Day
+DEN @ HOU,DEN,Cameron Johnson,threes,1.89,1.40,1.5,0.5,2.5,Day-To-Day
+DEN @ HOU,DEN,Cameron Johnson,pra,16.30,6.34,16.5,14.5,17.5,Day-To-Day
+DEN @ HOU,DEN,DeMar DeRozan,points,10.70,7.13,9.5,7.5,10.5,Day-To-Day
 DEN @ HOU,DEN,DeMar DeRozan,rebounds,1.74,1.45,1.5,0.5,2.5,Day-To-Day
-DEN @ HOU,DEN,DeMar DeRozan,assists,3.06,2.28,2.5,1.5,3.5,Day-To-Day
-DEN @ HOU,DEN,DeMar DeRozan,pra,15.57,8.76,15.5,13.5,17.5,Day-To-Day
-DEN @ HOU,DEN,Trevon Brazile,points,6.04,3.68,5.5,4.5,6.5,
+DEN @ HOU,DEN,DeMar DeRozan,assists,3.07,2.28,2.5,1.5,3.5,Day-To-Day
+DEN @ HOU,DEN,DeMar DeRozan,pra,15.62,8.79,15.5,13.5,17.5,Day-To-Day
+DEN @ HOU,DEN,Trevon Brazile,points,6.07,3.69,5.5,4.5,6.5,
 DEN @ HOU,DEN,Trevon Brazile,rebounds,5.41,3.01,5.5,4.5,5.5,
 DEN @ HOU,DEN,Trevon Brazile,assists,0.64,0.84,0.5,,1.5,
-DEN @ HOU,DEN,Trevon Brazile,threes,0.71,0.89,0.5,,1.5,
-DEN @ HOU,DEN,Trevon Brazile,pra,11.94,5.06,11.5,10.5,13.5,
-SA @ PHX,PHX,Devin Booker,points,24.21,9.84,24.5,22.5,26.5,
-SA @ PHX,PHX,Devin Booker,rebounds,2.84,1.90,2.5,1.5,3.5,
-SA @ PHX,PHX,Devin Booker,assists,4.98,2.44,4.5,3.5,5.5,
-SA @ PHX,PHX,Devin Booker,threes,1.85,1.39,1.5,0.5,2.5,
-SA @ PHX,PHX,Devin Booker,pra,32.21,11.27,32.5,29.5,34.5,
-SA @ PHX,PHX,Miles Bridges,points,15.74,5.40,15.5,14.5,17.5,
-SA @ PHX,PHX,Miles Bridges,rebounds,7.38,3.16,7.5,6.5,8.5,
-SA @ PHX,PHX,Miles Bridges,assists,3.36,2.09,3.5,2.5,3.5,
-SA @ PHX,PHX,Miles Bridges,threes,1.95,1.42,1.5,1.5,2.5,
-SA @ PHX,PHX,Miles Bridges,pra,26.46,8.27,26.5,24.5,28.5,
-SA @ PHX,PHX,Dillon Brooks,points,16.45,6.14,16.5,14.5,17.5,
-SA @ PHX,PHX,Dillon Brooks,rebounds,3.82,2.30,3.5,2.5,4.5,
-SA @ PHX,PHX,Dillon Brooks,assists,2.20,1.69,1.5,1.5,2.5,
-SA @ PHX,PHX,Dillon Brooks,threes,2.14,1.49,1.5,1.5,2.5,
-SA @ PHX,PHX,Dillon Brooks,pra,22.55,7.28,22.5,20.5,24.5,
-SA @ PHX,PHX,Jalen Green,points,14.07,8.30,14.5,12.5,15.5,
-SA @ PHX,PHX,Jalen Green,rebounds,3.12,2.23,2.5,1.5,3.5,
-SA @ PHX,PHX,Jalen Green,assists,3.39,2.22,3.5,2.5,3.5,
-SA @ PHX,PHX,Jalen Green,threes,1.18,1.56,0.5,,1.5,
-SA @ PHX,PHX,Jalen Green,pra,20.64,10.17,20.5,18.5,22.5,
-SA @ PHX,PHX,Collin Gillespie,points,6.68,5.18,5.5,4.5,6.5,
-SA @ PHX,PHX,Collin Gillespie,rebounds,2.55,1.64,2.5,1.5,3.5,
-SA @ PHX,PHX,Collin Gillespie,assists,3.52,2.80,2.5,2.5,3.5,
-SA @ PHX,PHX,Collin Gillespie,threes,1.58,1.43,1.5,0.5,2.5,
-SA @ PHX,PHX,Collin Gillespie,pra,12.74,7.86,12.5,10.5,14.5,
-SA @ PHX,PHX,Oso Ighodaro,points,6.09,4.01,5.5,4.5,6.5,
-SA @ PHX,PHX,Oso Ighodaro,rebounds,5.13,2.59,4.5,3.5,5.5,
-SA @ PHX,PHX,Oso Ighodaro,assists,2.96,2.12,2.5,1.5,3.5,
-SA @ PHX,PHX,Oso Ighodaro,pra,14.09,5.33,14.5,12.5,15.5,
-SA @ PHX,SA,Dylan Harper,points,16.97,5.41,16.5,15.5,18.5,
+DEN @ HOU,DEN,Trevon Brazile,threes,0.72,0.89,0.5,,1.5,
+DEN @ HOU,DEN,Trevon Brazile,pra,11.99,5.08,11.5,10.5,13.5,
+SA @ PHX,PHX,Devin Booker,points,24.10,9.80,24.5,22.5,26.5,
+SA @ PHX,PHX,Devin Booker,rebounds,2.83,1.90,2.5,1.5,3.5,
+SA @ PHX,PHX,Devin Booker,assists,4.96,2.44,4.5,3.5,5.5,
+SA @ PHX,PHX,Devin Booker,threes,1.84,1.38,1.5,0.5,2.5,
+SA @ PHX,PHX,Devin Booker,pra,32.09,11.23,32.5,29.5,34.5,
+SA @ PHX,PHX,Miles Bridges,points,15.67,5.38,15.5,14.5,17.5,
+SA @ PHX,PHX,Miles Bridges,rebounds,7.37,3.15,7.5,6.5,8.5,
+SA @ PHX,PHX,Miles Bridges,assists,3.35,2.09,3.5,2.5,3.5,
+SA @ PHX,PHX,Miles Bridges,threes,1.94,1.42,1.5,1.5,2.5,
+SA @ PHX,PHX,Miles Bridges,pra,26.36,8.24,26.5,24.5,28.5,
+SA @ PHX,PHX,Dillon Brooks,points,16.37,6.11,16.5,14.5,17.5,
+SA @ PHX,PHX,Dillon Brooks,rebounds,3.81,2.29,3.5,2.5,4.5,
+SA @ PHX,PHX,Dillon Brooks,assists,2.19,1.69,1.5,1.5,2.5,
+SA @ PHX,PHX,Dillon Brooks,threes,2.13,1.49,1.5,1.5,2.5,
+SA @ PHX,PHX,Dillon Brooks,pra,22.47,7.26,22.5,20.5,24.5,
+SA @ PHX,PHX,Jalen Green,points,14.01,8.26,14.5,12.5,15.5,
+SA @ PHX,PHX,Jalen Green,rebounds,3.11,2.22,2.5,1.5,3.5,
+SA @ PHX,PHX,Jalen Green,assists,3.37,2.21,3.5,2.5,3.5,
+SA @ PHX,PHX,Jalen Green,threes,1.17,1.55,0.5,,1.5,
+SA @ PHX,PHX,Jalen Green,pra,20.57,10.13,20.5,18.5,22.5,
+SA @ PHX,PHX,Collin Gillespie,points,6.65,5.15,5.5,4.5,6.5,
+SA @ PHX,PHX,Collin Gillespie,rebounds,2.54,1.64,2.5,1.5,3.5,
+SA @ PHX,PHX,Collin Gillespie,assists,3.51,2.79,2.5,2.5,3.5,
+SA @ PHX,PHX,Collin Gillespie,threes,1.58,1.42,1.5,0.5,2.5,
+SA @ PHX,PHX,Collin Gillespie,pra,12.69,7.83,12.5,10.5,14.5,
+SA @ PHX,PHX,Oso Ighodaro,points,6.06,4.00,5.5,4.5,6.5,
+SA @ PHX,PHX,Oso Ighodaro,rebounds,5.12,2.58,4.5,3.5,5.5,
+SA @ PHX,PHX,Oso Ighodaro,assists,2.95,2.12,2.5,1.5,3.5,
+SA @ PHX,PHX,Oso Ighodaro,pra,14.04,5.31,14.5,12.5,15.5,
+SA @ PHX,SA,Dylan Harper,points,16.90,5.38,16.5,15.5,18.5,
 SA @ PHX,SA,Dylan Harper,rebounds,5.03,2.31,4.5,3.5,5.5,
-SA @ PHX,SA,Dylan Harper,assists,4.29,2.59,3.5,3.5,4.5,
+SA @ PHX,SA,Dylan Harper,assists,4.37,2.56,4.5,3.5,4.5,
 SA @ PHX,SA,Dylan Harper,threes,1.23,1.13,1.5,0.5,1.5,
-SA @ PHX,SA,Dylan Harper,pra,26.29,6.94,26.5,24.5,27.5,
-SA @ PHX,SA,Devin Vassell,points,11.53,5.54,11.5,10.5,12.5,Day-To-Day
-SA @ PHX,SA,Devin Vassell,rebounds,3.68,1.97,3.5,2.5,4.5,Day-To-Day
-SA @ PHX,SA,Devin Vassell,assists,2.77,1.95,2.5,1.5,3.5,Day-To-Day
-SA @ PHX,SA,Devin Vassell,threes,1.72,1.65,1.5,0.5,2.5,Day-To-Day
-SA @ PHX,SA,Devin Vassell,pra,17.98,5.96,17.5,16.5,19.5,Day-To-Day
-SA @ PHX,SA,Victor Wembanyama,points,27.85,11.78,27.5,25.5,30.5,
-SA @ PHX,SA,Victor Wembanyama,rebounds,11.59,4.78,11.5,9.5,12.5,
-SA @ PHX,SA,Victor Wembanyama,assists,3.02,1.82,2.5,2.5,3.5,
-SA @ PHX,SA,Victor Wembanyama,threes,1.94,1.58,1.5,0.5,2.5,
-SA @ PHX,SA,Victor Wembanyama,pra,42.49,15.18,42.5,39.5,45.5,
-SA @ PHX,SA,De'Aaron Fox,points,13.27,5.45,13.5,11.5,14.5,
-SA @ PHX,SA,De'Aaron Fox,rebounds,3.48,2.04,3.5,2.5,4.5,
-SA @ PHX,SA,De'Aaron Fox,assists,5.43,2.45,5.5,4.5,6.5,
-SA @ PHX,SA,De'Aaron Fox,threes,0.96,1.04,0.5,0.5,1.5,
-SA @ PHX,SA,De'Aaron Fox,pra,22.16,8.06,22.5,20.5,23.5,
-SA @ PHX,SA,Stephon Castle,points,14.52,6.07,14.5,13.5,15.5,
-SA @ PHX,SA,Stephon Castle,rebounds,5.66,2.46,5.5,4.5,6.5,
-SA @ PHX,SA,Stephon Castle,assists,5.61,2.75,5.5,4.5,6.5,
-SA @ PHX,SA,Stephon Castle,threes,1.79,1.37,1.5,0.5,2.5,
-SA @ PHX,SA,Stephon Castle,pra,25.77,7.95,25.5,24.5,27.5,
-SA @ PHX,SA,Keldon Johnson,points,9.38,5.33,8.5,7.5,9.5,
-SA @ PHX,SA,Keldon Johnson,rebounds,5.52,2.42,5.5,4.5,6.5,
+SA @ PHX,SA,Dylan Harper,pra,26.30,6.89,26.5,24.5,27.5,
+SA @ PHX,SA,Devin Vassell,points,11.48,5.51,11.5,10.5,12.5,Day-To-Day
+SA @ PHX,SA,Devin Vassell,rebounds,3.67,1.97,3.5,2.5,4.5,Day-To-Day
+SA @ PHX,SA,Devin Vassell,assists,2.76,1.95,2.5,1.5,3.5,Day-To-Day
+SA @ PHX,SA,Devin Vassell,threes,1.71,1.64,1.5,0.5,2.5,Day-To-Day
+SA @ PHX,SA,Devin Vassell,pra,17.92,5.94,17.5,16.5,19.5,Day-To-Day
+SA @ PHX,SA,Victor Wembanyama,points,27.73,11.73,27.5,25.5,30.5,
+SA @ PHX,SA,Victor Wembanyama,rebounds,11.58,4.77,11.5,9.5,12.5,
+SA @ PHX,SA,Victor Wembanyama,assists,3.01,1.82,2.5,2.5,3.5,
+SA @ PHX,SA,Victor Wembanyama,threes,1.93,1.57,1.5,0.5,2.5,
+SA @ PHX,SA,Victor Wembanyama,pra,42.35,15.13,42.5,39.5,45.5,
+SA @ PHX,SA,De'Aaron Fox,points,13.21,5.43,13.5,11.5,14.5,
+SA @ PHX,SA,De'Aaron Fox,rebounds,3.47,2.03,3.5,2.5,4.5,
+SA @ PHX,SA,De'Aaron Fox,assists,5.41,2.44,5.5,4.5,6.5,
+SA @ PHX,SA,De'Aaron Fox,threes,0.96,1.03,0.5,0.5,1.5,
+SA @ PHX,SA,De'Aaron Fox,pra,22.09,8.03,22.5,20.5,23.5,
+SA @ PHX,SA,Stephon Castle,points,14.46,6.04,14.5,13.5,15.5,
+SA @ PHX,SA,Stephon Castle,rebounds,5.65,2.45,5.5,4.5,6.5,
+SA @ PHX,SA,Stephon Castle,assists,5.59,2.74,5.5,4.5,6.5,
+SA @ PHX,SA,Stephon Castle,threes,1.79,1.36,1.5,0.5,2.5,
+SA @ PHX,SA,Stephon Castle,pra,25.69,7.92,25.5,23.5,27.5,
+SA @ PHX,SA,Keldon Johnson,points,9.34,5.31,8.5,7.5,9.5,
+SA @ PHX,SA,Keldon Johnson,rebounds,5.51,2.42,5.5,4.5,6.5,
 SA @ PHX,SA,Keldon Johnson,assists,1.99,1.87,1.5,0.5,2.5,
 SA @ PHX,SA,Keldon Johnson,threes,0.44,0.78,0.5,,0.5,
-SA @ PHX,SA,Keldon Johnson,pra,16.89,5.74,16.5,15.5,18.5,
-SA @ PHX,SA,Julian Champagnie,points,9.17,6.02,8.5,6.5,9.5,
+SA @ PHX,SA,Keldon Johnson,pra,16.83,5.72,16.5,15.5,18.5,
+SA @ PHX,SA,Julian Champagnie,points,9.13,5.99,8.5,6.5,9.5,
 SA @ PHX,SA,Julian Champagnie,rebounds,4.23,2.13,4.5,3.5,4.5,
-SA @ PHX,SA,Julian Champagnie,assists,1.29,1.30,1.5,0.5,1.5,
-SA @ PHX,SA,Julian Champagnie,threes,2.39,1.91,2.5,1.5,2.5,
-SA @ PHX,SA,Julian Champagnie,pra,14.70,6.59,14.5,13.5,16.5,
+SA @ PHX,SA,Julian Champagnie,assists,1.28,1.29,1.5,0.5,1.5,
+SA @ PHX,SA,Julian Champagnie,threes,2.38,1.90,2.5,1.5,2.5,
+SA @ PHX,SA,Julian Champagnie,pra,14.65,6.57,14.5,13.5,16.5,
 NO @ GS,GS,Brandin Podziemski,points,16.76,6.01,16.5,15.5,18.5,
 NO @ GS,GS,Brandin Podziemski,rebounds,5.56,2.58,5.5,4.5,6.5,
 NO @ GS,GS,Brandin Podziemski,assists,3.97,2.50,3.5,2.5,4.5,
@@ -535,7 +530,7 @@ NO @ GS,NO,Trey Murphy III,pra,23.48,8.55,23.5,21.5,25.5,
 NO @ GS,NO,Saddiq Bey,points,15.17,5.63,15.5,13.5,16.5,
 NO @ GS,NO,Saddiq Bey,rebounds,3.98,2.05,3.5,2.5,4.5,
 NO @ GS,NO,Saddiq Bey,assists,2.16,1.54,1.5,1.5,2.5,
-NO @ GS,NO,Saddiq Bey,threes,1.76,1.35,1.5,0.5,2.5,
+NO @ GS,NO,Saddiq Bey,threes,1.77,1.35,1.5,0.5,2.5,
 NO @ GS,NO,Saddiq Bey,pra,21.39,6.82,21.5,19.5,22.5,
 NO @ GS,NO,Herbert Jones,points,5.48,4.43,4.5,3.5,5.5,
 NO @ GS,NO,Herbert Jones,rebounds,2.67,1.71,2.5,1.5,3.5,
@@ -561,12 +556,12 @@ MIL @ NY,NY,OG Anunoby,rebounds,5.22,2.36,5.5,4.5,5.5,
 MIL @ NY,NY,OG Anunoby,assists,2.26,1.91,1.5,1.5,2.5,
 MIL @ NY,NY,OG Anunoby,threes,2.18,1.50,2.5,1.5,2.5,
 MIL @ NY,NY,OG Anunoby,pra,23.88,8.28,23.5,22.5,25.5,
-MIL @ NY,NY,Karl-Anthony Towns,points,20.94,6.47,20.5,19.5,22.5,
+MIL @ NY,NY,Karl-Anthony Towns,points,20.94,6.46,20.5,19.5,22.5,
 MIL @ NY,NY,Karl-Anthony Towns,rebounds,13.03,3.65,13.5,11.5,14.5,
 MIL @ NY,NY,Karl-Anthony Towns,assists,3.31,2.03,3.5,2.5,3.5,
 MIL @ NY,NY,Karl-Anthony Towns,threes,1.77,1.36,1.5,0.5,2.5,
 MIL @ NY,NY,Karl-Anthony Towns,pra,37.35,9.26,37.5,35.5,39.5,
-MIL @ NY,NY,Josh Hart,points,9.51,5.83,8.5,7.5,9.5,Day-To-Day
+MIL @ NY,NY,Josh Hart,points,9.50,5.83,8.5,7.5,9.5,Day-To-Day
 MIL @ NY,NY,Josh Hart,rebounds,6.86,2.76,6.5,5.5,7.5,Day-To-Day
 MIL @ NY,NY,Josh Hart,assists,4.01,2.10,3.5,2.5,4.5,Day-To-Day
 MIL @ NY,NY,Josh Hart,threes,1.74,1.36,1.5,0.5,2.5,Day-To-Day
@@ -581,7 +576,7 @@ MIL @ NY,NY,Mikal Bridges,rebounds,2.95,1.96,2.5,1.5,3.5,
 MIL @ NY,NY,Mikal Bridges,assists,2.35,1.92,2.5,1.5,2.5,
 MIL @ NY,NY,Mikal Bridges,threes,1.10,1.23,0.5,0.5,1.5,
 MIL @ NY,NY,Mikal Bridges,pra,13.16,6.33,13.5,11.5,14.5,
-MIL @ NY,NY,Miles McBride,points,6.81,5.68,5.5,4.5,6.5,
+MIL @ NY,NY,Miles McBride,points,6.80,5.68,5.5,4.5,6.5,
 MIL @ NY,NY,Miles McBride,rebounds,1.52,1.44,1.5,0.5,1.5,
 MIL @ NY,NY,Miles McBride,assists,1.15,1.21,0.5,0.5,1.5,
 MIL @ NY,NY,Miles McBride,threes,1.70,1.55,1.5,0.5,2.5,
@@ -645,7 +640,7 @@ BOS @ PHI,PHI,VJ Edgecombe,points,13.09,5.30,13.5,11.5,14.5,
 BOS @ PHI,PHI,VJ Edgecombe,rebounds,5.96,2.79,5.5,4.5,6.5,
 BOS @ PHI,PHI,VJ Edgecombe,assists,3.10,2.10,2.5,1.5,3.5,
 BOS @ PHI,PHI,VJ Edgecombe,threes,1.77,1.39,1.5,0.5,2.5,
-BOS @ PHI,PHI,VJ Edgecombe,pra,22.14,6.90,22.5,20.5,23.5,
+BOS @ PHI,PHI,VJ Edgecombe,pra,22.13,6.90,22.5,20.5,23.5,
 BOS @ PHI,PHI,LeBron James,points,15.43,5.48,15.5,14.5,16.5,
 BOS @ PHI,PHI,LeBron James,rebounds,6.65,2.68,6.5,5.5,7.5,
 BOS @ PHI,PHI,LeBron James,assists,6.50,2.84,6.5,5.5,7.5,
@@ -685,7 +680,7 @@ BOS @ PHI,BOS,Derrick White,points,11.62,5.59,11.5,10.5,13.5,
 BOS @ PHI,BOS,Derrick White,rebounds,3.22,1.85,3.5,2.5,3.5,
 BOS @ PHI,BOS,Derrick White,assists,4.62,2.25,4.5,3.5,5.5,
 BOS @ PHI,BOS,Derrick White,threes,1.63,1.30,1.5,0.5,2.5,
-BOS @ PHI,BOS,Derrick White,pra,19.48,7.17,19.5,17.5,21.5,
+BOS @ PHI,BOS,Derrick White,pra,19.48,7.16,19.5,17.5,21.5,
 BOS @ PHI,BOS,Paul George,points,17.39,7.61,17.5,15.5,19.5,
 BOS @ PHI,BOS,Paul George,rebounds,4.75,2.24,4.5,3.5,5.5,
 BOS @ PHI,BOS,Paul George,assists,3.58,2.49,3.5,2.5,4.5,
@@ -710,189 +705,198 @@ BOS @ PHI,BOS,Sam Hauser,rebounds,2.82,1.73,2.5,1.5,3.5,
 BOS @ PHI,BOS,Sam Hauser,assists,1.10,1.13,0.5,0.5,1.5,
 BOS @ PHI,BOS,Sam Hauser,threes,1.91,1.41,1.5,1.5,2.5,
 BOS @ PHI,BOS,Sam Hauser,pra,11.06,5.15,10.5,9.5,11.5,
-LAC @ PHX,PHX,Devin Booker,points,25.32,10.29,25.5,23.5,27.5,
+LAC @ PHX,PHX,Devin Booker,points,25.18,10.24,25.5,23.5,27.5,
 LAC @ PHX,PHX,Devin Booker,rebounds,2.87,1.92,2.5,1.5,3.5,
-LAC @ PHX,PHX,Devin Booker,assists,5.16,2.52,4.5,4.5,5.5,
-LAC @ PHX,PHX,Devin Booker,threes,1.94,1.42,1.5,1.5,2.5,
-LAC @ PHX,PHX,Devin Booker,pra,33.38,11.69,33.5,31.5,35.5,
-LAC @ PHX,PHX,Miles Bridges,points,16.46,5.65,16.5,15.5,17.5,
-LAC @ PHX,PHX,Miles Bridges,rebounds,7.48,3.19,7.5,6.5,8.5,
-LAC @ PHX,PHX,Miles Bridges,assists,3.48,2.16,3.5,2.5,4.5,
-LAC @ PHX,PHX,Miles Bridges,threes,2.04,1.45,1.5,1.5,2.5,
-LAC @ PHX,PHX,Miles Bridges,pra,27.42,8.57,27.5,25.5,29.5,
-LAC @ PHX,PHX,Dillon Brooks,points,17.20,6.42,17.5,15.5,18.5,
-LAC @ PHX,PHX,Dillon Brooks,rebounds,3.87,2.32,3.5,2.5,4.5,
-LAC @ PHX,PHX,Dillon Brooks,assists,2.28,1.75,2.5,1.5,2.5,
-LAC @ PHX,PHX,Dillon Brooks,threes,2.24,1.53,2.5,1.5,2.5,
-LAC @ PHX,PHX,Dillon Brooks,pra,23.38,7.55,23.5,21.5,25.5,
-LAC @ PHX,PHX,Jalen Green,points,14.72,8.68,14.5,12.5,16.5,
-LAC @ PHX,PHX,Jalen Green,rebounds,3.16,2.25,2.5,1.5,3.5,
-LAC @ PHX,PHX,Jalen Green,assists,3.51,2.29,3.5,2.5,4.5,
-LAC @ PHX,PHX,Jalen Green,threes,1.23,1.62,0.5,,1.5,
-LAC @ PHX,PHX,Jalen Green,pra,21.40,10.54,21.5,19.5,23.5,
-LAC @ PHX,PHX,Collin Gillespie,points,6.99,5.40,5.5,4.5,7.5,
+LAC @ PHX,PHX,Devin Booker,assists,5.14,2.51,4.5,4.5,5.5,
+LAC @ PHX,PHX,Devin Booker,threes,1.93,1.42,1.5,1.5,2.5,
+LAC @ PHX,PHX,Devin Booker,pra,33.23,11.63,33.5,30.5,35.5,
+LAC @ PHX,PHX,Miles Bridges,points,16.37,5.62,16.5,14.5,17.5,
+LAC @ PHX,PHX,Miles Bridges,rebounds,7.47,3.19,7.5,6.5,8.5,
+LAC @ PHX,PHX,Miles Bridges,assists,3.47,2.15,3.5,2.5,4.5,
+LAC @ PHX,PHX,Miles Bridges,threes,2.02,1.45,1.5,1.5,2.5,
+LAC @ PHX,PHX,Miles Bridges,pra,27.30,8.53,27.5,25.5,29.5,
+LAC @ PHX,PHX,Dillon Brooks,points,17.11,6.39,17.5,15.5,18.5,
+LAC @ PHX,PHX,Dillon Brooks,rebounds,3.86,2.32,3.5,2.5,4.5,
+LAC @ PHX,PHX,Dillon Brooks,assists,2.27,1.74,2.5,1.5,2.5,
+LAC @ PHX,PHX,Dillon Brooks,threes,2.23,1.52,2.5,1.5,2.5,
+LAC @ PHX,PHX,Dillon Brooks,pra,23.27,7.52,23.5,21.5,24.5,
+LAC @ PHX,PHX,Jalen Green,points,14.64,8.63,14.5,12.5,16.5,
+LAC @ PHX,PHX,Jalen Green,rebounds,3.15,2.25,2.5,1.5,3.5,
+LAC @ PHX,PHX,Jalen Green,assists,3.50,2.28,3.5,2.5,4.5,
+LAC @ PHX,PHX,Jalen Green,threes,1.22,1.62,0.5,,1.5,
+LAC @ PHX,PHX,Jalen Green,pra,21.30,10.49,21.5,19.5,23.5,
+LAC @ PHX,PHX,Collin Gillespie,points,6.95,5.38,5.5,4.5,7.5,
 LAC @ PHX,PHX,Collin Gillespie,rebounds,2.58,1.65,2.5,1.5,3.5,
-LAC @ PHX,PHX,Collin Gillespie,assists,3.65,2.90,3.5,2.5,3.5,
-LAC @ PHX,PHX,Collin Gillespie,threes,1.66,1.48,1.5,0.5,2.5,
-LAC @ PHX,PHX,Collin Gillespie,pra,13.20,8.14,13.5,11.5,14.5,
-LAC @ PHX,PHX,Oso Ighodaro,points,6.37,4.19,5.5,4.5,6.5,
-LAC @ PHX,PHX,Oso Ighodaro,rebounds,5.20,2.62,4.5,4.5,5.5,
-LAC @ PHX,PHX,Oso Ighodaro,assists,3.07,2.19,2.5,1.5,3.5,
-LAC @ PHX,PHX,Oso Ighodaro,pra,14.61,5.52,14.5,13.5,15.5,
-LAC @ PHX,LAC,Darius Garland,points,22.07,6.85,22.5,20.5,23.5,+7% with teammates out
-LAC @ PHX,LAC,Darius Garland,rebounds,1.84,1.69,1.5,0.5,2.5,+7% with teammates out
-LAC @ PHX,LAC,Darius Garland,assists,7.56,2.89,7.5,6.5,8.5,+7% with teammates out
-LAC @ PHX,LAC,Darius Garland,threes,2.83,1.71,2.5,1.5,3.5,+7% with teammates out
-LAC @ PHX,LAC,Darius Garland,pra,31.46,7.78,31.5,29.5,33.5,+7% with teammates out
-LAC @ PHX,LAC,Rui Hachimura,points,14.79,6.65,14.5,13.5,16.5,+7% with teammates out
-LAC @ PHX,LAC,Rui Hachimura,rebounds,5.45,2.80,5.5,4.5,6.5,+7% with teammates out
-LAC @ PHX,LAC,Rui Hachimura,assists,1.59,2.17,0.5,0.5,1.5,+7% with teammates out
-LAC @ PHX,LAC,Rui Hachimura,threes,2.11,1.48,1.5,1.5,2.5,+7% with teammates out
-LAC @ PHX,LAC,Rui Hachimura,pra,21.86,9.69,21.5,19.5,23.5,+7% with teammates out
-LAC @ PHX,LAC,Derrick Jones Jr.,points,11.14,4.42,10.5,9.5,11.5,+7% with teammates out
-LAC @ PHX,LAC,Derrick Jones Jr.,rebounds,5.15,2.42,4.5,4.5,5.5,+7% with teammates out
-LAC @ PHX,LAC,Derrick Jones Jr.,assists,1.65,1.50,1.5,0.5,2.5,+7% with teammates out
-LAC @ PHX,LAC,Derrick Jones Jr.,threes,1.64,1.31,1.5,0.5,2.5,+7% with teammates out
-LAC @ PHX,LAC,Derrick Jones Jr.,pra,17.95,5.43,17.5,16.5,19.5,+7% with teammates out
-LAC @ PHX,LAC,Kris Dunn,points,8.74,4.50,8.5,6.5,9.5,+7% with teammates out
-LAC @ PHX,LAC,Kris Dunn,rebounds,4.24,2.12,4.5,3.5,4.5,+7% with teammates out
-LAC @ PHX,LAC,Kris Dunn,assists,4.48,2.31,4.5,3.5,5.5,+7% with teammates out
-LAC @ PHX,LAC,Kris Dunn,threes,1.01,1.03,0.5,0.5,1.5,+7% with teammates out
-LAC @ PHX,LAC,Kris Dunn,pra,17.44,5.61,17.5,16.5,18.5,+7% with teammates out
-LAC @ PHX,LAC,Kobe Sanders,points,10.87,7.19,9.5,7.5,11.5,+7% with teammates out
-LAC @ PHX,LAC,Kobe Sanders,rebounds,2.93,1.76,2.5,1.5,3.5,+7% with teammates out
-LAC @ PHX,LAC,Kobe Sanders,assists,2.32,1.74,2.5,1.5,2.5,+7% with teammates out
-LAC @ PHX,LAC,Kobe Sanders,threes,1.99,1.70,1.5,0.5,2.5,+7% with teammates out
-LAC @ PHX,LAC,Kobe Sanders,pra,16.12,8.24,16.5,14.5,17.5,+7% with teammates out
-LAC @ PHX,LAC,Brook Lopez,points,13.72,6.48,13.5,12.5,15.5,+7% with teammates out
-LAC @ PHX,LAC,Brook Lopez,rebounds,5.49,2.91,5.5,4.5,6.5,+7% with teammates out
-LAC @ PHX,LAC,Brook Lopez,assists,1.21,1.18,1.5,0.5,1.5,+7% with teammates out
-LAC @ PHX,LAC,Brook Lopez,threes,1.45,1.23,1.5,0.5,1.5,+7% with teammates out
-LAC @ PHX,LAC,Brook Lopez,pra,20.44,8.16,20.5,18.5,22.5,+7% with teammates out
-MIA @ UTAH,UTAH,Darryn Peterson,points,16.77,6.63,16.5,15.5,18.5,+10% with teammates out
-MIA @ UTAH,UTAH,Darryn Peterson,rebounds,4.32,2.14,4.5,3.5,4.5,+10% with teammates out
-MIA @ UTAH,UTAH,Darryn Peterson,assists,4.52,2.23,4.5,3.5,5.5,+10% with teammates out
-MIA @ UTAH,UTAH,Darryn Peterson,threes,2.25,1.65,2.5,1.5,2.5,+10% with teammates out
-MIA @ UTAH,UTAH,Darryn Peterson,pra,25.60,8.06,25.5,23.5,27.5,+10% with teammates out
-MIA @ UTAH,UTAH,Ace Bailey,points,14.28,6.58,14.5,12.5,15.5,+10% with teammates out
-MIA @ UTAH,UTAH,Ace Bailey,rebounds,6.45,2.93,6.5,5.5,7.5,+10% with teammates out
-MIA @ UTAH,UTAH,Ace Bailey,assists,2.05,1.51,1.5,1.5,2.5,+10% with teammates out
-MIA @ UTAH,UTAH,Ace Bailey,threes,1.60,1.41,1.5,0.5,2.5,+10% with teammates out
-MIA @ UTAH,UTAH,Ace Bailey,pra,22.80,8.30,22.5,20.5,24.5,+10% with teammates out
-MIA @ UTAH,UTAH,Keyonte George,points,23.25,10.43,23.5,21.5,25.5,Day-To-Day
-MIA @ UTAH,UTAH,Keyonte George,rebounds,4.38,2.45,4.5,3.5,4.5,Day-To-Day
-MIA @ UTAH,UTAH,Keyonte George,assists,6.63,3.39,6.5,5.5,7.5,Day-To-Day
-MIA @ UTAH,UTAH,Keyonte George,threes,2.00,1.82,1.5,0.5,2.5,Day-To-Day
-MIA @ UTAH,UTAH,Keyonte George,pra,34.25,12.13,34.5,31.5,36.5,Day-To-Day
-MIA @ UTAH,UTAH,Jaxson Hayes,points,10.33,6.36,9.5,7.5,10.5,+10% with teammates out
-MIA @ UTAH,UTAH,Jaxson Hayes,rebounds,6.64,2.65,6.5,5.5,7.5,+10% with teammates out
-MIA @ UTAH,UTAH,Jaxson Hayes,assists,1.80,1.41,1.5,0.5,2.5,+10% with teammates out
-MIA @ UTAH,UTAH,Jaxson Hayes,pra,18.78,6.82,18.5,17.5,20.5,+10% with teammates out
-MIA @ UTAH,UTAH,Josh Okogie,points,4.24,4.58,2.5,1.5,3.5,+10% with teammates out
-MIA @ UTAH,UTAH,Josh Okogie,rebounds,3.59,2.86,3.5,2.5,3.5,+10% with teammates out
-MIA @ UTAH,UTAH,Josh Okogie,assists,1.07,1.25,0.5,0.5,1.5,+10% with teammates out
-MIA @ UTAH,UTAH,Josh Okogie,threes,0.70,0.87,0.5,,1.5,+10% with teammates out
-MIA @ UTAH,UTAH,Josh Okogie,pra,8.90,6.93,7.5,5.5,8.5,+10% with teammates out
-MIA @ UTAH,MIA,Davion Mitchell,points,15.79,5.99,15.5,14.5,17.5,
-MIA @ UTAH,MIA,Davion Mitchell,rebounds,2.16,1.79,1.5,1.5,2.5,
-MIA @ UTAH,MIA,Davion Mitchell,assists,8.32,3.32,8.5,7.5,9.5,
-MIA @ UTAH,MIA,Davion Mitchell,threes,2.21,1.60,1.5,1.5,2.5,
-MIA @ UTAH,MIA,Davion Mitchell,pra,26.19,7.64,26.5,24.5,27.5,
-MIA @ UTAH,MIA,Bam Adebayo,points,19.73,9.78,19.5,17.5,21.5,
-MIA @ UTAH,MIA,Bam Adebayo,rebounds,8.88,3.07,8.5,7.5,9.5,
-MIA @ UTAH,MIA,Bam Adebayo,assists,3.37,1.93,3.5,2.5,3.5,
-MIA @ UTAH,MIA,Bam Adebayo,threes,0.91,1.14,0.5,,1.5,
-MIA @ UTAH,MIA,Bam Adebayo,pra,31.99,11.65,31.5,29.5,34.5,
-MIA @ UTAH,MIA,Giannis Antetokounmpo,points,27.86,7.73,27.5,26.5,29.5,
-MIA @ UTAH,MIA,Giannis Antetokounmpo,rebounds,12.56,4.27,12.5,11.5,13.5,
-MIA @ UTAH,MIA,Giannis Antetokounmpo,assists,5.51,3.15,5.5,4.5,6.5,
-MIA @ UTAH,MIA,Giannis Antetokounmpo,threes,0.44,0.70,0.5,,0.5,
-MIA @ UTAH,MIA,Giannis Antetokounmpo,pra,45.95,12.02,45.5,43.5,48.5,
-MIA @ UTAH,MIA,Klay Thompson,points,15.86,8.81,15.5,13.5,17.5,
+LAC @ PHX,PHX,Collin Gillespie,assists,3.63,2.88,3.5,2.5,3.5,
+LAC @ PHX,PHX,Collin Gillespie,threes,1.65,1.48,1.5,0.5,2.5,
+LAC @ PHX,PHX,Collin Gillespie,pra,13.14,8.11,13.5,11.5,14.5,
+LAC @ PHX,PHX,Oso Ighodaro,points,6.33,4.16,5.5,4.5,6.5,
+LAC @ PHX,PHX,Oso Ighodaro,rebounds,5.19,2.61,4.5,4.5,5.5,
+LAC @ PHX,PHX,Oso Ighodaro,assists,3.05,2.19,2.5,1.5,3.5,
+LAC @ PHX,PHX,Oso Ighodaro,pra,14.54,5.50,14.5,13.5,15.5,
+LAC @ PHX,LAC,Darius Garland,points,20.83,6.68,20.5,19.5,22.5,
+LAC @ PHX,LAC,Darius Garland,rebounds,1.73,1.64,1.5,0.5,2.5,
+LAC @ PHX,LAC,Darius Garland,assists,7.13,2.80,6.5,5.5,7.5,
+LAC @ PHX,LAC,Darius Garland,threes,2.67,1.67,2.5,1.5,3.5,
+LAC @ PHX,LAC,Darius Garland,pra,29.66,7.57,29.5,27.5,31.5,
+LAC @ PHX,LAC,Rui Hachimura,points,13.96,6.48,13.5,12.5,15.5,
+LAC @ PHX,LAC,Rui Hachimura,rebounds,5.13,2.71,4.5,3.5,5.5,
+LAC @ PHX,LAC,Rui Hachimura,assists,1.50,2.11,0.5,0.5,1.5,
+LAC @ PHX,LAC,Rui Hachimura,threes,1.99,1.44,1.5,1.5,2.5,
+LAC @ PHX,LAC,Rui Hachimura,pra,20.60,9.43,20.5,18.5,22.5,
+LAC @ PHX,LAC,Derrick Jones Jr.,points,10.51,4.30,10.5,8.5,11.5,
+LAC @ PHX,LAC,Derrick Jones Jr.,rebounds,4.84,2.35,4.5,3.5,5.5,
+LAC @ PHX,LAC,Derrick Jones Jr.,assists,1.55,1.46,1.5,0.5,1.5,
+LAC @ PHX,LAC,Derrick Jones Jr.,threes,1.55,1.27,1.5,0.5,2.5,
+LAC @ PHX,LAC,Derrick Jones Jr.,pra,16.92,5.28,16.5,15.5,18.5,
+LAC @ PHX,LAC,Kris Dunn,points,8.25,4.38,7.5,6.5,8.5,
+LAC @ PHX,LAC,Kris Dunn,rebounds,3.99,2.06,3.5,2.5,4.5,
+LAC @ PHX,LAC,Kris Dunn,assists,4.22,2.25,3.5,3.5,4.5,
+LAC @ PHX,LAC,Kris Dunn,threes,0.96,1.00,0.5,0.5,1.5,
+LAC @ PHX,LAC,Kris Dunn,pra,16.44,5.46,16.5,15.5,17.5,
+LAC @ PHX,LAC,Kobe Sanders,points,10.26,7.00,8.5,7.5,10.5,
+LAC @ PHX,LAC,Kobe Sanders,rebounds,2.75,1.71,2.5,1.5,3.5,
+LAC @ PHX,LAC,Kobe Sanders,assists,2.19,1.69,1.5,1.5,2.5,
+LAC @ PHX,LAC,Kobe Sanders,threes,1.87,1.65,1.5,0.5,2.5,
+LAC @ PHX,LAC,Kobe Sanders,pra,15.20,8.02,15.5,13.5,16.5,
+LAC @ PHX,LAC,Brook Lopez,points,12.95,6.31,12.5,11.5,14.5,
+LAC @ PHX,LAC,Brook Lopez,rebounds,5.16,2.82,4.5,3.5,5.5,
+LAC @ PHX,LAC,Brook Lopez,assists,1.14,1.15,0.5,0.5,1.5,
+LAC @ PHX,LAC,Brook Lopez,threes,1.37,1.19,1.5,0.5,1.5,
+LAC @ PHX,LAC,Brook Lopez,pra,19.27,7.94,19.5,17.5,21.5,
+MIA @ UTAH,UTAH,Darryn Peterson,points,15.98,6.51,15.5,14.5,17.5,+4% with teammates out
+MIA @ UTAH,UTAH,Darryn Peterson,rebounds,4.08,2.08,3.5,3.5,4.5,+4% with teammates out
+MIA @ UTAH,UTAH,Darryn Peterson,assists,4.30,2.18,4.5,3.5,4.5,+4% with teammates out
+MIA @ UTAH,UTAH,Darryn Peterson,threes,2.15,1.62,1.5,1.5,2.5,+4% with teammates out
+MIA @ UTAH,UTAH,Darryn Peterson,pra,24.33,7.89,24.5,22.5,26.5,+4% with teammates out
+MIA @ UTAH,UTAH,Ace Bailey,points,13.61,6.46,13.5,12.5,15.5,+4% with teammates out
+MIA @ UTAH,UTAH,Ace Bailey,rebounds,6.00,2.86,5.5,4.5,6.5,+4% with teammates out
+MIA @ UTAH,UTAH,Ace Bailey,assists,1.95,1.48,1.5,1.5,2.5,+4% with teammates out
+MIA @ UTAH,UTAH,Ace Bailey,threes,1.52,1.38,1.5,0.5,1.5,+4% with teammates out
+MIA @ UTAH,UTAH,Ace Bailey,pra,21.57,8.16,21.5,19.5,23.5,+4% with teammates out
+MIA @ UTAH,UTAH,Keyonte George,points,22.15,10.24,22.5,20.5,24.5,Day-To-Day
+MIA @ UTAH,UTAH,Keyonte George,rebounds,4.14,2.39,3.5,2.5,4.5,Day-To-Day
+MIA @ UTAH,UTAH,Keyonte George,assists,6.31,3.32,5.5,4.5,6.5,Day-To-Day
+MIA @ UTAH,UTAH,Keyonte George,threes,1.90,1.78,1.5,0.5,2.5,Day-To-Day
+MIA @ UTAH,UTAH,Keyonte George,pra,32.55,11.88,32.5,30.5,34.5,Day-To-Day
+MIA @ UTAH,UTAH,Lauri Markkanen,points,20.76,8.42,20.5,18.5,22.5,Day-To-Day
+MIA @ UTAH,UTAH,Lauri Markkanen,rebounds,6.90,3.07,6.5,5.5,7.5,Day-To-Day
+MIA @ UTAH,UTAH,Lauri Markkanen,assists,2.07,1.51,1.5,1.5,2.5,Day-To-Day
+MIA @ UTAH,UTAH,Lauri Markkanen,threes,3.50,2.34,3.5,2.5,4.5,Day-To-Day
+MIA @ UTAH,UTAH,Lauri Markkanen,pra,29.75,11.06,29.5,27.5,31.5,Day-To-Day
+MIA @ UTAH,UTAH,Jaxson Hayes,points,9.84,6.24,8.5,7.5,10.5,+4% with teammates out
+MIA @ UTAH,UTAH,Jaxson Hayes,rebounds,6.28,2.58,6.5,5.5,6.5,+4% with teammates out
+MIA @ UTAH,UTAH,Jaxson Hayes,assists,1.71,1.38,1.5,0.5,2.5,+4% with teammates out
+MIA @ UTAH,UTAH,Jaxson Hayes,pra,17.85,6.68,17.5,16.5,19.5,+4% with teammates out
+MIA @ UTAH,UTAH,Josh Okogie,points,4.03,4.49,2.5,1.5,3.5,+4% with teammates out
+MIA @ UTAH,UTAH,Josh Okogie,rebounds,3.39,2.79,2.5,1.5,3.5,+4% with teammates out
+MIA @ UTAH,UTAH,Josh Okogie,assists,1.02,1.22,0.5,0.5,1.5,+4% with teammates out
+MIA @ UTAH,UTAH,Josh Okogie,threes,0.67,0.86,0.5,,1.5,+4% with teammates out
+MIA @ UTAH,UTAH,Josh Okogie,pra,8.46,6.79,6.5,5.5,8.5,+4% with teammates out
+MIA @ UTAH,MIA,Davion Mitchell,points,15.62,5.93,15.5,14.5,17.5,
+MIA @ UTAH,MIA,Davion Mitchell,rebounds,2.15,1.78,1.5,1.5,2.5,
+MIA @ UTAH,MIA,Davion Mitchell,assists,8.25,3.30,7.5,6.5,8.5,
+MIA @ UTAH,MIA,Davion Mitchell,threes,2.18,1.58,1.5,1.5,2.5,
+MIA @ UTAH,MIA,Davion Mitchell,pra,25.97,7.58,25.5,24.5,27.5,
+MIA @ UTAH,MIA,Bam Adebayo,points,19.52,9.68,19.5,17.5,21.5,
+MIA @ UTAH,MIA,Bam Adebayo,rebounds,8.85,3.06,8.5,7.5,9.5,
+MIA @ UTAH,MIA,Bam Adebayo,assists,3.34,1.92,3.5,2.5,3.5,
+MIA @ UTAH,MIA,Bam Adebayo,threes,0.90,1.13,0.5,,1.5,
+MIA @ UTAH,MIA,Bam Adebayo,pra,31.73,11.55,31.5,29.5,34.5,
+MIA @ UTAH,MIA,Giannis Antetokounmpo,points,27.57,7.65,27.5,25.5,29.5,
+MIA @ UTAH,MIA,Giannis Antetokounmpo,rebounds,12.52,4.25,12.5,11.5,13.5,
+MIA @ UTAH,MIA,Giannis Antetokounmpo,assists,5.47,3.13,5.5,4.5,6.5,
+MIA @ UTAH,MIA,Giannis Antetokounmpo,threes,0.44,0.69,0.5,,0.5,
+MIA @ UTAH,MIA,Giannis Antetokounmpo,pra,45.57,11.92,45.5,43.5,47.5,
+MIA @ UTAH,MIA,Klay Thompson,points,15.70,8.72,15.5,13.5,17.5,
 MIA @ UTAH,MIA,Klay Thompson,rebounds,1.66,1.56,1.5,0.5,2.5,
-MIA @ UTAH,MIA,Klay Thompson,assists,2.11,1.52,1.5,1.5,2.5,
-MIA @ UTAH,MIA,Klay Thompson,threes,4.25,2.53,3.5,3.5,4.5,
-MIA @ UTAH,MIA,Klay Thompson,pra,19.61,10.06,19.5,17.5,21.5,
-MIA @ UTAH,MIA,Pelle Larsson,points,11.46,5.20,10.5,9.5,12.5,
-MIA @ UTAH,MIA,Pelle Larsson,rebounds,3.10,2.08,2.5,1.5,3.5,
-MIA @ UTAH,MIA,Pelle Larsson,assists,3.55,1.98,3.5,2.5,4.5,
-MIA @ UTAH,MIA,Pelle Larsson,threes,1.23,1.14,1.5,0.5,1.5,
-MIA @ UTAH,MIA,Pelle Larsson,pra,18.09,7.11,18.5,16.5,19.5,
-MIA @ UTAH,MIA,Andrew Wiggins,points,9.25,6.15,8.5,6.5,9.5,
-MIA @ UTAH,MIA,Andrew Wiggins,rebounds,3.29,2.31,2.5,2.5,3.5,
-MIA @ UTAH,MIA,Andrew Wiggins,assists,1.80,1.41,1.5,0.5,2.5,
-MIA @ UTAH,MIA,Andrew Wiggins,threes,1.53,1.38,1.5,0.5,1.5,
-MIA @ UTAH,MIA,Andrew Wiggins,pra,14.35,7.00,14.5,12.5,15.5,
-MIA @ UTAH,MIA,Bobby Portis,points,7.67,5.70,6.5,5.5,7.5,
-MIA @ UTAH,MIA,Bobby Portis,rebounds,5.42,3.24,4.5,3.5,5.5,
-MIA @ UTAH,MIA,Bobby Portis,assists,1.61,1.63,1.5,0.5,1.5,
-MIA @ UTAH,MIA,Bobby Portis,threes,1.30,1.33,1.5,0.5,1.5,
-MIA @ UTAH,MIA,Bobby Portis,pra,14.72,8.06,14.5,12.5,16.5,
-MIA @ UTAH,MIA,Ryan Conwell,points,5.09,4.29,4.5,2.5,5.5,
+MIA @ UTAH,MIA,Klay Thompson,assists,2.09,1.52,1.5,1.5,2.5,
+MIA @ UTAH,MIA,Klay Thompson,threes,4.21,2.51,3.5,2.5,4.5,
+MIA @ UTAH,MIA,Klay Thompson,pra,19.45,9.97,19.5,17.5,21.5,
+MIA @ UTAH,MIA,Pelle Larsson,points,11.34,5.15,10.5,9.5,12.5,
+MIA @ UTAH,MIA,Pelle Larsson,rebounds,3.09,2.07,2.5,1.5,3.5,
+MIA @ UTAH,MIA,Pelle Larsson,assists,3.52,1.97,3.5,2.5,4.5,
+MIA @ UTAH,MIA,Pelle Larsson,threes,1.22,1.13,1.5,0.5,1.5,
+MIA @ UTAH,MIA,Pelle Larsson,pra,17.94,7.05,17.5,16.5,19.5,
+MIA @ UTAH,MIA,Andrew Wiggins,points,9.16,6.09,8.5,6.5,9.5,
+MIA @ UTAH,MIA,Andrew Wiggins,rebounds,3.28,2.30,2.5,2.5,3.5,
+MIA @ UTAH,MIA,Andrew Wiggins,assists,1.79,1.40,1.5,0.5,2.5,
+MIA @ UTAH,MIA,Andrew Wiggins,threes,1.52,1.37,1.5,0.5,1.5,
+MIA @ UTAH,MIA,Andrew Wiggins,pra,14.23,6.94,14.5,12.5,15.5,
+MIA @ UTAH,MIA,Bobby Portis,points,7.59,5.65,6.5,5.5,7.5,
+MIA @ UTAH,MIA,Bobby Portis,rebounds,5.40,3.23,4.5,3.5,5.5,
+MIA @ UTAH,MIA,Bobby Portis,assists,1.60,1.61,1.5,0.5,1.5,
+MIA @ UTAH,MIA,Bobby Portis,threes,1.29,1.32,1.5,0.5,1.5,
+MIA @ UTAH,MIA,Bobby Portis,pra,14.60,8.00,14.5,12.5,16.5,
+MIA @ UTAH,MIA,Ryan Conwell,points,5.03,4.24,4.5,2.5,5.5,
 MIA @ UTAH,MIA,Ryan Conwell,rebounds,1.09,1.07,0.5,0.5,1.5,
-MIA @ UTAH,MIA,Ryan Conwell,assists,1.37,1.23,1.5,0.5,1.5,
-MIA @ UTAH,MIA,Ryan Conwell,threes,1.27,1.24,1.5,0.5,1.5,
-MIA @ UTAH,MIA,Ryan Conwell,pra,7.53,4.83,6.5,5.5,7.5,
-ORL @ SAC,SAC,Darius Acuff Jr.,points,28.03,8.83,28.5,26.5,29.5,+10% with teammates out
-ORL @ SAC,SAC,Darius Acuff Jr.,rebounds,4.18,2.10,3.5,3.5,4.5,+10% with teammates out
-ORL @ SAC,SAC,Darius Acuff Jr.,assists,8.38,3.65,8.5,6.5,9.5,+10% with teammates out
-ORL @ SAC,SAC,Darius Acuff Jr.,threes,3.36,2.27,3.5,2.5,3.5,+10% with teammates out
-ORL @ SAC,SAC,Darius Acuff Jr.,pra,40.58,11.86,40.5,38.5,42.5,+10% with teammates out
-ORL @ SAC,SAC,De'Andre Hunter,points,15.25,7.58,15.5,13.5,16.5,+10% with teammates out
-ORL @ SAC,SAC,De'Andre Hunter,rebounds,4.95,2.38,4.5,3.5,5.5,+10% with teammates out
-ORL @ SAC,SAC,De'Andre Hunter,assists,1.60,1.33,1.5,0.5,2.5,+10% with teammates out
-ORL @ SAC,SAC,De'Andre Hunter,threes,2.15,1.66,1.5,1.5,2.5,+10% with teammates out
-ORL @ SAC,SAC,De'Andre Hunter,pra,21.82,8.23,21.5,20.5,23.5,+10% with teammates out
-ORL @ SAC,SAC,Zach LaVine,points,21.01,8.10,21.5,19.5,22.5,+10% with teammates out
-ORL @ SAC,SAC,Zach LaVine,rebounds,3.32,1.88,3.5,2.5,3.5,+10% with teammates out
-ORL @ SAC,SAC,Zach LaVine,assists,2.61,1.74,2.5,1.5,3.5,+10% with teammates out
-ORL @ SAC,SAC,Zach LaVine,threes,2.53,1.64,2.5,1.5,3.5,+10% with teammates out
-ORL @ SAC,SAC,Zach LaVine,pra,26.97,9.46,26.5,24.5,28.5,+10% with teammates out
-ORL @ SAC,SAC,Keegan Murray,points,9.01,6.72,7.5,6.5,9.5,1 game back from a 7-game absence; +10% with teammates out
-ORL @ SAC,SAC,Keegan Murray,rebounds,3.20,3.03,2.5,1.5,3.5,1 game back from a 7-game absence; +10% with teammates out
-ORL @ SAC,SAC,Keegan Murray,assists,1.19,1.42,0.5,0.5,1.5,1 game back from a 7-game absence; +10% with teammates out
-ORL @ SAC,SAC,Keegan Murray,threes,0.59,1.10,0.5,,0.5,1 game back from a 7-game absence; +10% with teammates out
-ORL @ SAC,SAC,Keegan Murray,pra,13.40,8.48,13.5,11.5,15.5,1 game back from a 7-game absence; +10% with teammates out
-ORL @ SAC,SAC,Precious Achiuwa,points,11.46,6.67,10.5,8.5,11.5,+10% with teammates out
-ORL @ SAC,SAC,Precious Achiuwa,rebounds,7.66,4.05,7.5,6.5,8.5,+10% with teammates out
-ORL @ SAC,SAC,Precious Achiuwa,assists,1.46,1.32,1.5,0.5,1.5,+10% with teammates out
-ORL @ SAC,SAC,Precious Achiuwa,threes,0.33,0.59,0.5,,0.5,+10% with teammates out
-ORL @ SAC,SAC,Precious Achiuwa,pra,20.58,9.58,20.5,18.5,22.5,+10% with teammates out
-ORL @ SAC,SAC,Leaky Black,points,7.09,4.55,6.5,5.5,7.5,+10% with teammates out
-ORL @ SAC,SAC,Leaky Black,rebounds,4.19,2.42,3.5,3.5,4.5,+10% with teammates out
-ORL @ SAC,SAC,Leaky Black,assists,1.76,1.66,1.5,0.5,2.5,+10% with teammates out
-ORL @ SAC,SAC,Leaky Black,threes,1.82,1.68,1.5,0.5,2.5,+10% with teammates out
-ORL @ SAC,SAC,Leaky Black,pra,13.04,6.01,13.5,11.5,14.5,+10% with teammates out
-ORL @ SAC,ORL,Franz Wagner,points,23.52,7.46,23.5,21.5,25.5,+6% with teammates out
-ORL @ SAC,ORL,Franz Wagner,rebounds,6.60,3.02,6.5,5.5,7.5,+6% with teammates out
-ORL @ SAC,ORL,Franz Wagner,assists,8.83,4.55,8.5,7.5,9.5,+6% with teammates out
-ORL @ SAC,ORL,Franz Wagner,threes,1.34,1.28,1.5,0.5,1.5,+6% with teammates out
-ORL @ SAC,ORL,Franz Wagner,pra,38.89,11.24,38.5,36.5,41.5,+6% with teammates out
-ORL @ SAC,ORL,Wendell Carter Jr.,points,15.73,8.51,15.5,13.5,17.5,+6% with teammates out
-ORL @ SAC,ORL,Wendell Carter Jr.,rebounds,10.05,3.26,9.5,8.5,10.5,+6% with teammates out
-ORL @ SAC,ORL,Wendell Carter Jr.,assists,1.29,1.28,1.5,0.5,1.5,+6% with teammates out
-ORL @ SAC,ORL,Wendell Carter Jr.,threes,1.25,1.25,1.5,0.5,1.5,+6% with teammates out
-ORL @ SAC,ORL,Wendell Carter Jr.,pra,27.11,9.76,27.5,25.5,29.5,+6% with teammates out
-ORL @ SAC,ORL,Desmond Bane,points,19.92,7.84,19.5,18.5,21.5,Day-To-Day
-ORL @ SAC,ORL,Desmond Bane,rebounds,4.18,2.10,3.5,3.5,4.5,Day-To-Day
-ORL @ SAC,ORL,Desmond Bane,assists,2.87,2.27,2.5,1.5,3.5,Day-To-Day
-ORL @ SAC,ORL,Desmond Bane,threes,3.41,1.89,3.5,2.5,4.5,Day-To-Day
-ORL @ SAC,ORL,Desmond Bane,pra,26.95,9.42,26.5,24.5,28.5,Day-To-Day
-ORL @ SAC,ORL,Tristan da Silva,points,15.84,7.11,15.5,14.5,17.5,+6% with teammates out
-ORL @ SAC,ORL,Tristan da Silva,rebounds,4.29,2.87,3.5,2.5,4.5,+6% with teammates out
-ORL @ SAC,ORL,Tristan da Silva,assists,2.02,1.49,1.5,1.5,2.5,+6% with teammates out
-ORL @ SAC,ORL,Tristan da Silva,threes,3.40,1.98,3.5,2.5,3.5,+6% with teammates out
-ORL @ SAC,ORL,Tristan da Silva,pra,22.14,9.13,22.5,20.5,24.5,+6% with teammates out
-ORL @ SAC,ORL,Anthony Black,points,16.59,6.91,16.5,14.5,18.5,+6% with teammates out
-ORL @ SAC,ORL,Anthony Black,rebounds,5.61,2.69,5.5,4.5,6.5,+6% with teammates out
-ORL @ SAC,ORL,Anthony Black,assists,5.03,2.93,4.5,3.5,5.5,+6% with teammates out
-ORL @ SAC,ORL,Anthony Black,threes,1.93,1.65,1.5,0.5,2.5,+6% with teammates out
-ORL @ SAC,ORL,Anthony Black,pra,27.21,10.14,27.5,25.5,29.5,+6% with teammates out
-ORL @ SAC,ORL,Jase Richardson,points,7.07,4.24,6.5,5.5,7.5,+6% with teammates out
-ORL @ SAC,ORL,Jase Richardson,rebounds,2.48,1.96,2.5,1.5,2.5,+6% with teammates out
-ORL @ SAC,ORL,Jase Richardson,assists,3.07,2.01,2.5,1.5,3.5,+6% with teammates out
-ORL @ SAC,ORL,Jase Richardson,threes,0.85,1.06,0.5,,1.5,+6% with teammates out
-ORL @ SAC,ORL,Jase Richardson,pra,12.60,5.25,12.5,11.5,13.5,+6% with teammates out
+MIA @ UTAH,MIA,Ryan Conwell,assists,1.36,1.22,1.5,0.5,1.5,
+MIA @ UTAH,MIA,Ryan Conwell,threes,1.25,1.22,1.5,0.5,1.5,
+MIA @ UTAH,MIA,Ryan Conwell,pra,7.47,4.79,6.5,5.5,7.5,
+ORL @ SAC,SAC,Darius Acuff Jr.,points,25.78,8.52,25.5,23.5,27.5,
+ORL @ SAC,SAC,Darius Acuff Jr.,rebounds,3.81,2.01,3.5,2.5,4.5,
+ORL @ SAC,SAC,Darius Acuff Jr.,assists,7.69,3.51,7.5,6.5,8.5,
+ORL @ SAC,SAC,Darius Acuff Jr.,threes,3.09,2.19,2.5,1.5,3.5,
+ORL @ SAC,SAC,Darius Acuff Jr.,pra,37.24,11.41,37.5,34.5,39.5,
+ORL @ SAC,SAC,Domantas Sabonis,points,15.35,6.08,15.5,13.5,16.5,Day-To-Day
+ORL @ SAC,SAC,Domantas Sabonis,rebounds,13.54,4.11,13.5,12.5,14.5,Day-To-Day
+ORL @ SAC,SAC,Domantas Sabonis,assists,5.48,2.85,5.5,4.5,6.5,Day-To-Day
+ORL @ SAC,SAC,Domantas Sabonis,pra,34.38,10.50,34.5,32.5,36.5,Day-To-Day
+ORL @ SAC,SAC,De'Andre Hunter,points,14.03,7.31,14.5,12.5,15.5,
+ORL @ SAC,SAC,De'Andre Hunter,rebounds,4.52,2.28,4.5,3.5,5.5,
+ORL @ SAC,SAC,De'Andre Hunter,assists,1.47,1.27,1.5,0.5,1.5,
+ORL @ SAC,SAC,De'Andre Hunter,threes,1.98,1.60,1.5,0.5,2.5,
+ORL @ SAC,SAC,De'Andre Hunter,pra,20.02,7.92,20.5,18.5,21.5,
+ORL @ SAC,SAC,Zach LaVine,points,19.33,7.82,19.5,17.5,21.5,
+ORL @ SAC,SAC,Zach LaVine,rebounds,3.03,1.79,2.5,2.5,3.5,
+ORL @ SAC,SAC,Zach LaVine,assists,2.39,1.68,2.5,1.5,2.5,
+ORL @ SAC,SAC,Zach LaVine,threes,2.33,1.58,2.5,1.5,2.5,
+ORL @ SAC,SAC,Zach LaVine,pra,24.75,9.11,24.5,22.5,26.5,
+ORL @ SAC,SAC,Keegan Murray,points,8.29,6.48,6.5,5.5,8.5,1 game back from a 7-game absence
+ORL @ SAC,SAC,Keegan Murray,rebounds,2.92,2.90,2.5,1.5,3.5,1 game back from a 7-game absence
+ORL @ SAC,SAC,Keegan Murray,assists,1.09,1.36,0.5,,1.5,1 game back from a 7-game absence
+ORL @ SAC,SAC,Keegan Murray,threes,0.54,1.06,0.5,,0.5,1 game back from a 7-game absence
+ORL @ SAC,SAC,Keegan Murray,pra,12.30,8.16,12.5,10.5,14.5,1 game back from a 7-game absence
+ORL @ SAC,SAC,Precious Achiuwa,points,10.54,6.43,9.5,7.5,10.5,
+ORL @ SAC,SAC,Precious Achiuwa,rebounds,6.99,3.87,6.5,5.5,7.5,
+ORL @ SAC,SAC,Precious Achiuwa,assists,1.34,1.27,1.5,0.5,1.5,
+ORL @ SAC,SAC,Precious Achiuwa,threes,0.30,0.57,0.5,,0.5,
+ORL @ SAC,SAC,Precious Achiuwa,pra,18.88,9.22,18.5,16.5,20.5,
+ORL @ SAC,SAC,Leaky Black,points,6.53,4.38,5.5,4.5,6.5,
+ORL @ SAC,SAC,Leaky Black,rebounds,3.82,2.31,3.5,2.5,4.5,
+ORL @ SAC,SAC,Leaky Black,assists,1.62,1.59,1.5,0.5,1.5,
+ORL @ SAC,SAC,Leaky Black,threes,1.67,1.62,1.5,0.5,2.5,
+ORL @ SAC,SAC,Leaky Black,pra,11.97,5.79,11.5,10.5,13.5,
+ORL @ SAC,ORL,Franz Wagner,points,23.24,7.38,23.5,21.5,24.5,+6% with teammates out
+ORL @ SAC,ORL,Franz Wagner,rebounds,6.58,3.02,6.5,5.5,7.5,+6% with teammates out
+ORL @ SAC,ORL,Franz Wagner,assists,8.75,4.51,8.5,6.5,9.5,+6% with teammates out
+ORL @ SAC,ORL,Franz Wagner,threes,1.33,1.26,1.5,0.5,1.5,+6% with teammates out
+ORL @ SAC,ORL,Franz Wagner,pra,38.53,11.14,38.5,36.5,40.5,+6% with teammates out
+ORL @ SAC,ORL,Wendell Carter Jr.,points,15.54,8.41,15.5,13.5,17.5,+6% with teammates out
+ORL @ SAC,ORL,Wendell Carter Jr.,rebounds,10.01,3.26,9.5,8.5,10.5,+6% with teammates out
+ORL @ SAC,ORL,Wendell Carter Jr.,assists,1.27,1.27,1.5,0.5,1.5,+6% with teammates out
+ORL @ SAC,ORL,Wendell Carter Jr.,threes,1.23,1.24,1.5,0.5,1.5,+6% with teammates out
+ORL @ SAC,ORL,Wendell Carter Jr.,pra,26.86,9.67,26.5,24.5,28.5,+6% with teammates out
+ORL @ SAC,ORL,Desmond Bane,points,19.69,7.75,19.5,17.5,21.5,Day-To-Day
+ORL @ SAC,ORL,Desmond Bane,rebounds,4.16,2.10,3.5,3.5,4.5,Day-To-Day
+ORL @ SAC,ORL,Desmond Bane,assists,2.84,2.25,2.5,1.5,3.5,Day-To-Day
+ORL @ SAC,ORL,Desmond Bane,threes,3.37,1.87,3.5,2.5,3.5,Day-To-Day
+ORL @ SAC,ORL,Desmond Bane,pra,26.70,9.33,26.5,24.5,28.5,Day-To-Day
+ORL @ SAC,ORL,Tristan da Silva,points,15.66,7.03,15.5,14.5,17.5,+6% with teammates out
+ORL @ SAC,ORL,Tristan da Silva,rebounds,4.28,2.86,3.5,2.5,4.5,+6% with teammates out
+ORL @ SAC,ORL,Tristan da Silva,assists,2.00,1.48,1.5,1.5,2.5,+6% with teammates out
+ORL @ SAC,ORL,Tristan da Silva,threes,3.36,1.96,3.5,2.5,3.5,+6% with teammates out
+ORL @ SAC,ORL,Tristan da Silva,pra,21.94,9.05,21.5,20.5,23.5,+6% with teammates out
+ORL @ SAC,ORL,Anthony Black,points,16.39,6.83,16.5,14.5,17.5,+6% with teammates out
+ORL @ SAC,ORL,Anthony Black,rebounds,5.59,2.69,5.5,4.5,6.5,+6% with teammates out
+ORL @ SAC,ORL,Anthony Black,assists,4.98,2.91,4.5,3.5,5.5,+6% with teammates out
+ORL @ SAC,ORL,Anthony Black,threes,1.90,1.63,1.5,0.5,2.5,+6% with teammates out
+ORL @ SAC,ORL,Anthony Black,pra,26.95,10.05,26.5,24.5,29.5,+6% with teammates out
+ORL @ SAC,ORL,Jase Richardson,points,6.99,4.19,6.5,5.5,7.5,+6% with teammates out
+ORL @ SAC,ORL,Jase Richardson,rebounds,2.47,1.96,2.5,1.5,2.5,+6% with teammates out
+ORL @ SAC,ORL,Jase Richardson,assists,3.04,1.99,2.5,1.5,3.5,+6% with teammates out
+ORL @ SAC,ORL,Jase Richardson,threes,0.84,1.05,0.5,,1.5,+6% with teammates out
+ORL @ SAC,ORL,Jase Richardson,pra,12.49,5.20,12.5,11.5,13.5,+6% with teammates out
 OKC @ POR,POR,Deni Avdija,points,21.60,6.44,21.5,20.5,23.5,+4% with teammates out
 OKC @ POR,POR,Deni Avdija,rebounds,6.27,2.61,6.5,5.5,6.5,+4% with teammates out
 OKC @ POR,POR,Deni Avdija,assists,6.37,3.60,5.5,4.5,6.5,+4% with teammates out
@@ -1040,7 +1044,7 @@ CLE @ NY,NY,Karl-Anthony Towns,points,20.43,6.31,20.5,18.5,21.5,
 CLE @ NY,NY,Karl-Anthony Towns,rebounds,12.93,3.62,12.5,11.5,14.5,
 CLE @ NY,NY,Karl-Anthony Towns,assists,3.24,2.00,3.5,2.5,3.5,
 CLE @ NY,NY,Karl-Anthony Towns,threes,1.73,1.34,1.5,0.5,2.5,
-CLE @ NY,NY,Karl-Anthony Towns,pra,36.64,9.08,36.5,34.5,38.5,
+CLE @ NY,NY,Karl-Anthony Towns,pra,36.63,9.08,36.5,34.5,38.5,
 CLE @ NY,NY,Josh Hart,points,9.28,5.70,8.5,6.5,9.5,Day-To-Day
 CLE @ NY,NY,Josh Hart,rebounds,6.81,2.74,6.5,5.5,7.5,Day-To-Day
 CLE @ NY,NY,Josh Hart,assists,3.93,2.08,3.5,2.5,4.5,Day-To-Day
@@ -1085,8 +1089,8 @@ CLE @ NY,CLE,Peyton Watson,points,12.39,6.56,11.5,9.5,12.5,+10% with teammates o
 CLE @ NY,CLE,Peyton Watson,rebounds,5.08,2.58,4.5,3.5,5.5,+10% with teammates out
 CLE @ NY,CLE,Peyton Watson,assists,2.78,1.75,2.5,1.5,3.5,+10% with teammates out
 CLE @ NY,CLE,Peyton Watson,threes,1.05,1.13,0.5,0.5,1.5,+10% with teammates out
-CLE @ NY,CLE,Peyton Watson,pra,20.24,7.90,20.5,18.5,21.5,+10% with teammates out
-CLE @ NY,CLE,Jarrett Allen,points,12.97,7.08,12.5,11.5,14.5,Day-To-Day
+CLE @ NY,CLE,Peyton Watson,pra,20.25,7.90,20.5,18.5,21.5,+10% with teammates out
+CLE @ NY,CLE,Jarrett Allen,points,12.97,7.09,12.5,11.5,14.5,Day-To-Day
 CLE @ NY,CLE,Jarrett Allen,rebounds,7.68,3.40,7.5,6.5,8.5,Day-To-Day
 CLE @ NY,CLE,Jarrett Allen,assists,1.23,1.32,0.5,0.5,1.5,Day-To-Day
 CLE @ NY,CLE,Jarrett Allen,pra,21.82,10.21,21.5,19.5,23.5,Day-To-Day
@@ -1100,86 +1104,86 @@ CLE @ NY,CLE,Mario Hezonja,rebounds,7.00,3.03,6.5,5.5,7.5,+10% with teammates ou
 CLE @ NY,CLE,Mario Hezonja,assists,1.86,1.43,1.5,0.5,2.5,+10% with teammates out
 CLE @ NY,CLE,Mario Hezonja,threes,1.47,1.24,1.5,0.5,1.5,+10% with teammates out
 CLE @ NY,CLE,Mario Hezonja,pra,17.37,7.12,17.5,15.5,18.5,+10% with teammates out
-BOS @ TOR,TOR,Malachi Smith,points,9.85,5.95,8.5,7.5,10.5,+2% with teammates out
-BOS @ TOR,TOR,Malachi Smith,rebounds,4.43,2.67,4.5,3.5,4.5,+2% with teammates out
-BOS @ TOR,TOR,Malachi Smith,assists,4.20,2.99,3.5,2.5,4.5,+2% with teammates out
+BOS @ TOR,TOR,Malachi Smith,points,9.82,5.93,8.5,7.5,10.5,+2% with teammates out
+BOS @ TOR,TOR,Malachi Smith,rebounds,4.42,2.67,4.5,3.5,4.5,+2% with teammates out
+BOS @ TOR,TOR,Malachi Smith,assists,4.19,2.98,3.5,2.5,4.5,+2% with teammates out
 BOS @ TOR,TOR,Malachi Smith,threes,1.67,1.69,1.5,0.5,2.5,+2% with teammates out
-BOS @ TOR,TOR,Malachi Smith,pra,18.44,9.75,18.5,16.5,20.5,+2% with teammates out
-BOS @ TOR,TOR,Scottie Barnes,points,20.44,10.07,20.5,18.5,22.5,Day-To-Day
+BOS @ TOR,TOR,Malachi Smith,pra,18.39,9.73,18.5,16.5,20.5,+2% with teammates out
+BOS @ TOR,TOR,Scottie Barnes,points,20.37,10.04,20.5,18.5,22.5,Day-To-Day
 BOS @ TOR,TOR,Scottie Barnes,rebounds,7.28,3.84,6.5,5.5,7.5,Day-To-Day
-BOS @ TOR,TOR,Scottie Barnes,assists,5.77,2.72,5.5,4.5,6.5,Day-To-Day
+BOS @ TOR,TOR,Scottie Barnes,assists,5.75,2.72,5.5,4.5,6.5,Day-To-Day
 BOS @ TOR,TOR,Scottie Barnes,threes,0.52,0.74,0.5,,0.5,Day-To-Day
-BOS @ TOR,TOR,Scottie Barnes,pra,33.51,12.66,33.5,31.5,36.5,Day-To-Day
-BOS @ TOR,TOR,RJ Barrett,points,20.69,5.94,20.5,19.5,22.5,+2% with teammates out
-BOS @ TOR,TOR,RJ Barrett,rebounds,5.95,2.59,5.5,4.5,6.5,+2% with teammates out
-BOS @ TOR,TOR,RJ Barrett,assists,3.65,2.01,3.5,2.5,4.5,+2% with teammates out
+BOS @ TOR,TOR,Scottie Barnes,pra,33.42,12.63,33.5,30.5,35.5,Day-To-Day
+BOS @ TOR,TOR,RJ Barrett,points,20.62,5.92,20.5,19.5,22.5,+2% with teammates out
+BOS @ TOR,TOR,RJ Barrett,rebounds,5.94,2.59,5.5,4.5,6.5,+2% with teammates out
+BOS @ TOR,TOR,RJ Barrett,assists,3.65,2.00,3.5,2.5,4.5,+2% with teammates out
 BOS @ TOR,TOR,RJ Barrett,threes,1.57,1.39,1.5,0.5,2.5,+2% with teammates out
-BOS @ TOR,TOR,RJ Barrett,pra,30.37,7.99,30.5,28.5,32.5,+2% with teammates out
-BOS @ TOR,TOR,Immanuel Quickley,points,15.88,6.34,15.5,14.5,17.5,Day-To-Day
+BOS @ TOR,TOR,RJ Barrett,pra,30.29,7.97,30.5,28.5,32.5,+2% with teammates out
+BOS @ TOR,TOR,Immanuel Quickley,points,15.83,6.32,15.5,14.5,17.5,Day-To-Day
 BOS @ TOR,TOR,Immanuel Quickley,rebounds,3.53,1.94,3.5,2.5,4.5,Day-To-Day
-BOS @ TOR,TOR,Immanuel Quickley,assists,5.59,2.65,5.5,4.5,6.5,Day-To-Day
-BOS @ TOR,TOR,Immanuel Quickley,threes,2.43,1.59,2.5,1.5,2.5,Day-To-Day
-BOS @ TOR,TOR,Immanuel Quickley,pra,25.07,7.48,25.5,23.5,26.5,Day-To-Day
-BOS @ TOR,TOR,Ja'Kobe Walter,points,10.22,4.70,9.5,8.5,10.5,+2% with teammates out
-BOS @ TOR,TOR,Ja'Kobe Walter,rebounds,3.91,2.04,3.5,2.5,4.5,+2% with teammates out
+BOS @ TOR,TOR,Immanuel Quickley,assists,5.58,2.65,5.5,4.5,6.5,Day-To-Day
+BOS @ TOR,TOR,Immanuel Quickley,threes,2.42,1.59,2.5,1.5,2.5,Day-To-Day
+BOS @ TOR,TOR,Immanuel Quickley,pra,25.01,7.46,25.5,23.5,26.5,Day-To-Day
+BOS @ TOR,TOR,Ja'Kobe Walter,points,10.19,4.69,9.5,8.5,10.5,+2% with teammates out
+BOS @ TOR,TOR,Ja'Kobe Walter,rebounds,3.90,2.04,3.5,2.5,4.5,+2% with teammates out
 BOS @ TOR,TOR,Ja'Kobe Walter,assists,2.21,1.56,2.5,1.5,2.5,+2% with teammates out
-BOS @ TOR,TOR,Ja'Kobe Walter,threes,2.07,1.53,1.5,1.5,2.5,+2% with teammates out
-BOS @ TOR,TOR,Ja'Kobe Walter,pra,16.35,5.75,16.5,14.5,17.5,+2% with teammates out
-BOS @ TOR,TOR,Collin Murray-Boyles,points,10.85,5.67,10.5,8.5,11.5,+2% with teammates out
-BOS @ TOR,TOR,Collin Murray-Boyles,rebounds,5.25,2.55,5.5,4.5,5.5,+2% with teammates out
-BOS @ TOR,TOR,Collin Murray-Boyles,assists,1.48,1.28,1.5,0.5,1.5,+2% with teammates out
-BOS @ TOR,TOR,Collin Murray-Boyles,threes,0.44,0.68,0.5,,0.5,+2% with teammates out
-BOS @ TOR,TOR,Collin Murray-Boyles,pra,17.56,7.03,17.5,15.5,19.5,+2% with teammates out
-BOS @ TOR,TOR,Jamal Shead,points,5.96,3.77,5.5,4.5,6.5,+2% with teammates out
+BOS @ TOR,TOR,Ja'Kobe Walter,threes,2.06,1.53,1.5,1.5,2.5,+2% with teammates out
+BOS @ TOR,TOR,Ja'Kobe Walter,pra,16.31,5.73,16.5,14.5,17.5,+2% with teammates out
+BOS @ TOR,TOR,Collin Murray-Boyles,points,10.81,5.65,10.5,8.5,11.5,Day-To-Day
+BOS @ TOR,TOR,Collin Murray-Boyles,rebounds,5.25,2.55,5.5,4.5,5.5,Day-To-Day
+BOS @ TOR,TOR,Collin Murray-Boyles,assists,1.48,1.28,1.5,0.5,1.5,Day-To-Day
+BOS @ TOR,TOR,Collin Murray-Boyles,threes,0.44,0.68,0.5,,0.5,Day-To-Day
+BOS @ TOR,TOR,Collin Murray-Boyles,pra,17.52,7.01,17.5,15.5,19.5,Day-To-Day
+BOS @ TOR,TOR,Jamal Shead,points,5.95,3.76,5.5,4.5,6.5,+2% with teammates out
 BOS @ TOR,TOR,Jamal Shead,rebounds,1.88,1.41,1.5,0.5,2.5,+2% with teammates out
-BOS @ TOR,TOR,Jamal Shead,assists,6.49,3.89,5.5,4.5,6.5,+2% with teammates out
-BOS @ TOR,TOR,Jamal Shead,threes,0.67,0.84,0.5,,1.5,+2% with teammates out
-BOS @ TOR,TOR,Jamal Shead,pra,14.31,6.81,14.5,12.5,15.5,+2% with teammates out
-BOS @ TOR,BOS,Jayson Tatum,points,24.44,8.36,24.5,22.5,26.5,
-BOS @ TOR,BOS,Jayson Tatum,rebounds,6.50,3.02,6.5,5.5,7.5,
-BOS @ TOR,BOS,Jayson Tatum,assists,6.92,2.76,6.5,5.5,7.5,
-BOS @ TOR,BOS,Jayson Tatum,threes,2.46,1.67,2.5,1.5,3.5,
-BOS @ TOR,BOS,Jayson Tatum,pra,37.87,10.38,37.5,35.5,40.5,
-BOS @ TOR,BOS,Devin Carter,points,14.28,9.24,14.5,12.5,16.5,
+BOS @ TOR,TOR,Jamal Shead,assists,6.47,3.88,5.5,4.5,6.5,+2% with teammates out
+BOS @ TOR,TOR,Jamal Shead,threes,0.67,0.83,0.5,,1.5,+2% with teammates out
+BOS @ TOR,TOR,Jamal Shead,pra,14.27,6.80,14.5,12.5,15.5,+2% with teammates out
+BOS @ TOR,BOS,Jayson Tatum,points,24.52,8.38,24.5,22.5,26.5,
+BOS @ TOR,BOS,Jayson Tatum,rebounds,6.51,3.03,6.5,5.5,7.5,
+BOS @ TOR,BOS,Jayson Tatum,assists,6.94,2.76,6.5,5.5,7.5,
+BOS @ TOR,BOS,Jayson Tatum,threes,2.47,1.68,2.5,1.5,3.5,
+BOS @ TOR,BOS,Jayson Tatum,pra,37.97,10.40,37.5,35.5,40.5,
+BOS @ TOR,BOS,Devin Carter,points,14.33,9.27,14.5,12.5,16.5,
 BOS @ TOR,BOS,Devin Carter,rebounds,5.31,2.64,5.5,4.5,5.5,
-BOS @ TOR,BOS,Devin Carter,assists,4.30,2.31,4.5,3.5,4.5,
-BOS @ TOR,BOS,Devin Carter,threes,1.43,1.89,0.5,0.5,1.5,
-BOS @ TOR,BOS,Devin Carter,pra,23.89,12.42,23.5,21.5,26.5,
-BOS @ TOR,BOS,Derrick White,points,12.16,5.85,12.5,10.5,13.5,
-BOS @ TOR,BOS,Derrick White,rebounds,3.26,1.86,3.5,2.5,3.5,
-BOS @ TOR,BOS,Derrick White,assists,4.79,2.30,4.5,3.5,5.5,
-BOS @ TOR,BOS,Derrick White,threes,1.71,1.33,1.5,0.5,2.5,
-BOS @ TOR,BOS,Derrick White,pra,20.20,7.43,20.5,18.5,21.5,
-BOS @ TOR,BOS,Paul George,points,18.21,7.97,18.5,16.5,19.5,
-BOS @ TOR,BOS,Paul George,rebounds,4.81,2.26,4.5,3.5,5.5,
-BOS @ TOR,BOS,Paul George,assists,3.71,2.57,3.5,2.5,4.5,
-BOS @ TOR,BOS,Paul George,threes,3.03,1.89,2.5,2.5,3.5,
-BOS @ TOR,BOS,Paul George,pra,26.75,9.01,26.5,24.5,28.5,
-BOS @ TOR,BOS,Payton Pritchard,points,12.42,8.30,12.5,10.5,14.5,
-BOS @ TOR,BOS,Payton Pritchard,rebounds,3.15,2.02,2.5,2.5,3.5,
-BOS @ TOR,BOS,Payton Pritchard,assists,3.79,2.04,3.5,2.5,4.5,
+BOS @ TOR,BOS,Devin Carter,assists,4.31,2.32,4.5,3.5,4.5,
+BOS @ TOR,BOS,Devin Carter,threes,1.43,1.90,0.5,0.5,1.5,
+BOS @ TOR,BOS,Devin Carter,pra,23.95,12.45,23.5,21.5,26.5,
+BOS @ TOR,BOS,Derrick White,points,12.20,5.87,12.5,10.5,13.5,
+BOS @ TOR,BOS,Derrick White,rebounds,3.27,1.86,3.5,2.5,3.5,
+BOS @ TOR,BOS,Derrick White,assists,4.80,2.30,4.5,3.5,5.5,
+BOS @ TOR,BOS,Derrick White,threes,1.72,1.34,1.5,0.5,2.5,
+BOS @ TOR,BOS,Derrick White,pra,20.25,7.45,20.5,18.5,21.5,
+BOS @ TOR,BOS,Paul George,points,18.26,8.00,18.5,16.5,20.5,
+BOS @ TOR,BOS,Paul George,rebounds,4.82,2.26,4.5,3.5,5.5,
+BOS @ TOR,BOS,Paul George,assists,3.72,2.57,3.5,2.5,4.5,
+BOS @ TOR,BOS,Paul George,threes,3.04,1.89,2.5,2.5,3.5,
+BOS @ TOR,BOS,Paul George,pra,26.81,9.03,26.5,24.5,28.5,
+BOS @ TOR,BOS,Payton Pritchard,points,12.46,8.33,12.5,10.5,14.5,
+BOS @ TOR,BOS,Payton Pritchard,rebounds,3.16,2.02,2.5,2.5,3.5,
+BOS @ TOR,BOS,Payton Pritchard,assists,3.80,2.05,3.5,2.5,4.5,
 BOS @ TOR,BOS,Payton Pritchard,threes,2.14,2.03,1.5,0.5,2.5,
-BOS @ TOR,BOS,Payton Pritchard,pra,19.37,8.86,19.5,17.5,21.5,
-BOS @ TOR,BOS,Neemias Queta,points,9.19,4.71,8.5,7.5,9.5,
-BOS @ TOR,BOS,Neemias Queta,rebounds,6.48,3.12,6.5,5.5,7.5,
-BOS @ TOR,BOS,Neemias Queta,assists,1.68,1.37,1.5,0.5,2.5,
-BOS @ TOR,BOS,Neemias Queta,pra,17.35,6.97,17.5,15.5,18.5,
-BOS @ TOR,BOS,Baylor Scheierman,points,6.36,4.78,5.5,4.5,6.5,
-BOS @ TOR,BOS,Baylor Scheierman,rebounds,3.74,2.82,3.5,2.5,4.5,
-BOS @ TOR,BOS,Baylor Scheierman,assists,1.41,1.40,1.5,0.5,1.5,
-BOS @ TOR,BOS,Baylor Scheierman,threes,1.44,1.35,1.5,0.5,1.5,
-BOS @ TOR,BOS,Baylor Scheierman,pra,11.50,6.59,10.5,8.5,11.5,
-BOS @ TOR,BOS,Sam Hauser,points,7.46,4.41,6.5,5.5,7.5,
-BOS @ TOR,BOS,Sam Hauser,rebounds,2.86,1.74,2.5,1.5,3.5,
+BOS @ TOR,BOS,Payton Pritchard,pra,19.42,8.88,19.5,17.5,21.5,
+BOS @ TOR,BOS,Neemias Queta,points,9.22,4.72,8.5,7.5,9.5,
+BOS @ TOR,BOS,Neemias Queta,rebounds,6.49,3.12,6.5,5.5,7.5,
+BOS @ TOR,BOS,Neemias Queta,assists,1.69,1.37,1.5,0.5,2.5,
+BOS @ TOR,BOS,Neemias Queta,pra,17.39,6.99,17.5,15.5,18.5,
+BOS @ TOR,BOS,Baylor Scheierman,points,6.38,4.80,5.5,4.5,6.5,
+BOS @ TOR,BOS,Baylor Scheierman,rebounds,3.75,2.82,3.5,2.5,4.5,
+BOS @ TOR,BOS,Baylor Scheierman,assists,1.41,1.41,1.5,0.5,1.5,
+BOS @ TOR,BOS,Baylor Scheierman,threes,1.45,1.35,1.5,0.5,1.5,
+BOS @ TOR,BOS,Baylor Scheierman,pra,11.53,6.60,11.5,9.5,13.5,
+BOS @ TOR,BOS,Sam Hauser,points,7.49,4.42,6.5,5.5,7.5,
+BOS @ TOR,BOS,Sam Hauser,rebounds,2.87,1.74,2.5,1.5,3.5,
 BOS @ TOR,BOS,Sam Hauser,assists,1.14,1.16,0.5,0.5,1.5,
-BOS @ TOR,BOS,Sam Hauser,threes,2.00,1.47,1.5,1.5,2.5,
-BOS @ TOR,BOS,Sam Hauser,pra,11.47,5.33,10.5,9.5,12.5,
+BOS @ TOR,BOS,Sam Hauser,threes,2.01,1.47,1.5,1.5,2.5,
+BOS @ TOR,BOS,Sam Hauser,pra,11.50,5.34,10.5,9.5,12.5,
 SA @ CHI,CHI,Caleb Wilson,points,17.44,6.84,17.5,15.5,19.5,
 SA @ CHI,CHI,Caleb Wilson,rebounds,5.88,2.77,5.5,4.5,6.5,
 SA @ CHI,CHI,Caleb Wilson,assists,1.96,1.79,1.5,0.5,2.5,
 SA @ CHI,CHI,Caleb Wilson,threes,2.24,1.69,2.5,1.5,2.5,
 SA @ CHI,CHI,Caleb Wilson,pra,25.32,9.86,25.5,23.5,27.5,
-SA @ CHI,CHI,Josh Giddey,points,11.04,5.34,10.5,9.5,11.5,
+SA @ CHI,CHI,Josh Giddey,points,11.05,5.34,10.5,9.5,11.5,
 SA @ CHI,CHI,Josh Giddey,rebounds,5.35,3.18,4.5,3.5,5.5,
 SA @ CHI,CHI,Josh Giddey,assists,8.41,3.69,8.5,6.5,9.5,
 SA @ CHI,CHI,Josh Giddey,threes,1.22,1.13,1.5,0.5,1.5,
@@ -1213,22 +1217,22 @@ SA @ CHI,CHI,Nic Claxton,points,8.55,5.07,7.5,6.5,9.5,
 SA @ CHI,CHI,Nic Claxton,rebounds,5.52,2.42,5.5,4.5,6.5,
 SA @ CHI,CHI,Nic Claxton,assists,2.94,1.86,2.5,1.5,3.5,
 SA @ CHI,CHI,Nic Claxton,pra,16.97,6.78,16.5,15.5,18.5,
-SA @ CHI,SA,Dylan Harper,points,18.15,5.78,18.5,16.5,19.5,
+SA @ CHI,SA,Dylan Harper,points,18.14,5.78,18.5,16.5,19.5,
 SA @ CHI,SA,Dylan Harper,rebounds,5.13,2.33,4.5,4.5,5.5,
-SA @ CHI,SA,Dylan Harper,assists,4.52,2.72,4.5,3.5,5.5,
+SA @ CHI,SA,Dylan Harper,assists,4.63,2.70,4.5,3.5,5.5,
 SA @ CHI,SA,Dylan Harper,threes,1.32,1.17,1.5,0.5,1.5,
-SA @ CHI,SA,Dylan Harper,pra,27.74,7.32,27.5,26.5,29.5,
+SA @ CHI,SA,Dylan Harper,pra,27.84,7.30,27.5,26.5,29.5,
 SA @ CHI,SA,Devin Vassell,points,12.33,5.92,12.5,10.5,13.5,Day-To-Day
 SA @ CHI,SA,Devin Vassell,rebounds,3.75,2.01,3.5,2.5,4.5,Day-To-Day
 SA @ CHI,SA,Devin Vassell,assists,2.93,2.05,2.5,1.5,3.5,Day-To-Day
 SA @ CHI,SA,Devin Vassell,threes,1.84,1.75,1.5,0.5,2.5,Day-To-Day
 SA @ CHI,SA,Devin Vassell,pra,18.97,6.28,18.5,17.5,20.5,Day-To-Day
-SA @ CHI,SA,Victor Wembanyama,points,29.78,12.59,29.5,27.5,32.5,
+SA @ CHI,SA,Victor Wembanyama,points,29.77,12.59,29.5,27.5,32.5,
 SA @ CHI,SA,Victor Wembanyama,rebounds,11.83,4.87,11.5,10.5,13.5,
 SA @ CHI,SA,Victor Wembanyama,assists,3.19,1.87,2.5,2.5,3.5,
 SA @ CHI,SA,Victor Wembanyama,threes,2.07,1.67,1.5,1.5,2.5,
 SA @ CHI,SA,Victor Wembanyama,pra,44.82,16.01,44.5,41.5,47.5,
-SA @ CHI,SA,De'Aaron Fox,points,14.19,5.83,14.5,12.5,15.5,
+SA @ CHI,SA,De'Aaron Fox,points,14.18,5.83,14.5,12.5,15.5,
 SA @ CHI,SA,De'Aaron Fox,rebounds,3.55,2.07,3.5,2.5,4.5,
 SA @ CHI,SA,De'Aaron Fox,assists,5.73,2.51,5.5,4.5,6.5,
 SA @ CHI,SA,De'Aaron Fox,threes,1.03,1.10,0.5,0.5,1.5,
@@ -1321,270 +1325,275 @@ DEN @ MEM,DEN,Trevon Brazile,rebounds,5.51,3.06,5.5,4.5,6.5,
 DEN @ MEM,DEN,Trevon Brazile,assists,0.67,0.86,0.5,,1.5,
 DEN @ MEM,DEN,Trevon Brazile,threes,0.76,0.93,0.5,,1.5,
 DEN @ MEM,DEN,Trevon Brazile,pra,12.56,5.32,12.5,11.5,13.5,
-LAL @ MIL,MIL,Cormac Ryan,points,17.10,9.08,17.5,15.5,19.5,
-LAL @ MIL,MIL,Cormac Ryan,rebounds,3.34,3.28,2.5,1.5,3.5,
-LAL @ MIL,MIL,Cormac Ryan,assists,2.11,1.74,1.5,1.5,2.5,
-LAL @ MIL,MIL,Cormac Ryan,threes,2.95,1.75,2.5,1.5,3.5,
-LAL @ MIL,MIL,Cormac Ryan,pra,22.56,12.56,22.5,20.5,25.5,
-LAL @ MIL,MIL,Tyler Herro,points,19.76,6.76,19.5,18.5,21.5,
+LAL @ MIL,MIL,Cormac Ryan,points,17.05,9.06,17.5,15.5,18.5,
+LAL @ MIL,MIL,Cormac Ryan,rebounds,3.33,3.28,2.5,1.5,3.5,
+LAL @ MIL,MIL,Cormac Ryan,assists,2.10,1.74,1.5,1.5,2.5,
+LAL @ MIL,MIL,Cormac Ryan,threes,2.94,1.75,2.5,1.5,3.5,
+LAL @ MIL,MIL,Cormac Ryan,pra,22.51,12.54,22.5,20.5,24.5,
+LAL @ MIL,MIL,Tyler Herro,points,19.71,6.75,19.5,18.5,21.5,
 LAL @ MIL,MIL,Tyler Herro,rebounds,4.38,2.44,4.5,3.5,4.5,
-LAL @ MIL,MIL,Tyler Herro,assists,4.21,2.92,3.5,2.5,4.5,
+LAL @ MIL,MIL,Tyler Herro,assists,4.20,2.92,3.5,2.5,4.5,
 LAL @ MIL,MIL,Tyler Herro,threes,2.79,1.70,2.5,1.5,3.5,
-LAL @ MIL,MIL,Tyler Herro,pra,28.36,9.06,28.5,26.5,30.5,
-LAL @ MIL,MIL,Pete Nance,points,7.99,6.71,6.5,4.5,7.5,
+LAL @ MIL,MIL,Tyler Herro,pra,28.29,9.04,28.5,26.5,30.5,
+LAL @ MIL,MIL,Pete Nance,points,7.97,6.69,6.5,4.5,7.5,
 LAL @ MIL,MIL,Pete Nance,rebounds,4.23,2.84,3.5,2.5,4.5,
-LAL @ MIL,MIL,Pete Nance,assists,1.96,1.94,1.5,0.5,2.5,
+LAL @ MIL,MIL,Pete Nance,assists,1.95,1.94,1.5,0.5,2.5,
 LAL @ MIL,MIL,Pete Nance,threes,1.55,1.60,1.5,0.5,1.5,
-LAL @ MIL,MIL,Pete Nance,pra,14.18,9.11,14.5,12.5,16.5,
-LAL @ MIL,MIL,Myles Turner,points,7.76,5.49,6.5,5.5,7.5,
-LAL @ MIL,MIL,Myles Turner,rebounds,5.57,2.59,5.5,4.5,6.5,
+LAL @ MIL,MIL,Pete Nance,pra,14.14,9.09,14.5,12.5,16.5,
+LAL @ MIL,MIL,Myles Turner,points,7.74,5.48,6.5,5.5,7.5,
+LAL @ MIL,MIL,Myles Turner,rebounds,5.56,2.59,5.5,4.5,6.5,
 LAL @ MIL,MIL,Myles Turner,assists,2.52,2.28,2.5,1.5,2.5,
 LAL @ MIL,MIL,Myles Turner,threes,1.35,1.45,1.5,0.5,1.5,
-LAL @ MIL,MIL,Myles Turner,pra,15.84,7.21,15.5,14.5,17.5,
-LAL @ MIL,MIL,Brayden Burries,points,11.60,5.24,11.5,10.5,12.5,
+LAL @ MIL,MIL,Myles Turner,pra,15.81,7.20,15.5,14.5,17.5,
+LAL @ MIL,MIL,Brayden Burries,points,11.57,5.23,11.5,10.5,12.5,
 LAL @ MIL,MIL,Brayden Burries,rebounds,6.23,3.19,5.5,4.5,6.5,
-LAL @ MIL,MIL,Brayden Burries,assists,2.58,1.98,2.5,1.5,3.5,
+LAL @ MIL,MIL,Brayden Burries,assists,2.57,1.98,2.5,1.5,3.5,
 LAL @ MIL,MIL,Brayden Burries,threes,0.82,0.92,0.5,,1.5,
-LAL @ MIL,MIL,Brayden Burries,pra,20.41,9.06,20.5,18.5,22.5,
-LAL @ MIL,MIL,Kyle Kuzma,points,12.19,7.60,12.5,10.5,13.5,
-LAL @ MIL,MIL,Kyle Kuzma,rebounds,5.06,2.76,4.5,3.5,5.5,
-LAL @ MIL,MIL,Kyle Kuzma,assists,2.77,1.77,2.5,1.5,3.5,
-LAL @ MIL,MIL,Kyle Kuzma,threes,1.75,1.88,1.5,0.5,2.5,
-LAL @ MIL,MIL,Kyle Kuzma,pra,20.01,8.34,20.5,18.5,21.5,
-LAL @ MIL,MIL,Jaime Jaquez Jr.,points,14.12,6.49,14.5,12.5,15.5,
-LAL @ MIL,MIL,Jaime Jaquez Jr.,rebounds,4.86,2.77,4.5,3.5,5.5,
-LAL @ MIL,MIL,Jaime Jaquez Jr.,assists,3.08,2.00,2.5,2.5,3.5,
-LAL @ MIL,MIL,Jaime Jaquez Jr.,threes,1.56,1.27,1.5,0.5,2.5,
-LAL @ MIL,MIL,Jaime Jaquez Jr.,pra,22.07,8.33,22.5,20.5,23.5,
-LAL @ MIL,MIL,AJ Green,points,7.69,5.62,6.5,5.5,7.5,
+LAL @ MIL,MIL,Brayden Burries,pra,20.37,9.04,20.5,18.5,22.5,
+LAL @ MIL,MIL,Kyle Kuzma,points,12.15,7.58,12.5,10.5,13.5,
+LAL @ MIL,MIL,Kyle Kuzma,rebounds,5.05,2.75,4.5,3.5,5.5,
+LAL @ MIL,MIL,Kyle Kuzma,assists,2.76,1.77,2.5,1.5,3.5,
+LAL @ MIL,MIL,Kyle Kuzma,threes,1.74,1.88,1.5,0.5,2.5,
+LAL @ MIL,MIL,Kyle Kuzma,pra,19.97,8.33,19.5,18.5,21.5,
+LAL @ MIL,MIL,Jaime Jaquez Jr.,points,14.09,6.47,14.5,12.5,15.5,
+LAL @ MIL,MIL,Jaime Jaquez Jr.,rebounds,4.85,2.77,4.5,3.5,5.5,
+LAL @ MIL,MIL,Jaime Jaquez Jr.,assists,3.08,1.99,2.5,2.5,3.5,
+LAL @ MIL,MIL,Jaime Jaquez Jr.,threes,1.55,1.27,1.5,0.5,2.5,
+LAL @ MIL,MIL,Jaime Jaquez Jr.,pra,22.02,8.31,22.5,20.5,23.5,
+LAL @ MIL,MIL,AJ Green,points,7.67,5.60,6.5,5.5,7.5,
 LAL @ MIL,MIL,AJ Green,rebounds,2.00,1.57,1.5,1.5,2.5,
 LAL @ MIL,MIL,AJ Green,assists,1.47,1.32,1.5,0.5,1.5,
-LAL @ MIL,MIL,AJ Green,threes,2.25,1.81,1.5,1.5,2.5,
-LAL @ MIL,MIL,AJ Green,pra,11.17,6.35,10.5,8.5,11.5,
-LAL @ MIL,LAL,Austin Reaves,points,24.77,8.50,24.5,22.5,26.5,
-LAL @ MIL,LAL,Austin Reaves,rebounds,3.62,1.96,3.5,2.5,4.5,
-LAL @ MIL,LAL,Austin Reaves,assists,4.61,2.34,4.5,3.5,5.5,
-LAL @ MIL,LAL,Austin Reaves,threes,2.32,1.55,2.5,1.5,2.5,
-LAL @ MIL,LAL,Austin Reaves,pra,32.95,9.71,32.5,30.5,34.5,
-LAL @ MIL,LAL,Luka Doncic,points,38.85,11.97,38.5,36.5,41.5,Day-To-Day
-LAL @ MIL,LAL,Luka Doncic,rebounds,7.52,3.05,7.5,6.5,8.5,Day-To-Day
-LAL @ MIL,LAL,Luka Doncic,assists,7.60,3.05,7.5,6.5,8.5,Day-To-Day
-LAL @ MIL,LAL,Luka Doncic,threes,5.45,2.38,5.5,4.5,6.5,Day-To-Day
-LAL @ MIL,LAL,Luka Doncic,pra,53.92,14.19,53.5,51.5,56.5,Day-To-Day
-LAL @ MIL,LAL,Walker Kessler,points,13.95,5.99,13.5,12.5,15.5,
-LAL @ MIL,LAL,Walker Kessler,rebounds,11.11,3.48,10.5,9.5,11.5,
-LAL @ MIL,LAL,Walker Kessler,assists,1.67,1.48,1.5,0.5,2.5,
-LAL @ MIL,LAL,Walker Kessler,pra,26.78,8.37,26.5,24.5,28.5,
-LAL @ MIL,LAL,Quentin Grimes,points,8.71,6.80,7.5,5.5,8.5,Day-To-Day
-LAL @ MIL,LAL,Quentin Grimes,rebounds,2.48,2.01,2.5,1.5,2.5,Day-To-Day
-LAL @ MIL,LAL,Quentin Grimes,assists,2.44,1.87,2.5,1.5,2.5,Day-To-Day
-LAL @ MIL,LAL,Quentin Grimes,threes,0.84,1.07,0.5,,1.5,Day-To-Day
-LAL @ MIL,LAL,Quentin Grimes,pra,13.61,8.85,13.5,11.5,15.5,Day-To-Day
-LAL @ MIL,LAL,Jake LaRavia,points,6.46,3.85,5.5,4.5,6.5,
-LAL @ MIL,LAL,Jake LaRavia,rebounds,3.75,2.77,3.5,2.5,4.5,
-LAL @ MIL,LAL,Jake LaRavia,assists,1.76,1.39,1.5,0.5,2.5,
-LAL @ MIL,LAL,Jake LaRavia,threes,1.10,1.07,0.5,0.5,1.5,
-LAL @ MIL,LAL,Jake LaRavia,pra,11.98,4.91,11.5,10.5,13.5,
-LAL @ MIL,LAL,Matisse Thybulle,points,6.84,4.39,6.5,4.5,7.5,
-LAL @ MIL,LAL,Matisse Thybulle,rebounds,1.84,1.39,1.5,0.5,2.5,
-LAL @ MIL,LAL,Matisse Thybulle,assists,1.08,1.15,0.5,0.5,1.5,
-LAL @ MIL,LAL,Matisse Thybulle,threes,1.54,1.32,1.5,0.5,2.5,
-LAL @ MIL,LAL,Matisse Thybulle,pra,9.75,4.70,9.5,7.5,10.5,
-LAL @ MIL,LAL,Sandro Mamukelashvili,points,8.91,4.86,8.5,6.5,9.5,
-LAL @ MIL,LAL,Sandro Mamukelashvili,rebounds,4.21,2.13,4.5,3.5,4.5,
-LAL @ MIL,LAL,Sandro Mamukelashvili,assists,1.48,1.40,1.5,0.5,1.5,
-LAL @ MIL,LAL,Sandro Mamukelashvili,threes,1.13,1.09,0.5,0.5,1.5,
-LAL @ MIL,LAL,Sandro Mamukelashvili,pra,14.62,6.09,14.5,13.5,16.5,
-LAL @ MIL,LAL,Ziaire Williams,points,10.91,4.35,10.5,9.5,11.5,
-LAL @ MIL,LAL,Ziaire Williams,rebounds,2.52,1.63,2.5,1.5,3.5,
-LAL @ MIL,LAL,Ziaire Williams,assists,1.45,1.49,1.5,0.5,1.5,
-LAL @ MIL,LAL,Ziaire Williams,threes,1.90,1.41,1.5,0.5,2.5,
-LAL @ MIL,LAL,Ziaire Williams,pra,14.88,4.72,14.5,13.5,16.5,
-BKN @ NO,NO,Dejounte Murray,points,14.89,8.30,14.5,13.5,16.5,3 games back from a 3-game absence
+LAL @ MIL,MIL,AJ Green,threes,2.24,1.81,1.5,1.5,2.5,
+LAL @ MIL,MIL,AJ Green,pra,11.14,6.33,10.5,8.5,11.5,
+LAL @ MIL,LAL,Austin Reaves,points,27.09,8.90,27.5,25.5,29.5,Day-To-Day
+LAL @ MIL,LAL,Austin Reaves,rebounds,3.95,2.05,3.5,2.5,4.5,Day-To-Day
+LAL @ MIL,LAL,Austin Reaves,assists,5.04,2.45,4.5,3.5,5.5,Day-To-Day
+LAL @ MIL,LAL,Austin Reaves,threes,2.54,1.62,2.5,1.5,3.5,Day-To-Day
+LAL @ MIL,LAL,Austin Reaves,pra,36.03,10.17,36.5,33.5,38.5,Day-To-Day
+LAL @ MIL,LAL,Luka Doncic,points,42.50,12.53,42.5,40.5,44.5,+9% with teammates out
+LAL @ MIL,LAL,Luka Doncic,rebounds,8.21,3.18,7.5,6.5,8.5,+9% with teammates out
+LAL @ MIL,LAL,Luka Doncic,assists,8.31,3.19,8.5,7.5,9.5,+9% with teammates out
+LAL @ MIL,LAL,Luka Doncic,threes,5.97,2.49,5.5,4.5,6.5,+9% with teammates out
+LAL @ MIL,LAL,Luka Doncic,pra,58.96,14.85,58.5,56.5,61.5,+9% with teammates out
+LAL @ MIL,LAL,Walker Kessler,points,15.26,6.27,15.5,13.5,16.5,+9% with teammates out
+LAL @ MIL,LAL,Walker Kessler,rebounds,12.13,3.64,11.5,10.5,13.5,+9% with teammates out
+LAL @ MIL,LAL,Walker Kessler,assists,1.82,1.54,1.5,0.5,2.5,+9% with teammates out
+LAL @ MIL,LAL,Walker Kessler,pra,29.28,8.76,29.5,27.5,31.5,+9% with teammates out
+LAL @ MIL,LAL,Jake LaRavia,points,7.06,4.04,6.5,5.5,7.5,+9% with teammates out
+LAL @ MIL,LAL,Jake LaRavia,rebounds,4.10,2.90,3.5,2.5,4.5,+9% with teammates out
+LAL @ MIL,LAL,Jake LaRavia,assists,1.93,1.46,1.5,0.5,2.5,+9% with teammates out
+LAL @ MIL,LAL,Jake LaRavia,threes,1.20,1.12,1.5,0.5,1.5,+9% with teammates out
+LAL @ MIL,LAL,Jake LaRavia,pra,13.10,5.14,13.5,11.5,14.5,+9% with teammates out
+LAL @ MIL,LAL,Matisse Thybulle,points,7.48,4.60,6.5,5.5,7.5,+9% with teammates out
+LAL @ MIL,LAL,Matisse Thybulle,rebounds,2.01,1.46,1.5,1.5,2.5,+9% with teammates out
+LAL @ MIL,LAL,Matisse Thybulle,assists,1.18,1.20,0.5,0.5,1.5,+9% with teammates out
+LAL @ MIL,LAL,Matisse Thybulle,threes,1.68,1.38,1.5,0.5,2.5,+9% with teammates out
+LAL @ MIL,LAL,Matisse Thybulle,pra,10.66,4.92,10.5,8.5,11.5,+9% with teammates out
+LAL @ MIL,LAL,Sandro Mamukelashvili,points,9.75,5.09,9.5,7.5,10.5,+9% with teammates out
+LAL @ MIL,LAL,Sandro Mamukelashvili,rebounds,4.60,2.23,4.5,3.5,5.5,+9% with teammates out
+LAL @ MIL,LAL,Sandro Mamukelashvili,assists,1.62,1.47,1.5,0.5,2.5,+9% with teammates out
+LAL @ MIL,LAL,Sandro Mamukelashvili,threes,1.24,1.14,1.5,0.5,1.5,+9% with teammates out
+LAL @ MIL,LAL,Sandro Mamukelashvili,pra,15.98,6.37,15.5,14.5,17.5,+9% with teammates out
+LAL @ MIL,LAL,Ziaire Williams,points,11.94,4.55,11.5,10.5,12.5,+9% with teammates out
+LAL @ MIL,LAL,Ziaire Williams,rebounds,2.75,1.71,2.5,1.5,3.5,+9% with teammates out
+LAL @ MIL,LAL,Ziaire Williams,assists,1.59,1.56,1.5,0.5,1.5,+9% with teammates out
+LAL @ MIL,LAL,Ziaire Williams,threes,2.08,1.47,1.5,1.5,2.5,+9% with teammates out
+LAL @ MIL,LAL,Ziaire Williams,pra,16.27,4.94,16.5,14.5,17.5,+9% with teammates out
+BKN @ NO,NO,Dejounte Murray,points,14.83,8.27,14.5,13.5,16.5,3 games back from a 3-game absence
 BKN @ NO,NO,Dejounte Murray,rebounds,5.17,2.83,4.5,3.5,5.5,3 games back from a 3-game absence
-BKN @ NO,NO,Dejounte Murray,assists,5.35,2.79,5.5,4.5,5.5,3 games back from a 3-game absence
+BKN @ NO,NO,Dejounte Murray,assists,5.34,2.79,5.5,4.5,5.5,3 games back from a 3-game absence
 BKN @ NO,NO,Dejounte Murray,threes,0.85,1.11,0.5,,1.5,3 games back from a 3-game absence
-BKN @ NO,NO,Dejounte Murray,pra,25.39,10.81,25.5,23.5,27.5,3 games back from a 3-game absence
-BKN @ NO,NO,Zion Williamson,points,21.07,5.88,21.5,19.5,22.5,
-BKN @ NO,NO,Zion Williamson,rebounds,5.50,2.69,5.5,4.5,6.5,
-BKN @ NO,NO,Zion Williamson,assists,2.85,1.77,2.5,1.5,3.5,
-BKN @ NO,NO,Zion Williamson,pra,29.40,7.22,29.5,27.5,31.5,
-BKN @ NO,NO,Jeremiah Fears,points,18.04,8.49,18.5,16.5,19.5,
-BKN @ NO,NO,Jeremiah Fears,rebounds,4.75,2.41,4.5,3.5,5.5,
-BKN @ NO,NO,Jeremiah Fears,assists,4.88,3.27,4.5,3.5,5.5,
-BKN @ NO,NO,Jeremiah Fears,threes,1.33,1.31,1.5,0.5,1.5,
-BKN @ NO,NO,Jeremiah Fears,pra,27.64,11.93,27.5,25.5,30.5,
-BKN @ NO,NO,Trey Murphy III,points,16.75,7.56,16.5,15.5,18.5,
+BKN @ NO,NO,Dejounte Murray,pra,25.31,10.78,25.5,23.5,27.5,3 games back from a 3-game absence
+BKN @ NO,NO,Zion Williamson,points,20.99,5.86,20.5,19.5,22.5,
+BKN @ NO,NO,Zion Williamson,rebounds,5.49,2.69,5.5,4.5,6.5,
+BKN @ NO,NO,Zion Williamson,assists,2.84,1.77,2.5,1.5,3.5,
+BKN @ NO,NO,Zion Williamson,pra,29.31,7.20,29.5,27.5,30.5,
+BKN @ NO,NO,Jeremiah Fears,points,17.97,8.46,17.5,16.5,19.5,
+BKN @ NO,NO,Jeremiah Fears,rebounds,4.75,2.40,4.5,3.5,5.5,
+BKN @ NO,NO,Jeremiah Fears,assists,4.86,3.26,4.5,3.5,5.5,
+BKN @ NO,NO,Jeremiah Fears,threes,1.32,1.30,1.5,0.5,1.5,
+BKN @ NO,NO,Jeremiah Fears,pra,27.55,11.89,27.5,25.5,29.5,
+BKN @ NO,NO,Trey Murphy III,points,16.69,7.53,16.5,14.5,18.5,
 BKN @ NO,NO,Trey Murphy III,rebounds,4.81,2.26,4.5,3.5,5.5,
-BKN @ NO,NO,Trey Murphy III,assists,3.64,2.00,3.5,2.5,4.5,
-BKN @ NO,NO,Trey Murphy III,threes,2.52,1.66,2.5,1.5,3.5,
-BKN @ NO,NO,Trey Murphy III,pra,25.18,9.17,25.5,23.5,27.5,
-BKN @ NO,NO,Saddiq Bey,points,16.55,6.14,16.5,15.5,18.5,
-BKN @ NO,NO,Saddiq Bey,rebounds,4.09,2.08,3.5,3.5,4.5,
-BKN @ NO,NO,Saddiq Bey,assists,2.32,1.60,2.5,1.5,2.5,
-BKN @ NO,NO,Saddiq Bey,threes,1.93,1.42,1.5,1.5,2.5,
-BKN @ NO,NO,Saddiq Bey,pra,22.94,7.31,22.5,21.5,24.5,
-BKN @ NO,NO,Herbert Jones,points,5.98,4.81,4.5,3.5,6.5,
+BKN @ NO,NO,Trey Murphy III,assists,3.63,2.00,3.5,2.5,4.5,
+BKN @ NO,NO,Trey Murphy III,threes,2.51,1.65,2.5,1.5,3.5,
+BKN @ NO,NO,Trey Murphy III,pra,25.11,9.14,25.5,23.5,27.5,
+BKN @ NO,NO,Saddiq Bey,points,16.49,6.12,16.5,15.5,17.5,
+BKN @ NO,NO,Saddiq Bey,rebounds,4.08,2.08,3.5,3.5,4.5,
+BKN @ NO,NO,Saddiq Bey,assists,2.31,1.60,2.5,1.5,2.5,
+BKN @ NO,NO,Saddiq Bey,threes,1.92,1.41,1.5,1.5,2.5,
+BKN @ NO,NO,Saddiq Bey,pra,22.88,7.29,22.5,21.5,24.5,
+BKN @ NO,NO,Herbert Jones,points,5.96,4.80,4.5,3.5,6.5,
 BKN @ NO,NO,Herbert Jones,rebounds,2.74,1.75,2.5,1.5,3.5,
 BKN @ NO,NO,Herbert Jones,assists,1.37,1.48,1.5,0.5,1.5,
-BKN @ NO,NO,Herbert Jones,threes,0.79,1.11,0.5,,1.5,
-BKN @ NO,NO,Herbert Jones,pra,10.10,6.05,9.5,7.5,10.5,
-BKN @ NO,NO,Karlo Matkovic,points,9.35,6.92,7.5,6.5,9.5,
-BKN @ NO,NO,Karlo Matkovic,rebounds,4.35,2.62,4.5,3.5,4.5,
+BKN @ NO,NO,Herbert Jones,threes,0.79,1.10,0.5,,1.5,
+BKN @ NO,NO,Herbert Jones,pra,10.07,6.04,9.5,7.5,10.5,
+BKN @ NO,NO,Karlo Matkovic,points,9.32,6.90,7.5,6.5,9.5,
+BKN @ NO,NO,Karlo Matkovic,rebounds,4.35,2.61,4.5,3.5,4.5,
 BKN @ NO,NO,Karlo Matkovic,assists,1.12,1.11,0.5,0.5,1.5,
-BKN @ NO,NO,Karlo Matkovic,threes,1.66,1.59,1.5,0.5,2.5,
-BKN @ NO,NO,Karlo Matkovic,pra,14.84,8.05,14.5,13.5,16.5,
-BKN @ NO,NO,Derik Queen,points,11.16,5.92,10.5,8.5,11.5,
-BKN @ NO,NO,Derik Queen,rebounds,6.52,3.38,6.5,5.5,7.5,
-BKN @ NO,NO,Derik Queen,assists,2.78,1.94,2.5,1.5,3.5,
-BKN @ NO,NO,Derik Queen,pra,20.48,9.34,20.5,18.5,22.5,
-BKN @ NO,BKN,Michael Porter Jr.,points,23.61,7.36,23.5,21.5,25.5,+9% with teammates out
-BKN @ NO,BKN,Michael Porter Jr.,rebounds,8.18,3.54,7.5,6.5,8.5,+9% with teammates out
-BKN @ NO,BKN,Michael Porter Jr.,assists,1.61,1.50,1.5,0.5,2.5,+9% with teammates out
-BKN @ NO,BKN,Michael Porter Jr.,threes,3.69,1.96,3.5,2.5,4.5,+9% with teammates out
-BKN @ NO,BKN,Michael Porter Jr.,pra,33.43,10.40,33.5,31.5,35.5,+9% with teammates out
-BKN @ NO,BKN,Julius Randle,points,20.84,7.03,20.5,19.5,22.5,+9% with teammates out
-BKN @ NO,BKN,Julius Randle,rebounds,6.88,2.72,6.5,5.5,7.5,+9% with teammates out
-BKN @ NO,BKN,Julius Randle,assists,5.13,2.38,4.5,4.5,5.5,+9% with teammates out
-BKN @ NO,BKN,Julius Randle,threes,1.47,1.45,1.5,0.5,1.5,+9% with teammates out
-BKN @ NO,BKN,Julius Randle,pra,32.83,8.83,32.5,30.5,34.5,+9% with teammates out
-BKN @ NO,BKN,Day'Ron Sharpe,points,9.21,4.86,8.5,7.5,9.5,+9% with teammates out
-BKN @ NO,BKN,Day'Ron Sharpe,rebounds,7.90,3.09,7.5,6.5,8.5,+9% with teammates out
-BKN @ NO,BKN,Day'Ron Sharpe,assists,4.59,3.89,3.5,2.5,4.5,+9% with teammates out
-BKN @ NO,BKN,Day'Ron Sharpe,pra,21.70,8.97,21.5,19.5,23.5,+9% with teammates out
-BKN @ NO,BKN,Nolan Traore,points,14.06,6.02,14.5,12.5,15.5,+9% with teammates out
-BKN @ NO,BKN,Nolan Traore,rebounds,2.21,1.53,2.5,1.5,2.5,+9% with teammates out
-BKN @ NO,BKN,Nolan Traore,assists,3.34,2.31,2.5,2.5,3.5,+9% with teammates out
-BKN @ NO,BKN,Nolan Traore,threes,1.98,1.66,1.5,0.5,2.5,+9% with teammates out
-BKN @ NO,BKN,Nolan Traore,pra,19.59,7.41,19.5,17.5,21.5,+9% with teammates out
-BKN @ NO,BKN,Danny Wolf,points,11.37,4.26,11.5,9.5,12.5,+9% with teammates out
-BKN @ NO,BKN,Danny Wolf,rebounds,6.06,2.75,5.5,4.5,6.5,+9% with teammates out
-BKN @ NO,BKN,Danny Wolf,assists,2.43,1.63,2.5,1.5,2.5,+9% with teammates out
-BKN @ NO,BKN,Danny Wolf,threes,1.91,1.41,1.5,1.5,2.5,+9% with teammates out
-BKN @ NO,BKN,Danny Wolf,pra,19.86,6.60,19.5,18.5,21.5,+9% with teammates out
-BKN @ NO,BKN,Keon Ellis,points,5.21,4.41,4.5,3.5,5.5,+9% with teammates out
-BKN @ NO,BKN,Keon Ellis,rebounds,1.84,1.40,1.5,0.5,2.5,+9% with teammates out
-BKN @ NO,BKN,Keon Ellis,assists,1.79,1.82,1.5,0.5,2.5,+9% with teammates out
-BKN @ NO,BKN,Keon Ellis,threes,0.97,1.04,0.5,0.5,1.5,+9% with teammates out
-BKN @ NO,BKN,Keon Ellis,pra,8.85,5.23,7.5,6.5,9.5,+9% with teammates out
-ORL @ UTAH,UTAH,Darryn Peterson,points,16.44,6.50,16.5,14.5,17.5,+10% with teammates out
-ORL @ UTAH,UTAH,Darryn Peterson,rebounds,4.29,2.13,4.5,3.5,4.5,+10% with teammates out
-ORL @ UTAH,UTAH,Darryn Peterson,assists,4.45,2.21,4.5,3.5,5.5,+10% with teammates out
-ORL @ UTAH,UTAH,Darryn Peterson,threes,2.21,1.63,1.5,1.5,2.5,+10% with teammates out
-ORL @ UTAH,UTAH,Darryn Peterson,pra,25.20,7.93,25.5,23.5,26.5,+10% with teammates out
-ORL @ UTAH,UTAH,Ace Bailey,points,14.01,6.45,14.5,12.5,15.5,+10% with teammates out
-ORL @ UTAH,UTAH,Ace Bailey,rebounds,6.41,2.92,6.5,5.5,7.5,+10% with teammates out
-ORL @ UTAH,UTAH,Ace Bailey,assists,2.02,1.49,1.5,1.5,2.5,+10% with teammates out
-ORL @ UTAH,UTAH,Ace Bailey,threes,1.57,1.38,1.5,0.5,2.5,+10% with teammates out
-ORL @ UTAH,UTAH,Ace Bailey,pra,22.44,8.17,22.5,20.5,24.5,+10% with teammates out
-ORL @ UTAH,UTAH,Keyonte George,points,22.80,10.23,22.5,20.5,24.5,Day-To-Day
-ORL @ UTAH,UTAH,Keyonte George,rebounds,4.36,2.44,4.5,3.5,4.5,Day-To-Day
-ORL @ UTAH,UTAH,Keyonte George,assists,6.53,3.34,6.5,5.5,7.5,Day-To-Day
-ORL @ UTAH,UTAH,Keyonte George,threes,1.96,1.78,1.5,0.5,2.5,Day-To-Day
-ORL @ UTAH,UTAH,Keyonte George,pra,33.71,11.94,33.5,31.5,36.5,Day-To-Day
-ORL @ UTAH,UTAH,Jaxson Hayes,points,10.13,6.24,9.5,7.5,10.5,+10% with teammates out
-ORL @ UTAH,UTAH,Jaxson Hayes,rebounds,6.60,2.64,6.5,5.5,7.5,+10% with teammates out
-ORL @ UTAH,UTAH,Jaxson Hayes,assists,1.77,1.40,1.5,0.5,2.5,+10% with teammates out
-ORL @ UTAH,UTAH,Jaxson Hayes,pra,18.49,6.72,18.5,16.5,20.5,+10% with teammates out
-ORL @ UTAH,UTAH,Josh Okogie,points,4.15,4.49,2.5,1.5,3.5,+10% with teammates out
-ORL @ UTAH,UTAH,Josh Okogie,rebounds,3.57,2.85,3.5,2.5,3.5,+10% with teammates out
-ORL @ UTAH,UTAH,Josh Okogie,assists,1.06,1.23,0.5,0.5,1.5,+10% with teammates out
-ORL @ UTAH,UTAH,Josh Okogie,threes,0.69,0.86,0.5,,1.5,+10% with teammates out
-ORL @ UTAH,UTAH,Josh Okogie,pra,8.76,6.83,7.5,5.5,8.5,+10% with teammates out
-ORL @ UTAH,ORL,Franz Wagner,points,23.23,7.37,23.5,21.5,24.5,+6% with teammates out
-ORL @ UTAH,ORL,Franz Wagner,rebounds,6.58,3.01,6.5,5.5,7.5,+6% with teammates out
-ORL @ UTAH,ORL,Franz Wagner,assists,8.75,4.51,8.5,6.5,9.5,+6% with teammates out
-ORL @ UTAH,ORL,Franz Wagner,threes,1.33,1.26,1.5,0.5,1.5,+6% with teammates out
-ORL @ UTAH,ORL,Franz Wagner,pra,38.52,11.13,38.5,36.5,40.5,+6% with teammates out
-ORL @ UTAH,ORL,Wendell Carter Jr.,points,15.54,8.40,15.5,13.5,17.5,+6% with teammates out
-ORL @ UTAH,ORL,Wendell Carter Jr.,rebounds,10.01,3.26,9.5,8.5,10.5,+6% with teammates out
-ORL @ UTAH,ORL,Wendell Carter Jr.,assists,1.27,1.27,1.5,0.5,1.5,+6% with teammates out
-ORL @ UTAH,ORL,Wendell Carter Jr.,threes,1.23,1.24,1.5,0.5,1.5,+6% with teammates out
-ORL @ UTAH,ORL,Wendell Carter Jr.,pra,26.85,9.67,26.5,24.5,28.5,+6% with teammates out
-ORL @ UTAH,ORL,Desmond Bane,points,19.69,7.75,19.5,17.5,21.5,Day-To-Day
-ORL @ UTAH,ORL,Desmond Bane,rebounds,4.16,2.10,3.5,3.5,4.5,Day-To-Day
-ORL @ UTAH,ORL,Desmond Bane,assists,2.84,2.25,2.5,1.5,3.5,Day-To-Day
-ORL @ UTAH,ORL,Desmond Bane,threes,3.36,1.87,3.5,2.5,3.5,Day-To-Day
-ORL @ UTAH,ORL,Desmond Bane,pra,26.69,9.33,26.5,24.5,28.5,Day-To-Day
-ORL @ UTAH,ORL,Tristan da Silva,points,15.65,7.03,15.5,14.5,17.5,+6% with teammates out
-ORL @ UTAH,ORL,Tristan da Silva,rebounds,4.28,2.86,3.5,2.5,4.5,+6% with teammates out
-ORL @ UTAH,ORL,Tristan da Silva,assists,2.00,1.48,1.5,1.5,2.5,+6% with teammates out
-ORL @ UTAH,ORL,Tristan da Silva,threes,3.36,1.96,3.5,2.5,3.5,+6% with teammates out
-ORL @ UTAH,ORL,Tristan da Silva,pra,21.93,9.05,21.5,19.5,23.5,+6% with teammates out
-ORL @ UTAH,ORL,Anthony Black,points,16.39,6.83,16.5,14.5,17.5,+6% with teammates out
-ORL @ UTAH,ORL,Anthony Black,rebounds,5.59,2.69,5.5,4.5,6.5,+6% with teammates out
-ORL @ UTAH,ORL,Anthony Black,assists,4.98,2.90,4.5,3.5,5.5,+6% with teammates out
-ORL @ UTAH,ORL,Anthony Black,threes,1.90,1.63,1.5,0.5,2.5,+6% with teammates out
-ORL @ UTAH,ORL,Anthony Black,pra,26.95,10.05,26.5,24.5,29.5,+6% with teammates out
-ORL @ UTAH,ORL,Jase Richardson,points,6.99,4.19,6.5,5.5,7.5,+6% with teammates out
-ORL @ UTAH,ORL,Jase Richardson,rebounds,2.47,1.96,2.5,1.5,2.5,+6% with teammates out
-ORL @ UTAH,ORL,Jase Richardson,assists,3.04,1.99,2.5,1.5,3.5,+6% with teammates out
-ORL @ UTAH,ORL,Jase Richardson,threes,0.84,1.05,0.5,,1.5,+6% with teammates out
-ORL @ UTAH,ORL,Jase Richardson,pra,12.48,5.20,12.5,11.5,13.5,+6% with teammates out
-GS @ HOU,HOU,Alperen Sengun,points,20.24,7.23,20.5,18.5,21.5,
-GS @ HOU,HOU,Alperen Sengun,rebounds,8.61,3.02,8.5,7.5,9.5,
-GS @ HOU,HOU,Alperen Sengun,assists,7.27,2.83,7.5,6.5,8.5,
-GS @ HOU,HOU,Alperen Sengun,threes,0.81,0.92,0.5,,1.5,
-GS @ HOU,HOU,Alperen Sengun,pra,36.09,9.83,36.5,34.5,38.5,
-GS @ HOU,HOU,Jabari Smith Jr.,points,16.35,6.78,16.5,14.5,17.5,
-GS @ HOU,HOU,Jabari Smith Jr.,rebounds,6.43,3.16,6.5,5.5,7.5,
-GS @ HOU,HOU,Jabari Smith Jr.,assists,2.11,1.62,1.5,1.5,2.5,
-GS @ HOU,HOU,Jabari Smith Jr.,threes,2.65,1.66,2.5,1.5,3.5,
-GS @ HOU,HOU,Jabari Smith Jr.,pra,24.91,8.73,24.5,23.5,26.5,
-GS @ HOU,HOU,Kevin Durant,points,20.56,6.77,20.5,18.5,22.5,
-GS @ HOU,HOU,Kevin Durant,rebounds,5.43,2.40,5.5,4.5,6.5,
-GS @ HOU,HOU,Kevin Durant,assists,3.44,2.04,3.5,2.5,4.5,
-GS @ HOU,HOU,Kevin Durant,threes,1.54,1.28,1.5,0.5,2.5,
-GS @ HOU,HOU,Kevin Durant,pra,29.47,8.69,29.5,27.5,31.5,
-GS @ HOU,HOU,Amen Thompson,points,15.12,5.64,15.5,13.5,16.5,
-GS @ HOU,HOU,Amen Thompson,rebounds,6.10,3.07,5.5,4.5,6.5,
-GS @ HOU,HOU,Amen Thompson,assists,3.20,2.37,2.5,1.5,3.5,
-GS @ HOU,HOU,Amen Thompson,pra,24.43,8.55,24.5,22.5,26.5,
-GS @ HOU,HOU,Fred VanVleet,points,13.12,5.95,13.5,11.5,14.5,
-GS @ HOU,HOU,Fred VanVleet,rebounds,3.27,1.86,3.5,2.5,3.5,
-GS @ HOU,HOU,Fred VanVleet,assists,5.62,2.70,5.5,4.5,6.5,
-GS @ HOU,HOU,Fred VanVleet,threes,2.75,1.69,2.5,1.5,3.5,
-GS @ HOU,HOU,Fred VanVleet,pra,21.99,6.92,21.5,20.5,23.5,
-GS @ HOU,HOU,Tari Eason,points,8.84,5.24,7.5,6.5,9.5,
-GS @ HOU,HOU,Tari Eason,rebounds,5.91,3.09,5.5,4.5,6.5,
-GS @ HOU,HOU,Tari Eason,assists,1.36,1.22,1.5,0.5,1.5,
-GS @ HOU,HOU,Tari Eason,threes,0.89,1.07,0.5,,1.5,
-GS @ HOU,HOU,Tari Eason,pra,16.10,6.84,16.5,14.5,17.5,
-GS @ HOU,HOU,Marcus Smart,points,7.54,5.56,6.5,5.5,7.5,
+BKN @ NO,NO,Karlo Matkovic,threes,1.65,1.59,1.5,0.5,2.5,
+BKN @ NO,NO,Karlo Matkovic,pra,14.80,8.02,14.5,13.5,16.5,
+BKN @ NO,NO,Derik Queen,points,11.12,5.90,10.5,8.5,11.5,
+BKN @ NO,NO,Derik Queen,rebounds,6.52,3.37,6.5,5.5,7.5,
+BKN @ NO,NO,Derik Queen,assists,2.77,1.93,2.5,1.5,3.5,
+BKN @ NO,NO,Derik Queen,pra,20.42,9.31,20.5,18.5,22.5,
+BKN @ NO,BKN,Michael Porter Jr.,points,22.46,7.20,22.5,20.5,24.5,+3% with teammates out
+BKN @ NO,BKN,Michael Porter Jr.,rebounds,7.76,3.45,7.5,6.5,8.5,+3% with teammates out
+BKN @ NO,BKN,Michael Porter Jr.,assists,1.53,1.47,1.5,0.5,1.5,+3% with teammates out
+BKN @ NO,BKN,Michael Porter Jr.,threes,3.51,1.91,3.5,2.5,4.5,+3% with teammates out
+BKN @ NO,BKN,Michael Porter Jr.,pra,31.78,10.15,31.5,29.5,33.5,+3% with teammates out
+BKN @ NO,BKN,Julius Randle,points,19.83,6.87,19.5,18.5,21.5,+3% with teammates out
+BKN @ NO,BKN,Julius Randle,rebounds,6.43,2.64,6.5,5.5,7.5,+3% with teammates out
+BKN @ NO,BKN,Julius Randle,assists,4.87,2.32,4.5,3.5,5.5,+3% with teammates out
+BKN @ NO,BKN,Julius Randle,threes,1.39,1.42,1.5,0.5,1.5,+3% with teammates out
+BKN @ NO,BKN,Julius Randle,pra,31.12,8.58,31.5,29.5,32.5,+3% with teammates out
+BKN @ NO,BKN,Day'Ron Sharpe,points,8.76,4.75,8.5,6.5,9.5,+3% with teammates out
+BKN @ NO,BKN,Day'Ron Sharpe,rebounds,7.50,3.02,7.5,6.5,8.5,+3% with teammates out
+BKN @ NO,BKN,Day'Ron Sharpe,assists,4.36,3.80,3.5,2.5,4.5,+3% with teammates out
+BKN @ NO,BKN,Day'Ron Sharpe,pra,20.62,8.76,20.5,18.5,22.5,+3% with teammates out
+BKN @ NO,BKN,Nolan Traore,points,13.38,5.89,13.5,11.5,14.5,+3% with teammates out
+BKN @ NO,BKN,Nolan Traore,rebounds,2.09,1.49,1.5,1.5,2.5,+3% with teammates out
+BKN @ NO,BKN,Nolan Traore,assists,3.18,2.25,2.5,1.5,3.5,+3% with teammates out
+BKN @ NO,BKN,Nolan Traore,threes,1.88,1.62,1.5,0.5,2.5,+3% with teammates out
+BKN @ NO,BKN,Nolan Traore,pra,18.62,7.24,18.5,16.5,20.5,+3% with teammates out
+BKN @ NO,BKN,Mikel Brown Jr.,points,13.62,5.09,13.5,12.5,14.5,Day-To-Day
+BKN @ NO,BKN,Mikel Brown Jr.,rebounds,2.08,1.61,1.5,1.5,2.5,Day-To-Day
+BKN @ NO,BKN,Mikel Brown Jr.,assists,3.92,2.08,3.5,2.5,4.5,Day-To-Day
+BKN @ NO,BKN,Mikel Brown Jr.,threes,2.11,1.54,1.5,1.5,2.5,Day-To-Day
+BKN @ NO,BKN,Mikel Brown Jr.,pra,19.59,6.19,19.5,18.5,21.5,Day-To-Day
+BKN @ NO,BKN,Danny Wolf,points,10.82,4.16,10.5,9.5,11.5,+3% with teammates out
+BKN @ NO,BKN,Danny Wolf,rebounds,5.87,2.84,5.5,4.5,6.5,+3% with teammates out
+BKN @ NO,BKN,Danny Wolf,assists,2.31,1.59,2.5,1.5,2.5,+3% with teammates out
+BKN @ NO,BKN,Danny Wolf,threes,1.82,1.37,1.5,0.5,2.5,+3% with teammates out
+BKN @ NO,BKN,Danny Wolf,pra,19.01,6.53,19.5,17.5,20.5,+3% with teammates out
+BKN @ NO,BKN,Keon Ellis,points,4.96,4.31,3.5,2.5,5.5,+3% with teammates out
+BKN @ NO,BKN,Keon Ellis,rebounds,1.75,1.36,1.5,0.5,2.5,+3% with teammates out
+BKN @ NO,BKN,Keon Ellis,assists,1.71,1.78,1.5,0.5,2.5,+3% with teammates out
+BKN @ NO,BKN,Keon Ellis,threes,0.92,1.02,0.5,0.5,1.5,+3% with teammates out
+BKN @ NO,BKN,Keon Ellis,pra,8.41,5.11,7.5,6.5,8.5,+3% with teammates out
+ORL @ UTAH,UTAH,Darryn Peterson,points,15.67,6.38,15.5,14.5,17.5,+4% with teammates out
+ORL @ UTAH,UTAH,Darryn Peterson,rebounds,4.06,2.07,3.5,3.5,4.5,+4% with teammates out
+ORL @ UTAH,UTAH,Darryn Peterson,assists,4.23,2.16,4.5,3.5,4.5,+4% with teammates out
+ORL @ UTAH,UTAH,Darryn Peterson,threes,2.11,1.59,1.5,1.5,2.5,+4% with teammates out
+ORL @ UTAH,UTAH,Darryn Peterson,pra,23.95,7.77,23.5,22.5,25.5,+4% with teammates out
+ORL @ UTAH,UTAH,Ace Bailey,points,13.35,6.33,13.5,11.5,14.5,+4% with teammates out
+ORL @ UTAH,UTAH,Ace Bailey,rebounds,5.96,2.85,5.5,4.5,6.5,+4% with teammates out
+ORL @ UTAH,UTAH,Ace Bailey,assists,1.92,1.46,1.5,0.5,2.5,+4% with teammates out
+ORL @ UTAH,UTAH,Ace Bailey,threes,1.49,1.35,1.5,0.5,1.5,+4% with teammates out
+ORL @ UTAH,UTAH,Ace Bailey,pra,21.24,8.03,21.5,19.5,23.5,+4% with teammates out
+ORL @ UTAH,UTAH,Keyonte George,points,21.72,10.04,21.5,19.5,23.5,Day-To-Day
+ORL @ UTAH,UTAH,Keyonte George,rebounds,4.12,2.37,3.5,2.5,4.5,Day-To-Day
+ORL @ UTAH,UTAH,Keyonte George,assists,6.21,3.27,5.5,4.5,6.5,Day-To-Day
+ORL @ UTAH,UTAH,Keyonte George,threes,1.87,1.75,1.5,0.5,2.5,Day-To-Day
+ORL @ UTAH,UTAH,Keyonte George,pra,32.05,11.70,32.5,29.5,34.5,Day-To-Day
+ORL @ UTAH,UTAH,Lauri Markkanen,points,20.36,8.26,20.5,18.5,22.5,Day-To-Day
+ORL @ UTAH,UTAH,Lauri Markkanen,rebounds,6.86,3.05,6.5,5.5,7.5,Day-To-Day
+ORL @ UTAH,UTAH,Lauri Markkanen,assists,2.04,1.50,1.5,1.5,2.5,Day-To-Day
+ORL @ UTAH,UTAH,Lauri Markkanen,threes,3.44,2.30,3.5,2.5,3.5,Day-To-Day
+ORL @ UTAH,UTAH,Lauri Markkanen,pra,29.29,10.89,29.5,27.5,31.5,Day-To-Day
+ORL @ UTAH,UTAH,Jaxson Hayes,points,9.65,6.13,8.5,7.5,9.5,+4% with teammates out
+ORL @ UTAH,UTAH,Jaxson Hayes,rebounds,6.24,2.57,6.5,5.5,6.5,+4% with teammates out
+ORL @ UTAH,UTAH,Jaxson Hayes,assists,1.69,1.37,1.5,0.5,2.5,+4% with teammates out
+ORL @ UTAH,UTAH,Jaxson Hayes,pra,17.58,6.58,17.5,16.5,19.5,+4% with teammates out
+ORL @ UTAH,UTAH,Josh Okogie,points,3.96,4.41,2.5,1.5,3.5,+4% with teammates out
+ORL @ UTAH,UTAH,Josh Okogie,rebounds,3.37,2.77,2.5,1.5,3.5,+4% with teammates out
+ORL @ UTAH,UTAH,Josh Okogie,assists,1.01,1.21,0.5,0.5,1.5,+4% with teammates out
+ORL @ UTAH,UTAH,Josh Okogie,threes,0.65,0.84,0.5,,1.5,+4% with teammates out
+ORL @ UTAH,UTAH,Josh Okogie,pra,8.33,6.69,6.5,5.5,8.5,+4% with teammates out
+ORL @ UTAH,ORL,Franz Wagner,points,22.98,7.29,22.5,21.5,24.5,+6% with teammates out
+ORL @ UTAH,ORL,Franz Wagner,rebounds,6.56,3.01,6.5,5.5,7.5,+6% with teammates out
+ORL @ UTAH,ORL,Franz Wagner,assists,8.67,4.47,8.5,6.5,9.5,+6% with teammates out
+ORL @ UTAH,ORL,Franz Wagner,threes,1.31,1.25,1.5,0.5,1.5,+6% with teammates out
+ORL @ UTAH,ORL,Franz Wagner,pra,38.18,11.03,38.5,35.5,40.5,+6% with teammates out
+ORL @ UTAH,ORL,Wendell Carter Jr.,points,15.37,8.31,15.5,13.5,17.5,+6% with teammates out
+ORL @ UTAH,ORL,Wendell Carter Jr.,rebounds,9.98,3.25,9.5,8.5,10.5,+6% with teammates out
+ORL @ UTAH,ORL,Wendell Carter Jr.,assists,1.26,1.26,1.5,0.5,1.5,+6% with teammates out
+ORL @ UTAH,ORL,Wendell Carter Jr.,threes,1.22,1.23,1.5,0.5,1.5,+6% with teammates out
+ORL @ UTAH,ORL,Wendell Carter Jr.,pra,26.62,9.58,26.5,24.5,28.5,+6% with teammates out
+ORL @ UTAH,ORL,Desmond Bane,points,19.47,7.66,19.5,17.5,21.5,Day-To-Day
+ORL @ UTAH,ORL,Desmond Bane,rebounds,4.15,2.10,3.5,3.5,4.5,Day-To-Day
+ORL @ UTAH,ORL,Desmond Bane,assists,2.82,2.23,2.5,1.5,3.5,Day-To-Day
+ORL @ UTAH,ORL,Desmond Bane,threes,3.33,1.86,3.5,2.5,3.5,Day-To-Day
+ORL @ UTAH,ORL,Desmond Bane,pra,26.46,9.25,26.5,24.5,28.5,Day-To-Day
+ORL @ UTAH,ORL,Tristan da Silva,points,15.48,6.95,15.5,13.5,17.5,+6% with teammates out
+ORL @ UTAH,ORL,Tristan da Silva,rebounds,4.26,2.86,3.5,2.5,4.5,+6% with teammates out
+ORL @ UTAH,ORL,Tristan da Silva,assists,1.98,1.48,1.5,1.5,2.5,+6% with teammates out
+ORL @ UTAH,ORL,Tristan da Silva,threes,3.32,1.94,3.5,2.5,3.5,+6% with teammates out
+ORL @ UTAH,ORL,Tristan da Silva,pra,21.74,8.97,21.5,19.5,23.5,+6% with teammates out
+ORL @ UTAH,ORL,Anthony Black,points,16.21,6.75,16.5,14.5,17.5,+6% with teammates out
+ORL @ UTAH,ORL,Anthony Black,rebounds,5.57,2.68,5.5,4.5,6.5,+6% with teammates out
+ORL @ UTAH,ORL,Anthony Black,assists,4.94,2.88,4.5,3.5,5.5,+6% with teammates out
+ORL @ UTAH,ORL,Anthony Black,threes,1.88,1.62,1.5,0.5,2.5,+6% with teammates out
+ORL @ UTAH,ORL,Anthony Black,pra,26.71,9.96,26.5,24.5,28.5,+6% with teammates out
+ORL @ UTAH,ORL,Jase Richardson,points,6.91,4.15,6.5,5.5,7.5,+6% with teammates out
+ORL @ UTAH,ORL,Jase Richardson,rebounds,2.46,1.95,2.5,1.5,2.5,+6% with teammates out
+ORL @ UTAH,ORL,Jase Richardson,assists,3.01,1.98,2.5,1.5,3.5,+6% with teammates out
+ORL @ UTAH,ORL,Jase Richardson,threes,0.83,1.04,0.5,,1.5,+6% with teammates out
+ORL @ UTAH,ORL,Jase Richardson,pra,12.37,5.15,12.5,11.5,13.5,+6% with teammates out
+GS @ HOU,HOU,Alperen Sengun,points,20.12,7.18,20.5,18.5,21.5,
+GS @ HOU,HOU,Alperen Sengun,rebounds,8.59,3.02,8.5,7.5,9.5,
+GS @ HOU,HOU,Alperen Sengun,assists,7.23,2.82,7.5,6.5,7.5,
+GS @ HOU,HOU,Alperen Sengun,threes,0.80,0.92,0.5,,1.5,
+GS @ HOU,HOU,Alperen Sengun,pra,35.91,9.78,35.5,33.5,37.5,
+GS @ HOU,HOU,Jabari Smith Jr.,points,16.25,6.74,16.5,14.5,17.5,
+GS @ HOU,HOU,Jabari Smith Jr.,rebounds,6.42,3.16,6.5,5.5,7.5,
+GS @ HOU,HOU,Jabari Smith Jr.,assists,2.10,1.61,1.5,1.5,2.5,
+GS @ HOU,HOU,Jabari Smith Jr.,threes,2.64,1.66,2.5,1.5,3.5,
+GS @ HOU,HOU,Jabari Smith Jr.,pra,24.79,8.69,24.5,22.5,26.5,
+GS @ HOU,HOU,Kevin Durant,points,20.44,6.73,20.5,18.5,22.5,
+GS @ HOU,HOU,Kevin Durant,rebounds,5.42,2.40,5.5,4.5,6.5,
+GS @ HOU,HOU,Kevin Durant,assists,3.43,2.03,3.5,2.5,4.5,
+GS @ HOU,HOU,Kevin Durant,threes,1.53,1.28,1.5,0.5,2.5,
+GS @ HOU,HOU,Kevin Durant,pra,29.32,8.65,29.5,27.5,31.5,
+GS @ HOU,HOU,Amen Thompson,points,15.03,5.61,15.5,13.5,16.5,
+GS @ HOU,HOU,Amen Thompson,rebounds,6.18,3.09,5.5,4.5,6.5,
+GS @ HOU,HOU,Amen Thompson,assists,3.18,2.36,2.5,1.5,3.5,
+GS @ HOU,HOU,Amen Thompson,pra,24.40,8.50,24.5,22.5,26.5,
+GS @ HOU,HOU,Fred VanVleet,points,13.04,5.91,13.5,11.5,14.5,
+GS @ HOU,HOU,Fred VanVleet,rebounds,3.26,1.86,3.5,2.5,3.5,
+GS @ HOU,HOU,Fred VanVleet,assists,5.59,2.68,5.5,4.5,6.5,
+GS @ HOU,HOU,Fred VanVleet,threes,2.73,1.69,2.5,1.5,3.5,
+GS @ HOU,HOU,Fred VanVleet,pra,21.89,6.88,21.5,20.5,23.5,
+GS @ HOU,HOU,Tari Eason,points,8.79,5.21,7.5,6.5,9.5,
+GS @ HOU,HOU,Tari Eason,rebounds,5.96,3.13,5.5,4.5,6.5,
+GS @ HOU,HOU,Tari Eason,assists,1.35,1.22,1.5,0.5,1.5,
+GS @ HOU,HOU,Tari Eason,threes,0.89,1.06,0.5,,1.5,
+GS @ HOU,HOU,Tari Eason,pra,16.08,6.87,16.5,14.5,17.5,
+GS @ HOU,HOU,Marcus Smart,points,7.50,5.53,6.5,5.5,7.5,
 GS @ HOU,HOU,Marcus Smart,rebounds,2.27,1.55,2.5,1.5,2.5,
-GS @ HOU,HOU,Marcus Smart,assists,2.22,2.00,1.5,1.5,2.5,
-GS @ HOU,HOU,Marcus Smart,threes,1.50,1.80,1.5,0.5,1.5,
-GS @ HOU,HOU,Marcus Smart,pra,12.04,6.91,12.5,10.5,13.5,
-GS @ HOU,HOU,Reed Sheppard,points,9.45,5.26,8.5,7.5,9.5,
-GS @ HOU,HOU,Reed Sheppard,rebounds,1.97,1.87,1.5,0.5,2.5,
-GS @ HOU,HOU,Reed Sheppard,assists,2.65,2.24,2.5,1.5,3.5,
-GS @ HOU,HOU,Reed Sheppard,threes,2.17,1.51,1.5,1.5,2.5,
-GS @ HOU,HOU,Reed Sheppard,pra,14.07,7.70,14.5,12.5,15.5,
-GS @ HOU,GS,Brandin Podziemski,points,15.39,5.51,15.5,14.5,16.5,
-GS @ HOU,GS,Brandin Podziemski,rebounds,5.42,2.53,5.5,4.5,6.5,
-GS @ HOU,GS,Brandin Podziemski,assists,3.70,2.35,3.5,2.5,4.5,
-GS @ HOU,GS,Brandin Podziemski,threes,2.36,1.57,2.5,1.5,2.5,
-GS @ HOU,GS,Brandin Podziemski,pra,24.54,7.13,24.5,22.5,26.5,
-GS @ HOU,GS,Stephen Curry,points,27.61,9.12,27.5,25.5,29.5,
-GS @ HOU,GS,Stephen Curry,rebounds,3.73,2.26,3.5,2.5,4.5,
-GS @ HOU,GS,Stephen Curry,assists,4.52,2.23,4.5,3.5,5.5,
-GS @ HOU,GS,Stephen Curry,threes,4.43,2.14,4.5,3.5,5.5,
-GS @ HOU,GS,Stephen Curry,pra,36.09,11.61,36.5,33.5,38.5,
-GS @ HOU,GS,Yaxel Lendeborg,points,19.49,8.48,19.5,17.5,21.5,
-GS @ HOU,GS,Yaxel Lendeborg,rebounds,6.75,3.43,6.5,5.5,7.5,
-GS @ HOU,GS,Yaxel Lendeborg,assists,3.77,2.26,3.5,2.5,4.5,
-GS @ HOU,GS,Yaxel Lendeborg,threes,2.13,1.79,1.5,1.5,2.5,
-GS @ HOU,GS,Yaxel Lendeborg,pra,30.05,11.87,30.5,27.5,32.5,
-GS @ HOU,GS,Draymond Green,points,3.93,3.32,3.5,2.5,4.5,
-GS @ HOU,GS,Draymond Green,rebounds,4.86,2.27,4.5,3.5,5.5,
-GS @ HOU,GS,Draymond Green,assists,6.93,3.26,6.5,5.5,7.5,
-GS @ HOU,GS,Draymond Green,threes,0.51,0.88,0.5,,0.5,
-GS @ HOU,GS,Draymond Green,pra,15.58,4.77,15.5,14.5,16.5,
-GS @ HOU,GS,De'Anthony Melton,points,8.61,7.22,6.5,5.5,8.5,
-GS @ HOU,GS,De'Anthony Melton,rebounds,3.95,2.20,3.5,2.5,4.5,
-GS @ HOU,GS,De'Anthony Melton,assists,2.04,1.50,1.5,1.5,2.5,
-GS @ HOU,GS,De'Anthony Melton,threes,1.62,1.70,1.5,0.5,1.5,
-GS @ HOU,GS,De'Anthony Melton,pra,14.59,8.68,14.5,12.5,16.5,
+GS @ HOU,HOU,Marcus Smart,assists,2.21,1.99,1.5,0.5,2.5,
+GS @ HOU,HOU,Marcus Smart,threes,1.49,1.79,1.5,0.5,1.5,
+GS @ HOU,HOU,Marcus Smart,pra,11.98,6.88,11.5,10.5,13.5,
+GS @ HOU,HOU,Reed Sheppard,points,9.39,5.23,8.5,7.5,9.5,
+GS @ HOU,HOU,Reed Sheppard,rebounds,1.96,1.87,1.5,0.5,2.5,
+GS @ HOU,HOU,Reed Sheppard,assists,2.64,2.23,2.5,1.5,3.5,
+GS @ HOU,HOU,Reed Sheppard,threes,2.16,1.50,1.5,1.5,2.5,
+GS @ HOU,HOU,Reed Sheppard,pra,14.01,7.67,14.5,12.5,15.5,
+GS @ HOU,GS,Brandin Podziemski,points,15.49,5.55,15.5,14.5,16.5,
+GS @ HOU,GS,Brandin Podziemski,rebounds,5.43,2.53,5.5,4.5,6.5,
+GS @ HOU,GS,Brandin Podziemski,assists,3.72,2.36,3.5,2.5,4.5,
+GS @ HOU,GS,Brandin Podziemski,threes,2.37,1.57,2.5,1.5,2.5,
+GS @ HOU,GS,Brandin Podziemski,pra,24.67,7.16,24.5,23.5,26.5,
+GS @ HOU,GS,Stephen Curry,points,27.79,9.18,27.5,25.5,29.5,
+GS @ HOU,GS,Stephen Curry,rebounds,3.74,2.27,3.5,2.5,4.5,
+GS @ HOU,GS,Stephen Curry,assists,4.54,2.24,4.5,3.5,5.5,
+GS @ HOU,GS,Stephen Curry,threes,4.45,2.15,4.5,3.5,5.5,
+GS @ HOU,GS,Stephen Curry,pra,36.27,11.67,36.5,33.5,38.5,
+GS @ HOU,GS,Yaxel Lendeborg,points,19.62,8.53,19.5,17.5,21.5,
+GS @ HOU,GS,Yaxel Lendeborg,rebounds,6.76,3.44,6.5,5.5,7.5,
+GS @ HOU,GS,Yaxel Lendeborg,assists,3.79,2.27,3.5,2.5,4.5,
+GS @ HOU,GS,Yaxel Lendeborg,threes,2.14,1.80,1.5,1.5,2.5,
+GS @ HOU,GS,Yaxel Lendeborg,pra,30.20,11.93,30.5,27.5,32.5,
+GS @ HOU,GS,Draymond Green,points,3.96,3.34,3.5,2.5,4.5,
+GS @ HOU,GS,Draymond Green,rebounds,4.87,2.27,4.5,3.5,5.5,
+GS @ HOU,GS,Draymond Green,assists,6.97,3.27,6.5,5.5,7.5,
+GS @ HOU,GS,Draymond Green,threes,0.51,0.89,0.5,,0.5,
+GS @ HOU,GS,Draymond Green,pra,15.66,4.79,15.5,14.5,16.5,
+GS @ HOU,GS,De'Anthony Melton,points,8.66,7.27,6.5,5.5,8.5,
+GS @ HOU,GS,De'Anthony Melton,rebounds,3.96,2.20,3.5,2.5,4.5,
+GS @ HOU,GS,De'Anthony Melton,assists,2.06,1.50,1.5,1.5,2.5,
+GS @ HOU,GS,De'Anthony Melton,threes,1.63,1.71,1.5,0.5,1.5,
+GS @ HOU,GS,De'Anthony Melton,pra,14.66,8.73,14.5,12.5,16.5,
 OKC @ POR,POR,Deni Avdija,points,21.60,6.44,21.5,20.5,23.5,+4% with teammates out
 OKC @ POR,POR,Deni Avdija,rebounds,6.27,2.61,6.5,5.5,6.5,+4% with teammates out
 OKC @ POR,POR,Deni Avdija,assists,6.37,3.60,5.5,4.5,6.5,+4% with teammates out
@@ -1648,81 +1657,81 @@ OKC @ POR,OKC,Aday Mara,points,9.19,4.74,8.5,7.5,9.5,+6% with teammates out
 OKC @ POR,OKC,Aday Mara,rebounds,6.67,3.01,6.5,5.5,7.5,+6% with teammates out
 OKC @ POR,OKC,Aday Mara,assists,1.46,1.33,1.5,0.5,1.5,+6% with teammates out
 OKC @ POR,OKC,Aday Mara,pra,17.29,7.48,17.5,15.5,18.5,+6% with teammates out
-TOR @ PHI,PHI,Jaylen Brown,points,23.67,7.45,23.5,21.5,25.5,
-TOR @ PHI,PHI,Jaylen Brown,rebounds,6.53,2.78,6.5,5.5,7.5,
-TOR @ PHI,PHI,Jaylen Brown,assists,4.20,2.15,4.5,3.5,4.5,
-TOR @ PHI,PHI,Jaylen Brown,threes,1.98,1.43,1.5,1.5,2.5,
-TOR @ PHI,PHI,Jaylen Brown,pra,34.39,9.43,34.5,32.5,36.5,
-TOR @ PHI,PHI,Tyrese Maxey,points,25.34,7.33,25.5,23.5,27.5,
+TOR @ PHI,PHI,Jaylen Brown,points,23.74,7.47,23.5,22.5,25.5,
+TOR @ PHI,PHI,Jaylen Brown,rebounds,6.54,2.79,6.5,5.5,7.5,
+TOR @ PHI,PHI,Jaylen Brown,assists,4.21,2.15,4.5,3.5,4.5,
+TOR @ PHI,PHI,Jaylen Brown,threes,1.98,1.44,1.5,1.5,2.5,
+TOR @ PHI,PHI,Jaylen Brown,pra,34.47,9.46,34.5,32.5,36.5,
+TOR @ PHI,PHI,Tyrese Maxey,points,25.42,7.35,25.5,23.5,27.5,
 TOR @ PHI,PHI,Tyrese Maxey,rebounds,3.55,1.94,3.5,2.5,4.5,
-TOR @ PHI,PHI,Tyrese Maxey,assists,5.52,2.61,5.5,4.5,6.5,
-TOR @ PHI,PHI,Tyrese Maxey,threes,2.48,1.60,2.5,1.5,3.5,
-TOR @ PHI,PHI,Tyrese Maxey,pra,34.36,8.96,34.5,32.5,36.5,
-TOR @ PHI,PHI,VJ Edgecombe,points,14.05,5.69,14.5,12.5,15.5,
-TOR @ PHI,PHI,VJ Edgecombe,rebounds,6.09,2.84,5.5,4.5,6.5,
-TOR @ PHI,PHI,VJ Edgecombe,assists,3.28,2.21,2.5,2.5,3.5,
+TOR @ PHI,PHI,Tyrese Maxey,assists,5.53,2.61,5.5,4.5,6.5,
+TOR @ PHI,PHI,Tyrese Maxey,threes,2.49,1.61,2.5,1.5,3.5,
+TOR @ PHI,PHI,Tyrese Maxey,pra,34.45,8.98,34.5,32.5,36.5,
+TOR @ PHI,PHI,VJ Edgecombe,points,14.09,5.70,14.5,12.5,15.5,
+TOR @ PHI,PHI,VJ Edgecombe,rebounds,6.10,2.85,5.5,4.5,6.5,
+TOR @ PHI,PHI,VJ Edgecombe,assists,3.29,2.22,2.5,2.5,3.5,
 TOR @ PHI,PHI,VJ Edgecombe,threes,1.90,1.48,1.5,0.5,2.5,
-TOR @ PHI,PHI,VJ Edgecombe,pra,23.43,7.30,23.5,21.5,25.5,
-TOR @ PHI,PHI,LeBron James,points,16.57,5.88,16.5,15.5,17.5,
+TOR @ PHI,PHI,VJ Edgecombe,pra,23.48,7.32,23.5,21.5,25.5,
+TOR @ PHI,PHI,LeBron James,points,16.62,5.90,16.5,15.5,18.5,
 TOR @ PHI,PHI,LeBron James,rebounds,6.79,2.73,6.5,5.5,7.5,
-TOR @ PHI,PHI,LeBron James,assists,6.88,2.98,6.5,5.5,7.5,
+TOR @ PHI,PHI,LeBron James,assists,6.90,2.99,6.5,5.5,7.5,
 TOR @ PHI,PHI,LeBron James,threes,0.97,1.01,0.5,0.5,1.5,
-TOR @ PHI,PHI,LeBron James,pra,30.21,8.69,30.5,28.5,32.5,
-TOR @ PHI,PHI,Joel Embiid,points,19.48,8.80,19.5,17.5,21.5,
-TOR @ PHI,PHI,Joel Embiid,rebounds,8.73,3.04,8.5,7.5,9.5,
-TOR @ PHI,PHI,Joel Embiid,assists,3.84,2.71,3.5,2.5,4.5,
+TOR @ PHI,PHI,LeBron James,pra,30.29,8.71,30.5,28.5,32.5,
+TOR @ PHI,PHI,Joel Embiid,points,19.54,8.83,19.5,17.5,21.5,
+TOR @ PHI,PHI,Joel Embiid,rebounds,8.74,3.04,8.5,7.5,9.5,
+TOR @ PHI,PHI,Joel Embiid,assists,3.85,2.71,3.5,2.5,4.5,
 TOR @ PHI,PHI,Joel Embiid,threes,0.62,0.98,0.5,,0.5,
-TOR @ PHI,PHI,Joel Embiid,pra,32.07,11.14,32.5,29.5,34.5,
-TOR @ PHI,PHI,Dean Wade,points,3.63,3.73,2.5,1.5,3.5,
-TOR @ PHI,PHI,Dean Wade,rebounds,3.31,2.06,3.5,2.5,3.5,
-TOR @ PHI,PHI,Dean Wade,assists,1.71,2.47,0.5,0.5,1.5,
+TOR @ PHI,PHI,Joel Embiid,pra,32.14,11.17,32.5,29.5,34.5,
+TOR @ PHI,PHI,Dean Wade,points,3.64,3.74,2.5,1.5,3.5,
+TOR @ PHI,PHI,Dean Wade,rebounds,3.32,2.06,3.5,2.5,3.5,
+TOR @ PHI,PHI,Dean Wade,assists,1.72,2.48,0.5,0.5,1.5,
 TOR @ PHI,PHI,Dean Wade,threes,0.67,0.96,0.5,,1.5,
-TOR @ PHI,PHI,Dean Wade,pra,8.67,5.64,7.5,6.5,8.5,
-TOR @ PHI,PHI,Anfernee Simons,points,8.98,7.53,7.5,5.5,8.5,
-TOR @ PHI,PHI,Anfernee Simons,rebounds,1.96,1.44,1.5,1.5,2.5,
-TOR @ PHI,PHI,Anfernee Simons,assists,1.41,1.37,1.5,0.5,1.5,
-TOR @ PHI,PHI,Anfernee Simons,threes,2.02,1.96,1.5,0.5,2.5,
-TOR @ PHI,PHI,Anfernee Simons,pra,12.35,7.92,12.5,10.5,14.5,
-TOR @ PHI,PHI,Kentavious Caldwell-Pope,points,5.83,3.66,5.5,4.5,6.5,
+TOR @ PHI,PHI,Dean Wade,pra,8.69,5.65,7.5,6.5,9.5,
+TOR @ PHI,PHI,Anfernee Simons,points,9.01,7.55,7.5,5.5,8.5,
+TOR @ PHI,PHI,Anfernee Simons,rebounds,1.97,1.44,1.5,1.5,2.5,
+TOR @ PHI,PHI,Anfernee Simons,assists,1.41,1.38,1.5,0.5,1.5,
+TOR @ PHI,PHI,Anfernee Simons,threes,2.02,1.97,1.5,0.5,2.5,
+TOR @ PHI,PHI,Anfernee Simons,pra,12.38,7.94,12.5,10.5,14.5,
+TOR @ PHI,PHI,Kentavious Caldwell-Pope,points,5.84,3.67,5.5,4.5,6.5,
 TOR @ PHI,PHI,Kentavious Caldwell-Pope,rebounds,2.42,1.60,2.5,1.5,2.5,
 TOR @ PHI,PHI,Kentavious Caldwell-Pope,assists,1.43,1.37,1.5,0.5,1.5,
 TOR @ PHI,PHI,Kentavious Caldwell-Pope,threes,1.15,1.09,0.5,0.5,1.5,
-TOR @ PHI,PHI,Kentavious Caldwell-Pope,pra,9.68,4.64,9.5,7.5,10.5,
-TOR @ PHI,TOR,Malachi Smith,points,9.80,5.92,8.5,7.5,10.5,+2% with teammates out
+TOR @ PHI,PHI,Kentavious Caldwell-Pope,pra,9.70,4.65,9.5,7.5,10.5,
+TOR @ PHI,TOR,Malachi Smith,points,9.77,5.90,8.5,7.5,10.5,+2% with teammates out
 TOR @ PHI,TOR,Malachi Smith,rebounds,4.42,2.67,4.5,3.5,4.5,+2% with teammates out
-TOR @ PHI,TOR,Malachi Smith,assists,4.18,2.98,3.5,2.5,4.5,+2% with teammates out
-TOR @ PHI,TOR,Malachi Smith,threes,1.67,1.68,1.5,0.5,2.5,+2% with teammates out
-TOR @ PHI,TOR,Malachi Smith,pra,18.37,9.71,18.5,16.5,20.5,+2% with teammates out
-TOR @ PHI,TOR,Scottie Barnes,points,20.33,10.02,20.5,18.5,22.5,Day-To-Day
-TOR @ PHI,TOR,Scottie Barnes,rebounds,7.27,3.84,6.5,5.5,7.5,Day-To-Day
-TOR @ PHI,TOR,Scottie Barnes,assists,5.74,2.71,5.5,4.5,6.5,Day-To-Day
+TOR @ PHI,TOR,Malachi Smith,assists,4.17,2.97,3.5,2.5,4.5,+2% with teammates out
+TOR @ PHI,TOR,Malachi Smith,threes,1.66,1.68,1.5,0.5,2.5,+2% with teammates out
+TOR @ PHI,TOR,Malachi Smith,pra,18.32,9.69,18.5,16.5,20.5,+2% with teammates out
+TOR @ PHI,TOR,Scottie Barnes,points,20.27,9.99,20.5,18.5,22.5,Day-To-Day
+TOR @ PHI,TOR,Scottie Barnes,rebounds,7.27,3.83,6.5,5.5,7.5,Day-To-Day
+TOR @ PHI,TOR,Scottie Barnes,assists,5.73,2.71,5.5,4.5,6.5,Day-To-Day
 TOR @ PHI,TOR,Scottie Barnes,threes,0.52,0.74,0.5,,0.5,Day-To-Day
-TOR @ PHI,TOR,Scottie Barnes,pra,33.37,12.61,33.5,30.5,35.5,Day-To-Day
-TOR @ PHI,TOR,RJ Barrett,points,20.58,5.91,20.5,19.5,22.5,+2% with teammates out
-TOR @ PHI,TOR,RJ Barrett,rebounds,5.94,2.59,5.5,4.5,6.5,+2% with teammates out
-TOR @ PHI,TOR,RJ Barrett,assists,3.64,2.00,3.5,2.5,4.5,+2% with teammates out
-TOR @ PHI,TOR,RJ Barrett,threes,1.56,1.39,1.5,0.5,2.5,+2% with teammates out
-TOR @ PHI,TOR,RJ Barrett,pra,30.25,7.96,30.5,28.5,32.5,+2% with teammates out
-TOR @ PHI,TOR,Immanuel Quickley,points,15.80,6.31,15.5,14.5,17.5,Day-To-Day
+TOR @ PHI,TOR,Scottie Barnes,pra,33.29,12.58,33.5,30.5,35.5,Day-To-Day
+TOR @ PHI,TOR,RJ Barrett,points,20.52,5.89,20.5,19.5,21.5,+2% with teammates out
+TOR @ PHI,TOR,RJ Barrett,rebounds,5.93,2.59,5.5,4.5,6.5,+2% with teammates out
+TOR @ PHI,TOR,RJ Barrett,assists,3.63,2.00,3.5,2.5,4.5,+2% with teammates out
+TOR @ PHI,TOR,RJ Barrett,threes,1.56,1.38,1.5,0.5,2.5,+2% with teammates out
+TOR @ PHI,TOR,RJ Barrett,pra,30.17,7.94,30.5,28.5,31.5,+2% with teammates out
+TOR @ PHI,TOR,Immanuel Quickley,points,15.75,6.29,15.5,14.5,17.5,Day-To-Day
 TOR @ PHI,TOR,Immanuel Quickley,rebounds,3.52,1.94,3.5,2.5,4.5,Day-To-Day
-TOR @ PHI,TOR,Immanuel Quickley,assists,5.57,2.64,5.5,4.5,6.5,Day-To-Day
-TOR @ PHI,TOR,Immanuel Quickley,threes,2.42,1.59,2.5,1.5,2.5,Day-To-Day
-TOR @ PHI,TOR,Immanuel Quickley,pra,24.97,7.45,24.5,23.5,26.5,Day-To-Day
-TOR @ PHI,TOR,Ja'Kobe Walter,points,10.17,4.68,9.5,8.5,10.5,+2% with teammates out
+TOR @ PHI,TOR,Immanuel Quickley,assists,5.55,2.64,5.5,4.5,6.5,Day-To-Day
+TOR @ PHI,TOR,Immanuel Quickley,threes,2.41,1.58,2.5,1.5,2.5,Day-To-Day
+TOR @ PHI,TOR,Immanuel Quickley,pra,24.91,7.43,24.5,23.5,26.5,Day-To-Day
+TOR @ PHI,TOR,Ja'Kobe Walter,points,10.14,4.66,9.5,8.5,10.5,+2% with teammates out
 TOR @ PHI,TOR,Ja'Kobe Walter,rebounds,3.90,2.04,3.5,2.5,4.5,+2% with teammates out
 TOR @ PHI,TOR,Ja'Kobe Walter,assists,2.20,1.56,2.5,1.5,2.5,+2% with teammates out
-TOR @ PHI,TOR,Ja'Kobe Walter,threes,2.06,1.53,1.5,1.5,2.5,+2% with teammates out
-TOR @ PHI,TOR,Ja'Kobe Walter,pra,16.28,5.72,16.5,14.5,17.5,+2% with teammates out
-TOR @ PHI,TOR,Collin Murray-Boyles,points,10.79,5.64,9.5,8.5,11.5,+2% with teammates out
-TOR @ PHI,TOR,Collin Murray-Boyles,rebounds,5.25,2.55,5.5,4.5,5.5,+2% with teammates out
-TOR @ PHI,TOR,Collin Murray-Boyles,assists,1.47,1.28,1.5,0.5,1.5,+2% with teammates out
-TOR @ PHI,TOR,Collin Murray-Boyles,threes,0.44,0.67,0.5,,0.5,+2% with teammates out
-TOR @ PHI,TOR,Collin Murray-Boyles,pra,17.49,7.00,17.5,15.5,19.5,+2% with teammates out
-TOR @ PHI,TOR,Jamal Shead,points,5.93,3.76,5.5,4.5,6.5,+2% with teammates out
+TOR @ PHI,TOR,Ja'Kobe Walter,threes,2.05,1.52,1.5,1.5,2.5,+2% with teammates out
+TOR @ PHI,TOR,Ja'Kobe Walter,pra,16.24,5.71,16.5,14.5,17.5,+2% with teammates out
+TOR @ PHI,TOR,Collin Murray-Boyles,points,10.76,5.63,9.5,8.5,11.5,Day-To-Day
+TOR @ PHI,TOR,Collin Murray-Boyles,rebounds,5.24,2.55,5.5,4.5,5.5,Day-To-Day
+TOR @ PHI,TOR,Collin Murray-Boyles,assists,1.47,1.28,1.5,0.5,1.5,Day-To-Day
+TOR @ PHI,TOR,Collin Murray-Boyles,threes,0.44,0.67,0.5,,0.5,Day-To-Day
+TOR @ PHI,TOR,Collin Murray-Boyles,pra,17.45,6.98,17.5,15.5,19.5,Day-To-Day
+TOR @ PHI,TOR,Jamal Shead,points,5.92,3.75,5.5,4.5,6.5,+2% with teammates out
 TOR @ PHI,TOR,Jamal Shead,rebounds,1.88,1.41,1.5,0.5,2.5,+2% with teammates out
-TOR @ PHI,TOR,Jamal Shead,assists,6.46,3.88,5.5,4.5,6.5,+2% with teammates out
+TOR @ PHI,TOR,Jamal Shead,assists,6.45,3.87,5.5,4.5,6.5,+2% with teammates out
 TOR @ PHI,TOR,Jamal Shead,threes,0.67,0.83,0.5,,1.5,+2% with teammates out
-TOR @ PHI,TOR,Jamal Shead,pra,14.25,6.79,14.5,12.5,15.5,+2% with teammates out
+TOR @ PHI,TOR,Jamal Shead,pra,14.21,6.77,14.5,12.5,15.5,+2% with teammates out
 DET @ WSH,WSH,Kyshawn George,points,17.56,7.61,17.5,15.5,19.5,
 DET @ WSH,WSH,Kyshawn George,rebounds,4.53,2.31,4.5,3.5,5.5,
 DET @ WSH,WSH,Kyshawn George,assists,5.05,2.75,4.5,3.5,5.5,
@@ -1792,73 +1801,73 @@ DET @ WSH,DET,Kevin Huerter,rebounds,2.72,1.97,2.5,1.5,3.5,
 DET @ WSH,DET,Kevin Huerter,assists,2.52,1.80,2.5,1.5,3.5,
 DET @ WSH,DET,Kevin Huerter,threes,1.84,1.38,1.5,0.5,2.5,
 DET @ WSH,DET,Kevin Huerter,pra,14.60,8.22,14.5,12.5,16.5,
-DAL @ MIN,MIN,Ayo Dosunmu,points,18.65,6.63,18.5,17.5,20.5,+4% with teammates out
+DAL @ MIN,MIN,Ayo Dosunmu,points,18.68,6.64,18.5,17.5,20.5,+4% with teammates out
 DAL @ MIN,MIN,Ayo Dosunmu,rebounds,5.04,3.49,4.5,3.5,5.5,+4% with teammates out
 DAL @ MIN,MIN,Ayo Dosunmu,assists,4.06,2.85,3.5,2.5,4.5,+4% with teammates out
 DAL @ MIN,MIN,Ayo Dosunmu,threes,2.02,1.48,1.5,1.5,2.5,+4% with teammates out
-DAL @ MIN,MIN,Ayo Dosunmu,pra,27.79,9.38,27.5,25.5,29.5,+4% with teammates out
-DAL @ MIN,MIN,Jaden McDaniels,points,16.81,5.18,16.5,15.5,18.5,+4% with teammates out
+DAL @ MIN,MIN,Ayo Dosunmu,pra,27.83,9.39,27.5,25.5,29.5,+4% with teammates out
+DAL @ MIN,MIN,Jaden McDaniels,points,16.84,5.19,16.5,15.5,18.5,+4% with teammates out
 DAL @ MIN,MIN,Jaden McDaniels,rebounds,5.85,2.49,5.5,4.5,6.5,+4% with teammates out
-DAL @ MIN,MIN,Jaden McDaniels,assists,3.53,1.97,3.5,2.5,4.5,+4% with teammates out
+DAL @ MIN,MIN,Jaden McDaniels,assists,3.54,1.97,3.5,2.5,4.5,+4% with teammates out
 DAL @ MIN,MIN,Jaden McDaniels,threes,1.46,1.23,1.5,0.5,1.5,+4% with teammates out
-DAL @ MIN,MIN,Jaden McDaniels,pra,26.22,7.07,26.5,24.5,27.5,+4% with teammates out
-DAL @ MIN,MIN,Jonathan Kuminga,points,12.49,6.01,12.5,11.5,13.5,+4% with teammates out
+DAL @ MIN,MIN,Jaden McDaniels,pra,26.25,7.08,26.5,24.5,27.5,+4% with teammates out
+DAL @ MIN,MIN,Jonathan Kuminga,points,12.51,6.02,12.5,11.5,13.5,+4% with teammates out
 DAL @ MIN,MIN,Jonathan Kuminga,rebounds,5.65,3.46,5.5,4.5,6.5,+4% with teammates out
 DAL @ MIN,MIN,Jonathan Kuminga,assists,2.68,1.92,2.5,1.5,3.5,+4% with teammates out
 DAL @ MIN,MIN,Jonathan Kuminga,threes,1.66,1.37,1.5,0.5,2.5,+4% with teammates out
-DAL @ MIN,MIN,Jonathan Kuminga,pra,20.81,9.27,20.5,18.5,22.5,+4% with teammates out
-DAL @ MIN,MIN,Rudy Gobert,points,8.19,4.07,7.5,6.5,8.5,+4% with teammates out
-DAL @ MIN,MIN,Rudy Gobert,rebounds,11.77,3.93,11.5,10.5,12.5,+4% with teammates out
+DAL @ MIN,MIN,Jonathan Kuminga,pra,20.83,9.28,20.5,18.5,22.5,+4% with teammates out
+DAL @ MIN,MIN,Rudy Gobert,points,8.20,4.07,7.5,6.5,8.5,+4% with teammates out
+DAL @ MIN,MIN,Rudy Gobert,rebounds,11.78,3.93,11.5,10.5,12.5,+4% with teammates out
 DAL @ MIN,MIN,Rudy Gobert,assists,1.42,1.25,1.5,0.5,1.5,+4% with teammates out
-DAL @ MIN,MIN,Rudy Gobert,pra,21.24,6.57,21.5,19.5,22.5,+4% with teammates out
-DAL @ MIN,MIN,LaMelo Ball,points,19.60,7.88,19.5,17.5,21.5,+4% with teammates out
+DAL @ MIN,MIN,Rudy Gobert,pra,21.26,6.58,21.5,19.5,22.5,+4% with teammates out
+DAL @ MIN,MIN,LaMelo Ball,points,19.62,7.89,19.5,17.5,21.5,+4% with teammates out
 DAL @ MIN,MIN,LaMelo Ball,rebounds,3.69,2.27,3.5,2.5,4.5,+4% with teammates out
-DAL @ MIN,MIN,LaMelo Ball,assists,6.21,2.61,6.5,5.5,6.5,+4% with teammates out
-DAL @ MIN,MIN,LaMelo Ball,threes,3.59,1.97,3.5,2.5,4.5,+4% with teammates out
-DAL @ MIN,MIN,LaMelo Ball,pra,29.55,8.80,29.5,27.5,31.5,+4% with teammates out
-DAL @ MIN,MIN,Trey Lyles,points,6.87,3.40,6.5,5.5,7.5,+4% with teammates out
+DAL @ MIN,MIN,LaMelo Ball,assists,6.21,2.62,6.5,5.5,6.5,+4% with teammates out
+DAL @ MIN,MIN,LaMelo Ball,threes,3.60,1.97,3.5,2.5,4.5,+4% with teammates out
+DAL @ MIN,MIN,LaMelo Ball,pra,29.58,8.81,29.5,27.5,31.5,+4% with teammates out
+DAL @ MIN,MIN,Trey Lyles,points,6.88,3.40,6.5,5.5,7.5,+4% with teammates out
 DAL @ MIN,MIN,Trey Lyles,rebounds,4.86,3.64,4.5,3.5,5.5,+4% with teammates out
-DAL @ MIN,MIN,Trey Lyles,assists,0.97,1.06,0.5,0.5,1.5,+4% with teammates out
-DAL @ MIN,MIN,Trey Lyles,threes,1.03,1.04,0.5,0.5,1.5,+4% with teammates out
-DAL @ MIN,MIN,Trey Lyles,pra,12.68,5.69,12.5,11.5,14.5,+4% with teammates out
-DAL @ MIN,DAL,Cooper Flagg,points,22.22,8.19,22.5,20.5,24.5,
+DAL @ MIN,MIN,Trey Lyles,assists,0.98,1.06,0.5,0.5,1.5,+4% with teammates out
+DAL @ MIN,MIN,Trey Lyles,threes,1.04,1.04,0.5,0.5,1.5,+4% with teammates out
+DAL @ MIN,MIN,Trey Lyles,pra,12.69,5.70,12.5,11.5,14.5,+4% with teammates out
+DAL @ MIN,DAL,Cooper Flagg,points,22.19,8.18,22.5,20.5,23.5,
 DAL @ MIN,DAL,Cooper Flagg,rebounds,6.57,2.64,6.5,5.5,7.5,
-DAL @ MIN,DAL,Cooper Flagg,assists,6.27,3.04,5.5,4.5,6.5,
+DAL @ MIN,DAL,Cooper Flagg,assists,6.26,3.04,5.5,4.5,6.5,
 DAL @ MIN,DAL,Cooper Flagg,threes,1.13,1.20,0.5,0.5,1.5,
-DAL @ MIN,DAL,Cooper Flagg,pra,35.11,10.22,35.5,32.5,37.5,
-DAL @ MIN,DAL,P.J. Washington,points,13.55,6.80,13.5,11.5,15.5,
-DAL @ MIN,DAL,P.J. Washington,rebounds,7.02,3.00,6.5,5.5,7.5,
+DAL @ MIN,DAL,Cooper Flagg,pra,35.07,10.20,35.5,32.5,37.5,
+DAL @ MIN,DAL,P.J. Washington,points,13.53,6.80,13.5,11.5,15.5,
+DAL @ MIN,DAL,P.J. Washington,rebounds,6.93,2.94,6.5,5.5,7.5,
 DAL @ MIN,DAL,P.J. Washington,assists,1.16,1.13,0.5,0.5,1.5,
 DAL @ MIN,DAL,P.J. Washington,threes,2.13,1.59,1.5,1.5,2.5,
-DAL @ MIN,DAL,P.J. Washington,pra,21.70,8.65,21.5,19.5,23.5,
-DAL @ MIN,DAL,Kyrie Irving,points,20.02,7.45,20.5,18.5,21.5,
-DAL @ MIN,DAL,Kyrie Irving,rebounds,3.51,2.08,3.5,2.5,4.5,
+DAL @ MIN,DAL,P.J. Washington,pra,21.59,8.55,21.5,19.5,23.5,
+DAL @ MIN,DAL,Kyrie Irving,points,19.99,7.44,19.5,18.5,21.5,
+DAL @ MIN,DAL,Kyrie Irving,rebounds,3.50,2.08,3.5,2.5,4.5,
 DAL @ MIN,DAL,Kyrie Irving,assists,4.18,2.34,3.5,3.5,4.5,
 DAL @ MIN,DAL,Kyrie Irving,threes,2.66,1.88,2.5,1.5,3.5,
-DAL @ MIN,DAL,Kyrie Irving,pra,27.83,10.24,27.5,25.5,29.5,
-DAL @ MIN,DAL,Naji Marshall,points,10.83,6.42,9.5,8.5,11.5,
+DAL @ MIN,DAL,Kyrie Irving,pra,27.80,10.22,27.5,25.5,29.5,
+DAL @ MIN,DAL,Naji Marshall,points,10.81,6.41,9.5,8.5,11.5,
 DAL @ MIN,DAL,Naji Marshall,rebounds,2.77,1.94,2.5,1.5,3.5,
-DAL @ MIN,DAL,Naji Marshall,assists,3.69,2.02,3.5,2.5,4.5,
+DAL @ MIN,DAL,Naji Marshall,assists,3.69,2.01,3.5,2.5,4.5,
 DAL @ MIN,DAL,Naji Marshall,threes,0.75,0.95,0.5,,1.5,
-DAL @ MIN,DAL,Naji Marshall,pra,17.31,8.10,17.5,15.5,19.5,
-DAL @ MIN,DAL,Daniel Gafford,points,9.62,6.20,8.5,7.5,9.5,
+DAL @ MIN,DAL,Naji Marshall,pra,17.29,8.09,17.5,15.5,19.5,
+DAL @ MIN,DAL,Daniel Gafford,points,9.60,6.19,8.5,7.5,9.5,
 DAL @ MIN,DAL,Daniel Gafford,rebounds,5.81,3.11,5.5,4.5,6.5,
 DAL @ MIN,DAL,Daniel Gafford,assists,1.51,1.31,1.5,0.5,1.5,
-DAL @ MIN,DAL,Daniel Gafford,pra,16.90,7.95,16.5,15.5,18.5,
-DAL @ MIN,DAL,Zaccharie Risacher,points,6.77,4.52,5.5,4.5,7.5,
+DAL @ MIN,DAL,Daniel Gafford,pra,16.88,7.94,16.5,15.5,18.5,
+DAL @ MIN,DAL,Zaccharie Risacher,points,6.76,4.51,5.5,4.5,7.5,
 DAL @ MIN,DAL,Zaccharie Risacher,rebounds,4.61,2.21,4.5,3.5,5.5,
 DAL @ MIN,DAL,Zaccharie Risacher,assists,1.22,1.16,1.5,0.5,1.5,
 DAL @ MIN,DAL,Zaccharie Risacher,threes,0.88,1.05,0.5,,1.5,
-DAL @ MIN,DAL,Zaccharie Risacher,pra,12.56,5.86,12.5,11.5,13.5,
-DAL @ MIN,DAL,Caleb Martin,points,4.07,4.02,2.5,1.5,4.5,
-DAL @ MIN,DAL,Caleb Martin,rebounds,2.33,2.06,1.5,1.5,2.5,
+DAL @ MIN,DAL,Zaccharie Risacher,pra,12.55,5.85,12.5,11.5,13.5,
+DAL @ MIN,DAL,Caleb Martin,points,4.07,4.01,2.5,1.5,4.5,
+DAL @ MIN,DAL,Caleb Martin,rebounds,2.32,2.06,1.5,1.5,2.5,
 DAL @ MIN,DAL,Caleb Martin,assists,0.89,1.22,0.5,,1.5,
 DAL @ MIN,DAL,Caleb Martin,threes,0.60,0.86,0.5,,0.5,
-DAL @ MIN,DAL,Caleb Martin,pra,7.27,4.85,6.5,5.5,7.5,
-DAL @ MIN,DAL,Morez Johnson Jr.,points,7.38,3.69,6.5,5.5,8.5,
-DAL @ MIN,DAL,Morez Johnson Jr.,rebounds,5.56,4.58,4.5,3.5,5.5,
-DAL @ MIN,DAL,Morez Johnson Jr.,assists,1.29,1.19,1.5,0.5,1.5,
-DAL @ MIN,DAL,Morez Johnson Jr.,pra,14.17,7.19,14.5,12.5,15.5,
+DAL @ MIN,DAL,Caleb Martin,pra,7.27,4.84,6.5,5.5,7.5,
+DAL @ MIN,DAL,Morez Johnson Jr.,points,7.37,3.69,6.5,5.5,8.5,Day-To-Day
+DAL @ MIN,DAL,Morez Johnson Jr.,rebounds,5.55,4.58,4.5,3.5,5.5,Day-To-Day
+DAL @ MIN,DAL,Morez Johnson Jr.,assists,1.29,1.19,1.5,0.5,1.5,Day-To-Day
+DAL @ MIN,DAL,Morez Johnson Jr.,pra,14.15,7.18,14.5,12.5,15.5,Day-To-Day
 CHA @ PHX,PHX,Devin Booker,points,25.28,10.28,25.5,23.5,27.5,
 CHA @ PHX,PHX,Devin Booker,rebounds,2.87,1.92,2.5,1.5,3.5,
 CHA @ PHX,PHX,Devin Booker,assists,5.16,2.52,4.5,4.5,5.5,

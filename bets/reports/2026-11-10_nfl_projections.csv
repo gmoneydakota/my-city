@@ -1,44 +1,44 @@
 game,team,player,stat,proj,sd,fair_line,higher_if_line_le,lower_if_line_ge,status
-WSH @ NYG,NYG,Malik Nabers,rec_yds,83.82,67.62,83.5,72.5,95.5,
-WSH @ NYG,NYG,Malik Nabers,receptions,6.61,3.17,6.5,5.5,7.5,
-WSH @ NYG,NYG,Jameis Winston,pass_yds,142.08,101.00,142.5,125.5,158.5,
-WSH @ NYG,NYG,Jameis Winston,pass_tds,1.13,1.23,0.5,0.5,1.5,
-WSH @ NYG,NYG,Jameis Winston,rush_yds,8.83,9.74,5.5,4.5,7.5,
-WSH @ NYG,NYG,Isaiah Likely,rec_yds,50.64,42.71,50.5,43.5,57.5,
-WSH @ NYG,NYG,Isaiah Likely,receptions,4.95,2.85,4.5,3.5,5.5,
-WSH @ NYG,NYG,Isaiah Likely,anytime_td,0.65,0.85,47% (+112),,,
-WSH @ NYG,NYG,Devin Singletary,rush_yds,25.63,23.14,25.5,21.5,29.5,3 games back from a 3-game absence
-WSH @ NYG,NYG,Devin Singletary,rec_yds,11.55,13.61,6.5,4.5,9.5,3 games back from a 3-game absence
-WSH @ NYG,NYG,Devin Singletary,receptions,1.74,1.63,1.5,0.5,2.5,3 games back from a 3-game absence
-WSH @ NYG,NYG,Devin Singletary,anytime_td,0.40,0.74,33% (+201),,,3 games back from a 3-game absence
-WSH @ NYG,NYG,Malachi Fields,rec_yds,38.35,29.57,38.5,33.5,43.5,
-WSH @ NYG,NYG,Malachi Fields,receptions,2.46,1.55,2.5,1.5,3.5,
-WSH @ NYG,NYG,Darnell Mooney,rec_yds,21.95,24.56,21.5,17.5,26.5,Questionable
-WSH @ NYG,NYG,Darnell Mooney,receptions,1.59,1.24,1.5,0.5,2.5,Questionable
-WSH @ NYG,NYG,Tyrone Tracy Jr.,rush_yds,18.35,28.58,18.5,13.5,23.5,
-WSH @ NYG,NYG,Tyrone Tracy Jr.,rec_yds,11.34,18.00,4.5,2.5,6.5,
-WSH @ NYG,NYG,Tyrone Tracy Jr.,receptions,1.20,1.42,0.5,0.5,1.5,
-WSH @ NYG,NYG,Tyrone Tracy Jr.,anytime_td,0.52,0.81,40% (+151),,,
-WSH @ NYG,WSH,Jayden Daniels,pass_yds,197.89,83.01,197.5,184.5,211.5,
-WSH @ NYG,WSH,Jayden Daniels,pass_tds,1.02,1.00,0.5,0.5,1.5,
-WSH @ NYG,WSH,Jayden Daniels,rush_yds,36.94,36.64,36.5,30.5,43.5,
-WSH @ NYG,WSH,Jacory Croskey-Merritt,rush_yds,43.22,39.06,43.5,36.5,49.5,returning from injury (missed last 3 team games)
-WSH @ NYG,WSH,Jacory Croskey-Merritt,rec_yds,6.22,15.42,0.5,,1.5,returning from injury (missed last 3 team games)
-WSH @ NYG,WSH,Jacory Croskey-Merritt,receptions,0.70,0.95,0.5,,1.5,returning from injury (missed last 3 team games)
-WSH @ NYG,WSH,Jacory Croskey-Merritt,anytime_td,0.38,0.71,32% (+211),,,returning from injury (missed last 3 team games)
-WSH @ NYG,WSH,Rachaad White,rush_yds,31.28,19.59,31.5,27.5,34.5,
-WSH @ NYG,WSH,Rachaad White,rec_yds,16.99,17.71,16.5,13.5,20.5,
-WSH @ NYG,WSH,Rachaad White,receptions,2.29,1.52,2.5,1.5,2.5,
-WSH @ NYG,WSH,Rachaad White,anytime_td,0.36,0.60,34% (+195),,,
-WSH @ NYG,WSH,Stefon Diggs,rec_yds,43.70,28.42,43.5,38.5,48.5,
-WSH @ NYG,WSH,Stefon Diggs,receptions,4.08,1.99,3.5,3.5,4.5,
-WSH @ NYG,WSH,Stefon Diggs,anytime_td,0.53,0.73,43% (+135),,,
-WSH @ NYG,WSH,Chig Okonkwo,rec_yds,37.46,28.07,37.5,32.5,42.5,Questionable
-WSH @ NYG,WSH,Chig Okonkwo,receptions,3.65,1.99,3.5,2.5,4.5,Questionable
-WSH @ NYG,WSH,Antonio Williams,rec_yds,33.24,21.90,33.5,29.5,37.5,
-WSH @ NYG,WSH,Antonio Williams,receptions,3.11,1.74,2.5,2.5,3.5,
-WSH @ NYG,WSH,Terry McLaurin,rec_yds,43.99,33.71,43.5,38.5,49.5,returning from injury (missed last 2 team games)
-WSH @ NYG,WSH,Terry McLaurin,receptions,2.86,2.03,2.5,1.5,3.5,returning from injury (missed last 2 team games)
-WSH @ NYG,WSH,Austin Ekeler,rush_yds,16.47,16.06,16.5,13.5,19.5,
-WSH @ NYG,WSH,Austin Ekeler,rec_yds,9.67,8.32,7.5,5.5,9.5,
-WSH @ NYG,WSH,Austin Ekeler,receptions,1.25,1.10,1.5,0.5,1.5,
+WSH @ NYG,NYG,Malik Nabers,rec_yds,82.31,66.03,82.5,71.5,93.5,
+WSH @ NYG,NYG,Malik Nabers,receptions,6.52,3.11,6.5,5.5,7.5,
+WSH @ NYG,NYG,Jameis Winston,pass_yds,140.42,99.37,140.5,124.5,156.5,
+WSH @ NYG,NYG,Jameis Winston,pass_tds,1.10,1.21,0.5,0.5,1.5,
+WSH @ NYG,NYG,Jameis Winston,rush_yds,8.67,9.66,5.5,3.5,7.5,
+WSH @ NYG,NYG,Isaiah Likely,rec_yds,49.73,41.70,49.5,42.5,56.5,
+WSH @ NYG,NYG,Isaiah Likely,receptions,4.89,2.80,4.5,3.5,5.5,
+WSH @ NYG,NYG,Isaiah Likely,anytime_td,0.64,0.84,47% (+114),,,
+WSH @ NYG,NYG,Devin Singletary,rush_yds,25.18,22.95,25.5,21.5,29.5,3 games back from a 3-game absence
+WSH @ NYG,NYG,Devin Singletary,rec_yds,11.34,13.30,6.5,4.5,9.5,3 games back from a 3-game absence
+WSH @ NYG,NYG,Devin Singletary,receptions,1.72,1.60,1.5,0.5,2.5,3 games back from a 3-game absence
+WSH @ NYG,NYG,Devin Singletary,anytime_td,0.39,0.73,33% (+204),,,3 games back from a 3-game absence
+WSH @ NYG,NYG,Malachi Fields,rec_yds,37.66,28.87,37.5,32.5,42.5,
+WSH @ NYG,NYG,Malachi Fields,receptions,2.43,1.52,2.5,1.5,3.5,
+WSH @ NYG,NYG,Darnell Mooney,rec_yds,21.56,23.98,21.5,17.5,25.5,Questionable
+WSH @ NYG,NYG,Darnell Mooney,receptions,1.57,1.22,1.5,0.5,2.5,Questionable
+WSH @ NYG,NYG,Tyrone Tracy Jr.,rush_yds,18.03,28.34,18.5,13.5,23.5,
+WSH @ NYG,NYG,Tyrone Tracy Jr.,rec_yds,11.14,17.58,4.5,2.5,6.5,
+WSH @ NYG,NYG,Tyrone Tracy Jr.,receptions,1.19,1.40,0.5,0.5,1.5,
+WSH @ NYG,NYG,Tyrone Tracy Jr.,anytime_td,0.51,0.80,39% (+153),,,
+WSH @ NYG,WSH,Jayden Daniels,pass_yds,195.20,81.51,195.5,181.5,208.5,
+WSH @ NYG,WSH,Jayden Daniels,pass_tds,1.00,0.99,0.5,0.5,1.5,
+WSH @ NYG,WSH,Jayden Daniels,rush_yds,36.25,36.28,36.5,30.5,42.5,
+WSH @ NYG,WSH,Jacory Croskey-Merritt,rush_yds,42.40,38.68,42.5,35.5,49.5,returning from injury (missed last 3 team games)
+WSH @ NYG,WSH,Jacory Croskey-Merritt,rec_yds,6.09,15.03,0.5,,1.5,returning from injury (missed last 3 team games)
+WSH @ NYG,WSH,Jacory Croskey-Merritt,receptions,0.69,0.94,0.5,,1.5,returning from injury (missed last 3 team games)
+WSH @ NYG,WSH,Jacory Croskey-Merritt,anytime_td,0.37,0.71,32% (+215),,,returning from injury (missed last 3 team games)
+WSH @ NYG,WSH,Rachaad White,rush_yds,30.69,19.40,30.5,27.5,34.5,
+WSH @ NYG,WSH,Rachaad White,rec_yds,16.65,17.26,16.5,13.5,19.5,
+WSH @ NYG,WSH,Rachaad White,receptions,2.26,1.50,2.5,1.5,2.5,
+WSH @ NYG,WSH,Rachaad White,anytime_td,0.35,0.60,33% (+199),,,
+WSH @ NYG,WSH,Stefon Diggs,rec_yds,42.83,27.69,42.5,37.5,47.5,
+WSH @ NYG,WSH,Stefon Diggs,receptions,4.02,1.96,3.5,3.5,4.5,
+WSH @ NYG,WSH,Stefon Diggs,anytime_td,0.52,0.73,42% (+138),,,
+WSH @ NYG,WSH,Chig Okonkwo,rec_yds,36.72,27.36,36.5,31.5,41.5,Questionable
+WSH @ NYG,WSH,Chig Okonkwo,receptions,3.59,1.96,3.5,2.5,4.5,Questionable
+WSH @ NYG,WSH,Antonio Williams,rec_yds,32.58,21.34,32.5,28.5,36.5,
+WSH @ NYG,WSH,Antonio Williams,receptions,3.07,1.71,2.5,2.5,3.5,
+WSH @ NYG,WSH,Terry McLaurin,rec_yds,43.11,32.85,43.5,37.5,48.5,returning from injury (missed last 2 team games)
+WSH @ NYG,WSH,Terry McLaurin,receptions,2.82,1.99,2.5,1.5,3.5,returning from injury (missed last 2 team games)
+WSH @ NYG,WSH,Austin Ekeler,rush_yds,16.16,15.91,16.5,13.5,19.5,
+WSH @ NYG,WSH,Austin Ekeler,rec_yds,9.48,8.11,7.5,5.5,9.5,
+WSH @ NYG,WSH,Austin Ekeler,receptions,1.23,1.09,1.5,0.5,1.5,

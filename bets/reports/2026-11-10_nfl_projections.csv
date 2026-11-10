@@ -1,39 +1,4 @@
 game,team,player,stat,proj,sd,fair_line,higher_if_line_le,lower_if_line_ge,status
-BUF @ MIN,MIN,Aaron Jones Sr.,rush_yds,60.41,47.91,60.5,52.5,68.5,
-BUF @ MIN,MIN,Aaron Jones Sr.,rec_yds,13.43,16.03,13.5,10.5,16.5,
-BUF @ MIN,MIN,Aaron Jones Sr.,receptions,2.21,1.63,1.5,1.5,2.5,
-BUF @ MIN,MIN,Jordan Mason,rush_yds,45.23,39.30,45.5,38.5,51.5,2 games back from a 4-game absence
-BUF @ MIN,MIN,Jordan Mason,rec_yds,0.92,3.22,0.5,,0.5,2 games back from a 4-game absence
-BUF @ MIN,MIN,Jordan Addison,rec_yds,41.78,37.71,41.5,35.5,48.5,
-BUF @ MIN,MIN,Jordan Addison,receptions,2.66,1.71,2.5,1.5,3.5,
-BUF @ MIN,MIN,Justin Jefferson,rec_yds,53.63,36.07,53.5,47.5,59.5,
-BUF @ MIN,MIN,Justin Jefferson,receptions,4.57,2.11,4.5,3.5,5.5,
-BUF @ MIN,MIN,Justin Jefferson,anytime_td,0.51,0.75,41% (+143),,,
-BUF @ MIN,MIN,T.J. Hockenson,rec_yds,40.47,40.46,40.5,33.5,47.5,
-BUF @ MIN,MIN,T.J. Hockenson,receptions,4.13,3.10,3.5,2.5,4.5,
-BUF @ MIN,MIN,T.J. Hockenson,anytime_td,0.43,0.66,38% (+166),,,
-BUF @ MIN,MIN,Josh Oliver,rec_yds,12.82,15.09,12.5,9.5,15.5,returning from injury (missed last 4 team games)
-BUF @ MIN,MIN,Josh Oliver,receptions,0.94,1.10,0.5,,1.5,returning from injury (missed last 4 team games)
-BUF @ MIN,BUF,James Cook III,rush_yds,89.65,51.55,89.5,80.5,98.5,
-BUF @ MIN,BUF,James Cook III,rec_yds,15.70,20.16,15.5,12.5,19.5,
-BUF @ MIN,BUF,James Cook III,receptions,1.60,1.25,1.5,0.5,2.5,
-BUF @ MIN,BUF,James Cook III,anytime_td,0.85,0.93,56% (-126),,,
-BUF @ MIN,BUF,Josh Allen,pass_yds,218.78,81.21,218.5,205.5,232.5,
-BUF @ MIN,BUF,Josh Allen,pass_tds,1.27,1.12,1.5,0.5,1.5,
-BUF @ MIN,BUF,Josh Allen,rush_yds,33.75,41.91,33.5,26.5,40.5,
-BUF @ MIN,BUF,DJ Moore,rec_yds,40.89,46.31,40.5,33.5,48.5,1 game back from a 2-game absence
-BUF @ MIN,BUF,DJ Moore,receptions,2.66,2.22,2.5,1.5,3.5,1 game back from a 2-game absence
-BUF @ MIN,BUF,DJ Moore,anytime_td,0.35,0.69,31% (+226),,,1 game back from a 2-game absence
-BUF @ MIN,BUF,Khalil Shakir,rec_yds,44.99,31.90,44.5,39.5,50.5,
-BUF @ MIN,BUF,Khalil Shakir,receptions,3.72,1.90,3.5,2.5,4.5,
-BUF @ MIN,BUF,Dalton Kincaid,rec_yds,46.33,43.55,46.5,38.5,53.5,
-BUF @ MIN,BUF,Dalton Kincaid,receptions,3.36,2.16,3.5,2.5,3.5,
-BUF @ MIN,BUF,Keon Coleman,rec_yds,33.60,38.99,33.5,26.5,40.5,
-BUF @ MIN,BUF,Keon Coleman,receptions,2.48,1.89,2.5,1.5,2.5,
-BUF @ MIN,BUF,Keon Coleman,anytime_td,0.37,0.61,35% (+189),,,
-BUF @ MIN,BUF,Ty Johnson,rush_yds,5.14,8.35,1.5,0.5,3.5,
-BUF @ MIN,BUF,Ty Johnson,rec_yds,26.33,24.42,26.5,21.5,30.5,
-BUF @ MIN,BUF,Ty Johnson,receptions,2.40,1.53,2.5,1.5,2.5,
 WSH @ NYG,NYG,Malik Nabers,rec_yds,83.82,67.62,83.5,72.5,95.5,
 WSH @ NYG,NYG,Malik Nabers,receptions,6.61,3.17,6.5,5.5,7.5,
 WSH @ NYG,NYG,Jameis Winston,pass_yds,142.08,101.00,142.5,125.5,158.5,

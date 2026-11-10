@@ -1,6 +1,10 @@
 game,team,player,stat,proj,sd,fair_line,higher_if_line_le,lower_if_line_ge,status
 WSH @ NYG,NYG,Malik Nabers,rec_yds,82.31,66.03,82.5,71.5,93.5,
 WSH @ NYG,NYG,Malik Nabers,receptions,6.52,3.11,6.5,5.5,7.5,
+WSH @ NYG,NYG,Cam Skattebo,rush_yds,59.15,50.35,59.5,50.5,67.5,Questionable
+WSH @ NYG,NYG,Cam Skattebo,rec_yds,11.58,16.46,5.5,3.5,7.5,Questionable
+WSH @ NYG,NYG,Cam Skattebo,receptions,1.62,1.45,1.5,0.5,2.5,Questionable
+WSH @ NYG,NYG,Cam Skattebo,anytime_td,0.39,0.66,35% (+187),,,Questionable
 WSH @ NYG,NYG,Jameis Winston,pass_yds,140.42,99.37,140.5,124.5,156.5,
 WSH @ NYG,NYG,Jameis Winston,pass_tds,1.10,1.21,0.5,0.5,1.5,
 WSH @ NYG,NYG,Jameis Winston,rush_yds,8.67,9.66,5.5,3.5,7.5,
@@ -19,9 +23,9 @@ WSH @ NYG,NYG,Tyrone Tracy Jr.,rush_yds,18.03,28.34,18.5,13.5,23.5,
 WSH @ NYG,NYG,Tyrone Tracy Jr.,rec_yds,11.14,17.58,4.5,2.5,6.5,
 WSH @ NYG,NYG,Tyrone Tracy Jr.,receptions,1.19,1.40,0.5,0.5,1.5,
 WSH @ NYG,NYG,Tyrone Tracy Jr.,anytime_td,0.51,0.80,39% (+153),,,
-WSH @ NYG,WSH,Jayden Daniels,pass_yds,195.20,81.51,195.5,181.5,208.5,
+WSH @ NYG,WSH,Jayden Daniels,pass_yds,195.19,81.51,195.5,181.5,208.5,
 WSH @ NYG,WSH,Jayden Daniels,pass_tds,1.00,0.99,0.5,0.5,1.5,
-WSH @ NYG,WSH,Jayden Daniels,rush_yds,36.25,36.28,36.5,30.5,42.5,
+WSH @ NYG,WSH,Jayden Daniels,rush_yds,36.24,36.28,36.5,30.5,42.5,
 WSH @ NYG,WSH,Jacory Croskey-Merritt,rush_yds,42.40,38.68,42.5,35.5,49.5,returning from injury (missed last 3 team games)
 WSH @ NYG,WSH,Jacory Croskey-Merritt,rec_yds,6.09,15.03,0.5,,1.5,returning from injury (missed last 3 team games)
 WSH @ NYG,WSH,Jacory Croskey-Merritt,receptions,0.69,0.94,0.5,,1.5,returning from injury (missed last 3 team games)

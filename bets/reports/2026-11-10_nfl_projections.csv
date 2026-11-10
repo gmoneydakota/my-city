@@ -1,14 +1,14 @@
 game,team,player,stat,proj,sd,fair_line,higher_if_line_le,lower_if_line_ge,status
 WSH @ NYG,NYG,Malik Nabers,rec_yds,82.31,66.03,82.5,71.5,93.5,
 WSH @ NYG,NYG,Malik Nabers,receptions,6.52,3.11,6.5,5.5,7.5,
-WSH @ NYG,NYG,Cam Skattebo,rush_yds,59.15,50.35,59.5,50.5,67.5,Questionable
+WSH @ NYG,NYG,Cam Skattebo,rush_yds,59.15,50.34,59.5,50.5,67.5,Questionable
 WSH @ NYG,NYG,Cam Skattebo,rec_yds,11.58,16.46,5.5,3.5,7.5,Questionable
 WSH @ NYG,NYG,Cam Skattebo,receptions,1.62,1.45,1.5,0.5,2.5,Questionable
 WSH @ NYG,NYG,Cam Skattebo,anytime_td,0.39,0.66,35% (+187),,,Questionable
 WSH @ NYG,NYG,Jameis Winston,pass_yds,140.42,99.37,140.5,124.5,156.5,
 WSH @ NYG,NYG,Jameis Winston,pass_tds,1.10,1.21,0.5,0.5,1.5,
 WSH @ NYG,NYG,Jameis Winston,rush_yds,8.67,9.66,5.5,3.5,7.5,
-WSH @ NYG,NYG,Isaiah Likely,rec_yds,49.73,41.70,49.5,42.5,56.5,
+WSH @ NYG,NYG,Isaiah Likely,rec_yds,49.72,41.70,49.5,42.5,56.5,
 WSH @ NYG,NYG,Isaiah Likely,receptions,4.89,2.80,4.5,3.5,5.5,
 WSH @ NYG,NYG,Isaiah Likely,anytime_td,0.64,0.84,47% (+114),,,
 WSH @ NYG,NYG,Devin Singletary,rush_yds,25.18,22.95,25.5,21.5,29.5,3 games back from a 3-game absence
@@ -37,7 +37,7 @@ WSH @ NYG,WSH,Rachaad White,anytime_td,0.35,0.60,33% (+199),,,
 WSH @ NYG,WSH,Stefon Diggs,rec_yds,42.83,27.69,42.5,37.5,47.5,
 WSH @ NYG,WSH,Stefon Diggs,receptions,4.02,1.96,3.5,3.5,4.5,
 WSH @ NYG,WSH,Stefon Diggs,anytime_td,0.52,0.73,42% (+138),,,
-WSH @ NYG,WSH,Chig Okonkwo,rec_yds,36.72,27.36,36.5,31.5,41.5,Questionable
+WSH @ NYG,WSH,Chig Okonkwo,rec_yds,36.71,27.36,36.5,31.5,41.5,Questionable
 WSH @ NYG,WSH,Chig Okonkwo,receptions,3.59,1.96,3.5,2.5,4.5,Questionable
 WSH @ NYG,WSH,Antonio Williams,rec_yds,32.58,21.34,32.5,28.5,36.5,
 WSH @ NYG,WSH,Antonio Williams,receptions,3.07,1.71,2.5,2.5,3.5,

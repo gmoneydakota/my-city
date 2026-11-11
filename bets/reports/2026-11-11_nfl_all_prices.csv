@@ -1,0 +1,7 @@
+kind,game,selection,line,dk_odds,p_model,p_market,p_blend,ev
+ML,WSH @ NYG,NYG ML,,-135.0,0.5900,0.5547,0.5592,-0.0265
+ML,WSH @ NYG,WSH ML,,114.0,0.4100,0.4453,0.4408,-0.0568
+Spread,WSH @ NYG,NYG -2.5,-2.5,-110.0,0.5039,0.5000,0.5008,-0.0440
+Spread,WSH @ NYG,WSH +2.5,2.5,-110.0,0.4961,0.5000,0.4992,-0.0469
+Total,WSH @ NYG,Over 41.5,41.5,-105.0,0.6208,0.4884,0.5081,-0.0079
+Total,WSH @ NYG,Under 41.5,41.5,-115.0,0.3792,0.5116,0.4919,-0.0804

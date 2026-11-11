@@ -1,0 +1,197 @@
+kind,game,selection,line,dk_odds,p_model,p_market,p_blend,ev
+ML,BOS @ PHI,PHI ML,,105.0,0.4275,0.4665,0.4614,-0.0541
+ML,BOS @ PHI,BOS ML,,-124.0,0.5725,0.5335,0.5386,-0.0271
+Spread,BOS @ PHI,PHI +1.5,1.5,-106.0,0.4716,0.4907,0.4870,-0.0535
+Spread,BOS @ PHI,BOS -1.5,-1.5,-114.0,0.5284,0.5093,0.5130,-0.0370
+Total,BOS @ PHI,Over 217.5,217.5,-105.0,0.5037,0.4884,0.4907,-0.0420
+Total,BOS @ PHI,Under 217.5,217.5,-115.0,0.4963,0.5116,0.5093,-0.0478
+ML,LAC @ PHX,PHX ML,,-173.0,0.4586,0.6151,0.5949,-0.0613
+ML,LAC @ PHX,LAC ML,,145.0,0.5414,0.3849,0.4051,-0.0075
+Spread,LAC @ PHX,PHX -3.5,-3.5,-112.0,0.3579,0.5046,0.4763,-0.0984
+Spread,LAC @ PHX,LAC +3.5,3.5,-108.0,0.6421,0.4954,0.5237,0.0086
+Total,LAC @ PHX,Over 224.5,224.5,-108.0,0.5934,0.4954,0.5100,-0.0179
+Total,LAC @ PHX,Under 224.5,224.5,-112.0,0.4066,0.5046,0.4900,-0.0724
+ML,MIA @ UTAH,UTAH ML,,205.0,0.2667,0.3032,0.2985,-0.0896
+ML,MIA @ UTAH,MIA ML,,-249.0,0.7333,0.6968,0.7015,-0.0168
+Spread,MIA @ UTAH,UTAH +6.5,6.5,-113.0,0.4443,0.5070,0.4949,-0.0672
+Spread,MIA @ UTAH,MIA -6.5,-6.5,-107.0,0.5557,0.4930,0.5051,-0.0228
+Total,MIA @ UTAH,Over 226.5,226.5,-105.0,0.5933,0.4884,0.5040,-0.0159
+Total,MIA @ UTAH,Under 226.5,226.5,-115.0,0.4067,0.5116,0.4960,-0.0727
+ML,ORL @ SAC,SAC ML,,180.0,0.5307,0.3329,0.3584,0.0036
+ML,ORL @ SAC,ORL ML,,-217.0,0.4693,0.6671,0.6416,-0.0628
+Spread,ORL @ SAC,SAC +5.5,5.5,-108.0,0.6864,0.4954,0.5322,0.0250
+Spread,ORL @ SAC,ORL -5.5,-5.5,-112.0,0.3136,0.5046,0.4678,-0.1146
+Total,ORL @ SAC,Over 222.5,222.5,-105.0,0.5968,0.4884,0.5045,-0.0149
+Total,ORL @ SAC,Under 222.5,222.5,-115.0,0.4032,0.5116,0.4955,-0.0737
+ML,OKC @ POR,POR ML,,106.0,0.5137,0.4642,0.4706,-0.0305
+ML,OKC @ POR,OKC ML,,-125.0,0.4863,0.5358,0.5294,-0.0471
+Spread,OKC @ POR,POR +1.5,1.5,-109.0,0.5580,0.4977,0.5093,-0.0234
+Spread,OKC @ POR,OKC -1.5,-1.5,-111.0,0.4420,0.5023,0.4907,-0.0673
+Total,OKC @ POR,Over 226.5,226.5,-110.0,0.4302,0.5000,0.4896,-0.0653
+Total,OKC @ POR,Under 226.5,226.5,-110.0,0.5698,0.5000,0.5104,-0.0256
+ML,WSH @ IND,IND ML,,-160.0,0.6014,0.5968,0.5974,-0.0292
+ML,WSH @ IND,WSH ML,,135.0,0.3986,0.4032,0.4026,-0.0539
+Spread,WSH @ IND,IND -4.5,-4.5,-105.0,0.4691,0.4884,0.4847,-0.0537
+Spread,WSH @ IND,WSH +4.5,4.5,-115.0,0.5309,0.5116,0.5153,-0.0366
+Total,WSH @ IND,Over 226.5,226.5,-114.0,0.4273,0.5093,0.4971,-0.0669
+Total,WSH @ IND,Under 226.5,226.5,-106.0,0.5727,0.4907,0.5029,-0.0226
+ML,SA @ CHI,CHI ML,,630.0,0.1337,0.1073,0.1107,-0.1918
+ML,SA @ CHI,SA ML,,-940.0,0.8663,0.8927,0.8893,-0.0161
+Spread,SA @ CHI,CHI +15.5,15.5,-111.0,0.5170,0.5023,0.5052,-0.0397
+Spread,SA @ CHI,SA -15.5,-15.5,-109.0,0.4830,0.4977,0.4948,-0.0512
+Total,SA @ CHI,Over 238.5,238.5,-115.0,0.4758,0.5104,0.5053,-0.0554
+Total,SA @ CHI,Under 238.5,238.5,-106.0,0.5242,0.4896,0.4947,-0.0385
+ML,DEN @ MEM,MEM ML,,131.0,0.5265,0.4099,0.4250,-0.0183
+ML,DEN @ MEM,DEN ML,,-156.0,0.4735,0.5901,0.5750,-0.0564
+Spread,DEN @ MEM,MEM +4.5,4.5,-114.0,0.6557,0.5093,0.5375,0.0091
+Spread,DEN @ MEM,DEN -4.5,-4.5,-106.0,0.3443,0.4907,0.4625,-0.1013
+Total,DEN @ MEM,Over 228.5,228.5,-106.0,0.4792,0.4907,0.4890,-0.0497
+Total,DEN @ MEM,Under 228.5,228.5,-114.0,0.5208,0.5093,0.5110,-0.0407
+ML,BKN @ NO,NO ML,,-166.0,0.5873,0.6057,0.6034,-0.0332
+ML,BKN @ NO,BKN ML,,140.0,0.4127,0.3943,0.3966,-0.0481
+Spread,BKN @ NO,NO -4.5,-4.5,-110.0,0.4547,0.5000,0.4913,-0.0621
+Spread,BKN @ NO,BKN +4.5,4.5,-110.0,0.5453,0.5000,0.5087,-0.0288
+Total,BKN @ NO,Over 230.5,230.5,-110.0,0.5641,0.5000,0.5095,-0.0272
+Total,BKN @ NO,Under 230.5,230.5,-110.0,0.4359,0.5000,0.4905,-0.0637
+ML,GS @ HOU,HOU ML,,-189.0,0.6380,0.6359,0.6362,-0.0272
+ML,GS @ HOU,GS ML,,158.0,0.3620,0.3641,0.3638,-0.0613
+Spread,GS @ HOU,HOU -5.5,-5.5,-110.0,0.4779,0.5000,0.4957,-0.0536
+Spread,GS @ HOU,GS +5.5,5.5,-110.0,0.5221,0.5000,0.5043,-0.0373
+Total,GS @ HOU,Over 222.5,222.5,-110.0,0.5552,0.5000,0.5082,-0.0298
+Total,GS @ HOU,Under 222.5,222.5,-110.0,0.4448,0.5000,0.4918,-0.0612
+ML,OKC @ POR,POR ML,,111.0,0.5137,0.4515,0.4595,-0.0304
+ML,OKC @ POR,OKC ML,,-132.0,0.4863,0.5485,0.5405,-0.0501
+Spread,OKC @ POR,POR +2.5,2.5,-111.0,0.5871,0.5023,0.5187,-0.0140
+Spread,OKC @ POR,OKC -2.5,-2.5,-109.0,0.4129,0.4977,0.4813,-0.0771
+Total,OKC @ POR,Over 225.5,225.5,-107.0,0.4540,0.4930,0.4872,-0.0574
+Total,OKC @ POR,Under 225.5,225.5,-113.0,0.5460,0.5070,0.5128,-0.0334
+Prop,BOS @ TOR,Sam Hauser over 5.5 points,5.5,-136,,,0.5226,-0.0932
+Prop,BOS @ TOR,Sam Hauser under 5.5 points,5.5,107,,,0.4774,-0.0118
+Prop,BOS @ TOR,Jayson Tatum over 26.5 points,26.5,-112,,,0.4854,-0.0812
+Prop,BOS @ TOR,Jayson Tatum under 26.5 points,26.5,-114,,,0.5146,-0.0340
+Prop,TOR @ PHI,Jaylen Brown over 21.5 points,21.5,-115,,,0.5071,-0.0520
+Prop,TOR @ PHI,Jaylen Brown under 21.5 points,21.5,-111,,,0.4929,-0.0630
+Prop,TOR @ PHI,VJ Edgecombe over 11.5 points,11.5,-120,,,0.5192,-0.0482
+Prop,TOR @ PHI,VJ Edgecombe under 11.5 points,11.5,-106,,,0.4808,-0.0655
+Prop,BOS @ TOR,Neemias Queta over 8.5 points,8.5,-124,,,0.5260,-0.0497
+Prop,BOS @ TOR,Neemias Queta under 8.5 points,8.5,-103,,,0.4740,-0.0659
+Prop,TOR @ PHI,Tyrese Maxey over 23.5 points,23.5,-103,,,0.4853,-0.0434
+Prop,TOR @ PHI,Tyrese Maxey under 23.5 points,23.5,-124,,,0.5147,-0.0703
+Prop,TOR @ PHI,LeBron James over 14.5 points,14.5,-119,,,0.5161,-0.0503
+Prop,TOR @ PHI,LeBron James under 14.5 points,14.5,-107,,,0.4839,-0.0638
+Prop,BOS @ TOR,Payton Pritchard over 12.5 points,12.5,-123,,,0.5224,-0.0530
+Prop,BOS @ TOR,Payton Pritchard under 12.5 points,12.5,-103,,,0.4776,-0.0586
+Prop,TOR @ PHI,Anfernee Simons over 6.5 points,6.5,-107,,,0.4634,-0.1036
+Prop,TOR @ PHI,Anfernee Simons under 6.5 points,6.5,-119,,,0.5366,-0.0124
+Prop,BOS @ TOR,Derrick White over 13.5 points,13.5,-117,,,0.4854,-0.0997
+Prop,BOS @ TOR,Derrick White under 13.5 points,13.5,-109,,,0.5146,-0.0133
+Prop,TOR @ PHI,Joel Embiid over 19.5 points,19.5,-106,,,0.4779,-0.0712
+Prop,TOR @ PHI,Joel Embiid under 19.5 points,19.5,-121,,,0.5221,-0.0464
+Prop,BOS @ TOR,Paul George over 17.5 points,17.5,-117,,,0.5120,-0.0505
+Prop,BOS @ TOR,Paul George under 17.5 points,17.5,-109,,,0.4880,-0.0642
+Prop,BOS @ TOR,Mitchell Robinson over 5.5 points,5.5,-109,,,0.4675,-0.1036
+Prop,BOS @ TOR,Mitchell Robinson under 5.5 points,5.5,-117,,,0.5325,-0.0123
+Prop,OKC @ LAC,Brook Lopez over 12.5 points,12.5,-109,,,0.4933,-0.0541
+Prop,OKC @ LAC,Brook Lopez under 12.5 points,12.5,-117,,,0.5067,-0.0602
+Prop,CHA @ PHX,Miles Bridges over 16.5 points,16.5,-108,,,0.5092,-0.0193
+Prop,CHA @ PHX,Miles Bridges under 16.5 points,16.5,-118,,,0.4908,-0.0932
+Prop,OKC @ LAC,Rui Hachimura over 15.5 points,15.5,-125,,,0.5228,-0.0589
+Prop,OKC @ LAC,Rui Hachimura under 15.5 points,15.5,-102,,,0.4772,-0.0550
+Prop,CHA @ PHX,Devin Booker over 26.5 points,26.5,-114,,,0.4882,-0.0835
+Prop,CHA @ PHX,Devin Booker under 26.5 points,26.5,-112,,,0.5118,-0.0313
+Prop,CHA @ PHX,Jalen Green over 15.5 points,15.5,-116,,,0.5048,-0.0601
+Prop,CHA @ PHX,Jalen Green under 15.5 points,15.5,-110,,,0.4952,-0.0546
+Prop,CHA @ PHX,Collin Gillespie over 9.5 points,9.5,-108,,,0.4733,-0.0885
+Prop,CHA @ PHX,Collin Gillespie under 9.5 points,9.5,-118,,,0.5267,-0.0269
+Prop,OKC @ LAC,Kris Dunn over 7.5 points,7.5,-104,,,0.4754,-0.0675
+Prop,OKC @ LAC,Kris Dunn under 7.5 points,7.5,-123,,,0.5246,-0.0489
+Prop,CHA @ PHX,Khaman Maluach over 6.5 points,6.5,-127,,,0.5093,-0.0896
+Prop,CHA @ PHX,Khaman Maluach under 6.5 points,6.5,-101,,,0.4907,-0.0235
+Prop,OKC @ LAC,Keaton Wagler over 9.5 points,9.5,-108,,,0.4742,-0.0867
+Prop,OKC @ LAC,Keaton Wagler under 9.5 points,9.5,-119,,,0.5258,-0.0323
+Prop,OKC @ LAC,Kobe Sanders over 7.5 points,7.5,-101,,,0.4902,-0.0244
+Prop,OKC @ LAC,Kobe Sanders under 7.5 points,7.5,-127,,,0.5098,-0.0889
+Prop,OKC @ LAC,Darius Garland over 22.5 points,22.5,-111,,,0.4751,-0.0969
+Prop,OKC @ LAC,Darius Garland under 22.5 points,22.5,-115,,,0.5249,-0.0187
+Prop,CHA @ PHX,Dillon Brooks over 16.5 points,16.5,-103,,,0.4760,-0.0620
+Prop,CHA @ PHX,Dillon Brooks under 16.5 points,16.5,-124,,,0.5240,-0.0533
+Prop,OKC @ LAC,Derrick Jones Jr. over 10.5 points,10.5,-124,,,0.5147,-0.0702
+Prop,OKC @ LAC,Derrick Jones Jr. under 10.5 points,10.5,-103,,,0.4853,-0.0435
+Prop,CHA @ PHX,Oso Ighodaro over 7.5 points,7.5,100,,,0.4667,-0.0667
+Prop,CHA @ PHX,Oso Ighodaro under 7.5 points,7.5,-127,,,0.5333,-0.0467
+Prop,CLE @ MIA,Bobby Portis over 7.5 points,7.5,-108,,,0.4920,-0.0525
+Prop,CLE @ MIA,Bobby Portis under 7.5 points,7.5,-117,,,0.5080,-0.0578
+Prop,UTAH @ HOU,Isaiah Collier over 9.5 points,9.5,-101,,,0.4739,-0.0569
+Prop,UTAH @ HOU,Isaiah Collier under 9.5 points,9.5,-126,,,0.5261,-0.0563
+Prop,CLE @ MIA,Bam Adebayo over 18.5 points,18.5,-119,,,0.5080,-0.0650
+Prop,CLE @ MIA,Bam Adebayo under 18.5 points,18.5,-107,,,0.4920,-0.0483
+Prop,CLE @ MIA,Davion Mitchell over 13.5 points,13.5,-119,,,0.5094,-0.0626
+Prop,CLE @ MIA,Davion Mitchell under 13.5 points,13.5,-107,,,0.4906,-0.0509
+Prop,CLE @ MIA,Pelle Larsson over 11.5 points,11.5,-124,,,0.5161,-0.0677
+Prop,CLE @ MIA,Pelle Larsson under 11.5 points,11.5,-103,,,0.4839,-0.0463
+Prop,CLE @ MIA,Klay Thompson over 13.5 points,13.5,-125,,,0.5184,-0.0669
+Prop,CLE @ MIA,Klay Thompson under 13.5 points,13.5,-102,,,0.4816,-0.0462
+Prop,UTAH @ HOU,Jaxson Hayes over 8.5 points,8.5,-124,,,0.5229,-0.0554
+Prop,UTAH @ HOU,Jaxson Hayes under 8.5 points,8.5,-103,,,0.4771,-0.0597
+Prop,UTAH @ HOU,Darryn Peterson over 18.5 points,18.5,-122,,,0.4958,-0.0978
+Prop,UTAH @ HOU,Darryn Peterson under 18.5 points,18.5,-104,,,0.5042,-0.0110
+Prop,UTAH @ HOU,Ace Bailey over 14.5 points,14.5,-127,,,0.5231,-0.0649
+Prop,UTAH @ HOU,Ace Bailey under 14.5 points,14.5,-101,,,0.4769,-0.0510
+Prop,CLE @ MIA,Andrew Wiggins over 10.5 points,10.5,-103,,,0.4738,-0.0661
+Prop,CLE @ MIA,Andrew Wiggins under 10.5 points,10.5,-124,,,0.5262,-0.0495
+Prop,UTAH @ HOU,Josh Green over 6.5 points,6.5,-130,,,0.5188,-0.0821
+Prop,UTAH @ HOU,Josh Green under 6.5 points,6.5,102,,,0.4812,-0.0280
+Prop,POR @ SAC,Domantas Sabonis over 13.5 points,13.5,-113,,,0.5238,-0.0126
+Prop,POR @ SAC,Domantas Sabonis under 13.5 points,13.5,-113,,,0.4762,-0.1024
+Prop,MIL @ ORL,Wendell Carter Jr. over 13.5 points,13.5,-111,,,0.4957,-0.0576
+Prop,MIL @ ORL,Wendell Carter Jr. under 13.5 points,13.5,-115,,,0.5043,-0.0573
+Prop,POR @ SAC,Precious Achiuwa over 9.5 points,9.5,-112,,,0.4976,-0.0580
+Prop,POR @ SAC,Precious Achiuwa under 9.5 points,9.5,-114,,,0.5024,-0.0570
+Prop,MIL @ ORL,Anthony Black over 16.5 points,16.5,-102,,,0.4657,-0.0776
+Prop,MIL @ ORL,Anthony Black under 16.5 points,16.5,-124,,,0.5343,-0.0349
+Prop,POR @ SAC,Zach LaVine over 19.5 points,19.5,-106,,,0.4762,-0.0745
+Prop,POR @ SAC,Zach LaVine under 19.5 points,19.5,-120,,,0.5238,-0.0397
+Prop,MIL @ ORL,Jamal Cain over 8.5 points,8.5,-101,,,0.4760,-0.0526
+Prop,MIL @ ORL,Jamal Cain under 8.5 points,8.5,-126,,,0.5240,-0.0602
+Prop,MIL @ ORL,Franz Wagner over 24.5 points,24.5,-116,,,0.4942,-0.0798
+Prop,MIL @ ORL,Franz Wagner under 24.5 points,24.5,-110,,,0.5058,-0.0344
+Prop,POR @ SAC,De'Andre Hunter over 13.5 points,13.5,-112,,,0.5005,-0.0526
+Prop,POR @ SAC,De'Andre Hunter under 13.5 points,13.5,-114,,,0.4995,-0.0623
+Prop,POR @ SAC,Keegan Murray over 9.5 points,9.5,-105,,,0.4781,-0.0666
+Prop,POR @ SAC,Keegan Murray under 9.5 points,9.5,-122,,,0.5219,-0.0503
+Prop,POR @ SAC,Darius Acuff Jr. over 24.5 points,24.5,-118,,,0.5120,-0.0541
+Prop,POR @ SAC,Darius Acuff Jr. under 24.5 points,24.5,-108,,,0.4880,-0.0602
+Prop,MIL @ ORL,Desmond Bane over 20.5 points,20.5,-115,,,0.5005,-0.0642
+Prop,MIL @ ORL,Desmond Bane under 20.5 points,20.5,-111,,,0.4995,-0.0506
+Prop,MIL @ ORL,Jase Richardson over 8.5 points,8.5,-130,,,0.5210,-0.0782
+Prop,MIL @ ORL,Jase Richardson under 8.5 points,8.5,102,,,0.4790,-0.0325
+Prop,OKC @ LAC,Bennett Stirtz over 6.5 points,6.5,-106,,,0.4956,-0.0368
+Prop,OKC @ LAC,Bennett Stirtz under 6.5 points,6.5,-120,,,0.5044,-0.0753
+Prop,POR @ SAC,Deni Avdija over 22.5 points,22.5,-116,,,0.5007,-0.0677
+Prop,POR @ SAC,Deni Avdija under 22.5 points,22.5,-110,,,0.4993,-0.0467
+Prop,POR @ SAC,Scoot Henderson over 10.5 points,10.5,-120,,,0.4981,-0.0867
+Prop,POR @ SAC,Scoot Henderson under 10.5 points,10.5,-107,,,0.5019,-0.0291
+Prop,POR @ SAC,Donovan Clingan over 10.5 points,10.5,-128,,,0.5239,-0.0668
+Prop,POR @ SAC,Donovan Clingan under 10.5 points,10.5,101,,,0.4761,-0.0431
+Prop,POR @ SAC,Toumani Camara over 12.5 points,12.5,-120,,,0.5002,-0.0829
+Prop,POR @ SAC,Toumani Camara under 12.5 points,12.5,-107,,,0.4998,-0.0331
+Prop,POR @ SAC,Robert Williams III over 5.5 points,5.5,-118,,,0.5197,-0.0399
+Prop,POR @ SAC,Robert Williams III under 5.5 points,5.5,-108,,,0.4803,-0.0750
+Prop,OKC @ LAC,Jared McCain over 12.5 points,12.5,-106,,,0.5000,-0.0283
+Prop,OKC @ LAC,Jared McCain under 12.5 points,12.5,-121,,,0.5000,-0.0868
+Prop,OKC @ LAC,Kenrich Williams over 7.5 points,7.5,-117,,,0.5094,-0.0552
+Prop,OKC @ LAC,Kenrich Williams under 7.5 points,7.5,-109,,,0.4906,-0.0594
+Prop,OKC @ LAC,Ajay Mitchell over 19.5 points,19.5,-106,,,0.4816,-0.0640
+Prop,OKC @ LAC,Ajay Mitchell under 19.5 points,19.5,-121,,,0.5184,-0.0532
+Prop,OKC @ LAC,Alex Caruso over 6.5 points,6.5,-109,,,0.4797,-0.0803
+Prop,OKC @ LAC,Alex Caruso under 6.5 points,6.5,-117,,,0.5203,-0.0349
+Prop,POR @ SAC,Jrue Holiday over 13.5 points,13.5,-106,,,0.4804,-0.0664
+Prop,POR @ SAC,Jrue Holiday under 13.5 points,13.5,-120,,,0.5196,-0.0474
+Prop,POR @ SAC,Damian Lillard over 18.5 points,18.5,-124,,,0.5244,-0.0527
+Prop,POR @ SAC,Damian Lillard under 18.5 points,18.5,-102,,,0.4756,-0.0581
+Prop,OKC @ LAC,Shai Gilgeous-Alexander over 33.5 points,33.5,-105,,,0.4773,-0.0681
+Prop,OKC @ LAC,Shai Gilgeous-Alexander under 33.5 points,33.5,-121,,,0.5227,-0.0454
+Prop,OKC @ LAC,Isaiah Hartenstein over 8.5 points,8.5,-123,,,0.5067,-0.0813
+Prop,OKC @ LAC,Isaiah Hartenstein under 8.5 points,8.5,-104,,,0.4933,-0.0324
+Prop,OKC @ LAC,Aday Mara over 8.5 points,8.5,110,,,0.4477,-0.0598
+Prop,OKC @ LAC,Aday Mara under 8.5 points,8.5,-140,,,0.5523,-0.0532

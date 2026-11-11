@@ -281,17 +281,19 @@
   {
     "date": "2026-11-11",
     "lessons": [
-      "Not enough finished games yet to change anything. Still collecting results."
+      "Spread: trusting the model 19% \u2192 16% (vs the market) after 396 graded bets \u2014 the market has been the better predictor so far.",
+      "Total: trusting the model 15% \u2192 11% (vs the market) after 490 graded bets \u2014 the market has been the better predictor so far.",
+      "NBA threes: projections ran too high (avg 1.77 projected vs 1.74 actual over 874 players) \u2192 now scaled \u00d70.986."
     ],
     "scoreboard": {
-      "graded_bets": 4198,
-      "graded_projections": 5122,
+      "graded_bets": 4366,
+      "graded_projections": 5511,
       "model_leans": {
-        "w": 358,
-        "l": 475,
+        "w": 360,
+        "l": 479,
         "p": 0,
-        "hit_rate": 0.4298,
-        "roi_per_bet": -0.0635
+        "hit_rate": 0.4291,
+        "roi_per_bet": -0.0657
       },
       "strong_leans": {
         "w": 234,

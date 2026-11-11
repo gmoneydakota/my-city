@@ -281,9 +281,7 @@
   {
     "date": "2026-11-11",
     "lessons": [
-      "Spread: trusting the model 19% \u2192 16% (vs the market) after 396 graded bets \u2014 the market has been the better predictor so far.",
-      "Total: trusting the model 15% \u2192 11% (vs the market) after 490 graded bets \u2014 the market has been the better predictor so far.",
-      "NBA threes: projections ran too high (avg 1.77 projected vs 1.74 actual over 874 players) \u2192 now scaled \u00d70.986."
+      "Not enough finished games yet to change anything. Still collecting results."
     ],
     "scoreboard": {
       "graded_bets": 4366,

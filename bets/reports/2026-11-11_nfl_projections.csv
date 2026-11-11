@@ -2,7 +2,7 @@ game,team,player,stat,proj,sd,fair_line,higher_if_line_le,lower_if_line_ge,statu
 WSH @ NYG,NYG,Malik Nabers,rec_yds,82.31,66.03,82.5,71.5,93.5,
 WSH @ NYG,NYG,Malik Nabers,receptions,6.52,3.11,6.5,5.5,7.5,
 WSH @ NYG,NYG,Jameis Winston,pass_yds,140.41,99.37,140.5,124.5,156.5,
-WSH @ NYG,NYG,Jameis Winston,pass_tds,1.10,1.21,0.5,0.5,1.5,
+WSH @ NYG,NYG,Jameis Winston,pass_tds,1.10,1.20,0.5,0.5,1.5,
 WSH @ NYG,NYG,Jameis Winston,rush_yds,8.67,9.66,5.5,3.5,7.5,
 WSH @ NYG,NYG,Isaiah Likely,rec_yds,49.72,41.70,49.5,42.5,56.5,
 WSH @ NYG,NYG,Isaiah Likely,receptions,4.89,2.80,4.5,3.5,5.5,

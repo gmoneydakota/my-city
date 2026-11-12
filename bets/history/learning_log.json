@@ -305,17 +305,18 @@
   {
     "date": "2026-11-12",
     "lessons": [
-      "Total: trusting the model 11% \u2192 7% (vs the market) after 504 graded bets \u2014 the market has been the better predictor so far."
+      "Total: trusting the model 7% \u2192 22% (vs the market) after 542 graded bets \u2014 the market has been the better predictor so far.",
+      "Player props: trusting the model 2% \u2192 7% after 3230 graded props."
     ],
     "scoreboard": {
-      "graded_bets": 4428,
-      "graded_projections": 5712,
+      "graded_bets": 4638,
+      "graded_projections": 6163,
       "model_leans": {
-        "w": 360,
+        "w": 362,
         "l": 479,
         "p": 0,
-        "hit_rate": 0.4291,
-        "roi_per_bet": -0.0657
+        "hit_rate": 0.4304,
+        "roi_per_bet": -0.0633
       },
       "strong_leans": {
         "w": 234,

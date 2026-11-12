@@ -1,41 +1,69 @@
 kind,game,selection,line,dk_odds,p_model,p_market,p_blend,ev
-ML,TOR @ PHI,PHI ML,,-344.0,0.6071,0.7597,0.7417,-0.0427
-ML,TOR @ PHI,TOR ML,,276.0,0.3929,0.2403,0.2583,-0.0289
-Spread,TOR @ PHI,PHI -8.5,-8.5,-110.0,0.3617,0.5000,0.4791,-0.0853
-Spread,TOR @ PHI,TOR +8.5,8.5,-110.0,0.6383,0.5000,0.5209,-0.0056
-Total,TOR @ PHI,Over 223.5,223.5,-115.0,0.4712,0.5104,0.5017,-0.0620
-Total,TOR @ PHI,Under 223.5,223.5,-106.0,0.5288,0.4896,0.4983,-0.0316
-ML,DET @ WSH,WSH ML,,360.0,0.2797,0.1902,0.2008,-0.0764
-ML,DET @ WSH,DET ML,,-467.0,0.7203,0.8098,0.7992,-0.0297
-Spread,DET @ WSH,WSH +10.5,10.5,-108.0,0.5750,0.4954,0.5074,-0.0228
-Spread,DET @ WSH,DET -10.5,-10.5,-112.0,0.4250,0.5046,0.4926,-0.0676
-Total,DET @ WSH,Over 220.5,220.5,-112.0,0.5030,0.5046,0.5043,-0.0455
-Total,DET @ WSH,Under 220.5,220.5,-108.0,0.4970,0.4954,0.4957,-0.0453
+ML,TOR @ PHI,PHI ML,,-269.0,0.5488,0.7130,0.6936,-0.0485
+ML,TOR @ PHI,TOR ML,,221.0,0.4512,0.2870,0.3064,-0.0165
+Spread,TOR @ PHI,PHI -7.5,-7.5,-104.0,0.3338,0.4861,0.4631,-0.0916
+Spread,TOR @ PHI,TOR +7.5,7.5,-116.0,0.6662,0.5139,0.5369,-0.0002
+Total,TOR @ PHI,Over 223.5,223.5,-115.0,0.4713,0.5116,0.5026,-0.0603
+Total,TOR @ PHI,Under 223.5,223.5,-105.0,0.5287,0.4884,0.4974,-0.0290
+ML,DET @ WSH,WSH ML,,348.0,0.2799,0.1962,0.2061,-0.0768
+ML,DET @ WSH,DET ML,,-449.0,0.7201,0.8038,0.7939,-0.0292
+Spread,DET @ WSH,WSH +10.5,10.5,-115.0,0.5752,0.5116,0.5212,-0.0256
+Spread,DET @ WSH,DET -10.5,-10.5,-105.0,0.4248,0.4884,0.4788,-0.0652
+Total,DET @ WSH,Over 220.5,220.5,-112.0,0.5031,0.5046,0.5043,-0.0455
+Total,DET @ WSH,Under 220.5,220.5,-108.0,0.4969,0.4954,0.4957,-0.0453
 ML,DAL @ MIN,MIN ML,,-223.0,0.5869,0.6732,0.6630,-0.0396
 ML,DAL @ MIN,DAL ML,,185.0,0.4131,0.3268,0.3370,-0.0397
 Spread,DAL @ MIN,MIN -5.5,-5.5,-114.0,0.4265,0.5093,0.4968,-0.0674
-Spread,DAL @ MIN,DAL +5.5,5.5,-106.0,0.5735,0.4907,0.5032,-0.0221
+Spread,DAL @ MIN,DAL +5.5,5.5,-106.0,0.5735,0.4907,0.5032,-0.0220
 Total,DAL @ MIN,Over 225.5,225.5,-112.0,0.4900,0.5046,0.5014,-0.0509
 Total,DAL @ MIN,Under 225.5,225.5,-108.0,0.5100,0.4954,0.4986,-0.0397
-ML,CHA @ PHX,PHX ML,,-244.0,0.7818,0.6924,0.7030,-0.0089
-ML,CHA @ PHX,CHA ML,,201.0,0.2182,0.3076,0.2970,-0.1060
-Spread,CHA @ PHX,PHX -6.5,-6.5,-108.0,0.6178,0.4954,0.5139,-0.0104
-Spread,CHA @ PHX,CHA +6.5,6.5,-112.0,0.3822,0.5046,0.4861,-0.0798
-Total,CHA @ PHX,Over 214.5,214.5,-108.0,0.6118,0.4954,0.5212,0.0038
-Total,CHA @ PHX,Under 214.5,214.5,-112.0,0.3882,0.5046,0.4788,-0.0937
-Prop,NY @ TOR,Immanuel Quickley over 15.5 points,15.5,-115,,,0.5044,-0.0569
-Prop,NY @ TOR,Immanuel Quickley under 15.5 points,15.5,-111,,,0.4956,-0.0580
-Prop,NY @ TOR,Jakob Poeltl over 10.5 points,10.5,-119,,,0.4937,-0.0914
-Prop,NY @ TOR,Jakob Poeltl under 10.5 points,10.5,-107,,,0.5063,-0.0206
-Prop,NY @ TOR,Collin Murray-Boyles over 11.5 points,11.5,-110,,,0.4848,-0.0745
-Prop,NY @ TOR,Collin Murray-Boyles under 11.5 points,11.5,-116,,,0.5152,-0.0406
-Prop,IND @ PHI,Tyrese Maxey over 24.5 points,24.5,-111,,,0.4943,-0.0603
-Prop,IND @ PHI,Tyrese Maxey under 24.5 points,24.5,-115,,,0.5057,-0.0546
-Prop,NY @ TOR,Ja'Kobe Walter over 10.5 points,10.5,-124,,,0.5255,-0.0507
-Prop,NY @ TOR,Ja'Kobe Walter under 10.5 points,10.5,-103,,,0.4745,-0.0649
-Prop,IND @ PHI,Jaylen Brown over 22.5 points,22.5,-114,,,0.4812,-0.0967
-Prop,IND @ PHI,Jaylen Brown under 22.5 points,22.5,-112,,,0.5188,-0.0180
-Prop,NY @ TOR,RJ Barrett over 22.5 points,22.5,-106,,,0.4825,-0.0623
-Prop,NY @ TOR,RJ Barrett under 22.5 points,22.5,-120,,,0.5175,-0.0513
-Prop,IND @ PHI,VJ Edgecombe over 14.5 points,14.5,-108,,,0.4845,-0.0670
-Prop,IND @ PHI,VJ Edgecombe under 14.5 points,14.5,-118,,,0.5155,-0.0476
+ML,CHA @ PHX,PHX ML,,-244.0,0.7816,0.6924,0.7030,-0.0089
+ML,CHA @ PHX,CHA ML,,201.0,0.2184,0.3076,0.2970,-0.1059
+Spread,CHA @ PHX,PHX -6.5,-6.5,-108.0,0.6177,0.4954,0.5138,-0.0104
+Spread,CHA @ PHX,CHA +6.5,6.5,-112.0,0.3823,0.5046,0.4862,-0.0797
+Total,CHA @ PHX,Over 214.5,214.5,-108.0,0.6120,0.4954,0.5212,0.0039
+Total,CHA @ PHX,Under 214.5,214.5,-112.0,0.3880,0.5046,0.4788,-0.0938
+Prop,NY @ TOR,Immanuel Quickley over 15.5 points,15.5,-115,,,0.5043,-0.0572
+Prop,NY @ TOR,Immanuel Quickley under 15.5 points,15.5,-111,,,0.4957,-0.0577
+Prop,NY @ TOR,Jakob Poeltl over 10.5 points,10.5,-119,,,0.4936,-0.0915
+Prop,NY @ TOR,Jakob Poeltl under 10.5 points,10.5,-107,,,0.5064,-0.0204
+Prop,NY @ TOR,Collin Murray-Boyles over 11.5 points,11.5,-110,,,0.4847,-0.0747
+Prop,NY @ TOR,Collin Murray-Boyles under 11.5 points,11.5,-116,,,0.5153,-0.0404
+Prop,IND @ PHI,Tyrese Maxey over 24.5 points,24.5,-111,,,0.5003,-0.0490
+Prop,IND @ PHI,Tyrese Maxey under 24.5 points,24.5,-115,,,0.4997,-0.0658
+Prop,NY @ TOR,Ja'Kobe Walter over 10.5 points,10.5,-124,,,0.5254,-0.0509
+Prop,NY @ TOR,Ja'Kobe Walter under 10.5 points,10.5,-103,,,0.4746,-0.0646
+Prop,IND @ PHI,Jaylen Brown over 22.5 points,22.5,-114,,,0.4862,-0.0873
+Prop,IND @ PHI,Jaylen Brown under 22.5 points,22.5,-112,,,0.5138,-0.0274
+Prop,NY @ TOR,RJ Barrett over 22.5 points,22.5,-106,,,0.4823,-0.0627
+Prop,NY @ TOR,RJ Barrett under 22.5 points,22.5,-120,,,0.5177,-0.0509
+Prop,IND @ PHI,VJ Edgecombe over 14.5 points,14.5,-108,,,0.4886,-0.0590
+Prop,IND @ PHI,VJ Edgecombe under 14.5 points,14.5,-118,,,0.5114,-0.0552
+Prop,LAL @ PHX,Miles Bridges over 15.5 points,15.5,-121,,,0.4953,-0.0954
+Prop,LAL @ PHX,Miles Bridges under 15.5 points,15.5,-105,,,0.5047,-0.0146
+Prop,CHA @ LAC,Sion James over 7.5 points,7.5,-126,,,0.5158,-0.0748
+Prop,CHA @ LAC,Sion James under 7.5 points,7.5,-101,,,0.4842,-0.0365
+Prop,LAL @ PHX,Dillon Brooks over 14.5 points,14.5,-126,,,0.5258,-0.0569
+Prop,LAL @ PHX,Dillon Brooks under 14.5 points,14.5,-102,,,0.4742,-0.0609
+Prop,LAL @ PHX,Oso Ighodaro over 6.5 points,6.5,-106,,,0.4873,-0.0531
+Prop,LAL @ PHX,Oso Ighodaro under 6.5 points,6.5,-120,,,0.5127,-0.0600
+Prop,LAL @ PHX,Khaman Maluach over 6.5 points,6.5,-111,,,0.5072,-0.0359
+Prop,LAL @ PHX,Khaman Maluach under 6.5 points,6.5,-115,,,0.4928,-0.0786
+Prop,LAL @ PHX,Jalen Green over 13.5 points,13.5,-119,,,0.5103,-0.0609
+Prop,LAL @ PHX,Jalen Green under 13.5 points,13.5,-107,,,0.4897,-0.0526
+Prop,LAL @ PHX,Devin Booker over 24.5 points,24.5,-122,,,0.5072,-0.0771
+Prop,LAL @ PHX,Devin Booker under 24.5 points,24.5,-105,,,0.4928,-0.0378
+Prop,LAL @ PHX,Collin Gillespie over 8.5 points,8.5,-108,,,0.4684,-0.0979
+Prop,LAL @ PHX,Collin Gillespie under 8.5 points,8.5,-118,,,0.5316,-0.0178
+Prop,CHA @ LAC,Coby White over 13.5 points,13.5,-126,,,0.5118,-0.0821
+Prop,CHA @ LAC,Coby White under 13.5 points,13.5,-101,,,0.4882,-0.0283
+Prop,LAL @ PHX,Jordan Goodwin over 7.5 points,7.5,-109,,,0.4610,-0.1161
+Prop,LAL @ PHX,Jordan Goodwin under 7.5 points,7.5,-117,,,0.5390,-0.0003
+Prop,CHA @ LAC,Naz Reid over 20.5 points,20.5,-118,,,0.4964,-0.0829
+Prop,CHA @ LAC,Naz Reid under 20.5 points,20.5,-108,,,0.5036,-0.0302
+Prop,CHA @ LAC,Grayson Allen over 18.5 points,18.5,-112,,,0.4924,-0.0680
+Prop,CHA @ LAC,Grayson Allen under 18.5 points,18.5,-114,,,0.5076,-0.0471
+Prop,CHA @ LAC,Royce O'Neale over 6.5 points,6.5,-110,,,0.4880,-0.0684
+Prop,CHA @ LAC,Royce O'Neale under 6.5 points,6.5,-115,,,0.5120,-0.0428
+Prop,CHA @ LAC,Ryan Kalkbrenner over 5.5 points,5.5,-114,,,0.5036,-0.0546
+Prop,CHA @ LAC,Ryan Kalkbrenner under 5.5 points,5.5,-112,,,0.4964,-0.0605

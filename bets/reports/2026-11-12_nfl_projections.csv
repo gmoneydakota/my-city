@@ -19,7 +19,7 @@ WSH @ NYG,NYG,Tyrone Tracy Jr.,rush_yds,17.82,28.01,17.5,12.5,22.5,
 WSH @ NYG,NYG,Tyrone Tracy Jr.,rec_yds,10.98,17.34,4.5,2.5,6.5,
 WSH @ NYG,NYG,Tyrone Tracy Jr.,receptions,1.18,1.39,0.5,0.5,1.5,
 WSH @ NYG,NYG,Tyrone Tracy Jr.,anytime_td,0.50,0.78,39% (+156),,,
-WSH @ NYG,WSH,Jayden Daniels,pass_yds,192.16,80.24,192.5,178.5,205.5,
+WSH @ NYG,WSH,Jayden Daniels,pass_yds,192.15,80.24,192.5,178.5,205.5,
 WSH @ NYG,WSH,Jayden Daniels,pass_tds,0.97,0.98,0.5,0.5,1.5,
 WSH @ NYG,WSH,Jayden Daniels,rush_yds,35.77,35.81,35.5,29.5,41.5,
 WSH @ NYG,WSH,Jacory Croskey-Merritt,rush_yds,41.85,38.17,41.5,35.5,48.5,returning from injury (missed last 3 team games)
@@ -121,81 +121,80 @@ KC @ ATL,KC,Emmett Johnson,rush_yds,14.54,14.97,14.5,11.5,17.5,
 KC @ ATL,KC,Emmett Johnson,rec_yds,32.09,49.33,32.5,23.5,40.5,
 KC @ ATL,KC,Emmett Johnson,receptions,1.79,1.61,1.5,0.5,2.5,
 KC @ ATL,KC,Emmett Johnson,anytime_td,0.36,0.61,34% (+194),,,
-HOU @ CLE,CLE,Quinshon Judkins,rush_yds,47.84,34.21,47.5,41.5,53.5,
-HOU @ CLE,CLE,Quinshon Judkins,rec_yds,14.89,16.17,14.5,11.5,17.5,
-HOU @ CLE,CLE,Quinshon Judkins,receptions,2.35,1.67,2.5,1.5,2.5,
-HOU @ CLE,CLE,Quinshon Judkins,anytime_td,0.39,0.74,32% (+211),,,
-HOU @ CLE,CLE,Dylan Sampson,rush_yds,19.34,18.36,19.5,15.5,22.5,
-HOU @ CLE,CLE,Dylan Sampson,rec_yds,29.91,26.40,29.5,25.5,34.5,
-HOU @ CLE,CLE,Dylan Sampson,receptions,3.10,1.89,2.5,2.5,3.5,
-HOU @ CLE,CLE,Denzel Boston,rec_yds,53.02,38.94,53.5,46.5,59.5,Questionable
-HOU @ CLE,CLE,Denzel Boston,receptions,3.65,1.91,3.5,2.5,4.5,Questionable
-HOU @ CLE,CLE,KC Concepcion,rec_yds,51.64,45.93,51.5,43.5,59.5,
-HOU @ CLE,CLE,KC Concepcion,receptions,3.96,2.06,3.5,2.5,4.5,
-HOU @ CLE,CLE,Harold Fannin Jr.,rec_yds,52.58,53.70,52.5,43.5,61.5,Questionable
-HOU @ CLE,CLE,Harold Fannin Jr.,receptions,4.10,2.74,3.5,2.5,4.5,Questionable
-HOU @ CLE,CLE,Harold Fannin Jr.,anytime_td,0.44,0.69,38% (+164),,,Questionable
-HOU @ CLE,CLE,Jerry Jeudy,rec_yds,24.70,25.55,24.5,20.5,29.5,
-HOU @ CLE,CLE,Jerry Jeudy,receptions,2.11,1.56,1.5,1.5,2.5,
-HOU @ CLE,CLE,Raheim Sanders,rush_yds,10.16,10.79,6.5,5.5,8.5,returning from injury (missed last 4 team games)
-HOU @ CLE,CLE,Raheim Sanders,rec_yds,11.14,14.87,11.5,8.5,13.5,returning from injury (missed last 4 team games)
-HOU @ CLE,CLE,Raheim Sanders,receptions,1.72,1.48,1.5,0.5,2.5,returning from injury (missed last 4 team games)
-HOU @ CLE,HOU,C.J. Stroud,pass_yds,257.30,102.31,257.5,240.5,273.5,
-HOU @ CLE,HOU,C.J. Stroud,pass_tds,1.96,1.45,1.5,1.5,2.5,
-HOU @ CLE,HOU,C.J. Stroud,rush_yds,11.05,9.70,8.5,6.5,10.5,
-HOU @ CLE,HOU,Woody Marks,rush_yds,45.34,30.90,45.5,39.5,50.5,Questionable
-HOU @ CLE,HOU,Woody Marks,rec_yds,11.19,11.88,7.5,5.5,9.5,Questionable
-HOU @ CLE,HOU,Woody Marks,receptions,1.62,1.39,1.5,0.5,2.5,Questionable
-HOU @ CLE,HOU,David Montgomery,rush_yds,25.78,27.70,25.5,20.5,30.5,Questionable
-HOU @ CLE,HOU,David Montgomery,rec_yds,10.57,9.41,8.5,6.5,9.5,Questionable
-HOU @ CLE,HOU,David Montgomery,receptions,1.09,1.26,0.5,0.5,1.5,Questionable
-HOU @ CLE,HOU,David Montgomery,anytime_td,0.39,0.97,27% (+269),,,Questionable
-HOU @ CLE,HOU,Nico Collins,rec_yds,59.40,41.96,59.5,52.5,66.5,
-HOU @ CLE,HOU,Nico Collins,receptions,4.13,1.99,3.5,3.5,4.5,
-HOU @ CLE,HOU,Nico Collins,anytime_td,0.54,0.74,43% (+133),,,
-HOU @ CLE,HOU,Xavier Hutchinson,rec_yds,30.66,23.69,30.5,26.5,34.5,
-HOU @ CLE,HOU,Xavier Hutchinson,receptions,2.66,1.59,2.5,1.5,3.5,
-HOU @ CLE,HOU,Jawhar Jordan,rush_yds,39.10,37.57,39.5,32.5,45.5,returning from injury (missed last 2 team games)
-HOU @ CLE,HOU,Jawhar Jordan,rec_yds,6.42,6.94,4.5,2.5,5.5,returning from injury (missed last 2 team games)
-HOU @ CLE,HOU,Jawhar Jordan,receptions,1.16,1.56,0.5,,1.5,returning from injury (missed last 2 team games)
-HOU @ CLE,HOU,Jawhar Jordan,anytime_td,0.43,0.76,34% (+191),,,returning from injury (missed last 2 team games)
-HOU @ CLE,HOU,Dalton Schultz,rec_yds,40.49,36.18,40.5,34.5,46.5,
-HOU @ CLE,HOU,Dalton Schultz,receptions,3.93,2.43,3.5,2.5,4.5,
-MIN @ GB,GB,Jordan Love,pass_yds,273.85,102.29,273.5,257.5,290.5,
-MIN @ GB,GB,Jordan Love,pass_tds,1.97,1.39,1.5,1.5,2.5,
-MIN @ GB,GB,Jordan Love,rush_yds,4.54,9.08,0.5,,1.5,
-MIN @ GB,GB,Matthew Golden,rec_yds,77.69,59.84,77.5,67.5,87.5,
-MIN @ GB,GB,Matthew Golden,receptions,5.41,2.46,5.5,4.5,6.5,
-MIN @ GB,GB,Matthew Golden,anytime_td,0.51,0.72,42% (+140),,,
-MIN @ GB,GB,Christian Watson,rec_yds,91.91,61.64,91.5,81.5,102.5,
-MIN @ GB,GB,Christian Watson,receptions,5.12,2.21,4.5,4.5,5.5,
-MIN @ GB,GB,Christian Watson,anytime_td,0.64,0.81,47% (+111),,,
-MIN @ GB,GB,Tucker Kraft,rec_yds,37.85,31.35,37.5,32.5,43.5,
-MIN @ GB,GB,Tucker Kraft,receptions,3.79,1.90,3.5,2.5,4.5,
-MIN @ GB,GB,Tucker Kraft,anytime_td,0.40,0.64,36% (+178),,,
-MIN @ GB,GB,Pierre Strong Jr.,rush_yds,11.47,11.86,7.5,5.5,9.5,
-MIN @ GB,GB,Pierre Strong Jr.,rec_yds,10.70,13.59,5.5,3.5,7.5,
-MIN @ GB,GB,Pierre Strong Jr.,receptions,1.75,1.70,1.5,0.5,2.5,
-MIN @ GB,GB,Kaleb Johnson,rush_yds,23.71,32.38,23.5,18.5,29.5,1 game back from a 2-game absence
-MIN @ GB,GB,Kaleb Johnson,rec_yds,1.15,3.98,0.5,,0.5,1 game back from a 2-game absence
-MIN @ GB,MIN,Aaron Jones Sr.,rush_yds,53.51,47.65,53.5,45.5,61.5,
-MIN @ GB,MIN,Aaron Jones Sr.,rec_yds,12.14,15.08,12.5,9.5,15.5,
-MIN @ GB,MIN,Aaron Jones Sr.,receptions,2.02,1.55,1.5,1.5,2.5,
-MIN @ GB,MIN,Jordan Mason,rush_yds,43.75,37.05,43.5,37.5,50.5,3 games back from a 4-game absence
-MIN @ GB,MIN,Jordan Mason,rec_yds,2.10,4.31,0.5,,1.5,3 games back from a 4-game absence
-MIN @ GB,MIN,Jordan Mason,receptions,0.58,1.01,0.5,,0.5,3 games back from a 4-game absence
-MIN @ GB,MIN,Justin Jefferson,rec_yds,54.35,34.20,54.5,48.5,60.5,
-MIN @ GB,MIN,Justin Jefferson,receptions,4.31,2.03,4.5,3.5,4.5,
-MIN @ GB,MIN,Justin Jefferson,anytime_td,0.44,0.71,37% (+171),,,
-MIN @ GB,MIN,T.J. Hockenson,rec_yds,39.36,37.64,39.5,32.5,45.5,Questionable
-MIN @ GB,MIN,T.J. Hockenson,receptions,4.10,2.88,3.5,2.5,4.5,Questionable
-MIN @ GB,MIN,T.J. Hockenson,anytime_td,0.37,0.61,34% (+191),,,Questionable
-MIN @ GB,MIN,Jordan Addison,rec_yds,39.60,35.14,39.5,33.5,45.5,
-MIN @ GB,MIN,Jordan Addison,receptions,2.54,1.61,2.5,1.5,3.5,
-MIN @ GB,MIN,Myles Price,rec_yds,3.81,7.15,0.5,,1.5,
-MIN @ GB,MIN,Myles Price,receptions,0.69,1.01,0.5,,0.5,
-MIN @ GB,MIN,Jauan Jennings,rec_yds,17.90,22.76,17.5,13.5,22.5,Questionable
-MIN @ GB,MIN,Jauan Jennings,receptions,1.68,1.46,1.5,0.5,2.5,Questionable
+HOU @ CLE,CLE,Quinshon Judkins,rush_yds,47.19,33.75,47.5,41.5,53.5,
+HOU @ CLE,CLE,Quinshon Judkins,rec_yds,14.65,15.91,14.5,11.5,17.5,
+HOU @ CLE,CLE,Quinshon Judkins,receptions,2.33,1.65,2.5,1.5,2.5,
+HOU @ CLE,CLE,Quinshon Judkins,anytime_td,0.38,0.72,32% (+214),,,
+HOU @ CLE,CLE,Dylan Sampson,rush_yds,19.07,18.11,19.5,15.5,22.5,
+HOU @ CLE,CLE,Dylan Sampson,rec_yds,29.42,25.97,29.5,24.5,34.5,
+HOU @ CLE,CLE,Dylan Sampson,receptions,3.07,1.88,2.5,2.5,3.5,
+HOU @ CLE,CLE,Denzel Boston,rec_yds,52.16,38.30,52.5,45.5,58.5,Questionable
+HOU @ CLE,CLE,Denzel Boston,receptions,3.61,1.89,3.5,2.5,4.5,Questionable
+HOU @ CLE,CLE,KC Concepcion,rec_yds,50.80,45.18,50.5,43.5,58.5,
+HOU @ CLE,CLE,KC Concepcion,receptions,3.92,2.04,3.5,2.5,4.5,
+HOU @ CLE,CLE,Harold Fannin Jr.,rec_yds,51.72,52.82,51.5,42.5,60.5,Questionable
+HOU @ CLE,CLE,Harold Fannin Jr.,receptions,4.05,2.71,3.5,2.5,4.5,Questionable
+HOU @ CLE,CLE,Harold Fannin Jr.,anytime_td,0.43,0.67,37% (+167),,,Questionable
+HOU @ CLE,CLE,Jerry Jeudy,rec_yds,24.29,25.13,24.5,19.5,28.5,
+HOU @ CLE,CLE,Jerry Jeudy,receptions,2.09,1.55,1.5,1.5,2.5,
+HOU @ CLE,CLE,Raheim Sanders,rush_yds,10.02,10.65,6.5,4.5,8.5,returning from injury (missed last 4 team games)
+HOU @ CLE,CLE,Raheim Sanders,rec_yds,10.96,14.62,10.5,8.5,13.5,returning from injury (missed last 4 team games)
+HOU @ CLE,CLE,Raheim Sanders,receptions,1.71,1.47,1.5,0.5,2.5,returning from injury (missed last 4 team games)
+HOU @ CLE,HOU,C.J. Stroud,pass_yds,253.93,100.97,253.5,237.5,270.5,
+HOU @ CLE,HOU,C.J. Stroud,pass_tds,1.91,1.42,1.5,0.5,2.5,
+HOU @ CLE,HOU,C.J. Stroud,rush_yds,10.93,9.60,8.5,6.5,10.5,
+HOU @ CLE,HOU,Woody Marks,rush_yds,44.85,30.57,44.5,39.5,50.5,Questionable
+HOU @ CLE,HOU,Woody Marks,rec_yds,11.04,11.73,7.5,5.5,9.5,Questionable
+HOU @ CLE,HOU,Woody Marks,receptions,1.61,1.38,1.5,0.5,2.5,Questionable
+HOU @ CLE,HOU,David Montgomery,rush_yds,25.49,27.40,25.5,20.5,30.5,Questionable
+HOU @ CLE,HOU,David Montgomery,rec_yds,10.43,9.30,7.5,6.5,9.5,Questionable
+HOU @ CLE,HOU,David Montgomery,receptions,1.08,1.25,0.5,0.5,1.5,Questionable
+HOU @ CLE,HOU,David Montgomery,anytime_td,0.38,0.95,27% (+272),,,Questionable
+HOU @ CLE,HOU,Nico Collins,rec_yds,58.62,41.41,58.5,51.5,65.5,
+HOU @ CLE,HOU,Nico Collins,receptions,4.10,1.98,3.5,3.5,4.5,
+HOU @ CLE,HOU,Nico Collins,anytime_td,0.52,0.73,42% (+136),,,
+HOU @ CLE,HOU,Xavier Hutchinson,rec_yds,30.26,23.38,30.5,26.5,34.5,
+HOU @ CLE,HOU,Xavier Hutchinson,receptions,2.63,1.59,2.5,1.5,3.5,
+HOU @ CLE,HOU,Jawhar Jordan,rush_yds,38.68,37.16,38.5,32.5,45.5,returning from injury (missed last 2 team games)
+HOU @ CLE,HOU,Jawhar Jordan,rec_yds,6.34,6.86,4.5,2.5,5.5,returning from injury (missed last 2 team games)
+HOU @ CLE,HOU,Jawhar Jordan,receptions,1.15,1.55,0.5,,1.5,returning from injury (missed last 2 team games)
+HOU @ CLE,HOU,Jawhar Jordan,anytime_td,0.42,0.75,34% (+194),,,returning from injury (missed last 2 team games)
+HOU @ CLE,HOU,Dalton Schultz,rec_yds,39.96,35.71,39.5,33.5,46.5,
+HOU @ CLE,HOU,Dalton Schultz,receptions,3.89,2.41,3.5,2.5,4.5,
+MIN @ GB,GB,Jordan Love,pass_yds,270.23,100.94,270.5,253.5,286.5,
+MIN @ GB,GB,Jordan Love,pass_tds,1.93,1.38,1.5,1.5,2.5,
+MIN @ GB,GB,Jordan Love,rush_yds,4.49,8.98,0.5,,1.5,
+MIN @ GB,GB,Matthew Golden,rec_yds,76.66,59.05,76.5,66.5,86.5,
+MIN @ GB,GB,Matthew Golden,receptions,5.36,2.44,5.5,4.5,6.5,
+MIN @ GB,GB,Matthew Golden,anytime_td,0.50,0.71,41% (+144),,,
+MIN @ GB,GB,Christian Watson,rec_yds,90.69,60.82,90.5,80.5,100.5,
+MIN @ GB,GB,Christian Watson,receptions,5.07,2.20,4.5,4.5,5.5,
+MIN @ GB,GB,Christian Watson,anytime_td,0.62,0.80,47% (+114),,,
+MIN @ GB,GB,Tucker Kraft,rec_yds,37.35,30.94,37.5,31.5,42.5,
+MIN @ GB,GB,Tucker Kraft,receptions,3.76,1.90,3.5,2.5,4.5,
+MIN @ GB,GB,Tucker Kraft,anytime_td,0.39,0.63,36% (+181),,,
+MIN @ GB,GB,Pierre Strong Jr.,rush_yds,11.35,11.73,7.5,5.5,9.5,
+MIN @ GB,GB,Pierre Strong Jr.,rec_yds,10.56,13.42,5.5,3.5,7.5,
+MIN @ GB,GB,Pierre Strong Jr.,receptions,1.74,1.68,1.5,0.5,2.5,
+MIN @ GB,GB,Kaleb Johnson,rush_yds,23.45,32.02,23.5,17.5,29.5,1 game back from a 2-game absence
+MIN @ GB,GB,Kaleb Johnson,rec_yds,1.14,3.93,0.5,,0.5,1 game back from a 2-game absence
+MIN @ GB,MIN,Aaron Jones Sr.,rush_yds,52.83,47.04,52.5,44.5,60.5,
+MIN @ GB,MIN,Aaron Jones Sr.,rec_yds,11.96,14.85,11.5,9.5,14.5,
+MIN @ GB,MIN,Aaron Jones Sr.,receptions,2.00,1.54,1.5,1.5,2.5,
+MIN @ GB,MIN,Jordan Mason,rush_yds,43.19,36.58,43.5,36.5,49.5,3 games back from a 4-game absence
+MIN @ GB,MIN,Jordan Mason,rec_yds,2.07,4.25,0.5,,1.5,3 games back from a 4-game absence
+MIN @ GB,MIN,Jordan Mason,receptions,0.58,1.00,0.5,,0.5,3 games back from a 4-game absence
+MIN @ GB,MIN,T.J. Hockenson,rec_yds,38.76,37.07,38.5,32.5,45.5,Questionable
+MIN @ GB,MIN,T.J. Hockenson,receptions,4.06,2.85,3.5,2.5,4.5,Questionable
+MIN @ GB,MIN,T.J. Hockenson,anytime_td,0.36,0.60,34% (+195),,,Questionable
+MIN @ GB,MIN,Jordan Addison,rec_yds,39.00,34.60,38.5,33.5,44.5,
+MIN @ GB,MIN,Jordan Addison,receptions,2.52,1.59,2.5,1.5,3.5,
+MIN @ GB,MIN,Myles Price,rec_yds,3.75,7.05,0.5,,1.5,
+MIN @ GB,MIN,Myles Price,receptions,0.68,1.00,0.5,,0.5,
+MIN @ GB,MIN,Jauan Jennings,rec_yds,17.62,22.41,17.5,13.5,21.5,Questionable
+MIN @ GB,MIN,Jauan Jennings,receptions,1.66,1.44,1.5,0.5,2.5,Questionable
+MIN @ GB,MIN,Josh Oliver,rec_yds,12.51,14.71,12.5,9.5,15.5,returning from injury (missed last 5 team games)
+MIN @ GB,MIN,Josh Oliver,receptions,0.92,1.08,0.5,,1.5,returning from injury (missed last 5 team games)
 JAX @ TEN,TEN,Tony Pollard,rush_yds,75.68,48.81,75.5,67.5,83.5,
 JAX @ TEN,TEN,Tony Pollard,rec_yds,9.69,11.72,5.5,3.5,7.5,
 JAX @ TEN,TEN,Tony Pollard,receptions,1.73,1.40,1.5,0.5,2.5,
@@ -203,14 +202,14 @@ JAX @ TEN,TEN,Tony Pollard,anytime_td,0.80,1.07,49% (+106),,,
 JAX @ TEN,TEN,Cam Ward,pass_yds,181.04,74.48,181.5,168.5,193.5,
 JAX @ TEN,TEN,Cam Ward,pass_tds,0.78,0.88,0.5,,1.5,
 JAX @ TEN,TEN,Cam Ward,rush_yds,13.61,16.57,13.5,10.5,16.5,
-JAX @ TEN,TEN,Carnell Tate,rec_yds,57.08,48.28,57.5,48.5,65.5,Questionable
+JAX @ TEN,TEN,Carnell Tate,rec_yds,57.07,48.28,57.5,48.5,65.5,Questionable
 JAX @ TEN,TEN,Carnell Tate,receptions,4.64,2.35,4.5,3.5,5.5,Questionable
-JAX @ TEN,TEN,Wan'Dale Robinson,rec_yds,35.98,32.56,35.5,30.5,41.5,
+JAX @ TEN,TEN,Wan'Dale Robinson,rec_yds,35.97,32.56,35.5,30.5,41.5,
 JAX @ TEN,TEN,Wan'Dale Robinson,receptions,4.48,2.10,4.5,3.5,5.5,
 JAX @ TEN,TEN,Wan'Dale Robinson,anytime_td,0.35,0.60,33% (+200),,,
 JAX @ TEN,TEN,Tyjae Spears,rush_yds,10.72,18.79,3.5,1.5,4.5,Questionable
 JAX @ TEN,TEN,Tyjae Spears,rec_yds,12.35,16.73,12.5,9.5,15.5,Questionable
-JAX @ TEN,TEN,Tyjae Spears,receptions,2.59,2.92,1.5,0.5,2.5,Questionable
+JAX @ TEN,TEN,Tyjae Spears,receptions,2.59,2.91,1.5,0.5,2.5,Questionable
 JAX @ TEN,TEN,Elic Ayomanor,rec_yds,25.94,22.36,25.5,21.5,29.5,
 JAX @ TEN,TEN,Elic Ayomanor,receptions,1.79,1.31,1.5,0.5,2.5,
 JAX @ TEN,TEN,Gunnar Helm,rec_yds,21.40,27.72,21.5,16.5,26.5,
@@ -224,7 +223,7 @@ JAX @ TEN,JAX,Bhayshul Tuten,anytime_td,0.96,0.99,59% (-145),,,Questionable
 JAX @ TEN,JAX,Trevor Lawrence,pass_yds,251.78,86.67,251.5,237.5,266.5,
 JAX @ TEN,JAX,Trevor Lawrence,pass_tds,2.30,1.53,2.5,1.5,2.5,
 JAX @ TEN,JAX,Trevor Lawrence,rush_yds,11.89,14.22,11.5,9.5,14.5,
-JAX @ TEN,JAX,Parker Washington,rec_yds,60.90,49.34,60.5,52.5,69.5,
+JAX @ TEN,JAX,Parker Washington,rec_yds,60.91,49.34,60.5,52.5,69.5,
 JAX @ TEN,JAX,Parker Washington,receptions,3.44,2.13,3.5,2.5,3.5,
 JAX @ TEN,JAX,Parker Washington,anytime_td,0.62,0.80,46% (+115),,,
 JAX @ TEN,JAX,Chris Rodriguez Jr.,rush_yds,32.15,25.50,32.5,27.5,36.5,Questionable
@@ -233,7 +232,7 @@ JAX @ TEN,JAX,Chris Rodriguez Jr.,receptions,0.60,0.79,0.5,,1.5,Questionable
 JAX @ TEN,JAX,Chris Rodriguez Jr.,anytime_td,0.59,0.78,45% (+120),,,Questionable
 JAX @ TEN,JAX,Brenton Strange,rec_yds,45.75,32.36,45.5,40.5,51.5,
 JAX @ TEN,JAX,Brenton Strange,receptions,3.73,2.10,3.5,2.5,4.5,
-JAX @ TEN,JAX,Jakobi Meyers,rec_yds,49.18,30.29,49.5,43.5,54.5,Questionable
+JAX @ TEN,JAX,Jakobi Meyers,rec_yds,49.18,30.30,49.5,43.5,54.5,Questionable
 JAX @ TEN,JAX,Jakobi Meyers,receptions,3.52,1.85,3.5,2.5,4.5,Questionable
 JAX @ TEN,JAX,Nate Boerkircher,rec_yds,22.40,24.57,22.5,18.5,26.5,
 JAX @ TEN,JAX,Nate Boerkircher,receptions,1.25,1.09,1.5,0.5,1.5,
@@ -281,7 +280,7 @@ CAR @ NO,NO,Chris Olave,rec_yds,88.61,57.58,88.5,78.5,98.5,
 CAR @ NO,NO,Chris Olave,receptions,6.73,2.54,6.5,5.5,7.5,
 CAR @ NO,NO,Chris Olave,anytime_td,0.35,0.63,33% (+206),,,
 CAR @ NO,NO,Alvin Kamara,rush_yds,26.36,23.02,26.5,22.5,30.5,Questionable
-CAR @ NO,NO,Alvin Kamara,rec_yds,23.39,24.92,23.5,18.5,27.5,Questionable
+CAR @ NO,NO,Alvin Kamara,rec_yds,23.40,24.92,23.5,18.5,27.5,Questionable
 CAR @ NO,NO,Alvin Kamara,receptions,3.54,2.05,3.5,2.5,4.5,Questionable
 CAR @ NO,NO,Alvin Kamara,anytime_td,0.39,0.75,32% (+215),,,Questionable
 CAR @ NO,NO,Audric Estime,rush_yds,43.66,41.06,43.5,36.5,50.5,
@@ -328,9 +327,9 @@ BUF @ NYJ,NYJ,Geno Smith,rush_yds,5.30,6.82,2.5,1.5,4.5,
 BUF @ NYJ,NYJ,Garrett Wilson,rec_yds,62.01,42.93,62.5,54.5,69.5,Questionable
 BUF @ NYJ,NYJ,Garrett Wilson,receptions,5.00,2.44,4.5,3.5,5.5,Questionable
 BUF @ NYJ,NYJ,Garrett Wilson,anytime_td,0.35,0.60,33% (+199),,,Questionable
-BUF @ NYJ,NYJ,Adonai Mitchell,rec_yds,44.57,66.02,44.5,33.5,55.5,3 games back from a 4-game absence
+BUF @ NYJ,NYJ,Adonai Mitchell,rec_yds,44.57,66.01,44.5,33.5,55.5,3 games back from a 4-game absence
 BUF @ NYJ,NYJ,Adonai Mitchell,receptions,2.76,2.94,1.5,1.5,2.5,3 games back from a 4-game absence
-BUF @ NYJ,NYJ,Omar Cooper Jr.,rec_yds,59.30,52.65,59.5,50.5,68.5,Questionable
+BUF @ NYJ,NYJ,Omar Cooper Jr.,rec_yds,59.29,52.65,59.5,50.5,68.5,Questionable
 BUF @ NYJ,NYJ,Omar Cooper Jr.,receptions,4.10,2.84,3.5,2.5,4.5,Questionable
 BUF @ NYJ,NYJ,Omar Cooper Jr.,anytime_td,0.38,0.63,35% (+185),,,Questionable
 BUF @ NYJ,NYJ,Mason Taylor,rec_yds,23.47,23.95,23.5,19.5,27.5,
@@ -338,11 +337,11 @@ BUF @ NYJ,NYJ,Mason Taylor,receptions,2.71,1.74,2.5,1.5,3.5,
 BUF @ NYJ,NYJ,Isaiah Davis,rush_yds,7.23,12.04,2.5,1.5,3.5,
 BUF @ NYJ,NYJ,Isaiah Davis,rec_yds,9.20,18.57,1.5,0.5,3.5,
 BUF @ NYJ,NYJ,Isaiah Davis,receptions,0.71,1.07,0.5,,0.5,
-BUF @ NYJ,BUF,James Cook III,rush_yds,98.81,54.68,98.5,89.5,107.5,
+BUF @ NYJ,BUF,James Cook III,rush_yds,98.82,54.68,98.5,89.5,107.5,
 BUF @ NYJ,BUF,James Cook III,rec_yds,14.77,21.53,14.5,10.5,18.5,
 BUF @ NYJ,BUF,James Cook III,receptions,1.45,1.23,1.5,0.5,1.5,
 BUF @ NYJ,BUF,James Cook III,anytime_td,1.02,1.02,61% (-156),,,
-BUF @ NYJ,BUF,Josh Allen,pass_yds,242.58,86.72,242.5,228.5,256.5,
+BUF @ NYJ,BUF,Josh Allen,pass_yds,242.58,86.73,242.5,228.5,256.5,
 BUF @ NYJ,BUF,Josh Allen,pass_tds,1.44,1.19,1.5,0.5,1.5,
 BUF @ NYJ,BUF,Josh Allen,rush_yds,33.40,43.38,33.5,26.5,40.5,
 BUF @ NYJ,BUF,Khalil Shakir,rec_yds,50.97,33.65,50.5,45.5,56.5,
@@ -353,7 +352,7 @@ BUF @ NYJ,BUF,DJ Moore,anytime_td,0.35,0.70,30% (+229),,,2 games back from a 2-g
 BUF @ NYJ,BUF,Keon Coleman,rec_yds,34.09,40.47,34.5,27.5,40.5,
 BUF @ NYJ,BUF,Keon Coleman,receptions,2.69,1.87,2.5,1.5,3.5,
 BUF @ NYJ,BUF,Keon Coleman,anytime_td,0.38,0.62,35% (+187),,,
-BUF @ NYJ,BUF,Dalton Kincaid,rec_yds,47.68,45.28,47.5,40.5,55.5,Questionable
+BUF @ NYJ,BUF,Dalton Kincaid,rec_yds,47.69,45.28,47.5,40.5,55.5,Questionable
 BUF @ NYJ,BUF,Dalton Kincaid,receptions,3.49,2.14,3.5,2.5,4.5,Questionable
 BUF @ NYJ,BUF,Ty Johnson,rush_yds,4.82,8.62,1.5,0.5,2.5,
 BUF @ NYJ,BUF,Ty Johnson,rec_yds,30.24,25.44,30.5,25.5,34.5,
@@ -426,7 +425,7 @@ LAR @ ARI,LAR,Kyren Williams,anytime_td,0.74,0.87,52% (-107),,,
 LAR @ ARI,LAR,Matthew Stafford,pass_yds,262.24,105.70,262.5,244.5,279.5,
 LAR @ ARI,LAR,Matthew Stafford,pass_tds,1.96,1.39,1.5,1.5,2.5,
 LAR @ ARI,LAR,Matthew Stafford,rush_yds,1.55,5.40,0.5,,0.5,
-LAR @ ARI,LAR,Blake Corum,rush_yds,52.44,39.07,52.5,45.5,59.5,
+LAR @ ARI,LAR,Blake Corum,rush_yds,52.44,39.06,52.5,45.5,59.5,
 LAR @ ARI,LAR,Blake Corum,rec_yds,9.43,17.12,2.5,0.5,4.5,
 LAR @ ARI,LAR,Blake Corum,receptions,0.94,1.01,0.5,0.5,1.5,
 LAR @ ARI,LAR,Blake Corum,anytime_td,0.67,0.83,49% (+105),,,
@@ -463,7 +462,7 @@ SF @ DAL,SF,Brock Purdy,pass_tds,2.19,1.47,2.5,1.5,2.5,
 SF @ DAL,SF,Brock Purdy,rush_yds,24.59,18.84,24.5,21.5,28.5,
 SF @ DAL,SF,Keenan Allen,rec_yds,45.53,32.14,45.5,39.5,51.5,
 SF @ DAL,SF,Keenan Allen,receptions,4.99,2.26,4.5,3.5,5.5,
-SF @ DAL,SF,George Kittle,rec_yds,64.33,39.29,64.5,57.5,71.5,
+SF @ DAL,SF,George Kittle,rec_yds,64.34,39.29,64.5,57.5,71.5,
 SF @ DAL,SF,George Kittle,receptions,5.08,2.20,4.5,4.5,5.5,
 SF @ DAL,SF,George Kittle,anytime_td,0.61,0.81,46% (+118),,,
 SF @ DAL,SF,Kaelon Black,rush_yds,41.84,32.98,41.5,36.5,47.5,
@@ -471,18 +470,18 @@ SF @ DAL,SF,Kaelon Black,receptions,0.39,0.61,0.5,,0.5,
 SF @ DAL,SF,Mike Evans,rec_yds,67.89,52.57,67.5,59.5,76.5,Questionable
 SF @ DAL,SF,Mike Evans,receptions,4.14,2.29,3.5,3.5,4.5,Questionable
 SF @ DAL,SF,Mike Evans,anytime_td,0.48,0.80,37% (+171),,,Questionable
-SF @ DAL,SF,Deebo Samuel Sr.,rec_yds,39.59,34.39,39.5,33.5,45.5,Questionable
+SF @ DAL,SF,Deebo Samuel Sr.,rec_yds,39.59,34.40,39.5,33.5,45.5,Questionable
 SF @ DAL,SF,Deebo Samuel Sr.,receptions,3.12,2.32,2.5,1.5,3.5,Questionable
 SF @ DAL,SF,Deebo Samuel Sr.,anytime_td,0.50,0.82,38% (+164),,,Questionable
-PIT @ CIN,CIN,Joe Burrow,pass_yds,284.37,115.55,284.5,265.5,303.5,
+PIT @ CIN,CIN,Joe Burrow,pass_yds,284.38,115.56,284.5,265.5,303.5,
 PIT @ CIN,CIN,Joe Burrow,pass_tds,2.80,1.66,2.5,1.5,3.5,
 PIT @ CIN,CIN,Joe Burrow,rush_yds,8.58,6.14,7.5,5.5,8.5,
 PIT @ CIN,CIN,Chase Brown,rush_yds,49.49,31.22,49.5,44.5,54.5,
-PIT @ CIN,CIN,Chase Brown,rec_yds,25.56,22.90,25.5,21.5,29.5,
+PIT @ CIN,CIN,Chase Brown,rec_yds,25.56,22.91,25.5,21.5,29.5,
 PIT @ CIN,CIN,Chase Brown,receptions,4.55,2.56,4.5,3.5,5.5,
-PIT @ CIN,CIN,Ja'Marr Chase,rec_yds,84.64,59.30,84.5,74.5,94.5,
+PIT @ CIN,CIN,Ja'Marr Chase,rec_yds,84.65,59.31,84.5,74.5,94.5,
 PIT @ CIN,CIN,Ja'Marr Chase,receptions,6.83,2.93,6.5,5.5,7.5,
-PIT @ CIN,CIN,Ja'Marr Chase,anytime_td,0.78,0.89,53% (-114),,,
+PIT @ CIN,CIN,Ja'Marr Chase,anytime_td,0.79,0.89,53% (-114),,,
 PIT @ CIN,CIN,Tee Higgins,rec_yds,84.27,64.34,84.5,73.5,94.5,
 PIT @ CIN,CIN,Tee Higgins,receptions,5.56,2.70,5.5,4.5,6.5,
 PIT @ CIN,CIN,Tee Higgins,anytime_td,0.85,0.93,56% (-125),,,
@@ -526,7 +525,7 @@ LAC @ BAL,BAL,Derrick Henry,rush_yds,75.85,49.60,75.5,67.5,84.5,
 LAC @ BAL,BAL,Derrick Henry,rec_yds,7.11,9.19,3.5,2.5,5.5,
 LAC @ BAL,BAL,Derrick Henry,receptions,1.13,1.04,0.5,0.5,1.5,
 LAC @ BAL,BAL,Derrick Henry,anytime_td,0.86,1.02,53% (-114),,,
-LAC @ BAL,BAL,Zay Flowers,rec_yds,67.54,63.92,67.5,56.5,78.5,
+LAC @ BAL,BAL,Zay Flowers,rec_yds,67.53,63.92,67.5,56.5,78.5,
 LAC @ BAL,BAL,Zay Flowers,receptions,4.90,2.63,4.5,3.5,5.5,
 LAC @ BAL,BAL,Zay Flowers,anytime_td,0.38,0.62,35% (+186),,,
 LAC @ BAL,BAL,Justice Hill,rush_yds,27.51,38.73,27.5,20.5,34.5,
@@ -534,13 +533,13 @@ LAC @ BAL,BAL,Justice Hill,rec_yds,13.04,11.42,13.5,10.5,15.5,
 LAC @ BAL,BAL,Justice Hill,receptions,2.36,1.50,2.5,1.5,2.5,
 LAC @ BAL,BAL,Mark Andrews,rec_yds,23.16,17.11,23.5,19.5,26.5,
 LAC @ BAL,BAL,Mark Andrews,receptions,3.04,1.71,2.5,2.5,3.5,
-LAC @ BAL,BAL,Rashod Bateman,rec_yds,27.28,30.12,27.5,22.5,32.5,
+LAC @ BAL,BAL,Rashod Bateman,rec_yds,27.27,30.12,27.5,22.5,32.5,
 LAC @ BAL,BAL,Rashod Bateman,receptions,1.87,1.80,1.5,0.5,2.5,
 LAC @ BAL,BAL,Ja'Kobi Lane,rec_yds,16.44,16.06,16.5,13.5,19.5,
 LAC @ BAL,BAL,Ja'Kobi Lane,receptions,1.64,1.49,1.5,0.5,2.5,
 LAC @ BAL,BAL,Josh Cuevas,rec_yds,16.02,18.60,16.5,12.5,19.5,
 LAC @ BAL,BAL,Josh Cuevas,receptions,1.17,1.27,0.5,0.5,1.5,
-LAC @ BAL,LAC,Justin Herbert,pass_yds,193.95,69.50,193.5,182.5,205.5,Questionable
+LAC @ BAL,LAC,Justin Herbert,pass_yds,193.94,69.50,193.5,182.5,205.5,Questionable
 LAC @ BAL,LAC,Justin Herbert,pass_tds,0.76,0.87,0.5,,1.5,Questionable
 LAC @ BAL,LAC,Justin Herbert,rush_yds,23.42,21.59,23.5,19.5,27.5,Questionable
 LAC @ BAL,LAC,Omarion Hampton,rush_yds,43.75,32.18,43.5,38.5,49.5,
@@ -553,11 +552,11 @@ LAC @ BAL,LAC,Keaton Mitchell,receptions,2.00,1.55,1.5,1.5,2.5,
 LAC @ BAL,LAC,Kimani Vidal,rush_yds,25.15,28.66,25.5,20.5,30.5,
 LAC @ BAL,LAC,Kimani Vidal,rec_yds,7.54,9.91,3.5,2.5,5.5,
 LAC @ BAL,LAC,Kimani Vidal,receptions,1.27,1.10,1.5,0.5,1.5,
-LAC @ BAL,LAC,Tre' Harris,rec_yds,30.42,27.22,30.5,25.5,35.5,
+LAC @ BAL,LAC,Tre' Harris,rec_yds,30.41,27.22,30.5,25.5,35.5,
 LAC @ BAL,LAC,Tre' Harris,receptions,2.64,1.59,2.5,1.5,3.5,
 LAC @ BAL,LAC,Oronde Gadsden,rec_yds,23.20,24.45,23.5,18.5,27.5,
 LAC @ BAL,LAC,Oronde Gadsden,receptions,2.42,1.74,2.5,1.5,2.5,
-LAC @ BAL,LAC,Charlie Kolar,rec_yds,18.12,14.58,18.5,15.5,20.5,
+LAC @ BAL,LAC,Charlie Kolar,rec_yds,18.12,14.57,18.5,15.5,20.5,
 LAC @ BAL,LAC,Charlie Kolar,receptions,1.74,1.32,1.5,0.5,2.5,
 LAC @ BAL,LAC,Quentin Johnston,rec_yds,39.81,29.02,39.5,34.5,44.5,
 LAC @ BAL,LAC,Quentin Johnston,receptions,2.04,1.49,1.5,1.5,2.5,

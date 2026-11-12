@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T22:31:00+00:00",
+  "generated_at": "2026-11-12T22:24:00+00:00",
   "data_source": "Yahoo Finance / Stooq daily bars",
   "demo": false,
   "benchmark": "SPY",
@@ -7,26 +7,25 @@
   "symbols": [
     {
       "symbol": "AAPL",
-      "as_of": "2026-11-11",
-      "price": 355.63,
-      "change_pct": 2.04,
+      "as_of": "2026-11-12",
+      "price": 354.88,
+      "change_pct": -0.21,
       "score": 5,
       "signal": "BUY ZONE",
       "reasons": [
         "price above 200-day average (long-term uptrend)",
         "50-day above 200-day (golden-cross regime)",
-        "up 16.5% over 3 months",
+        "up 16.0% over 3 months",
         "outperforming the benchmark over 3 months",
         "MACD momentum positive and rising"
       ],
-      "rsi": 60.4,
-      "sma50": 337.88,
-      "sma200": 300.01,
-      "pct_from_52w_high": 0.0,
-      "pct_above_52w_low": 44.5,
-      "suggested_stop": 338.32,
+      "rsi": 59.7,
+      "sma50": 338.48,
+      "sma200": 300.51,
+      "pct_from_52w_high": -0.2,
+      "pct_above_52w_low": 44.2,
+      "suggested_stop": 338.1,
       "score_history": [
-        6,
         5,
         5,
         5,
@@ -85,40 +84,40 @@
         5,
         4,
         4,
+        5,
         5
       ],
       "backtest": {
         "rule": "score >= 5, judged 20 trading days later",
         "signal_days": 238,
         "avg_fwd_return_pct_when_signal": 1.38,
-        "avg_fwd_return_pct_any_day": 1.82,
+        "avg_fwd_return_pct_any_day": 1.83,
         "win_rate_pct_when_signal": 66.4
       },
       "source": "yahoo"
     },
     {
       "symbol": "MSFT",
-      "as_of": "2026-11-11",
-      "price": 521.12,
-      "change_pct": -2.26,
+      "as_of": "2026-11-12",
+      "price": 523.0,
+      "change_pct": 0.36,
       "score": 5,
       "signal": "BUY ZONE",
       "reasons": [
         "price above 200-day average (long-term uptrend)",
         "50-day above 200-day (golden-cross regime)",
-        "up 5.1% over 3 months",
+        "up 5.8% over 3 months",
         "outperforming the benchmark over 3 months",
         "MACD momentum negative and falling",
         "pulled back to the 50-day in an uptrend (classic entry zone)"
       ],
-      "rsi": 47.7,
-      "sma50": 518.2,
-      "sma200": 439.8,
-      "pct_from_52w_high": -6.2,
-      "pct_above_52w_low": 48.0,
-      "suggested_stop": 489.4,
+      "rsi": 48.4,
+      "sma50": 518.72,
+      "sma200": 440.03,
+      "pct_from_52w_high": -5.9,
+      "pct_above_52w_low": 48.5,
+      "suggested_stop": 492.17,
       "score_history": [
-        1,
         1,
         1,
         1,
@@ -174,6 +173,7 @@
         6,
         4,
         4,
+        5,
         5,
         5,
         5,
@@ -183,16 +183,16 @@
         "rule": "score >= 5, judged 20 trading days later",
         "signal_days": 171,
         "avg_fwd_return_pct_when_signal": 1.07,
-        "avg_fwd_return_pct_any_day": 1.79,
+        "avg_fwd_return_pct_any_day": 1.8,
         "win_rate_pct_when_signal": 60.2
       },
       "source": "yahoo"
     },
     {
       "symbol": "SPY",
-      "as_of": "2026-11-11",
-      "price": 759.81,
-      "change_pct": 1.32,
+      "as_of": "2026-11-12",
+      "price": 757.12,
+      "change_pct": -0.35,
       "score": 4,
       "signal": "WATCH / ACCUMULATE",
       "reasons": [
@@ -200,14 +200,13 @@
         "50-day above 200-day (golden-cross regime)",
         "pulled back to the 50-day in an uptrend (classic entry zone)"
       ],
-      "rsi": 49.9,
-      "sma50": 764.55,
-      "sma200": 728.65,
-      "pct_from_52w_high": -2.5,
-      "pct_above_52w_low": 20.8,
-      "suggested_stop": 737.69,
+      "rsi": 48.6,
+      "sma50": 764.43,
+      "sma200": 728.99,
+      "pct_from_52w_high": -2.8,
+      "pct_above_52w_low": 20.4,
+      "suggested_stop": 735.25,
       "score_history": [
-        3,
         4,
         4,
         4,
@@ -266,38 +265,38 @@
         1,
         4,
         4,
+        4,
         4
       ],
       "backtest": {
         "rule": "score >= 5, judged 20 trading days later",
-        "signal_days": 222,
-        "avg_fwd_return_pct_when_signal": 0.96,
-        "avg_fwd_return_pct_any_day": 1.48,
-        "win_rate_pct_when_signal": 70.3
+        "signal_days": 236,
+        "avg_fwd_return_pct_when_signal": 0.85,
+        "avg_fwd_return_pct_any_day": 1.49,
+        "win_rate_pct_when_signal": 67.4
       },
       "source": "yahoo"
     },
     {
       "symbol": "AMZN",
-      "as_of": "2026-11-11",
-      "price": 266.17,
-      "change_pct": -1.74,
+      "as_of": "2026-11-12",
+      "price": 267.44,
+      "change_pct": 0.48,
       "score": 4,
       "signal": "WATCH / ACCUMULATE",
       "reasons": [
         "price above 200-day average (long-term uptrend)",
         "50-day above 200-day (golden-cross regime)",
-        "up 0.4% over 3 months",
+        "up 1.8% over 3 months",
         "outperforming the benchmark over 3 months"
       ],
-      "rsi": 57.3,
-      "sma50": 254.41,
-      "sma200": 244.35,
-      "pct_from_52w_high": -6.3,
-      "pct_above_52w_low": 33.9,
-      "suggested_stop": 247.26,
+      "rsi": 58.2,
+      "sma50": 254.66,
+      "sma200": 244.47,
+      "pct_from_52w_high": -5.8,
+      "pct_above_52w_low": 34.5,
+      "suggested_stop": 248.82,
       "score_history": [
-        3,
         1,
         1,
         2,
@@ -356,22 +355,23 @@
         5,
         4,
         5,
+        4,
         4
       ],
       "backtest": {
         "rule": "score >= 5, judged 20 trading days later",
-        "signal_days": 285,
-        "avg_fwd_return_pct_when_signal": 0.51,
-        "avg_fwd_return_pct_any_day": 1.76,
-        "win_rate_pct_when_signal": 56.5
+        "signal_days": 286,
+        "avg_fwd_return_pct_when_signal": 0.53,
+        "avg_fwd_return_pct_any_day": 1.78,
+        "win_rate_pct_when_signal": 56.6
       },
       "source": "yahoo"
     },
     {
       "symbol": "META",
-      "as_of": "2026-11-11",
-      "price": 628.77,
-      "change_pct": -1.97,
+      "as_of": "2026-11-12",
+      "price": 623.61,
+      "change_pct": -0.82,
       "score": 3,
       "signal": "WATCH / ACCUMULATE",
       "reasons": [
@@ -381,14 +381,13 @@
         "outperforming the benchmark over 3 months",
         "MACD momentum positive and rising"
       ],
-      "rsi": 43.4,
-      "sma50": 678.45,
-      "sma200": 630.71,
-      "pct_from_52w_high": -19.1,
-      "pct_above_52w_low": 19.8,
-      "suggested_stop": 581.05,
+      "rsi": 42.1,
+      "sma50": 679.07,
+      "sma200": 630.5,
+      "pct_from_52w_high": -19.8,
+      "pct_above_52w_low": 18.8,
+      "suggested_stop": 577.67,
       "score_history": [
-        -3,
         -3,
         -2,
         -2,
@@ -447,6 +446,7 @@
         2,
         4,
         4,
+        3,
         3
       ],
       "backtest": {
@@ -460,23 +460,22 @@
     },
     {
       "symbol": "QQQ",
-      "as_of": "2026-11-11",
-      "price": 690.38,
-      "change_pct": 2.31,
+      "as_of": "2026-11-12",
+      "price": 688.17,
+      "change_pct": -0.32,
       "score": 2,
       "signal": "HOLD / NEUTRAL",
       "reasons": [
         "price above 200-day average (long-term uptrend)",
         "50-day above 200-day (golden-cross regime)"
       ],
-      "rsi": 46.1,
-      "sma50": 718.87,
-      "sma200": 680.65,
-      "pct_from_52w_high": -9.1,
-      "pct_above_52w_low": 23.9,
-      "suggested_stop": 657.57,
+      "rsi": 45.4,
+      "sma50": 718.46,
+      "sma200": 680.94,
+      "pct_from_52w_high": -9.4,
+      "pct_above_52w_low": 23.5,
+      "suggested_stop": 655.6,
       "score_history": [
-        5,
         4,
         3,
         3,
@@ -535,38 +534,38 @@
         -1,
         0,
         0,
+        2,
         2
       ],
       "backtest": {
         "rule": "score >= 5, judged 20 trading days later",
-        "signal_days": 303,
-        "avg_fwd_return_pct_when_signal": 1.0,
+        "signal_days": 304,
+        "avg_fwd_return_pct_when_signal": 0.98,
         "avg_fwd_return_pct_any_day": 1.89,
-        "win_rate_pct_when_signal": 63.0
+        "win_rate_pct_when_signal": 62.8
       },
       "source": "yahoo"
     },
     {
       "symbol": "TSLA",
-      "as_of": "2026-11-11",
-      "price": 390.84,
-      "change_pct": 2.91,
+      "as_of": "2026-11-12",
+      "price": 397.45,
+      "change_pct": 1.69,
       "score": 2,
       "signal": "HOLD / NEUTRAL",
       "reasons": [
         "price above 200-day average (long-term uptrend)",
         "50-day below 200-day (death-cross regime)",
-        "up 15.0% over 3 months",
+        "up 16.1% over 3 months",
         "outperforming the benchmark over 3 months"
       ],
-      "rsi": 54.4,
-      "sma50": 373.65,
-      "sma200": 383.03,
-      "pct_from_52w_high": -20.2,
-      "pct_above_52w_low": 31.0,
-      "suggested_stop": 357.62,
+      "rsi": 56.5,
+      "sma50": 374.46,
+      "sma200": 382.86,
+      "pct_from_52w_high": -18.9,
+      "pct_above_52w_low": 33.2,
+      "suggested_stop": 364.32,
       "score_history": [
-        -1,
         -2,
         -1,
         -2,
@@ -625,38 +624,39 @@
         -1,
         0,
         0,
+        2,
         2
       ],
       "backtest": {
         "rule": "score >= 5, judged 20 trading days later",
         "signal_days": 100,
         "avg_fwd_return_pct_when_signal": 0.12,
-        "avg_fwd_return_pct_any_day": 2.11,
+        "avg_fwd_return_pct_any_day": 2.12,
         "win_rate_pct_when_signal": 51.0
       },
       "source": "yahoo"
     },
     {
       "symbol": "NVDA",
-      "as_of": "2026-11-11",
-      "price": 173.73,
-      "change_pct": 2.87,
-      "score": 0,
-      "signal": "HOLD / NEUTRAL",
+      "as_of": "2026-11-12",
+      "price": 166.19,
+      "change_pct": -4.34,
+      "score": -1,
+      "signal": "AVOID",
       "reasons": [
         "price below 200-day average (long-term downtrend)",
         "50-day above 200-day (golden-cross regime)",
-        "RSI 29: oversold"
+        "MACD momentum negative and falling",
+        "RSI 26: oversold"
       ],
-      "rsi": 28.7,
-      "sma50": 217.1,
-      "sma200": 204.19,
-      "pct_from_52w_high": -27.4,
-      "pct_above_52w_low": 5.4,
-      "suggested_stop": 156.34,
+      "rsi": 26.0,
+      "sma50": 215.94,
+      "sma200": 204.07,
+      "pct_from_52w_high": -30.5,
+      "pct_above_52w_low": 0.8,
+      "suggested_stop": 146.48,
       "score_history": [
         2,
-        2,
         1,
         3,
         3,
@@ -714,36 +714,37 @@
         -1,
         -1,
         -1,
-        0
+        0,
+        -1
       ],
       "backtest": {
         "rule": "score >= 5, judged 20 trading days later",
-        "signal_days": 285,
-        "avg_fwd_return_pct_when_signal": 4.54,
-        "avg_fwd_return_pct_any_day": 6.19,
-        "win_rate_pct_when_signal": 63.2
+        "signal_days": 286,
+        "avg_fwd_return_pct_when_signal": 4.45,
+        "avg_fwd_return_pct_any_day": 6.18,
+        "win_rate_pct_when_signal": 62.9
       },
       "source": "yahoo"
     },
     {
       "symbol": "GOOGL",
-      "as_of": "2026-11-11",
-      "price": 293.45,
-      "change_pct": 2.11,
-      "score": -2,
+      "as_of": "2026-11-12",
+      "price": 298.7,
+      "change_pct": 1.79,
+      "score": -1,
       "signal": "AVOID",
       "reasons": [
         "price below 200-day average (long-term downtrend)",
-        "50-day below 200-day (death-cross regime)"
+        "50-day below 200-day (death-cross regime)",
+        "MACD momentum positive and rising"
       ],
-      "rsi": 38.0,
-      "sma50": 329.88,
-      "sma200": 338.59,
-      "pct_from_52w_high": -27.0,
-      "pct_above_52w_low": 7.4,
-      "suggested_stop": 272.89,
+      "rsi": 42.3,
+      "sma50": 329.12,
+      "sma200": 338.41,
+      "pct_from_52w_high": -25.7,
+      "pct_above_52w_low": 9.3,
+      "suggested_stop": 278.31,
       "score_history": [
-        3,
         1,
         4,
         4,
@@ -802,14 +803,15 @@
         -2,
         -2,
         -2,
-        -2
+        -2,
+        -1
       ],
       "backtest": {
         "rule": "score >= 5, judged 20 trading days later",
-        "signal_days": 184,
-        "avg_fwd_return_pct_when_signal": 0.89,
+        "signal_days": 185,
+        "avg_fwd_return_pct_when_signal": 0.81,
         "avg_fwd_return_pct_any_day": 2.48,
-        "win_rate_pct_when_signal": 54.3
+        "win_rate_pct_when_signal": 54.1
       },
       "source": "yahoo"
     }

@@ -1,73 +1,73 @@
 {
-  "updated": "2026-11-13T00:49:10+00:00",
+  "updated": "2026-11-13T03:14:25+00:00",
   "game_weights": {
     "ML": 0.118,
-    "Spread": 0.151,
+    "Spread": 0.113,
     "Total": 0.222
   },
   "fit_stats": {
     "ML": {
-      "n": 230,
+      "n": 232,
       "raw_best": 0.0,
-      "logloss_model": 0.5656,
-      "logloss_market": 0.4968,
-      "logloss_blend": 0.5031
+      "logloss_model": 0.5659,
+      "logloss_market": 0.4954,
+      "logloss_blend": 0.5019
     },
     "Spread": {
-      "n": 440,
-      "raw_best": 0.1,
-      "logloss_model": 0.7123,
-      "logloss_market": 0.6937,
-      "logloss_blend": 0.6936
+      "n": 444,
+      "raw_best": 0.05,
+      "logloss_model": 0.7154,
+      "logloss_market": 0.6939,
+      "logloss_blend": 0.694
     },
     "Total": {
-      "n": 542,
+      "n": 544,
       "raw_best": 0.2,
-      "logloss_model": 0.704,
-      "logloss_market": 0.6932,
-      "logloss_blend": 0.6925
+      "logloss_model": 0.7042,
+      "logloss_market": 0.6931,
+      "logloss_blend": 0.6926
     },
     "Prop": {
-      "n": 3230,
+      "n": 3246,
       "raw_best": 0.05,
-      "logloss_model": 0.7081,
-      "logloss_market": 0.6851,
-      "logloss_blend": 0.6851
+      "logloss_model": 0.7078,
+      "logloss_market": 0.6852,
+      "logloss_blend": 0.6852
     }
   },
   "calibration": {
     "nba:assists": {
-      "scale": 0.9667,
-      "sd_scale": 0.994,
-      "n": 1101,
+      "scale": 0.9681,
+      "sd_scale": 0.9972,
+      "n": 1115,
       "avg_proj": 3.31,
-      "avg_actual": 3.19
+      "avg_actual": 3.2
     },
     "nba:points": {
-      "scale": 0.9658,
-      "sd_scale": 1.0458,
-      "n": 1102,
+      "scale": 0.9667,
+      "sd_scale": 1.0452,
+      "n": 1116,
       "avg_proj": 14.1,
-      "avg_actual": 13.58
+      "avg_actual": 13.6
     },
     "nba:pra": {
-      "scale": 0.964,
-      "sd_scale": 1.0176,
-      "n": 1102,
+      "scale": 0.9646,
+      "sd_scale": 1.0207,
+      "n": 1116,
       "avg_proj": 22.48,
-      "avg_actual": 21.61
+      "avg_actual": 21.62
     },
     "nba:rebounds": {
-      "scale": 0.957,
-      "sd_scale": 0.9999,
-      "n": 1102,
-      "avg_proj": 5.07,
+      "scale": 0.9564,
+      "sd_scale": 1.0032,
+      "n": 1116,
+      "avg_proj": 5.06,
       "avg_actual": 4.83
     },
     "nba:threes": {
-      "scale": 0.9943,
-      "sd_scale": 0.9935,
-      "n": 994,
+      "scale": 0.9946,
+      "sd_scale": 0.9949,
+      "n": 1007,
       "avg_proj": 1.77,
       "avg_actual": 1.76
     },
@@ -109,8 +109,8 @@
   },
   "prop_weight": 0.07,
   "scoreboard": {
-    "graded_bets": 4638,
-    "graded_projections": 6163,
+    "graded_bets": 4662,
+    "graded_projections": 6232,
     "model_leans": {
       "w": 362,
       "l": 479,

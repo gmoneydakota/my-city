@@ -1,38 +1,38 @@
 {
-  "updated": "2026-11-15T15:29:15+00:00",
+  "updated": "2026-11-15T18:40:35+00:00",
   "game_weights": {
-    "ML": 0.108,
+    "ML": 0.107,
     "Spread": 0.067,
     "Total": 0.259
   },
   "fit_stats": {
     "ML": {
-      "n": 268,
+      "n": 270,
       "raw_best": 0.0,
-      "logloss_model": 0.5912,
+      "logloss_model": 0.5916,
       "logloss_market": 0.5207,
-      "logloss_blend": 0.5265
+      "logloss_blend": 0.5266
     },
     "Spread": {
-      "n": 522,
+      "n": 526,
       "raw_best": 0.0,
-      "logloss_model": 0.7207,
+      "logloss_model": 0.7217,
       "logloss_market": 0.6934,
-      "logloss_blend": 0.6938
+      "logloss_blend": 0.6939
     },
     "Total": {
-      "n": 642,
+      "n": 648,
       "raw_best": 0.25,
       "logloss_model": 0.7019,
-      "logloss_market": 0.6932,
-      "logloss_blend": 0.692
+      "logloss_market": 0.693,
+      "logloss_blend": 0.6919
     },
     "Prop": {
-      "n": 3526,
+      "n": 3538,
       "raw_best": 0.0,
-      "logloss_model": 0.709,
+      "logloss_model": 0.7092,
       "logloss_market": 0.6857,
-      "logloss_blend": 0.6857
+      "logloss_blend": 0.6858
     }
   },
   "calibration": {
@@ -72,45 +72,45 @@
       "avg_actual": 1.76
     },
     "nfl:pass_tds": {
-      "scale": 0.9978,
-      "sd_scale": 0.9892,
-      "n": 51,
-      "avg_proj": 1.5,
+      "scale": 0.994,
+      "sd_scale": 0.9931,
+      "n": 53,
+      "avg_proj": 1.51,
       "avg_actual": 1.49
     },
     "nfl:pass_yds": {
-      "scale": 0.9897,
-      "sd_scale": 0.9618,
-      "n": 51,
-      "avg_proj": 225.61,
-      "avg_actual": 219.65
+      "scale": 0.9846,
+      "sd_scale": 0.9748,
+      "n": 53,
+      "avg_proj": 226.73,
+      "avg_actual": 217.98
     },
     "nfl:rec_yds": {
-      "scale": 0.9879,
-      "sd_scale": 1.2587,
-      "n": 271,
-      "avg_proj": 33.38,
-      "avg_actual": 32.86
+      "scale": 0.9836,
+      "sd_scale": 1.253,
+      "n": 282,
+      "avg_proj": 33.64,
+      "avg_actual": 32.93
     },
     "nfl:receptions": {
-      "scale": 0.9769,
-      "sd_scale": 0.9599,
-      "n": 269,
-      "avg_proj": 3.13,
+      "scale": 0.9705,
+      "sd_scale": 0.9605,
+      "n": 279,
+      "avg_proj": 3.14,
       "avg_actual": 3.03
     },
     "nfl:rush_yds": {
-      "scale": 0.9892,
-      "sd_scale": 1.3114,
-      "n": 152,
-      "avg_proj": 36.19,
-      "avg_actual": 35.59
+      "scale": 0.9908,
+      "sd_scale": 1.3014,
+      "n": 158,
+      "avg_proj": 36.16,
+      "avg_actual": 35.66
     }
   },
   "prop_weight": 0.02,
   "scoreboard": {
-    "graded_bets": 5154,
-    "graded_projections": 7383,
+    "graded_bets": 5178,
+    "graded_projections": 7414,
     "model_leans": {
       "w": 370,
       "l": 483,

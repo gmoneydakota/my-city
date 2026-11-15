@@ -35,8 +35,6 @@ you start. If you work out something reusable that isn't here, add a skill (see 
 - watchlist.json: Tickers the free daily market scan follows
 
 ## Recent jobs (outputs/job-N/)
-- #7 Louvre-Slide Door (cad · make · 2026-10-31)
-- #8 Pop-Out Plug Door (replaces the louvre door of job 7) (cad · make · 2026-10-31)
 - #9 Products building: every finished job, ready to download (coder · make · 2026-10-31)
 - #12 Lean Reader: an MCP connector that saves Claude usage on web reading (forge · make · 2026-10-31)
 - #13 City upgrade: the Second Brain building (coder · upgrade · 2026-11-01)
@@ -47,3 +45,5 @@ you start. If you work out something reusable that isn't here, add a skill (see 
 - #21 Lucky Tower factor study (weather, defenses, rest, more) (quant · make · 2026-11-01)
 - #22 weekly betting-model self-improvement (2026-11-02) (quant · upgrade · 2026-11-02)
 - #26 Brain dream (week of 1 to 8 Nov 2026) (scribe · make · 2026-11-08)
+- #27 The change is made and tests pass (cd bets && python3 testbetmodel.py: 22 tests, OK). The … (quant · upgrade · 2026-11-09)
+- #29 Job #29 (scribe · make · 2026-11-15)

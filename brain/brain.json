@@ -1,13 +1,13 @@
 {
  "format": "agent-city-brain/1",
- "generated": "2026-11-08T15:38:38+00:00",
+ "generated": "2026-11-15T15:41:41+00:00",
  "counts": {
   "skills": 14,
   "agents": 10,
-  "jobs": 17,
+  "jobs": 19,
   "tools": 13,
   "topics": 9,
-  "links": 126
+  "links": 131
  },
  "nodes": [
   {
@@ -68,7 +68,7 @@
    "summary": "Builds stock and market models - buy/sell signal models, screeners, backtests, watchlist reports, portfolio analysis - always using freshly downloaded prices and current news. Use for anything about stocks, ETFs, crypto, or \"when should I buy\".",
    "body": "You are Quant. You build working market models, not opinions.\n\n1. Get fresh data every time. Run `python3 scripts/market_data.py TICKER --years 5 --csv <out_dir>/TICKER.csv` for prices (no API key needed) and use WebSearch for news, earnings dates, and anything from the last few weeks. State the \"as of\" date of every number. Never quote a price from memory.\n2. Build the model as a runnable Python script in the job folder (standard library first; `pip install pandas numpy` is fine if needed). Reuse the indicator functions in `scripts/signals.py` where they fit.\n3. Backtest it on history the rule didn't see, and report honestly: number of signals, average forward return vs buy-and-hold, win rate, worst drawdown. If the edge is weak or noisy, say so plainly.\n4. Give the current reading in plain words: \"BUY ZONE / WATCH / HOLD / AVOID\", why, the price level that would change your mind, and a suggested stop.\n5. If the person wants it tracked daily, add the ticker to `watchlist.json` (the only file outside your job folder you may edit) and explain that the free daily `market-signals` workflow will now score it every weekday.\n\nAlways end with: \"This is an educational model, not financial advice. Markets can move against any signal.\"\nIf the request needs a large custom application rather than a model, reply `ESCALATE: coder - <reason>`.",
    "path": ".claude/agents/quant.md",
-   "uses": 3
+   "uses": 4
   },
   {
    "id": "agent:runner",
@@ -98,7 +98,7 @@
    "summary": "Rewrites, comments, commit messages, READMEs, docstrings - anything that's mostly wordsmithing rather than logic. Use after code is working to document or clean up prose.",
    "body": "You are Scribe: a writing and documentation agent. Do exactly what's asked with the text or code it's attached to - tighten a comment, write a commit message, draft a README section, fix a docstring. Keep the project's existing voice and formatting conventions. Don't change logic; if you spot a bug while writing docs, note it separately instead of fixing it silently.",
    "path": ".claude/agents/scribe.md",
-   "uses": 2
+   "uses": 3
   },
   {
    "id": "agent:tutor",
@@ -274,7 +274,7 @@
    "type": "skill",
    "label": "Improve the self-learning betting model",
    "summary": "bets, nfl, nba, calibration, walk-forward, learning",
-   "body": "## When to use\nChanges to the Lucky Tower model in `bets/`, or measuring whether it is any good.\n\n## How\n1. Read what it has learned: `bets/learned.json`, `bets/history/learning_log.json`, graded results in `bets/history/*.csv` (`shadow_bets.csv` has the graded rows).\n2. Test ideas walk-forward (fit on the past, test on the next period) like job 6's accuracy lab. Report calibration, not just win rate.\n3. **Bucket by market-implied probability before blaming the model.** Group graded bets by the implied probability of the price (under 10%, 10-20%, 20-30%...) and compare model p, market-implied p and actual win rate per bucket. Job 22 found the model floored every long shot at about 10% while long shots won 5.5%. The average looked fine; the bucket did not.\n4. Check for one-sided markets. Some props (e.g. NFL `anytime_td`) post only a \"yes\" price, so there is no two-way market to remove the vig from. Then the model runs alone, and the learned prop weight never applies. Fix: fair = implied x (1 - hold), with the hold as a named constant (`ONE_SIDED_HOLD` in `bets/betmodel/engine.py`), blended with the model by the learned weight.\n5. Change `bets/betmodel/`, add a test to `bets/test_betmodel.py`, run `cd bets && python3 test_betmodel.py`.\n6. Never edit `bets/history/` or `learned.json`; the daily learner owns them.\n\n## Gotchas\n- With thin data, the right change is often no change plus a short report. Job 22 changed one thing (one-sided props) and left NBA overs and the other markets alone: fewer than 50 graded rows each.\n- Two days of graded rows is not a trend. Say so and set a date to re-check the bucket that moved.\n- Hold figures (e.g. 10%) are typical values, not measured. Write them in the README as assumptions.\n- Before testing a new factor for an edge, run it through `factor-edge-test` (break-even and standard error).",
+   "body": "## When to use\nChanges to the Lucky Tower model in `bets/`, or measuring whether it is any good.\n\n## How\n1. Read what it has learned: `bets/learned.json`, `bets/history/learning_log.json`, and the graded rows in `bets/history/shadow_bets.csv` (other graded results sit in `bets/history/*.csv`).\n2. Test ideas walk-forward (fit on the past, test on the next period) like job 6's accuracy lab. Report calibration, not just win rate.\n3. **Bucket by market-implied probability before blaming the model.** Group graded bets by the implied probability of the price (under 10%, 10-20%, 20-30%...) and compare model p, market-implied p and actual win rate per bucket. Job 22 found the model floored every long shot at about 10% while long shots won 5.5%. The average looked fine; the bucket did not.\n4. **Split two-way props by side.** Group graded over/under pairs by side and compare each side's win rate and ROI with its implied probability. Job 27 counted 1,237 pairs: overs won 43.2% where the price implied 49.3%, and unders won. The gap held in both sports, both halves of the window and every probability bucket, so it was not noise. Check the market's own de-vigged probability too: if it carries the same bias, blending with it will not remove the gap.\n5. Check for one-sided markets. Some props (e.g. NFL `anytime_td`) post only a \"yes\" price, so there is no two-way market to remove the vig from. Then the model runs alone, and the learned prop weight never applies. Fix: fair = implied x (1 - hold), with the hold as a named constant (`ONE_SIDED_HOLD` in `bets/betmodel/engine.py`), blended with the model by the learned weight.\n6. Change `bets/betmodel/`, add a test to `bets/test_betmodel.py`, run `cd bets && python3 test_betmodel.py`.\n7. Never edit `bets/history/` or `learned.json`; the daily learner owns them.\n\n## Gotchas\n- With thin data, the right change is often no change plus a short report. Job 22 changed one thing (one-sided props) and left NBA overs and the other markets alone: fewer than 50 graded rows each.\n- A side-bias fix (step 4) should be about half the observed gap, written as a named constant, with a date to re-check it and a rule for raising or dropping it. Half the gap is a judgement, not a fit; say so.\n- Two days of graded rows is not a trend. Say so and set a date to re-check the bucket that moved.\n- Hold figures (e.g. 10%) are typical values, not measured. Write them in the README as assumptions.\n- Before you report a change as made, grep for its constant or function name in `bets/betmodel/`. A job's own README can describe code that is not in the files.\n- Before testing a new factor for an edge, run it through `factor-edge-test` (break-even and standard error).",
    "path": "brain/skills/betting-model-learning.md",
    "tags": [
     "bets",
@@ -689,6 +689,32 @@
    "has_page": false,
    "has_model": false,
    "finished": "2026-11-08"
+  },
+  {
+   "id": "job:27",
+   "type": "job",
+   "label": "#27 The change is made and tests pass (cd bets && python3 testbetmodel.py: 22 tests, OK). The …",
+   "summary": "quant · upgrade · 2026-11-09",
+   "body": "# Job #27\n\nThe change is made and tests pass (`cd bets && python3 test_betmodel.py`: 22 tests, OK). The README, `PROGRESS.md` and the brain-skill update were written, but the last command only returned an approval prompt for its `git status`, so I haven't confirmed those files landed.\n\n**The weakness:** player-prop overs lose and unders win. On two-way props (NFL anytime TD excluded) I counted 1,237 over/under pairs. Overs won 43.2% where the price implied 49.3%, a gap of about 4 standard errors. Overs lost 17.6% per bet and unders made 6.3%. It shows in both NBA and NFL, in both halves of the window, and in each market-probability bucket. The market's own de-vigged probability was about 49.4%, so blending with it doesn't remove the bias.\n\n**The change:**\n- **`bets/betmodel/engine.py`:** a new `OVER_BIAS = 0.03` and `over_bias_adjust()` lower P(over) by 3 points after the model/market blend. That is half the observed gap, because the data covers only nine days. Anytime TD is skipped. Underdog legs move too.\n- **`bets/test_betmodel.py`:** `OverBiasTest` has two tests, over/under symmetry, and the anytime-TD skip plus probability bounds.\n\n**Left alone:**\n- **NFL anytime TD:** job 22's one-sided fix already works. The 96 priced-with-market rows are calibrated (32.4% modelled vs 34.4% won).\n- **NBA totals and spreads at EV 5% or more:** 35 and 9 bets.\n- **Moneylines:** the sample is too thin to justify a change.\n\n**Assumptions:**\n- The 3-point shift is my judgement, not a fit, and I don't know the cause.\n- I suggest re-checking around 2026-11-23: raise the shift toward 0.05 if overs still win under 47%, or set it to 0 if they reach about 49%.\n\nI also added a step to `brain/skills/betting-model-learning.md` on splitting props by over/under side.\n\nThis is an educational model",
+   "path": "outputs/job-27/",
+   "n": 27,
+   "mode": "upgrade",
+   "has_page": false,
+   "has_model": false,
+   "finished": "2026-11-09"
+  },
+  {
+   "id": "job:29",
+   "type": "job",
+   "label": "#29 Job #29",
+   "summary": "scribe · make · 2026-11-15",
+   "body": "# Job #29\n\n\n",
+   "path": "outputs/job-29/",
+   "n": 29,
+   "mode": "make",
+   "has_page": false,
+   "has_model": false,
+   "finished": "2026-11-15"
   }
  ],
  "links": [
@@ -774,7 +800,17 @@
   },
   {
    "source": "skill:betting-model-learning",
+   "target": "job:22",
+   "kind": "learned from"
+  },
+  {
+   "source": "skill:betting-model-learning",
    "target": "job:26",
+   "kind": "learned from"
+  },
+  {
+   "source": "skill:betting-model-learning",
+   "target": "job:27",
    "kind": "learned from"
   },
   {
@@ -1321,6 +1357,21 @@
    "source": "job:26",
    "target": "tool:bets-model",
    "kind": "uses tool"
+  },
+  {
+   "source": "job:27",
+   "target": "agent:quant",
+   "kind": "done by"
+  },
+  {
+   "source": "job:27",
+   "target": "tool:bets-model",
+   "kind": "uses tool"
+  },
+  {
+   "source": "job:29",
+   "target": "agent:scribe",
+   "kind": "done by"
   }
  ],
  "problems": []

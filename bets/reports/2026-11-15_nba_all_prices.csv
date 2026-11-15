@@ -1,0 +1,219 @@
+kind,game,selection,line,dk_odds,p_model,p_market,p_blend,ev
+ML,DET @ MIA,MIA ML,,146.0,0.3467,0.3842,0.3801,-0.0651
+ML,DET @ MIA,DET ML,,-173.0,0.6533,0.6158,0.6199,-0.0217
+Spread,DET @ MIA,MIA +4.5,4.5,-112.0,0.4730,0.5046,0.5025,-0.0489
+Spread,DET @ MIA,DET -4.5,-4.5,-108.0,0.5270,0.4954,0.4975,-0.0418
+Total,DET @ MIA,Over 228.5,228.5,-113.0,0.6302,0.5070,0.5290,-0.0028
+Total,DET @ MIA,Under 228.5,228.5,-107.0,0.3698,0.4930,0.4710,-0.0888
+ML,BKN @ MEM,MEM ML,,-191.0,0.5739,0.6386,0.6315,-0.0379
+ML,BKN @ MEM,BKN ML,,160.0,0.4261,0.3614,0.3685,-0.0418
+Spread,BKN @ MEM,MEM -4.5,-4.5,-107.0,0.4442,0.4930,0.4897,-0.0527
+Spread,BKN @ MEM,BKN +4.5,4.5,-113.0,0.5558,0.5070,0.5103,-0.0381
+Total,BKN @ MEM,Over 223.5,223.5,-115.0,0.6554,0.5116,0.5373,0.0046
+Total,BKN @ MEM,Under 223.5,223.5,-105.0,0.3446,0.4884,0.4627,-0.0967
+ML,CHI @ MIN,MIN ML,,-1080.0,0.9464,0.9043,0.9090,-0.0069
+ML,CHI @ MIN,CHI ML,,690.0,0.0536,0.0957,0.0910,-0.2808
+Spread,CHI @ MIN,MIN -16.5,-16.5,-104.0,0.6603,0.4861,0.4981,-0.0230
+Spread,CHI @ MIN,CHI +16.5,16.5,-116.0,0.3397,0.5139,0.5019,-0.0654
+Total,CHI @ MIN,Over 237.5,237.5,-115.0,0.4697,0.5116,0.5041,-0.0576
+Total,CHI @ MIN,Under 237.5,237.5,-105.0,0.5303,0.4884,0.4959,-0.0318
+Prop,PHI @ BKN,Day'Ron Sharpe over 3.5 assists,3.5,-142,,,0.5226,-0.1094
+Prop,PHI @ BKN,Day'Ron Sharpe under 3.5 assists,3.5,108,,,0.4774,-0.0069
+Prop,PHI @ BKN,Julius Randle over 4.5 assists,4.5,-142,,,0.5505,-0.0618
+Prop,PHI @ BKN,Julius Randle under 4.5 assists,4.5,107,,,0.4495,-0.0696
+Prop,PHI @ BKN,Egor Demin over 2.5 assists,2.5,-151,,,0.5673,-0.0570
+Prop,PHI @ BKN,Egor Demin under 2.5 assists,2.5,115,,,0.4327,-0.0697
+Prop,PHI @ BKN,Danny Wolf over 10.5 points,10.5,-123,,,0.5179,-0.0610
+Prop,PHI @ BKN,Danny Wolf under 10.5 points,10.5,-103,,,0.4821,-0.0499
+Prop,MEM @ WSH,Jaylen Wells over 12.5 points,12.5,-107,,,0.4838,-0.0640
+Prop,MEM @ WSH,Jaylen Wells under 12.5 points,12.5,-119,,,0.5162,-0.0501
+Prop,PHI @ BKN,Mikel Brown Jr. over 13.5 points,13.5,-111,,,0.5088,-0.0328
+Prop,PHI @ BKN,Mikel Brown Jr. under 13.5 points,13.5,-115,,,0.4912,-0.0817
+Prop,PHI @ BKN,Day'Ron Sharpe over 8.5 rebounds,8.5,104,,,0.4893,-0.0017
+Prop,PHI @ BKN,Day'Ron Sharpe under 8.5 rebounds,8.5,-137,,,0.5107,-0.1166
+Prop,PHI @ BKN,Egor Demin over 2.5 rebounds,2.5,-133,,,0.5602,-0.0186
+Prop,PHI @ BKN,Egor Demin under 2.5 rebounds,2.5,101,,,0.4398,-0.1160
+Prop,PHI @ BKN,Nolan Traore over 2.5 rebounds,2.5,141,,,0.3665,-0.1168
+Prop,PHI @ BKN,Nolan Traore under 2.5 rebounds,2.5,-188,,,0.6335,-0.0295
+Prop,MEM @ WSH,Jaylen Wells over 2.5 rebounds,2.5,-174,,,0.5959,-0.0616
+Prop,MEM @ WSH,Jaylen Wells under 2.5 rebounds,2.5,132,,,0.4041,-0.0625
+Prop,PHI @ BKN,Julius Randle over 6.5 rebounds,6.5,-104,,,0.4993,-0.0206
+Prop,PHI @ BKN,Julius Randle under 6.5 rebounds,6.5,-127,,,0.5007,-0.1051
+Prop,MEM @ WSH,Cameron Boozer over 4.5 assists,4.5,-146,,,0.5682,-0.0426
+Prop,MEM @ WSH,Cameron Boozer under 4.5 assists,4.5,111,,,0.4318,-0.0889
+Prop,PHI @ BKN,Nolan Traore over 2.5 assists,2.5,-172,,,0.6017,-0.0485
+Prop,PHI @ BKN,Nolan Traore under 2.5 assists,2.5,130,,,0.3983,-0.0838
+Prop,MEM @ WSH,Jaylen Wells over 1.5 assists,1.5,121,,,0.4324,-0.0443
+Prop,MEM @ WSH,Jaylen Wells under 1.5 assists,1.5,-160,,,0.5676,-0.0777
+Prop,PHI @ BKN,Julius Randle over 22.5 points,22.5,-114,,,0.5045,-0.0529
+Prop,PHI @ BKN,Julius Randle under 22.5 points,22.5,-112,,,0.4955,-0.0622
+Prop,MEM @ WSH,Cameron Boozer over 18.5 points,18.5,-119,,,0.5108,-0.0600
+Prop,MEM @ WSH,Cameron Boozer under 18.5 points,18.5,-107,,,0.4892,-0.0536
+Prop,PHI @ BKN,Egor Demin over 12.5 points,12.5,100,,,0.4660,-0.0679
+Prop,PHI @ BKN,Egor Demin under 12.5 points,12.5,-127,,,0.5340,-0.0456
+Prop,PHI @ BKN,Nolan Traore over 10.5 points,10.5,-125,,,0.5307,-0.0448
+Prop,PHI @ BKN,Nolan Traore under 10.5 points,10.5,-102,,,0.4693,-0.0706
+Prop,PHI @ BKN,Day'Ron Sharpe over 10.5 points,10.5,-103,,,0.4747,-0.0644
+Prop,PHI @ BKN,Day'Ron Sharpe under 10.5 points,10.5,-124,,,0.5253,-0.0511
+Prop,MEM @ WSH,Cameron Boozer over 8.5 rebounds,8.5,-141,,,0.5579,-0.0464
+Prop,MEM @ WSH,Cameron Boozer under 8.5 rebounds,8.5,107,,,0.4421,-0.0849
+Prop,POR @ MIN,Ayo Dosunmu over 4.5 assists,4.5,-115,,,0.4867,-0.0901
+Prop,POR @ MIN,Ayo Dosunmu under 4.5 assists,4.5,-114,,,0.5133,-0.0365
+Prop,CHI @ CLE,Josh Giddey over 8.5 assists,8.5,-115,,,0.5027,-0.0602
+Prop,CHI @ CLE,Josh Giddey under 8.5 assists,8.5,-115,,,0.4973,-0.0702
+Prop,CHI @ CLE,Patrick Williams over 1.5 assists,1.5,-179,,,0.6058,-0.0558
+Prop,CHI @ CLE,Patrick Williams under 1.5 assists,1.5,135,,,0.3942,-0.0736
+Prop,POR @ MIN,LaMelo Ball over 7.5 assists,7.5,108,,,0.4385,-0.0879
+Prop,POR @ MIN,LaMelo Ball under 7.5 assists,7.5,-142,,,0.5615,-0.0431
+Prop,POR @ MIN,Jaden McDaniels over 3.5 assists,3.5,-103,,,0.4637,-0.0861
+Prop,POR @ MIN,Jaden McDaniels under 3.5 assists,3.5,-127,,,0.5363,-0.0414
+Prop,CHI @ CLE,Tre Jones over 2.5 assists,2.5,-169,,,0.5987,-0.0470
+Prop,CHI @ CLE,Tre Jones under 2.5 assists,2.5,128,,,0.4013,-0.0851
+Prop,POR @ MIN,LaMelo Ball over 20.5 points,20.5,-114,,,0.5008,-0.0599
+Prop,POR @ MIN,LaMelo Ball under 20.5 points,20.5,-112,,,0.4992,-0.0551
+Prop,POR @ MIN,Ayo Dosunmu over 18.5 points,18.5,-111,,,0.5003,-0.0490
+Prop,POR @ MIN,Ayo Dosunmu under 18.5 points,18.5,-115,,,0.4997,-0.0658
+Prop,POR @ MIN,Rudy Gobert over 10.5 points,10.5,104,,,0.4782,-0.0244
+Prop,POR @ MIN,Rudy Gobert under 10.5 points,10.5,-133,,,0.5218,-0.0859
+Prop,POR @ MIN,Joan Beringer over 6.5 points,6.5,-102,,,0.4942,-0.0213
+Prop,POR @ MIN,Joan Beringer under 6.5 points,6.5,-125,,,0.5058,-0.0895
+Prop,CHI @ CLE,Isaac Okoro over 8.5 points,8.5,103,,,0.4828,-0.0199
+Prop,CHI @ CLE,Isaac Okoro under 8.5 points,8.5,-132,,,0.5172,-0.0910
+Prop,CHI @ CLE,Zach Collins over 7.5 points,7.5,-124,,,0.5151,-0.0695
+Prop,CHI @ CLE,Zach Collins under 7.5 points,7.5,-102,,,0.4849,-0.0397
+Prop,CHI @ CLE,Patrick Williams over 8.5 points,8.5,-112,,,0.4978,-0.0577
+Prop,CHI @ CLE,Patrick Williams under 8.5 points,8.5,-114,,,0.5022,-0.0573
+Prop,CHI @ CLE,Norman Powell over 19.5 points,19.5,-118,,,0.5137,-0.0509
+Prop,CHI @ CLE,Norman Powell under 19.5 points,19.5,-108,,,0.4863,-0.0635
+Prop,POR @ MIN,Trey Lyles over 5.5 points,5.5,-131,,,0.5349,-0.0568
+Prop,POR @ MIN,Trey Lyles under 5.5 points,5.5,103,,,0.4651,-0.0559
+Prop,POR @ MIN,Terrence Shannon Jr. over 10.5 points,10.5,-117,,,0.5066,-0.0603
+Prop,POR @ MIN,Terrence Shannon Jr. under 10.5 points,10.5,-109,,,0.4934,-0.0540
+Prop,POR @ MIN,Jonathan Kuminga over 13.5 points,13.5,-126,,,0.5307,-0.0481
+Prop,POR @ MIN,Jonathan Kuminga under 13.5 points,13.5,-101,,,0.4693,-0.0660
+Prop,CHI @ CLE,Tre Jones over 9.5 points,9.5,-114,,,0.5040,-0.0540
+Prop,CHI @ CLE,Tre Jones under 9.5 points,9.5,-112,,,0.4960,-0.0611
+Prop,POR @ MIN,Jaden McDaniels over 17.5 points,17.5,-106,,,0.5099,-0.0090
+Prop,POR @ MIN,Jaden McDaniels under 17.5 points,17.5,-121,,,0.4901,-0.1049
+Prop,POR @ MIN,LaMelo Ball over 4.5 rebounds,4.5,114,,,0.4359,-0.0672
+Prop,POR @ MIN,LaMelo Ball under 4.5 rebounds,4.5,-150,,,0.5641,-0.0598
+Prop,POR @ MIN,Jaden McDaniels over 5.5 rebounds,5.5,-125,,,0.5225,-0.0594
+Prop,POR @ MIN,Jaden McDaniels under 5.5 rebounds,5.5,-105,,,0.4775,-0.0678
+Prop,POR @ MIN,Terrence Shannon Jr. over 2.5 rebounds,2.5,-111,,,0.5110,-0.0286
+Prop,POR @ MIN,Terrence Shannon Jr. under 2.5 rebounds,2.5,-118,,,0.4890,-0.0966
+Prop,CHI @ CLE,Matas Buzelis over 5.5 rebounds,5.5,109,,,0.4738,-0.0097
+Prop,CHI @ CLE,Matas Buzelis under 5.5 rebounds,5.5,-144,,,0.5262,-0.1085
+Prop,POR @ MIN,Rudy Gobert over 10.5 rebounds,10.5,-115,,,0.5171,-0.0333
+Prop,POR @ MIN,Rudy Gobert under 10.5 rebounds,10.5,-114,,,0.4829,-0.0935
+Prop,CHI @ CLE,Isaac Okoro over 2.5 rebounds,2.5,-101,,,0.4727,-0.0593
+Prop,CHI @ CLE,Isaac Okoro under 2.5 rebounds,2.5,-130,,,0.5273,-0.0670
+Prop,CHI @ CLE,Norman Powell over 2.5 rebounds,2.5,-134,,,0.5408,-0.0556
+Prop,CHI @ CLE,Norman Powell under 2.5 rebounds,2.5,102,,,0.4592,-0.0724
+Prop,CHI @ CLE,Josh Giddey over 6.5 rebounds,6.5,-148,,,0.5360,-0.1018
+Prop,CHI @ CLE,Josh Giddey under 6.5 rebounds,6.5,112,,,0.4640,-0.0164
+Prop,POR @ MIN,Trey Lyles over 4.5 rebounds,4.5,-101,,,0.4250,-0.1542
+Prop,POR @ MIN,Trey Lyles under 4.5 rebounds,4.5,-130,,,0.5750,0.0173
+Prop,CHI @ CLE,Tre Jones over 2.5 rebounds,2.5,102,,,0.4600,-0.0709
+Prop,CHI @ CLE,Tre Jones under 2.5 rebounds,2.5,-134,,,0.5400,-0.0569
+Prop,POR @ MIN,Jonathan Kuminga over 5.5 rebounds,5.5,-114,,,0.4996,-0.0621
+Prop,POR @ MIN,Jonathan Kuminga under 5.5 rebounds,5.5,-116,,,0.5004,-0.0683
+Prop,POR @ MIN,Ayo Dosunmu over 4.5 rebounds,4.5,113,,,0.4404,-0.0619
+Prop,POR @ MIN,Ayo Dosunmu under 4.5 rebounds,4.5,-149,,,0.5596,-0.0648
+Prop,POR @ MIN,Jonathan Kuminga over 2.5 assists,2.5,-139,,,0.4906,-0.1564
+Prop,POR @ MIN,Jonathan Kuminga under 2.5 assists,2.5,106,,,0.5094,0.0493
+Prop,CHI @ CLE,Matas Buzelis over 16.5 points,16.5,-106,,,0.4837,-0.0600
+Prop,CHI @ CLE,Matas Buzelis under 16.5 points,16.5,-120,,,0.5163,-0.0535
+Prop,CHI @ CLE,Josh Giddey over 13.5 points,13.5,-112,,,0.4990,-0.0555
+Prop,CHI @ CLE,Josh Giddey under 13.5 points,13.5,-114,,,0.5010,-0.0595
+Prop,CHI @ CLE,Patrick Williams over 3.5 rebounds,3.5,-123,,,0.5173,-0.0621
+Prop,CHI @ CLE,Patrick Williams under 3.5 rebounds,3.5,-107,,,0.4827,-0.0662
+Prop,POR @ MIN,Joan Beringer over 6.5 rebounds,6.5,102,,,0.4590,-0.0728
+Prop,POR @ MIN,Joan Beringer under 6.5 rebounds,6.5,-135,,,0.5410,-0.0583
+Prop,HOU @ MIA,Bam Adebayo over 3.5 assists,3.5,119,,,0.4433,-0.0291
+Prop,HOU @ MIA,Bam Adebayo under 3.5 assists,3.5,-157,,,0.5567,-0.0888
+Prop,HOU @ MIA,Klay Thompson over 1.5 assists,1.5,-172,,,0.6028,-0.0467
+Prop,HOU @ MIA,Klay Thompson under 1.5 assists,1.5,130,,,0.3972,-0.0864
+Prop,HOU @ MIA,Giannis Antetokounmpo over 5.5 assists,5.5,108,,,0.4441,-0.0763
+Prop,HOU @ MIA,Giannis Antetokounmpo under 5.5 assists,5.5,-143,,,0.5559,-0.0553
+Prop,DET @ SA,Kevin Huerter over 2.5 assists,2.5,113,,,0.4455,-0.0511
+Prop,DET @ SA,Kevin Huerter under 2.5 assists,2.5,-149,,,0.5545,-0.0733
+Prop,DET @ SA,Cade Cunningham over 9.5 assists,9.5,109,,,0.4348,-0.0912
+Prop,DET @ SA,Cade Cunningham under 9.5 assists,9.5,-144,,,0.5652,-0.0424
+Prop,HOU @ MIA,Ryan Conwell over 2.5 assists,2.5,125,,,0.4056,-0.0873
+Prop,HOU @ MIA,Ryan Conwell under 2.5 assists,2.5,-165,,,0.5944,-0.0454
+Prop,DET @ SA,Duncan Robinson over 2.5 assists,2.5,131,,,0.3869,-0.1063
+Prop,DET @ SA,Duncan Robinson under 2.5 assists,2.5,-174,,,0.6131,-0.0345
+Prop,DET @ SA,Ausar Thompson over 4.5 assists,4.5,102,,,0.4957,0.0013
+Prop,DET @ SA,Ausar Thompson under 4.5 assists,4.5,-135,,,0.5043,-0.1221
+Prop,HOU @ MIA,Bam Adebayo over 17.5 points,17.5,-107,,,0.5052,-0.0227
+Prop,HOU @ MIA,Bam Adebayo under 17.5 points,17.5,-119,,,0.4948,-0.0893
+Prop,DET @ SA,Cade Cunningham over 25.5 points,25.5,-115,,,0.4951,-0.0744
+Prop,DET @ SA,Cade Cunningham under 25.5 points,25.5,-110,,,0.5049,-0.0361
+Prop,DET @ SA,Kevin Huerter over 9.5 points,9.5,-106,,,0.4946,-0.0389
+Prop,DET @ SA,Kevin Huerter under 9.5 points,9.5,-120,,,0.5054,-0.0734
+Prop,DET @ SA,Paul Reed over 10.5 points,10.5,-119,,,0.4927,-0.0933
+Prop,DET @ SA,Paul Reed under 10.5 points,10.5,-107,,,0.5073,-0.0185
+Prop,DET @ SA,Ronald Holland II over 4.5 points,4.5,-130,,,0.5251,-0.0710
+Prop,DET @ SA,Ronald Holland II under 4.5 points,4.5,102,,,0.4749,-0.0407
+Prop,HOU @ MIA,Giannis Antetokounmpo over 28.5 points,28.5,-122,,,0.5017,-0.0871
+Prop,HOU @ MIA,Giannis Antetokounmpo under 28.5 points,28.5,-104,,,0.4983,-0.0225
+Prop,HOU @ MIA,Davion Mitchell over 13.5 points,13.5,-119,,,0.5133,-0.0553
+Prop,HOU @ MIA,Davion Mitchell under 13.5 points,13.5,-107,,,0.4867,-0.0585
+Prop,DET @ SA,Duncan Robinson over 15.5 points,15.5,-108,,,0.5014,-0.0343
+Prop,DET @ SA,Duncan Robinson under 15.5 points,15.5,-118,,,0.4986,-0.0789
+Prop,DET @ SA,John Collins over 11.5 points,11.5,-113,,,0.4979,-0.0615
+Prop,DET @ SA,John Collins under 11.5 points,11.5,-113,,,0.5021,-0.0536
+Prop,DET @ SA,Ausar Thompson over 10.5 points,10.5,104,,,0.4861,-0.0083
+Prop,DET @ SA,Ausar Thompson under 10.5 points,10.5,-133,,,0.5139,-0.0998
+Prop,HOU @ MIA,Andrew Wiggins over 9.5 points,9.5,-111,,,0.4973,-0.0547
+Prop,HOU @ MIA,Andrew Wiggins under 9.5 points,9.5,-115,,,0.5027,-0.0601
+Prop,HOU @ MIA,Ryan Conwell over 8.5 points,8.5,-102,,,0.4585,-0.0921
+Prop,HOU @ MIA,Ryan Conwell under 8.5 points,8.5,-124,,,0.5415,-0.0217
+Prop,DET @ SA,Daniss Jenkins over 14.5 points,14.5,-112,,,0.4996,-0.0543
+Prop,DET @ SA,Daniss Jenkins under 14.5 points,14.5,-114,,,0.5004,-0.0607
+Prop,DET @ SA,Ronald Holland II over 2.5 rebounds,2.5,-144,,,0.5393,-0.0863
+Prop,DET @ SA,Ronald Holland II under 2.5 rebounds,2.5,109,,,0.4607,-0.0371
+Prop,HOU @ MIA,Bam Adebayo over 8.5 rebounds,8.5,-137,,,0.5477,-0.0526
+Prop,HOU @ MIA,Bam Adebayo under 8.5 rebounds,8.5,104,,,0.4523,-0.0773
+Prop,HOU @ MIA,Klay Thompson over 2.5 rebounds,2.5,141,,,0.3777,-0.0898
+Prop,HOU @ MIA,Klay Thompson under 2.5 rebounds,2.5,-187,,,0.6223,-0.0449
+Prop,DET @ SA,Paul Reed over 7.5 rebounds,7.5,-120,,,0.5002,-0.0830
+Prop,DET @ SA,Paul Reed under 7.5 rebounds,7.5,-109,,,0.4998,-0.0417
+Prop,HOU @ MIA,Giannis Antetokounmpo over 12.5 rebounds,12.5,106,,,0.4546,-0.0634
+Prop,HOU @ MIA,Giannis Antetokounmpo under 12.5 rebounds,12.5,-140,,,0.5454,-0.0651
+Prop,DET @ SA,Cade Cunningham over 5.5 rebounds,5.5,-118,,,0.5017,-0.0732
+Prop,DET @ SA,Cade Cunningham under 5.5 rebounds,5.5,-111,,,0.4983,-0.0527
+Prop,DET @ SA,Kevin Huerter over 3.5 rebounds,3.5,123,,,0.4124,-0.0802
+Prop,DET @ SA,Kevin Huerter under 3.5 rebounds,3.5,-163,,,0.5876,-0.0520
+Prop,HOU @ MIA,Andrew Wiggins over 3.5 rebounds,3.5,113,,,0.4369,-0.0694
+Prop,HOU @ MIA,Andrew Wiggins under 3.5 rebounds,3.5,-150,,,0.5631,-0.0615
+Prop,DET @ SA,Ausar Thompson over 7.5 rebounds,7.5,104,,,0.4607,-0.0601
+Prop,DET @ SA,Ausar Thompson under 7.5 rebounds,7.5,-137,,,0.5393,-0.0671
+Prop,HOU @ MIA,Ryan Conwell over 2.5 rebounds,2.5,-108,,,0.4882,-0.0598
+Prop,HOU @ MIA,Ryan Conwell under 2.5 rebounds,2.5,-121,,,0.5118,-0.0652
+Prop,DET @ SA,Daniss Jenkins over 4.5 assists,4.5,-144,,,0.5574,-0.0555
+Prop,DET @ SA,Daniss Jenkins under 4.5 assists,4.5,109,,,0.4426,-0.0750
+Prop,DET @ SA,Duncan Robinson over 2.5 rebounds,2.5,-104,,,0.4792,-0.0600
+Prop,DET @ SA,Duncan Robinson under 2.5 rebounds,2.5,-126,,,0.5208,-0.0659
+Prop,HOU @ MIA,Davion Mitchell over 2.5 rebounds,2.5,123,,,0.4246,-0.0532
+Prop,HOU @ MIA,Davion Mitchell under 2.5 rebounds,2.5,-162,,,0.5754,-0.0694
+Prop,DET @ SA,Daniss Jenkins over 3.5 rebounds,3.5,-113,,,0.5059,-0.0464
+Prop,DET @ SA,Daniss Jenkins under 3.5 rebounds,3.5,-116,,,0.4941,-0.0799
+Prop,HOU @ MIA,Davion Mitchell over 7.5 assists,7.5,-132,,,0.5318,-0.0653
+Prop,HOU @ MIA,Davion Mitchell under 7.5 assists,7.5,100,,,0.4682,-0.0636
+Prop,DET @ SA,Paul Reed over 1.5 assists,1.5,-186,,,0.6211,-0.0449
+Prop,DET @ SA,Paul Reed under 1.5 assists,1.5,141,,,0.3789,-0.0870
+Prop,HOU @ MIA,Andrew Wiggins over 1.5 assists,1.5,-108,,,0.4940,-0.0486
+Prop,HOU @ MIA,Andrew Wiggins under 1.5 assists,1.5,-122,,,0.5060,-0.0793
+Prop,HOU @ MIA,Klay Thompson over 13.5 points,13.5,-113,,,0.4936,-0.0695
+Prop,HOU @ MIA,Klay Thompson under 13.5 points,13.5,-112,,,0.5064,-0.0415
+Prop,DET @ SA,Javonte Green over 5.5 points,5.5,-102,,,0.4608,-0.0875
+Prop,DET @ SA,Javonte Green under 5.5 points,5.5,-125,,,0.5392,-0.0294
+Prop,HOU @ MIA,Myron Gardner over 4.5 points,4.5,-142,,,0.5506,-0.0616
+Prop,HOU @ MIA,Myron Gardner under 4.5 points,4.5,111,,,0.4494,-0.0518
+Prop,DET @ SA,John Collins over 5.5 rebounds,5.5,-148,,,0.5650,-0.0532
+Prop,DET @ SA,John Collins under 5.5 rebounds,5.5,112,,,0.4350,-0.0778
+Prop,HOU @ MIA,Myron Gardner over 4.5 rebounds,4.5,126,,,0.3960,-0.1049
+Prop,HOU @ MIA,Myron Gardner under 4.5 rebounds,4.5,-167,,,0.6040,-0.0344
+Prop,DET @ SA,Javonte Green over 2.5 rebounds,2.5,-115,,,0.4977,-0.0695
+Prop,DET @ SA,Javonte Green under 2.5 rebounds,2.5,-114,,,0.5023,-0.0571

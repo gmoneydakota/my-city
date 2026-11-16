@@ -163,6 +163,20 @@ ONE_SIDED_STATS = {"anytime_td"}  # books post only the "yes" price, so there is
 ONE_SIDED_HOLD = 0.90             # typical anytime-TD hold is ~10%: fair prob ~ implied x 0.90
 
 
+# Job 30: graded two-way props show overs losing and unders winning (4,380 pairs 31 Oct-15 Nov: overs won ~45%
+# where prices implied ~53%). NFL held in both halves (late: 45.8% vs 52.7%, n=590); NBA was 39% early but
+# 50% late (n=369), so it gets a smaller shift. Half the observed gap is a judgement, not a fit.
+# Re-check on 2026-12-01: raise if overs still trail implied by >4 pts, drop to 0 if the gap closes.
+OVER_SHIFT = {"nfl": 0.02, "nba": 0.01}  # subtracted from P(over), added to P(under)
+
+
+def side_adjust(league: str, stat: str, p_over: float) -> float:
+    """Nudge P(over) down for two-way props. One-sided markets (anytime TD) are untouched."""
+    if stat in ONE_SIDED_STATS:
+        return p_over
+    return min(0.99, max(0.01, p_over - OVER_SHIFT.get(league, 0.0)))
+
+
 def one_sided_fair(books: dict) -> list[float]:
     """Approximate fair P(over) from one-sided 'yes' prices (non-DFS books), hold removed.
     Job 22: with no market anchor the model priced +2500 long shots at 10% (they won 5.5%, n=55)."""
@@ -234,6 +248,7 @@ def prop_bets(league: str, games: list[dict], model, pbook: props.PlayerBook, qu
         p_over_model = mo / played if played else 0.5
         w_prop = learn.prop_weight(W_MODEL_PROP)
         p_over = p_over_model if p_mkt is None else w_prop * p_over_model + (1 - w_prop) * p_mkt
+        p_over = side_adjust(league, stat, p_over)
         note = f"{injury['status']}: {injury['detail']}" if injury else ""
         if proj.get("avail_note"):
             note = (note + " | " if note else "") + proj["avail_note"]

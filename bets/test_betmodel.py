@@ -190,5 +190,19 @@ class AvailabilityTests(unittest.TestCase):
         self.assertEqual(proj["mean"], 20.0)  # input untouched
 
 
+class SideBias(unittest.TestCase):
+    def test_over_shifted_down_under_up(self):
+        p = engine.side_adjust("nfl", "rec_yds", 0.50)
+        self.assertAlmostEqual(p, 0.50 - engine.OVER_SHIFT["nfl"])
+        self.assertGreater(1 - p, 0.50)
+
+    def test_one_sided_and_unknown_league_untouched(self):
+        self.assertEqual(engine.side_adjust("nfl", "anytime_td", 0.2), 0.2)
+        self.assertEqual(engine.side_adjust("nhl", "points", 0.5), 0.5)
+
+    def test_clamped(self):
+        self.assertGreaterEqual(engine.side_adjust("nfl", "rec_yds", 0.005), 0.01)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=1)

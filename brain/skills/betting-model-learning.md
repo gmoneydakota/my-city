@@ -18,6 +18,8 @@ Changes to the Lucky Tower model in `bets/`, or measuring whether it is any good
 7. Never edit `bets/history/` or `learned.json`; the daily learner owns them.
 
 ## Gotchas
+- Shadow rows log both sides of every game market, so ML/Spread/Total win rate is 50% by construction: only props and implied-probability buckets are informative. The runner has no pandas: use `csv` + `collections`.
+- Job 30 found the job 27 side bias had never been coded; it added `OVER_SHIFT` in `engine.py`. Grep before assuming a prior fix exists.
 - With thin data, the right change is often no change plus a short report. Job 22 changed one thing (one-sided props) and left NBA overs and the other markets alone: fewer than 50 graded rows each.
 - A side-bias fix (step 4) should be about half the observed gap, written as a named constant, with a date to re-check it and a rule for raising or dropping it. Half the gap is a judgement, not a fit; say so.
 - Two days of graded rows is not a trend. Say so and set a date to re-check the bucket that moved.

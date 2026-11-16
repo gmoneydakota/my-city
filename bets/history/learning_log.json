@@ -405,19 +405,17 @@
   {
     "date": "2026-11-16",
     "lessons": [
-      "Total: trusting the model 30% \u2192 34% (vs the market) after 704 graded bets \u2014 the market has been the better predictor so far.",
-      "NFL pass_tds: projections ran too low (avg 1.53 projected vs 1.57 actual over 68 players) \u2192 now scaled \u00d71.014.",
-      "NFL rush_yds: was overconfident about player swings \u2192 uncertainty \u00d71.274."
+      "Total: trusting the model 34% \u2192 38% (vs the market) after 720 graded bets \u2014 the market has been the better predictor so far."
     ],
     "scoreboard": {
-      "graded_bets": 5940,
-      "graded_projections": 7944,
+      "graded_bets": 6014,
+      "graded_projections": 8144,
       "model_leans": {
-        "w": 381,
+        "w": 382,
         "l": 488,
         "p": 0,
-        "hit_rate": 0.4384,
-        "roi_per_bet": -0.0512
+        "hit_rate": 0.4391,
+        "roi_per_bet": -0.0501
       },
       "strong_leans": {
         "w": 239,

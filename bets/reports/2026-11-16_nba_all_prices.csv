@@ -1,71 +1,49 @@
 kind,game,selection,line,dk_odds,p_model,p_market,p_blend,ev
-ML,ATL @ MIL,MIL ML,,270.0,0.2477,0.2446,0.2449,-0.0940
-ML,ATL @ MIL,ATL ML,,-336.0,0.7523,0.7554,0.7551,-0.0201
-Spread,ATL @ MIL,MIL +8.5,8.5,-106.0,0.4744,0.4896,0.4887,-0.0504
-Spread,ATL @ MIL,ATL -8.5,-8.5,-115.0,0.5256,0.5104,0.5113,-0.0440
-Total,ATL @ MIL,Over 233.5,233.5,-115.0,0.4333,0.5116,0.4849,-0.0934
-Total,ATL @ MIL,Under 233.5,233.5,-105.0,0.5667,0.4884,0.5151,0.0057
-ML,OKC @ SAC,SAC ML,,361.0,0.2591,0.1899,0.1968,-0.0928
-ML,OKC @ SAC,OKC ML,,-468.0,0.7409,0.8101,0.8032,-0.0252
-Spread,OKC @ SAC,SAC +11.5,11.5,-116.0,0.5752,0.5127,0.5166,-0.0381
-Spread,OKC @ SAC,OKC -11.5,-11.5,-105.0,0.4248,0.4873,0.4834,-0.0562
-Total,OKC @ SAC,Over 223.5,223.5,-110.0,0.4288,0.5000,0.4757,-0.0918
-Total,OKC @ SAC,Under 223.5,223.5,-110.0,0.5712,0.5000,0.5243,0.0009
-ML,POR @ MIN,MIN ML,,-143.0,0.5846,0.5693,0.5709,-0.0299
-ML,POR @ MIN,POR ML,,121.0,0.4154,0.4307,0.4291,-0.0516
-Spread,POR @ MIN,MIN -3.5,-3.5,-105.0,0.4838,0.4884,0.4881,-0.0470
-Spread,POR @ MIN,POR +3.5,3.5,-115.0,0.5162,0.5116,0.5119,-0.0430
-Total,POR @ MIN,Over 228.5,228.5,-110.0,0.4716,0.5000,0.4903,-0.0639
-Total,POR @ MIN,Under 228.5,228.5,-110.0,0.5284,0.5000,0.5097,-0.0270
-Prop,WSH @ TOR,Scottie Barnes over 18.5 points,18.5,-115,,,0.5007,-0.0638
-Prop,WSH @ TOR,Scottie Barnes under 18.5 points,18.5,-115,,,0.4993,-0.0666
-Prop,WSH @ TOR,Immanuel Quickley over 8.5 points,8.5,-120,,,0.5141,-0.0575
-Prop,WSH @ TOR,Immanuel Quickley under 8.5 points,8.5,-110,,,0.4859,-0.0723
-Prop,NY @ TOR,Landry Shamet over 13.5 points,13.5,-130,,,0.5226,-0.0753
-Prop,NY @ TOR,Landry Shamet under 13.5 points,13.5,100,,,0.4774,-0.0453
-Prop,NY @ TOR,Jalen Brunson over 26.5 points,26.5,-135,,,0.5427,-0.0553
-Prop,NY @ TOR,Jalen Brunson under 26.5 points,26.5,105,,,0.4573,-0.0626
-Prop,WSH @ TOR,Jakob Poeltl over 11.5 points,11.5,-110,,,0.4868,-0.0706
-Prop,WSH @ TOR,Jakob Poeltl under 11.5 points,11.5,-120,,,0.5132,-0.0592
-Prop,WSH @ TOR,Ja'Kobe Walter over 7.5 points,7.5,114,,,0.4408,-0.0567
-Prop,WSH @ TOR,Ja'Kobe Walter under 7.5 points,7.5,-145,,,0.5592,-0.0551
-Prop,MIL @ MIA,Brayden Burries over 12.5 points,12.5,-117,,,0.5064,-0.0609
-Prop,MIL @ MIA,Brayden Burries under 12.5 points,12.5,-109,,,0.4936,-0.0535
-Prop,ATL @ OKC,Dyson Daniels over 9.5 points,9.5,-127,,,0.5305,-0.0518
-Prop,ATL @ OKC,Dyson Daniels under 9.5 points,9.5,-101,,,0.4695,-0.0656
-Prop,MIL @ MIA,Jaime Jaquez Jr. over 15.5 points,15.5,-102,,,0.4958,-0.0180
-Prop,MIL @ MIA,Jaime Jaquez Jr. under 15.5 points,15.5,-125,,,0.5042,-0.0925
-Prop,ATL @ OKC,Onyeka Okongwu over 13.5 points,13.5,-119,,,0.5012,-0.0777
-Prop,ATL @ OKC,Onyeka Okongwu under 13.5 points,13.5,-107,,,0.4988,-0.0350
-Prop,ATL @ OKC,Luguentz Dort over 8.5 points,8.5,-102,,,0.4774,-0.0545
-Prop,ATL @ OKC,Luguentz Dort under 8.5 points,8.5,-125,,,0.5226,-0.0594
-Prop,MIL @ MIA,Nate Ament over 8.5 points,8.5,-119,,,0.4886,-0.1008
-Prop,MIL @ MIA,Nate Ament under 8.5 points,8.5,-107,,,0.5114,-0.0107
-Prop,MIL @ MIA,Tyler Herro over 22.5 points,22.5,-118,,,0.5001,-0.0761
-Prop,MIL @ MIA,Tyler Herro under 22.5 points,22.5,-108,,,0.4999,-0.0373
-Prop,ATL @ OKC,Aaron Wiggins over 12.5 points,12.5,-107,,,0.4899,-0.0522
-Prop,ATL @ OKC,Aaron Wiggins under 12.5 points,12.5,-120,,,0.5101,-0.0649
-Prop,MIL @ MIA,Kyle Kuzma over 12.5 points,12.5,-116,,,0.4990,-0.0707
-Prop,MIL @ MIA,Kyle Kuzma under 12.5 points,12.5,-110,,,0.5010,-0.0436
-Prop,MIL @ MIA,Kel'el Ware over 8.5 points,8.5,-102,,,0.4789,-0.0516
-Prop,MIL @ MIA,Kel'el Ware under 8.5 points,8.5,-125,,,0.5211,-0.0620
-Prop,MIL @ MIA,Myles Turner over 10.5 points,10.5,101,,,0.4764,-0.0424
-Prop,MIL @ MIA,Myles Turner under 10.5 points,10.5,-128,,,0.5236,-0.0674
-Prop,ATL @ OKC,Jalen Johnson over 22.5 points,22.5,-103,,,0.4761,-0.0616
-Prop,ATL @ OKC,Jalen Johnson under 22.5 points,22.5,-123,,,0.5239,-0.0502
-Prop,ATL @ OKC,Nickeil Alexander-Walker over 22.5 points,22.5,-102,,,0.4752,-0.0589
-Prop,ATL @ OKC,Nickeil Alexander-Walker under 22.5 points,22.5,-124,,,0.5248,-0.0520
-Prop,ATL @ OKC,CJ McCollum over 16.5 points,16.5,-101,,,0.4705,-0.0636
-Prop,ATL @ OKC,CJ McCollum under 16.5 points,16.5,-126,,,0.5295,-0.0503
-Prop,MIL @ MIA,Jericho Sims over 4.5 points,4.5,104,,,0.4543,-0.0732
-Prop,MIL @ MIA,Jericho Sims under 4.5 points,4.5,-133,,,0.5457,-0.0440
-Prop,ATL @ OKC,Isaiah Hartenstein over 9.5 points,9.5,-118,,,0.5102,-0.0574
-Prop,ATL @ OKC,Isaiah Hartenstein under 9.5 points,9.5,-108,,,0.4898,-0.0568
-Prop,ATL @ OKC,Aday Mara over 9.5 points,9.5,-106,,,0.5035,-0.0216
-Prop,ATL @ OKC,Aday Mara under 9.5 points,9.5,-120,,,0.4965,-0.0897
-Prop,ATL @ OKC,Kenrich Williams over 8.5 points,8.5,-118,,,0.5126,-0.0529
-Prop,ATL @ OKC,Kenrich Williams under 8.5 points,8.5,-108,,,0.4874,-0.0614
-Prop,ATL @ OKC,Shai Gilgeous-Alexander over 31.5 points,31.5,-108,,,0.4996,-0.0377
-Prop,ATL @ OKC,Shai Gilgeous-Alexander under 31.5 points,31.5,-118,,,0.5004,-0.0756
-Prop,ATL @ OKC,Jared McCain over 14.5 points,14.5,-118,,,0.5116,-0.0548
-Prop,ATL @ OKC,Jared McCain under 14.5 points,14.5,-108,,,0.4884,-0.0594
+ML,ORL @ BOS,BOS ML,,-381.0,0.7736,0.7775,0.7771,-0.0190
+ML,ORL @ BOS,ORL ML,,302.0,0.2264,0.2225,0.2229,-0.1038
+Spread,ORL @ BOS,BOS -9.5,-9.5,-115.0,0.5244,0.5116,0.5124,-0.0421
+Spread,ORL @ BOS,ORL +9.5,9.5,-105.0,0.4756,0.4884,0.4876,-0.0480
+Total,ORL @ BOS,Over 211.5,211.5,-110.0,0.6569,0.5000,0.5601,0.0693
+Total,ORL @ BOS,Under 211.5,211.5,-110.0,0.3431,0.5000,0.4399,-0.1602
+ML,CHI @ CLE,CLE ML,,-431.0,0.6860,0.7977,0.7866,-0.0309
+ML,CHI @ CLE,CHI ML,,337.0,0.3140,0.2023,0.2134,-0.0675
+Spread,CHI @ CLE,CLE -10.5,-10.5,-110.0,0.3907,0.5000,0.4933,-0.0582
+Spread,CHI @ CLE,CHI +10.5,10.5,-110.0,0.6093,0.5000,0.5067,-0.0327
+Total,CHI @ CLE,Over 241.5,241.5,-110.0,0.5384,0.5000,0.5147,-0.0174
+Total,CHI @ CLE,Under 241.5,241.5,-110.0,0.4616,0.5000,0.4853,-0.0735
+ML,MEM @ WSH,WSH ML,,158.0,0.4488,0.3641,0.3725,-0.0390
+ML,MEM @ WSH,MEM ML,,-189.0,0.5512,0.6359,0.6275,-0.0405
+Spread,MEM @ WSH,WSH +5.5,5.5,-110.0,0.6066,0.5000,0.5065,-0.0330
+Spread,MEM @ WSH,MEM -5.5,-5.5,-110.0,0.3934,0.5000,0.4935,-0.0579
+Total,MEM @ WSH,Over 230.5,230.5,-110.0,0.5689,0.5000,0.5264,0.0049
+Total,MEM @ WSH,Under 230.5,230.5,-110.0,0.4311,0.5000,0.4736,-0.0958
+ML,PHI @ BKN,BKN ML,,172.0,0.5263,0.3435,0.3616,-0.0164
+ML,PHI @ BKN,PHI ML,,-207.0,0.4737,0.6565,0.6384,-0.0532
+Spread,PHI @ BKN,BKN +5.5,5.5,-104.0,0.6791,0.4850,0.4968,-0.0255
+Spread,PHI @ BKN,PHI -5.5,-5.5,-117.0,0.3209,0.5150,0.5032,-0.0667
+Total,PHI @ BKN,Over 226.5,226.5,-110.0,0.4897,0.5000,0.4961,-0.0530
+Total,PHI @ BKN,Under 226.5,226.5,-110.0,0.5103,0.5000,0.5039,-0.0380
+ML,HOU @ MIA,MIA ML,,119.0,0.4734,0.4345,0.4383,-0.0400
+ML,HOU @ MIA,HOU ML,,-141.0,0.5266,0.5655,0.5617,-0.0400
+Spread,HOU @ MIA,MIA +2.5,2.5,-108.0,0.5457,0.4954,0.4984,-0.0401
+Spread,HOU @ MIA,HOU -2.5,-2.5,-112.0,0.4543,0.5046,0.5016,-0.0506
+Total,HOU @ MIA,Over 228.5,228.5,-110.0,0.6514,0.5000,0.5580,0.0653
+Total,HOU @ MIA,Under 228.5,228.5,-110.0,0.3486,0.5000,0.4420,-0.1562
+ML,POR @ MIN,MIN ML,,-132.0,0.5843,0.5496,0.5530,-0.0280
+ML,POR @ MIN,POR ML,,112.0,0.4157,0.4504,0.4470,-0.0524
+Spread,POR @ MIN,MIN -2.5,-2.5,-110.0,0.5126,0.5000,0.5008,-0.0440
+Spread,POR @ MIN,POR +2.5,2.5,-110.0,0.4874,0.5000,0.4992,-0.0469
+Total,POR @ MIN,Over 228.5,228.5,-110.0,0.4720,0.5000,0.4893,-0.0659
+Total,POR @ MIN,Under 228.5,228.5,-110.0,0.5280,0.5000,0.5107,-0.0250
+ML,GS @ NO,NO ML,,128.0,0.3219,0.4160,0.4067,-0.0727
+ML,GS @ NO,GS ML,,-152.0,0.6781,0.5840,0.5933,-0.0164
+Spread,GS @ NO,NO +2.5,2.5,-105.0,0.3894,0.4884,0.4824,-0.0583
+Spread,GS @ NO,GS -2.5,-2.5,-115.0,0.6106,0.5116,0.5176,-0.0322
+Total,GS @ NO,Over 226.5,226.5,-110.0,0.7085,0.5000,0.5799,0.1070
+Total,GS @ NO,Under 226.5,226.5,-110.0,0.2915,0.5000,0.4201,-0.1979
+ML,PHX @ DEN,DEN ML,,-370.0,0.6953,0.7724,0.7648,-0.0285
+ML,PHX @ DEN,PHX ML,,294.0,0.3047,0.2276,0.2352,-0.0732
+Spread,PHX @ DEN,DEN -10.5,-10.5,-110.0,0.4009,0.5000,0.4940,-0.0570
+Spread,PHX @ DEN,PHX +10.5,10.5,-110.0,0.5991,0.5000,0.5060,-0.0339
+Total,PHX @ DEN,Over 228.5,228.5,-110.0,0.4985,0.5000,0.4994,-0.0466
+Total,PHX @ DEN,Under 228.5,228.5,-110.0,0.5015,0.5000,0.5006,-0.0443

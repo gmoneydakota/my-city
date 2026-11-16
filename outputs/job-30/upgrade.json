@@ -1,0 +1,10 @@
+{
+  "branch": "upgrade/job-30",
+  "files": [
+    "bets/betmodel/engine.py",
+    "bets/test_betmodel.py",
+    "brain/skills/betting-model-learning.md"
+  ],
+  "pr_url": "https://github.com/gmoneydakota/my-city/pull/31",
+  "compare_url": null
+}

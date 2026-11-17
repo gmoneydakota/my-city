@@ -3,56 +3,54 @@ ML,NY @ TOR,TOR ML,,150.0,0.4375,0.3768,0.3825,-0.0438
 ML,NY @ TOR,NY ML,,-179.0,0.5625,0.6232,0.6175,-0.0375
 Spread,NY @ TOR,TOR +4.5,4.5,-114.0,0.5655,0.5093,0.5125,-0.0380
 Spread,NY @ TOR,NY -4.5,-4.5,-106.0,0.4345,0.4907,0.4875,-0.0526
-Total,NY @ TOR,Over 214.5,214.5,-114.0,0.5742,0.5093,0.5369,0.0078
-Total,NY @ TOR,Under 214.5,214.5,-106.0,0.4258,0.4907,0.4631,-0.1000
-ML,POR @ MIN,MIN ML,,-130.0,0.5834,0.5454,0.5490,-0.0287
-ML,POR @ MIN,POR ML,,110.0,0.4166,0.4546,0.4510,-0.0528
-Spread,POR @ MIN,MIN -1.5,-1.5,-115.0,0.5411,0.5116,0.5133,-0.0404
-Spread,POR @ MIN,POR +1.5,1.5,-105.0,0.4589,0.4884,0.4867,-0.0497
-Total,POR @ MIN,Over 227.5,227.5,-113.0,0.4359,0.5070,0.4768,-0.1013
-Total,POR @ MIN,Under 227.5,227.5,-107.0,0.5641,0.4930,0.5232,0.0123
-ML,DET @ SA,SA ML,,-437.0,0.7968,0.7996,0.7994,-0.0177
-ML,DET @ SA,DET ML,,340.0,0.2032,0.2004,0.2006,-0.1172
-Spread,DET @ SA,SA -9.5,-9.5,-116.0,0.5596,0.5127,0.5154,-0.0403
-Spread,DET @ SA,DET +9.5,9.5,-105.0,0.4404,0.4873,0.4846,-0.0539
-Total,DET @ SA,Over 222.5,222.5,-115.0,0.5918,0.5116,0.5457,0.0202
-Total,DET @ SA,Under 222.5,222.5,-105.0,0.4082,0.4884,0.4543,-0.1130
-ML,UTAH @ LAC,LAC ML,,-238.0,0.7534,0.6875,0.6937,-0.0149
-ML,UTAH @ LAC,UTAH ML,,197.0,0.2466,0.3125,0.3063,-0.0901
-Spread,UTAH @ LAC,LAC -6.5,-6.5,-107.0,0.5870,0.4930,0.4984,-0.0358
-Spread,UTAH @ LAC,UTAH +6.5,6.5,-113.0,0.4130,0.5070,0.5016,-0.0545
+Total,NY @ TOR,Over 214.5,214.5,-108.0,0.5744,0.4954,0.5289,0.0187
+Total,NY @ TOR,Under 214.5,214.5,-112.0,0.4256,0.5046,0.4711,-0.1083
+ML,POR @ MIN,MIN ML,,-146.0,0.5985,0.5740,0.5763,-0.0290
+ML,POR @ MIN,POR ML,,123.0,0.4015,0.4260,0.4237,-0.0552
+Spread,POR @ MIN,MIN -2.5,-2.5,-113.0,0.5281,0.5070,0.5082,-0.0421
+Spread,POR @ MIN,POR +2.5,2.5,-107.0,0.4719,0.4930,0.4918,-0.0485
+Total,POR @ MIN,Over 225.5,225.5,-107.0,0.4835,0.4930,0.4890,-0.0541
+Total,POR @ MIN,Under 225.5,225.5,-113.0,0.5165,0.5070,0.5110,-0.0367
+ML,DET @ SA,SA ML,,-437.0,0.7967,0.7996,0.7994,-0.0177
+ML,DET @ SA,DET ML,,340.0,0.2033,0.2004,0.2006,-0.1172
+Spread,DET @ SA,SA -9.5,-9.5,-116.0,0.5595,0.5127,0.5154,-0.0403
+Spread,DET @ SA,DET +9.5,9.5,-105.0,0.4405,0.4873,0.4846,-0.0538
+Total,DET @ SA,Over 221.5,221.5,-113.0,0.6149,0.5070,0.5528,0.0420
+Total,DET @ SA,Under 221.5,221.5,-107.0,0.3851,0.4930,0.4472,-0.1349
+ML,UTAH @ LAC,LAC ML,,-238.0,0.7534,0.6875,0.6936,-0.0149
+ML,UTAH @ LAC,UTAH ML,,197.0,0.2466,0.3125,0.3064,-0.0901
+Spread,UTAH @ LAC,LAC -6.5,-6.5,-107.0,0.5869,0.4930,0.4984,-0.0358
+Spread,UTAH @ LAC,UTAH +6.5,6.5,-113.0,0.4131,0.5070,0.5016,-0.0545
 Total,UTAH @ LAC,Over 225.5,225.5,-112.0,0.5247,0.5046,0.5132,-0.0286
 Total,UTAH @ LAC,Under 225.5,225.5,-108.0,0.4753,0.4954,0.4868,-0.0624
-ML,CHA @ LAL,LAL ML,,-289.0,0.6756,0.7272,0.7224,-0.0277
-ML,CHA @ LAL,CHA ML,,236.0,0.3244,0.2728,0.2776,-0.0672
-Spread,CHA @ LAL,LAL -7.5,-7.5,-101.0,0.4675,0.4780,0.4774,-0.0499
-Spread,CHA @ LAL,CHA +7.5,7.5,-120.0,0.5325,0.5220,0.5226,-0.0419
-Total,CHA @ LAL,Over 221.5,221.5,-110.0,0.4938,0.5000,0.4974,-0.0505
-Total,CHA @ LAL,Under 221.5,221.5,-110.0,0.5062,0.5000,0.5026,-0.0405
-Prop,NY @ MIN,Terrence Shannon Jr. over 14.5 points,14.5,-125,,,0.5204,-0.0633
-Prop,NY @ MIN,Terrence Shannon Jr. under 14.5 points,14.5,-102,,,0.4796,-0.0502
-Prop,NY @ MIN,Jaden McDaniels over 16.5 points,16.5,-116,,,0.4855,-0.0959
-Prop,NY @ MIN,Jaden McDaniels under 16.5 points,16.5,-110,,,0.5145,-0.0178
-Prop,POR @ MIL,Damian Lillard over 20.5 points,20.5,-126,,,0.5060,-0.0925
-Prop,POR @ MIL,Damian Lillard under 20.5 points,20.5,-101,,,0.4940,-0.0168
-Prop,POR @ MIL,Toumani Camara over 11.5 points,11.5,-101,,,0.4875,-0.0298
-Prop,POR @ MIL,Toumani Camara under 11.5 points,11.5,-127,,,0.5125,-0.0840
-Prop,POR @ MIL,Sidy Cissoko over 6.5 points,6.5,-130,,,0.5000,-0.1154
-Prop,POR @ MIL,Sidy Cissoko under 6.5 points,6.5,102,,,0.5000,0.0100
-Prop,POR @ MIL,Jrue Holiday over 12.5 points,12.5,-117,,,0.4954,-0.0811
-Prop,POR @ MIL,Jrue Holiday under 12.5 points,12.5,-109,,,0.5046,-0.0325
-Prop,NY @ MIN,Ayo Dosunmu over 18.5 points,18.5,-122,,,0.4990,-0.0920
-Prop,NY @ MIN,Ayo Dosunmu under 18.5 points,18.5,-105,,,0.5010,-0.0218
-Prop,POR @ MIL,Deni Avdija over 24.5 points,24.5,-120,,,0.5004,-0.0827
-Prop,POR @ MIL,Deni Avdija under 24.5 points,24.5,-106,,,0.4996,-0.0290
-Prop,POR @ MIL,Scoot Henderson over 10.5 points,10.5,-116,,,0.4860,-0.0951
-Prop,POR @ MIL,Scoot Henderson under 10.5 points,10.5,-110,,,0.5140,-0.0187
-Prop,NY @ MIN,LaMelo Ball over 20.5 points,20.5,-110,,,0.4914,-0.0620
-Prop,NY @ MIN,LaMelo Ball under 20.5 points,20.5,-116,,,0.5086,-0.0529
-Prop,POR @ MIL,Donovan Clingan over 11.5 points,11.5,-103,,,0.4741,-0.0656
-Prop,POR @ MIL,Donovan Clingan under 11.5 points,11.5,-124,,,0.5259,-0.0500
-Prop,NY @ MIN,Rudy Gobert over 10.5 points,10.5,105,,,0.4540,-0.0693
-Prop,NY @ MIN,Rudy Gobert under 10.5 points,10.5,-134,,,0.5460,-0.0465
+ML,CHA @ LAL,LAL ML,,-289.0,0.6754,0.7272,0.7223,-0.0277
+ML,CHA @ LAL,CHA ML,,236.0,0.3246,0.2728,0.2777,-0.0671
+Spread,CHA @ LAL,LAL -7.5,-7.5,-101.0,0.4672,0.4780,0.4774,-0.0499
+Spread,CHA @ LAL,CHA +7.5,7.5,-120.0,0.5328,0.5220,0.5226,-0.0419
+Total,CHA @ LAL,Over 221.5,221.5,-115.0,0.4940,0.5116,0.5041,-0.0575
+Total,CHA @ LAL,Under 221.5,221.5,-105.0,0.5060,0.4884,0.4959,-0.0318
+Prop,NY @ MIN,Terrence Shannon Jr. over 14.5 points,14.5,-125,,,0.5210,-0.0622
+Prop,NY @ MIN,Terrence Shannon Jr. under 14.5 points,14.5,-102,,,0.4790,-0.0514
+Prop,NY @ MIN,Jaden McDaniels over 16.5 points,16.5,-116,,,0.4870,-0.0932
+Prop,NY @ MIN,Jaden McDaniels under 16.5 points,16.5,-110,,,0.5130,-0.0206
+Prop,POR @ MIL,Damian Lillard over 20.5 points,20.5,-126,,,0.5058,-0.0927
+Prop,POR @ MIL,Damian Lillard under 20.5 points,20.5,-101,,,0.4942,-0.0166
+Prop,POR @ MIL,Toumani Camara over 11.5 points,11.5,-101,,,0.4874,-0.0299
+Prop,POR @ MIL,Toumani Camara under 11.5 points,11.5,-127,,,0.5126,-0.0839
+Prop,POR @ MIL,Sidy Cissoko over 6.5 points,6.5,-130,,,0.5000,-0.1155
+Prop,POR @ MIL,Sidy Cissoko under 6.5 points,6.5,102,,,0.5000,0.0101
+Prop,POR @ MIL,Jrue Holiday over 12.5 points,12.5,-117,,,0.4954,-0.0813
+Prop,POR @ MIL,Jrue Holiday under 12.5 points,12.5,-109,,,0.5046,-0.0324
+Prop,NY @ MIN,Ayo Dosunmu over 18.5 points,18.5,-122,,,0.5001,-0.0899
+Prop,NY @ MIN,Ayo Dosunmu under 18.5 points,18.5,-105,,,0.4999,-0.0241
+Prop,POR @ MIL,Scoot Henderson over 10.5 points,10.5,-116,,,0.4859,-0.0952
+Prop,POR @ MIL,Scoot Henderson under 10.5 points,10.5,-110,,,0.5141,-0.0186
+Prop,NY @ MIN,LaMelo Ball over 20.5 points,20.5,-110,,,0.4924,-0.0600
+Prop,NY @ MIN,LaMelo Ball under 20.5 points,20.5,-116,,,0.5076,-0.0547
+Prop,POR @ MIL,Donovan Clingan over 11.5 points,11.5,-103,,,0.4740,-0.0657
+Prop,POR @ MIL,Donovan Clingan under 11.5 points,11.5,-124,,,0.5260,-0.0499
+Prop,NY @ MIN,Rudy Gobert over 10.5 points,10.5,105,,,0.4546,-0.0680
+Prop,NY @ MIN,Rudy Gobert under 10.5 points,10.5,-134,,,0.5454,-0.0476
 Prop,LAC @ SA,Derrick Jones Jr. over 10.5 points,10.5,-101,,,0.4722,-0.0603
 Prop,LAC @ SA,Derrick Jones Jr. under 10.5 points,10.5,-126,,,0.5278,-0.0533
 Prop,LAC @ SA,Kris Dunn over 5.5 points,5.5,-111,,,0.4933,-0.0623
@@ -81,27 +79,27 @@ Prop,SAC @ LAL,Matisse Thybulle over 7.5 points,7.5,-107,,,0.4865,-0.0588
 Prop,SAC @ LAL,Matisse Thybulle under 7.5 points,7.5,-119,,,0.5135,-0.0550
 Prop,SAC @ LAL,Quentin Grimes over 12.5 points,12.5,-124,,,0.5192,-0.0621
 Prop,SAC @ LAL,Quentin Grimes under 12.5 points,12.5,-103,,,0.4808,-0.0524
-Prop,CHA @ ATL,Coby White over 14.5 points,14.5,-119,,,0.4845,-0.1083
-Prop,CHA @ ATL,Coby White under 14.5 points,14.5,-107,,,0.5155,-0.0028
+Prop,CHA @ ATL,Coby White over 14.5 points,14.5,-119,,,0.4847,-0.1081
+Prop,CHA @ ATL,Coby White under 14.5 points,14.5,-107,,,0.5153,-0.0030
 Prop,SAC @ LAL,Jake LaRavia over 7.5 points,7.5,-132,,,0.5097,-0.1041
 Prop,SAC @ LAL,Jake LaRavia under 7.5 points,7.5,103,,,0.4903,-0.0048
-Prop,CHA @ ATL,Moussa Diabate over 8.5 points,8.5,-113,,,0.5097,-0.0392
-Prop,CHA @ ATL,Moussa Diabate under 8.5 points,8.5,-112,,,0.4903,-0.0719
-Prop,CHA @ ATL,Brandon Miller over 18.5 points,18.5,-115,,,0.5216,-0.0248
-Prop,CHA @ ATL,Brandon Miller under 18.5 points,18.5,-110,,,0.4784,-0.0868
+Prop,CHA @ ATL,Moussa Diabate over 8.5 points,8.5,-113,,,0.5098,-0.0390
+Prop,CHA @ ATL,Moussa Diabate under 8.5 points,8.5,-112,,,0.4902,-0.0722
+Prop,CHA @ ATL,Brandon Miller over 18.5 points,18.5,-115,,,0.5218,-0.0245
+Prop,CHA @ ATL,Brandon Miller under 18.5 points,18.5,-110,,,0.4782,-0.0870
 Prop,SAC @ LAL,Collin Sexton over 14.5 points,14.5,-109,,,0.5023,-0.0369
 Prop,SAC @ LAL,Collin Sexton under 14.5 points,14.5,-117,,,0.4977,-0.0769
-Prop,CHA @ ATL,Ryan Kalkbrenner over 4.5 points,4.5,-126,,,0.5168,-0.0731
-Prop,CHA @ ATL,Ryan Kalkbrenner under 4.5 points,4.5,-101,,,0.4832,-0.0383
-Prop,CHA @ ATL,Sion James over 6.5 points,6.5,-121,,,0.5162,-0.0572
-Prop,CHA @ ATL,Sion James under 6.5 points,6.5,-105,,,0.4838,-0.0555
+Prop,CHA @ ATL,Ryan Kalkbrenner over 4.5 points,4.5,-126,,,0.5169,-0.0729
+Prop,CHA @ ATL,Ryan Kalkbrenner under 4.5 points,4.5,-101,,,0.4831,-0.0385
+Prop,CHA @ ATL,Sion James over 6.5 points,6.5,-121,,,0.5163,-0.0570
+Prop,CHA @ ATL,Sion James under 6.5 points,6.5,-105,,,0.4837,-0.0557
 Prop,SAC @ LAL,Luka Doncic over 36.5 points,36.5,-110,,,0.4943,-0.0563
 Prop,SAC @ LAL,Luka Doncic under 36.5 points,36.5,-116,,,0.5057,-0.0584
-Prop,CHA @ ATL,Naz Reid over 17.5 points,17.5,-109,,,0.4890,-0.0624
-Prop,CHA @ ATL,Naz Reid under 17.5 points,17.5,-116,,,0.5110,-0.0485
+Prop,CHA @ ATL,Naz Reid over 17.5 points,17.5,-109,,,0.4892,-0.0621
+Prop,CHA @ ATL,Naz Reid under 17.5 points,17.5,-116,,,0.5108,-0.0488
 Prop,SAC @ LAL,Ziaire Williams over 9.5 points,9.5,-111,,,0.4763,-0.0946
 Prop,SAC @ LAL,Ziaire Williams under 9.5 points,9.5,-115,,,0.5237,-0.0209
 Prop,SAC @ LAL,Sandro Mamukelashvili over 13.5 points,13.5,-108,,,0.4894,-0.0574
 Prop,SAC @ LAL,Sandro Mamukelashvili under 13.5 points,13.5,-118,,,0.5106,-0.0567
-Prop,CHA @ ATL,Grayson Allen over 12.5 points,12.5,-118,,,0.5130,-0.0523
-Prop,CHA @ ATL,Grayson Allen under 12.5 points,12.5,-108,,,0.4870,-0.0621
+Prop,CHA @ ATL,Grayson Allen over 12.5 points,12.5,-118,,,0.5131,-0.0521
+Prop,CHA @ ATL,Grayson Allen under 12.5 points,12.5,-108,,,0.4869,-0.0622

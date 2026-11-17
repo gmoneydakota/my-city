@@ -1,129 +1,129 @@
 {
-  "updated": "2026-11-17T03:15:40+00:00",
+  "updated": "2026-11-17T15:45:33+00:00",
   "game_weights": {
-    "ML": 0.097,
-    "Spread": 0.059,
+    "ML": 0.094,
+    "Spread": 0.057,
     "Total": 0.425
   },
   "fit_stats": {
     "ML": {
-      "n": 316,
+      "n": 328,
       "raw_best": 0.0,
-      "logloss_model": 0.5761,
-      "logloss_market": 0.5114,
-      "logloss_blend": 0.5162
+      "logloss_model": 0.5894,
+      "logloss_market": 0.5256,
+      "logloss_blend": 0.5301
     },
     "Spread": {
-      "n": 616,
+      "n": 638,
       "raw_best": 0.0,
-      "logloss_model": 0.7221,
-      "logloss_market": 0.6933,
-      "logloss_blend": 0.6938
+      "logloss_model": 0.7248,
+      "logloss_market": 0.6934,
+      "logloss_blend": 0.694
     },
     "Total": {
-      "n": 744,
+      "n": 768,
       "raw_best": 0.45,
-      "logloss_model": 0.6957,
-      "logloss_market": 0.693,
-      "logloss_blend": 0.6896
+      "logloss_model": 0.6965,
+      "logloss_market": 0.6929,
+      "logloss_blend": 0.6897
     },
     "Prop": {
-      "n": 4430,
+      "n": 4694,
       "raw_best": 0.0,
-      "logloss_model": 0.7143,
-      "logloss_market": 0.6876,
-      "logloss_blend": 0.6876
+      "logloss_model": 0.7149,
+      "logloss_market": 0.688,
+      "logloss_blend": 0.688
     }
   },
   "calibration": {
     "nba:assists": {
-      "scale": 0.9851,
-      "sd_scale": 1.0078,
-      "n": 1498,
+      "scale": 0.9807,
+      "sd_scale": 1.005,
+      "n": 1567,
       "avg_proj": 3.29,
-      "avg_actual": 3.24
+      "avg_actual": 3.22
     },
     "nba:points": {
-      "scale": 0.9752,
-      "sd_scale": 1.0678,
-      "n": 1499,
-      "avg_proj": 14.01,
-      "avg_actual": 13.64
+      "scale": 0.9751,
+      "sd_scale": 1.0654,
+      "n": 1568,
+      "avg_proj": 13.99,
+      "avg_actual": 13.62
     },
     "nba:pra": {
-      "scale": 0.975,
-      "sd_scale": 1.0417,
-      "n": 1499,
-      "avg_proj": 22.34,
-      "avg_actual": 21.75
+      "scale": 0.9753,
+      "sd_scale": 1.0397,
+      "n": 1568,
+      "avg_proj": 22.3,
+      "avg_actual": 21.72
     },
     "nba:rebounds": {
-      "scale": 0.9676,
-      "sd_scale": 1.0074,
-      "n": 1499,
-      "avg_proj": 5.04,
-      "avg_actual": 4.87
+      "scale": 0.9721,
+      "sd_scale": 1.0085,
+      "n": 1568,
+      "avg_proj": 5.03,
+      "avg_actual": 4.88
     },
     "nba:threes": {
-      "scale": 0.9889,
-      "sd_scale": 1.0116,
-      "n": 1348,
-      "avg_proj": 1.78,
-      "avg_actual": 1.76
+      "scale": 0.9859,
+      "sd_scale": 1.01,
+      "n": 1413,
+      "avg_proj": 1.77,
+      "avg_actual": 1.75
     },
     "nfl:pass_tds": {
-      "scale": 1.0206,
-      "sd_scale": 1.0107,
-      "n": 70,
-      "avg_proj": 1.55,
-      "avg_actual": 1.61
+      "scale": 1.0113,
+      "sd_scale": 1.0113,
+      "n": 72,
+      "avg_proj": 1.53,
+      "avg_actual": 1.57
     },
     "nfl:pass_yds": {
-      "scale": 0.994,
-      "sd_scale": 0.9649,
-      "n": 70,
-      "avg_proj": 229.86,
-      "avg_actual": 226.93
+      "scale": 0.9955,
+      "sd_scale": 0.9668,
+      "n": 72,
+      "avg_proj": 229.31,
+      "avg_actual": 227.14
     },
     "nfl:rec_yds": {
-      "scale": 1.0049,
-      "sd_scale": 1.3015,
-      "n": 403,
-      "avg_proj": 33.52,
-      "avg_actual": 33.72
+      "scale": 1.0137,
+      "sd_scale": 1.3044,
+      "n": 417,
+      "avg_proj": 33.17,
+      "avg_actual": 33.71
     },
     "nfl:receptions": {
-      "scale": 0.9718,
-      "sd_scale": 1.031,
-      "n": 398,
-      "avg_proj": 3.1,
-      "avg_actual": 2.99
+      "scale": 0.9822,
+      "sd_scale": 1.0454,
+      "n": 412,
+      "avg_proj": 3.07,
+      "avg_actual": 3.0
     },
     "nfl:rush_yds": {
-      "scale": 0.9892,
-      "sd_scale": 1.264,
-      "n": 218,
-      "avg_proj": 35.66,
-      "avg_actual": 35.13
+      "scale": 0.9844,
+      "sd_scale": 1.2635,
+      "n": 225,
+      "avg_proj": 35.57,
+      "avg_actual": 34.82
     }
   },
-  "prop_weight": 0.016,
+  "prop_weight": 0.015,
   "scoreboard": {
-    "graded_bets": 6302,
-    "graded_projections": 8502,
+    "graded_bets": 6624,
+    "graded_projections": 8882,
     "model_leans": {
-      "w": 389,
-      "l": 490,
+      "w": 393,
+      "l": 493,
       "p": 0,
-      "hit_rate": 0.4425,
-      "roi_per_bet": -0.0443
+      "hit_rate": 0.4436,
+      "roi_per_bet": -0.0433
     },
     "strong_leans": {
-      "w": 241,
-      "l": 387,
+      "w": 244,
+      "l": 389,
       "p": 0,
-      "hit_rate": 0.3838,
-      "roi_per_bet": -0.1313
+      "hit_rate": 0.3855,
+      "roi_per_bet": -0.1291
     }
   }
 }

@@ -1,0 +1,63 @@
+kind,game,selection,line,dk_odds,p_model,p_market,p_blend,ev
+ML,LAC @ BAL,BAL ML,,-225.0,0.6051,0.6744,0.6676,-0.0357
+ML,LAC @ BAL,LAC ML,,185.0,0.3949,0.3256,0.3324,-0.0526
+Spread,LAC @ BAL,BAL -4.5,-4.5,-112.0,0.4500,0.5046,0.5014,-0.0510
+Spread,LAC @ BAL,LAC +4.5,4.5,-108.0,0.5500,0.4954,0.4986,-0.0397
+Total,LAC @ BAL,Over 39.5,39.5,-108.0,0.6015,0.4954,0.5360,0.0323
+Total,LAC @ BAL,Under 39.5,39.5,-112.0,0.3985,0.5046,0.4640,-0.1217
+ML,IND @ HOU,HOU ML,,-650.0,0.6923,0.8538,0.8380,-0.0331
+ML,IND @ HOU,IND ML,,470.0,0.3077,0.1462,0.1620,-0.0763
+Spread,IND @ HOU,HOU -11.5,-11.5,-110.0,0.3086,0.5000,0.4885,-0.0674
+Spread,IND @ HOU,IND +11.5,11.5,-110.0,0.6914,0.5000,0.5115,-0.0235
+Total,IND @ HOU,Over 44.5,44.5,-105.0,0.6640,0.4884,0.5557,0.0849
+Total,IND @ HOU,Under 44.5,44.5,-115.0,0.3360,0.5116,0.4443,-0.1693
+Prop,LAC @ BAL,Zay Flowers over 75.5 rec_yds,75.5,-110,,,0.4951,-0.0548
+Prop,LAC @ BAL,Zay Flowers under 75.5 rec_yds,75.5,-114,,,0.5049,-0.0522
+Prop,LAC @ BAL,Tre' Harris over 41.5 rec_yds,41.5,-114,,,0.5026,-0.0565
+Prop,LAC @ BAL,Tre' Harris under 41.5 rec_yds,41.5,-110,,,0.4974,-0.0505
+Prop,LAC @ BAL,Quentin Johnston over 33.5 rec_yds,33.5,-114,,,0.5014,-0.0588
+Prop,LAC @ BAL,Quentin Johnston under 33.5 rec_yds,33.5,-110,,,0.4986,-0.0481
+Prop,LAC @ BAL,Mark Andrews over 24.5 rec_yds,24.5,-110,,,0.5026,-0.0405
+Prop,LAC @ BAL,Mark Andrews under 24.5 rec_yds,24.5,-115,,,0.4974,-0.0701
+Prop,LAC @ BAL,Rashod Bateman over 23.5 rec_yds,23.5,-115,,,0.5036,-0.0585
+Prop,LAC @ BAL,Rashod Bateman under 23.5 rec_yds,23.5,-109,,,0.4964,-0.0482
+Prop,LAC @ BAL,Ja'Kobi Lane over 21.5 rec_yds,21.5,-108,,,0.4996,-0.0377
+Prop,LAC @ BAL,Ja'Kobi Lane under 21.5 rec_yds,21.5,-116,,,0.5004,-0.0683
+Prop,LAC @ BAL,KeAndre Lambert-Smith over 17.5 rec_yds,17.5,-115,,,0.4999,-0.0654
+Prop,LAC @ BAL,KeAndre Lambert-Smith under 17.5 rec_yds,17.5,-109,,,0.5001,-0.0411
+Prop,LAC @ BAL,Charlie Kolar over 15.5 rec_yds,15.5,-114,,,0.5012,-0.0592
+Prop,LAC @ BAL,Charlie Kolar under 15.5 rec_yds,15.5,-110,,,0.4988,-0.0477
+Prop,LAC @ BAL,David Njoku over 11.5 rec_yds,11.5,-108,,,0.4976,-0.0417
+Prop,LAC @ BAL,David Njoku under 11.5 rec_yds,11.5,-116,,,0.5024,-0.0645
+Prop,LAC @ BAL,Oronde Gadsden over 10.5 rec_yds,10.5,-117,,,0.5084,-0.0571
+Prop,LAC @ BAL,Oronde Gadsden under 10.5 rec_yds,10.5,-107,,,0.4916,-0.0489
+Prop,LAC @ BAL,Justice Hill over 10.5 rec_yds,10.5,-116,,,0.5047,-0.0602
+Prop,LAC @ BAL,Justice Hill under 10.5 rec_yds,10.5,-108,,,0.4953,-0.0462
+Prop,LAC @ BAL,Keaton Mitchell over 10.5 rec_yds,10.5,-112,,,0.5077,-0.0390
+Prop,LAC @ BAL,Keaton Mitchell under 10.5 rec_yds,10.5,-112,,,0.4923,-0.0681
+Prop,LAC @ BAL,Kimani Vidal over 8.5 rec_yds,8.5,-107,,,0.4887,-0.0546
+Prop,LAC @ BAL,Kimani Vidal under 8.5 rec_yds,8.5,-118,,,0.5113,-0.0554
+Prop,LAC @ BAL,Josh Cuevas over 8.5 rec_yds,8.5,-105,,,0.4888,-0.0457
+Prop,LAC @ BAL,Josh Cuevas under 8.5 rec_yds,8.5,-119,,,0.5112,-0.0592
+Prop,LAC @ BAL,Omarion Hampton over 5.5 rec_yds,5.5,-107,,,0.4974,-0.0377
+Prop,LAC @ BAL,Omarion Hampton under 5.5 rec_yds,5.5,-117,,,0.5026,-0.0679
+Prop,LAC @ BAL,Derrick Henry over 4.5 rec_yds,4.5,-119,,,0.5074,-0.0661
+Prop,LAC @ BAL,Derrick Henry under 4.5 rec_yds,4.5,-105,,,0.4926,-0.0383
+Prop,LAC @ BAL,Matt Hibner over 2.5 rec_yds,2.5,-115,,,0.5258,-0.0169
+Prop,LAC @ BAL,Matt Hibner under 2.5 rec_yds,2.5,-109,,,0.4742,-0.0908
+Prop,LAC @ BAL,Derrick Henry over 82.5 rush_yds,82.5,-111,,,0.4983,-0.0529
+Prop,LAC @ BAL,Derrick Henry under 82.5 rush_yds,82.5,-113,,,0.5017,-0.0542
+Prop,LAC @ BAL,Omarion Hampton over 34.5 rush_yds,34.5,-111,,,0.4994,-0.0507
+Prop,LAC @ BAL,Omarion Hampton under 34.5 rush_yds,34.5,-113,,,0.5006,-0.0564
+Prop,LAC @ BAL,Kimani Vidal over 21.5 rush_yds,21.5,-111,,,0.4980,-0.0534
+Prop,LAC @ BAL,Kimani Vidal under 21.5 rush_yds,21.5,-113,,,0.5020,-0.0537
+Prop,LAC @ BAL,Justin Herbert over 20.5 rush_yds,20.5,-114,,,0.5025,-0.0568
+Prop,LAC @ BAL,Justin Herbert under 20.5 rush_yds,20.5,-110,,,0.4975,-0.0501
+Prop,LAC @ BAL,Justice Hill over 12.5 rush_yds,12.5,-110,,,0.4944,-0.0561
+Prop,LAC @ BAL,Justice Hill under 12.5 rush_yds,12.5,-114,,,0.5056,-0.0509
+Prop,LAC @ BAL,Keaton Mitchell over 11.5 rush_yds,11.5,-113,,,0.5114,-0.0360
+Prop,LAC @ BAL,Keaton Mitchell under 11.5 rush_yds,11.5,-111,,,0.4886,-0.0712
+Prop,LAC @ BAL,Jacoby Brissett over 7.5 rush_yds,7.5,-109,,,0.4980,-0.0452
+Prop,LAC @ BAL,Jacoby Brissett under 7.5 rush_yds,7.5,-115,,,0.5020,-0.0614
+Prop,LAC @ BAL,Zay Flowers over 2.5 rush_yds,2.5,-105,,,0.4655,-0.0912
+Prop,LAC @ BAL,Zay Flowers under 2.5 rush_yds,2.5,-120,,,0.5345,-0.0200

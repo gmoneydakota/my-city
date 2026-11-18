@@ -1,0 +1,43 @@
+game,team,player,stat,proj,sd,fair_line,higher_if_line_le,lower_if_line_ge,status
+IND @ HOU,HOU,C.J. Stroud,pass_yds,284.51,112.42,284.5,266.5,302.5,
+IND @ HOU,HOU,C.J. Stroud,pass_tds,2.62,1.74,2.5,1.5,3.5,
+IND @ HOU,HOU,C.J. Stroud,rush_yds,13.57,11.20,13.5,11.5,15.5,
+IND @ HOU,HOU,David Montgomery,rush_yds,28.34,29.38,28.5,23.5,33.5,returning from injury (missed last 4 team games)
+IND @ HOU,HOU,David Montgomery,rec_yds,12.37,12.15,12.5,9.5,14.5,returning from injury (missed last 4 team games)
+IND @ HOU,HOU,David Montgomery,receptions,1.19,1.47,0.5,0.5,1.5,returning from injury (missed last 4 team games)
+IND @ HOU,HOU,David Montgomery,anytime_td,0.48,1.17,29% (+247),,,returning from injury (missed last 4 team games)
+IND @ HOU,HOU,Nico Collins,rec_yds,75.55,49.99,75.5,67.5,83.5,
+IND @ HOU,HOU,Nico Collins,receptions,5.33,2.75,5.5,4.5,5.5,
+IND @ HOU,HOU,Nico Collins,anytime_td,0.74,0.87,52% (-107),,,
+IND @ HOU,HOU,Xavier Hutchinson,rec_yds,40.25,29.40,40.5,35.5,45.5,
+IND @ HOU,HOU,Xavier Hutchinson,receptions,3.11,1.88,2.5,2.5,3.5,
+IND @ HOU,HOU,Xavier Hutchinson,anytime_td,0.46,0.69,39% (+154),,,
+IND @ HOU,HOU,Tank Dell,rec_yds,60.92,51.31,60.5,52.5,69.5,
+IND @ HOU,HOU,Tank Dell,receptions,2.84,1.86,2.5,1.5,3.5,
+IND @ HOU,HOU,Tank Dell,anytime_td,0.38,0.68,33% (+200),,,
+IND @ HOU,HOU,Jawhar Jordan,rush_yds,43.00,39.84,43.5,36.5,49.5,returning from injury (missed last 3 team games)
+IND @ HOU,HOU,Jawhar Jordan,rec_yds,7.52,8.05,5.5,3.5,6.5,returning from injury (missed last 3 team games)
+IND @ HOU,HOU,Jawhar Jordan,receptions,1.27,1.83,0.5,,1.5,returning from injury (missed last 3 team games)
+IND @ HOU,HOU,Jawhar Jordan,anytime_td,0.52,0.87,38% (+162),,,returning from injury (missed last 3 team games)
+IND @ HOU,HOU,Dalton Schultz,rec_yds,42.70,41.74,42.5,35.5,49.5,
+IND @ HOU,HOU,Dalton Schultz,receptions,3.86,2.88,3.5,2.5,4.5,
+IND @ HOU,IND,Jonathan Taylor,rush_yds,65.31,40.26,65.5,58.5,72.5,
+IND @ HOU,IND,Jonathan Taylor,rec_yds,21.43,17.38,21.5,18.5,24.5,
+IND @ HOU,IND,Jonathan Taylor,receptions,2.61,1.72,2.5,1.5,3.5,
+IND @ HOU,IND,Jonathan Taylor,anytime_td,0.55,0.78,43% (+133),,,
+IND @ HOU,IND,Daniel Jones,pass_yds,162.36,67.95,162.5,151.5,173.5,
+IND @ HOU,IND,Daniel Jones,pass_tds,0.69,0.84,0.5,,1.5,
+IND @ HOU,IND,Daniel Jones,rush_yds,9.37,9.20,6.5,5.5,8.5,
+IND @ HOU,IND,Tyler Warren,rec_yds,31.59,33.02,31.5,25.5,37.5,3 games back from a 2-game absence
+IND @ HOU,IND,Tyler Warren,receptions,4.24,2.52,3.5,3.5,4.5,3 games back from a 2-game absence
+IND @ HOU,IND,Seth McGowan,rush_yds,31.85,26.49,31.5,27.5,36.5,
+IND @ HOU,IND,Seth McGowan,rec_yds,0.57,2.56,0.5,,0.5,
+IND @ HOU,IND,Seth McGowan,receptions,0.44,0.71,0.5,,0.5,
+IND @ HOU,IND,Alec Pierce,rec_yds,42.47,47.07,42.5,34.5,50.5,returning from injury (missed last 8 team games)
+IND @ HOU,IND,Alec Pierce,receptions,2.24,1.98,1.5,1.5,2.5,returning from injury (missed last 8 team games)
+IND @ HOU,IND,Will Mallory,rec_yds,5.50,9.64,1.5,0.5,2.5,Questionable
+IND @ HOU,IND,Will Mallory,receptions,0.51,1.03,0.5,,0.5,Questionable
+IND @ HOU,IND,Laquon Treadwell,rec_yds,18.22,18.10,18.5,14.5,21.5,
+IND @ HOU,IND,Laquon Treadwell,receptions,1.55,1.47,1.5,0.5,1.5,
+IND @ HOU,IND,Ashton Dulin,rec_yds,17.20,22.79,17.5,13.5,21.5,
+IND @ HOU,IND,Ashton Dulin,receptions,0.67,0.97,0.5,,0.5,

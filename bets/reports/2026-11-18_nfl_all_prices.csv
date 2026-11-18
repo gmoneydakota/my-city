@@ -1,0 +1,7 @@
+kind,game,selection,line,dk_odds,p_model,p_market,p_blend,ev
+ML,IND @ HOU,HOU ML,,-750.0,0.6925,0.8700,0.8533,-0.0330
+ML,IND @ HOU,IND ML,,525.0,0.3075,0.1300,0.1467,-0.0830
+Spread,IND @ HOU,HOU -12.5,-12.5,-108.0,0.2788,0.4954,0.4830,-0.0697
+Spread,IND @ HOU,IND +12.5,12.5,-112.0,0.7212,0.5046,0.5170,-0.0214
+Total,IND @ HOU,Over 44.5,44.5,-105.0,0.6644,0.4884,0.5632,0.0995
+Total,IND @ HOU,Under 44.5,44.5,-115.0,0.3356,0.5116,0.4368,-0.1833

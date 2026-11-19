@@ -477,24 +477,24 @@
   {
     "date": "2026-11-19",
     "lessons": [
-      "Total: trusting the model 38% \u2192 34% (vs the market) after 822 graded bets \u2014 the market has been the better predictor so far."
+      "Total: trusting the model 34% \u2192 38% (vs the market) after 870 graded bets \u2014 the market has been the better predictor so far."
     ],
     "scoreboard": {
-      "graded_bets": 6828,
-      "graded_projections": 9444,
+      "graded_bets": 7026,
+      "graded_projections": 9981,
       "model_leans": {
-        "w": 400,
-        "l": 501,
+        "w": 406,
+        "l": 507,
         "p": 0,
-        "hit_rate": 0.444,
-        "roi_per_bet": -0.0442
+        "hit_rate": 0.4447,
+        "roi_per_bet": -0.0439
       },
       "strong_leans": {
-        "w": 244,
-        "l": 391,
+        "w": 248,
+        "l": 394,
         "p": 0,
-        "hit_rate": 0.3843,
-        "roi_per_bet": -0.1319
+        "hit_rate": 0.3863,
+        "roi_per_bet": -0.1293
       }
     }
   }

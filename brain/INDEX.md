@@ -18,6 +18,7 @@ you start. If you work out something reusable that isn't here, add a skill (see 
 - secure-public-fetch: Fetch user-given public URLs safely [security, fetch, ssrf, dns, redirects, mcp] (agents: coder, forge)
 - static-job-page: Ship an app as a static page [web, html, app, game, dashboard, github-pages] (agents: coder, quant)
 - stock-signal-model: Build a stock buy/sell signal model [stocks, quant, backtest, signals, market] (agents: quant)
+- verify-a-job-landed: Check that a job's change really landed [verify, grep, git, tests, review, job-report] (agents: analyst, cad, coder, forge, quant)
 
 ## Tools
 - scripts/brain.py: The city's second brain: turns skills, agents, tools and job history into one web. Free: no model calls
@@ -35,8 +36,6 @@ you start. If you work out something reusable that isn't here, add a skill (see 
 - watchlist.json: Tickers the free daily market scan follows
 
 ## Recent jobs (outputs/job-N/)
-- #9 Products building: every finished job, ready to download (coder · make · 2026-10-31)
-- #12 Lean Reader: an MCP connector that saves Claude usage on web reading (forge · make · 2026-10-31)
 - #13 City upgrade: the Second Brain building (coder · upgrade · 2026-11-01)
 - #15 Free movement around the city (coder · upgrade · 2026-11-01)
 - #16 Brain dream (week of 26 Oct to 1 Nov 2026) (scribe · make · 2026-11-01)
@@ -47,3 +46,5 @@ you start. If you work out something reusable that isn't here, add a skill (see 
 - #26 Brain dream (week of 1 to 8 Nov 2026) (scribe · make · 2026-11-08)
 - #27 The change is made and tests pass (cd bets && python3 testbetmodel.py: 22 tests, OK). The … (quant · upgrade · 2026-11-09)
 - #29 Job #29 (scribe · make · 2026-11-15)
+- #30 weekly betting-model self-improvement (16 Nov 2026) (quant · upgrade · 2026-11-16)
+- #32 Brain dream (week of 15 to 22 Nov 2026) (scribe · make · 2026-11-22)

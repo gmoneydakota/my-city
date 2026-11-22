@@ -549,24 +549,27 @@
   {
     "date": "2026-11-22",
     "lessons": [
-      "Not enough finished games yet to change anything. Still collecting results."
+      "Player props: trusting the model 1% \u2192 6% after 5656 graded props.",
+      "NFL pass_tds: was underconfident about player swings \u2192 uncertainty \u00d70.981.",
+      "NFL pass_yds: was underconfident about player swings \u2192 uncertainty \u00d70.937.",
+      "NFL rec_yds: was overconfident about player swings \u2192 uncertainty \u00d71.241."
     ],
     "scoreboard": {
-      "graded_bets": 7606,
-      "graded_projections": 11213,
+      "graded_bets": 8086,
+      "graded_projections": 11414,
       "model_leans": {
-        "w": 411,
-        "l": 522,
+        "w": 414,
+        "l": 524,
         "p": 0,
-        "hit_rate": 0.4405,
-        "roi_per_bet": -0.0542
+        "hit_rate": 0.4414,
+        "roi_per_bet": -0.0533
       },
       "strong_leans": {
         "w": 249,
-        "l": 401,
+        "l": 402,
         "p": 0,
-        "hit_rate": 0.3831,
-        "roi_per_bet": -0.1371
+        "hit_rate": 0.3825,
+        "roi_per_bet": -0.1384
       }
     }
   }

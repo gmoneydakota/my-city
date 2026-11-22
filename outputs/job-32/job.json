@@ -1,0 +1,18 @@
+{
+  "job": 32,
+  "agent": "scribe",
+  "model": "haiku",
+  "tier": "light",
+  "mode": "make",
+  "route": "chosen by you",
+  "escalated_from": null,
+  "builds_on": null,
+  "repeat": null,
+  "has_page": false,
+  "has_model": false,
+  "turns": 23,
+  "cost_usd_estimate": 0.0158,
+  "ok": true,
+  "subtype": "success",
+  "finished_at": "2026-11-22T15:47:30+00:00"
+}

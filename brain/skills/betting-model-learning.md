@@ -2,7 +2,7 @@
 title: Improve the self-learning betting model
 tags: bets, nfl, nba, calibration, walk-forward, learning
 agents: quant, coder
-learned_from: 2, 6, 22, 26, 27
+learned_from: 2, 6, 22, 26, 27, 33
 related: stock-signal-model, factor-edge-test
 ---
 ## When to use
@@ -23,4 +23,5 @@ Changes to the Lucky Tower model in `bets/`, or measuring whether it is any good
 - Two days of graded rows is not a trend. Say so and set a date to re-check the bucket that moved.
 - Hold figures (e.g. 10%) are typical values, not measured. Write them in the README as assumptions.
 - Before you report a change as made, grep for its constant or function name in `bets/betmodel/`. A job's own README can describe code that is not in the files.
+- Check a gap's weekly trend before sizing a fix (job 33: over gap 8.2 -> 1.5 pts over four weeks). `pip install pandas numpy` is needed for ad-hoc analysis on the runner.
 - Before testing a new factor for an edge, run it through `factor-edge-test` (break-even and standard error).

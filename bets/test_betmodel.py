@@ -140,6 +140,13 @@ class OddsBudget(unittest.TestCase):
         oddsapi.spend(10)
         self.assertLessEqual(oddsapi.allowance(now), max(0, before - 9))
 
+    def test_over_bias_two_way_only(self):
+        self.assertAlmostEqual(engine.side_bias_adjust(0.50, "points"), 0.50 - engine.OVER_BIAS)
+        self.assertEqual(engine.side_bias_adjust(0.20, "anytime_td"), 0.20)
+        self.assertGreaterEqual(engine.side_bias_adjust(0.0, "points"), 0.01)
+        # the under side gains exactly what the over loses
+        self.assertAlmostEqual(1 - engine.side_bias_adjust(0.5, "rec_yds"), 0.5 + engine.OVER_BIAS)
+
     def test_event_cache(self):
         self.assertIsNone(oddsapi.cached_event("nfl", "g1"))
         oddsapi.store_event("nfl", "g1", [{"player": "A", "stat": "pass_yds", "line": 250.5, "side": "over"}])

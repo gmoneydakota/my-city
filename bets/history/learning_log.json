@@ -576,12 +576,11 @@
   {
     "date": "2026-11-23",
     "lessons": [
-      "NFL pass_yds: was underconfident about player swings \u2192 uncertainty \u00d70.991.",
-      "NFL rush_yds: projections ran too high (avg 35.67 projected vs 35.59 actual over 279 players) \u2192 now scaled \u00d70.998."
+      "Total: trusting the model 13% \u2192 8% (vs the market) after 1036 graded bets \u2014 the market has been the better predictor so far."
     ],
     "scoreboard": {
-      "graded_bets": 8220,
-      "graded_projections": 11537,
+      "graded_bets": 8386,
+      "graded_projections": 11834,
       "model_leans": {
         "w": 415,
         "l": 524,

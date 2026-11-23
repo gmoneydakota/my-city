@@ -1,116 +1,116 @@
 {
-  "updated": "2026-11-23T00:49:15+00:00",
+  "updated": "2026-11-23T03:24:29+00:00",
   "game_weights": {
-    "ML": 0.079,
-    "Spread": 0.046,
-    "Total": 0.126
+    "ML": 0.077,
+    "Spread": 0.045,
+    "Total": 0.082
   },
   "fit_stats": {
     "ML": {
-      "n": 422,
+      "n": 432,
       "raw_best": 0.0,
-      "logloss_model": 0.5983,
-      "logloss_market": 0.5377,
-      "logloss_blend": 0.541
+      "logloss_model": 0.6018,
+      "logloss_market": 0.5418,
+      "logloss_blend": 0.545
     },
     "Spread": {
-      "n": 828,
+      "n": 852,
       "raw_best": 0.0,
-      "logloss_model": 0.736,
+      "logloss_model": 0.7347,
       "logloss_market": 0.6931,
-      "logloss_blend": 0.6941
+      "logloss_blend": 0.694
     },
     "Total": {
-      "n": 1016,
-      "raw_best": 0.1,
-      "logloss_model": 0.7073,
+      "n": 1036,
+      "raw_best": 0.05,
+      "logloss_model": 0.709,
       "logloss_market": 0.6931,
-      "logloss_blend": 0.6929
+      "logloss_blend": 0.6931
     },
     "Prop": {
-      "n": 5758,
+      "n": 5870,
       "raw_best": 0.05,
-      "logloss_model": 0.7112,
-      "logloss_market": 0.6885,
-      "logloss_blend": 0.6884
+      "logloss_model": 0.7107,
+      "logloss_market": 0.6883,
+      "logloss_blend": 0.6882
     }
   },
   "calibration": {
     "nba:assists": {
-      "scale": 0.9841,
-      "sd_scale": 1.0009,
-      "n": 2049,
-      "avg_proj": 3.29,
-      "avg_actual": 3.24
+      "scale": 0.9882,
+      "sd_scale": 1.0097,
+      "n": 2100,
+      "avg_proj": 3.3,
+      "avg_actual": 3.26
     },
     "nba:points": {
-      "scale": 0.9801,
-      "sd_scale": 1.0684,
-      "n": 2050,
+      "scale": 0.9823,
+      "sd_scale": 1.0678,
+      "n": 2101,
       "avg_proj": 13.95,
-      "avg_actual": 13.66
+      "avg_actual": 13.69
     },
     "nba:pra": {
-      "scale": 0.9793,
-      "sd_scale": 1.0404,
-      "n": 2050,
-      "avg_proj": 22.26,
-      "avg_actual": 21.78
+      "scale": 0.9816,
+      "sd_scale": 1.0432,
+      "n": 2101,
+      "avg_proj": 22.24,
+      "avg_actual": 21.82
     },
     "nba:rebounds": {
-      "scale": 0.974,
-      "sd_scale": 1.0107,
-      "n": 2050,
-      "avg_proj": 5.01,
+      "scale": 0.9754,
+      "sd_scale": 1.0136,
+      "n": 2101,
+      "avg_proj": 5.0,
       "avg_actual": 4.88
     },
     "nba:threes": {
-      "scale": 0.9887,
-      "sd_scale": 1.0179,
-      "n": 1849,
+      "scale": 0.9951,
+      "sd_scale": 1.0226,
+      "n": 1897,
       "avg_proj": 1.78,
-      "avg_actual": 1.76
+      "avg_actual": 1.77
     },
     "nfl:pass_tds": {
-      "scale": 1.0285,
-      "sd_scale": 0.9842,
-      "n": 87,
+      "scale": 1.0237,
+      "sd_scale": 0.9834,
+      "n": 88,
       "avg_proj": 1.54,
-      "avg_actual": 1.62
+      "avg_actual": 1.61
     },
     "nfl:pass_yds": {
-      "scale": 1.0017,
-      "sd_scale": 0.9906,
-      "n": 89,
-      "avg_proj": 227.03,
-      "avg_actual": 227.78
+      "scale": 1.0031,
+      "sd_scale": 0.9888,
+      "n": 90,
+      "avg_proj": 227.25,
+      "avg_actual": 228.59
     },
     "nfl:rec_yds": {
-      "scale": 0.9905,
-      "sd_scale": 1.2278,
-      "n": 520,
-      "avg_proj": 33.23,
-      "avg_actual": 32.87
+      "scale": 0.9935,
+      "sd_scale": 1.2376,
+      "n": 539,
+      "avg_proj": 33.16,
+      "avg_actual": 32.91
     },
     "nfl:receptions": {
-      "scale": 0.9774,
-      "sd_scale": 1.0188,
-      "n": 514,
-      "avg_proj": 3.04,
+      "scale": 0.9822,
+      "sd_scale": 1.0357,
+      "n": 533,
+      "avg_proj": 3.02,
       "avg_actual": 2.96
     },
     "nfl:rush_yds": {
-      "scale": 0.9982,
-      "sd_scale": 1.2551,
-      "n": 279,
+      "scale": 0.9928,
+      "sd_scale": 1.2488,
+      "n": 284,
       "avg_proj": 35.67,
-      "avg_actual": 35.59
+      "avg_actual": 35.34
     }
   },
   "prop_weight": 0.061,
   "scoreboard": {
-    "graded_bets": 8220,
-    "graded_projections": 11537,
+    "graded_bets": 8386,
+    "graded_projections": 11834,
     "model_leans": {
       "w": 415,
       "l": 524,

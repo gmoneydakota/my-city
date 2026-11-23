@@ -1,74 +1,67 @@
-# Market signals - 2026-11-20
+# Market signals - 2026-11-23
 
 _Educational signals from simple technical rules, not financial advice. Past behaviour of a rule does not guarantee future results. Do your own research._
 
 | Symbol | Price | Day | Signal | Score | RSI | Stop | Past BUY-ZONE hit rate |
 |---|---|---|---|---|---|---|---|
-| AAPL | 342.56 | -1.90% | **BUY ZONE** | 5 | 46.6 | 326.21 | 66.4% of 241 |
-| MSFT | 484.52 | -2.77% | **HOLD / NEUTRAL** | 2 | 35.0 | 451.76 | 59.9% of 172 |
-| AMZN | 246.82 | -4.10% | **HOLD / NEUTRAL** | 2 | 42.3 | 226.88 | 56.5% of 292 |
-| META | 560.84 | -5.93% | **HOLD / NEUTRAL** | 1 | 30.3 | 514.29 | 64.0% of 225 |
-| SPY | 689.81 | -3.64% | **AVOID** | -1 | 24.9 | 662.62 | 67.7% of 124 |
-| QQQ | 608.45 | -5.67% | **AVOID** | -1 | 26.6 | 570.9 | 62.4% of 306 |
-| NVDA | 125.53 | -14.01% | **AVOID** | -1 | 15.0 | 104.12 | 62.3% of 289 |
-| TSLA | 345.82 | -7.64% | **AVOID** | -2 | 37.8 | 311.54 | 51.0% of 100 |
-| GOOGL | 265.29 | -2.70% | **AVOID** | -3 | 27.8 | 242.66 | 54.1% of 185 |
+| AAPL | 349.08 | +1.90% | **BUY ZONE** | 5 | 52.8 | 332.46 | 66.4% of 241 |
+| MSFT | 492.5 | +1.65% | **WATCH / ACCUMULATE** | 4 | 39.3 | 458.56 | 59.9% of 172 |
+| AMZN | 255.39 | +3.47% | **WATCH / ACCUMULATE** | 4 | 48.4 | 234.64 | 56.7% of 293 |
+| TSLA | 385.46 | +11.46% | **WATCH / ACCUMULATE** | 4 | 52.1 | 346.77 | 51.0% of 100 |
+| META | 597.6 | +6.55% | **HOLD / NEUTRAL** | 2 | 41.8 | 548.43 | 64.0% of 225 |
+| SPY | 722.29 | +4.71% | **HOLD / NEUTRAL** | 0 | 41.5 | 691.59 | 73.1% of 245 |
+| QQQ | 651.03 | +7.00% | **HOLD / NEUTRAL** | 0 | 42.2 | 609.16 | 62.2% of 307 |
+| NVDA | 165.05 | +31.48% | **HOLD / NEUTRAL** | 0 | 42.9 | 138.6 | 62.1% of 290 |
+| GOOGL | 282.1 | +6.34% | **AVOID** | -1 | 41.0 | 258.25 | 54.1% of 185 |
 
 ## Why
 ### AAPL - BUY ZONE
 - price above 200-day average (long-term uptrend)
 - 50-day above 200-day (golden-cross regime)
-- up 10.5% over 3 months
+- up 12.7% over 3 months
 - outperforming the benchmark over 3 months
 - MACD momentum negative and falling
 - pulled back to the 50-day in an uptrend (classic entry zone)
 
-### MSFT - HOLD / NEUTRAL
+### MSFT - WATCH / ACCUMULATE
 - price above 200-day average (long-term uptrend)
 - 50-day above 200-day (golden-cross regime)
+- up 0.4% over 3 months
 - outperforming the benchmark over 3 months
-- MACD momentum negative and falling
 
-### AMZN - HOLD / NEUTRAL
+### AMZN - WATCH / ACCUMULATE
 - price above 200-day average (long-term uptrend)
 - 50-day above 200-day (golden-cross regime)
 - outperforming the benchmark over 3 months
 - MACD momentum negative and falling
+- pulled back to the 50-day in an uptrend (classic entry zone)
+
+### TSLA - WATCH / ACCUMULATE
+- price above 200-day average (long-term uptrend)
+- 50-day below 200-day (death-cross regime)
+- up 10.1% over 3 months
+- outperforming the benchmark over 3 months
+- pulled back to the 50-day in an uptrend (classic entry zone)
 
 ### META - HOLD / NEUTRAL
 - price below 200-day average (long-term downtrend)
 - 50-day above 200-day (golden-cross regime)
-- up 0.4% over 3 months
+- up 4.9% over 3 months
 - outperforming the benchmark over 3 months
-- MACD momentum negative and falling
-- RSI 30: oversold
 
-### SPY - AVOID
+### SPY - HOLD / NEUTRAL
 - price below 200-day average (long-term downtrend)
 - 50-day above 200-day (golden-cross regime)
-- MACD momentum negative and falling
-- RSI 25: oversold
 
-### QQQ - AVOID
+### QQQ - HOLD / NEUTRAL
 - price below 200-day average (long-term downtrend)
 - 50-day above 200-day (golden-cross regime)
-- MACD momentum negative and falling
-- RSI 27: oversold
 
-### NVDA - AVOID
+### NVDA - HOLD / NEUTRAL
 - price below 200-day average (long-term downtrend)
 - 50-day above 200-day (golden-cross regime)
-- MACD momentum negative and falling
-- RSI 15: oversold
-
-### TSLA - AVOID
-- price below 200-day average (long-term downtrend)
-- 50-day below 200-day (death-cross regime)
-- outperforming the benchmark over 3 months
-- MACD momentum negative and falling
 
 ### GOOGL - AVOID
 - price below 200-day average (long-term downtrend)
 - 50-day below 200-day (death-cross regime)
-- MACD momentum negative and falling
-- RSI 28: oversold
+- MACD momentum positive and rising

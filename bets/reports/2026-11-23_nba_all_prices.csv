@@ -1,0 +1,81 @@
+kind,game,selection,line,dk_odds,p_model,p_market,p_blend,ev
+ML,IND @ NY,NY ML,,-249.0,0.6449,0.6968,0.6927,-0.0291
+ML,IND @ NY,IND ML,,205.0,0.3551,0.3032,0.3073,-0.0627
+Spread,IND @ NY,NY -6.5,-6.5,-114.0,0.4589,0.5093,0.5070,-0.0483
+Spread,IND @ NY,IND +6.5,6.5,-106.0,0.5411,0.4907,0.4930,-0.0418
+Total,IND @ NY,Over 215.5,215.5,-107.0,0.4979,0.4930,0.4937,-0.0450
+Total,IND @ NY,Under 215.5,215.5,-113.0,0.5021,0.5070,0.5063,-0.0456
+ML,BOS @ GS,GS ML,,261.0,0.4044,0.2513,0.2634,-0.0492
+ML,BOS @ GS,BOS ML,,-324.0,0.5956,0.7487,0.7366,-0.0360
+Spread,BOS @ GS,GS +7.5,7.5,-106.0,0.6201,0.4907,0.4967,-0.0348
+Spread,BOS @ GS,BOS -7.5,-7.5,-114.0,0.3799,0.5093,0.5033,-0.0552
+Total,BOS @ GS,Over 210.5,210.5,-108.0,0.6329,0.4954,0.5127,-0.0126
+Total,BOS @ GS,Under 210.5,210.5,-112.0,0.3671,0.5046,0.4873,-0.0776
+ML,POR @ PHI,PHI ML,,-144.0,0.4003,0.5703,0.5568,-0.0565
+ML,POR @ PHI,POR ML,,121.0,0.5997,0.4297,0.4432,-0.0206
+Spread,POR @ PHI,PHI -2.5,-2.5,-110.0,0.3317,0.5000,0.4923,-0.0602
+Spread,POR @ PHI,POR +2.5,2.5,-110.0,0.6683,0.5000,0.5077,-0.0307
+Total,POR @ PHI,Over 228.5,228.5,-110.0,0.5299,0.5000,0.5038,-0.0383
+Total,POR @ PHI,Under 228.5,228.5,-110.0,0.4701,0.5000,0.4962,-0.0527
+ML,LAC @ HOU,HOU ML,,-610.0,0.7891,0.8462,0.8417,-0.0204
+ML,LAC @ HOU,LAC ML,,448.0,0.2109,0.1538,0.1583,-0.1323
+Spread,LAC @ HOU,HOU -13.5,-13.5,-110.0,0.4275,0.5000,0.4967,-0.0518
+Spread,LAC @ HOU,LAC +13.5,13.5,-110.0,0.5725,0.5000,0.5033,-0.0391
+Total,LAC @ HOU,Over 225.5,225.5,-110.0,0.6263,0.5000,0.5159,-0.0151
+Total,LAC @ HOU,Under 225.5,225.5,-110.0,0.3737,0.5000,0.4841,-0.0758
+Prop,CLE @ NY,Karl-Anthony Towns over 21.5 points,21.5,-107,,,0.4857,-0.0604
+Prop,CLE @ NY,Karl-Anthony Towns under 21.5 points,21.5,-119,,,0.5143,-0.0535
+Prop,CLE @ NY,Jalen Brunson over 27.5 points,27.5,-116,,,0.5206,-0.0305
+Prop,CLE @ NY,Jalen Brunson under 27.5 points,27.5,-110,,,0.4794,-0.0848
+Prop,CLE @ NY,Josh Hart over 9.5 points,9.5,-114,,,0.5064,-0.0494
+Prop,CLE @ NY,Josh Hart under 9.5 points,9.5,-112,,,0.4936,-0.0657
+Prop,CLE @ NY,Landry Shamet over 11.5 points,11.5,-103,,,0.4902,-0.0340
+Prop,CLE @ NY,Landry Shamet under 11.5 points,11.5,-124,,,0.5098,-0.0790
+Prop,OKC @ IND,Andrew Nembhard over 14.5 points,14.5,-101,,,0.4684,-0.0679
+Prop,OKC @ IND,Andrew Nembhard under 14.5 points,14.5,-127,,,0.5316,-0.0498
+Prop,OKC @ IND,Ivica Zubac over 11.5 points,11.5,-112,,,0.4954,-0.0623
+Prop,OKC @ IND,Ivica Zubac under 11.5 points,11.5,-113,,,0.5046,-0.0488
+Prop,OKC @ IND,Aaron Nesmith over 12.5 points,12.5,-106,,,0.4735,-0.0798
+Prop,OKC @ IND,Aaron Nesmith under 12.5 points,12.5,-120,,,0.5265,-0.0347
+Prop,OKC @ IND,Obi Toppin over 11.5 points,11.5,-104,,,0.4837,-0.0513
+Prop,OKC @ IND,Obi Toppin under 11.5 points,11.5,-122,,,0.5163,-0.0604
+Prop,CLE @ NY,Mikal Bridges over 11.5 points,11.5,102,,,0.4702,-0.0503
+Prop,CLE @ NY,Mikal Bridges under 11.5 points,11.5,-130,,,0.5298,-0.0626
+Prop,OKC @ IND,Pascal Siakam over 19.5 points,19.5,-122,,,0.5319,-0.0320
+Prop,OKC @ IND,Pascal Siakam under 19.5 points,19.5,-105,,,0.4681,-0.0862
+Prop,OKC @ IND,Kelly Oubre Jr. over 12.5 points,12.5,-116,,,0.5063,-0.0573
+Prop,OKC @ IND,Kelly Oubre Jr. under 12.5 points,12.5,-110,,,0.4937,-0.0574
+Prop,BOS @ WSH,Luka Garza over 6.5 points,6.5,-128,,,0.5196,-0.0745
+Prop,BOS @ WSH,Luka Garza under 6.5 points,6.5,100,,,0.4804,-0.0392
+Prop,SAC @ GS,Brandin Podziemski over 15.5 points,15.5,-106,,,0.4975,-0.0331
+Prop,SAC @ GS,Brandin Podziemski under 15.5 points,15.5,-120,,,0.5025,-0.0788
+Prop,SAC @ GS,Gui Santos over 7.5 points,7.5,-124,,,0.5239,-0.0537
+Prop,SAC @ GS,Gui Santos under 7.5 points,7.5,-103,,,0.4761,-0.0616
+Prop,SAC @ GS,Yaxel Lendeborg over 19.5 points,19.5,-116,,,0.5065,-0.0568
+Prop,SAC @ GS,Yaxel Lendeborg under 19.5 points,19.5,-110,,,0.4935,-0.0579
+Prop,SAC @ GS,Will Richard over 7.5 points,7.5,-108,,,0.4912,-0.0539
+Prop,SAC @ GS,Will Richard under 7.5 points,7.5,-118,,,0.5088,-0.0601
+Prop,SAC @ GS,Al Horford over 5.5 points,5.5,110,,,0.4625,-0.0287
+Prop,SAC @ GS,Al Horford under 5.5 points,5.5,-140,,,0.5375,-0.0786
+Prop,BOS @ WSH,Sam Hauser over 8.5 points,8.5,-120,,,0.5042,-0.0757
+Prop,BOS @ WSH,Sam Hauser under 8.5 points,8.5,-106,,,0.4958,-0.0364
+Prop,BOS @ WSH,Jordan Walsh over 4.5 points,4.5,-124,,,0.4989,-0.0987
+Prop,BOS @ WSH,Jordan Walsh under 4.5 points,4.5,-103,,,0.5011,-0.0124
+Prop,SAC @ GS,Charles Bassey over 7.5 points,7.5,-139,,,0.5513,-0.0521
+Prop,SAC @ GS,Charles Bassey under 7.5 points,7.5,109,,,0.4487,-0.0622
+Prop,BOS @ WSH,Baylor Scheierman over 7.5 points,7.5,-116,,,0.4772,-0.1113
+Prop,BOS @ WSH,Baylor Scheierman under 7.5 points,7.5,-110,,,0.5228,-0.0020
+Prop,SAC @ GS,De'Anthony Melton over 10.5 points,10.5,-103,,,0.4673,-0.0790
+Prop,SAC @ GS,De'Anthony Melton under 10.5 points,10.5,-124,,,0.5327,-0.0377
+Prop,BOS @ WSH,Derrick White over 14.5 points,14.5,-122,,,0.5014,-0.0876
+Prop,BOS @ WSH,Derrick White under 14.5 points,14.5,-104,,,0.4986,-0.0220
+Prop,BOS @ WSH,Neemias Queta over 10.5 points,10.5,-105,,,0.4825,-0.0579
+Prop,BOS @ WSH,Neemias Queta under 10.5 points,10.5,-122,,,0.5175,-0.0584
+Prop,SAC @ GS,Georges Niang over 6.5 points,6.5,-116,,,0.4992,-0.0704
+Prop,SAC @ GS,Georges Niang under 6.5 points,6.5,-110,,,0.5008,-0.0440
+Prop,SAC @ GS,Draymond Green over 4.5 points,4.5,-109,,,0.4819,-0.0761
+Prop,SAC @ GS,Draymond Green under 4.5 points,4.5,-117,,,0.5181,-0.0390
+Prop,BOS @ WSH,Payton Pritchard over 15.5 points,15.5,-118,,,0.4988,-0.0784
+Prop,BOS @ WSH,Payton Pritchard under 15.5 points,15.5,-108,,,0.5012,-0.0348
+Prop,BOS @ WSH,Jayson Tatum over 27.5 points,27.5,-104,,,0.4791,-0.0603
+Prop,BOS @ WSH,Jayson Tatum under 27.5 points,27.5,-123,,,0.5209,-0.0556

@@ -600,9 +600,7 @@
   {
     "date": "2026-11-24",
     "lessons": [
-      "Total: trusting the model 12% \u2192 4% (vs the market) after 1110 graded bets \u2014 the market has been the better predictor so far.",
-      "Player props: trusting the model 6% \u2192 1% after 6240 graded props.",
-      "NFL pass_tds: projections ran too low (avg 1.57 projected vs 1.62 actual over 91 players) \u2192 now scaled \u00d71.016."
+      "Not enough finished games yet to change anything. Still collecting results."
     ],
     "scoreboard": {
       "graded_bets": 8914,

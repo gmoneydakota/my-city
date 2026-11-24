@@ -600,17 +600,19 @@
   {
     "date": "2026-11-24",
     "lessons": [
-      "Total: trusting the model 8% \u2192 12% (vs the market) after 1066 graded bets \u2014 the market has been the better predictor so far."
+      "Total: trusting the model 12% \u2192 4% (vs the market) after 1110 graded bets \u2014 the market has been the better predictor so far.",
+      "Player props: trusting the model 6% \u2192 1% after 6240 graded props.",
+      "NFL pass_tds: projections ran too low (avg 1.57 projected vs 1.62 actual over 91 players) \u2192 now scaled \u00d71.016."
     ],
     "scoreboard": {
-      "graded_bets": 8576,
-      "graded_projections": 12123,
+      "graded_bets": 8914,
+      "graded_projections": 12697,
       "model_leans": {
-        "w": 417,
-        "l": 526,
+        "w": 418,
+        "l": 528,
         "p": 0,
-        "hit_rate": 0.4422,
-        "roi_per_bet": -0.0523
+        "hit_rate": 0.4419,
+        "roi_per_bet": -0.0532
       },
       "strong_leans": {
         "w": 250,

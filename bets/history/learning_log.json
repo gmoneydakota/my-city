@@ -600,11 +600,11 @@
   {
     "date": "2026-11-24",
     "lessons": [
-      "Not enough finished games yet to change anything. Still collecting results."
+      "Total: trusting the model 8% \u2192 12% (vs the market) after 1066 graded bets \u2014 the market has been the better predictor so far."
     ],
     "scoreboard": {
-      "graded_bets": 8536,
-      "graded_projections": 11990,
+      "graded_bets": 8576,
+      "graded_projections": 12123,
       "model_leans": {
         "w": 417,
         "l": 526,

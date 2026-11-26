@@ -648,24 +648,24 @@
   {
     "date": "2026-11-26",
     "lessons": [
-      "Not enough finished games yet to change anything. Still collecting results."
+      "NFL pass_tds: projections ran too low (avg 1.58 projected vs 1.59 actual over 93 players) \u2192 now scaled \u00d71.005."
     ],
     "scoreboard": {
-      "graded_bets": 9050,
-      "graded_projections": 13046,
+      "graded_bets": 9332,
+      "graded_projections": 13520,
       "model_leans": {
-        "w": 418,
+        "w": 419,
         "l": 528,
         "p": 0,
-        "hit_rate": 0.4419,
-        "roi_per_bet": -0.0532
+        "hit_rate": 0.4424,
+        "roi_per_bet": -0.0521
       },
       "strong_leans": {
-        "w": 250,
+        "w": 251,
         "l": 402,
         "p": 0,
-        "hit_rate": 0.3834,
-        "roi_per_bet": -0.1368
+        "hit_rate": 0.3844,
+        "roi_per_bet": -0.1351
       }
     }
   }

@@ -651,8 +651,8 @@
       "Not enough finished games yet to change anything. Still collecting results."
     ],
     "scoreboard": {
-      "graded_bets": 9332,
-      "graded_projections": 13520,
+      "graded_bets": 9402,
+      "graded_projections": 13552,
       "model_leans": {
         "w": 419,
         "l": 528,

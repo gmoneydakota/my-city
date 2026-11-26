@@ -1,24 +1,18 @@
 kind,game,selection,line,dk_odds,p_model,p_market,p_blend,ev
-ML,GB @ LAR,LAR ML,,-137.0,0.6366,0.5587,0.5644,-0.0237
-ML,GB @ LAR,GB ML,,116.0,0.3634,0.4413,0.4356,-0.0591
-Spread,GB @ LAR,LAR -2.5,-2.5,-115.0,0.5523,0.5128,0.5145,-0.0382
-Spread,GB @ LAR,GB +2.5,2.5,-104.0,0.4477,0.4872,0.4855,-0.0476
-Total,GB @ LAR,Over 43.5,43.5,-112.0,0.4955,0.5058,0.5055,-0.0432
-Total,GB @ LAR,Under 43.5,43.5,-107.0,0.5045,0.4942,0.4945,-0.0433
-ML,CHI @ DET,DET ML,,101.0,0.5487,0.4766,0.4819,-0.0314
-ML,CHI @ DET,CHI ML,,-119.0,0.4513,0.5234,0.5181,-0.0465
+ML,CHI @ DET,DET ML,,102.0,0.5487,0.4743,0.4797,-0.0309
+ML,CHI @ DET,CHI ML,,-120.0,0.4513,0.5257,0.5203,-0.0462
 Spread,CHI @ DET,DET +1.5,1.5,-113.0,0.5999,0.5082,0.5120,-0.0349
 Spread,CHI @ DET,CHI -1.5,-1.5,-106.0,0.4001,0.4918,0.4880,-0.0516
 Total,CHI @ DET,Over 55.5,55.5,-110.0,0.3552,0.5012,0.4961,-0.0530
 Total,CHI @ DET,Under 55.5,55.5,-109.0,0.6448,0.4988,0.5039,-0.0337
-ML,PHI @ DAL,DAL ML,,-480.0,0.5664,0.8141,0.7960,-0.0382
-ML,PHI @ DAL,PHI ML,,370.0,0.4336,0.1859,0.2040,-0.0411
+ML,PHI @ DAL,DAL ML,,-471.0,0.5664,0.8113,0.7934,-0.0382
+ML,PHI @ DAL,PHI ML,,364.0,0.4336,0.1887,0.2066,-0.0413
 Spread,PHI @ DAL,DAL -8.5,-8.5,-111.0,0.2831,0.5035,0.4942,-0.0605
 Spread,PHI @ DAL,PHI +8.5,8.5,-108.0,0.7169,0.4965,0.5058,-0.0259
-Total,PHI @ DAL,Over 47.5,47.5,-116.0,0.6215,0.5151,0.5189,-0.0338
-Total,PHI @ DAL,Under 47.5,47.5,-103.0,0.3785,0.4849,0.4811,-0.0517
-ML,KC @ BUF,BUF ML,,-149.0,0.5644,0.5795,0.5784,-0.0334
-ML,KC @ BUF,KC ML,,126.0,0.4356,0.4205,0.4216,-0.0472
+Total,PHI @ DAL,Over 48.5,48.5,-106.0,0.5904,0.4918,0.4953,-0.0374
+Total,PHI @ DAL,Under 48.5,48.5,-113.0,0.4096,0.5082,0.5047,-0.0487
+ML,KC @ BUF,BUF ML,,-148.0,0.5644,0.5777,0.5767,-0.0336
+ML,KC @ BUF,KC ML,,125.0,0.4356,0.4223,0.4233,-0.0476
 Spread,KC @ BUF,BUF -3,-3.0,100.0,0.4604,0.4768,0.4761,-0.0478
 Spread,KC @ BUF,KC +3,3.0,-120.0,0.5396,0.5232,0.5239,-0.0395
 Total,KC @ BUF,Over 46.5,46.5,-105.0,0.5519,0.4884,0.4906,-0.0421
@@ -27,24 +21,24 @@ ML,DEN @ PIT,PIT ML,,169.0,0.4027,0.3485,0.3524,-0.0520
 ML,DEN @ PIT,DEN ML,,-202.0,0.5973,0.6515,0.6476,-0.0319
 Spread,DEN @ PIT,PIT +3.5,3.5,-106.0,0.5234,0.4918,0.4932,-0.0416
 Spread,DEN @ PIT,DEN -3.5,-3.5,-113.0,0.4766,0.5082,0.5068,-0.0447
-Total,DEN @ PIT,Over 36.5,36.5,-114.0,0.6788,0.5105,0.5164,-0.0307
-Total,DEN @ PIT,Under 36.5,36.5,-105.0,0.3212,0.4895,0.4836,-0.0558
-ML,NO @ CIN,CIN ML,,-533.0,0.7805,0.8290,0.8255,-0.0197
-ML,NO @ CIN,NO ML,,405.0,0.2195,0.1710,0.1745,-0.1186
+Total,DEN @ PIT,Over 36.5,36.5,-114.0,0.6789,0.5105,0.5164,-0.0307
+Total,DEN @ PIT,Under 36.5,36.5,-105.0,0.3211,0.4895,0.4836,-0.0558
+ML,NO @ CIN,CIN ML,,-534.0,0.7805,0.8292,0.8256,-0.0198
+ML,NO @ CIN,NO ML,,405.0,0.2195,0.1708,0.1744,-0.1194
 Spread,NO @ CIN,CIN -10,-10.0,-107.0,0.4611,0.4942,0.4928,-0.0467
 Spread,NO @ CIN,NO +10,10.0,-112.0,0.5389,0.5058,0.5072,-0.0399
 Total,NO @ CIN,Over 49.5,49.5,-111.0,0.5433,0.5035,0.5049,-0.0403
 Total,NO @ CIN,Under 49.5,49.5,-108.0,0.4567,0.4965,0.4951,-0.0464
-ML,NYG @ IND,IND ML,,261.0,0.3300,0.2520,0.2577,-0.0697
-ML,NYG @ IND,NYG ML,,-322.0,0.6700,0.7480,0.7423,-0.0272
-Spread,NYG @ IND,IND +6.5,6.5,-106.0,0.5503,0.4907,0.4932,-0.0415
-Spread,NYG @ IND,NYG -6.5,-6.5,-114.0,0.4497,0.5093,0.5068,-0.0487
+ML,NYG @ IND,IND ML,,235.0,0.3300,0.2744,0.2784,-0.0672
+ML,NYG @ IND,NYG ML,,-286.0,0.6700,0.7256,0.7216,-0.0262
+Spread,NYG @ IND,IND +6,6.0,-110.0,0.5330,0.5012,0.5025,-0.0407
+Spread,NYG @ IND,NYG -6,-6.0,-109.0,0.4670,0.4988,0.4975,-0.0461
 Total,NYG @ IND,Over 41.5,41.5,-111.0,0.6012,0.5035,0.5069,-0.0364
 Total,NYG @ IND,Under 41.5,41.5,-108.0,0.3988,0.4965,0.4931,-0.0504
-ML,NYJ @ MIA,MIA ML,,172.0,0.3738,0.3448,0.3469,-0.0564
-ML,NYJ @ MIA,NYJ ML,,-205.0,0.6262,0.6552,0.6531,-0.0283
-Spread,NYJ @ MIA,MIA +3.5,3.5,-104.0,0.4933,0.4872,0.4874,-0.0439
-Spread,NYJ @ MIA,NYJ -3.5,-3.5,-115.0,0.5067,0.5128,0.5126,-0.0417
+ML,NYJ @ MIA,MIA ML,,180.0,0.3738,0.3335,0.3365,-0.0579
+ML,NYJ @ MIA,NYJ ML,,-216.0,0.6262,0.6665,0.6635,-0.0293
+Spread,NYJ @ MIA,MIA +4.5,4.5,-114.0,0.5280,0.5105,0.5112,-0.0403
+Spread,NYJ @ MIA,NYJ -4.5,-4.5,-105.0,0.4720,0.4895,0.4888,-0.0457
 Total,NYJ @ MIA,Over 40.5,40.5,-104.0,0.5177,0.4872,0.4883,-0.0423
 Total,NYJ @ MIA,Under 40.5,40.5,-115.0,0.4823,0.5128,0.5117,-0.0433
 ML,ATL @ MIN,MIN ML,,-309.0,0.7001,0.7401,0.7372,-0.0242
@@ -53,34 +47,34 @@ Spread,ATL @ MIN,MIN -7,-7.0,100.0,0.4660,0.4768,0.4763,-0.0474
 Spread,ATL @ MIN,ATL +7,7.0,-120.0,0.5340,0.5232,0.5237,-0.0399
 Total,ATL @ MIN,Over 41.5,41.5,-113.0,0.3484,0.5070,0.5014,-0.0549
 Total,ATL @ MIN,Under 41.5,41.5,-107.0,0.6516,0.4930,0.4986,-0.0354
-ML,TEN @ JAX,JAX ML,,-1180.0,0.9143,0.9115,0.9117,-0.0110
-ML,TEN @ JAX,TEN ML,,740.0,0.0857,0.0885,0.0883,-0.2582
-Spread,TEN @ JAX,JAX -14.5,-14.5,-104.0,0.5415,0.4861,0.4884,-0.0420
-Spread,TEN @ JAX,TEN +14.5,14.5,-116.0,0.4585,0.5139,0.5116,-0.0474
-Total,TEN @ JAX,Over 48.5,48.5,-109.0,0.5082,0.4988,0.4992,-0.0429
-Total,TEN @ JAX,Under 48.5,48.5,-110.0,0.4918,0.5012,0.5008,-0.0439
-ML,BAL @ HOU,HOU ML,,-330.0,0.7454,0.7520,0.7515,-0.0208
-ML,BAL @ HOU,BAL ML,,265.0,0.2546,0.2480,0.2485,-0.0930
+ML,TEN @ JAX,JAX ML,,-1160.0,0.9143,0.9101,0.9104,-0.0111
+ML,TEN @ JAX,TEN ML,,730.0,0.0857,0.0899,0.0896,-0.2567
+Spread,TEN @ JAX,JAX -14.5,-14.5,-104.0,0.5414,0.4861,0.4884,-0.0420
+Spread,TEN @ JAX,TEN +14.5,14.5,-116.0,0.4586,0.5139,0.5116,-0.0474
+Total,TEN @ JAX,Over 49.5,49.5,-106.0,0.4760,0.4918,0.4913,-0.0452
+Total,TEN @ JAX,Under 49.5,49.5,-113.0,0.5240,0.5082,0.5087,-0.0411
+ML,BAL @ HOU,HOU ML,,-333.0,0.7454,0.7536,0.7530,-0.0209
+ML,BAL @ HOU,BAL ML,,267.0,0.2546,0.2464,0.2470,-0.0935
 Spread,BAL @ HOU,HOU -6.5,-6.5,-112.0,0.5373,0.5058,0.5071,-0.0401
 Spread,BAL @ HOU,BAL +6.5,6.5,-107.0,0.4627,0.4942,0.4929,-0.0465
 Total,BAL @ HOU,Over 47.5,47.5,-106.0,0.4860,0.4918,0.4916,-0.0445
 Total,BAL @ HOU,Under 47.5,47.5,-113.0,0.5140,0.5082,0.5084,-0.0418
-ML,NE @ LAC,LAC ML,,-102.0,0.4286,0.4847,0.4806,-0.0481
-ML,NE @ LAC,NE ML,,-115.0,0.5714,0.5153,0.5194,-0.0290
+ML,NE @ LAC,LAC ML,,-102.0,0.4286,0.4836,0.4796,-0.0502
+ML,NE @ LAC,NE ML,,-116.0,0.5714,0.5164,0.5204,-0.0310
 Spread,NE @ LAC,LAC +1.5,1.5,-118.0,0.4804,0.5198,0.5182,-0.0427
 Spread,NE @ LAC,NE -1.5,-1.5,-101.0,0.5196,0.4802,0.4818,-0.0411
 Total,NE @ LAC,Over 35.5,35.5,-109.0,0.7805,0.4988,0.5087,-0.0246
 Total,NE @ LAC,Under 35.5,35.5,-110.0,0.2195,0.5012,0.4913,-0.0621
-ML,WSH @ ARI,ARI ML,,266.0,0.3197,0.2477,0.2530,-0.0740
-ML,WSH @ ARI,WSH ML,,-330.0,0.6803,0.7523,0.7470,-0.0266
-Spread,WSH @ ARI,ARI +7,7.0,-116.0,0.5563,0.5151,0.5169,-0.0375
-Spread,WSH @ ARI,WSH -7,-7.0,-103.0,0.4437,0.4849,0.4831,-0.0478
+ML,WSH @ ARI,ARI ML,,262.0,0.3198,0.2510,0.2560,-0.0732
+ML,WSH @ ARI,WSH ML,,-324.0,0.6802,0.7490,0.7440,-0.0264
+Spread,WSH @ ARI,ARI +7,7.0,-116.0,0.5563,0.5139,0.5157,-0.0397
+Spread,WSH @ ARI,WSH -7,-7.0,-104.0,0.4437,0.4861,0.4843,-0.0500
 Total,WSH @ ARI,Over 41.5,41.5,-111.0,0.6455,0.5035,0.5085,-0.0335
 Total,WSH @ ARI,Under 41.5,41.5,-108.0,0.3545,0.4965,0.4915,-0.0533
-ML,SEA @ SF,SF ML,,-147.0,0.4614,0.5759,0.5675,-0.0464
+ML,SEA @ SF,SF ML,,-147.0,0.4614,0.5759,0.5675,-0.0465
 ML,SEA @ SF,SEA ML,,124.0,0.5386,0.4241,0.4325,-0.0312
-Spread,SEA @ SF,SF -2.5,-2.5,-121.0,0.3765,0.5243,0.5181,-0.0537
-Spread,SEA @ SF,SEA +2.5,2.5,100.0,0.6235,0.4757,0.4819,-0.0362
+Spread,SEA @ SF,SF -2.5,-2.5,-121.0,0.3764,0.5243,0.5181,-0.0537
+Spread,SEA @ SF,SEA +2.5,2.5,100.0,0.6236,0.4757,0.4819,-0.0362
 Total,SEA @ SF,Over 44.5,44.5,-109.0,0.5474,0.4988,0.5005,-0.0403
 Total,SEA @ SF,Under 44.5,44.5,-110.0,0.4526,0.5012,0.4995,-0.0465
 ML,LV @ CLE,CLE ML,,-244.0,0.4242,0.6924,0.6729,-0.0514
@@ -89,58 +83,12 @@ Spread,LV @ CLE,CLE -4.5,-4.5,-105.0,0.2798,0.4895,0.4807,-0.0615
 Spread,LV @ CLE,LV +4.5,4.5,-114.0,0.7202,0.5105,0.5193,-0.0252
 Total,LV @ CLE,Over 39.5,39.5,-116.0,0.7597,0.5151,0.5237,-0.0248
 Total,LV @ CLE,Under 39.5,39.5,-103.0,0.2403,0.4849,0.4763,-0.0613
-ML,CAR @ TB,TB ML,,-158.0,0.7328,0.5935,0.6036,-0.0143
-ML,CAR @ TB,CAR ML,,133.0,0.2672,0.4065,0.3964,-0.0765
+ML,CAR @ TB,TB ML,,-157.0,0.7328,0.5918,0.6021,-0.0145
+ML,CAR @ TB,CAR ML,,132.0,0.2672,0.4082,0.3979,-0.0768
 Spread,CAR @ TB,TB -3,-3.0,-107.0,0.6405,0.4942,0.5003,-0.0321
 Spread,CAR @ TB,CAR +3,3.0,-112.0,0.3595,0.5058,0.4997,-0.0542
 Total,CAR @ TB,Over 43.5,43.5,-110.0,0.6318,0.5012,0.5057,-0.0345
 Total,CAR @ TB,Under 43.5,43.5,-109.0,0.3682,0.4988,0.4943,-0.0523
-Prop,GB @ LAR,Matthew Golden over 74.5 rec_yds,74.5,-114,,,0.5023,-0.0572
-Prop,GB @ LAR,Matthew Golden under 74.5 rec_yds,74.5,-110,,,0.4977,-0.0498
-Prop,GB @ LAR,Christian Watson over 72.5 rec_yds,72.5,-112,,,0.5006,-0.0524
-Prop,GB @ LAR,Christian Watson under 72.5 rec_yds,72.5,-112,,,0.4994,-0.0547
-Prop,GB @ LAR,Tucker Kraft over 37.5 rec_yds,37.5,-110,,,0.4782,-0.0871
-Prop,GB @ LAR,Tucker Kraft under 37.5 rec_yds,37.5,-114,,,0.5218,-0.0205
-Prop,GB @ LAR,Konata Mumpfield over 34.5 rec_yds,34.5,-111,,,0.4965,-0.0562
-Prop,GB @ LAR,Konata Mumpfield under 34.5 rec_yds,34.5,-113,,,0.5035,-0.0509
-Prop,GB @ LAR,Tyler Higbee over 30.5 rec_yds,30.5,-108,,,0.4950,-0.0466
-Prop,GB @ LAR,Tyler Higbee under 30.5 rec_yds,30.5,-116,,,0.5050,-0.0597
-Prop,GB @ LAR,CJ Daniels over 24.5 rec_yds,24.5,-113,,,0.4957,-0.0657
-Prop,GB @ LAR,CJ Daniels under 24.5 rec_yds,24.5,-111,,,0.5043,-0.0414
-Prop,GB @ LAR,Kyren Williams over 24.5 rec_yds,24.5,-111,,,0.4972,-0.0549
-Prop,GB @ LAR,Kyren Williams under 24.5 rec_yds,24.5,-113,,,0.5028,-0.0522
-Prop,GB @ LAR,Tutu Atwell over 21.5 rec_yds,21.5,-114,,,0.5041,-0.0537
-Prop,GB @ LAR,Tutu Atwell under 21.5 rec_yds,21.5,-110,,,0.4959,-0.0532
-Prop,GB @ LAR,Colby Parkinson over 18.5 rec_yds,18.5,-111,,,0.5001,-0.0494
-Prop,GB @ LAR,Colby Parkinson under 18.5 rec_yds,18.5,-113,,,0.4999,-0.0577
-Prop,GB @ LAR,Savion Williams over 15.5 rec_yds,15.5,-115,,,0.5088,-0.0488
-Prop,GB @ LAR,Savion Williams under 15.5 rec_yds,15.5,-109,,,0.4912,-0.0581
-Prop,GB @ LAR,Blake Corum over 14.5 rec_yds,14.5,-111,,,0.4952,-0.0587
-Prop,GB @ LAR,Blake Corum under 14.5 rec_yds,14.5,-113,,,0.5048,-0.0485
-Prop,GB @ LAR,Davis Allen over 10.5 rec_yds,10.5,-116,,,0.5028,-0.0637
-Prop,GB @ LAR,Davis Allen under 10.5 rec_yds,10.5,-109,,,0.4972,-0.0467
-Prop,GB @ LAR,MarShawn Lloyd over 6.5 rec_yds,6.5,-122,,,0.4963,-0.0969
-Prop,GB @ LAR,MarShawn Lloyd under 6.5 rec_yds,6.5,-103,,,0.5037,-0.0073
-Prop,GB @ LAR,Chris Brooks over 6.5 rec_yds,6.5,-110,,,0.4951,-0.0548
-Prop,GB @ LAR,Chris Brooks under 6.5 rec_yds,6.5,-114,,,0.5049,-0.0523
-Prop,GB @ LAR,Xavier Smith over 5.5 rec_yds,5.5,-111,,,0.4990,-0.0515
-Prop,GB @ LAR,Xavier Smith under 5.5 rec_yds,5.5,-113,,,0.5010,-0.0556
-Prop,GB @ LAR,Blake Corum over 58.5 rush_yds,58.5,-113,,,0.5020,-0.0537
-Prop,GB @ LAR,Blake Corum under 58.5 rush_yds,58.5,-111,,,0.4980,-0.0534
-Prop,GB @ LAR,Kyren Williams over 49.5 rush_yds,49.5,-112,,,0.5009,-0.0519
-Prop,GB @ LAR,Kyren Williams under 49.5 rush_yds,49.5,-112,,,0.4991,-0.0552
-Prop,GB @ LAR,Kaleb Johnson over 31.5 rush_yds,31.5,-114,,,0.5037,-0.0544
-Prop,GB @ LAR,Kaleb Johnson under 31.5 rush_yds,31.5,-110,,,0.4963,-0.0526
-Prop,GB @ LAR,MarShawn Lloyd over 11.5 rush_yds,11.5,-113,,,0.5013,-0.0550
-Prop,GB @ LAR,MarShawn Lloyd under 11.5 rush_yds,11.5,-111,,,0.4987,-0.0521
-Prop,GB @ LAR,Chris Brooks over 6.5 rush_yds,6.5,-113,,,0.5003,-0.0570
-Prop,GB @ LAR,Chris Brooks under 6.5 rush_yds,6.5,-111,,,0.4997,-0.0501
-Prop,GB @ LAR,Savion Williams over 4.5 rush_yds,4.5,-104,,,0.4766,-0.0650
-Prop,GB @ LAR,Savion Williams under 4.5 rush_yds,4.5,-120,,,0.5234,-0.0405
-Prop,GB @ LAR,Jordan Love over 3.5 rush_yds,3.5,-112,,,0.4977,-0.0579
-Prop,GB @ LAR,Jordan Love under 3.5 rush_yds,3.5,-112,,,0.5023,-0.0493
-Prop,GB @ LAR,Matthew Stafford over 0.5 rush_yds,0.5,145,,,0.3749,-0.0815
-Prop,GB @ LAR,Matthew Stafford under 0.5 rush_yds,0.5,-183,,,0.6251,-0.0333
 Prop,CHI @ DET,Amon-Ra St. Brown over 86.5 rec_yds,86.5,-113,,,0.5022,-0.0534
 Prop,CHI @ DET,Amon-Ra St. Brown under 86.5 rec_yds,86.5,-111,,,0.4978,-0.0537
 Prop,CHI @ DET,Luther Burden III over 59.5 rec_yds,59.5,-113,,,0.5029,-0.0520
@@ -183,40 +131,38 @@ Prop,CHI @ DET,Sione Vaki over 9.5 rush_yds,9.5,-110,,,0.5010,-0.0436
 Prop,CHI @ DET,Sione Vaki under 9.5 rush_yds,9.5,-114,,,0.4990,-0.0632
 Prop,CHI @ DET,Jared Goff over 1.5 rush_yds,1.5,-112,,,0.5003,-0.0531
 Prop,CHI @ DET,Jared Goff under 1.5 rush_yds,1.5,-112,,,0.4997,-0.0541
-Prop,PHI @ DAL,CeeDee Lamb over 90.5 rec_yds,90.5,-111,,,0.4993,-0.0509
-Prop,PHI @ DAL,CeeDee Lamb under 90.5 rec_yds,90.5,-113,,,0.5007,-0.0562
-Prop,PHI @ DAL,George Pickens over 71.5 rec_yds,71.5,-111,,,0.4997,-0.0502
-Prop,PHI @ DAL,George Pickens under 71.5 rec_yds,71.5,-113,,,0.5003,-0.0569
-Prop,PHI @ DAL,DeVonta Smith over 64.5 rec_yds,64.5,-113,,,0.5011,-0.0555
-Prop,PHI @ DAL,DeVonta Smith under 64.5 rec_yds,64.5,-111,,,0.4989,-0.0516
-Prop,PHI @ DAL,Dallas Goedert over 32.5 rec_yds,32.5,-112,,,0.5015,-0.0508
-Prop,PHI @ DAL,Dallas Goedert under 32.5 rec_yds,32.5,-112,,,0.4985,-0.0564
-Prop,PHI @ DAL,Makai Lemon over 31.5 rec_yds,31.5,-110,,,0.4960,-0.0531
-Prop,PHI @ DAL,Makai Lemon under 31.5 rec_yds,31.5,-114,,,0.5040,-0.0539
-Prop,PHI @ DAL,Ryan Flournoy over 31.5 rec_yds,31.5,-110,,,0.4980,-0.0492
-Prop,PHI @ DAL,Ryan Flournoy under 31.5 rec_yds,31.5,-114,,,0.5020,-0.0577
-Prop,PHI @ DAL,Darius Cooper over 27.5 rec_yds,27.5,-115,,,0.5036,-0.0585
-Prop,PHI @ DAL,Darius Cooper under 27.5 rec_yds,27.5,-109,,,0.4964,-0.0481
+Prop,PHI @ DAL,CeeDee Lamb over 90.5 rec_yds,90.5,-111,,,0.4993,-0.0508
+Prop,PHI @ DAL,CeeDee Lamb under 90.5 rec_yds,90.5,-113,,,0.5007,-0.0563
+Prop,PHI @ DAL,George Pickens over 71.5 rec_yds,71.5,-111,,,0.4997,-0.0501
+Prop,PHI @ DAL,George Pickens under 71.5 rec_yds,71.5,-113,,,0.5003,-0.0570
+Prop,PHI @ DAL,Dallas Goedert over 32.5 rec_yds,32.5,-112,,,0.5015,-0.0506
+Prop,PHI @ DAL,Dallas Goedert under 32.5 rec_yds,32.5,-112,,,0.4985,-0.0565
+Prop,PHI @ DAL,Makai Lemon over 31.5 rec_yds,31.5,-110,,,0.4960,-0.0530
+Prop,PHI @ DAL,Makai Lemon under 31.5 rec_yds,31.5,-114,,,0.5040,-0.0540
+Prop,PHI @ DAL,Ryan Flournoy over 31.5 rec_yds,31.5,-110,,,0.4981,-0.0491
+Prop,PHI @ DAL,Ryan Flournoy under 31.5 rec_yds,31.5,-114,,,0.5019,-0.0578
+Prop,PHI @ DAL,Darius Cooper over 27.5 rec_yds,27.5,-115,,,0.5036,-0.0584
+Prop,PHI @ DAL,Darius Cooper under 27.5 rec_yds,27.5,-109,,,0.4964,-0.0482
 Prop,PHI @ DAL,Brevyn Spann-Ford over 14.5 rec_yds,14.5,-113,,,0.5001,-0.0573
-Prop,PHI @ DAL,Brevyn Spann-Ford under 14.5 rec_yds,14.5,-111,,,0.4999,-0.0497
+Prop,PHI @ DAL,Brevyn Spann-Ford under 14.5 rec_yds,14.5,-111,,,0.4999,-0.0498
 Prop,PHI @ DAL,Javonte Williams over 7.5 rec_yds,7.5,-108,,,0.5016,-0.0340
 Prop,PHI @ DAL,Javonte Williams under 7.5 rec_yds,7.5,-116,,,0.4984,-0.0719
 Prop,PHI @ DAL,Saquon Barkley over 7.5 rec_yds,7.5,-108,,,0.5088,-0.0201
-Prop,PHI @ DAL,Saquon Barkley under 7.5 rec_yds,7.5,-116,,,0.4912,-0.0853
-Prop,PHI @ DAL,Will Shipley over 6.5 rec_yds,6.5,-103,,,0.4761,-0.0617
+Prop,PHI @ DAL,Saquon Barkley under 7.5 rec_yds,7.5,-116,,,0.4912,-0.0854
+Prop,PHI @ DAL,Will Shipley over 6.5 rec_yds,6.5,-103,,,0.4761,-0.0616
 Prop,PHI @ DAL,Will Shipley under 6.5 rec_yds,6.5,-122,,,0.5239,-0.0467
-Prop,PHI @ DAL,KaVontae Turpin over 4.5 rec_yds,4.5,-114,,,0.5041,-0.0536
-Prop,PHI @ DAL,KaVontae Turpin under 4.5 rec_yds,4.5,-110,,,0.4959,-0.0534
-Prop,PHI @ DAL,Javonte Williams over 74.5 rush_yds,74.5,-112,,,0.5052,-0.0438
-Prop,PHI @ DAL,Javonte Williams under 74.5 rush_yds,74.5,-112,,,0.4948,-0.0633
-Prop,PHI @ DAL,Saquon Barkley over 66.5 rush_yds,66.5,-109,,,0.4919,-0.0568
-Prop,PHI @ DAL,Saquon Barkley under 66.5 rush_yds,66.5,-115,,,0.5081,-0.0501
-Prop,PHI @ DAL,Joe Milton over 32.5 rush_yds,32.5,-111,,,0.4972,-0.0550
-Prop,PHI @ DAL,Joe Milton under 32.5 rush_yds,32.5,-113,,,0.5028,-0.0522
-Prop,PHI @ DAL,Dak Prescott over 9.5 rush_yds,9.5,-108,,,0.5005,-0.0360
-Prop,PHI @ DAL,Dak Prescott under 9.5 rush_yds,9.5,-117,,,0.4995,-0.0737
+Prop,PHI @ DAL,KaVontae Turpin over 4.5 rec_yds,4.5,-114,,,0.5042,-0.0536
+Prop,PHI @ DAL,KaVontae Turpin under 4.5 rec_yds,4.5,-110,,,0.4958,-0.0534
+Prop,PHI @ DAL,Javonte Williams over 74.5 rush_yds,74.5,-112,,,0.5052,-0.0437
+Prop,PHI @ DAL,Javonte Williams under 74.5 rush_yds,74.5,-112,,,0.4948,-0.0634
+Prop,PHI @ DAL,Saquon Barkley over 66.5 rush_yds,66.5,-109,,,0.4920,-0.0567
+Prop,PHI @ DAL,Saquon Barkley under 66.5 rush_yds,66.5,-115,,,0.5080,-0.0502
+Prop,PHI @ DAL,Joe Milton over 32.5 rush_yds,32.5,-111,,,0.4972,-0.0549
+Prop,PHI @ DAL,Joe Milton under 32.5 rush_yds,32.5,-113,,,0.5028,-0.0523
+Prop,PHI @ DAL,Dak Prescott over 9.5 rush_yds,9.5,-108,,,0.5006,-0.0359
+Prop,PHI @ DAL,Dak Prescott under 9.5 rush_yds,9.5,-117,,,0.4994,-0.0737
 Prop,PHI @ DAL,KaVontae Turpin over 3.5 rush_yds,3.5,-112,,,0.4705,-0.1095
-Prop,PHI @ DAL,KaVontae Turpin under 3.5 rush_yds,3.5,-112,,,0.5295,0.0024
+Prop,PHI @ DAL,KaVontae Turpin under 3.5 rush_yds,3.5,-112,,,0.5295,0.0023
 Prop,KC @ BUF,DJ Moore over 47.5 rec_yds,47.5,-114,,,0.5043,-0.0533
 Prop,KC @ BUF,DJ Moore under 47.5 rec_yds,47.5,-110,,,0.4957,-0.0537
 Prop,KC @ BUF,Rashee Rice over 46.5 rec_yds,46.5,-109,,,0.4938,-0.0532

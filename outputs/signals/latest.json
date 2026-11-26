@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T22:30:23+00:00",
+  "generated_at": "2026-11-26T22:31:37+00:00",
   "data_source": "Yahoo Finance / Stooq daily bars",
   "demo": false,
   "benchmark": "SPY",
@@ -355,10 +355,10 @@
       ],
       "backtest": {
         "rule": "score >= 5, judged 20 trading days later",
-        "signal_days": 245,
-        "avg_fwd_return_pct_when_signal": 0.82,
+        "signal_days": 240,
+        "avg_fwd_return_pct_when_signal": 0.98,
         "avg_fwd_return_pct_any_day": 1.5,
-        "win_rate_pct_when_signal": 68.6
+        "win_rate_pct_when_signal": 69.6
       },
       "source": "yahoo"
     },

@@ -7,7 +7,7 @@ _Educational signals from simple technical rules, not financial advice. Past beh
 | AAPL | 355.58 | +0.43% | **WATCH / ACCUMULATE** | 4 | 58.0 | 338.46 | 66.4% of 241 |
 | MSFT | 489.93 | -1.25% | **WATCH / ACCUMULATE** | 3 | 39.0 | 456.21 | 59.9% of 172 |
 | META | 609.89 | +3.40% | **HOLD / NEUTRAL** | 2 | 45.7 | 559.18 | 64.0% of 225 |
-| SPY | 716.7 | -0.29% | **HOLD / NEUTRAL** | 0 | 39.9 | 685.55 | 68.6% of 245 |
+| SPY | 716.7 | -0.29% | **HOLD / NEUTRAL** | 0 | 39.9 | 685.55 | 69.6% of 240 |
 | QQQ | 633.93 | -0.65% | **HOLD / NEUTRAL** | 0 | 38.6 | 590.85 | 61.8% of 309 |
 | NVDA | 149.3 | -3.91% | **HOLD / NEUTRAL** | 0 | 37.5 | 122.53 | 61.6% of 292 |
 | AMZN | 244.43 | -3.12% | **HOLD / NEUTRAL** | 0 | 42.0 | 223.54 | 56.3% of 295 |

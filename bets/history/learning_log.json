@@ -675,14 +675,14 @@
       "Not enough finished games yet to change anything. Still collecting results."
     ],
     "scoreboard": {
-      "graded_bets": 9402,
-      "graded_projections": 13552,
+      "graded_bets": 9468,
+      "graded_projections": 13573,
       "model_leans": {
         "w": 419,
-        "l": 528,
+        "l": 529,
         "p": 0,
-        "hit_rate": 0.4424,
-        "roi_per_bet": -0.0521
+        "hit_rate": 0.442,
+        "roi_per_bet": -0.0531
       },
       "strong_leans": {
         "w": 251,

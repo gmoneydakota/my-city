@@ -1,36 +1,51 @@
-# Market signals - 2026-11-25
+# Market signals - 2026-11-27
 
 _Educational signals from simple technical rules, not financial advice. Past behaviour of a rule does not guarantee future results. Do your own research._
 
 | Symbol | Price | Day | Signal | Score | RSI | Stop | Past BUY-ZONE hit rate |
 |---|---|---|---|---|---|---|---|
-| AAPL | 355.58 | +0.43% | **WATCH / ACCUMULATE** | 4 | 58.0 | 338.46 | 66.4% of 241 |
-| MSFT | 489.93 | -1.25% | **WATCH / ACCUMULATE** | 3 | 39.0 | 456.21 | 59.9% of 172 |
-| META | 609.89 | +3.40% | **HOLD / NEUTRAL** | 2 | 45.7 | 559.18 | 64.0% of 225 |
-| SPY | 716.7 | -0.29% | **HOLD / NEUTRAL** | 0 | 39.9 | 685.55 | 69.6% of 240 |
-| QQQ | 633.93 | -0.65% | **HOLD / NEUTRAL** | 0 | 38.6 | 590.85 | 61.8% of 309 |
-| NVDA | 149.3 | -3.91% | **HOLD / NEUTRAL** | 0 | 37.5 | 122.53 | 61.6% of 292 |
-| AMZN | 244.43 | -3.12% | **HOLD / NEUTRAL** | 0 | 42.0 | 223.54 | 56.3% of 295 |
-| TSLA | 380.14 | -1.18% | **HOLD / NEUTRAL** | 0 | 50.3 | 340.98 | 51.0% of 100 |
-| GOOGL | 273.1 | -2.13% | **AVOID** | -2 | 36.9 | 249.4 | 54.1% of 185 |
+| AAPL | 358.54 | +0.83% | **BUY ZONE** | 5 | 60.3 | 342.08 | 66.4% of 241 |
+| AMZN | 254.12 | +3.96% | **BUY ZONE** | 5 | 48.6 | 233.17 | 56.3% of 295 |
+| META | 628.96 | +3.13% | **BUY ZONE** | 5 | 50.3 | 578.05 | 64.0% of 225 |
+| MSFT | 492.85 | +0.60% | **WATCH / ACCUMULATE** | 3 | 40.6 | 459.88 | 59.9% of 172 |
+| TSLA | 400.0 | +5.22% | **WATCH / ACCUMULATE** | 3 | 56.4 | 360.63 | 51.0% of 100 |
+| SPY | 728.32 | +1.62% | **HOLD / NEUTRAL** | 0 | 45.1 | 697.62 | 68.3% of 246 |
+| QQQ | 650.99 | +2.69% | **HOLD / NEUTRAL** | 0 | 44.0 | 608.5 | 61.6% of 310 |
+| GOOGL | 274.96 | +0.68% | **AVOID** | -1 | 38.3 | 251.6 | 54.1% of 185 |
+| NVDA | 150.49 | +0.80% | **AVOID** | -2 | 38.1 | 124.7 | 61.6% of 292 |
 
 ## Why
-### AAPL - WATCH / ACCUMULATE
+### AAPL - BUY ZONE
 - price above 200-day average (long-term uptrend)
 - 50-day above 200-day (golden-cross regime)
-- up 13.1% over 3 months
+- up 12.2% over 3 months
 - outperforming the benchmark over 3 months
+- MACD momentum positive and rising
+
+### AMZN - BUY ZONE
+- price above 200-day average (long-term uptrend)
+- 50-day above 200-day (golden-cross regime)
+- outperforming the benchmark over 3 months
+- pulled back to the 50-day in an uptrend (classic entry zone)
+
+### META - BUY ZONE
+- price above 200-day average (long-term uptrend)
+- 50-day above 200-day (golden-cross regime)
+- up 8.9% over 3 months
+- outperforming the benchmark over 3 months
+- MACD momentum positive and rising
 
 ### MSFT - WATCH / ACCUMULATE
 - price above 200-day average (long-term uptrend)
 - 50-day above 200-day (golden-cross regime)
 - outperforming the benchmark over 3 months
 
-### META - HOLD / NEUTRAL
-- price below 200-day average (long-term downtrend)
-- 50-day above 200-day (golden-cross regime)
-- up 6.9% over 3 months
+### TSLA - WATCH / ACCUMULATE
+- price above 200-day average (long-term uptrend)
+- 50-day below 200-day (death-cross regime)
+- up 14.7% over 3 months
 - outperforming the benchmark over 3 months
+- MACD momentum positive and rising
 
 ### SPY - HOLD / NEUTRAL
 - price below 200-day average (long-term downtrend)
@@ -40,22 +55,11 @@ _Educational signals from simple technical rules, not financial advice. Past beh
 - price below 200-day average (long-term downtrend)
 - 50-day above 200-day (golden-cross regime)
 
-### NVDA - HOLD / NEUTRAL
-- price below 200-day average (long-term downtrend)
-- 50-day above 200-day (golden-cross regime)
-
-### AMZN - HOLD / NEUTRAL
-- price below 200-day average (long-term downtrend)
-- 50-day above 200-day (golden-cross regime)
-- outperforming the benchmark over 3 months
-- MACD momentum negative and falling
-
-### TSLA - HOLD / NEUTRAL
+### GOOGL - AVOID
 - price below 200-day average (long-term downtrend)
 - 50-day below 200-day (death-cross regime)
-- up 7.1% over 3 months
-- outperforming the benchmark over 3 months
+- MACD momentum positive and rising
 
-### GOOGL - AVOID
+### NVDA - AVOID
 - price below 200-day average (long-term downtrend)
 - 50-day below 200-day (death-cross regime)
